@@ -1749,23 +1749,6 @@ html.cme-focus .cme-fab-focus {
 .cme-search-hit strong { display: block; font-size: 13px; margin-bottom: 0.2em; }
 .cme-search-hit span { display: block; font-size: 12px; opacity: 0.75; line-height: 1.35; }
 
-.cme-glos-item {
-  border-bottom: 1px solid #333;
-  padding: 0.35em 0.2em;
-}
-.cme-glos-item summary {
-  cursor: pointer;
-  font-weight: bold;
-  text-transform: capitalize;
-  padding: 0.35em 0;
-}
-.cme-glos-item p {
-  margin: 0.3em 0 0.6em;
-  font-size: 0.95em;
-  line-height: 1.45;
-  opacity: 0.9;
-}
-
 .cme-bm-item {
   display: flex;
   align-items: center;
@@ -1806,5 +1789,4 @@ html.cme-focus .cme-fab-focus {
   .cme-fab-search { bottom: 7.3rem; }
   .cme-fab-bm { bottom: 9.8rem; }
   .cme-fab-focus { bottom: 12.3rem; }
-  .cme-fab-glos { bottom: 14.8rem; }
 }
