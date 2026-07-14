@@ -25,8 +25,8 @@
 4. **Sem commit sem aprovação explícita**
 
 ## Pendências
-- [ ] Deploy/push de `public/` para `gh-pages` (aguardar aprovação do usuário)
+- [x] Deploy em GitHub Pages (commit `f629b3c`, Actions success 2026-07-14)
 - [ ] Polimento residual opcional (baixa prioridade): unificar `Fig.`/`Figura`, capitalização do título V no sumário
 
 ## Atualização
-2026-07-14 — features de ebook + revisão (APROVADO); revisão 100% da tradução em 2 passagens com patches alta/média; residual cap. XIV fechado; índice de busca limpo; site local em `:8765`.
+2026-07-14 — publicado em https://rodriguestmo.github.io/calculo-tornado-facil/ (features + revisão 100% da tradução; commit f629b3c).
