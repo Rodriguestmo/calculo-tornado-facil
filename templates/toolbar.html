@@ -1,4 +1,4 @@
-<!-- Barra fixa: navegação, modo das notas, tema -->
+<!-- Barra fixa: navegação, leitura, notas, tema -->
 <div id="site-toolbar" class="site-toolbar" role="region" aria-label="Controles do site">
   <a class="tb-home" href="index.html">Cálculo Tornado Fácil</a>
 
@@ -12,8 +12,46 @@
       </select>
     </label>
 
+    <label class="tb-field" title="Família tipográfica">
+      <span class="tb-label">Fonte</span>
+      <select id="font-family" aria-label="Fonte do texto">
+        <option value="default">Padrão do site</option>
+        <option value="dyslexia">Dislexia</option>
+        <option value="sans">Sans-serif</option>
+        <option value="mono">Monospace</option>
+      </select>
+    </label>
+
+    <div class="tb-font-size" role="group" aria-label="Tamanho da fonte">
+      <button type="button" id="font-smaller" class="tb-btn tb-btn-sq" title="Diminuir fonte" aria-label="Diminuir fonte">A-</button>
+      <span id="font-size-label" class="tb-size-label" aria-live="polite">100%</span>
+      <button type="button" id="font-larger" class="tb-btn tb-btn-sq" title="Aumentar fonte" aria-label="Aumentar fonte">A+</button>
+    </div>
+
     <button type="button" id="toggle-theme" class="tb-btn" title="Alternar tema claro/escuro" aria-pressed="false">
       <span class="theme-label">Tema escuro</span>
     </button>
+  </div>
+</div>
+
+<!-- Popup de seleção: destacar + nota -->
+<div id="hl-popup" class="hl-popup" hidden role="dialog" aria-label="Destacar trecho">
+  <button type="button" id="hl-btn-mark" class="tb-btn">Destacar</button>
+  <button type="button" id="hl-btn-note" class="tb-btn">Destacar + nota</button>
+  <button type="button" id="hl-btn-cancel" class="tb-btn tb-btn-ghost">Cancelar</button>
+</div>
+
+<!-- Modal de nota do highlight -->
+<div id="hl-note-modal" class="hl-modal" hidden role="dialog" aria-modal="true" aria-labelledby="hl-note-title">
+  <div class="hl-modal-box">
+    <h3 id="hl-note-title">Nota do trecho</h3>
+    <p id="hl-note-quote" class="hl-quote"></p>
+    <label class="hl-note-label" for="hl-note-input">Sua nota (salva só neste navegador)</label>
+    <textarea id="hl-note-input" rows="4" maxlength="2000" placeholder="Escreva uma anotação opcional..."></textarea>
+    <div class="hl-modal-actions">
+      <button type="button" id="hl-note-save" class="tb-btn">Salvar</button>
+      <button type="button" id="hl-note-remove" class="tb-btn tb-btn-danger">Remover destaque</button>
+      <button type="button" id="hl-note-close" class="tb-btn tb-btn-ghost">Fechar</button>
+    </div>
   </div>
 </div>

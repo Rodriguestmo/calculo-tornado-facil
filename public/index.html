@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light dark">
@@ -16,7 +15,6 @@
 <link rel="alternate" hreflang="pt-BR" href="https://rodriguestmo.github.io/calculo-tornado-facil/index.html">
 <link rel="alternate" hreflang="x-default" href="https://rodriguestmo.github.io/calculo-tornado-facil/">
 
-
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Cálculo Tornado Fácil">
 <meta property="og:locale" content="pt_BR">
@@ -25,14 +23,11 @@
 <meta property="og:url" content="https://rodriguestmo.github.io/calculo-tornado-facil/index.html">
 <meta property="og:image" content="https://rodriguestmo.github.io/calculo-tornado-facil/cover.jpg">
 
-
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Cálculo Tornado Fácil | Silvanus P. Thompson (PT-BR)">
 <meta name="twitter:description" content="Tradução pública e gratuita para português brasileiro de Calculus Made Easy, o clássico de Silvanus P. Thompson. Aprenda cálculo diferencial e integral de forma simples. Projeto sem fins lucrativos por Thales Rodrigues.">
 <meta name="twitter:image" content="https://rodriguestmo.github.io/calculo-tornado-facil/cover.jpg">
 
-
-<meta name="ai-content-declaration" content="human-authored translation and educational adaptation">
 <link rel="describedby" href="https://rodriguestmo.github.io/calculo-tornado-facil/llms.txt">
 <link rel="stylesheet" href="screen.css">
 <style>
@@ -115,7 +110,7 @@ html.theme-dark .title, html.theme-dark .number { background: #161616; }
 </script>
 </head>
 <body>
-<!-- Barra fixa: navegação, modo das notas, tema -->
+<!-- Barra fixa: navegação, leitura, notas, tema -->
 <div id="site-toolbar" class="site-toolbar" role="region" aria-label="Controles do site">
   <a class="tb-home" href="index.html">Cálculo Tornado Fácil</a>
 
@@ -129,9 +124,47 @@ html.theme-dark .title, html.theme-dark .number { background: #161616; }
       </select>
     </label>
 
+    <label class="tb-field" title="Família tipográfica">
+      <span class="tb-label">Fonte</span>
+      <select id="font-family" aria-label="Fonte do texto">
+        <option value="default">Padrão do site</option>
+        <option value="dyslexia">Dislexia</option>
+        <option value="sans">Sans-serif</option>
+        <option value="mono">Monospace</option>
+      </select>
+    </label>
+
+    <div class="tb-font-size" role="group" aria-label="Tamanho da fonte">
+      <button type="button" id="font-smaller" class="tb-btn tb-btn-sq" title="Diminuir fonte" aria-label="Diminuir fonte">A-</button>
+      <span id="font-size-label" class="tb-size-label" aria-live="polite">100%</span>
+      <button type="button" id="font-larger" class="tb-btn tb-btn-sq" title="Aumentar fonte" aria-label="Aumentar fonte">A+</button>
+    </div>
+
     <button type="button" id="toggle-theme" class="tb-btn" title="Alternar tema claro/escuro" aria-pressed="false">
       <span class="theme-label">Tema escuro</span>
     </button>
+  </div>
+</div>
+
+<!-- Popup de seleção: destacar + nota -->
+<div id="hl-popup" class="hl-popup" hidden role="dialog" aria-label="Destacar trecho">
+  <button type="button" id="hl-btn-mark" class="tb-btn">Destacar</button>
+  <button type="button" id="hl-btn-note" class="tb-btn">Destacar + nota</button>
+  <button type="button" id="hl-btn-cancel" class="tb-btn tb-btn-ghost">Cancelar</button>
+</div>
+
+<!-- Modal de nota do highlight -->
+<div id="hl-note-modal" class="hl-modal" hidden role="dialog" aria-modal="true" aria-labelledby="hl-note-title">
+  <div class="hl-modal-box">
+    <h3 id="hl-note-title">Nota do trecho</h3>
+    <p id="hl-note-quote" class="hl-quote"></p>
+    <label class="hl-note-label" for="hl-note-input">Sua nota (salva só neste navegador)</label>
+    <textarea id="hl-note-input" rows="4" maxlength="2000" placeholder="Escreva uma anotação opcional..."></textarea>
+    <div class="hl-modal-actions">
+      <button type="button" id="hl-note-save" class="tb-btn">Salvar</button>
+      <button type="button" id="hl-note-remove" class="tb-btn tb-btn-danger">Remover destaque</button>
+      <button type="button" id="hl-note-close" class="tb-btn tb-btn-ghost">Fechar</button>
+    </div>
   </div>
 </div>
 
@@ -148,12 +181,13 @@ html.theme-dark .title, html.theme-dark .number { background: #161616; }
   <h4>Sobre esta edição em português</h4>
   <p>Tradução PT-BR do clássico <em>Calculus Made Easy</em> (1910), de Silvanus P. Thompson,
   a partir do texto em domínio público.</p>
-  <p><strong>Notas de Martin Gardner (1998):</strong> na barra preta no topo, escolha
-  <em>Sempre visíveis</em>, <em>Lupa (clique para abrir)</em> ou <em>Sempre ocultadas</em>.
-  No modo lupa, cada ícone abre/fecha a nota logo abaixo. Há também botão de
-  <em>tema escuro</em>. O texto principal de Thompson é domínio público; as notas de
-  contexto são adaptações inspiradas na edição anotada de Gardner (1998).</p>
-  <p><strong>Tradução completa</strong> do livro para português brasileiro, com notas de contexto opcionais.</p>
+  <p><strong>Leitura:</strong> na barra preta no topo você pode mudar a fonte (padrão, dislexia,
+  sans-serif, monospace), o tamanho do texto, o tema e como as notas de Gardner aparecem.
+  Selecione um trecho para destacar e, se quiser, anexar uma nota. Preferências e destaques
+  ficam salvos só neste navegador.</p>
+  <p><strong>Tradução completa</strong> do livro para português brasileiro, com notas de contexto opcionais.
+  O texto principal de Thompson é domínio público; as notas de contexto são adaptações
+  inspiradas na edição anotada de Gardner (1998).</p>
   <p>Projeto <strong>público</strong>, sem fins lucrativos. Não é permitido comercializar.</p>
 </div>
 

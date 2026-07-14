@@ -32,7 +32,5 @@ python3 -m http.server 8765 --directory public
 
 ## SEO / descoberta
 
-- `robots.txt` permite buscadores e crawlers de IA
-- `sitemap.xml` lista as páginas
-- `llms.txt` resume o projeto para assistentes
+- `robots.txt` e `sitemap.xml` para indexação
 - Meta tags Open Graph + JSON-LD (Book / WebSite)

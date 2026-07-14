@@ -1,16 +1,13 @@
-# Cálculo Tornado Fácil - indexação liberada para buscadores e IAs
+# Cálculo Tornado Fácil - indexação liberada
 User-agent: *
 Allow: /
 
-# Google
 User-agent: Googlebot
 Allow: /
 
-# Bing
 User-agent: Bingbot
 Allow: /
 
-# Assistentes e crawlers de IA (quando respeitam robots.txt)
 User-agent: GPTBot
 Allow: /
 

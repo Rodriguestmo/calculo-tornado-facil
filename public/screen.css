@@ -793,3 +793,205 @@ html.theme-dark .site-footer .manifesto-sign {
 html.theme-dark .site-footer .footer-meta {
   opacity: 0.75;
 }
+
+/* ---------- Tipografia do leitor (localStorage) ---------- */
+@font-face {
+  font-family: "OpenDyslexic";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("https://cdn.jsdelivr.net/npm/@fontsource/opendyslexic@5.2.5/files/opendyslexic-latin-400-normal.woff2") format("woff2");
+}
+@font-face {
+  font-family: "OpenDyslexic";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("https://cdn.jsdelivr.net/npm/@fontsource/opendyslexic@5.2.5/files/opendyslexic-latin-700-normal.woff2") format("woff2");
+}
+
+html {
+  --cme-font-scale: 1;
+}
+
+html.font-default body {
+  font-family: "Libertine", Palatino, "Palatino Linotype", "Book Antiqua", Georgia, "Times New Roman", serif;
+}
+html.font-dyslexia body {
+  font-family: "OpenDyslexic", "Comic Sans MS", Verdana, sans-serif;
+  letter-spacing: 0.04em;
+  word-spacing: 0.12em;
+  line-height: 1.7;
+}
+html.font-sans body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+html.font-mono body {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+  letter-spacing: -0.01em;
+}
+
+/* Escala de fonte com limites (85%–140%) via --cme-font-scale */
+html body {
+  font-size: calc(large * var(--cme-font-scale, 1)) !important;
+}
+html body p,
+html body li,
+html body td,
+html body th,
+html body blockquote,
+html body .gardner-note,
+html body .edition-box {
+  font-size: inherit;
+}
+
+/* Toolbar extras */
+.site-toolbar .tb-font-size {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25em;
+}
+.site-toolbar .tb-btn-sq {
+  min-width: 2em;
+  padding-left: 0.4em;
+  padding-right: 0.4em;
+  font-weight: bold;
+}
+.site-toolbar .tb-size-label {
+  min-width: 2.8em;
+  text-align: center;
+  font-size: 12px;
+  opacity: 0.9;
+}
+.site-toolbar .tb-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+.site-toolbar .tb-btn-ghost {
+  background: transparent;
+  border-color: #666;
+}
+.site-toolbar .tb-btn-danger {
+  background: #5c2020;
+  border-color: #a44;
+  color: #fff;
+}
+
+@media only screen and (max-width: 900px) {
+  .site-toolbar .tb-label { display: none; }
+  .site-toolbar select { max-width: 9.5em; }
+}
+
+/* ---------- Destaques do leitor ---------- */
+mark.cme-hl {
+  background: #ffe566;
+  color: inherit;
+  padding: 0.05em 0.12em;
+  border-radius: 2px;
+  cursor: pointer;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+mark.cme-hl.cme-hl-has-note {
+  background: #ffc14d;
+  box-shadow: inset 0 -2px 0 #c47a00;
+}
+html.theme-dark mark.cme-hl {
+  background: #6b5a12;
+  color: #fff8d6;
+}
+html.theme-dark mark.cme-hl.cme-hl-has-note {
+  background: #8a6a10;
+  box-shadow: inset 0 -2px 0 #e0b040;
+}
+
+.hl-popup {
+  position: fixed;
+  z-index: 2000;
+  display: none;
+  flex-wrap: wrap;
+  gap: 0.35em;
+  padding: 0.45em;
+  background: #1a1a1a;
+  color: #f5f0e6;
+  border-radius: 6px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.35);
+  max-width: min(92vw, 320px);
+}
+.hl-popup .tb-btn {
+  font-size: 12px;
+  padding: 0.3em 0.55em;
+}
+
+.hl-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 2100;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.45);
+  padding: 1em;
+}
+.hl-modal-box {
+  width: min(92vw, 420px);
+  background: #fff;
+  color: #222;
+  border-radius: 8px;
+  padding: 1.1em 1.2em 1em;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+}
+html.theme-dark .hl-modal-box {
+  background: #222;
+  color: #e8e4d9;
+}
+.hl-modal-box h3 {
+  margin: 0 0 0.6em 0;
+  font-size: 1.1em;
+  line-height: 1.3;
+  text-align: left;
+  border: 0;
+  padding: 0;
+}
+.hl-quote {
+  font-style: italic;
+  font-size: 0.95em;
+  margin: 0 0 0.8em 0;
+  opacity: 0.9;
+  max-height: 5em;
+  overflow: auto;
+}
+.hl-note-label {
+  display: block;
+  font-size: 0.85em;
+  margin-bottom: 0.35em;
+}
+#hl-note-input {
+  width: 100%;
+  box-sizing: border-box;
+  font: inherit;
+  padding: 0.5em;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  resize: vertical;
+  min-height: 5em;
+  background: #fff;
+  color: #222;
+}
+html.theme-dark #hl-note-input {
+  background: #1a1a1a;
+  color: #e8e4d9;
+  border-color: #555;
+}
+.hl-modal-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4em;
+  margin-top: 0.85em;
+}
+.hl-modal-actions .tb-btn {
+  font-size: 13px;
+  background: #2a2a2a;
+  color: #f5f0e6;
+  border: 1px solid #555;
+}
