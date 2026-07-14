@@ -388,10 +388,19 @@ h2 {
   clear: both;
 }
 h3 {
+  /* Essays 1743 desalinhar dígitos em "Caso 3"; usa fonte estável */
+  font-family: "Libertine", Palatino, "Palatino Linotype", "Book Antiqua", Georgia, "Times New Roman", serif;
   font-size: x-large;
-  line-height: 1.167;
-  margin: 1.556em 0;
+  line-height: 1.25;
+  margin: 1.75em 0 1em 0;
   text-align: center;
+  letter-spacing: 0.04em;
+  word-spacing: normal;
+  clear: both;
+}
+h3:before,
+h3:after {
+  content: none !important;
 }
 h1:before {
   content: "\2116" counter(h1) ".";

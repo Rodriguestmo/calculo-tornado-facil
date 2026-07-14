@@ -36,41 +36,35 @@ body{counter-reset:h1 4}
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
     tex2jax: {
-      inlineMath: [['$','$'], ['\(','\)']],
-      displayMath: [['$$','$$'], ['\[','\]']],
-      processEscapes: true
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$'], ['\\[','\\]']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ["script","noscript","style","textarea","pre","code"]
     },
     TeX: {
       extensions: ["AMSmath.js","AMSsymbols.js"],
       equationNumbers: { autoNumber: "none" }
     },
     "HTML-CSS": {
+      availableFonts: ["TeX"],
       linebreaks: { automatic: false },
       styles: {
-        ".MathJax_Display": {
-          "margin": "1.5em 0",
-          "overflow-x": "auto",
-          "overflow-y": "hidden"
-        },
-        ".MathJax .mtable .mtd": {
-          "padding-top": "0.45em",
-          "padding-bottom": "0.45em"
-        },
-        ".MathJax .mtr + .mtr .mtd": {
-          "padding-top": "0.65em"
-        }
+        ".MathJax_Display": { "margin": "1.5em 0" }
       }
     },
     CommonHTML: {
-      styles: {
-        ".MJXc-display": { "margin": "1.5em 0" }
-      }
-    }
+      styles: { ".MJXc-display": { "margin": "1.5em 0" } }
+    },
+    showProcessingMessages: false,
+    messageStyle: "none"
   });
 </script>
 <script type="text/javascript"
-  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
+
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -367,7 +361,7 @@ y + dy=x^3+3x^2 · dx.
 <p>Mas $y=x^3$; e, subtraindo isto, temos:</p>
 
 \begin{align*}dy &= 3x^2 · dx, \\
-\text{ e}\;
+\\ 
 \frac{dy}{dx} &= 3x^2.
 \end{align*}
 
@@ -386,7 +380,7 @@ potências mais altas de $dx$, por serem desprezíveis por comparação, temos
 
 Subtraindo o $y=x^4$ original, ficamos com
 \begin{align*}dy &= 4x^3\, dx, \\
-\text{ e}\;
+\\ 
 \frac{dy}{dx} &= 4x^3.
 \end{align*}
 
