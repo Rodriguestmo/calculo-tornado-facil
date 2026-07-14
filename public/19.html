@@ -435,14 +435,17 @@ bx_1 + \frac{a}{3} x_1^3 + C.
 valores numéricos. Suponha $b = 10$, $a = 0.06$, e
 $x_2 = 8$ e $x_1 = 6$. Então a área $S$ é igual a</p>
 
-\begin{gather*}10(8 - 6) + \frac{0.06}{3} (8^3 - 6^3) \\
+\[
+\begin{gathered}
+10(8 - 6) + \frac{0.06}{3} (8^3 - 6^3) \\
 \begin{aligned}
 &= 20 + 0.02(512 - 216)    \\
 &= 20 + 0.02 × 296    \\
 &= 20 + 5.92     \\
-&= 25.92.
+&= 25.92. \\
 \end{aligned}
-\end{gather*}
+\end{gathered}
+\]
 
 <p>Ponhamos aqui um modo simbólico de enunciar o que
 averiguamos sobre limites:</p>
@@ -488,12 +491,15 @@ y = \frac{x}{3}.
 integral geral entre colchetes com os limites
 marcados em cima e embaixo, obtemos
 
-\begin{align*}\text{área}\;
+\[
+\begin{aligned}
+\text{área}\;
   &= \left[ \frac{1}{3} · \frac{1}{2} x^2 \right]^{x=12}_{x=0} + C \\
   &= \left[ \frac{x^2}{6} \right]^{x=12}_{x=0} + C  \\
   &= \left[ \frac{12^2}{6} \right] - \left[ \frac{0^2}{6} \right] \\
   &= \frac{144}{6} = 24.\quad \text{Resp.}
-\end{align*}
+\end{aligned}
+\]
 
 <p>Satisfaçamo-nos quanto a este truque de cálculo
 um tanto surpreendente, testando-o em um exemplo
@@ -534,13 +540,16 @@ mesma integral entre os limites $x = 3$ e $x = 15$
 <p>(2) Ache a área, entre os limites $x = x_1$ e $x = 0$,
 da curva $y = \dfrac{b}{x + a}$.</p>
 
-\begin{align*}\text{Área}
-  &= \int^{x=x_1}_{x=0} y · dx
+\[
+\begin{aligned}
+\text{Área}
+  &= \int^{x=x_1}_{x=0} y · dx \\
    &= \int^{x=x_1}_{x=0} \frac{b}{x+a}\, dx  \\
   &= b \bigl[\log_\epsilon(x + a) \bigr]^{x_1} _{0} + C  \\
   &= b \bigl[\log_\epsilon(x_1 + a) - \log_\epsilon(0 + a)\bigr]  \\
   &= b \log_\epsilon \frac{x_1 + a}{a}.\quad \text{Resp.}
-\end{align*}
+\end{aligned}
+\]
 
 <p><em>Nota</em> - Observe que ao lidar com integrais
 definidas a constante $C$ sempre desaparece por
@@ -566,15 +575,21 @@ $= \text{circunferência média do anel} × \text{largura do anel}$.
 <p>(3) Eis outro caso - o da <em>curva de decaimento</em>.
 Ache a área entre $x = 0$ e $x = a$, da curva
 (<a href="#figure57">Figura 57</a>) cuja equação é
-\begin{align*}y &= b\epsilon^{-x}. \\
+\[
+\begin{aligned}
+y &= b\epsilon^{-x}. \\
 \text{Área}
-  &= b\int^{x=a} _{x=0} \epsilon^{-x} · dx.  
-\end{align*}
+  &= b\int^{x=a} _{x=0} \epsilon^{-x} · dx.
+\end{aligned}
+\]
   A integração (<a href="18.html#differ3">aqui</a>) dá
-\begin{align*}  &= b\left[-\epsilon^{-x}\right]^a _0 \\
+\[
+\begin{aligned}
+  &= b\left[-\epsilon^{-x}\right]^a _0 \\
   &= b\bigl[-\epsilon^{-a} - (-\epsilon^{-0})\bigr] \\
   &= b(1-\epsilon^{-a}).
-\end{align*}
+\end{aligned}
+\]
 
 <a name="figure57">
 <p><img src="33283-t/images/227a.pdf.png-1.png">
@@ -593,12 +608,15 @@ do volume $v_2$ ao volume $v_1$.
 
 <p>Aqui temos</p>
 
-\begin{align*}\text{área}
+\[
+\begin{aligned}
+\text{área}
   &= \int^{v=v_2}_{v=v_1} cv^{-n} · dv \\
   &= c\left[\frac{1}{1-n} v^{1-n} \right]^{v_2} _{v_1} \\
   &= c \frac{1}{1-n} (v_2^{1-n} - v_1^{1-n}) \\
   &= \frac{-c}{0.42}\left(\frac{1}{v_2^{0.42}} - \frac{1}{v_1^{0.42}}\right).
-\end{align*}
+\end{aligned}
+\]
 
 <p>
 <em>Um exercício.</em><p>
@@ -639,12 +657,15 @@ A = \int dA
 
 <p>Ora, a integral geral de $r · dr$ é $\frac{1}{2} r^2$. Portanto,</p>
 
-\begin{align*}A &= 2 \pi \bigl[\tfrac{1}{2} r^2 \bigr]^{r=R}_{r=0}; \\
+\[
+\begin{aligned}
+A &= 2 \pi \bigl[\tfrac{1}{2} r^2 \bigr]^{r=R}_{r=0}; \\
  \text{ou} \\
 A &= 2 \pi \bigl[\tfrac{1}{2} R^2 - \tfrac{1}{2}(0)^2\bigr]; \\
  donde \;
 A &= \pi R^2.
-\end{align*}
+\end{aligned}
+\]
 
 <p>
 <em>Outro exercício.</em><p>
@@ -664,11 +685,14 @@ $x=1$ nos dá a posição do ponto $N$.
 <p><img src="33283-t/images/229a.pdf.png-1.png">
 <p>Então a área desejada é</p>
 
-\begin{align*}  &= \int^{x=1}_{x=0} (x-x^2)\, dx \\
+\[
+\begin{aligned}
+  &= \int^{x=1}_{x=0} (x-x^2)\, dx \\
   &= \left[\tfrac{1}{2} x^2 - \tfrac{1}{3} x^3 \right]^{1}_{0} \\
   &= \left[\tfrac{1}{2} - \tfrac{1}{3} \right] - [0-0] \\
   &= \tfrac{1}{6}.
-\end{align*}
+\end{aligned}
+\]
 
 <p>Mas o comprimento da base é $1$.
 
@@ -701,11 +725,14 @@ cinta estreita da superfície, de largura $dx$,
 correspondente a esse ponto, tem por área $2\pi y\, dx$.
 A área total é</p>
 
-\begin{align*}2\pi \int^{x&=6}_{x=0} y\, dx
-  &= 2\pi \int^{x=6}_{x=0} (x^2-5)\, dx
+\[
+\begin{aligned}
+2\pi \int^{x&=6}_{x=0} y\, dx \\
+  &= 2\pi \int^{x=6}_{x=0} (x^2-5)\, dx \\
    &= 2\pi \left[\frac{x^3}{3} - 5x\right]^6_0 \\
   &= 6.28 × 42=263.76.
-\end{align*}
+\end{aligned}
+\]
 
 <p>
 <h2>Áreas em coordenadas polares.</h2>
@@ -753,12 +780,15 @@ $r=a$. A área é</p>
 (conhecida como “Caracol de Pascal”), cuja equação
 polar é $r=a(1+\cos \theta)$.</p>
 
-\begin{align*}\text{Área}
+\[
+\begin{aligned}
+\text{Área}
   &= \tfrac{1}{2}  \int^{\theta=\frac{\pi}{2}}_{\theta=0} a^2(1+\cos \theta)^2\, d\theta  \\
   &= \frac{a^2}{2} \int^{\theta=\frac{\pi}{2}}_{\theta=0} (1+2 \cos \theta + \cos^2 \theta)\, d\theta  \\
   &= \frac{a^2}{2} \left[\theta + 2 \sin \theta + \frac{\theta}{2} + \frac{\sin 2 \theta}{4} \right]^{\frac{\pi}{2}}_{0} \\
   &= \frac{a^2(3\pi+8)}{8}.
-\end{align*}
+\end{aligned}
+\]
 
 <p><h2>Volumes por integração.</h2>
 
@@ -798,12 +828,15 @@ expressão
 y^2 = r^2 - x^2.
 \]
 
-\begin{align*}   \text{Logo } \;
+\[
+\begin{aligned}
+   \text{Logo } \;
 \text{volume da esfera}
   &= 2 \int^{x=r}_{x=0} \pi(r^2-x^2)\, dx \\
   &= 2 \pi \left[ \int^{x=r}_{x=0} r^2\, dx - \int^{x=r}_{x=0} x^2\, dx \right] \\
   &= 2 \pi \left[r^2x - \frac{x^3}{3} \right]^r_0 = \frac{4\pi}{3} r^3.
-\end{align*}
+\end{aligned}
+\]
 
 <p>(2) Ache o volume do sólido gerado pela revolução
 da curva $y^2=6x$ em torno do eixo dos $x$, entre
@@ -811,11 +844,14 @@ $x=0$ e $x=4$.
 
 <p>O volume de uma faixa do sólido é $\pi y^2\, dx$.</p>
 
-\begin{align*}   \text{Logo } \;
+\[
+\begin{aligned}
+   \text{Logo } \;
 \text{volume}
   &= \int^{x=4}_{x=0} \pi y^2\, dx = 6\pi \int^{x=4}_{x=0} x\, dx  \\
   &= 6\pi \left[ \frac{x^2}{2} \right]^4_0 = 48\pi = 150.8.
-\end{align*}
+\end{aligned}
+\]
 
 <p><h2>Sobre médias quadráticas.</h2>
 

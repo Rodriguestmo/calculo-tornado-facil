@@ -99,17 +99,23 @@ Teremos então $du = dw$, enquanto $\int \sin w · dw = -\cos w = x$.
 
 <p>Pondo isso na fórmula, obtemos</p>
 
-\begin{align*}\int w · \sin w\, dw &= w(-\cos w) - \int -\cos w\, dw  \\
+\[
+\begin{aligned}
+\int w · \sin w\, dw &= w(-\cos w) - \int -\cos w\, dw  \\
                      &=-w \cos w + \sin w + C.
-\end{align*}
+\end{aligned}
+\]
 
 <p>(2) Ache $\int x \epsilon^x\, dx$.</p>
 
-\begin{align*}   \text{Escreva}\;
+\[
+\begin{aligned}
+   \text{Escreva}\;
  u &=  x, & \epsilon^x\, dx&=dv; \\
  \text{então }\;
 du &= dx, & v &=\epsilon^x,
-\end{align*}
+\end{aligned}
+\]
 
  e
 \[
@@ -121,31 +127,43 @@ du &= dx, & v &=\epsilon^x,
 
 <p>(3) Tente $\int \cos^2 \theta\, d\theta$.<a name="moreexamples"/></p>
 
-\begin{align*}u &= \cos \theta, &\cos \theta\, d\theta &= dv. \\
+\[
+\begin{aligned}
+u &= \cos \theta, &\cos \theta\, d\theta &= dv. \\
    \text{Logo }\;
 du&= -\sin \theta\, d\theta, & v &=\sin \theta,
-\end{align*}
-\begin{align*}\int \cos^2 \theta\, d\theta
+\end{aligned}
+\]
+\[
+\begin{aligned}
+\int \cos^2 \theta\, d\theta
   &= \cos \theta \sin \theta+ \int \sin^2 \theta\, d\theta       \\
   &= \frac{2 \cos\theta \sin\theta}{2} +\int(1-\cos^2 \theta)\, d\theta  \\
   &= \frac{\sin 2\theta}{2} + \int d\theta - \int \cos^2 \theta\, d\theta.
-\end{align*}
-\begin{align*}   \text{Logo}\;
+\end{aligned}
+\]
+\[
+\begin{aligned}
+   \text{Logo}\;
 2 \int \cos^2 \theta\, d\theta
   &= \frac{\sin 2\theta}{2} + \theta \\
  \text{e} \\
 \int \cos^2 \theta\, d\theta
   &= \frac{\sin 2\theta}{4} + \frac{\theta}{2} + C.
-\end{align*}
+\end{aligned}
+\]
 
 <p>(4) Ache $\int x^2 \sin x\, dx$.
 </p>
 
-\begin{align*}   \text{Escreva }\;
+\[
+\begin{aligned}
+   \text{Escreva }\;
 x^2  &= u, & \sin x\, dx &= dv; \\
  \text{então }\;
 du &= 2x\, dx, & v &= -\cos x,
-\end{align*}
+\end{aligned}
+\]
 \[
 \int x^2 \sin x\, dx = -x^2 \cos x + 2 \int x \cos x\, dx.
 \]
@@ -159,22 +177,28 @@ du &= 2x\, dx, & v &= -\cos x,
 
 <p>Logo</p>
 
-\begin{align*}\int x^2 \sin x\, dx
+\[
+\begin{aligned}
+\int x^2 \sin x\, dx
   &= -x^2 \cos x + 2x \sin x + 2 \cos x + C' \\
   &= 2 \left[ x \sin x + \cos x \left(1 - \frac{x^2}{2}\right) \right] +C'.
-\end{align*}
+\end{aligned}
+\]
 
 <p>(5) Ache $\int \sqrt{1-x^2}\, dx$.</p>
 
-\begin{align*} \text{Escreva}\;
+\[
+\begin{aligned}
+ \text{Escreva}\;
 u &= \sqrt{1-x^2},\quad dx=dv;  \\
  \text{então }\;
-du &= -\frac{x\, dx}{\sqrt{1-x^2}}\quad \text{(veja } 
+du &= -\frac{x\, dx}{\sqrt{1-x^2}}\quad \text{(veja } \\
 \style{
-  border-bottom-width: 1px; 
+  border-bottom-width: 1px;
   border-bottom-style: dotted;
-}{\href{9.html}{\text{Cap. IX}}}) 
-\end{align*} 
+}{\href{9.html}{\text{Cap. IX}}})
+\end{aligned}
+\] 
 e $x=v$; de modo que
 \[
 \int \sqrt{1-x^2}\, dx=x \sqrt{1-x^2} + \int \frac{x^2\, dx}{\sqrt{1-x^2}}.
@@ -214,12 +238,14 @@ alguns exemplos.
 
 $\int \sqrt{3+x}\, dx$.</p>
 
-\begin{align*}
+\[
+\begin{aligned}
 3+x &= u,\quad dx = du; \\
  substitua
 \int u^{\frac{1}{2}}\, du
   &= \tfrac{2}{3} u^{\frac{3}{2}} = \tfrac{2}{3}(3+x)^{\frac{3}{2}}.
-\end{align*}
+\end{aligned}
+\]
 
 <p>(2) $\int \dfrac{dx}{\epsilon^x+\epsilon^{-x}}$.
 
@@ -336,14 +362,17 @@ expressas em termos de funções já conhecidas.”</note>
 
 <p>Por frações parciais,<a name="partfracs3"/></p>
 
-\begin{align*}\frac{1}{a^2-x^2} &= \frac{1}{2a(a+x)} + \frac{1}{2a(a-x)},  \\
+\[
+\begin{aligned}
+\frac{1}{a^2-x^2} &= \frac{1}{2a(a+x)} + \frac{1}{2a(a-x)},  \\
 dy &= \frac {dx}{2a(a+x)}+ \frac{dx}{2a(a-x)},  \\
-y  &= \frac{1}{2a}
+y  &= \frac{1}{2a} \\
        \left( \int \frac{dx}{a+x}
             + \int \frac{dx}{a-x} \right)  \\
    &= \frac{1}{2a} \left(\log_\epsilon (a+x) - \log_\epsilon (a-x) \right)  \\
    &= \frac{1}{2a} \log_\epsilon \frac{a+x}{a-x} + C.
-\end{align*}
+\end{aligned}
+\]
 
 
   Não é uma metamorfose muito difícil!

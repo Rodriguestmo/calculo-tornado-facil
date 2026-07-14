@@ -86,10 +86,13 @@ tornará $y + dy$. Então, claramente, ainda será verdade
 que o $y$ ampliado será igual ao quadrado do
 $x$ ampliado. Escrevendo isso, temos:</p>
 
-\begin{align*}y + dy &= (x + dx)^2.\\
+\[
+\begin{aligned}
+y + dy &= (x + dx)^2.\\
 \text{Fazendo a elevação ao quadrado obtemos:}\;\\
 y + dy &= x^2 + 2x · dx+(dx)^2.
-\end{align*}
+\end{aligned}
+\]
 
 <p>O que significa $(dx)^2$? Lembre-se de que $dx$ significava
 um pedaço - um pedacinho - de $x$. Então $(dx)^2$ significará um
@@ -98,13 +101,16 @@ pedacinho de um pedacinho de $x$; isto é, como explicado acima
 de pequenez. Pode portanto ser descartada como bastante
 insignificante em comparação com os outros termos.
 Deixando-a de fora, temos então:<a name="diffexample"/>
-\begin{align*}y + dy &= x^2 + 2x · dx.  \\
-\text{Ora $y&=x^2$; assim subtraiamos isso da equação
+\[
+\begin{aligned}
+y + dy &= x^2 + 2x · dx.  \\
+\text{Ora $y&=x^2$; assim subtraiamos isso da equação \\
 \text{e } ficamos com}\;\\
 dy &= 2x · dx.  \\
 \text{  Dividindo por $dx$, achamos}\;\\
 \frac{dy}{dx} &= 2x.
-\end{align*}
+\end{aligned}
+\]
 
 <p>Ora <em>isto</em>*
 é o que nos propusemos a achar. A razão do
@@ -183,29 +189,44 @@ y + dy=x^3+3x^2 · dx.
 
 <p>Mas $y=x^3$; e, subtraindo isto, temos:</p>
 
-\begin{align*}dy &= 3x^2 · dx, \\
-\\ 
+\[
+\begin{aligned}
+dy &= 3x^2 · dx, \\
+\\
 \frac{dy}{dx} &= 3x^2.
-\end{align*}
+\end{aligned}
+\]
 
 <h3>Caso 3</h3>
 Tente diferenciar $y=x^4$. Começando como antes ao
 deixar tanto $y$ quanto $x$ crescer um pedacinho, temos:
-\begin{align*}y + dy &= (x+dx)^4.  
-\end{align*}
+\[
+\begin{aligned}
+y + dy &= (x+dx)^4.
+\end{aligned}
+\]
 Desenvolvendo a elevação à quarta potência, obtemos
-\begin{align*}y + dy &= x^4 + 4x^3\, dx + 6x^2(dx)^2 + 4x(dx)^3+(dx)^4.  
-\end{align*}
+\[
+\begin{aligned}
+y + dy &= x^4 + 4x^3\, dx + 6x^2(dx)^2 + 4x(dx)^3+(dx)^4.
+\end{aligned}
+\]
 Então riscando os termos que contêm todas as
 potências mais altas de $dx$, por serem desprezíveis por comparação, temos
-\begin{align*}y + dy &= x^4+4x^3\, dx.  
-\end{align*}
+\[
+\begin{aligned}
+y + dy &= x^4+4x^3\, dx.
+\end{aligned}
+\]
 
 Subtraindo o $y=x^4$ original, ficamos com
-\begin{align*}dy &= 4x^3\, dx, \\
-\\ 
+\[
+\begin{aligned}
+dy &= 4x^3\, dx, \\
+\\
 \frac{dy}{dx} &= 4x^3.
-\end{align*}
+\end{aligned}
+\]
 
 <p><hr>
 
@@ -238,22 +259,28 @@ a conjectura se confirma.
 
 <p>Tente $y = x^5$.</p>
 
-\begin{align*}\text{   Então}\;
+\[
+\begin{aligned}
+\text{   Então}\;
 y+dy &= (x+dx)^5     \\
      &= x^5 + 5x^4\, dx + 10x^3(dx)^2  + 10x^2(dx)^3 \\
-     &\phantom{&= x^5 + 5x^4\, dx} + 5x(dx)^4 + (dx)^5.
-\end{align*}
+     &\phantom{= x^5 + 5x^4\, dx} + 5x(dx)^4 + (dx)^5.
+\end{aligned}
+\]
 
 <p>Desprezando todos os termos que contêm quantidades pequenas
 das ordens mais altas, ficamos com</p>
 
-\begin{align*}y + dy &= x^5 + 5x^4\, dx,  \\
+\[
+\begin{aligned}
+y + dy &= x^5 + 5x^4\, dx,  \\
 \text{ e subtraindo}\;
 y &= x^5 \text{ ficamos com} \\
 dy &= 5x^4\, dx,  \\
  \text{donde}\;
 \frac{dy}{dx} &= 5x^4, \text{ exatamente como supúnhamos.}
-\end{align*}
+\end{aligned}
+\]
 
 <p><hr>
 
@@ -279,28 +306,40 @@ consideração adicional.
 <em>Caso de uma potência negativa.</em><p>
 Seja $y = x^{-2}$. Então proceda como antes:</p>
 
-\begin{align*}y+dy &= (x+dx)^{-2} \\
+\[
+\begin{aligned}
+y+dy &= (x+dx)^{-2} \\
      &= x^{-2} \left(1 + \frac{dx}{x}\right)^{-2}.
-\end{align*}
+\end{aligned}
+\]
 
 Expandindo isto pelo teorema binomial (veja <a href="14.html#binomtheo">aqui</a>),
 obtemos
-\begin{align*}&=x^{-2} \left[1 - \frac{2\, dx}{x} +
+\[
+\begin{aligned}
+&=x^{-2} \left[1 - \frac{2\, dx}{x} + \\
     \frac{2(2+1)}{1×2} \left(\frac{dx}{x}\right)^2 -
     \text{etc.}\right]  \\
-&=x^{-2} - 2x^{-3} · dx + 3x^{-4}(dx)^2 - 4x^{-5}(dx)^3 + \text{etc.} 
-\end{align*}
+&=x^{-2} - 2x^{-3} · dx + 3x^{-4}(dx)^2 - 4x^{-5}(dx)^3 + \text{etc.}
+\end{aligned}
+\]
 
 
   Assim, desprezando as quantidades pequenas de ordens
 mais altas de pequenez, temos:
-\begin{align*}       y + dy &= x^{-2} - 2x^{-3} · dx.
-\end{align*}
+\[
+\begin{aligned}
+       y + dy &= x^{-2} - 2x^{-3} · dx.
+\end{aligned}
+\]
 
 Subtraindo o $y = x^{-2}$ original, achamos
-\begin{align*}           dy &= -2x^{-3}dx,   \\
+\[
+\begin{aligned}
+           dy &= -2x^{-3}dx,   \\
 \frac{dy}{dx} &= -2x^{-3}.
-\end{align*}
+\end{aligned}
+\]
 E isto ainda está de acordo com a regra inferida
 acima.
 
@@ -310,11 +349,14 @@ Seja $y= x^{\frac{1}{2}}$. Então, como antes,
 
 </p>
 
-\begin{align*}y+dy &= (x+dx)^{\frac{1}{2}} = x^{\frac{1}{2}} (1 + \frac{dx}{x} )^{\frac{1}{2}} \\
-     &= \sqrt{x} + \frac{1}{2} \frac{dx}{\sqrt{x}} - \frac{1}{8}
+\[
+\begin{aligned}
+y+dy &= (x+dx)^{\frac{1}{2}} = x^{\frac{1}{2}} (1 + \frac{dx}{x} )^{\frac{1}{2}} \\
+     &= \sqrt{x} + \frac{1}{2} \frac{dx}{\sqrt{x}} - \frac{1}{8} \\
         \frac{(dx)^2}{x\sqrt{x}} + \text{termos com potências
           mais altas de $dx$.}
-\end{align*}
+\end{aligned}
+\]
 
 <p>Subtraindo o $y = x^{\frac{1}{2}}$ original, e desprezando potências
 mais altas, ficamos com:</p>

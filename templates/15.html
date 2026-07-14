@@ -110,22 +110,28 @@ $M$ e $N$ forem dois ângulos diferentes,</p>
 <p>Se, então, pusermos $M= \theta + d \theta$ para um ângulo, e
 $N= \theta$ para o outro, podemos escrever</p>
 
-\begin{align*}dy &= 2 \cos\frac{\theta + d\theta + \theta}{2}
+\[
+\begin{aligned}
+dy &= 2 \cos\frac{\theta + d\theta + \theta}{2} \\
       · \sin\frac{\theta + d\theta - \theta}{2},\\
 \text{ou,}\;
-dy &= 2\cos(\theta + \tfrac{1}{2}d\theta)
+dy &= 2\cos(\theta + \tfrac{1}{2}d\theta) \\
      · \sin\tfrac{1}{2} d\theta.
-\end{align*}
+\end{aligned}
+\]
 
 <p>Mas se considerarmos $d \theta$ como indefinidamente pequeno, então no
 limite podemos desprezar $\frac{1}{2} d \theta$ por comparação com $\theta$,
 e também tomar $\sin\frac{1}{2} d \theta$ como sendo o mesmo que $\frac{1}{2} d \theta$.
 A equação então se torna:<a name="differsin"/>
-\begin{align*}dy &= 2 \cos \theta × \tfrac{1}{2} d \theta; \\
+\[
+\begin{aligned}
+dy &= 2 \cos \theta × \tfrac{1}{2} d \theta; \\
 dy &= \cos \theta · d \theta, \\
 \text{ e, finalmente,}\;
 \dfrac{dy}{d \theta} &= \cos \theta.
-\end{align*}
+\end{aligned}
+\]
 
 <p>As curvas acompanhantes, <a href="#figure44">Fig. 44</a> e <a href="#figure45">Fig. 45</a> mostram,
 plotadas em escala, os valores de $y=\sin \theta$, e $\dfrac{dy}{d\theta}=\cos\theta$,
@@ -146,47 +152,62 @@ para os valores correspondentes de $\theta$.
 
 <p>Portanto</p>
 
-\begin{align*}&\begin{aligned}
-dy &= d\left(\sin\left(\frac{\pi}{2} - \theta\right)\right)
+\[
+\begin{aligned}
+&\begin{aligned} \\
+dy &= d\left(\sin\left(\frac{\pi}{2} - \theta\right)\right) \\
   &= \cos\left(\frac{\pi}{2} - \theta\right) × d(-\theta), \\
-  &= \cos\left(\frac{\pi}{2} - \theta\right) × (-d\theta),
+  &= \cos\left(\frac{\pi}{2} - \theta\right) × (-d\theta), \\
 \end{aligned} \\
 &\frac{dy}{d\theta} &= -\cos\left(\frac{\pi}{2} - \theta\right).
-\end{align*}
+\end{aligned}
+\]
 E segue-se que
-\begin{align*}&\frac{dy}{d\theta} &= -\sin \theta.
-\end{align*}
+\[
+\begin{aligned}
+&\frac{dy}{d\theta} &= -\sin \theta.
+\end{aligned}
+\]
 
 <p><hr>
 
 <p>Por último, tome a tangente.
    Seja</p>
 
-\begin{align*}y  &= \tan \theta, \\
-dy &= \tan(\theta + d\theta) - \tan\theta. 
-\end{align*}
+\[
+\begin{aligned}
+y  &= \tan \theta, \\
+dy &= \tan(\theta + d\theta) - \tan\theta.
+\end{aligned}
+\]
 Expandindo, como se mostra nos livros de trigonometria,
-\begin{align*}\tan(\theta + d\theta)
-   &= \frac{\tan\theta + \tan d\theta}
+\[
+\begin{aligned}
+\tan(\theta + d\theta)
+   &= \frac{\tan\theta + \tan d\theta} \\
            {1 - \tan\theta·\tan d\theta}; \\
  \text{donde}\;
-dy &= \frac{\tan\theta + \tan d\theta}
+dy &= \frac{\tan\theta + \tan d\theta} \\
            {1-\tan\theta·\tan d\theta} - \tan\theta \\
-   &= \frac{(1 + \tan^2\theta)\tan d\theta}
+   &= \frac{(1 + \tan^2\theta)\tan d\theta} \\
            {1-\tan\theta·\tan d\theta}.
-\end{align*}
+\end{aligned}
+\]
 
 <p>Ora lembre-se de que se $d\theta$ for indefinidamente diminuído,
 o valor de $\tan d\theta$ se torna idêntico a $d\theta$, e
 $\tan\theta · d\theta$ é negligenciavelmente pequeno comparado com $1$, de modo que
 a expressão se reduz a</p>
 
-\begin{align*}dy &= \frac{(1+\tan^2 \theta)\, d\theta}{1}, \\
+\[
+\begin{aligned}
+dy &= \frac{(1+\tan^2 \theta)\, d\theta}{1}, \\
  \text{de modo que}\;
 \frac{dy}{d\theta} &= 1 + \tan^2\theta, \\
  \text{ou}\;
 \frac{dy}{d\theta} &= \sec^2 \theta.
-\end{align*}
+\end{aligned}
+\]
 
 <p>Reunindo estes resultados, temos:
   <table>
@@ -205,10 +226,13 @@ tempo de um <em>período</em> completo, ou movimento em torno do
 círculo, então, como o ângulo em torno do círculo todo é $2\pi$ radianos,
 ou $360°$, a quantidade de ângulo percorrida
 no tempo $t$, será
-\begin{align*}\theta &= 2\pi\frac{t}{T},\quad \text{em radianos,} \\
+\[
+\begin{aligned}
+\theta &= 2\pi\frac{t}{T},\quad \text{em radianos,} \\
 \text{ou}\;
 \theta &= 360\frac{t}{T},\quad \text{em graus.}
-\end{align*}
+\end{aligned}
+\]
 
 <p>Se a <em>frequência</em>, ou número de períodos por segundo,
 for denotada por $n$, então $n = \dfrac{1}{T}$, e podemos então escrever:
@@ -230,12 +254,18 @@ explicado no <a href="9.html">Capítulo IX</a>., e por
 
 <p>Ora $\dfrac{d\theta}{dt}$ será obviamente $2\pi n$; de modo que</p>
 
-\begin{align*}\frac{dy}{dt} &= \cos \theta × 2\pi n \\
-              &= 2\pi n · \cos 2\pi nt. 
-\end{align*}
+\[
+\begin{aligned}
+\frac{dy}{dt} &= \cos \theta × 2\pi n \\
+              &= 2\pi n · \cos 2\pi nt.
+\end{aligned}
+\]
  De modo semelhante, segue-se que
-\begin{align*}\frac{d(\cos 2\pi nt)}{dt} &= -2\pi n · \sin 2\pi nt.
-\end{align*}
+\[
+\begin{aligned}
+\frac{d(\cos 2\pi nt)}{dt} &= -2\pi n · \sin 2\pi nt.
+\end{aligned}
+\]
 
 <p>
 <h2>Segundo Coeficiente Diferencial do Seno ou Cosseno.</h2>
@@ -283,7 +313,9 @@ diferenciar expressões de natureza mais complexa.
 <p>Passando agora da função inversa para a original,
 obtemos</p>
 
-\begin{align*}\frac{dy}{dx}
+\[
+\begin{aligned}
+\frac{dy}{dx}
   &= \frac{1}{\;\dfrac{dx}{dy}\;} = \frac{1}{\cos y}. \\
    \text{Ora}\;
 \cos y
@@ -291,7 +323,8 @@ obtemos</p>
  \text{logo}\;
 \frac{dy}{dx}
   &= \frac{1}{\sqrt{1-x^2}},
-\end{align*}
+\end{aligned}
+\]
 um resultado um tanto inesperado.
 
 
@@ -301,10 +334,13 @@ um resultado um tanto inesperado.
 
 <p>Seja $\cos\theta=v$; então $y=v^3$; $\dfrac{dy}{dv}=3v^2$.</p>
 
-\begin{align*}\frac{dv}{d\theta} &= -\sin\theta.\\
-\frac{dy}{d\theta} &=  \frac{dy}{dv} × \frac{dv}{d\theta}
+\[
+\begin{aligned}
+\frac{dv}{d\theta} &= -\sin\theta.\\
+\frac{dy}{d\theta} &=  \frac{dy}{dv} × \frac{dv}{d\theta} \\
                     &= -3 \cos^2 \theta \sin\theta.
-\end{align*}
+\end{aligned}
+\]
 
 <p>(3) $y=\sin(x+a)$.
 
@@ -320,17 +356,23 @@ um resultado um tanto inesperado.
 
 <p>Seja $\sin\theta=v$; $y=\log_\epsilon v$.</p>
 
-\begin{align*}\frac{dy}{dv}      &= \frac{1}{v} \\
+\[
+\begin{aligned}
+\frac{dy}{dv}      &= \frac{1}{v} \\
 \frac{dv}{d\theta}&=\cos\theta;\\
 \frac{dy}{d\theta} &= \frac{1}{\sin\theta} × \cos\theta = \cot\theta.
-\end{align*}
+\end{aligned}
+\]
 
 <p>(5) $y=\cot\theta=\dfrac{\cos\theta}{\sin\theta}$.</p>
 
-\begin{align*}\frac{dy}{d\theta}
+\[
+\begin{aligned}
+\frac{dy}{d\theta}
   &= \frac{-\sin^2\theta - \cos^2 \theta}{\sin^2 \theta}\\
   &= -(1+\cot^2 \theta) = -\text{cosec}^2 \theta.
-\end{align*}
+\end{aligned}
+\]
 
 <p>(6) $y=\tan 3\theta$.
 
@@ -345,15 +387,23 @@ um resultado um tanto inesperado.
 
 <p>Seja $3\tan^2\theta=v$.</p>
 
-\begin{align*}y &= (1+v)^{\frac{1}{2}} \\
+\[
+\begin{aligned}
+y &= (1+v)^{\frac{1}{2}} \\
 \frac{dy}{dv} &= \frac{1}{2\sqrt{1+v}}
-\end{align*}
+\end{aligned}
+\]
 (ver <a href="9.html#ExNo1">aqui</a>);
-\begin{align*}\frac{dv}{d\theta}
-  &= 6\tan\theta \sec^2 \theta 
-\end{align*}
+\[
+\begin{aligned}
+\frac{dv}{d\theta}
+  &= 6\tan\theta \sec^2 \theta
+\end{aligned}
+\]
 pois, se $\tan \theta = u$,
-\begin{align*}v &= 3u^2 \\
+\[
+\begin{aligned}
+v &= 3u^2 \\
 \frac{dv}{du} &= 6u \\
 \frac{du}{d\theta} &= \sec^2 \theta; \\
  \text{logo} \\
@@ -362,25 +412,32 @@ pois, se $\tan \theta = u$,
  \text{logo} \\
 \frac{dy}{d\theta}
   &= \frac{6\tan\theta \sec^2\theta}{2\sqrt{1 + 3\tan^2\theta}}.
-\end{align*}
+\end{aligned}
+\]
 
 <p>(8) $y=\sin x \cos x$. <a name="example1"/></p>
 
-\begin{align*}\frac{dy}{dx}
+\[
+\begin{aligned}
+\frac{dy}{dx}
   &= \sin x(-\sin x) + \cos x × \cos x \\
   &= \cos^2 x - \sin^2 x.
-\end{align*}
+\end{aligned}
+\]
 
 <p>
 <hr><h3>Exercícios XIV</h3>
 
 (1) Diferencie o seguinte:
-\begin{align*}\text{(i)}\quad   y &= A \sin\left(\theta - \frac{\pi}{2}\right).\\
+\[
+\begin{aligned}
+\text{(i)}\quad   y &= A \sin\left(\theta - \frac{\pi}{2}\right).\\
 \text{(ii)}\quad  y &= \sin^2 \theta \\
 \text{e } y &= \sin 2\theta.\\
 \text{(iii)}\quad y &= \sin^3 \theta \\
 \text{e } y &= \sin 3\theta.
-\end{align*}
+\end{aligned}
+\]
 
 <p>(2) Encontre o valor de $\theta$ para o qual $\sin\theta × \cos\theta$ é um
 máximo.
@@ -414,12 +471,15 @@ de $x=30$.
 
 <p>(12) Diferencie o seguinte:</p>
 
-\begin{align*}\text{(i)}\quad   y &= \sec x.    \\
+\[
+\begin{aligned}
+\text{(i)}\quad   y &= \sec x.    \\
 \text{(ii)}\quad  y &= \arccos x. \\
 \text{(iii)}\quad y &= \arctan x. \\
 \text{(iv)}\quad  y &= \text{arcsec} x. \\
 \text{(v)}\quad   y &= \tan x × \sqrt{3 \sec x}. &&
-\end{align*}
+\end{aligned}
+\]
 
 <p>(13) Diferencie $y=\sin(2\theta +3)^{2.3}$.
 

@@ -181,10 +181,13 @@ modo que $\dfrac{dy}{dx} = 0$, então $y$ terá o valor
 $= \dfrac{g}{a}$. Mas vamos ao trabalho como antes,
 separando as diferenciais e tentando transformar a
 coisa em alguma forma integrável.
-\begin{align*}b\frac{dy}{dx}           &= g -ay; \\
+\[
+\begin{aligned}
+b\frac{dy}{dx}           &= g -ay; \\
 \frac{dy}{dx}            &= \frac{a}{b}\left(\frac{g}{a}-y\right); \\
 \frac{dy}{y-\dfrac{g}{a}} &= -\frac{a}{b}\, dx.
-\end{align*}
+\end{aligned}
+\]
 
 <p>Agora fizemos o melhor para não ter nada senão $y$
 e $dy$ de um lado, e nada senão $dx$ do outro. Mas o
@@ -197,10 +200,13 @@ escrevendo as instruções para integrar, temos:
 \]
 e, fazendo a integração, e acrescentando a
 constante apropriada,
-\begin{align*}\log_\epsilon\left(y-\frac{g}{a}\right) &= -\frac{a}{b}x + \log_\epsilon C; \\
+\[
+\begin{aligned}
+\log_\epsilon\left(y-\frac{g}{a}\right) &= -\frac{a}{b}x + \log_\epsilon C; \\
  \text{donde}\;\;        y-\frac{g}{a} &= C\epsilon^{-\frac{a}{b}x}; \\
  \text{e finalmente,}\;\;              y &= \frac{g}{a} + C\epsilon^{-\frac{a}{b}x},
-\end{align*}
+\end{aligned}
+\]
 que é <em>a solução</em>.
 
 
@@ -208,9 +214,12 @@ que é <em>a solução</em>.
 podemos achar $C$; pois então a exponencial se torna
 $= 1$; e temos</p>
 
-\begin{align*}                0 &= \frac{g}{a} + C, \\
+\[
+\begin{aligned}
+                0 &= \frac{g}{a} + C, \\
  \text{ou}\;  C &= -\frac{g}{a}.
-\end{align*}
+\end{aligned}
+\]
 
 <p>Pondo esse valor, a solução se torna</p>
 
@@ -263,14 +272,17 @@ que é o mesmo que
 e isto sendo uma diferencial completa pode ser
 integrado assim: - pois, se  $u = y\epsilon^{\frac{a}{b} t}$,
 $\dfrac{du}{dt} = \dfrac{dy}{dt} \epsilon^{\frac{a}{b} t} + y \dfrac{d(\epsilon^{\frac{a}{b} t})}{dt}$,
-\begin{align*}  y \epsilon^{\frac{a}{b} t}
+\[
+\begin{aligned}
+  y \epsilon^{\frac{a}{b} t}
   &= \frac{g}{b} \int \epsilon^{\frac{a}{b} t} · \sin 2 \pi nt · dt + C, \\
  \text{ou} \\
-y &= \frac{g}{b} \epsilon^{-\frac{a}{b} t}
+y &= \frac{g}{b} \epsilon^{-\frac{a}{b} t} \\
      \int \epsilon^{ \frac{a}{b} t} · \sin 2\pi nt · dt
        + C\epsilon^{-\frac{a}{b} t}.
 \tag*{[A]}
-\end{align*}
+\end{aligned}
+\]
 
 <p>O último termo é obviamente um termo que se
 esvairá conforme $t$ aumenta, e pode ser omitido. O
@@ -278,68 +290,80 @@ trabalho agora é achar a integral que aparece como
 fator. Para atacar isso recorremos ao recurso (veja
 <a href="20.html#intparts">aqui</a>) da integração por partes, cuja fórmula geral
 é $\int u dv = uv - \int v du$. Para esse propósito escreva
-\begin{align*}&\left\{
+\[
+\begin{aligned}
+&\left\{ \\
 \begin{aligned}
  u &= \epsilon^{\frac{a}{b} t}; \\
-dv &= \sin 2\pi nt · dt.
-\end{aligned}
-\right.  
-\end{align*}
-Teremos então
-\begin{align*}&\left\{
-\begin{aligned}
-du &= \epsilon^{\frac{a}{b} t} × \frac{a}{b}\, dt; \\
-v &= - \frac{1}{2\pi n} \cos 2\pi nt.
+dv &= \sin 2\pi nt · dt. \\
 \end{aligned}
 \right.
-\end{align*}
+\end{aligned}
+\]
+Teremos então
+\[
+\begin{aligned}
+&\left\{ \\
+\begin{aligned}
+du &= \epsilon^{\frac{a}{b} t} × \frac{a}{b}\, dt; \\
+v &= - \frac{1}{2\pi n} \cos 2\pi nt. \\
+\end{aligned}
+\right.
+\end{aligned}
+\]
 
 <p>Inserindo isso, a integral em questão se torna:</p>
 
-\begin{align*}\int \epsilon^{\frac{a}{b} t} &{} · \sin 2 \pi n t · dt \\
-&= -\frac{1}{2 \pi n} · \epsilon^{\frac{a}{b} t} · \cos 2 \pi nt
+\[
+\begin{aligned}
+\int \epsilon^{\frac{a}{b} t} &{} · \sin 2 \pi n t · dt \\
+&= -\frac{1}{2 \pi n} · \epsilon^{\frac{a}{b} t} · \cos 2 \pi nt \\
    -\int -\frac{1}{2\pi n} \cos 2 \pi nt · \epsilon^{\frac{a}{b} t} · \frac{a}{b}\, dt \\
-&= -\frac{1}{2 \pi n} \epsilon^{\frac{a}{b} t} \cos 2 \pi nt
+&= -\frac{1}{2 \pi n} \epsilon^{\frac{a}{b} t} \cos 2 \pi nt \\
    +\frac{a}{2 \pi nb} \int \epsilon^{\frac{a}{b} t} · \cos 2 \pi nt · dt.
 \tag*{[B]}
-\end{align*}
+\end{aligned}
+\]
 
 <p>A última integral ainda é irredutível. Para
 contornar a dificuldade, repita a integração por
 partes do lado esquerdo, mas tratando-o do modo
 inverso ao escrever:</p>
 
-\begin{align*}&\left\{
+\[
 \begin{aligned}
-u &= \sin 2 \pi n t ; \\
-dv &= \epsilon^{\frac{a}{b} t} · dt;
+u &= \sin 2 \pi n t, &
+dv &= \epsilon^{\frac{a}{b} t} · dt, \\
+du &= 2 \pi n · \cos 2 \pi n t · dt, &
+v &= \frac{b}{a} \epsilon^{\frac{a}{b} t}.
 \end{aligned}
-\right. \\[1ex]
- donde
-&\left\{
-  \begin{aligned}
-  du &= 2 \pi n · \cos 2 \pi n t · dt; \\
- v &= \frac{b}{a} \epsilon ^{\frac{a}{b} t}
-\end{aligned}
-\right.
-\end{align*}
+\]
 <p>Inserindo isso, obtemos</p>
-\begin{align*}\int \epsilon^{\frac{a}{b} t} &{} · \sin 2 \pi n t · dt\\
-&= \frac{b}{a} · \epsilon^{\frac{a}{b} t} · \sin 2 \pi n t -
+\[
+\begin{aligned}
+\int \epsilon^{\frac{a}{b} t} &{} · \sin 2 \pi n t · dt\\
+&= \frac{b}{a} · \epsilon^{\frac{a}{b} t} · \sin 2 \pi n t - \\
    \frac{2 \pi n b}{a} \int \epsilon^{\frac{a}{b} t} · \cos 2 \pi n t · dt. \tag*{[C]}
-\end{align*}
+\end{aligned}
+\]
 <p>Notando que a integral final intratável em [C] é a
 mesma que em [B], podemos eliminá-la, multiplicando
 [B] por $\dfrac{2 \pi nb}{a}$, e multiplicando [C] por
 $\dfrac{a}{2 \pi nb}$, e somando-as.
 <p>O resultado, quando simplificado, é:</p>
-\begin{align*}\int \epsilon^{\frac{a}{b} t} · \sin 2 \pi n t · dt
-  &= \epsilon^{\frac{a}{b} t} \left\{\frac{ ab · \sin 2 \pi nt - 2 \pi n b^2 · \cos 2 \pi n t}{ a^2 + 4 \pi^2 n^2 b^2 } \right\}
+\[
+\begin{aligned}
+\int \epsilon^{\frac{a}{b} t} · \sin 2 \pi n t · dt
+  &= \epsilon^{\frac{a}{b} t} \left\{\frac{ ab · \sin 2 \pi nt - 2 \pi n b^2 · \cos 2 \pi n t}{ a^2 + 4 \pi^2 n^2 b^2 } \right\} \\
 \tag*{[D]} &
-\end{align*}
+\end{aligned}
+\]
 Inserindo esse valor em [A], obtemos
-\begin{align*}y &= g \left\{\frac{ a · \sin 2 \pi n t - 2 \pi n b · \cos 2 \pi nt}{ a^2 + 4 \pi^2  n^2 b^2}\right\}. &
-\end{align*}
+\[
+\begin{aligned}
+y &= g \left\{\frac{ a · \sin 2 \pi n t - 2 \pi n b · \cos 2 \pi nt}{ a^2 + 4 \pi^2  n^2 b^2}\right\}. &
+\end{aligned}
+\]
 <p>Para simplificar ainda mais, imaginemos um ângulo
 $\phi$ tal que $\tan \phi = \dfrac{2 \pi n b}{ a}$.
    Então</p>
@@ -404,10 +428,13 @@ E se tal função comum existe, então
 Ora o teste da questão é este. Se a expressão é
 uma diferencial exata, deve ser verdade que</p>
 
-\begin{align*}        \frac{dM}{dy} &= \frac{dN}{dx}; \\
+\[
+\begin{aligned}
+        \frac{dM}{dy} &= \frac{dN}{dx}; \\
 \text{pois então}\;
 \frac{d(dU)}{dx\, dy} &= \frac{d(dU)}{dy\, dx},
-\end{align*}
+\end{aligned}
+\]
  o que é necessariamente verdadeiro.
 
 <p>Tome como ilustração a equação</p>
@@ -587,8 +614,11 @@ segundo termo que se esvai conforme $x$ aumenta.
 <p>
 <em>Exemplo (7.)</em>
    Seja
-\begin{align*}b \frac{d^2y}{dt^2} + a \frac{dy}{dt} + gy &= 0.
-\end{align*}
+\[
+\begin{aligned}
+b \frac{d^2y}{dt^2} + a \frac{dy}{dt} + gy &= 0.
+\end{aligned}
+\]
 
 <p>O exame dessa expressão mostrará que, se $b = 0$,
 ela tem a forma do Exemplo 1, cuja solução era uma
@@ -598,11 +628,14 @@ solução é a soma de uma exponencial positiva e uma
 negativa. Não é portanto muito surpreendente achar
 que a solução do presente exemplo é</p>
 
-\begin{align*}y &= (\epsilon^{-mt})(A \epsilon^{nt} + B \epsilon^{-nt}), \\
+\[
+\begin{aligned}
+y &= (\epsilon^{-mt})(A \epsilon^{nt} + B \epsilon^{-nt}), \\
  \text{onde}\;
-m &= \frac{a}{2b}\quad \text{e}\quad
+m &= \frac{a}{2b}\quad \text{e}\quad \\
 n  &= \sqrt{\frac{a^2}{4b^2}} - \frac{g}{b}.
-\end{align*}
+\end{aligned}
+\]
 
 <p>Os passos pelos quais se chega a essa solução não
 são dados aqui; podem ser encontrados em tratados

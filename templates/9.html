@@ -95,14 +95,17 @@ e diferencie-a em relação a $x$,
 \]
 
 Então o que resta é água de chuva;
-\begin{align*} \text{pois}\;
+\[
+\begin{aligned}
+ \text{pois}\;
 \frac{dy}{dx} &= \frac{dy}{du} × \frac{du}{dx}; \\
  \text{isto é,}\;
 \frac{dy}{dx}
   &= \frac{3}{2} u^{\frac{1}{2}} × 2x \\
   &= \tfrac{3}{2} (x^2 + a^2)^{\frac{1}{2}} × 2x \\
   &= 3x(x^2 + a^2)^{\frac{1}{2}};
-\end{align*}
+\end{aligned}
+\]
 e assim o truque está feito.
 
 <p>Mais adiante, quando você tiver aprendido a lidar
@@ -119,44 +122,56 @@ Vamos praticar esse truque em alguns exemplos.
 
 <p>Seja $a+x = u$.</p>
 
-\begin{align*}\frac{du}{dx} &= 1 \\
+\[
+\begin{aligned}
+\frac{du}{dx} &= 1 \\
 y&=u^{\frac{1}{2}} \\
-\frac{dy}{du} &= \tfrac{1}{2} u^{-\frac{1}{2}}
+\frac{dy}{du} &= \tfrac{1}{2} u^{-\frac{1}{2}} \\
                 &= \tfrac{1}{2} (a+x)^{-\frac{1}{2}}.\\
 \frac{dy}{dx} &= \frac{dy}{du} × \frac{du}{dx} = \frac{1}{2\sqrt{a+x}}.
-\end{align*}
+\end{aligned}
+\]
 
 <p>(2) Diferencie  $y = \dfrac{1}{\sqrt{a+x^2}}$.
 
 <p>Seja $a + x^2 = u$.</p>
 
-\begin{align*}\frac{du}{dx} &= 2x \\
+\[
+\begin{aligned}
+\frac{du}{dx} &= 2x \\
 y&=u^{-\frac{1}{2}} \\
 \frac{dy}{du} &= -\tfrac{1}{2}u^{-\frac{3}{2}}.\\
 \frac{dy}{dx} &= \frac{dy}{du}×\frac{du}{dx} = - \frac{x}{\sqrt{(a+x^2)^3}}.
-\end{align*}
+\end{aligned}
+\]
 
 <p>(3) Diferencie $y = \left(m - nx^{\frac{2}{3}} + \dfrac{p}{x^{\frac{4}{3}}}\right)^a$.
 
 <p>Seja $m - nx^{\frac{2}{3}} + px^{-\frac{4}{3}} = u$.</p>
 
-\begin{gather*}\frac{du}{dx} = -\tfrac{2}{3} nx^{-\frac{1}{3}} - \tfrac{4}{3} px^{-\frac{7}{3}};\\
+\[
+\begin{gathered}
+\frac{du}{dx} = -\tfrac{2}{3} nx^{-\frac{1}{3}} - \tfrac{4}{3} px^{-\frac{7}{3}};\\
 y = u^a \\
 \frac{dy}{du} = a u^{a-1}. \\
-\frac{dy}{dx} = \frac{dy}{du}×\frac{du}{dx}
-  = -a\left(m -nx^{\frac{2}{3}} + \frac{p}{x^{\frac{4}{3}}}\right)^{a-1}
+\frac{dy}{dx} = \frac{dy}{du}×\frac{du}{dx} \\
+  = -a\left(m -nx^{\frac{2}{3}} + \frac{p}{x^{\frac{4}{3}}}\right)^{a-1} \\
      (\tfrac{2}{3} nx^{-\frac{1}{3}} + \tfrac{4}{3} px^{-\frac{7}{3}}).
-\end{gather*}
+\end{gathered}
+\]
 
 <p>(4) Diferencie $y=\dfrac{1}{\sqrt{x^3 - a^2}}$.
 
 <p>Seja $u = x^3 - a^2$.</p>
 
-\begin{align*}\frac{du}{dx} &= 3x^2 \\
+\[
+\begin{aligned}
+\frac{du}{dx} &= 3x^2 \\
 y &= u^{-\frac{1}{2}} \\
 \frac{dy}{du}&=-\frac{1}{2}(x^3 - a^2)^{-\frac{3}{2}}. \\
 \frac{dy}{dx} &= \frac{dy}{du} × \frac{du}{dx} = -\frac{3x^2}{2\sqrt{(x^3 - a^2)^3}}.
-\end{align*}
+\end{aligned}
+\]
 
 <p><a name="examples4"/>
 (5) Diferencie $y=\sqrt{\dfrac{1-x}{1+x}}$.
@@ -183,24 +198,30 @@ como um produto.)
 
 <p>Logo</p>
 
-\begin{align*}\frac{dy}{dx}
-  &= - \frac{(1 + x)^{\frac{1}{2}}}{2(1 + x)\sqrt{1-x}}
+\[
+\begin{aligned}
+\frac{dy}{dx}
+  &= - \frac{(1 + x)^{\frac{1}{2}}}{2(1 + x)\sqrt{1-x}} \\
      - \frac{(1 - x)^{\frac{1}{2}}}{2(1 + x)\sqrt{1+x}} \\
   &= - \frac{1}{2\sqrt{1+x}\sqrt{1-x}} - \frac{\sqrt{1-x}}{2 \sqrt{(1+x)^3}};\\
  \text{ou} \\
 \frac{dy}{dx}
   &= - \frac{1}{(1+x)\sqrt{1-x^2}}.
-\end{align*}
+\end{aligned}
+\]
 
 <p>(6) Diferencie $y = \sqrt{\dfrac{x^3}{1+x^2}}$.
 
 <p>Podemos escrever isto</p>
 
-\begin{gather*}y = x^{\frac{3}{2}}(1+x^2)^{-\frac{1}{2}}; \\
+\[
+\begin{gathered}
+y = x^{\frac{3}{2}}(1+x^2)^{-\frac{1}{2}}; \\
 \frac{dy}{dx}
-  = \tfrac{3}{2} x^{\frac{1}{2}}(1 + x^2)^{-\frac{1}{2}}
+  = \tfrac{3}{2} x^{\frac{1}{2}}(1 + x^2)^{-\frac{1}{2}} \\
   + x^{\frac{3}{2}} × \frac{d\bigl[(1+x^2)^{-\frac{1}{2}}\bigr]}{dx}.
-\end{gather*}
+\end{gathered}
+\]
 
 <p>Diferenciando $(1+x^2)^{-\frac{1}{2}}$, como mostrado no exemplo (2)
 acima, obtemos</p>
@@ -219,14 +240,19 @@ de modo que
 
 <p>Seja $x+\sqrt{x^2+x+a}=u$.</p>
 
-\begin{gather*}\frac{du}{dx} = 1 + \frac{d\bigl[(x^2+x+a)^{\frac{1}{2}}\bigr]}{dx}. \\
+\[
+\begin{gathered}
+\frac{du}{dx} = 1 + \frac{d\bigl[(x^2+x+a)^{\frac{1}{2}}\bigr]}{dx}. \\
 y = u^3 \\
 \text{e}\quad \frac{dy}{du} = 3u^2= 3\left(x+\sqrt{x^2+x+a}\right)^2.
-\end{gather*}
+\end{gathered}
+\]
 
 <p>Agora seja $(x^2+x+a)^{\frac{1}{2}}=v$ e $(x^2+x+a) = w$.</p>
 
-\begin{align*}\frac{dw}{dx}
+\[
+\begin{aligned}
+\frac{dw}{dx}
   &= 2x+1 \\
 v &= w^{\frac{1}{2}} \\
 \frac{dv}{dw} &= \tfrac{1}{2}w^{-\frac{1}{2}}. \\
@@ -237,49 +263,62 @@ v &= w^{\frac{1}{2}} \\
   &= 1 + \frac{2x+1}{2\sqrt{x^2+x+a}}, \\
 \frac{dy}{dx}
   &= \frac{dy}{du} × \frac{du}{dx}\\
-  &= 3\left(x+\sqrt{x^2+x+a}\right)^2
+  &= 3\left(x+\sqrt{x^2+x+a}\right)^2 \\
       \left(1 +\frac{2x+1}{2\sqrt{x^2+x+a}}\right).
-\end{align*}
+\end{aligned}
+\]
 
 <p>(8) Diferencie $y=\sqrt{\dfrac{a^2+x^2}{a^2-x^2}} \sqrt[3]{\dfrac{a^2-x^2}{a^2+x^2}}$.
 
 <p>Obtemos</p>
 
-\begin{align*}y &= \frac{(a^2+x^2)^{\frac{1}{2}} (a^2-x^2)^{\frac{1}{3}}}
+\[
+\begin{aligned}
+y &= \frac{(a^2+x^2)^{\frac{1}{2}} (a^2-x^2)^{\frac{1}{3}}} \\
           {(a^2-x^2)^{\frac{1}{2}} (a^2+x^2)^{\frac{1}{3}}}
   &= (a^2+x^2)^{\frac{1}{6}} (a^2-x^2)^{-\frac{1}{6}}. \\
 \frac{dy}{dx}
-  &= (a^2+x^2)^{\frac{1}{6}} \frac{d\bigl[(a^2-x^2)^{-\frac{1}{6}}\bigr]}{dx}
+  &= (a^2+x^2)^{\frac{1}{6}} \frac{d\bigl[(a^2-x^2)^{-\frac{1}{6}}\bigr]}{dx} \\
    + \frac{d\bigl[(a^2+x^2)^{\frac{1}{6}}\bigr]}{(a^2-x^2)^{\frac{1}{6}}\, dx}.
-\end{align*}
+\end{aligned}
+\]
 
 <p>Seja $u = (a^2-x^2)^{-\frac{1}{6}}$ e $v = (a^2 - x^2)$.</p>
 
-\begin{align*}u &= v^{-\frac{1}{6}} \\
+\[
+\begin{aligned}
+u &= v^{-\frac{1}{6}} \\
 \frac{du}{dv} &= -\frac{1}{6}v^{-\frac{7}{6}} \\
 \frac{dv}{dx} &= -2x. \\
 \frac{du}{dx} &= \frac{du}{dv} × \frac{dv}{dx} = \frac{1}{3}x(a^2-x^2)^{-\frac{7}{6}}.
-\end{align*}
+\end{aligned}
+\]
 
 <p>Seja $w = (a^2 + x^2)^{\frac{1}{6}}$ e $z = (a^2 + x^2)$.</p>
 
-\begin{align*}w &= z^{\frac{1}{6}} \\
+\[
+\begin{aligned}
+w &= z^{\frac{1}{6}} \\
 \frac{dw}{dz} &= \frac{1}{6}z^{-\frac{5}{6}} \\
 \frac{dz}{dx} &= 2x. \\
 \frac{dw}{dx} &= \frac{dw}{dz} × \frac{dz}{dx} = \frac{1}{3} x(a^2 + x^2)^{-\frac{5}{6}}.
-\end{align*}
+\end{aligned}
+\]
 
 <p>Logo</p>
 
-\begin{align*}\frac{dy}{dx}
-  &= (a^2+x^2)^{\frac{1}{6}} \frac{x}{3(a^2-x^2)^{\frac{7}{6}}}
+\[
+\begin{aligned}
+\frac{dy}{dx}
+  &= (a^2+x^2)^{\frac{1}{6}} \frac{x}{3(a^2-x^2)^{\frac{7}{6}}} \\
    + \frac{x}{3(a^2-x^2)^{\frac{1}{6}} (a^2+x^2)^{\frac{5}{6}}}; \\
  \text{ou} \\
 \frac{dy}{dx}
-  &= \frac{x}{3}
+  &= \frac{x}{3} \\
      \left[\sqrt[6]{\frac{a^2+x^2}{(a^2-x^2)^7}}
            + \frac{1}{\sqrt[6]{(a^2-x^2)(a^2+x^2)^5]}} \right].
-\end{align*}
+\end{aligned}
+\]
 
 <p>(9) Diferencie $y^n$ em relação a $y^5$.</p>
 
@@ -305,9 +344,12 @@ de $y = \dfrac{x}{b} \sqrt{(a-x)x}$.
   = \frac{1}{2w^{\frac{1}{2}}} = \frac{1}{2\sqrt{(a-x)x}}.
 \]
 
-\begin{align*}&\frac{dw}{dx} &= a-2x.\\
+\[
+\begin{aligned}
+&\frac{dw}{dx} &= a-2x.\\
 &\frac{du}{dw} × \frac{dw}{dx} &= \frac{du}{dx} = \frac{a-2x}{2\sqrt{(a-x)x}}.
-\end{align*}
+\end{aligned}
+\]
 
 <p>Logo</p>
 
@@ -319,12 +361,15 @@ de $y = \dfrac{x}{b} \sqrt{(a-x)x}$.
 
 <p>Agora</p>
 
-\begin{align*}\frac{d^2y}{dx^2}
-  &= \frac{2b \sqrt{(a-x)x}\, (3a-8x)
+\[
+\begin{aligned}
+\frac{d^2y}{dx^2}
+  &= \frac{2b \sqrt{(a-x)x}\, (3a-8x) \\
            - \dfrac{(3ax-4x^2)b(a-2x)}{\sqrt{(a-x)x}}}
           {4b^2(a-x)x} \\
   &= \frac{3a^2-12ax+8x^2}{4b(a-x)\sqrt{(a-x)x}}.
-\end{align*}
+\end{aligned}
+\]
 
 <p>(Precisaremos dessas duas últimas derivadas
 mais adiante. Veja <a href="12.html#ex10">Capítulo XII, Exercício 11</a>)
@@ -375,12 +420,15 @@ coeficientes diferenciais, de modo que $\dfrac{dy}{dx} = \dfrac{dy}{dz} × \dfra
 
 <p>Temos</p>
 
-\begin{align*}\frac{dy}{dv} &= \frac{1}{2\sqrt{1+v}} \\
+\[
+\begin{aligned}
+\frac{dy}{dv} &= \frac{1}{2\sqrt{1+v}} \\
 \frac{dv}{dz} &= -\frac{14}{z^3} \\
 \frac{dz}{dx} &= 12x^3. \\
-\frac{dy}{dx} &= -\frac{168x^3}{(2\sqrt{1+v})z^3}
+\frac{dy}{dx} &= -\frac{168x^3}{(2\sqrt{1+v})z^3} \\
                &= -\frac{28}{3x^5\sqrt{9x^8+7}}.
-\end{align*}
+\end{aligned}
+\]
 
 <p>(2) Se $t = \dfrac{1}{5\sqrt{\theta}}$;&nbsp;&nbsp; $x = t^3 + \dfrac{t}{2}$;&nbsp;&nbsp; $v = \dfrac{7x^2}{\sqrt[3]{x-1}}$, encontre $\dfrac{dv}{d\theta}$.
 </p>
@@ -403,13 +451,16 @@ encontre $\dfrac{d\phi}{dx}$.
 
 <p>Obtemos</p>
 
-\begin{gather*}\theta = 3a^2x^{-\frac{1}{2}} \\
+\[
+\begin{gathered}
+\theta = 3a^2x^{-\frac{1}{2}} \\
 \omega = \sqrt{\frac{1-\theta}{1+\theta}} \\
 \text{e}\quad
 \phi = \sqrt{3} - \frac{1}{\sqrt{2}} \omega^{-1}. \\
 \frac{d\theta}{dx} = -\frac{3a^2}{2\sqrt{x^3}} \\
 \frac{d\omega}{d\theta} = -\frac{1}{(1+\theta)\sqrt{1-\theta^2}}
-\end{gather*}
+\end{gathered}
+\]
 (veja o exemplo 5, <a href="9.html#examples4">aqui</a>); e
 \[
 \frac{d\phi}{d\omega} = \frac{1}{\sqrt{2}\omega^2}.
