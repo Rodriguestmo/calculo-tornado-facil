@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<meta charset="utf-8">
-<title>On Relative Growings | Calculus Made Easy</title>
+<html lang="pt-BR">
+<head>
+{% include "seo_head.html" %}
 <link rel="stylesheet" href="screen.css">
 <style>
 body{counter-reset:h1 3}
@@ -11,276 +12,303 @@ body{counter-reset:h1 3}
 <script type="text/javascript"
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Chapter",
+  "name": "Sobre Crescimentos Relativos",
+  "position": 3,
+  "isPartOf": {
+    "@type": "Book",
+    "name": "Cálculo Tornado Fácil",
+    "url": "{{ site_url }}/"
+  },
+  "author": {"@type": "Person", "name": "Silvanus P. Thompson"},
+  "translator": {"@type": "Person", "name": "Thales Rodrigues"},
+  "url": "{{ site_url }}/3.html",
+  "inLanguage": "pt-BR",
+  "isAccessibleForFree": true
+}
+</script>
+</head>
+<body>
+{% include "toolbar.html" %}
 
-<h1><br>On Relative Growings</h1>
+<h1><br>Sobre Crescimentos Relativos</h1>
 <p class="a rotatedFloralHeartBullet">
 
 
 
-<p>All through the calculus we are dealing with quantities
-that are growing, and with rates of growth.
-We classify all quantities into two classes: <em>constants</em>
-and <em>variables</em>. Those which we regard as of fixed
-value, and call <em>constants</em>, we generally denote algebraically
-by letters from the beginning of the
-alphabet, such as $a$, $b$, or $c$; while those which we
-consider as capable of growing, or (as mathematicians
-say) of “varying,” we denote by letters from the end
-of the alphabet, such as $x$, $y$, $z$, $u$, $v$, $w$, or sometimes $t$.
+<p>Em todo o cálculo lidamos com quantidades
+que estão crescendo, e com taxas de crescimento.
+Classificamos todas as quantidades em duas classes: <em>constantes</em>
+e <em>variáveis</em>. Aquelas que consideramos de valor
+fixo, e chamamos <em>constantes</em>, denotamos em geral
+algebricamente por letras do começo do
+alfabeto, tais como $a$, $b$, ou $c$; enquanto aquelas que
+consideramos capazes de crescer, ou (como os matemáticos
+dizem) de “variar,” denotamos por letras do fim
+do alfabeto, tais como $x$, $y$, $z$, $u$, $v$, $w$, ou às vezes $t$.
 
-<p>Moreover, we are usually dealing with more than
-one variable at once, and thinking of the way in
-which one variable depends on the other: for instance,
-we think of the way in which the height reached
-by a projectile depends on the time of attaining that
-height. Or we are asked to consider a rectangle of
-given area, and to enquire how any increase in the
-length of it will compel a corresponding decrease in
-the breadth of it. Or we think of the way in which
-any variation in the slope of a ladder will cause the
-height that it reaches, to vary.
+<p>Além disso, usualmente lidamos com mais de
+uma variável ao mesmo tempo, e pensamos no modo em
+que uma variável depende da outra: por exemplo,
+pensamos no modo em que a altura alcançada
+por um projétil depende do tempo para atingir essa
+altura. Ou nos pedem para considerar um retângulo de
+área dada, e indagar como qualquer aumento no
+comprimento obrigará uma diminuição correspondente na
+largura. Ou pensamos no modo em que
+qualquer variação na inclinação de uma escada fará variar
+a altura que ela alcança.
 
-<p>Suppose we have got two such variables that
+<p>Suponha que tenhamos duas variáveis tais que
 
-depend one on the other. An alteration in one will
-bring about an alteration in the other, <em>because</em> of this
-dependence. Let us call one of the variables $x$, and
-the other that depends on it $y$.
+dependem uma da outra. Uma alteração em uma
+trará uma alteração na outra, <em>por causa</em> dessa
+dependência. Chamemos uma das variáveis de $x$, e
+a outra que depende dela de $y$.
 
-<p>Suppose we make $x$ to vary, that is to say, we
-either alter it or imagine it to be altered, by adding
-to it a bit which we call $dx$. We are thus causing $x$
-to become $x + dx$. Then, because $x$ has been altered,
-$y$ will have altered also, and will have become $y + dy$.
-Here the bit $dy$ may be in some cases positive, in
-others negative; and it won't (except by a miracle) be
-the same size as $dx$.
+<p>Suponha que façamos $x$ variar, isto é, a
+alteramos ou imaginamos que seja alterada, acrescentando
+a ela um pedacinho que chamamos $dx$. Estamos assim fazendo $x$
+tornar-se $x + dx$. Então, porque $x$ foi alterado,
+$y$ também se terá alterado, e se tornará $y + dy$.
+Aqui o pedacinho $dy$ pode em alguns casos ser positivo, em
+outros negativo; e não será (exceto por milagre)
+do mesmo tamanho que $dx$.
 
 <p><a name="figure4">
 <img src="33283-t/images/022a.pdf.png-1.png">
 <p>
-<em>Take two examples.</em><p>
-(1) Let $x$ and $y$ be respectively the base and the
-height of a right-angled triangle (<a href="#figure4">Figure 4</a>), of which
-the slope of the other side is fixed at $30°$. If we
-suppose this triangle to expand and yet keep its
-angles the same as at first, then, when the base grows
-so as to become $x + dx$, the height becomes $y + dy$.
-Here, increasing $x$ results in an increase of $y$. The
-little triangle, the height of which is $dy$, and the base
-of which is $dx$, is similar to the original triangle; and
-it is obvious that the value of the ratio $\dfrac{dy}{dx}$ is the
-same as that of the ratio $\dfrac{y}{x}$. As the angle is $30°$ it
-will be seen that here
+<em>Tome dois exemplos.</em><p>
+(1) Sejam $x$ e $y$ respectivamente a base e a
+altura de um triângulo retângulo (<a href="#figure4">Figura 4</a>), do qual
+a inclinação do outro lado está fixada em $30°$. Se
+supusermos que este triângulo se expanda e ainda assim mantenha
+seus ângulos iguais aos de início, então, quando a base cresce
+de modo a se tornar $x + dx$, a altura se torna $y + dy$.
+Aqui, aumentar $x$ resulta em um aumento de $y$. O
+triangulozinho, cuja altura é $dy$, e cuja base
+é $dx$, é semelhante ao triângulo original; e
+é óbvio que o valor da razão $\dfrac{dy}{dx}$ é o
+mesmo que o da razão $\dfrac{y}{x}$. Como o ângulo é $30°$
+ver-se-á que aqui
 \[
 \frac{dy}{dx} = \frac{1}{1.73}.
 \]
 
-<p>(2) Let $x$ represent, in <a href="#figure5">Figure 5</a>, the horizontal distance,
-from a wall, of the bottom end of a ladder, $AB$,
-of fixed length; and let $y$ be the height it
-reaches up the wall. Now $y$ clearly depends on $x$.
-It is easy to see that, if we pull the bottom end $A$ a
-bit further from the wall, the top end $B$ will come
-down a little lower. Let us state this in scientific
-language. If we increase $x$ to $x + dx$, then $y$ will
-become $y - dy$; that is, when $x$ receives a positive
-increment, the increment which results to $y$ is
-negative.
+<p>(2) Seja $x$ representar, na <a href="#figure5">Figura 5</a>, a distância horizontal,
+a partir de uma parede, da extremidade inferior de uma escada, $AB$,
+de comprimento fixo; e seja $y$ a altura que ela
+alcança na parede. Ora, $y$ claramente depende de $x$.
+É fácil ver que, se puxarmos a extremidade inferior $A$ um
+pouco mais longe da parede, a extremidade superior $B$ descerá
+um pouco. Enunciemos isso em linguagem
+científica. Se aumentarmos $x$ para $x + dx$, então $y$
+se tornará $y - dy$; isto é, quando $x$ recebe um incremento
+positivo, o incremento que resulta em $y$ é
+negativo.
 <p><a name="figure5">
 <img src="33283-t/images/023a.pdf.png-1.png">
 
-<p>Yes, but how much? Suppose the ladder was so
-long that when the bottom end $A$ was $19$ inches from
-the wall the top end $B$ reached just $15$ feet from the
-ground. Now, if you were to pull the bottom end
-out $1$ inch more, how much would the top end come
-down? Put it all into inches: $x = 19$ inches, $y = 180$
-inches. Now the increment of $x$ which we call $dx$,
-is $1$ inch: or $x + dx = 20$ inches.
+<p>Sim, mas quanto? Suponha que a escada fosse tão
+longa que, quando a extremidade inferior $A$ estava a $19$ polegadas da
+parede, a extremidade superior $B$ alcançava justamente $15$ pés do
+chão. Agora, se você puxasse a extremidade inferior
+mais $1$ polegada para fora, quanto desceria a extremidade superior?
+Ponha tudo em polegadas: $x = 19$ polegadas, $y = 180$
+polegadas. Ora o incremento de $x$ que chamamos $dx$,
+é $1$ polegada: ou $x + dx = 20$ polegadas.
 
-<p>How much will $y$ be diminished? The new height
-will be $y - dy$. If we work out the height by Euclid
-I. 47, then we shall be able to find how much $dy$ will
-be. The length of the ladder is
+<p>Quanto será $y$ diminuído? A nova altura
+será $y - dy$. Se calculamos a altura pelo teorema de Pitágoras
+(Euclides I. 47), então seremos capazes de achar quanto $dy$
+será. O comprimento da escada é
 \[
-\sqrt{ (180)^2 + (19)^2 } = 181 \text{ inches}.
+\sqrt{ (180)^2 + (19)^2 } = 181 \text{ polegadas}.
 \]
-Clearly then, the new height, which is $y - dy$, will be
-such that
+Claramente então, a nova altura, que é $y - dy$, será
+tal que
 \begin{align*}
 (y - dy)^2 &= (181)^2 - (20)^2 = 32761 - 400 = 32361,   \\
-y - dy     &= \sqrt{32361} = 179.89 \text{ inches}.
+y - dy     &= \sqrt{32361} = 179.89 \text{ polegadas}.
 \end{align*}
-Now $y$ is $180$, so that $dy$ is $180 - 179.89 = 0.11$ inch.
+Ora $y$ é $180$, de modo que $dy$ é $180 - 179.89 = 0.11$ polegada.
 
-<p>So we see that making $dx$ an increase of $1$ inch
-has resulted in making $dy$ a decrease of $0.11$ inch.
+<p>Assim vemos que fazer $dx$ um aumento de $1$ polegada
+resultou em fazer $dy$ uma diminuição de $0.11$ polegada.
 
-<p>And the ratio of $dy$ to $dx$ may be stated thus:
+<p>E a razão de $dy$ para $dx$ pode ser enunciada assim:
 \[
 \frac{dy}{dx} = - \frac{0.11}{1}.
 \]
 
-<p>It is also easy to see that (except in one particular
-position) $dy$ will be of a different size from $dx$.
+<p>É também fácil ver que (exceto em uma posição
+particular) $dy$ será de tamanho diferente de $dx$.
 
-<p>Now right through the differential calculus we
-are hunting, hunting, hunting for a curious thing,
+<p>Ora, de ponta a ponta do cálculo diferencial estamos
+caçando, caçando, caçando uma coisa curiosa,
 
-a mere ratio, namely, the proportion which $dy$ bears
-to $dx$ when both of them are indefinitely
-small.
+uma mera razão, a saber, a proporção que $dy$ guarda
+com $dx$ quando ambos são indefinidamente
+pequenos.
 
-<p>It should be noted here that we can only find
-this ratio $\dfrac{dy}{dx}$ when $y$ and $x$ are related to each
-other in some way, so that whenever $x$ varies $y$ does
-vary also. For instance, in the first example just
-taken, if the base $x$ of the triangle be made longer,
-the height $y$ of the triangle becomes greater also,
-and in the second example, if the distance $x$ of the
-foot of the ladder from the wall be made to increase,
-the height $y$ reached by the ladder decreases in a
-corresponding manner, slowly at first, but more and
-more rapidly as $x$ becomes greater. In these cases
-the relation between $x$ and $y$ is perfectly definite,
-it can be expressed mathematically, being $\dfrac{y}{x} = \tan 30°$
-and $x^2 + y^2 = l^2$ (where $l$ is the length of the ladder)
-respectively, and $\dfrac{dy}{dx}$ has the meaning we found in
-each case.
+<p>Deve-se notar aqui que só podemos achar
+essa razão $\dfrac{dy}{dx}$ quando $y$ e $x$ estão relacionados um
+ao outro de algum modo, de forma que sempre que $x$ varia $y$
+também varia. Por exemplo, no primeiro exemplo
+acima, se a base $x$ do triângulo for alongada,
+a altura $y$ do triângulo também se torna maior,
+e no segundo exemplo, se a distância $x$ do
+pé da escada à parede for aumentada,
+a altura $y$ alcançada pela escada diminui de
+modo correspondente, lentamente no início, mas cada
+vez mais depressa à medida que $x$ se torna maior. Nesses casos
+a relação entre $x$ e $y$ é perfeitamente definida,
+pode ser expressa matematicamente, sendo $\dfrac{y}{x} = \tan 30°$
+e $x^2 + y^2 = l^2$ (onde $l$ é o comprimento da escada)
+respectivamente, e $\dfrac{dy}{dx}$ tem o significado que achamos em
+cada caso.
 
-<p>If, while $x$ is, as before, the distance of the foot
-of the ladder from the wall, $y$ is, instead of the
-height reached, the horizontal length of the wall, or
-the number of bricks in it, or the number of years
-since it was built, any change in $x$ would naturally
-cause no change whatever in $y$; in this case $\dfrac{dy}{dx}$ has
-no meaning whatever, and it is not possible to find
+<p>Se, enquanto $x$ for, como antes, a distância do pé
+da escada à parede, $y$ for, em vez da
+altura alcançada, o comprimento horizontal da parede, ou
+o número de tijolos nela, ou o número de anos
+desde que foi construída, qualquer mudança em $x$ naturalmente
+não causaria mudança alguma em $y$; neste caso $\dfrac{dy}{dx}$ não tem
+significado algum, e não é possível achar
 
-an expression for it. Whenever we use differentials
-$dx$, $dy$, $dz$, etc., the existence of some kind of
-relation between $x$, $y$, $z$, etc., is implied, and this
-relation is called a “function”<a name="function"/> in $x$, $y$, $z$, etc.; the
-two expressions given above, for instance, namely
-$\dfrac{y}{x} = \tan 30°$ and $x^2 + y^2 = l^2$, are functions of $x$ and $y$.
-Such expressions contain implicitly (that is, contain
-without distinctly showing it) the means of expressing
-either $x$ in terms of $y$ or $y$ in terms of $x$, and for
-this reason they are called <em>implicit functions</em> in
-$x$ and $y$; they can be respectively put into the forms
+uma expressão para ela. Sempre que usamos diferenciais
+$dx$, $dy$, $dz$, etc., a existência de algum tipo de
+relação entre $x$, $y$, $z$, etc., está implícita, e essa
+relação é chamada uma “função”<a name="function"/> em $x$, $y$, $z$, etc.; as
+duas expressões dadas acima, por exemplo, a saber
+$\dfrac{y}{x} = \tan 30°$ e $x^2 + y^2 = l^2$, são funções de $x$ e $y$.
+Tais expressões contêm implicitamente (isto é, contêm
+sem mostrar distintamente) os meios de expressar
+seja $x$ em termos de $y$ ou $y$ em termos de $x$, e por
+essa razão são chamadas <em>funções implícitas</em> em
+$x$ e $y$; podem ser respectivamente postas nas formas
 \begin{align*}
-y &= x \tan 30° \quad\text{or}\quad x = \frac{y}{\tan 30°} \\
- \text{and}\;
-y &= \sqrt{ l^2 - x^2} \quad\text{or}\quad x = \sqrt{ l^2 - y^2}.
+y &= x \tan 30° \quad\text{ou}\quad x = \frac{y}{\tan 30°} \\
+ \text{e}\;
+y &= \sqrt{ l^2 - x^2} \quad\text{ou}\quad x = \sqrt{ l^2 - y^2}.
 \end{align*}
 
-<p>These last expressions state explicitly (that is, distinctly)
-the value of $x$ in terms of $y$, or of $y$ in terms
-of $x$, and they are for this reason called <em>explicit
-functions</em> of $x$ or $y$. For example $x^2 + 3 = 2y - 7$ is
-an implicit function in $x$ and $y$; it may be written
-$y = \dfrac{x^2 + 10}{2}$ (explicit function of $x$) or $x = \sqrt{2y - 10}$
-(explicit function of $y$). We see that an explicit
-function in $x$, $y$, $z$, etc., is simply something the
-value of which changes when $x$, $y$, $z$, etc., are
-changing, either one at the time or several together.
-Because of this, the value of the explicit function is
-called the <em>dependent variable</em>, as it depends on the
-value of the other variable quantities in the function;
+<p>Estas últimas expressões enunciam explicitamente (isto é, distintamente)
+o valor de $x$ em termos de $y$, ou de $y$ em termos
+de $x$, e por essa razão são chamadas <em>funções
+explícitas</em> de $x$ ou $y$. Por exemplo $x^2 + 3 = 2y - 7$ é
+uma função implícita em $x$ e $y$; pode ser escrita
+$y = \dfrac{x^2 + 10}{2}$ (função explícita de $x$) ou $x = \sqrt{2y - 10}$
+(função explícita de $y$). Vemos que uma função
+explícita em $x$, $y$, $z$, etc., é simplesmente algo cujo
+valor muda quando $x$, $y$, $z$, etc., estão
+mudando, seja um de cada vez ou vários juntos.
+Por causa disso, o valor da função explícita é
+chamado a <em>variável dependente</em>, pois depende do
+valor das outras quantidades variáveis na função;
 
-these other variables are called the <em>independent
-variables</em><a name="indvar"/> because their value is not determined from
-the value assumed by the function. For example,
-if $u = x^2 \sin \theta$, $x$ and $\theta$ are the independent variables,
-and $u$ is the dependent variable.
+essas outras variáveis são chamadas as <em>variáveis
+independentes</em><a name="indvar"/> porque o valor delas não é determinado a partir
+do valor assumido pela função. Por exemplo,
+se $u = x^2 \sin \theta$, $x$ e $\theta$ são as variáveis independentes,
+e $u$ é a variável dependente.
 
-<p>Sometimes the exact relation between several
-quantities $x$, $y$, $z$ either is not known or it is not
-convenient to state it; it is only known, or convenient
-to state, that there is some sort of relation
-between these variables, so that one cannot alter
-either $x$ or $y$ or $z$ singly without affecting the other
-quantities; the existence of a function in $x$, $y$, $z$ is
-then indicated by the notation<a name="notation"/> $F(x, y, z)$ (implicit
-function) or by $x = F(y, z)$, $y = F(x, z)$ or $z = F(x, y)$
-(explicit function). Sometimes the letter $f$ or $\phi$ is used
-instead of $F$, so that $y = F(x)$, $y = f(x)$ and $y = \phi(x)$
-all mean the same thing, namely, that the value of $y$
-depends on the value of $x$ in some way which is
-not stated.
+<p>Às vezes a relação exata entre várias
+quantidades $x$, $y$, $z$ ou não é conhecida ou não é
+conveniente enunciá-la; sabe-se apenas, ou é conveniente
+enunciar, que há algum tipo de relação
+entre essas variáveis, de modo que não se pode alterar
+seja $x$ ou $y$ ou $z$ isoladamente sem afetar as outras
+quantidades; a existência de uma função em $x$, $y$, $z$ é
+então indicada pela notação<a name="notation"/> $F(x, y, z)$ (função
+implícita) ou por $x = F(y, z)$, $y = F(x, z)$ ou $z = F(x, y)$
+(função explícita). Às vezes a letra $f$ ou $\phi$ é usada
+em vez de $F$, de modo que $y = F(x)$, $y = f(x)$ e $y = \phi(x)$
+todas significam a mesma coisa, a saber, que o valor de $y$
+depende do valor de $x$ de algum modo que
+não está enunciado.
 
-<p>We call the ratio $\dfrac{dy}{dx}$ “the <em>differential coefficient</em> of $y$
-with respect to $x$.” It is a solemn scientific name
-for this very simple thing. But we are not going
-to be frightened by solemn names, when the things
-themselves are so easy. Instead of being frightened
-we will simply pronounce a brief curse on the
-stupidity of giving long crack-jaw names; and, having
-relieved our minds, will go on to the simple thing
-itself, namely the ratio $\dfrac{dy}{dx}$.
+<p>Chamamos a razão $\dfrac{dy}{dx}$ de “o <em>coeficiente diferencial</em> de $y$
+com respeito a $x$.” É um nome científico solene
+para esta coisa bem simples. Mas não vamos
+nos assustar com nomes solenes, quando as coisas
+em si são tão fáceis. Em vez de nos assustarmos
+simplesmente proferiremos uma breve maldição sobre a
+estupidez de dar nomes longos e engasgantes; e, tendo
+aliviado a mente, seguiremos para a coisa simples
+em si, a saber a razão $\dfrac{dy}{dx}$.
 
 
-<p>In ordinary algebra which you learned at school,
-you were always hunting after some unknown
-quantity which you called $x$ or $y$; or sometimes
-there were two unknown quantities to be hunted
-for simultaneously. You have now to learn to go
-hunting in a new way; the fox being now neither
-$x$ nor $y$. Instead of this you have to hunt for this
-curious cub called $\dfrac{dy}{dx}$. The process of finding the
-value of $\dfrac{dy}{dx}$ is called “differentiating.” But, remember,
-what is wanted is the value of this ratio when both
-$dy$ and $dx$ are themselves indefinitely small. The
-true value of the differential coefficient is that to which
-it approximates in the limiting case when each of
-them is considered as infinitesimally minute.
+<p>Na álgebra ordinária que você aprendeu na escola,
+você estava sempre caçando alguma quantidade
+desconhecida que chamava de $x$ ou $y$; ou às vezes
+havia duas quantidades desconhecidas a serem caçadas
+simultaneamente. Agora você tem de aprender a ir
+caçar de um modo novo; a raposa agora não é
+$x$ nem $y$. Em vez disso você tem de caçar este
+filhote curioso chamado $\dfrac{dy}{dx}$. O processo de achar o
+valor de $\dfrac{dy}{dx}$ chama-se “diferenciar.” Mas, lembre-se,
+o que se quer é o valor dessa razão quando tanto
+$dy$ quanto $dx$ são eles mesmos indefinidamente pequenos. O
+verdadeiro valor da derivada (do coeficiente diferencial) é aquele a que
+ela se aproxima no caso limite quando cada um
+deles é considerado infinitesimalmente miúdo.
 
-<p>Let us now learn how to go in quest of $\dfrac{dy}{dx}$.
+<p>Aprendamos agora como ir em busca de $\dfrac{dy}{dx}$.
 
 
 <p>
 <a name="note"/>
-<h2>NOTE TO CHAPTER III.</h2>
+<h2>NOTA AO CAPÍTULO III.</h2>
 
-<p><h2>How to read Differentials.</h2>
+<p><h2>Como ler diferenciais.</h2>
 
-<p>It will never do to fall into the schoolboy error of
-thinking that $dx$ means $d$ times $x$, for $d$ is not a
-factor–it means “an element of” or “a bit of”
-whatever follows. One reads $dx$ thus: “dee-eks.”
+<p>Nunca servirá cair no erro de escolar de
+pensar que $dx$ significa $d$ vezes $x$, pois $d$ não é um
+fator - significa “um elemento de” ou “um pedacinho de”
+o que vier a seguir. Lê-se $dx$ assim: “dê-équis.”
 
-<p>In case the reader has no one to guide him in such
-matters it may here be simply said that one reads
-differential coefficients in the following way. The
-differential coefficient
+<p>Caso o leitor não tenha ninguém para guiá-lo em tais
+assuntos, pode-se simplesmente dizer aqui que se lê
+coeficientes diferenciais do seguinte modo. O
+coeficiente diferencial
 
 $\dfrac{dy}{dx}$
-is read “<em>dee-wy by dee-eks,</em>” or “<em>dee-wy over dee-eks.</em>”<br>
- So also
-$\dfrac{du}{dt}$ is read “<em>dee-you by dee-tee.</em>”
+lê-se “<em>dê-ípsilon por dê-équis,</em>” ou “<em>dê-ípsilon sobre dê-équis.</em>”<br>
+ Assim também
+$\dfrac{du}{dt}$ se lê “<em>dê-u por dê-tê.</em>”
 
 
-<p>Second differential coefficients will be met with
-later on. They are like this: $\dfrac{d^2 y}{dx^2};$
-<em>which is read “dee-two-wy over dee-eks-squared,”</em>
-and it means that the operation of differentiating $y$
-with respect to $x$ has been (or has to be) performed
-twice over.
+<p>Coeficientes diferenciais de segunda ordem serão encontrados
+mais adiante. São assim: $\dfrac{d^2 y}{dx^2};$
+<em>que se lê “dê-dois-ípsilon sobre dê-équis-ao-quadrado,”</em>
+e significa que a operação de diferenciar $y$
+com respeito a $x$ foi (ou tem de ser) realizada
+duas vezes.
 
-<p>Another way of indicating that a function has been
-differentiated is by putting an accent to the symbol of
-the function. Thus if $y=F(x)$, which means that $y$
-is some unspecified function of $x$ (see <a href="3.html#function">here</a>), we may
-write $F'(x)$ instead of $\dfrac{d\bigl(F(x)\bigr)}{dx}$. Similarly, $F''(x)$
-will mean that the original function $F(x)$ has been
-differentiated twice over with respect to $x$.
+<p>Outro modo de indicar que uma função foi
+diferenciada é pondo um acento no símbolo da
+função. Assim se $y=F(x)$, o que significa que $y$
+é alguma função não especificada de $x$ (veja <a href="3.html#function">aqui</a>), podemos
+escrever $F'(x)$ em vez de $\dfrac{d\bigl(F(x)\bigr)}{dx}$. Similarmente, $F''(x)$
+significará que a função original $F(x)$ foi
+diferenciada duas vezes com respeito a $x$.
 
 <br>
 <hr>
-<a href="4.html">Next &rarr;</a><br>
-<a href="/">Main Page &uarr;</a><br>
+<a href="4.html">Próximo &rarr;</a><br>
+<a href="2.html">← Anterior</a><br>
+<a href="index.html">Página principal &uarr;</a><br>
+
+{% include "footer.html" %}
 
 <script src="j/jquery.js"></script>
 <script src="j/modernizr.js"></script>
 <script src="j/dih5.js"></script>
+<script src="j/notes-toggle.js"></script>
 {%include "googleanalytics.html" %}
+</body>
+</html>

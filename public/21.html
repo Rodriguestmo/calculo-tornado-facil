@@ -1,6 +1,39 @@
 <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+
 <meta charset="utf-8">
-<title>Finding some Solutions | Calculus Made Easy</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Encontrando Soluções | Cálculo Tornado Fácil - Cap. XXI</title>
+<meta name="description" content="Capítulo XXI: encontrando algumas soluções.">
+<meta name="author" content="Thales Rodrigues; Silvanus P. Thompson">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="googlebot" content="index, follow">
+<meta name="language" content="Portuguese">
+<meta name="keywords" content="cálculo, calculus made easy, Silvanus Thompson, cálculo diferencial, cálculo integral, matemática, educação livre, português, Martin Gardner, Cálculo Tornado Fácil, Thales Rodrigues">
+<link rel="canonical" href="https://rodriguestmo.github.io/calculo-tornado-facil/21.html">
+<link rel="alternate" hreflang="pt-BR" href="https://rodriguestmo.github.io/calculo-tornado-facil/21.html">
+<link rel="alternate" hreflang="x-default" href="https://rodriguestmo.github.io/calculo-tornado-facil/">
+
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Cálculo Tornado Fácil">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Encontrando Soluções | Cálculo Tornado Fácil - Cap. XXI">
+<meta property="og:description" content="Capítulo XXI: encontrando algumas soluções.">
+<meta property="og:url" content="https://rodriguestmo.github.io/calculo-tornado-facil/21.html">
+<meta property="og:image" content="https://rodriguestmo.github.io/calculo-tornado-facil/cover.jpg">
+
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Encontrando Soluções | Cálculo Tornado Fácil - Cap. XXI">
+<meta name="twitter:description" content="Capítulo XXI: encontrando algumas soluções.">
+<meta name="twitter:image" content="https://rodriguestmo.github.io/calculo-tornado-facil/cover.jpg">
+
+
+<meta name="ai-content-declaration" content="human-authored translation and educational adaptation">
+<link rel="describedby" href="https://rodriguestmo.github.io/calculo-tornado-facil/llms.txt">
 <link rel="stylesheet" href="screen.css">
 <style>
 body{counter-reset:h1 21}
@@ -11,211 +44,259 @@ body{counter-reset:h1 21}
 <script type="text/javascript"
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Chapter",
+  "name": "Encontrando Algumas Soluções",
+  "position": 21,
+  "isPartOf": {
+    "@type": "Book",
+    "name": "Cálculo Tornado Fácil",
+    "url": "https://rodriguestmo.github.io/calculo-tornado-facil/"
+  },
+  "author": {"@type": "Person", "name": "Silvanus P. Thompson"},
+  "translator": {"@type": "Person", "name": "Thales Rodrigues"},
+  "url": "https://rodriguestmo.github.io/calculo-tornado-facil/21.html",
+  "inLanguage": "pt-BR",
+  "isAccessibleForFree": true
+}
+</script>
+</head>
+<body>
+<!-- Barra fixa: navegação, modo das notas, tema -->
+<div id="site-toolbar" class="site-toolbar" role="region" aria-label="Controles do site">
+  <a class="tb-home" href="index.html">Cálculo Tornado Fácil</a>
 
-<h1><br>Finding some Solutions</h1>
+  <div class="tb-controls">
+    <label class="tb-field" title="Como exibir as notas de Martin Gardner (1998)">
+      <span class="tb-label">Notas</span>
+      <select id="notes-mode" aria-label="Modo de exibição das notas">
+        <option value="all">Sempre visíveis</option>
+        <option value="click">Lupa (clique para abrir)</option>
+        <option value="off">Sempre ocultadas</option>
+      </select>
+    </label>
+
+    <button type="button" id="toggle-theme" class="tb-btn" title="Alternar tema claro/escuro" aria-pressed="false">
+      <span class="theme-label">Tema escuro</span>
+    </button>
+  </div>
+</div>
+
+<h1><br>Encontrando Algumas Soluções</h1>
 <p class="a rotatedFloralHeartBullet">
 
-<p>In this chapter we go to work finding solutions to
-some important differential equations, using for this
-purpose the processes shown in the preceding chapters.
+<p>Neste capítulo saímos a trabalhar encontrando
+soluções de algumas equações diferenciais
+importantes, usando para esse propósito os processos
+mostrados nos capítulos precedentes.
 
-<p>The beginner, who now knows how easy most of
-those processes are in themselves, will here begin to
-realize that integration is <em>an art</em>. As in all arts, so
-in this, facility can be acquired only by diligent and
-regular practice. He who would attain that facility
-must work out examples, and more examples, and yet
-more examples, such as are found abundantly in all
-the regular treatises on the Calculus. Our purpose
-here must be to afford the briefest introduction to
-serious work.
+<p>O principiante, que agora sabe quão fáceis a
+maioria desses processos são em si mesmos, começará
+aqui a perceber que a integração é <em>uma arte</em>. Como
+em todas as artes, também nesta a facilidade só se
+adquire com prática diligente e regular. Quem
+quiser atingir essa facilidade deve resolver
+exemplos, e mais exemplos, e ainda mais exemplos,
+como os que se encontram em abundância em todos os
+tratados regulares sobre o Cálculo. Nosso propósito
+aqui deve ser oferecer a mais breve introdução ao
+trabalho sério.
 
 <p><hr>
 
-<p><em>Example (1.)</em> Find the solution of the differential
-equation
+<p><em>Exemplo (1.)</em> Ache a solução da equação
+diferencial
 \[
 ay + b \frac{dy}{dx} = 0.
 \]
 
-<p>Transposing we have
+<p>Transpondo, temos
 \[
 b \frac{dy}{dx} = -ay.
 \]
 
 
-<p>Now the mere inspection of this relation tells us
-that we have got to do with a case in which $\dfrac{dy}{dx}$ is
-proportional to $y$. If we think of the curve which
-will represent $y$ as a function of $x$, it will be such
-that its slope at any point will be proportional to
-the ordinate at that point, and will be a negative
-slope if $y$ is positive. So obviously the curve will
-be a die-away curve, and the solution will
-contain $\epsilon^{-x}$ as a factor. But, without presuming on
-this bit of sagacity, let us go to work.
+<p>Ora, a mera inspeção dessa relação nos diz que
+temos de lidar com um caso em que $\dfrac{dy}{dx}$ é
+proporcional a $y$. Se pensarmos na curva que
+representará $y$ como função de $x$, ela será tal que
+sua inclinação em qualquer ponto será proporcional
+à ordenada naquele ponto, e será uma inclinação
+negativa se $y$ for positivo. Assim, obviamente a
+curva será uma curva de decaimento, e a solução
+conterá $\epsilon^{-x}$ como fator. Mas, sem presumir
+desse pedaço de sagacidade, vamos ao trabalho.
 
-<p>As both $y$ and $dy$ occur in the equation and on
-opposite sides, we can do nothing until we get both
-$y$ and $dy$ to one side, and $dx$ to the other. To do
-this, we must split our usually inseparable companions
-$dy$ and $dx$ from one another.
+<p>Como tanto $y$ quanto $dy$ ocorrem na equação e em
+lados opostos, não podemos fazer nada até
+colocarmos tanto $y$ quanto $dy$ de um lado, e $dx$ do
+outro. Para isso, devemos separar nossos
+companheiros de costume inseparáveis $dy$ e $dx$ um
+do outro.
 \[
 \frac{dy}{y} = - \frac{a}{b}\, dx.
 \]
 
-<p>Having done the deed, we now can see that both
-sides have got into a shape that is integrable, because
-we recognize $\dfrac{dy}{y}$, or $\dfrac{1}{y}\, dy$, as a differential that we
-have met with (<a href="14.html#expolo">here</a>) when differentiating logarithms.
-So we may at once write down the instructions to
-integrate,
+<p>Tendo feito o feito, agora vemos que ambos os
+lados entraram em uma forma que é integrável,
+porque reconhecemos $\dfrac{dy}{y}$, ou $\dfrac{1}{y}\, dy$, como uma
+diferencial que encontramos (<a href="14.html#expolo">aqui</a>) ao diferenciar
+logaritmos. Assim podemos de uma vez escrever as
+instruções para integrar,
 \[
 \int \frac{dy}{y} = \int -\frac{a}{b}\, dx;
 \]
-and doing the two integrations, we have:
+e fazendo as duas integrações, temos:
 \[
 \log_\epsilon y = -\frac{a}{b} x + \log_\epsilon C,
 \]
 
-where $\log_\epsilon C$ is the yet undetermined constant
-of
-integration. Then, delogarizing, we get:
+onde $\log_\epsilon C$ é a constante de integração ainda
+indeterminada. Então, deslogaritmizando, obtemos:
 \[
 y = C \epsilon^{-\frac{a}{b} x},
 \]
-which is <em>the solution</em> required*. Now, this solution
-looks quite unlike the original differential equation
-from which it was constructed: yet to an expert
-mathematician they both convey the same information
-as to the way in which $y$ depends on $x$.
+que é <em>a solução</em> pedida*. Ora, essa solução parece
+bastante diferente da equação diferencial original
+da qual foi construída: e no entanto, a um
+matemático experiente, ambas transmitem a mesma
+informação sobre o modo como $y$ depende de $x$.
 
-<p><note>*We may write down any form of constant as the “constant of
-  integration,” and the form $\log_\epsilon C$ is adopted here by preference,
-  because the other terms in this line of equation are, or are treated
-  as logarithms; and it saves complications afterward if the added
-  constant be <em>of the same kind</em>.</note>
+<p><note>*Podemos escrever qualquer forma de constante como a “constante de
+  integração,” e a forma $\log_\epsilon C$ é adotada aqui de preferência,
+  porque os outros termos nesta linha da equação são, ou são tratados
+  como, logaritmos; e poupa complicações depois se a constante
+  acrescentada for <em>do mesmo tipo</em>.</note>
 
-<p>Now, as to the $C$, its meaning depends on the
-initial value of $y$. For if we put $x = 0$ in order to
-see what value $y$ then has, we find that this makes
-$y = C \epsilon^{-0}$; and as $\epsilon^{-0} = 1$ we see that $C$ is nothing else
-than the particular value*
- of $y$ at starting. This we
-may call $y_0$, and so write the solution as
+<p>Agora, quanto a $C$, seu significado depende do
+valor inicial de $y$. Pois se pusermos $x = 0$ para
+ver que valor $y$ então tem, vemos que isso faz
+$y = C \epsilon^{-0}$; e como $\epsilon^{-0} = 1$ vemos que $C$ não é
+outra coisa senão o valor particular*
+ de $y$ no
+início. Podemos chamar isso de $y_0$, e assim
+escrever a solução como
 \[
 y = y_0 \epsilon^{-\frac{a}{b} x}.
 \]
-<p><note>*Compare what was said about the “constant of integration,”
-  with reference to <a href="17.html#figure48">Figure 48</a> on <a href="17.html#constant">here</a>, and <a href="17.html#figure51">Figure 51</a>.</note>
+<p><note>*Compare o que se disse sobre a “constante de integração,”
+  com referência à <a href="17.html#figure48">Figura 48</a> <a href="17.html#constant">aqui</a>, e à <a href="17.html#figure51">Figura 51</a>.</note>
 <p><hr>
 
-<p><em>Example (2.)</em>
+<p><em>Exemplo (2.)</em>
 
-<p>Let us take as an example to solve
+<p>Tomemos como exemplo a resolver
 \[
 ay + b \frac{dy}{dx} = g,
 \]
-where $g$ is a constant. Again, inspecting the equation
-will suggest, (1) that somehow or other $\epsilon^x$ will come
-into the solution, and (2) that if at any part of the
+onde $g$ é uma constante. De novo, inspecionar a
+equação sugerirá, (1) que de um modo ou de outro
+$\epsilon^x$ entrará na solução, e (2) que se em qualquer
+parte da
 
-curve $y$ becomes either a maximum or a minimum, so
-that $\dfrac{dy}{dx} = 0$, then $y$ will have the value $= \dfrac{g}{a}$. But let
-us go to work as before, separating the differentials
-and trying to transform the thing into some integrable
-shape.
+curva $y$ se tornar ou um máximo ou um mínimo, de
+modo que $\dfrac{dy}{dx} = 0$, então $y$ terá o valor
+$= \dfrac{g}{a}$. Mas vamos ao trabalho como antes,
+separando as diferenciais e tentando transformar a
+coisa em alguma forma integrável.
 \begin{align*}
 b\frac{dy}{dx}           &= g -ay; \\
 \frac{dy}{dx}            &= \frac{a}{b}\left(\frac{g}{a}-y\right); \\
 \frac{dy}{y-\dfrac{g}{a}} &= -\frac{a}{b}\, dx.
 \end{align*}
 
-<p>Now we have done our best to get nothing but $y$ and $dy$
-on one side, and nothing but $dx$ on the other.
-But is the result on the left side integrable?
+<p>Agora fizemos o melhor para não ter nada senão $y$
+e $dy$ de um lado, e nada senão $dx$ do outro. Mas o
+resultado do lado esquerdo é integrável?
 
-<p>It is of the same form as the result on <a href="14.html#differlog">here</a>; so,
-writing the instructions to integrate, we have:
+<p>É da mesma forma que o resultado <a href="14.html#differlog">aqui</a>; assim,
+escrevendo as instruções para integrar, temos:
 \[
 \int{\frac{dy}{y-\dfrac{g}{a}}} = - \int{\frac{a}{b}\, dx};
 \]
-and, doing the integration, and adding the appropriate
-constant,
+e, fazendo a integração, e acrescentando a
+constante apropriada,
 \begin{align*}
 \log_\epsilon\left(y-\frac{g}{a}\right) &= -\frac{a}{b}x + \log_\epsilon C; \\
- \text{whence}\;\;        y-\frac{g}{a} &= C\epsilon^{-\frac{a}{b}x}; \\
- \text{and finally,}\;\;              y &= \frac{g}{a} + C\epsilon^{-\frac{a}{b}x},
+ \text{donde}\;\;        y-\frac{g}{a} &= C\epsilon^{-\frac{a}{b}x}; \\
+ \text{e finalmente,}\;\;              y &= \frac{g}{a} + C\epsilon^{-\frac{a}{b}x},
 \end{align*}
-which is <em>the solution</em>.
+que é <em>a solução</em>.
 
 
-<p>If the condition is laid down that $y = 0$ when $x = 0$
-we can find $C$; for then the exponential becomes $= 1$;
-and we have
+<p>Se a condição imposta for que $y = 0$ quando $x = 0$,
+podemos achar $C$; pois então a exponencial se torna
+$= 1$; e temos
 \begin{align*}
                 0 &= \frac{g}{a} + C, \\
- \text{or}\;  C &= -\frac{g}{a}.
+ \text{ou}\;  C &= -\frac{g}{a}.
 \end{align*}
 
-<p>Putting in this value, the solution becomes
+<p>Pondo esse valor, a solução se torna
 \[
 y = \frac{g}{a} (1-\epsilon^{-\frac{a}{b} x}).
 \]
 
-<p>But further, if $x$ grows indefinitely, $y$ will grow to
-a maximum; for when $x=\infty$, the exponential $= 0$,
-giving $y_{\text{max.}} = \dfrac{g}{a}$. Substituting this, we get finally
+<p>Mas além disso, se $x$ cresce indefinidamente, $y$
+crescerá até um máximo; pois quando $x=\infty$, a
+exponencial $= 0$, dando $y_{\text{máx.}} = \dfrac{g}{a}$.
+Substituindo isso, obtemos finalmente
 \[
-y = y_{\text{max.}}(1-\epsilon^{-\frac{a}{b} x}).
+y = y_{\text{máx.}}(1-\epsilon^{-\frac{a}{b} x}).
 \]
 
-<p>This result is also of importance in physical science.
+<p>Este resultado também é de importância na ciência
+física.
 
 <p><hr>
 
 <p>
-<em>Example (3.)</em>
+<em>Exemplo (3.)</em>
 
-   Let $ay+b\frac{dy}{dt} = g · \sin 2\pi nt$.
+   Seja $ay+b\frac{dy}{dt} = g · \sin 2\pi nt$.
 
 
-<p>We shall find this much less tractable than the
-preceding. First divide through by $b$.
+<p>Acharemos isto bem menos tratável do que o
+precedente. Primeiro divida tudo por $b$.
 \[
 \frac{dy}{dt} + \frac{a}{b}y = \frac{g}{b} \sin 2\pi nt.
 \]
 
-<p>Now, as it stands, the left side is not integrable.
-But it can be made so by the artifice–and this is
+<p>Ora, como está, o lado esquerdo não é integrável.
+Mas pode ser tornado assim pelo artifício - e é
+aqui
 
-where skill and practice suggest a plan–of multiplying
-all the terms by $\epsilon^{\frac{a}{b} t}$, giving us:
+que a habilidade e a prática sugerem um plano - de
+multiplicar todos os termos por $\epsilon^{\frac{a}{b} t}$,
+dando-nos:
 \[
 \frac{dy}{dt} \epsilon^{\frac{a}{b} t} + \frac{a}{b} y \epsilon^{\frac{a}{b} t} = \frac{g}{b} \epsilon^{\frac{a}{b} t} · \sin 2 \pi nt,
 \]
-which is the same as
+que é o mesmo que
 \[
 \frac{dy}{dt} \epsilon^{\frac{a}{b} t} + y \frac{d(\epsilon^{\frac{a}{b} t})}{dt} = \frac{g}{b} \epsilon^{\frac{a}{b} t} · \sin 2 \pi nt;
 \]
-and this being a perfect differential may be integrated
-thus:–since, if  $u = y\epsilon^{\frac{a}{b} t}$, $\dfrac{du}{dt} = \dfrac{dy}{dt} \epsilon^{\frac{a}{b} t} + y \dfrac{d(\epsilon^{\frac{a}{b} t})}{dt}$,
+e isto sendo uma diferencial completa pode ser
+integrado assim: - pois, se  $u = y\epsilon^{\frac{a}{b} t}$,
+$\dfrac{du}{dt} = \dfrac{dy}{dt} \epsilon^{\frac{a}{b} t} + y \dfrac{d(\epsilon^{\frac{a}{b} t})}{dt}$,
 \begin{align*}
   y \epsilon^{\frac{a}{b} t}
   &= \frac{g}{b} \int \epsilon^{\frac{a}{b} t} · \sin 2 \pi nt · dt + C, \\
- or
+ ou
 y &= \frac{g}{b} \epsilon^{-\frac{a}{b} t}
      \int \epsilon^{ \frac{a}{b} t} · \sin 2\pi nt · dt
        + C\epsilon^{-\frac{a}{b} t}.
 \tag*{[A]}
 \end{align*}
 
-<p>The last term is obviously a term which will die
-out as $t$ increases, and may be omitted. The trouble
-now comes in to find the integral that appears as a
-factor. To tackle this we resort to the device (see
-<a href="20.html#intparts">here</a>) of integration by parts, the general formula for
-which is $\int u dv = uv - \int v du$. For this purpose write
+<p>O último termo é obviamente um termo que se
+esvairá conforme $t$ aumenta, e pode ser omitido. O
+trabalho agora é achar a integral que aparece como
+fator. Para atacar isso recorremos ao recurso (veja
+<a href="20.html#intparts">aqui</a>) da integração por partes, cuja fórmula geral
+é $\int u dv = uv - \int v du$. Para esse propósito escreva
 \begin{align*}
 &\left\{
 \begin{aligned}
@@ -224,7 +305,7 @@ dv &= \sin 2\pi nt · dt.
 \end{aligned}
 \right.  \\
 \end{align*}
-We shall then have
+Teremos então
 \begin{align*}
 &\left\{
 \begin{aligned}
@@ -235,7 +316,7 @@ v &= - \frac{1}{2\pi n} \cos 2\pi nt.
 \end{align*}
 
 
-<p>Inserting these, the integral in question becomes:
+<p>Inserindo isso, a integral em questão se torna:
 \begin{align*}
 \int \epsilon^{\frac{a}{b} t} &{} · \sin 2 \pi n t · dt \\
 &= -\frac{1}{2 \pi n} · \epsilon^{\frac{a}{b} t} · \cos 2 \pi nt
@@ -245,9 +326,10 @@ v &= - \frac{1}{2\pi n} \cos 2\pi nt.
 \tag*{[B]}
 \end{align*}
 
-<p>The last integral is still irreducible. To evade the
-difficulty, repeat the integration by parts of the left
-side, but treating it in the reverse way by writing:
+<p>A última integral ainda é irredutível. Para
+contornar a dificuldade, repita a integração por
+partes do lado esquerdo, mas tratando-o do modo
+inverso ao escrever:
 \begin{align*}
 &\left\{
 \begin{aligned}
@@ -255,7 +337,7 @@ u &= \sin 2 \pi n t ; \\
 dv &= \epsilon^{\frac{a}{b} t} · dt;
 \end{aligned}
 \right. \\[1ex]
- whence
+ donde
 &\left\{
   \begin{aligned}
   du &= 2 \pi n · \cos 2 \pi n t · dt; \\
@@ -264,75 +346,76 @@ dv &= \epsilon^{\frac{a}{b} t} · dt;
 \right.
 \end{align*}
 
-<p>Inserting these, we get
+<p>Inserindo isso, obtemos
 \begin{align*}
 \int \epsilon^{\frac{a}{b} t} &{} · \sin 2 \pi n t · dt\\
 &= \frac{b}{a} · \epsilon^{\frac{a}{b} t} · \sin 2 \pi n t -
    \frac{2 \pi n b}{a} \int \epsilon^{\frac{a}{b} t} · \cos 2 \pi n t · dt. \tag*{[C]}
 \end{align*}
 
-<p>Noting that the final intractable integral in [C] is
-the same as that in [B], we may eliminate it, by
-multiplying [B] by $\dfrac{2 \pi nb}{a}$, and multiplying [C] by
-$\dfrac{a}{2 \pi nb}$, and adding them.
+<p>Notando que a integral final intratável em [C] é a
+mesma que em [B], podemos eliminá-la, multiplicando
+[B] por $\dfrac{2 \pi nb}{a}$, e multiplicando [C] por
+$\dfrac{a}{2 \pi nb}$, e somando-as.
 
 
-<p>The result, when cleared down, is:
+<p>O resultado, quando simplificado, é:
 \begin{align*}
 \int \epsilon^{\frac{a}{b} t} · \sin 2 \pi n t · dt
   &= \epsilon^{\frac{a}{b} t} \left\{\frac{ ab · \sin 2 \pi nt - 2 \pi n b^2 · \cos 2 \pi n t}{ a^2 + 4 \pi^2 n^2 b^2 } \right\}
 \tag*{[D]} &\\
 \end{align*}
-Inserting this value in [A], we get
+Inserindo esse valor em [A], obtemos
 \begin{align*}
 y &= g \left\{\frac{ a · \sin 2 \pi n t - 2 \pi n b · \cos 2 \pi nt}{ a^2 + 4 \pi^2  n^2 b^2}\right\}. &
 \end{align*}
 
-<p>To simplify still further, let us imagine an angle $\phi$
-such that $\tan \phi = \dfrac{2 \pi n b}{ a}$.
-   Then
+<p>Para simplificar ainda mais, imaginemos um ângulo
+$\phi$ tal que $\tan \phi = \dfrac{2 \pi n b}{ a}$.
+   Então
 \[
 \sin \phi = \frac{2 \pi nb}{\sqrt{a^2 + 4 \pi^2 n^2 b^2}},
 \]
- and
+ e
  \[
 \cos \phi = \frac{a}{\sqrt{a^2 + 4 \pi^2 n^2 b^2}}.  \\
 \]
-Substituting these, we get:
+Substituindo isso, obtemos:
  \[
 y = g \frac{\cos \phi · \sin 2 \pi nt
   - \sin \phi · \cos 2 \pi nt}{\sqrt{a^2 + 4 \pi^2 n^2 b^2}}, \\
 \]
-which may be written
+que se pode escrever
  \[
 y = g \frac{\sin(2 \pi nt - \phi)}{\sqrt{a^2 + 4 \pi^2 n^2 b^2}},
 \]
- which is <em>the solution  desired.</em>
+ que é <em>a solução desejada.</em>
 
 
-<p>This is indeed none other than the equation of an
-alternating electric current, where $g$ represents the
-amplitude of the electromotive force, $n$ the frequency,
-$a$ the resistance, $b$ the coefficient of self-induction of
-the circuit, and $\phi$ is an angle of lag.
+<p>Isto não é outra coisa senão a equação de uma
+corrente elétrica alternada, onde $g$ representa a
+amplitude da força eletromotriz, $n$ a frequência,
+$a$ a resistência, $b$ o coeficiente de autoindução
+do circuito, e $\phi$ é um ângulo de atraso.
 
 <p><hr>
 
 
 <p>
-<em>Example (4.)</em>
+<em>Exemplo (4.)</em>
 
-   Suppose that
+   Suponha que
 $M\, dx + N\, dy = 0.$
 
 
-<p>We could integrate this expression directly, if $M$
-were a function of $x$ only, and $N$ a function of $y$
-only; but, if both $M$ and $N$ are functions that depend
-on both $x$ and $y$, how are we to integrate it? Is it
-itself an exact differential? That is: have $M$ and $N$
-each been formed by partial differentiation from some
-common function $U$, or not? If they have, then
+<p>Poderíamos integrar essa expressão diretamente, se
+$M$ fosse função só de $x$, e $N$ função só de $y$;
+mas, se tanto $M$ quanto $N$ são funções que dependem
+tanto de $x$ quanto de $y$, como a integramos? É ela
+mesma uma diferencial exata? Isto é: $M$ e $N$ foram
+cada um formados por diferenciação parcial a partir
+de alguma função comum $U$, ou não? Se o foram,
+então
 \[\left\{
   \begin{aligned}
  \frac{\partial U}{\partial x} = M, \\
@@ -340,29 +423,29 @@ common function $U$, or not? If they have, then
   \end{aligned}
 \right.
 \]
-And if such a common function exists, then
+E se tal função comum existe, então
 \[
 \frac{\partial U}{\partial x}\, dx + \frac{\partial U}{\partial y}\, dy
 \]
-is an exact differential (compare <a href="16.html#partialdiff">here</a>).
+é uma diferencial exata (compare <a href="16.html#partialdiff">aqui</a>).
 
 <p>
-Now the test of the matter is this. If the expression
-is an exact differential, it must be true that
+Ora o teste da questão é este. Se a expressão é
+uma diferencial exata, deve ser verdade que
 \begin{align*}
         \frac{dM}{dy} &= \frac{dN}{dx}; \\
-\text{for then}\;
+\text{pois então}\;
 \frac{d(dU)}{dx\, dy} &= \frac{d(dU)}{dy\, dx},\\
 \end{align*}
- which is necessarily true.
+ o que é necessariamente verdadeiro.
 
-<p>Take as an illustration the equation
+<p>Tome como ilustração a equação
 \[
 (1 + 3 xy)\, dx + x^2\, dy = 0.
 \]
 
-<p>Is this an exact differential or not? Apply the
-test.
+<p>É esta uma diferencial exata ou não? Aplique o
+teste.
 \[\left\{
   \begin{aligned}
  \frac{d(1 + 3xy)}{dy}=3x, \\
@@ -372,23 +455,23 @@ test.
   \end{aligned}
 \right.
 \]
-which do not agree. Therefore, it is not an exact
-differential, and the two functions $1+3xy$ and $x^2$
-have not come from a common original function.
+que não concordam. Portanto, não é uma diferencial
+exata, e as duas funções $1+3xy$ e $x^2$ não vieram
+de uma função original comum.
 
-<p>It is possible in such cases to discover, however, <em>an
-integrating factor</em>, that is to say, a factor such that
-if both are multiplied by this factor, the expression
-will become an exact differential. There is no one
-rule for discovering such an integrating factor; but
-experience will usually suggest one. In the present
-instance $2x$ will act as such. Multiplying by $2x$, we
-get
+<p>É possível em tais casos descobrir, contudo, <em>um
+fator integrante</em>, isto é, um fator tal que se
+ambos forem multiplicados por esse fator, a
+expressão se tornará uma diferencial exata. Não há
+uma única regra para descobrir tal fator
+integrante; mas a experiência em geral sugere um.
+No presente caso $2x$ atuará como tal. Multiplicando
+por $2x$, obtemos
 \[
 (2x + 6x^2y)\, dx + 2x^3\, dy = 0.
 \]
 
-<p>Now apply the test to this.
+<p>Agora aplique o teste a isto.
 \[
 \left\{
   \begin{aligned}
@@ -397,103 +480,105 @@ get
   \end{aligned}
 \right.
 \]
-which agrees. Hence this is an exact differential, and
-may be integrated. Now, if $w = 2x^3y$,
+que concorda. Logo isto é uma diferencial exata, e
+pode ser integrado. Ora, se $w = 2x^3y$,
 \[
 dw=6x^2y\, dx + 2x^3\, dy.
 \]
-   Hence
+   Logo
    \[
 \int 6x^2y\, dx + \int 2x^3\, dy=w=2x^3y;
 \]
- so that we get
+ de modo que obtemos
 \[
  U = x^2 + 2x^3y + C.
 \]
 
 
 <p><hr>
-<em>Example (5.)</em> Let $\dfrac{d^2 y}{dt^2} + n^2 y = 0$.
+<em>Exemplo (5.)</em> Seja $\dfrac{d^2 y}{dt^2} + n^2 y = 0$.
 
-<p>In this case we have a differential equation of the
-second degree, in which $y$ appears in the form of
-a second differential coefficient, as well as in person.
+<p>Neste caso temos uma equação diferencial de
+segundo grau, em que $y$ aparece na forma de uma
+segunda derivada, bem como em pessoa.
 
-<p>Transposing, we have $\dfrac{d^2 y}{dt^2} = - n^2 y$.
+<p>Transpondo, temos $\dfrac{d^2 y}{dt^2} = - n^2 y$.
 
-<p>It appears from this that we have to do with a
-function such that its second differential coefficient is
-proportional to itself, but with reversed sign. In
-Chapter XV. we found that there was such a function–namely,
-the <em>sine</em> (or the <em>cosine</em> also) which
-possessed this property. So, without further ado,
-we may infer that the solution will be of the form
-$y = A \sin (pt + q)$. However, let us go to work.
+<p>Parece daí que temos de lidar com uma função tal
+que sua segunda derivada é proporcional a ela
+mesma, mas com sinal invertido. No Capítulo XV
+vimos que havia tal função - a saber, o <em>seno</em> (ou
+também o <em>cosseno</em>) que possuía essa propriedade.
+Assim, sem mais delongas, podemos inferir que a
+solução será da forma $y = A \sin (pt + q)$. Contudo,
+vamos ao trabalho.
 
-<p>Multiply both sides of the original equation by $2\dfrac{dy}{dt}$
-and integrate, giving us $2\dfrac{d^2 y}{dt^2}\, \dfrac{dy}{dt} + 2x^2 y \dfrac{dy}{dt} = 0$, and, as
+<p>Multiplique ambos os lados da equação original por
+$2\dfrac{dy}{dt}$ e integre, dando-nos $2\dfrac{d^2 y}{dt^2}\, \dfrac{dy}{dt} + 2x^2 y \dfrac{dy}{dt} = 0$, e, como
 \[
 2 \frac{d^2y}{dt^2}\, \frac{dy}{dt}
   = \frac{d \left(\dfrac{dy}{dt}\right)^2}{dt},\quad
 \left(\frac{dy}{dt}\right)^2 + n^2 (y^2-C^2) = 0,
 \]
-$C$ being a constant. Then, taking the square roots,
+$C$ sendo uma constante. Então, tomando as raízes
+quadradas,
 \[
-\frac{dy}{dt} = -n \sqrt{ y^2 - C^2}\quad \text{and}\quad
+\frac{dy}{dt} = -n \sqrt{ y^2 - C^2}\quad \text{e}\quad
 \frac{dy}{\sqrt{C^2 - y^2}} = n · dt.
 \]
 
-<p>But it can be shown that (see <a href="15.html#intex3">here</a>)
+<p>Mas pode-se mostrar que (veja <a href="15.html#intex3">aqui</a>)
 \[
 \frac{1}{\sqrt{C^2 - y^2}} = \frac{d (\arcsin \dfrac{y}{C})}{dy};
 \]
-whence, passing from angles to sines,
+donde, passando de ângulos a senos,
 \[
-\arcsin \frac{y}{C} = nt + C_1\quad \text{and}\quad y = C \sin (nt + C_1),
+\arcsin \frac{y}{C} = nt + C_1\quad \text{e}\quad y = C \sin (nt + C_1),
 \]
 
-where $C_1$ is a constant angle that comes in by integration.
+onde $C_1$ é um ângulo constante que entra por
+integração.
 
-<p>Or, preferably, this may be written
+<p>Ou, de preferência, isto se pode escrever
 \[
-y = A \sin nt + B \cos nt, \text{ which is the solution.}
+y = A \sin nt + B \cos nt, \text{ que é a solução.}
 \]
 
 <p><hr>
 
-<p><em>Example (6.)</em> $\dfrac{d^2 y}{dt^2} - n^2 y = 0$.
+<p><em>Exemplo (6.)</em> $\dfrac{d^2 y}{dt^2} - n^2 y = 0$.
 
-<p>Here we have obviously to deal with a function $y$
-which is such that its second differential coefficient is
-proportional to itself. The only function we know
-that has this property is the exponential function
-(see <a href="14.html#unchanged">here</a>), and we may be certain therefore that the
-solution of the equation will be of that form.
+<p>Aqui obviamente temos de lidar com uma função $y$
+que é tal que sua segunda derivada é proporcional a
+ela mesma. A única função que conhecemos com essa
+propriedade é a função exponencial (veja
+<a href="14.html#unchanged">aqui</a>), e podemos estar certos portanto de que a
+solução da equação será dessa forma.
 
-<p>Proceeding as before, by multiplying through by
-$2 \dfrac{dy}{dx}$, and integrating, we get $2\dfrac{d^2 y}{dx^2}\, \dfrac{dy}{dx} - 2x^2 y \dfrac{dy}{dx}=0$,
+<p>Procedendo como antes, multiplicando por
+$2 \dfrac{dy}{dx}$, e integrando, obtemos $2\dfrac{d^2 y}{dx^2}\, \dfrac{dy}{dx} - 2x^2 y \dfrac{dy}{dx}=0$,
 
- and, as
+ e, como
 \[
 2\frac{d^2 y}{dx^2}\, \frac{dy}{dx}
   = \frac{d \left(\dfrac{dy}{dx}\right)^2}{dx},\quad
 \left(\frac{dy}{dx}\right)^2 - n^2 (y^2 + c^2) = 0, \\
 \frac{dy}{dx} - n \sqrt{y^2 + c^2} = 0,
 \]
-where $c$ is a constant, and $\dfrac{dy}{\sqrt{y^2 + c^2}} = n\, dx$.
+onde $c$ é uma constante, e $\dfrac{dy}{\sqrt{y^2 + c^2}} = n\, dx$.
 
-<p>Now, if
+<p>Ora, se
 \[
 \quad w = \log_\epsilon ( y+ \sqrt{y^2+ c^2}) = \log_\epsilon u,\\
 
 \frac{dw}{du} = \frac{1}{u},\quad \frac{du}{dy} = 1 + \frac{y}{\sqrt{y^2 + c^2}} = \frac{y + \sqrt{ y^2 + c^2}}{\sqrt{y^2 + c^2}} \\
 \]
- and
+ e
 \[
  \frac{dw}{dy} = \frac{1}{\sqrt{ y^2 + c^2}}.
 \]
 
-<p>Hence, integrating, this gives us
+<p>Logo, integrando, isto nos dá
 \[
 \log_\epsilon (y + \sqrt{y^2 + c^2} ) = nx + \log_\epsilon C, \\
 y + \sqrt{y^2 + c^2} = C \epsilon^{nx}.
@@ -501,143 +586,172 @@ y + \sqrt{y^2 + c^2} = C \epsilon^{nx}.
 \tag*{(1)}  \\
 \]
 \[
-   \text{Now}\;  \qquad ( y + \sqrt{y^2 + c^2} ) × ( -y + \sqrt{y^2 + c^2} ) = c^2 ;    \\
-  \text{whence}\;  \qquad  -y + \sqrt{y^2 + c^2} = \dfrac{c^2}{C} \epsilon^{-nx}.
+   \text{Ora}\;  \qquad ( y + \sqrt{y^2 + c^2} ) × ( -y + \sqrt{y^2 + c^2} ) = c^2 ;    \\
+  \text{donde}\;  \qquad  -y + \sqrt{y^2 + c^2} = \dfrac{c^2}{C} \epsilon^{-nx}.
 \tag*{(2)}
 \]
 
 
-<p>Subtracting (2) from (1) and dividing by $2$, we
-then have
+<p>Subtraindo (2) de (1) e dividindo por $2$, temos
+então
 \[
 y = \frac{1}{2} C \epsilon^{nx} - \frac{1}{2}\, \frac{c^2}{C} \epsilon^{-nx},
 \]
-which is more conveniently written
+que se escreve de modo mais conveniente
 \[
 y = A \epsilon^{nx} + B \epsilon^{-nx}.
 \]
-Or, the solution, which at first sight does not look
-as if it had anything to do with the original equation,
-shows that $y$ consists of two terms, one of which
-grows logarithmically as $x$ increases, and of a second
-term which dies away as $x$ increases.
+Ou a solução, que à primeira vista não parece ter
+nada a ver com a equação original, mostra que $y$
+consiste de dois termos, um dos quais cresce
+logaritmicamente conforme $x$ aumenta, e de um
+segundo termo que se esvai conforme $x$ aumenta.
 
 <p><hr>
 
 <p>
-<em>Example (7.)</em>
-   Let
+<em>Exemplo (7.)</em>
+   Seja
 \begin{align*}
 b \frac{d^2y}{dt^2} + a \frac{dy}{dt} + gy &= 0.
 \end{align*}
 
-<p>Examination of this expression will show that, if
-$b = 0$, it has the form of Example 1, the solution of
-which was a negative exponential. On the other
-hand, if $a = 0$, its form becomes the same as that of
-Example 6, the solution of which is the sum of a
-positive and a negative exponential. It is therefore
-not very surprising to find that the solution of the
-present example is
+<p>O exame dessa expressão mostrará que, se $b = 0$,
+ela tem a forma do Exemplo 1, cuja solução era uma
+exponencial negativa. Por outro lado, se $a = 0$,
+sua forma se torna a mesma do Exemplo 6, cuja
+solução é a soma de uma exponencial positiva e uma
+negativa. Não é portanto muito surpreendente achar
+que a solução do presente exemplo é
 \begin{align*}
 y &= (\epsilon^{-mt})(A \epsilon^{nt} + B \epsilon^{-nt}), \\
- \text{where}\;
-m &= \frac{a}{2b}\quad \text{and}\quad
+ \text{onde}\;
+m &= \frac{a}{2b}\quad \text{e}\quad
 n  = \sqrt{\frac{a^2}{4b^2}} - \frac{g}{b}.
 \end{align*}
 
-<p>The steps by which this solution is reached are not
-given here; they may be found in advanced treatises.
+<p>Os passos pelos quais se chega a essa solução não
+são dados aqui; podem ser encontrados em tratados
+avançados.
 
 <p><hr>
 
 
 <p>
-<em>Example (8.)</em>
+<em>Exemplo (8.)</em>
 \[
 \frac{d^2y}{dt^2} = a^2 \frac{d^2y}{dx^2}.
 \]
 
-<p>It was seen (<a href="9.html#Example4">here</a>) that this equation was derived
-from the original
+<p>Viu-se (<a href="9.html#Example4">aqui</a>) que essa equação se derivava do
+original
 \[
 y = F(x+at) + f(x-at),
 \]
-where $F$ and $f$ were any arbitrary functions of $t$.
+onde $F$ e $f$ eram quaisquer funções arbitrárias de
+$t$.
 
-<p>Another way of dealing with it is to transform it
-by a change of variables into
+<p>Outro modo de tratá-la é transformá-la por uma
+mudança de variáveis em
 \[
 \frac{d^2y}{du · dv} = 0,
 \]
-where $u = x + at$, and $v = x - at$, leading to the same
-general solution. If we consider a case in which
-$F$ vanishes, then we have simply
+onde $u = x + at$, e $v = x - at$, levando à mesma
+solução geral. Se considerarmos um caso em que $F$
+se anula, então temos simplesmente
 \[
 y = f(x-at);
 \]
-and this merely states that, at the time $t = 0$, $y$ is a
-particular function of $x$, and may be looked upon as
-denoting that the curve of the relation of $y$ to $x$ has
-a particular shape. Then any change in the value
-of $t$ is equivalent simply to an alteration in the origin
-from which $x$ is reckoned. That is to say, it indicates
-that, the form of the function being conserved, it is
-propagated along the $x$ direction with a uniform
-velocity $a$; so that whatever the value of the
-ordinate $y$ at any particular time $t_0$ at any particular
-point $x_0$, the same value of $y$ will appear at the subsequent
-time $t_1$ at a point further along, the abscissa
-of which is $x_0 + a(t_1 - t_0)$. In this case the simplified
+e isto meramente enuncia que, no tempo $t = 0$, $y$ é
+uma função particular de $x$, e pode ser visto como
+denotando que a curva da relação de $y$ com $x$ tem
+uma forma particular. Então qualquer mudança no
+valor de $t$ é equivalente simplesmente a uma
+alteração na origem a partir da qual $x$ se conta.
+Isto é, indica que, a forma da função sendo
+conservada, ela se propaga ao longo da direção $x$
+com uma velocidade uniforme $a$; de modo que
+qualquer que seja o valor da ordenada $y$ em qualquer
+tempo particular $t_0$ em qualquer ponto particular
+$x_0$, o mesmo valor de $y$ aparecerá no tempo
+subsequente $t_1$ em um ponto mais adiante, cuja
+abscissa é $x_0 + a(t_1 - t_0)$. Neste caso a equação
+simplificada
 
-equation represents the propagation of a wave (of any
-form) at a uniform speed along the $x$ direction.
+representa a propagação de uma onda (de qualquer
+forma) a uma velocidade uniforme ao longo da
+direção $x$.
 
-<p>If the differential equation had been written
+<p>Se a equação diferencial tivesse sido escrita
 \[
 m \frac{d^2y}{dt^2} = k\, \frac{d^2y}{dx^2},
 \]
-the solution would have been the same, but the
-velocity of propagation would have had the value
+a solução teria sido a mesma, mas a velocidade de
+propagação teria tido o valor
 \[
 a = \sqrt{\frac{k}{m}}.
 \]
 
 <p><hr>
 
-<p>You have now been personally conducted over the
-frontiers into the enchanted land. And in order that
-you may have a handy reference to the principal
-results, the author, in bidding you farewell, begs to
-present you with a passport in the shape of a convenient
-<a href="table.html">collection of standard forms</a>.
-In the middle column are set down a number of the
-functions which most commonly occur. The results
-of differentiating them are set down on the left; the
-results of integrating them are set down on the right.
-May you find them useful!
+<p>Você foi agora conduzido pessoalmente pelas
+fronteiras até a terra encantada. E para que tenha
+uma referência prática aos principais resultados, o
+autor, ao despedir-se, pede permissão para
+presenteá-lo com um passaporte na forma de uma
+conveniente <a href="table.html">coleção de formas-padrão</a>.
+Na coluna do meio se puseram várias das funções que
+mais comumente ocorrem. Os resultados de
+diferenciá-las se puseram à esquerda; os resultados
+de integrá-las se puseram à direita. Que você as
+ache úteis!
 
 <br>
-<script type="text/javascript" src="https://payhip.com/payhip.js"></script>
-<h3>Get Complete Step-by-Step Solutions</h3>
-<a href="https://payhip.com/b/2MVru"><img class="cover" src="cover-small.png" width="180px"></a>
-
-<ul>
-    <li>For all exercises in this book.</li>
-    <li>Check your work or get unstuck.</li>
-    <li>Written by CalculusMadeEasy.org</li>
-	<li>Support this website ❤️.</li>
-	<li>229 pages</li>
-    <li><a href="https://payhip.com/b/2MVru">More details</a></li>
-    <br>
-        <a href="https://payhip.com/b/2MVru" class="payhip-buy-button" data-theme="green" data-product="2MVru">Download for $9</a>
-</ul>
+<!-- Soluções comerciais removidas: projeto público e sem fins lucrativos -->
 
 <hr>
-<a href="epilogue.html">Next &rarr;</a><br>
-<a href="/">Main Page &uarr;</a><br>
+<a href="epilogue.html">Próximo &rarr;</a><br>
+<a href="20.html">← Anterior</a><br>
+<a href="index.html">Página principal &uarr;</a><br>
+
+<footer class="site-footer" role="contentinfo">
+  <p class="a rotatedFloralHeartBullet"></p>
+
+  <div class="manifesto">
+    <p class="manifesto-lead">
+      Este é um <strong>projeto público</strong>, sem fins lucrativos.
+      Não é permitido comercializá-lo, vendê-lo nem usá-lo como produto pago.
+    </p>
+    <p class="manifesto-quote">
+      A educação é um direito de todos.
+      O conhecimento deve ser livre sempre que não cause o mal:
+      deve circular, ensinar e libertar, nunca aprisionar quem aprende.
+    </p>
+    <p class="manifesto-sign">
+      - Thales Rodrigues
+    </p>
+  </div>
+
+  <nav class="author-links" aria-label="Redes de Thales Rodrigues">
+    <a href="https://www.linkedin.com/in/thales-oliveira-rodrigues/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    <span class="dot" aria-hidden="true">·</span>
+    <a href="https://github.com/Rodriguestmo" target="_blank" rel="noopener noreferrer">GitHub</a>
+  </nav>
+
+  <p class="footer-meta">
+    <small>
+      Tradução e adaptação PT-BR por Thales Rodrigues.
+      Texto de Silvanus P. Thompson em domínio público (Project Gutenberg).
+      Notas de contexto inspiradas na edição Gardner (1998).
+      Projeto público e gratuito.
+    </small>
+  </p>
+</footer>
 
 <script src="j/jquery.js"></script>
 <script src="j/modernizr.js"></script>
 <script src="j/dih5.js"></script>
+<script src="j/notes-toggle.js"></script>
 <!-- Analytics desativado na edição PT local -->
+</body>
+</html>

@@ -1,6 +1,39 @@
 <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+
 <meta charset="utf-8">
-<title>Successive Differentiation | Calculus Made Easy</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Diferenciação Sucessiva | Cálculo Tornado Fácil - Cap. VII</title>
+<meta name="description" content="Capítulo VII: diferenciação sucessiva e derivadas de ordem superior.">
+<meta name="author" content="Thales Rodrigues; Silvanus P. Thompson">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="googlebot" content="index, follow">
+<meta name="language" content="Portuguese">
+<meta name="keywords" content="cálculo, calculus made easy, Silvanus Thompson, cálculo diferencial, cálculo integral, matemática, educação livre, português, Martin Gardner, Cálculo Tornado Fácil, Thales Rodrigues">
+<link rel="canonical" href="https://rodriguestmo.github.io/calculo-tornado-facil/7.html">
+<link rel="alternate" hreflang="pt-BR" href="https://rodriguestmo.github.io/calculo-tornado-facil/7.html">
+<link rel="alternate" hreflang="x-default" href="https://rodriguestmo.github.io/calculo-tornado-facil/">
+
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Cálculo Tornado Fácil">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Diferenciação Sucessiva | Cálculo Tornado Fácil - Cap. VII">
+<meta property="og:description" content="Capítulo VII: diferenciação sucessiva e derivadas de ordem superior.">
+<meta property="og:url" content="https://rodriguestmo.github.io/calculo-tornado-facil/7.html">
+<meta property="og:image" content="https://rodriguestmo.github.io/calculo-tornado-facil/cover.jpg">
+
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Diferenciação Sucessiva | Cálculo Tornado Fácil - Cap. VII">
+<meta name="twitter:description" content="Capítulo VII: diferenciação sucessiva e derivadas de ordem superior.">
+<meta name="twitter:image" content="https://rodriguestmo.github.io/calculo-tornado-facil/cover.jpg">
+
+
+<meta name="ai-content-declaration" content="human-authored translation and educational adaptation">
+<link rel="describedby" href="https://rodriguestmo.github.io/calculo-tornado-facil/llms.txt">
 <link rel="stylesheet" href="screen.css">
 <style>
 body{counter-reset:h1 7}
@@ -11,70 +44,109 @@ body{counter-reset:h1 7}
 <script type="text/javascript"
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Chapter",
+  "name": "Diferenciação Sucessiva",
+  "position": 7,
+  "isPartOf": {
+    "@type": "Book",
+    "name": "Cálculo Tornado Fácil",
+    "url": "https://rodriguestmo.github.io/calculo-tornado-facil/"
+  },
+  "author": {"@type": "Person", "name": "Silvanus P. Thompson"},
+  "translator": {"@type": "Person", "name": "Thales Rodrigues"},
+  "url": "https://rodriguestmo.github.io/calculo-tornado-facil/7.html",
+  "inLanguage": "pt-BR",
+  "isAccessibleForFree": true
+}
+</script>
+</head>
+<body>
+<!-- Barra fixa: navegação, modo das notas, tema -->
+<div id="site-toolbar" class="site-toolbar" role="region" aria-label="Controles do site">
+  <a class="tb-home" href="index.html">Cálculo Tornado Fácil</a>
 
-<h1><br>Successive Differentiation</h1>
+  <div class="tb-controls">
+    <label class="tb-field" title="Como exibir as notas de Martin Gardner (1998)">
+      <span class="tb-label">Notas</span>
+      <select id="notes-mode" aria-label="Modo de exibição das notas">
+        <option value="all">Sempre visíveis</option>
+        <option value="click">Lupa (clique para abrir)</option>
+        <option value="off">Sempre ocultadas</option>
+      </select>
+    </label>
+
+    <button type="button" id="toggle-theme" class="tb-btn" title="Alternar tema claro/escuro" aria-pressed="false">
+      <span class="theme-label">Tema escuro</span>
+    </button>
+  </div>
+</div>
+
+<h1><br>Diferenciação Sucessiva</h1>
 <p class="a rotatedFloralHeartBullet">
 
-<p>Let us try the effect of repeating several times over
-the operation of differentiating a function (see <a href="3.html#function">here</a>).
-Begin with a concrete case.
+<p>Vamos experimentar o efeito de repetir várias vezes
+a operação de diferenciar uma função (veja <a href="3.html#function">aqui</a>).
+Comece com um caso concreto.
 
-<p>Let $y = x^5$.
+<p>Seja $y = x^5$.
 \begin{alignat*}{3}
-&\text{First differentiation, }  &&5x^4.              &&         \\
-&\text{Second differentiation, } &&5 × 4x^3           &&= 20x^3. \\
-&\text{Third differentiation, }  &&5 × 4 × 3x^2       &&= 60x^2. \\
-&\text{Fourth differentiation, } &&5 × 4 × 3 × 2x     &&= 120x.  \\
-&\text{Fifth differentiation, }  &&5 × 4 × 3 × 2 × 1  &&= 120.   \\
-&\text{Sixth differentiation, }  &&                   &&= 0.
+&\text{Primeira diferenciação, }  &&5x^4.              &&         \\
+&\text{Segunda diferenciação, } &&5 × 4x^3           &&= 20x^3. \\
+&\text{Terceira diferenciação, }  &&5 × 4 × 3x^2       &&= 60x^2. \\
+&\text{Quarta diferenciação, } &&5 × 4 × 3 × 2x     &&= 120x.  \\
+&\text{Quinta diferenciação, }  &&5 × 4 × 3 × 2 × 1  &&= 120.   \\
+&\text{Sexta diferenciação, }  &&                   &&= 0.
 \end{alignat*}
 
-<p>There is a certain notation, with which we are
-already acquainted (see <a href="3.html#notation">here</a>), used by some writers,
-that is very convenient. This is to employ the
-general symbol $f(x)$ for any function of $x$. Here
-the symbol $f( )$ is read as “function of,” without
-saying what particular function is meant. So the
-statement $y=f(x)$ merely tells us that $y$ is a function
-of $x$, it may be $x^2$ or $ax^n$, or $\cos x$ or any other complicated
-function of $x$.
+<p>Há uma certa notação, com a qual já estamos
+familiarizados (veja <a href="3.html#notation">aqui</a>), usada por alguns autores,
+que é muito conveniente. Consiste em empregar o
+símbolo geral $f(x)$ para qualquer função de $x$. Aqui
+o símbolo $f( )$ se lê como “função de,” sem
+dizer qual função particular se quer dizer. Assim a
+afirmação $y=f(x)$ apenas nos diz que $y$ é uma função
+de $x$; pode ser $x^2$ ou $ax^n$, ou $\cos x$ ou qualquer outra
+função complicada de $x$.
 
-<p>The corresponding symbol for the differential coefficient
-is $f'(x)$, which is simpler to write than $\dfrac{dy}{dx}$.
-This is called the “derived function” of $x$.
+<p>O símbolo correspondente para o coeficiente diferencial
+é $f'(x)$, que é mais simples de escrever do que $\dfrac{dy}{dx}$.
+Isso se chama a “função derivada” de $x$.
 
 
-<p>Suppose we differentiate over again, we shall get
-the “second derived function” or second differential
-coefficient, which is denoted by $f''(x)$; and so on.
+<p>Suponha que diferencemos de novo: obteremos
+a “segunda função derivada” ou segunda derivada,
+que se denota por $f''(x)$; e assim por diante.
 
-<p>Now let us generalize.
+<p>Agora vamos generalizar.
 
-<p>Let $y = f(x) = x^n$.
+<p>Seja $y = f(x) = x^n$.
 \begin{align*}
-   \text{First differentiation,}\;      f'(x) &= nx^{n-1}. \\
-   \text{Second differentiation,}\;    f''(x) &= n(n-1)x^{n-2}. \\
-   \text{Third differentiation,}\;    f'''(x) &= n(n-1)(n-2)x^{n-3}. \\
-   \text{Fourth differentiation,}\;  f''''(x) &= n(n-1)(n-2)(n-3)x^{n-4}. \\
+   \text{Primeira diferenciação,}\;      f'(x) &= nx^{n-1}. \\
+   \text{Segunda diferenciação,}\;    f''(x) &= n(n-1)x^{n-2}. \\
+   \text{Terceira diferenciação,}\;    f'''(x) &= n(n-1)(n-2)x^{n-3}. \\
+   \text{Quarta diferenciação,}\;  f''''(x) &= n(n-1)(n-2)(n-3)x^{n-4}. \\
     &\llap{\text{etc.,}} \text{ etc.}
 \end{align*}
 
-<p>But this is not the only way of indicating successive
-differentiations. For,
+<p>Mas esta não é a única maneira de indicar diferenciações
+sucessivas. Pois,
 \begin{align*}
- \text{if the original function be}\;               y &= f(x);  \\
- \text{once differentiating gives}\;    \frac{dy}{dx} &= f'(x); \\
- \text{twice differentiating gives}\;   \frac{d\left(\dfrac{dy}{dx}\right)}{dx} &= f''(x);
+ \text{se a função original for}\;               y &= f(x);  \\
+ \text{diferenciar uma vez dá}\;    \frac{dy}{dx} &= f'(x); \\
+ \text{diferenciar duas vezes dá}\;   \frac{d\left(\dfrac{dy}{dx}\right)}{dx} &= f''(x);
 \end{align*}
-and this is more conveniently written as $\dfrac{d^2y}{(dx)^2}$, or
-more usually $\dfrac{d^2y}{dx^2}$. Similarly, we may write as the
-result of thrice differentiating, $\dfrac{d^3y}{dx^3} = f'''(x)$.
+e isso se escreve de forma mais conveniente como $\dfrac{d^2y}{(dx)^2}$, ou
+mais usualmente $\dfrac{d^2y}{dx^2}$. Da mesma forma, podemos escrever como
+resultado de diferenciar três vezes, $\dfrac{d^3y}{dx^3} = f'''(x)$.
 <hr>
 
 
 <p>
-<p><em>Examples</em>
-Now let us try $y = f(x) = 7x^4 + 3.5x^3 - \frac{1}{2}x^2 + x - 2$.
+<p><em>Exemplos</em>
+Agora vamos tentar $y = f(x) = 7x^4 + 3.5x^3 - \frac{1}{2}x^2 + x - 2$.
 \begin{align*}
 \frac{dy}{dx}     &= f'(x) = 28x^3 + 10.5x^2 - x + 1, \\
 \frac{d^2y}{dx^2} &= f''(x) = 84x^2 + 21x - 1,        \\
@@ -82,7 +154,7 @@ Now let us try $y = f(x) = 7x^4 + 3.5x^3 - \frac{1}{2}x^2 + x - 2$.
 \frac{d^4y}{dx^4} &= f''''(x) = 168,                  \\
 \frac{d^5y}{dx^5} &= f'''''(x) = 0.
 \end{align*}
-In a similar manner if $y = \phi(x) = 3x(x^2 - 4)$,
+De maneira semelhante, se $y = \phi(x) = 3x(x^2 - 4)$,
 \begin{align*}
 \phi'(x)    &= \frac{dy}{dx} = 3\bigl[x × 2x + (x^2 - 4) × 1\bigr] = 3(3x^2 - 4), \\
 \phi''(x)   &= \frac{d^2y}{dx^2} = 3 × 6x = 18x, \\
@@ -92,24 +164,24 @@ In a similar manner if $y = \phi(x) = 3x(x^2 - 4)$,
 
 <p>
 
-<hr><h3>Exercises IV</h3>
+<hr><h3>Exercícios IV</h3>
 
-<p>Find $\dfrac{dy}{dx}$ and $\dfrac{d^2y}{dx^2}$ for the following expressions:
+<p>Encontre $\dfrac{dy}{dx}$ e $\dfrac{d^2y}{dx^2}$ para as seguintes expressões:
 <p>(1) $y = 17x + 12x^2$.
 <p>(2) $y = \dfrac{x^2 + a}{x + a}$.
 <p>(3) $y = 1 + \dfrac{x}{1} + \dfrac{x^2}{1×2} + \dfrac{x^3}{1×2×3} + \dfrac{x^4}{1×2×3×4}$.
-<p>(4) Find the 2nd and 3rd derived functions in
-the Exercises III. (<a href="6.html#examples2">here</a>), No. 1 to No. 7, and in the
-Examples given (<a href="6.html#examples3">here</a>), No. 1 to No. 7.
+<p>(4) Encontre as 2ª e 3ª funções derivadas nos
+Exercícios III. (<a href="6.html#examples2">aqui</a>), nº 1 a nº 7, e nos
+Exemplos dados (<a href="6.html#examples3">aqui</a>), nº 1 a nº 7.
 
-<p><h3 class="answers">Answers</h3>
+<p><h3 class="answers">Respostas</h3>
 <p>(1)  $17 + 24x$;&nbsp;&nbsp; $24$.
 <p>(2)  $\dfrac{x^2 + 2ax - a}{(x + a)^2}$;&nbsp;&nbsp; $\dfrac{2a(a + 1)}{(x + a)^3}$.
 <p>(3)  $1 + x + \dfrac{x^2}{1 × 2} + \dfrac{x^3}{1 × 2 × 3}$;&nbsp;&nbsp; $1 + x + \dfrac{x^2}{1 × 2}$.
 
-<p><em>Exercises III</em>
+<p><em>Exercícios III</em>
 
-<p>(4)  (<em>Exercises III.</em> ):
+<p>(4)  (<em>Exercícios III.</em> ):
 
 <p>(1) (<em>a</em> ) $\dfrac{d^2 y}{dx^2} = \dfrac{d^3 y}{dx^3} = 1 + x + \frac{1}{2}x^2 + \frac{1}{6} x^3 + \ldots$.
    <p>(<em>b</em> ) $2a$, $0$.
@@ -128,7 +200,7 @@ Examples given (<a href="6.html#examples3">here</a>), No. 1 to No. 7.
 <p>(7) $\dfrac{30}{(3x + 2)^3}$,&nbsp;&nbsp; $-\dfrac{270}{(3x + 2)^4}$.
 
 
-<p><em>Examples</em> ):
+<p><em>Exemplos</em> ):
 
 <p>(1) $\dfrac{6a}{b^2} x$,&nbsp;&nbsp; $\dfrac{6a}{b^2}$.
 <p>(2) $\dfrac{3a \sqrt{b}} {2 \sqrt{x}} - \dfrac{6b \sqrt[3]{a}}{x^3}$,&nbsp;&nbsp;
@@ -156,26 +228,51 @@ $\begin{aligned}[t]
 
 
 <br>
-<script type="text/javascript" src="https://payhip.com/payhip.js"></script>
-<h3>Get Complete Step-by-Step Solutions</h3>
-<a href="https://payhip.com/b/2MVru"><img class="cover" src="cover-small.png" width="180px"></a>
-
-<ul>
-    <li>For all exercises in this book.</li>
-    <li>Check your work or get unstuck.</li>
-    <li>Written by CalculusMadeEasy.org</li>
-	<li>Support this website ❤️.</li>
-	<li>229 pages</li>
-    <li><a href="https://payhip.com/b/2MVru">More details</a></li>
-    <br>
-        <a href="https://payhip.com/b/2MVru" class="payhip-buy-button" data-theme="green" data-product="2MVru">Download for $9</a>
-</ul>
+<!-- Soluções comerciais removidas: projeto público e sem fins lucrativos -->
 
 <hr>
-<a href="8.html">Next &rarr;</a><br>
-<a href="/">Main Page &uarr;</a><br>
+<a href="8.html">Próximo &rarr;</a><br>
+<a href="6.html">← Anterior</a><br>
+<a href="index.html">Página principal &uarr;</a><br>
+
+<footer class="site-footer" role="contentinfo">
+  <p class="a rotatedFloralHeartBullet"></p>
+
+  <div class="manifesto">
+    <p class="manifesto-lead">
+      Este é um <strong>projeto público</strong>, sem fins lucrativos.
+      Não é permitido comercializá-lo, vendê-lo nem usá-lo como produto pago.
+    </p>
+    <p class="manifesto-quote">
+      A educação é um direito de todos.
+      O conhecimento deve ser livre sempre que não cause o mal:
+      deve circular, ensinar e libertar, nunca aprisionar quem aprende.
+    </p>
+    <p class="manifesto-sign">
+      - Thales Rodrigues
+    </p>
+  </div>
+
+  <nav class="author-links" aria-label="Redes de Thales Rodrigues">
+    <a href="https://www.linkedin.com/in/thales-oliveira-rodrigues/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    <span class="dot" aria-hidden="true">·</span>
+    <a href="https://github.com/Rodriguestmo" target="_blank" rel="noopener noreferrer">GitHub</a>
+  </nav>
+
+  <p class="footer-meta">
+    <small>
+      Tradução e adaptação PT-BR por Thales Rodrigues.
+      Texto de Silvanus P. Thompson em domínio público (Project Gutenberg).
+      Notas de contexto inspiradas na edição Gardner (1998).
+      Projeto público e gratuito.
+    </small>
+  </p>
+</footer>
 
 <script src="j/jquery.js"></script>
 <script src="j/modernizr.js"></script>
 <script src="j/dih5.js"></script>
+<script src="j/notes-toggle.js"></script>
 <!-- Analytics desativado na edição PT local -->
+</body>
+</html>

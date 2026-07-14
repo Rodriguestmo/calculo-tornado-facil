@@ -1,7 +1,10 @@
 {% raw %}
 <!DOCTYPE html>
-<meta charset="utf-8">
-<title>On true Compound Interest and the Law of Organic Growth | Calculus Made Easy</title>
+<html lang="pt-BR">
+<head>
+{% endraw %}
+{% include "seo_head.html" %}
+{% raw %}
 <link rel="stylesheet" href="screen.css">
 <style>
 body{counter-reset:h1 14}
@@ -12,219 +15,242 @@ body{counter-reset:h1 14}
 <script type="text/javascript"
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
+{% endraw %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Chapter",
+  "name": "Sobre os Verdadeiros Juros Compostos e a Lei do Crescimento Orgânico",
+  "position": 14,
+  "isPartOf": {
+    "@type": "Book",
+    "name": "Cálculo Tornado Fácil",
+    "url": "{{ site_url }}/"
+  },
+  "author": {"@type": "Person", "name": "Silvanus P. Thompson"},
+  "translator": {"@type": "Person", "name": "Thales Rodrigues"},
+  "url": "{{ site_url }}/14.html",
+  "inLanguage": "pt-BR",
+  "isAccessibleForFree": true
+}
+</script>
+</head>
+<body>
+{% include "toolbar.html" %}
+{% raw %}
 
-<h1><br>On true Compound Interest and the Law of Organic Growth</h1>
+<h1><br>Sobre os Verdadeiros Juros Compostos e a Lei do Crescimento Orgânico</h1>
 <p class="a rotatedFloralHeartBullet">
 
 
-<p>Let there be a quantity growing in such a way that
-the increment of its growth, during a given time,
-shall always be proportional to its own magnitude.
-This resembles the process of reckoning interest on
-money at some fixed rate; for the bigger the capital,
-the bigger the amount of interest on it in a given
-time.
+<p>Seja uma quantidade que cresce de tal modo que
+o incremento de seu crescimento, durante um tempo dado,
+seja sempre proporcional à sua própria magnitude.
+Isso se assemelha ao processo de calcular juros sobre
+dinheiro a alguma taxa fixa; pois quanto maior o capital,
+maior a quantia de juros sobre ele em um tempo
+dado.
 
-<p>Now we must distinguish clearly between two
-cases, in our calculation, according as the calculation
-is made by what the arithmetic books call “simple
-interest,” or by what they call “compound interest.”
-For in the former case the capital remains fixed,
-while in the latter the interest is added to the capital,
-which therefore increases by successive additions.
+<p>Ora, devemos distinguir claramente entre dois
+casos, em nosso cálculo, conforme o cálculo
+seja feito pelo que os livros de aritmética chamam “juros
+simples,” ou pelo que chamam “juros compostos.”
+Pois no primeiro caso o capital permanece fixo,
+enquanto no segundo os juros são acrescentados ao capital,
+que portanto aumenta por acréscimos sucessivos.
 
-<p><em> At simple interest</em>. Consider a concrete case.
-Let the capital at start be £$100$, and let the rate
-of interest be $10$ per cent. per annum. Then the
-increment to the owner of the capital will be £$10$
-every year. Let him go on drawing his interest
-every year, and hoard it by putting it by in a
+<p><em> A juros simples</em>. Considere um caso concreto.
+Seja o capital no início £$100$, e seja a taxa
+de juros $10$ por cento ao ano. Então o
+incremento para o dono do capital será £$10$
+a cada ano. Que ele continue sacando seus juros
+todo ano, e os entesoure pondo-os de lado em uma
 
-stocking, or locking it up in his safe. Then, if he
-goes on for $10$ years, by the end of that time he will
-have received $10$ increments of £$10$ each, or £$100$,
-making, with the original £$100$, a total of £$200$ in all.
-His property will have doubled itself in $10$ years.
-If the rate of interest had been $5$ per cent., he would
-have had to hoard for $20$ years to double his property.
-If it had been only $2$ per cent., he would have had
-to hoard for $50$ years. It is easy to see that if the
-value of the yearly interest is $\dfrac{1}{n}$ of the capital, he
-must go on hoarding for $n$ years in order to double
-his property.
+meia, ou trancando-os em seu cofre. Então, se ele
+continuar por $10$ anos, ao fim desse tempo terá
+recebido $10$ incrementos de £$10$ cada, ou £$100$,
+fazendo, com as £$100$ originais, um total de £$200$ no todo.
+Sua propriedade terá se dobrado em $10$ anos.
+Se a taxa de juros tivesse sido $5$ por cento, ele teria
+tido de entesourar por $20$ anos para dobrar sua propriedade.
+Se tivesse sido apenas $2$ por cento, teria
+tido de entesourar por $50$ anos. É fácil ver que se o
+valor dos juros anuais for $\dfrac{1}{n}$ do capital, ele
+deve continuar entesourando por $n$ anos para dobrar
+sua propriedade.
 
-<p>Or, if $y$ be the original capital, and the yearly
-interest is $\dfrac{y}{n}$, then, at the end of $n$ years, his property
-will be
+<p>Ou, se $y$ for o capital original, e os juros anuais
+forem $\dfrac{y}{n}$, então, ao fim de $n$ anos, sua propriedade
+será
 \[
 y + n\dfrac{y}{n} = 2y.
 \]
 
 <p>
-<em>(2) At compound interest.</em> As before, let the owner
+<em>(2) A juros compostos.</em> Como antes, que o dono
 <a name="erratum0"/>
-begin with a capital of £$100$, earning interest at the
-rate of $10$ per cent. per annum; but, instead of
-hoarding the interest, let it be added to the capital
-each year, so that the capital grows year by year.
-Then, at the end of one year, the capital will have
-grown to £$110$; and in the second year (still at $10$%)
-this will earn £$11$ interest. He will start the third
-year with £$121$, and the interest on that will be
-£$12$. $2$<em>s</em> .; so that he starts the fourth year with
-£$133$. $2$<em>s</em> ., and so on. It is easy to work it out, and
-find that at the end of the ten years the total capital
+comece com um capital de £$100$, rendendo juros à
+taxa de $10$ por cento ao ano; mas, em vez de
+entesourar os juros, que eles sejam acrescentados ao capital
+a cada ano, de modo que o capital cresça ano a ano.
+Então, ao fim de um ano, o capital terá
+crescido a £$110$; e no segundo ano (ainda a $10$%)
+isto renderá £$11$ de juros. Ele começará o terceiro
+ano com £$121$, e os juros sobre isso serão
+£$12$. $2$<em>s</em> .; de modo que ele começa o quarto ano com
+£$133$. $2$<em>s</em> ., e assim por diante. É fácil calcular, e
+achar que ao fim dos dez anos o capital total
 
-will have grown to £$259$. $7$<em>s</em> . $6$<em>d</em> . In fact, we see that
-at the end of each year, each pound will have earned
-$\tfrac{1}{10}$ of a pound, and therefore, if this is always added
-on, each year multiplies the capital by $\tfrac{11}{10}$; and if
-continued for ten years (which will multiply by this
-factor ten times over) will multiply the original
-capital by $2.59374$. Let us put this into symbols.
-Put $y_0$ for the original capital; $\dfrac{1}{n}$ for the fraction
-added on at each of the $n$ operations; and $y_n$ for the
-value of the capital at the end of the $n$th operation.
-Then
+terá crescido a £$259$. $7$<em>s</em> . $6$<em>d</em> . De fato, vemos que
+ao fim de cada ano, cada libra terá rendido
+$\tfrac{1}{10}$ de uma libra, e portanto, se isto for sempre acrescentado,
+cada ano multiplica o capital por $\tfrac{11}{10}$; e se
+continuar por dez anos (o que multiplicará por este
+fator dez vezes seguidas) multiplicará o capital original
+por $2.59374$. Ponhamos isto em símbolos.
+Ponha $y_0$ para o capital original; $\dfrac{1}{n}$ para a fração
+acrescentada em cada uma das $n$ operações; e $y_n$ para o
+valor do capital ao fim da $n$-ésima operação.
+Então
 \[
 y_n = y_0\left(1 + \frac{1}{n}\right)^n.
 \]
 
-<p>But this mode of reckoning compound interest once
-a year, is really not quite fair; for even during the
-first year the £$100$ ought to have been growing. At
-the end of half a year it ought to have been at least £$105$,
-and it certainly would have been fairer had
-the interest for the second half of the year been
-calculated on £$105$. This would be equivalent to
-calling it $5$% per half-year; with $20$ operations, therefore,
-at each of which the capital is multiplied by $\tfrac{21}{20}$.
-If reckoned this way, by the end of ten years the
-capital would have grown to
-£$265$. $6$<em>s</em> . $7$<em>d</em>.; for
+<p>Mas este modo de calcular juros compostos uma vez
+por ano não é realmente de todo justo; pois mesmo durante o
+primeiro ano as £$100$ deveriam ter estado crescendo. Ao
+fim de meio ano deveria ter sido ao menos £$105$,
+e certamente teria sido mais justo se
+os juros da segunda metade do ano tivessem sido
+calculados sobre £$105$. Isto seria equivalente a
+chamar de $5$% por semestre; com $20$ operações, portanto,
+em cada uma das quais o capital é multiplicado por $\tfrac{21}{20}$.
+Se calculado deste modo, ao fim de dez anos o
+capital teria crescido a
+£$265$. $6$<em>s</em> . $7$<em>d</em>.; pois
 \[
 (1 + \tfrac{1}{20})^{20} = 2.653.
 \]
 
-<p>But, even so, the process is still not quite fair; for,
-by the end of the first month, there will be some
-interest earned; and a half-yearly reckoning assumes
-that the capital remains stationary for six months at
+<p>Mas, mesmo assim, o processo ainda não é de todo justo; pois,
+ao fim do primeiro mês, haverá algum
+juros ganho; e um cálculo semestral supõe
+que o capital permanece estacionário por seis meses de
 
-a time. Suppose we divided the year into $10$ parts,
-and reckon a one-per-cent. interest for each tenth of
-the year. We now have $100$ operations lasting over
-the ten years; or
+cada vez. Suponha que dividíssemos o ano em $10$ partes,
+e calculássemos um juro de um por cento para cada décimo do
+ano. Agora temos $100$ operações estendendo-se por
+os dez anos; ou
 \[
 y_n = £100 \left( 1 + \tfrac{1}{100} \right)^{100};
 \]
-which works out to
+que resulta em
 £$270$. $9$<em>s</em> . $7\frac{1}{2}$<em>d</em>.
 
-<p>Even this is not final. Let the ten years be divided
-into $1000$ periods, each of $\frac{1}{100}$ of a year; the interest
-being $\frac{1}{10}$ per cent. for each such period; then
+<p>Mesmo isto não é final. Que os dez anos sejam divididos
+em $1000$ períodos, cada um de $\frac{1}{100}$ de um ano; os juros
+sendo $\frac{1}{10}$ por cento para cada tal período; então
 \[
 y_n = £100 \left( 1 + \tfrac{1}{1000} \right)^{1000};
 \]
-which works out to
+que resulta em
 £$271$. $13$<em>s</em> . $10$<em>d</em> .
 
-<p>Go even more minutely, and divide the ten years
-into $10,000$ parts, each $\frac{1}{1000}$ of a year, with interest
-at $\frac{1}{100}$ of $1$ per cent. Then
+<p>Vá ainda mais minuciosamente, e divida os dez anos
+em $10{,}000$ partes, cada uma $\frac{1}{1000}$ de um ano, com juros
+a $\frac{1}{100}$ de $1$ por cento. Então
 \[
 y_n = £100 \left( 1 + \tfrac{1}{10,000} \right)^{10,000}
 \]
-which amounts to
+que monta a
 £$271$. $16$<em>s</em> . $3\frac{1}{2}$<em>d</em>.
 
-<p>Finally, it will be seen that what we are trying to
-find is in reality the ultimate value of the expression
-$\left(1 + \dfrac{1}{n}\right)^n$, which, as we see, is greater than $2$; and
-which, as we take $n$ larger and larger, grows closer
-and closer to a particular limiting value. However
-big you make $n$, the value of this expression grows
-nearer and nearer to the figure
+<p>Finalmente, ver-se-á que o que estamos tentando
+achar é na realidade o valor último da expressão
+$\left(1 + \dfrac{1}{n}\right)^n$, que, como vemos, é maior que $2$; e
+que, à medida que tomamos $n$ cada vez maior, cresce mais perto
+e mais perto de um valor limite particular. Por maior
+que você faça $n$, o valor desta expressão cresce
+mais perto e mais perto da figura
 \[
 2.71828\ldots
 \]
-a number <em>never to be forgotten</em>.
+um número <em>nunca a ser esquecido</em>.
 
-<p>Let us take geometrical illustrations of these things.
-In <a href="#figure36">Figure 36</a>, $OP$ stands for the original value. $OT$ is
-the whole time during which the value is growing.
-It is divided into $10$ periods, in each of which there is
-an equal step up. Here $\dfrac{dy}{dx}$ is a constant; and if each
-step up is $\frac{1}{10}$ of the original $OP$, then, by $10$ such
-steps, the height is doubled. If we had taken $20$ steps,
-each of half the height shown, at the end the height
-would still be just doubled. Or $n$ such steps, each
-of $\dfrac{1}{n}$ of the original height $OP$, would suffice to
-double the height. This is the case of simple interest.
-Here is $1$ growing till it becomes $2$.
+<p>Tomemos ilustrações geométricas destas coisas.
+Na <a href="#figure36">Figura 36</a>, $OP$ representa o valor original. $OT$ é
+o tempo todo durante o qual o valor está crescendo.
+É dividido em $10$ períodos, em cada um dos quais há
+um degrau igual para cima. Aqui $\dfrac{dy}{dx}$ é uma constante; e se cada
+degrau para cima for $\frac{1}{10}$ do $OP$ original, então, por $10$ tais
+degraus, a altura é dobrada. Se tivéssemos tomado $20$ degraus,
+cada um da metade da altura mostrada, no fim a altura
+ainda seria exatamente dobrada. Ou $n$ tais degraus, cada
+um de $\dfrac{1}{n}$ da altura original $OP$, bastariam para
+dobrar a altura. Este é o caso de juros simples.
+Aqui está $1$ crescendo até se tornar $2$.
 <a name="figure36">
 <p><img src="33283-t/images/150a.pdf.png-1.png">
-<p>In <a href="#figure37">Figure 37</a>, we have the corresponding illustration of
-the geometrical progression. Each of the successive
-ordinates is to be $1 + \dfrac{1}{n}$, that is, $\dfrac{n+1}{n}$ times as high as
-its predecessor. The steps up are not equal, because
-each step up is now $\dfrac{1}{n}$ of the ordinate <em>at that part</em> of
-the curve. If we had literally $10$ steps, with $\left(1 + \frac{1}{10} \right)$
-for the multiplying factor, the final total would be
+<p>Na <a href="#figure37">Figura 37</a>, temos a ilustração correspondente da
+progressão geométrica. Cada uma das ordenadas sucessivas
+deve ser $1 + \dfrac{1}{n}$, isto é, $\dfrac{n+1}{n}$ vezes tão alta quanto
+sua predecessora. Os degraus para cima não são iguais, porque
+cada degrau para cima é agora $\dfrac{1}{n}$ da ordenada <em>naquela parte</em> da
+curva. Se tivéssemos literalmente $10$ degraus, com $\left(1 + \frac{1}{10} \right)$
+como fator multiplicador, o total final seria
 
-$(1 + \tfrac{1}{10})^{10}$ or $2.594$ times the original $1$. But if only
-we take $n$ sufficiently large (and the corresponding
-$\dfrac{1}{n}$ sufficiently small), then the final value $\left(1 + \dfrac{1}{n}\right)^n$ to
+$(1 + \tfrac{1}{10})^{10}$ ou $2.594$ vezes o $1$ original. Mas se apenas
+tomarmos $n$ suficientemente grande (e o correspondente
+$\dfrac{1}{n}$ suficientemente pequeno), então o valor final $\left(1 + \dfrac{1}{n}\right)^n$ a
 
-which unity will grow will be $2.71828$.
+que a unidade crescerá será $2.71828$.
 
 <a name="figure37">
 <p><img src="33283-t/images/151a.pdf.png-1.png">
 
-<p><em>Epsilon.</em> To this mysterious number $2.7182818$
-etc., the mathematicians have assigned as a symbol
-the Greek letter $\epsilon$ (pronounced <em>epsilon</em>). All schoolboys
-know that the Greek letter $\pi$ (called <em>pi</em>) stands
-for $3.141592$ etc.; but how many of them know that
-<em>epsilon</em> means $2.71828$? Yet it is an even more
-important number than $\pi$!
+<p><em>Épsilon.</em> A este número misterioso $2.7182818$
+etc., os matemáticos atribuíram como símbolo
+a letra grega $\epsilon$ (pronunciada <em>épsilon</em>). Todos os escolares
+sabem que a letra grega $\pi$ (chamada <em>pi</em>) representa
+$3.141592$ etc.; mas quantos deles sabem que
+<em>épsilon</em> significa $2.71828$? E no entanto é um número ainda mais
+importante que $\pi$!
 
-<p>What, then, is <em>epsilon</em>?
+<p>O que é, então, <em>épsilon</em>?
 
-<p>Suppose we were to let $1$ grow at simple interest
-till it became $2$; then, if at the same nominal rate of
-interest, and for the same time, we were to let $1$ grow
-at true compound interest, instead of simple, it would
-grow to the value <em>epsilon</em>.
+<p>Suponha que deixássemos $1$ crescer a juros simples
+até se tornar $2$; então, se à mesma taxa nominal de
+juros, e pelo mesmo tempo, deixássemos $1$ crescer
+a verdadeiros juros compostos, em vez de simples, ele
+cresceria ao valor <em>épsilon</em>.
 
-<p>This process of growing proportionately, at every
-instant, to the magnitude at that instant, some people
+<p>Este processo de crescer proporcionalmente, a cada
+instante, à magnitude naquele instante, algumas pessoas
 
-call <em>a logarithmic rate</em> of growing. Unit logarithmic
-rate of growth is that rate which in unit time will
-cause $1$ to grow to $2.718281$. It might also be
-called the <em>organic rate</em> of growing: because it is
-characteristic of organic growth (in certain circumstances)
-that the increment of the organism in a
-given time is proportional to the magnitude of the
-organism itself.
+chamam de <em>uma taxa logarítmica</em> de crescimento. Taxa logarítmica
+unitária de crescimento é aquela taxa que em tempo unitário fará
+$1$ crescer a $2.718281$. Também poderia ser
+chamada a <em>taxa orgânica</em> de crescimento: porque é
+característica do crescimento orgânico (em certas circunstâncias)
+que o incremento do organismo em um
+tempo dado seja proporcional à magnitude do
+próprio organismo.
 
-<p>If we take $100$ per cent. as the unit of rate,
-and any fixed period as the unit of time, then the
-result of letting $1$ grow <em>arithmetically</em> at unit rate,
-for unit time, will be $2$, while the result of letting $1$
-grow <em>logarithmically</em> at unit rate, for the same time,
-will be $2.71828\ldots$,.
+<p>Se tomarmos $100$ por cento como a unidade de taxa,
+e qualquer período fixo como a unidade de tempo, então o
+resultado de deixar $1$ crescer <em>aritmeticamente</em> à taxa unitária,
+por tempo unitário, será $2$, enquanto o resultado de deixar $1$
+crescer <em>logaritmicamente</em> à taxa unitária, pelo mesmo tempo,
+será $2.71828\ldots$,.
 
-<p><em>A little more about Epsilon.</em> We have seen that
+<p><em>Um pouco mais sobre Épsilon.</em> Vimos que
 
-we require to know what value is reached by the
-expression $\left(1 + \dfrac{1}{n}\right)^n$, when $n$ becomes indefinitely
-great. Arithmetically, here are tabulated a lot of
-values (which anybody can calculate out by the help
-of an ordinary table of logarithms) got by assuming
-$n = 2$; $n = 5$; $n = 10$; and so on, up to $n = 10,000$.
+precisamos saber que valor é atingido pela
+expressão $\left(1 + \dfrac{1}{n}\right)^n$, quando $n$ se torna indefinidamente
+grande. Aritmeticamente, aqui estão tabulados muitos
+valores (que qualquer um pode calcular com a ajuda
+de uma tabela ordinária de logaritmos) obtidos ao assumir
+$n = 2$; $n = 5$; $n = 10$; e assim por diante, até $n = 10{,}000$.
 \begin{alignat*}{2}
 &(1 + \tfrac{1}{2})^2             &&= 2.25.    \\
 &(1 + \tfrac{1}{5})^5             &&= 2.488.   \\
@@ -236,20 +262,20 @@ $n = 2$; $n = 5$; $n = 10$; and so on, up to $n = 10,000$.
 \end{alignat*}
 
 
-<p>It is, however, worth while to find another way of
-calculating this immensely important figure.
+<p>Vale a pena, contudo, achar outro modo de
+calcular esta figura imensamente importante.
 
-<p>Accordingly, we will avail ourselves of the binomial
-theorem, and expand the expression $\left(1 + \dfrac{1}{n}\right)^n$ in that
-well-known way.
+<p>Consequentemente, lançaremos mão do teorema
+binomial, e expandiremos a expressão $\left(1 + \dfrac{1}{n}\right)^n$ daquele
+modo bem conhecido.
 
-<p>The binomial theorem<a name="binomtheo"/> gives the rule that
+<p>O teorema binomial<a name="binomtheo"/> dá a regra de que
 \begin{align*}
 (a + b)^n &= a^n + n \dfrac{a^{n-1} b}{1!} + n(n - 1) \dfrac{a^{n-2} b^2}{2!} \\
   & \phantom{= a^n\ } + n(n -1)(n - 2) \dfrac{a^{n-3} b^3}{3!} + \text{etc}. \\
 
 \end{align*}
-Putting $a = 1$ and $b = \dfrac{1}{n}$, we get
+Pondo $a = 1$ e $b = \dfrac{1}{n}$, obtemos
 \begin{align*}
 
 \left(1 + \dfrac{1}{n}\right)^n
@@ -257,41 +283,41 @@ Putting $a = 1$ and $b = \dfrac{1}{n}$, we get
   &\phantom{= 1 + 1\ } + \dfrac{1}{4!} \dfrac{(n - 1)(n - 2)(n - 3)}{n^3} + \text{etc}.
 \end{align*}
 
-<p>Now, if we suppose $n$ to become indefinitely great,
-say a billion, or a billion billions, then $n - 1$, $n - 2$,
-and $n - 3$, etc., will all be sensibly equal to $n$; and
-then the series becomes
+<p>Ora, se supusermos $n$ se tornar indefinidamente grande,
+digamos um bilhão, ou um bilhão de bilhões, então $n - 1$, $n - 2$,
+e $n - 3$, etc., serão todos sensivelmente iguais a $n$; e
+então a série se torna
 \[
 \epsilon = 1 + 1 + \dfrac{1}{2!} + \dfrac{1}{3!} + \dfrac{1}{4!} + \text{etc}.\ldots
 \]
 
-<p>By taking this rapidly convergent series to as
-many terms as we please, we can work out the sum to
-any desired point of accuracy. Here is the working
-for ten terms:
+<p>Tomando esta série rapidamente convergente até quantos
+termos quisermos, podemos calcular a soma até
+qualquer ponto desejado de precisão. Aqui está o cálculo
+para dez termos:
 <table>
 <tr><td>        </td><td>$1.000000$</td></tr>
-<tr><td>dividing by 1 </td><td>$1.000000$</td></tr>
-<tr><td>dividing by 2 </td><td>$0.500000$</td></tr>
-<tr><td>dividing by 3 </td><td>$0.166667$</td></tr>
-<tr><td>dividing by 4 </td><td>$0.041667$</td></tr>
-<tr><td>dividing by 5 </td><td>$0.008333$</td></tr>
-<tr><td>dividing by 6 </td><td>$0.001389$</td></tr>
-<tr><td>dividing by 7 </td><td>$0.000198$</td></tr>
-<tr><td>dividing by 8 </td><td>$0.000025$</td></tr>
-<tr><td>dividing by 9 </td><td><u>$0.000002$</u></td></tr>
+<tr><td>dividindo por 1 </td><td>$1.000000$</td></tr>
+<tr><td>dividindo por 2 </td><td>$0.500000$</td></tr>
+<tr><td>dividindo por 3 </td><td>$0.166667$</td></tr>
+<tr><td>dividindo por 4 </td><td>$0.041667$</td></tr>
+<tr><td>dividindo por 5 </td><td>$0.008333$</td></tr>
+<tr><td>dividindo por 6 </td><td>$0.001389$</td></tr>
+<tr><td>dividindo por 7 </td><td>$0.000198$</td></tr>
+<tr><td>dividindo por 8 </td><td>$0.000025$</td></tr>
+<tr><td>dividindo por 9 </td><td><u>$0.000002$</u></td></tr>
 <tr><td>Total       </td><td><u>$2.718281$</u></td></tr>
 </table>
 
-<p>$\epsilon$ is incommensurable with $1$, and resembles $\pi$ in
-being an interminable non-recurrent decimal.
+<p>$\epsilon$ é incomensurável com $1$, e se assemelha a $\pi$ por
+ser um decimal interminável não-recorrente.
 
-<p><em>The Exponential Series.</em> We shall have need of yet
-another series.
+<p><em>A Série Exponencial.</em> Precisaremos de ainda
+outra série.
 
-<p>Let us, again making use of the binomial theorem,
-expand the expression $\left(1 + \dfrac{1}{n}\right)^{nx}$, which is the same
-as $\epsilon^x$ when we make $n$ indefinitely great.
+<p>Deixemos, de novo fazendo uso do teorema binomial,
+expandir a expressão $\left(1 + \dfrac{1}{n}\right)^{nx}$, que é a mesma
+que $\epsilon^x$ quando fazemos $n$ indefinidamente grande.
 \begin{align*}
 \epsilon^x
   &= 1^{nx} + nx \frac{1^{nx-1} \left(\dfrac{1}{n}\right)}{1!}
@@ -306,116 +332,116 @@ as $\epsilon^x$ when we make $n$ indefinitely great.
     + \frac{x^3 - \dfrac{3x^2}{n} + \dfrac{2x}{n^2}}{3!} + \text{etc}.
 \end{align*}
 
-<p>But, when $n$ is made indefinitely great, this simplifies down to the following:
+<p>Mas, quando $n$ é feito indefinidamente grande, isto se simplifica até o seguinte:
 \[
 \epsilon^x
   = 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \frac{x^4}{4!} + \text{etc.}\dots
 \]
 
-<p>This series is called <em>the exponential series</em>.
+<p>Esta série é chamada <em>a série exponencial</em>.
 
-<p>The great reason why $\epsilon$ is regarded of importance
-is that $\epsilon^x$ possesses a property, not possessed by any
-other function of $x$, that <em>when you differentiate it
-its value remains unchanged</em><a name="unchanged"/>; or, in other words, its
-differential coefficient is the same as itself. This can
-be instantly seen by differentiating it with respect
-to $x$, thus:
+<p>A grande razão pela qual $\epsilon$ é considerado de importância
+é que $\epsilon^x$ possui uma propriedade, não possuída por qualquer
+outra função de $x$, de que <em>quando você a diferencia
+seu valor permanece inalterado</em><a name="unchanged"/>; ou, em outras palavras, seu
+coeficiente diferencial é o mesmo que ela mesma. Isto pode
+ser visto instantaneamente diferenciando-a em relação
+a $x$, assim:
 \begin{align*}
 \frac{d(\epsilon^x)}{dx}
   &= 0 + 1 + \frac{2x}{1 · 2} + \frac{3x^2}{1 · 2 · 3} + \frac{4x^3}{1 · 2 · 3 · 4} \\
 &\phantom{= 0 + 1 + \frac{2x}{1 · 2} + \frac{3x^2}{1 · 2 · 3}\ } + \frac{5x^4}{1 · 2 · 3 · 4 · 5} + \text{etc}.  \\
- or
+ ou
   &= 1 + x + \frac{x^2}{1 · 2} + \frac{x^3}{1 · 2 · 3} + \frac{x^4}{1 · 2 · 3 · 4} + \text{etc}.,
 \end{align*}
-which is exactly the same as the original series.
+que é exatamente a mesma que a série original.
 
-<p>Now we might have gone to work the other way,
-and said: Go to; let us find a function of $x$, such
-that its differential coefficient is the same as itself.
-Or, is there any expression, involving only powers
+<p>Ora, poderíamos ter trabalhado do outro modo,
+e dito: Vamos lá; encontremos uma função de $x$, tal
+que seu coeficiente diferencial seja o mesmo que ela mesma.
+Ou, há alguma expressão, envolvendo apenas potências
 
-of $x$, which is unchanged by differentiation? Accordingly;
-let us <em>assume</em> as a general expression that
+de $x$, que permanece inalterada pela diferenciação? Consequentemente;
+<em>assumamos</em> como expressão geral que
 \begin{align*}
 y &= A + Bx + Cx^2 + Dx^3 + Ex^4 + \text{etc}.,\\
 \end{align*}
 
-(in which the coefficients $A$, $B$, $C$, etc. will have to be
-determined), and differentiate it.
+(em que os coeficientes $A$, $B$, $C$, etc. terão de ser
+determinados), e diferenciemos-na.
 \begin{align*}
 
 \dfrac{dy}{dx} &= B + 2Cx + 3Dx^2 + 4Ex^3 + \text{etc}.
 \end{align*}
 
-<p>Now, if this new expression is really to be the same
-as that from which it was derived, it is clear that
-$A$ <em>must</em> $=B$; that $C=\dfrac{B}{2}=\dfrac{A}{1· 2}$; that $D = \dfrac{C}{3} = \dfrac{A}{1 · 2 · 3}$;
-that $E = \dfrac{D}{4} = \dfrac{A}{1 · 2 · 3 · 4}$, etc.
+<p>Ora, se esta nova expressão for realmente a mesma
+da qual foi derivada, é claro que
+$A$ <em>deve</em> $=B$; que $C=\dfrac{B}{2}=\dfrac{A}{1· 2}$; que $D = \dfrac{C}{3} = \dfrac{A}{1 · 2 · 3}$;
+que $E = \dfrac{D}{4} = \dfrac{A}{1 · 2 · 3 · 4}$, etc.
 
-<p>The law of change is therefore that
+<p>A lei de mudança é portanto que
 \[
 y = A\left(1 + \dfrac{x}{1} + \dfrac{x^2}{1 · 2} + \dfrac{x^3}{1 · 2 · 3} + \dfrac{x^4}{1 · 2 · 3 · 4} + \text{etc}.\right).
 \]
 
-<p>If, now, we take $A = 1$ for the sake of further
-simplicity, we have
+<p>Se, agora, tomarmos $A = 1$ por simplicidade
+adicional, temos
 \[
 y = 1 + \dfrac{x}{1} + \dfrac{x^2}{1 · 2} + \dfrac{x^3}{1 · 2 · 3} + \dfrac{x^4}{1 · 2 · 3 · 4} + \text{etc}.
 \]
 
-<p>Differentiating it any number of times will give
-always the same series over again.
+<p>Diferenciá-la qualquer número de vezes dará
+sempre a mesma série de novo.
 
-<p>If, now, we take the particular case of $A=1$, and
-evaluate the series, we shall get simply
+<p>Se, agora, tomarmos o caso particular de $A=1$, e
+avaliarmos a série, obteremos simplesmente
 \begin{align*}
-\text{when } x &= 1,\quad & y &= 2.718281 \text{ etc.};    & \text{that is, } y &= \epsilon;   \\
-\text{when } x &= 2,\quad & y &=(2.718281 \text{ etc.})^2; & \text{that is, } y &= \epsilon^2; \\
-\text{when } x &= 3,\quad & y &=(2.718281 \text{ etc.})^3; & \text{that is, } y &= \epsilon^3;
+\text{quando } x &= 1,\quad & y &= 2.718281 \text{ etc.};    & \text{isto é, } y &= \epsilon;   \\
+\text{quando } x &= 2,\quad & y &=(2.718281 \text{ etc.})^2; & \text{isto é, } y &= \epsilon^2; \\
+\text{quando } x &= 3,\quad & y &=(2.718281 \text{ etc.})^3; & \text{isto é, } y &= \epsilon^3;
 \end{align*}
 
-and therefore
+e portanto
 \[
-\text{when } x=x,\quad y=(2.718281 \text{ etc}.)^x;\quad\text{that is, } y=\epsilon^x,
+\text{quando } x=x,\quad y=(2.718281 \text{ etc}.)^x;\quad\text{isto é, } y=\epsilon^x,
 \]
-thus finally demonstrating that
+demonstrando finalmente que
 \[
 \epsilon^x = 1 + \dfrac{x}{1} + \dfrac{x^2}{1·2} + \dfrac{x^3}{1· 2· 3} + \dfrac{x^4}{1· 2· 3· 4} + \text{etc}.
 \]
 
-<p>[Note.–<em>How to read exponentials</em> . For the benefit
-of those who have no tutor at hand it may be of use
-to state that $\epsilon^x$ is read as “<em>epsilon to the eksth power</em>;”
-or some people read it “<em>exponential eks</em>.” So $\epsilon^{pt}$ is
-read “<em>epsilon to the pee-teeth-power</em>” or “<em>exponential
-pee tee</em>.” Take some similar expressions:–Thus, $\epsilon^{-2}$ is
-read “<em>epsilon to the minus two power</em>” or “<em>exponential
-minus two</em>.” $\epsilon^{-ax}$ is read “<em>epsilon to the minus
-ay-eksth</em>” or “<em>exponential minus ay-eks</em>.”]
+<p>[Nota. - <em>Como ler exponenciais</em> . Para benefício
+daqueles que não têm tutor à mão pode ser útil
+declarar que $\epsilon^x$ se lê como “<em>épsilon à potência ics</em>;”
+ou algumas pessoas leem “<em>exponencial ics</em>.” Assim $\epsilon^{pt}$ se
+lê “<em>épsilon à potência pê-tê</em>” ou “<em>exponencial
+pê tê</em>.” Tome algumas expressões semelhantes: - Assim, $\epsilon^{-2}$ se
+lê “<em>épsilon à potência menos dois</em>” ou “<em>exponencial
+menos dois</em>.” $\epsilon^{-ax}$ se lê “<em>épsilon à menos
+á-ics</em>” ou “<em>exponencial menos á-ics</em>.”]
 
-<p>Of course it follows that $\epsilon^y$ remains unchanged if
-differentiated with respect to $y$. Also $\epsilon^{ax}$, which is
-equal to $(\epsilon^a)^x$, will, when differentiated with respect
-to $x$, be $a\epsilon^{ax}$, because $a$ is a constant.
+<p>É claro que se segue que $\epsilon^y$ permanece inalterado se
+diferenciado em relação a $y$. Também $\epsilon^{ax}$, que é
+igual a $(\epsilon^a)^x$, será, quando diferenciado em relação
+a $x$, $a\epsilon^{ax}$, porque $a$ é uma constante.
 
 <p>
-<em>Natural or Naperian Logarithms.</em><p>
-Another reason why $\epsilon$ is important is because it
-was made by Napier, the inventor of logarithms, the
-basis of his system. If $y$ is the value of $\epsilon^x$, then $x$
-is the <em>logarithm</em>, to the base $\epsilon$, of $y$. Or, if
+<em>Logaritmos Naturais ou Naperianos.</em><p>
+Outra razão pela qual $\epsilon$ é importante é porque ele
+foi feito por Napier, o inventor dos logaritmos, a
+base de seu sistema. Se $y$ é o valor de $\epsilon^x$, então $x$
+é o <em>logaritmo</em>, na base $\epsilon$, de $y$. Ou, se
 \begin{align*}
                   y &= \epsilon^x, \\
- \text{then}\;  x &= \log_\epsilon y.
+ \text{então}\;  x &= \log_\epsilon y.
 \end{align*}
 
-<p>The two curves plotted in <a href="#figure38">Fig. 38</a> and <a href="#figure39">Fig. 39</a> represent
-these equations.
+<p>As duas curvas plotadas na <a href="#figure38">Fig. 38</a> e <a href="#figure39">Fig. 39</a> representam
+estas equações.
 
 
-<p>The points calculated are:
-<p>For Fig. 38:
+<p>Os pontos calculados são:
+<p>Para a Fig. 38:
 <table>
 <tr><td>$x$</td><td>$0$</td><td>$0.5$</td><td>$1$</td><td>$1.5$</td><td>$2$</td></tr>
 <tr><td>$y$</td><td>$1$</td><td>$1.65$</td><td>$2.71$</td><td>$4.50$</td><td>$7.39$</td></tr>
@@ -424,7 +450,7 @@ these equations.
 <a name="figure38">
 <p><img src="33283-t/images/158b.pdf.png-1.png">
 
-<p>For Fig. 39:
+<p>Para a Fig. 39:
 <table>
 <tr><td>$y$</td><td>$1$</td><td>$2$</td><td>$3$</td><td>$4$</td><td>$8$</td></tr>
 <tr><td>$x$</td><td>$0$</td><td>$0.69$</td><td>$1.10$</td><td>$1.39$</td><td>$2.08$</td></tr>
@@ -433,46 +459,46 @@ these equations.
 <a name="figure39">
 <p><img src="33283-t/images/158a.pdf.png-1.png">
 
-<p>It will be seen that, though the calculations yield
-different points for plotting, yet the result is identical.
-The two equations really mean the same thing.
+<p>Ver-se-á que, embora os cálculos deem
+pontos diferentes para plotar, o resultado é idêntico.
+As duas equações realmente significam a mesma coisa.
 
-<p>As many persons who use ordinary logarithms,
-which are calculated to base $10$ instead of base $\epsilon$, are
-unfamiliar with the “natural” logarithms, it may be
-worth while to say a word about them. The ordinary
-rule that adding logarithms gives the logarithm of
-the product still holds good; or
+<p>Como muitas pessoas que usam logaritmos ordinários,
+que são calculados na base $10$ em vez da base $\epsilon$, estão
+pouco familiarizadas com os logaritmos “naturais”, pode
+valer a pena dizer uma palavra sobre eles. A regra ordinária
+de que somar logaritmos dá o logaritmo do
+produto ainda vale; ou
 \[
 \log_\epsilon a + \log_\epsilon b = \log_\epsilon ab.
 \]
-Also the rule of powers holds good;
+Também a regra das potências vale;
 \[
 n × \log_\epsilon a = \log_\epsilon a^n.
 \]
 
-But as $10$ is no longer the basis, one cannot multiply
-by $100$ or $1000$ by merely adding $2$ or $3$ to the
-index. One can change the natural logarithm to
-the ordinary logarithm simply by multiplying it by
-$0.4343$; or
+Mas como $10$ não é mais a base, não se pode multiplicar
+por $100$ ou $1000$ meramente acrescentando $2$ ou $3$ ao
+índice. Pode-se mudar o logaritmo natural para
+o logaritmo ordinário simplesmente multiplicando-o por
+$0.4343$; ou
 \begin{align*}
 \log_{10} x &= 0.4343 × \log_{\epsilon} x, \\
-\text{ and conversely,}\;
+\text{ e inversamente,}\;
 \log_{\epsilon} x &= 2.3026 × \log_{10} x.
 \end{align*}
 
 <p>
 
-<h2>A Useful Table of “Naperian Logarithms”</h3>
-<p><em>(Also called Natural Logarithms or Hyperbolic Logarithms)</em>
+<h2>Uma Tabela Útil de “Logaritmos Naperianos”</h3>
+<p><em>(Também chamados Logaritmos Naturais ou Logaritmos Hiperbólicos)</em>
 
 <table>
 <tr>
-<th>Number</th>
+<th>Número</th>
 <th>$\log_{\epsilon}$</th>
 <th></th>
-<th>Number</th>
+<th>Número</th>
 <th>$\log_{\epsilon}$</th>
 </tr>
 
@@ -494,25 +520,25 @@ $0.4343$; or
 </table>
 
 <p>
-<em>Exponential and Logarithmic Equations.</em><p><a name="expolo"/>
-Now let us try our hands at differentiating certain
-expressions that contain logarithms or exponentials.
+<em>Equações Exponenciais e Logarítmicas.</em><p><a name="expolo"/>
+Agora tentemos nossas mãos em diferenciar certas
+expressões que contêm logaritmos ou exponenciais.
 
-<p>Take the equation:
+<p>Tome a equação:
 \[
 y = \log_\epsilon x.
 \]
-First transform this into
+Primeiro transforme isto em
 \[
 \epsilon^y = x,
 \]
 
-whence, since the differential of $\epsilon^y$ with regard to $y$ is
-the original function unchanged (see <a href="14.html#unchanged">here</a>),
+donde, como o diferencial de $\epsilon^y$ em relação a $y$ é
+a função original inalterada (ver <a href="14.html#unchanged">aqui</a>),
 \[
 \frac{dx}{dy} = \epsilon^y,
 \]
-and, reverting from the inverse to the original function,
+e, revertendo da inversa para a função original,
 \[
 \frac{dy}{dx}
   = \frac{1}{\ \dfrac{dx}{dy}\ }
@@ -520,130 +546,130 @@ and, reverting from the inverse to the original function,
   = \frac{1}{x}.
 \]
 
-<p>Now this is a very curious result.  It may be
-written<a name="differlog"/>
+<p>Ora, este é um resultado muito curioso.  Pode ser
+escrito<a name="differlog"/>
 \[
 \frac{d(\log_\epsilon x)}{dx} = x^{-1}.
 \]
 
-<p>Note that $x^{-1}$ is a result that we could never have
-got by the rule for differentiating powers. <a href="4.html#multipow">That rule</a> is to multiply by the power, and reduce the
-power by $1$. Thus, differentiating $x^3$ gave us $3x^2$;
-and differentiating $x^2$ gave $2x^1$. But differentiating
-$x^0$ does not give us $x^{-1}$ or $0 × x^{-1}$, because $x^0$ is itself
-$= 1$, and is a constant. We shall have to come back
-to this curious fact that differentiating $\log_\epsilon x$ gives us
-$\dfrac{1}{x}$ when we reach the chapter on integrating.
+<p>Note que $x^{-1}$ é um resultado que nunca poderíamos ter
+obtido pela regra para diferenciar potências. <a href="4.html#multipow">Aquela regra</a> é multiplicar pela potência, e reduzir a
+potência em $1$. Assim, diferenciar $x^3$ nos deu $3x^2$;
+e diferenciar $x^2$ deu $2x^1$. Mas diferenciar
+$x^0$ não nos dá $x^{-1}$ nem $0 × x^{-1}$, porque $x^0$ é ele mesmo
+$= 1$, e é uma constante. Teremos de voltar
+a este fato curioso de que diferenciar $\log_\epsilon x$ nos dá
+$\dfrac{1}{x}$ quando chegarmos ao capítulo sobre integração.
 
 <p><hr>
 
-<p>Now, try to differentiate
+<p>Agora, tente diferenciar
 \begin{align*}
                               y &= \log_\epsilon(x+a),\\
- \text{that is}\;  \epsilon^y &= x+a;
+ \text{isto é}\;  \epsilon^y &= x+a;
 \end{align*}
-we have $\dfrac{d(x+a)}{dy} = \epsilon^y$, since the differential of $\epsilon^y$
-remains $\epsilon^y$.
+temos $\dfrac{d(x+a)}{dy} = \epsilon^y$, já que o diferencial de $\epsilon^y$
+permanece $\epsilon^y$.
 
-   This gives
+   Isto dá
 \begin{align*}
 
 \frac{dx}{dy} &= \epsilon^y = x+a; \\
 \end{align*}
-hence, reverting to the original function,
-we get
+logo, revertendo à função original,
+obtemos
 \begin{align*}
 
 \frac{dy}{dx} &= \frac{1}{\;\dfrac{dx}{dy}\;} = \frac{1}{x+a}.
 \end{align*}<a name="differ2"/>
 <hr>
-   Next try
+   Em seguida tente
 \begin{align*}
 y &= \log_{10} x.
 \end{align*}
 
-<p>First change to natural logarithms by multiplying
-by the modulus $0.4343$. This gives us
+<p>Primeiro mude para logaritmos naturais multiplicando
+pelo módulo $0.4343$. Isto nos dá
 \begin{align*}
 y &= 0.4343 \log_\epsilon x; \\
- \text{whence}\;
+ \text{donde}\;
 \frac{dy}{dx} &= \frac{0.4343}{x}.
 \end{align*}
 
 <p><hr>
 
-<p>The next thing is not quite so simple. Try this:<a name="diffexp"/>
+<p>A próxima coisa não é tão simples. Tente isto:<a name="diffexp"/>
 \[
 y = a^x.
 \]
 
-<p>Taking the logarithm of both sides, we get
+<p>Tomando o logaritmo de ambos os lados, obtemos
 \begin{align*}
 \log_\epsilon y &= x \log_\epsilon a, \\
-\text{ or}\;
+\text{ ou}\;
 x  = \frac{\log_\epsilon y}{\log_\epsilon a}
   &= \frac{1}{\log_\epsilon a} × \log_\epsilon y.
 \end{align*}
 
-<p>Since $\dfrac{1}{\log_\epsilon a}$ is a constant, we get
+<p>Como $\dfrac{1}{\log_\epsilon a}$ é uma constante, obtemos
 \[
 \frac{dx}{dy}
   = \frac{1}{\log_\epsilon a} × \frac{1}{y}
   = \frac{1}{a^x × \log_\epsilon a};
 \]
-hence, reverting to the original function.
+logo, revertendo à função original.
 \[
 \frac{dy}{dx} = \frac{1}{\;\dfrac{dx}{dy}\;} = a^x × \log_\epsilon a.
 \]
 
 
-<p>We see that, since
+<p>Vemos que, como
 \[
-\frac{dx}{dy} × \frac{dy}{dx} =1\quad\text{and}\quad
+\frac{dx}{dy} × \frac{dy}{dx} =1\quad\text{e}\quad
 \frac{dx}{dy} = \frac{1}{y} × \frac{1}{\log_\epsilon a},\quad
 \frac{1}{y} × \frac{dy}{dx} = \log_\epsilon a.
 \]
 
-<p>We shall find that whenever we have an expression
-such as $\log_\epsilon y =$ a function of $x$, we always have
-$\dfrac{1}{y}\, \dfrac{dy}{dx} =$ the differential coefficient of the function of $x$,
-so that we could have written at once, from
+<p>Acharemos que sempre que temos uma expressão
+como $\log_\epsilon y =$ uma função de $x$, sempre temos
+$\dfrac{1}{y}\, \dfrac{dy}{dx} =$ o coeficiente diferencial da função de $x$,
+de modo que poderíamos ter escrito de uma vez, a partir de
 
 $\log_\epsilon y = x \log_\epsilon a$,
 \[
 \frac{1}{y}\, \frac{dy}{dx}
-  = \log_\epsilon a\quad\text{and}\quad
+  = \log_\epsilon a\quad\text{e}\quad
 \frac{dy}{dx} = a^x \log_\epsilon a.
 \]
 
 <p><hr>
 
-<p>Let us now attempt further examples.
+<p>Tentemos agora outros exemplos.
 
 <p>
-<p><em>Examples</em>
-(1) $y=\epsilon^{-ax}$. Let $-ax=z$; then $y=\epsilon^z$.
+<p><em>Exemplos</em>
+(1) $y=\epsilon^{-ax}$. Seja $-ax=z$; então $y=\epsilon^z$.
 \[
 \frac{dy}{dz} = \epsilon^z;\quad
-\frac{dz}{dx} = -a;\quad\text{hence}\quad
+\frac{dz}{dx} = -a;\quad\text{logo}\quad
 \frac{dy}{dx} = -a\epsilon^{-ax}.
 \]
 
-<p>Or thus:
+<p>Ou assim:
 \[
 \log_\epsilon y = -ax;\quad
 \frac{1}{y}\, \frac{dy}{dx} = -a;\quad
 \frac{dy}{dx} = -ay = -a\epsilon^{-ax}.
 \]
 
-<p>(2) $y=\epsilon^{\frac{x^2}{3}}$. Let $\dfrac{x^2}{3}=z$; then $y=\epsilon^z$.
+<p>(2) $y=\epsilon^{\frac{x^2}{3}}$. Seja $\dfrac{x^2}{3}=z$; então $y=\epsilon^z$.
 \[
 \frac{dy}{dz} = \epsilon^z;\quad
 \frac{dz}{dx} = \frac{2x}{3};\quad
 \frac{dy}{dx} = \frac{2x}{3}\, \epsilon^{\frac{x^2}{3}}.
 \]
 
-<p>Or thus:
+<p>Ou assim:
 \[
 \log_\epsilon y = \frac{x^2}{3};\quad
 \frac{1}{y}\, \frac{dy}{dx} = \frac{2x}{3};\quad
@@ -655,35 +681,35 @@ $\log_\epsilon y = x \log_\epsilon a$,
 \begin{align*}
 \log_\epsilon y &= \frac{2x}{x+1},\quad
 \frac{1}{y}\, \frac{dy}{dx} = \frac{2(x+1)-2x}{(x+1)^2}; \\
- hence
+ logo
 \frac{dy}{dx} &= \frac{2}{(x+1)^2} \epsilon^{\frac{2x}{x+1}}.
 \end{align*}
 
-<p>Check by writing $\dfrac{2x}{x+1}=z$.
+<p>Verifique escrevendo $\dfrac{2x}{x+1}=z$.
 
 <p>(4) $y=\epsilon^{\sqrt{x^2+a}}$. $\log_\epsilon y=(x^2+a)^{\frac{1}{2}}$.
 \[
-\frac{1}{y}\, \frac{dy}{dx} = \frac{x}{(x^2+a)^{\frac{1}{2}}}\quad\text{and}\quad
+\frac{1}{y}\, \frac{dy}{dx} = \frac{x}{(x^2+a)^{\frac{1}{2}}}\quad\text{e}\quad
 \frac{dy}{dx} = \frac{x × \epsilon^{\sqrt{x^2+a}}}{(x^2+a)^{\frac{1}{2}}}.
 \]
-For if $(x^2+a)^{\frac{1}{2}}=u$ and $x^2+a=v$, $u=v^{\frac{1}{2}}$,
+Pois se $(x^2+a)^{\frac{1}{2}}=u$ e $x^2+a=v$, $u=v^{\frac{1}{2}}$,
 \[
 \frac{du}{dv} = \frac{1}{{2v}^{\frac{1}{2}}};\quad
 \frac{dv}{dx} = 2x;\quad
 \frac{du}{dx} = \frac{x}{(x^2+a)^{\frac{1}{2}}}.
 \]
 
-<p>Check by writing $\sqrt{x^2+a}=z$.
+<p>Verifique escrevendo $\sqrt{x^2+a}=z$.
 
-<p>(5) $y=\log(a+x^3)$. Let $(a+x^3)=z$; then $y=\log_\epsilon z$.
+<p>(5) $y=\log(a+x^3)$. Seja $(a+x^3)=z$; então $y=\log_\epsilon z$.
 \[
 \frac{dy}{dz} = \frac{1}{z};\quad
-\frac{dz}{dx} = 3x^2;\quad\text{hence}\quad
+\frac{dz}{dx} = 3x^2;\quad\text{logo}\quad
 \frac{dy}{dx} = \frac{3x^2}{a+x^3}.
 \]
 
-<p>(6) $y=\log_\epsilon\{{3x^2+\sqrt{a+x^2}}\}$. Let $3x^2 + \sqrt{a+x^2}=z$;
-then $y=\log_\epsilon z$.
+<p>(6) $y=\log_\epsilon\{{3x^2+\sqrt{a+x^2}}\}$. Seja $3x^2 + \sqrt{a+x^2}=z$;
+então $y=\log_\epsilon z$.
 \begin{align*}
 \frac{dy}{dz}
   &= \frac{1}{z};\quad \frac{dz}{dx} = 6x + \frac{x}{\sqrt{x^2+a}}; \\
@@ -711,13 +737,13 @@ then $y=\log_\epsilon z$.
   &= 3 \frac{2x}{(x^2+3)} + \frac{2}{3} \frac{3x^2}{x^3-2}
    = \frac{6x}{x^2+3} + \frac{2x^2}{x^3-2}.
 \end{align*}
-For if $y=\log_\epsilon(x^2+3)$, let $x^2+3=z$ and $u=\log_\epsilon z$.
+Pois se $y=\log_\epsilon(x^2+3)$, seja $x^2+3=z$ e $u=\log_\epsilon z$.
 \[
 \frac{du}{dz} = \frac{1}{z};\quad
 \frac{dz}{dx} = 2x;\quad
 \frac{du}{dx} = \frac{2x}{x^2+3}.
 \]
-Similarly, if $v=\log_\epsilon(x^3-2)$, $\dfrac{dv}{dx} = \dfrac{3x^2}{x^3-2}$ and
+De modo semelhante, se $v=\log_\epsilon(x^3-2)$, $\dfrac{dv}{dx} = \dfrac{3x^2}{x^3-2}$ e
 \[
 \frac{dy}{dx}
   = (x^2+3)^3(x^3-2)^{\frac{2}{3}}
@@ -731,7 +757,7 @@ Similarly, if $v=\log_\epsilon(x^3-2)$, $\dfrac{dv}{dx} = \dfrac{3x^2}{x^3-2}$ a
 \frac{1}{y}\, \frac{dy}{dx}
   &= \frac{1}{2}\, \frac{2x}{x^2+a} - \frac{1}{3}\, \frac{3x^2}{x^3-a}
    = \frac{x}{x^2+a} - \frac{x^2}{x^3-a} \\
- and
+ e
 \frac{dy}{dx}
   &= \frac{\sqrt[2]{x^2+a}}{\sqrt[3]{x^3-a}}
      \left\{ \frac{x}{x^2+a} - \frac{x^2}{x^3-a} \right\}.
@@ -746,7 +772,7 @@ Similarly, if $v=\log_\epsilon(x^3-2)$, $\dfrac{dv}{dx} = \dfrac{3x^2}{x^3-2}$ a
   = -\frac{1}{x \log_\epsilon^2x}.
 \]
 
-<p>(11) $y=\sqrt[3]{\log_\epsilon x} = (\log_\epsilon x)^{\frac{1}{3}}$. Let $z=\log_\epsilon x$; $y=z^{\frac{1}{3}}$.
+<p>(11) $y=\sqrt[3]{\log_\epsilon x} = (\log_\epsilon x)^{\frac{1}{3}}$. Seja $z=\log_\epsilon x$; $y=z^{\frac{1}{3}}$.
 \[
 \frac{dy}{dz} = \frac{1}{3} z^{-\frac{2}{3}};\quad
 \frac{dz}{dx} = \frac{1}{x};\quad
@@ -762,24 +788,24 @@ Similarly, if $v=\log_\epsilon(x^3-2)$, $\dfrac{dv}{dx} = \dfrac{3x^2}{x^3-2}$ a
 
 \end{align*}
 
-<p>Try now the following exercises.
+<p>Tente agora os seguintes exercícios.
 
 <p>
-<hr><h3>Exercises XII</h3>
+<hr><h3>Exercícios XII</h3>
 
-<p>(1) Differentiate $y=b(\epsilon^{ax} -\epsilon^{-ax})$.
+<p>(1) Diferencie $y=b(\epsilon^{ax} -\epsilon^{-ax})$.
 
-<p>(2) Find the differential coefficient with respect to $t$
-of the expression $u=at^2+2\log_\epsilon t$.
+<p>(2) Encontre o coeficiente diferencial em relação a $t$
+da expressão $u=at^2+2\log_\epsilon t$.
 
-<p>(3) If $y=n^t$, find $\dfrac{d(\log_\epsilon y)}{dt}$.
+<p>(3) Se $y=n^t$, encontre $\dfrac{d(\log_\epsilon y)}{dt}$.
 
-<p>(4) Show that if $y=\dfrac{1}{b}·\dfrac{a^{bx}}{\log_\epsilon a}$,&nbsp;&nbsp; $\dfrac{dy}{dx}=a^{bx}$.
+<p>(4) Mostre que se $y=\dfrac{1}{b}·\dfrac{a^{bx}}{\log_\epsilon a}$,&nbsp;&nbsp; $\dfrac{dy}{dx}=a^{bx}$.
 
-<p>(5) If $w=pv^n$, find $\dfrac{dw}{dv}$.
+<p>(5) Se $w=pv^n$, encontre $\dfrac{dw}{dv}$.
 
 
-<p>Differentiate
+<p>Diferencie
 
 <p>(6) $y=\log_\epsilon x^n$.
 <p>(7) $y=3\epsilon^{-\frac{x}{x-1}}$.
@@ -791,30 +817,30 @@ of the expression $u=at^2+2\log_\epsilon t$.
 <p>(11) $y=\dfrac{\log_\epsilon(x+3)}{x+3}$.
 <p>(12) $y=a^x × x^a$.
 
-<p>(13) It was shown by Lord Kelvin that the speed of
-signalling through a submarine cable depends on the
-value of the ratio of the external diameter of the core
-to the diameter of the enclosed copper wire. If this
-ratio is called $y$, then the number of signals $s$ that can
-be sent per minute can be expressed by the formula
+<p>(13) Foi mostrado por Lord Kelvin que a velocidade de
+sinalização através de um cabo submarino depende do
+valor da razão do diâmetro externo do núcleo
+ao diâmetro do fio de cobre contido. Se esta
+razão for chamada $y$, então o número de sinais $s$ que podem
+ser enviados por minuto pode ser expresso pela fórmula
 \[
 s=ay^2 \log_\epsilon \frac{1}{y};
 \]
-where $a$ is a constant depending on the length and
-the quality of the materials. Show that if these are
-given, $s$ will be a maximum if $y=1 ÷ \sqrt{\epsilon}$.
+onde $a$ é uma constante que depende do comprimento e
+da qualidade dos materiais. Mostre que se estes forem
+dados, $s$ será máximo se $y=1 ÷ \sqrt{\epsilon}$.
 
-<p>(14) Find the maximum or minimum of
+<p>(14) Encontre o máximo ou mínimo de
 \[
 y=x^3-\log_\epsilon x.
 \]
 
-<p>(15) Differentiate $y=\log_\epsilon(ax\epsilon^x)$.
+<p>(15) Diferencie $y=\log_\epsilon(ax\epsilon^x)$.
 
-<p>(16) Differentiate $y=(\log_\epsilon ax)^3$.
+<p>(16) Diferencie $y=(\log_\epsilon ax)^3$.
 
 <hr>
-<p><h3 class="answers">Answers</h3>
+<p><h3 class="answers">Respostas</h3>
 
 <p>(1)   $ab(\epsilon^{ax} + \epsilon^{-ax})$.
 
@@ -842,23 +868,23 @@ y=x^3-\log_\epsilon x.
 
 <p>(12)   $a^x\left(ax^{a-1} + x^a \log_\epsilon a\right)$.
 
-<p>(14)   Min.: $y = 0.7$ for $x = 0.694$.
+<p>(14)   Mín.: $y = 0.7$ para $x = 0.694$.
 
 
 <p>(15)   $\dfrac{1 + x}{x}$.
 
 <p>(16)   $\dfrac{3}{x} (\log_\epsilon ax)^2$.
 <p>
-<h2>The Logarithmic Curve.</h2>
+<h2>A Curva Logarítmica.</h2>
 
-<p>Let us return to the curve which has its successive
-ordinates in geometrical progression, such as that
-represented by the equation $y=bp^x$.
+<p>Voltemos à curva que tem suas ordenadas sucessivas
+em progressão geométrica, tal como a
+representada pela equação $y=bp^x$.
 
-<p>We can see, by putting $x=0$, that $b$ is the initial
-height of $y$.
+<p>Podemos ver, pondo $x=0$, que $b$ é a altura inicial
+de $y$.
 
-<p>Then when
+<p>Então quando
 \[
 x=1,\quad y=bp;\qquad
 x=2,\quad y=bp^2;\qquad
@@ -866,35 +892,34 @@ x=3,\quad y=bp^3,\quad \text{etc.}
 \]
 
 
-<p>Also, we see that $p$ is the numerical value of the
-ratio between the height of any ordinate and that of
-the next preceding it. In <a href="#figure40">Figure 40</a>, we have taken $p$
-as $\frac{6}{5}$; each ordinate being $\frac{6}{5}$ as high as the preceding
-one.
+<p>Também, vemos que $p$ é o valor numérico da
+razão entre a altura de qualquer ordenada e a da
+próxima que a precede. Na <a href="#figure40">Figura 40</a>, tomamos $p$
+como $\frac{6}{5}$; cada ordenada sendo $\frac{6}{5}$ tão alta quanto a precedente.
 
 <a name="figure40">
 <p><img src="33283-t/images/167a.pdf.png-1.png">
 <a name="figure41">
 <p><img src="33283-t/images/167b.pdf.png-1.png">
 
-<p>If two successive ordinates are related together
-thus in a constant ratio, their logarithms will have a
-constant difference; so that, if we should plot out
-a new curve, <a href="#figure41">Figure 41</a>, with values of $\log_\epsilon y$ as ordinates,
-it would be a straight line sloping up by equal steps.
-In fact, it follows from the equation, that
+<p>Se duas ordenadas sucessivas estão relacionadas
+assim em uma razão constante, seus logaritmos terão uma
+diferença constante; de modo que, se plotássemos
+uma nova curva, <a href="#figure41">Figura 41</a>, com valores de $\log_\epsilon y$ como ordenadas,
+seria uma reta inclinando-se para cima por degraus iguais.
+De fato, segue da equação que
 \begin{align*}
 \log_\epsilon y &= \log_\epsilon b + x · \log_\epsilon p, \\
- \text{whence }\;
+ \text{donde }\;
 \log_\epsilon y &- \log_\epsilon b = x · \log_\epsilon p.
 \end{align*}
 
-<p>Now, since $\log_\epsilon p$ is a mere number, and may be
-written as $\log_\epsilon p=a$, it follows that
+<p>Ora, como $\log_\epsilon p$ é um mero número, e pode ser
+escrito como $\log_\epsilon p=a$, segue-se que
 \[
 \log_\epsilon \frac{y}{b}=ax,
 \]
-and the equation takes the new form
+e a equação toma a nova forma
 \[
 y = b\epsilon^{ax}.
 \]
@@ -903,10 +928,16 @@ y = b\epsilon^{ax}.
 {%include "buy_solutions.html" %}
 
 <hr>
-<a href="14b.html">Next &rarr;</a><br>
-<a href="/">Main Page &uarr;</a><br>
+<a href="14b.html">Próximo &rarr;</a><br>
+<a href="13.html">← Anterior</a><br>
+<a href="index.html">Página principal &uarr;</a><br>
+
+{% include "footer.html" %}
 
 <script src="j/jquery.js"></script>
 <script src="j/modernizr.js"></script>
 <script src="j/dih5.js"></script>
+<script src="j/notes-toggle.js"></script>
 {%include "googleanalytics.html" %}
+</body>
+</html>

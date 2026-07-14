@@ -1,7 +1,39 @@
-
 <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+
 <meta charset="utf-8">
-<title>Simplest Cases | Calculus Made Easy</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Casos Mais Simples | Cálculo Tornado Fácil - Cap. IV</title>
+<meta name="description" content="Capítulo IV: os casos mais simples de diferenciação.">
+<meta name="author" content="Thales Rodrigues; Silvanus P. Thompson">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="googlebot" content="index, follow">
+<meta name="language" content="Portuguese">
+<meta name="keywords" content="cálculo, calculus made easy, Silvanus Thompson, cálculo diferencial, cálculo integral, matemática, educação livre, português, Martin Gardner, Cálculo Tornado Fácil, Thales Rodrigues">
+<link rel="canonical" href="https://rodriguestmo.github.io/calculo-tornado-facil/4.html">
+<link rel="alternate" hreflang="pt-BR" href="https://rodriguestmo.github.io/calculo-tornado-facil/4.html">
+<link rel="alternate" hreflang="x-default" href="https://rodriguestmo.github.io/calculo-tornado-facil/">
+
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Cálculo Tornado Fácil">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Casos Mais Simples | Cálculo Tornado Fácil - Cap. IV">
+<meta property="og:description" content="Capítulo IV: os casos mais simples de diferenciação.">
+<meta property="og:url" content="https://rodriguestmo.github.io/calculo-tornado-facil/4.html">
+<meta property="og:image" content="https://rodriguestmo.github.io/calculo-tornado-facil/cover.jpg">
+
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Casos Mais Simples | Cálculo Tornado Fácil - Cap. IV">
+<meta name="twitter:description" content="Capítulo IV: os casos mais simples de diferenciação.">
+<meta name="twitter:image" content="https://rodriguestmo.github.io/calculo-tornado-facil/cover.jpg">
+
+
+<meta name="ai-content-declaration" content="human-authored translation and educational adaptation">
+<link rel="describedby" href="https://rodriguestmo.github.io/calculo-tornado-facil/llms.txt">
 <link rel="stylesheet" href="screen.css">
 <style>
 body{counter-reset:h1 4}
@@ -12,164 +44,204 @@ body{counter-reset:h1 4}
 <script type="text/javascript"
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Chapter",
+  "name": "Casos Mais Simples",
+  "position": 4,
+  "isPartOf": {
+    "@type": "Book",
+    "name": "Cálculo Tornado Fácil",
+    "url": "https://rodriguestmo.github.io/calculo-tornado-facil/"
+  },
+  "author": {"@type": "Person", "name": "Silvanus P. Thompson"},
+  "translator": {"@type": "Person", "name": "Thales Rodrigues"},
+  "url": "https://rodriguestmo.github.io/calculo-tornado-facil/4.html",
+  "inLanguage": "pt-BR",
+  "isAccessibleForFree": true
+}
+</script>
+</head>
+<body>
+<!-- Barra fixa: navegação, modo das notas, tema -->
+<div id="site-toolbar" class="site-toolbar" role="region" aria-label="Controles do site">
+  <a class="tb-home" href="index.html">Cálculo Tornado Fácil</a>
 
-<h1><br>Simplest Cases</h1>
+  <div class="tb-controls">
+    <label class="tb-field" title="Como exibir as notas de Martin Gardner (1998)">
+      <span class="tb-label">Notas</span>
+      <select id="notes-mode" aria-label="Modo de exibição das notas">
+        <option value="all">Sempre visíveis</option>
+        <option value="click">Lupa (clique para abrir)</option>
+        <option value="off">Sempre ocultadas</option>
+      </select>
+    </label>
+
+    <button type="button" id="toggle-theme" class="tb-btn" title="Alternar tema claro/escuro" aria-pressed="false">
+      <span class="theme-label">Tema escuro</span>
+    </button>
+  </div>
+</div>
+
+
+<h1><br>Casos Mais Simples</h1>
 <p class="a rotatedFloralHeartBullet">
 
 
-<p>Now let us see how, on first principles, we can
-differentiate some simple algebraical expression.
+<p>Vejamos agora como, a partir de primeiros princípios, podemos
+diferenciar alguma expressão algébrica simples.
 
-<p><h3>Case 1</h3>
-Let us begin with the simple expression $y=x^2$.
-Now remember that the fundamental notion about
-the calculus is the idea of <em>growing</em>. Mathematicians
-call it <em>varying</em>. Now as $y$ and $x^2$ are equal to one
-another, it is clear that if $x$ grows, $x^2$ will also grow.
-And if $x^2$ grows, then $y$ will also grow. What we
-have got to find out is the proportion between the
-growing of $y$ and the growing of $x$. In other words
-our task is to find out the ratio between $dy$ and $dx$,
-or, in brief, to find the value of $\dfrac{dy}{dx}$.
+<p><h3>Caso 1</h3>
+Comecemos com a expressão simples $y=x^2$.
+Lembre-se agora de que a noção fundamental sobre
+o cálculo é a ideia de <em>crescer</em>. Os matemáticos
+chamam isso de <em>variar</em>. Ora, como $y$ e $x^2$ são iguais um
+ao outro, é claro que se $x$ cresce, $x^2$ também crescerá.
+E se $x^2$ cresce, então $y$ também crescerá. O que temos
+de descobrir é a proporção entre o
+crescimento de $y$ e o crescimento de $x$. Em outras palavras
+nossa tarefa é achar a razão entre $dy$ e $dx$,
+ou, em breve, achar o valor de $\dfrac{dy}{dx}$.
 
-<p>Let $x$, then, grow a little bit bigger and become
-$x + dx$; similarly, $y$ will grow a bit bigger and will
-become $y + dy$. Then, clearly, it will still be true
-that the enlarged $y$ will be equal to the square of the
-enlarged $x$. Writing this down, we have:
+<p>Deixe então $x$ crescer um pedacinho e tornar-se
+$x + dx$; similarmente, $y$ crescerá um pedacinho e se
+tornará $y + dy$. Então, claramente, ainda será verdade
+que o $y$ ampliado será igual ao quadrado do
+$x$ ampliado. Escrevendo isso, temos:
 \begin{align*}
 y + dy &= (x + dx)^2.\\
-\text{Doing the squaring we get:}\;\\
+\text{Fazendo a elevação ao quadrado obtemos:}\;\\
 y + dy &= x^2 + 2x · dx+(dx)^2.
 \end{align*}
 
 
-<p>What does $(dx)^2$ mean? Remember that $dx$ meant
-a bit–a little bit–of $x$. Then $(dx)^2$ will mean a little
-bit of a little bit of $x$; that is, as explained above
-(<a href="2.html#smallness">here</a>), it is a small quantity of the second order
-of smallness. It may therefore be discarded as quite
-inconsiderable in comparison with the other terms.
-Leaving it out, we then have:<a name="diffexample"/>
+<p>O que significa $(dx)^2$? Lembre-se de que $dx$ significava
+um pedaço - um pedacinho - de $x$. Então $(dx)^2$ significará um
+pedacinho de um pedacinho de $x$; isto é, como explicado acima
+(<a href="2.html#smallness">aqui</a>), é uma quantidade pequena da segunda ordem
+de pequenez. Pode portanto ser descartada como bastante
+insignificante em comparação com os outros termos.
+Deixando-a de fora, temos então:<a name="diffexample"/>
 \begin{align*}
 y + dy &= x^2 + 2x · dx.  \\
-\text{Now $y=x^2$; so let us subtract this from the equation
-and we have left}\;\\
+\text{Ora $y=x^2$; assim subtraiamos isso da equação
+e ficamos com}\;\\
 dy &= 2x · dx.  \\
-\text{  Dividing across by $dx$, we find}\;\\
+\text{  Dividindo por $dx$, achamos}\;\\
 \frac{dy}{dx} &= 2x.
 \end{align*}
 
-<p>Now <em>this</em>*
-is what we set out to find. The ratio of
-the growing of $y$ to the growing of $x$ is, in the case
-before us, found to be $2x$.
-<p><note>*<em>Note</em>–This ratio $\dfrac{dy}{dx}$ is the result of differentiating $y$ with
-  respect to $x$. Differentiating means finding the differential coefficient.
-  Suppose we had some other function of $x$, as, for
-  example, $u = 7x^2 + 3$. Then if we were told to differentiate this
-  with respect to $x$, we should have to find $\dfrac{du}{dx}$, or, what is the same
-  thing, $\dfrac{d(7x^2 + 3)}{dx}$. On the other hand, we may have a case in which
-  time was the independent variable (see <a href="3.html#indvar">here</a>), such as this:
-  $y = b + \frac{1}{2} at^2$. Then, if we were told to differentiate it, that means we
-  must find its differential coefficient with respect to $t$. So that then
-  our business would be to try to find $\dfrac{dy}{dt}$, that is, to find
+<p>Ora <em>isto</em>*
+é o que nos propusemos a achar. A razão do
+crescimento de $y$ para o crescimento de $x$ é, no caso
+diante de nós, encontrada ser $2x$.
+<p><note>*<em>Nota</em> - Esta razão $\dfrac{dy}{dx}$ é o resultado de diferenciar $y$ com
+  respeito a $x$. Diferenciar significa achar o coeficiente diferencial
+  (a derivada). Suponha que tivéssemos alguma outra função de $x$, como, por
+  exemplo, $u = 7x^2 + 3$. Então se nos pedissem para diferenciar isto
+  com respeito a $x$, teríamos de achar $\dfrac{du}{dx}$, ou, o que é a mesma
+  coisa, $\dfrac{d(7x^2 + 3)}{dx}$. Por outro lado, podemos ter um caso em que
+  o tempo era a variável independente (veja <a href="3.html#indvar">aqui</a>), como este:
+  $y = b + \frac{1}{2} at^2$. Então, se nos pedissem para diferenciá-lo, isso significa que
+  devemos achar sua derivada com respeito a $t$. De modo que então
+  nosso negócio seria tentar achar $\dfrac{dy}{dt}$, isto é, achar
   $\dfrac{d(b + \frac{1}{2} at^2)}{dt}$.</note>
 
 <p>
-<em>Numerical example.</em><p>
-Suppose $x=100$ and $\therefore y=10,000$. Then let $x$ grow
-till it becomes $101$ (that is, let $dx=1$). Then the
-enlarged $y$ will be $101 × 101 = 10,201$. But if we agree
-that we may ignore small quantities of the second
-order, $1$ may be rejected as compared with $10,000$; so
-we may round off the enlarged $y$ to $10,200$. $y$ has
-grown from $10,000$ to $10,200$; the bit added on is $dy$,
-which is therefore $200$.
+<em>Exemplo numérico.</em><p>
+Suponha $x=100$ e $\therefore y=10.000$. Então deixe $x$ crescer
+até se tornar $101$ (isto é, deixe $dx=1$). Então o
+$y$ ampliado será $101 × 101 = 10.201$. Mas se concordarmos
+que podemos ignorar quantidades pequenas da segunda
+ordem, $1$ pode ser rejeitado em comparação com $10.000$; assim
+podemos arredondar o $y$ ampliado para $10.200$. $y$
+cresceu de $10.000$ para $10.200$; o pedaço acrescentado é $dy$,
+que é portanto $200$.
 
-<p>$\dfrac{dy}{dx} = \dfrac{200}{1} = 200$. According to the algebra-working
-of the previous paragraph, we find $\dfrac{dy}{dx} = 2x$. And so
-it is; for $x=100$ and $2x=200$.
+<p>$\dfrac{dy}{dx} = \dfrac{200}{1} = 200$. Segundo o trabalho algébrico
+do parágrafo anterior, achamos $\dfrac{dy}{dx} = 2x$. E assim
+é; pois $x=100$ e $2x=200$.
 
-<p>But, you will say, we neglected a whole unit.
+<p>Mas, você dirá, negligenciamos uma unidade inteira.
 
-<p>Well, try again, making $dx$ a still smaller bit.
+<p>Bem, tente de novo, fazendo $dx$ um pedacinho ainda menor.
 
-<p>Try $dx=\frac{1}{10}$. Then $x+dx=100.1$, and
+<p>Tente $dx=\frac{1}{10}$. Então $x+dx=100.1$, e
 \[
-(x+dx)^2 = 100.1 × 100.1 = 10,020.01.
+(x+dx)^2 = 100.1 × 100.1 = 10.020,01.
 \]
 
-<p>Now the last figure $1$ is only one-millionth part of
-the $10,000$, and is utterly negligible; so we may
-take $10,020$ without the little decimal at the end.
-And this makes $dy=20$; and $\dfrac{dy}{dx} = \dfrac{20}{0.1} = 200$, which
-is still the same as $2x$.
+<p>Ora o último algarismo $1$ é apenas a parte de um milionésimo
+dos $10.000$, e é completamente desprezível; assim podemos
+tomar $10.020$ sem o pequeno decimal no fim.
+E isso faz $dy=20$; e $\dfrac{dy}{dx} = \dfrac{20}{0.1} = 200$, o que
+ainda é o mesmo que $2x$.
 
 <p>
-<h3>Case 2</h3>
-Try differentiating $y = x^3$ in the same way.
+<h3>Caso 2</h3>
+Tente diferenciar $y = x^3$ do mesmo modo.
 
-<p>We let $y$ grow to $y+dy$, while $x$ grows to $x+dx$.
+<p>Deixamos $y$ crescer para $y+dy$, enquanto $x$ cresce para $x+dx$.
 
-<p>Then we have
+<p>Então temos
 \[
 y + dy = (x + dx)^3.
 \]
 
 
-<p>Doing the cubing we obtain
+<p>Fazendo a elevação ao cubo obtemos
 \[
 y + dy = x^3 + 3x^2 · dx + 3x(dx)^2+(dx)^3.
 \]
 
-<p>Now we know that we may neglect small quantities
-of the second and third orders; since, when $dy$ and $dx$
-are both made indefinitely small, $(dx)^2$ and $(dx)^3$
-will become indefinitely smaller by comparison. So,
-regarding them as negligible, we have left:
+<p>Ora sabemos que podemos desprezar quantidades pequenas
+das ordens segunda e terceira; pois, quando $dy$ e $dx$
+são ambos tornados indefinidamente pequenos, $(dx)^2$ e $(dx)^3$
+se tornarão indefinidamente menores por comparação. Assim,
+considerando-os desprezíveis, ficamos com:
 \[
 y + dy=x^3+3x^2 · dx.
 \]
 
-<p>But $y=x^3$; and, subtracting this, we have:
+<p>Mas $y=x^3$; e, subtraindo isto, temos:
 \begin{align*}
 dy &= 3x^2 · dx, \\
-\text{ and}\;
+\text{ e}\;
 \frac{dy}{dx} &= 3x^2.
 \end{align*}
 
-<h3>Case 3</h3>
-Try differentiating $y=x^4$. Starting as before by
-letting both $y$ and $x$ grow a bit, we have:
+<h3>Caso 3</h3>
+Tente diferenciar $y=x^4$. Começando como antes ao
+deixar tanto $y$ quanto $x$ crescer um pedacinho, temos:
 \begin{align*}
 y + dy &= (x+dx)^4.  \\
 \end{align*}
-Working out the raising to the fourth power, we get
+Desenvolvendo a elevação à quarta potência, obtemos
 \begin{align*}
 y + dy &= x^4 + 4x^3\, dx + 6x^2(dx)^2 + 4x(dx)^3+(dx)^4.  \\
 \end{align*}
-Then striking out the terms containing all the
-higher powers of $dx$, as being negligible by comparison, we have
+Então riscando os termos que contêm todas as
+potências mais altas de $dx$, por serem desprezíveis por comparação, temos
 \begin{align*}
 y + dy &= x^4+4x^3\, dx.  \\
 \end{align*}
 
-Subtracting the original $y=x^4$, we have left
+Subtraindo o $y=x^4$ original, ficamos com
 \begin{align*}
 dy &= 4x^3\, dx, \\
-\text{ and}\;
+\text{ e}\;
 \frac{dy}{dx} &= 4x^3.
 \end{align*}
 
 <p><hr>
 
 
-<p>Now all these cases are quite easy. Let us collect
-the results to see if we can infer any general rule.
-Put them in two columns, the values of $y$ in one
-and the corresponding values found for $\dfrac{dy}{dx}$ in the
-other: thus
+<p>Ora todos esses casos são bem fáceis. Coletemos
+os resultados para ver se podemos inferir alguma regra geral.
+Ponhamo-los em duas colunas, os valores de $y$ numa
+e os valores correspondentes achados para $\dfrac{dy}{dx}$ na
+outra: assim
 <table>
   <tr><th>$y$</th><th>$\frac{dy}{dx}$</th></tr>
   <tr><td>$x^2$</td><td>$2x$</td></tr>
@@ -179,68 +251,68 @@ other: thus
 
 
 <p><a name="diffrule1"/>
-Just look at these results: the operation of differentiating
-appears to have had the effect of diminishing
-the power of $x$ by $1$ (for example in the last case
-reducing $x^4$ to $x^3$), and at the same time multiplying
-by a number (the same number in fact which originally
-appeared as the power). Now, when you have once
-seen this, you might easily conjecture how the others
-will run. You would expect that differentiating $x^5$
-would give $5x^4$, or differentiating $x^6$ would give $6x^5$.
-If you hesitate, try one of these, and see whether
-the conjecture comes right.
+Olhe bem para esses resultados: a operação de diferenciar
+parece ter tido o efeito de diminuir
+a potência de $x$ em $1$ (por exemplo no último caso
+reduzindo $x^4$ a $x^3$), e ao mesmo tempo multiplicar
+por um número (o mesmo número de fato que originalmente
+aparecia como a potência). Ora, uma vez que você
+viu isso, poderia facilmente conjecturar como os outros
+correrão. Você esperaria que diferenciar $x^5$
+daria $5x^4$, ou diferenciar $x^6$ daria $6x^5$.
+Se hesitar, experimente um deles, e veja se
+a conjectura se confirma.
 
-<p>Try $y = x^5$.
+<p>Tente $y = x^5$.
 \begin{align*}
-\text{   Then}\;
+\text{   Então}\;
 y+dy &= (x+dx)^5     \\
      &= x^5 + 5x^4\, dx + 10x^3(dx)^2  + 10x^2(dx)^3 \\
      &\phantom{{}= x^5 + 5x^4\, dx} + 5x(dx)^4 + (dx)^5.
 \end{align*}
 
-<p>Neglecting all the terms containing small quantities
-of the higher orders, we have left
+<p>Desprezando todos os termos que contêm quantidades pequenas
+das ordens mais altas, ficamos com
 \begin{align*}
 y + dy &= x^5 + 5x^4\, dx,  \\
 
-\text{ and subtracting}\;
-y &= x^5 \text{ leaves us} \\
+\text{ e subtraindo}\;
+y &= x^5 \text{ ficamos com} \\
 dy &= 5x^4\, dx,  \\
- \text{whence}\;
-\frac{dy}{dx} &= 5x^4, \text{ exactly as we supposed.}
+ \text{donde}\;
+\frac{dy}{dx} &= 5x^4, \text{ exatamente como supúnhamos.}
 \end{align*}
 
 <p><hr>
 
-<p>Following out logically our observation, we should
-conclude that if we want to deal with any higher
-power,–call it $n$–we could tackle it in the same
-way.
-<p> Let $y = x^n,$ <p>then, we should expect to find that <p>
+<p>Seguindo logicamente nossa observação, deveríamos
+concluir que se quisermos lidar com qualquer potência
+mais alta, - chame-a $n$ - poderíamos atacá-la do mesmo
+modo.
+<p> Seja $y = x^n,$ <p>então, deveríamos esperar achar que <p>
 <p>$\frac{dy}{dx} = nx^{(n-1)}$.
 
-<p>For example, let $n=8$, then $y=x^8$; and differentiating
-it would give $\dfrac{dy}{dx} = 8x^7$.
+<p>Por exemplo, seja $n=8$, então $y=x^8$; e diferenciá-lo
+daria $\dfrac{dy}{dx} = 8x^7$.
 
-<p>And, indeed, the rule that differentiating $x^n$ gives as
-the result $nx^{n-1}$ is true for all cases where $n$ is a
-whole number and positive. [Expanding $(x + dx)^n$ by
-the binomial theorem will at once show this.] But
-the question whether it is true for cases where $n$
-has negative or fractional values requires further
-consideration.
+<p>E, de fato, a regra de que diferenciar $x^n$ dá como
+resultado $nx^{n-1}$ é verdadeira para todos os casos em que $n$ é um
+número inteiro e positivo. [Expandir $(x + dx)^n$ pelo
+teorema binomial mostrará isso de imediato.] Mas
+a questão de se é verdadeira para casos em que $n$
+tem valores negativos ou fracionários exige
+consideração adicional.
 
 <p>
-<em>Case of a negative power.</em><p>
-Let $y = x^{-2}$. Then proceed as before:
+<em>Caso de uma potência negativa.</em><p>
+Seja $y = x^{-2}$. Então proceda como antes:
 \begin{align*}
 y+dy &= (x+dx)^{-2} \\
      &= x^{-2} \left(1 + \frac{dx}{x}\right)^{-2}.
 \end{align*}
 
-Expanding this by the binomial theorem (see <a href="14.html#binomtheo">here</a>),
-we get
+Expandindo isto pelo teorema binomial (veja <a href="14.html#binomtheo">aqui</a>),
+obtemos
 \begin{align*}
 &=x^{-2} \left[1 - \frac{2\, dx}{x} +
     \frac{2(2+1)}{1×2} \left(\frac{dx}{x}\right)^2 -
@@ -249,25 +321,25 @@ we get
 \end{align*}
 
 
-  So, neglecting the small quantities of higher orders
-of smallness, we have:
+  Assim, desprezando as quantidades pequenas de ordens
+mais altas de pequenez, temos:
 \begin{align*}
 
        y + dy &= x^{-2} - 2x^{-3} · dx.
 \end{align*}
 
-Subtracting the original $y = x^{-2}$, we find
+Subtraindo o $y = x^{-2}$ original, achamos
 \begin{align*}
 
            dy &= -2x^{-3}dx,   \\
 \frac{dy}{dx} &= -2x^{-3}.
 \end{align*}
-And this is still in accordance with the rule inferred
-above.
+E isto ainda está de acordo com a regra inferida
+acima.
 
 <p>
-<em>Case of a fractional power.</em><p>
-Let $y= x^{\frac{1}{2}}$. Then, as before,
+<em>Caso de uma potência fracionária.</em><p>
+Seja $y= x^{\frac{1}{2}}$. Então, como antes,
 
 
 \begin{align*}
@@ -275,28 +347,28 @@ y+dy &= (x+dx)^{\frac{1}{2}} = x^{\frac{1}{2}} (1 + \frac{dx}{x} )^{\frac{1}{2}}
 
 
      &= \sqrt{x} + \frac{1}{2} \frac{dx}{\sqrt{x}} - \frac{1}{8}
-        \frac{(dx)^2}{x\sqrt{x}} + \text{terms with higher
-          powers of $dx$.}
+        \frac{(dx)^2}{x\sqrt{x}} + \text{termos com potências
+          mais altas de $dx$.}
 \end{align*}
 
-<p>Subtracting the original $y = x^{\frac{1}{2}}$, and neglecting higher
-powers we have left:
+<p>Subtraindo o $y = x^{\frac{1}{2}}$ original, e desprezando potências
+mais altas, ficamos com:
 \[
 dy = \frac{1}{2} \frac{dx}{\sqrt{x}} = \frac{1}{2} x^{-\frac{1}{2}} · dx,
 \]
-and $\dfrac{dy}{dx} = \dfrac{1}{2} x^{-\frac{1}{2}}$. Agreeing with the general rule.
+e $\dfrac{dy}{dx} = \dfrac{1}{2} x^{-\frac{1}{2}}$. Concordando com a regra geral.
 
 
-<p><em>Summary.</em> Let us see how far we have got. We
-have arrived at the following rule:<a name="multipow"/> To differentiate $x^n$,
-multiply by the power and reduce the power by
-one, so giving us $nx^{n-1}$ as the result.
+<p><em>Resumo.</em> Vejamos até onde chegamos. Chegamos
+à seguinte regra:<a name="multipow"/> Para diferenciar $x^n$,
+multiplique pela potência e reduza a potência em
+um, obtendo assim $nx^{n-1}$ como resultado.
 
 <p>
 <a name="ex1"/>
-<hr><h3>Exercises I</h3>
+<hr><h3>Exercícios I</h3>
 
-<p>Differentiate the following:
+<p>Diferencie o seguinte:
 
 <p>(1) $y = x^{13}$
 <p>(2) $y = x^{-\frac{3}{2}}$
@@ -310,10 +382,10 @@ one, so giving us $nx^{n-1}$ as the result.
 <p>(10) $y = \sqrt[n]{\dfrac{1}{x^m}}$
 
 
-<p><em>You have now learned how to differentiate powers
-of $x$. How easy it is!</em>
+<p><em>Agora você aprendeu como diferenciar potências
+de $x$. Como é fácil!</em>
 
-<h3 class="answers">Answers</h3>
+<h3 class="answers">Respostas</h3>
 <p>(1)   $\dfrac{dy}{dx} = 13x^{12}$.
 <p>(2)   $\dfrac{dy}{dx} = - \dfrac{3}{2} x^{-\frac{5}{2}}$.
 <p>(3)   $\dfrac{dy}{dx} = 2ax^{(2a-1)}$.
@@ -326,27 +398,51 @@ of $x$. How easy it is!</em>
 <p>(10)   $\dfrac{dy}{dx} = -\dfrac{m}{n} x^{-\frac{m+n}{n}}$.
 <br>
 
-<script type="text/javascript" src="https://payhip.com/payhip.js"></script>
-<h3>Get Complete Step-by-Step Solutions</h3>
-<a href="https://payhip.com/b/2MVru"><img class="cover" src="cover-small.png" width="180px"></a>
-
-<ul>
-    <li>For all exercises in this book.</li>
-    <li>Check your work or get unstuck.</li>
-    <li>Written by CalculusMadeEasy.org</li>
-	<li>Support this website ❤️.</li>
-	<li>229 pages</li>
-    <li><a href="https://payhip.com/b/2MVru">More details</a></li>
-    <br>
-        <a href="https://payhip.com/b/2MVru" class="payhip-buy-button" data-theme="green" data-product="2MVru">Download for $9</a>
-</ul>
+<!-- Soluções comerciais removidas: projeto público e sem fins lucrativos -->
 
 <hr>
-<a href="5.html">Next &rarr;</a><br>
-<a href="/">Main Page &uarr;</a><br>
+<a href="5.html">Próximo &rarr;</a><br>
+<a href="3.html">← Anterior</a><br>
+<a href="index.html">Página principal &uarr;</a><br>
+
+<footer class="site-footer" role="contentinfo">
+  <p class="a rotatedFloralHeartBullet"></p>
+
+  <div class="manifesto">
+    <p class="manifesto-lead">
+      Este é um <strong>projeto público</strong>, sem fins lucrativos.
+      Não é permitido comercializá-lo, vendê-lo nem usá-lo como produto pago.
+    </p>
+    <p class="manifesto-quote">
+      A educação é um direito de todos.
+      O conhecimento deve ser livre sempre que não cause o mal:
+      deve circular, ensinar e libertar, nunca aprisionar quem aprende.
+    </p>
+    <p class="manifesto-sign">
+      - Thales Rodrigues
+    </p>
+  </div>
+
+  <nav class="author-links" aria-label="Redes de Thales Rodrigues">
+    <a href="https://www.linkedin.com/in/thales-oliveira-rodrigues/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    <span class="dot" aria-hidden="true">·</span>
+    <a href="https://github.com/Rodriguestmo" target="_blank" rel="noopener noreferrer">GitHub</a>
+  </nav>
+
+  <p class="footer-meta">
+    <small>
+      Tradução e adaptação PT-BR por Thales Rodrigues.
+      Texto de Silvanus P. Thompson em domínio público (Project Gutenberg).
+      Notas de contexto inspiradas na edição Gardner (1998).
+      Projeto público e gratuito.
+    </small>
+  </p>
+</footer>
 
 <script src="j/jquery.js"></script>
 <script src="j/modernizr.js"></script>
 <script src="j/dih5.js"></script>
-
+<script src="j/notes-toggle.js"></script>
 <!-- Analytics desativado na edição PT local -->
+</body>
+</html>

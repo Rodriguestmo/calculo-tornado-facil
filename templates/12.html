@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<meta charset="utf-8">
-<title>Curvature of Curves | Calculus Made Easy</title>
+<html lang="pt-BR">
+<head>
+{% include "seo_head.html" %}
 <link rel="stylesheet" href="screen.css">
 <style>
 body{counter-reset:h1 12}
@@ -11,136 +12,157 @@ body{counter-reset:h1 12}
 <script type="text/javascript"
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Chapter",
+  "name": "Curvatura das Curvas",
+  "position": 12,
+  "isPartOf": {
+    "@type": "Book",
+    "name": "Cálculo Tornado Fácil",
+    "url": "{{ site_url }}/"
+  },
+  "author": {"@type": "Person", "name": "Silvanus P. Thompson"},
+  "translator": {"@type": "Person", "name": "Thales Rodrigues"},
+  "url": "{{ site_url }}/12.html",
+  "inLanguage": "pt-BR",
+  "isAccessibleForFree": true
+}
+</script>
+</head>
+<body>
+{% include "toolbar.html" %}
 
-<h1><br>Curvature of Curves</h1>
+<h1><br>Curvatura das Curvas</h1>
 <p class="a rotatedFloralHeartBullet">
 
 
-<p>Returning to the process of successive differentiation,
-it may be asked: Why does anybody want to
-differentiate twice over? We know that when the
-variable quantities are space and time, by differentiating
-twice over we get the acceleration of a
-moving body, and that in the geometrical interpretation,
-as applied to curves, $\dfrac{dy}{dx}$ means the <em>slope</em> of the
-curve. But what can $\dfrac{d^2 y}{dx^2}$ mean in this case? Clearly
-it means the rate (per unit of length $x$) at which the
-slope is changing–in brief, it is <em>a measure of the
-curvature of the slope</em>.
+<p>Voltando ao processo de diferenciação sucessiva,
+pode-se perguntar: por que alguém quer
+diferenciar duas vezes? Sabemos que, quando as
+grandezas variáveis são espaço e tempo, ao diferenciar
+duas vezes obtemos a aceleração de um
+corpo em movimento, e que, na interpretação geométrica
+aplicada a curvas, $\dfrac{dy}{dx}$ significa a <em>inclinação</em> da
+curva. Mas o que pode $\dfrac{d^2 y}{dx^2}$ significar neste caso? Claramente
+significa a taxa (por unidade de comprimento $x$) com que a
+inclinação está mudando - em resumo, é <em>uma medida da
+curvatura da inclinação</em>.
 
 <a name="figure31">
 <p><img src="33283-t/images/124a.pdf.png-1.png">
 <a name="figure32">
 <p><img src="33283-t/images/124b.pdf.png-1.png">
 
-<p>Suppose a slope constant, as in <a href="#figure31">Figure 31</a>.
+<p>Suponha uma inclinação constante, como na <a href="#figure31">Figura 31</a>.
 
-<p>Here, $\dfrac{dy}{dx}$ is of constant value.
+<p>Aqui, $\dfrac{dy}{dx}$ tem valor constante.
 
 
-<p>Suppose, however, a case in which, like <a href="#figure32">Figure 32</a>,
-the slope itself is getting greater upwards, then
-$\dfrac{d\left(\dfrac{dy}{dx}\right)}{dx}$, that is, $\dfrac{d^2y}{dx^2}$, will be <em>positive</em>.
+<p>Suponha, porém, um caso em que, como na <a href="#figure32">Figura 32</a>,
+a própria inclinação está se tornando maior para cima; então
+$\dfrac{d\left(\dfrac{dy}{dx}\right)}{dx}$, isto é, $\dfrac{d^2y}{dx^2}$, será <em>positiva</em>.
 
-<p>If the slope is becoming less as you go to the right
-(as in <a href="10.html#figure14">Figure 14</a>), or as in <a href="#figure33">Figure 33</a>, then, even
-though the curve may be going upward, since the
-change is such as to diminish its slope, its $\dfrac{d^2y}{dx^2}$ will
-be <em>negative</em>.
+<p>Se a inclinação está se tornando menor conforme você avança para a direita
+(como na <a href="10.html#figure14">Figura 14</a>), ou como na <a href="#figure33">Figura 33</a>, então, mesmo
+que a curva possa estar subindo, como a
+mudança é de tal modo a diminuir sua inclinação, seu $\dfrac{d^2y}{dx^2}$ será
+<em>negativo</em>.
 
 <a name="figure3">
 <p><img src="33283-t/images/125a.pdf.png-1.png">
 
-<p>It is now time to initiate you into another secret–how
-to tell whether the result that you get by
-“equating to zero” is a maximum or a minimum.
-The trick is this: After you have differentiated
-(so as to get the expression which you equate to
-zero), you then differentiate a second time, and look
-whether the result of the second differentiation is
-<em>positive</em> or <em>negative</em>. If $\dfrac{d^2y}{dx^2}$ comes out <em>positive</em>, then
-you know that the value of $y$ which you got was
-a <em>minimum</em>; but if $\dfrac{d^2y}{dx^2}$ comes out <em>negative</em>, then
+<p>É chegada a hora de iniciá-lo em outro segredo: como
+saber se o resultado que você obtém ao
+“igualar a zero” é um máximo ou um mínimo.
+O truque é este: depois de ter diferenciado
+(de modo a obter a expressão que você iguala a
+zero), você então diferencia uma segunda vez, e observa
+se o resultado da segunda diferenciação é
+<em>positivo</em> ou <em>negativo</em>. Se $\dfrac{d^2y}{dx^2}$ resulta <em>positivo</em>, então
+você sabe que o valor de $y$ que obteve era
+um <em>mínimo</em>; mas se $\dfrac{d^2y}{dx^2}$ resulta <em>negativo</em>, então
 
-the value of $y$ which you got must be a <em>maximum</em>.
-That's the rule.
+o valor de $y$ que você obteve deve ser um <em>máximo</em>.
+Essa é a regra.
 
 <a name="figure34">
 <p><img src="33283-t/images/126a.pdf.png-1.png">
 <a name="figure35">
 <p><img src="33283-t/images/126b.pdf.png-1.png">
 
-<p>The reason of it ought to be quite evident. Think
-of any curve that has a minimum point in it (like
-<a href="10.html#figure15">Figure 15</a>), or like <a href="#figure34">Figure 34</a>, where the point of
-minimum $y$ is marked $M$, and the curve is <em>concave</em>
-upwards. To the left of $M$ the slope is downward,
-that is, negative, and is getting less negative. To the
-right of $M$ the slope has become upward, and is
-getting more and more upward. Clearly the change
-of slope as the curve passes through $M$ is such that
-$\dfrac{d^2y}{dx^2}$ is <em>positive</em>, for its operation, as $x$ increases toward
-the right, is to convert a downward slope into an
-upward one.
+<p>A razão disso deveria ser bem evidente. Pense
+em qualquer curva que tenha um ponto de mínimo nela (como a
+<a href="10.html#figure15">Figura 15</a>), ou como a <a href="#figure34">Figura 34</a>, onde o ponto de
+mínimo $y$ está marcado $M$, e a curva é <em>côncava</em>
+para cima. À esquerda de $M$ a inclinação é para baixo,
+isto é, negativa, e está se tornando menos negativa. À
+direita de $M$ a inclinação se tornou para cima, e está
+se tornando cada vez mais para cima. Claramente a mudança
+de inclinação conforme a curva passa por $M$ é tal que
+$\dfrac{d^2y}{dx^2}$ é <em>positivo</em>, pois sua operação, à medida que $x$ aumenta para
+a direita, é converter uma inclinação para baixo em uma
+para cima.
 
-<p>Similarly, consider any curve that has a maximum
-point in it (like <a href="10.html#figure16">Figure 16</a>), or like <a href="#figure35">Figure 35</a>, where
-the curve is <em>convex</em>, and the maximum point is
-marked $M$. In this case, as the curve passes through $M$
-from left to right, its upward slope is converted
+<p>De modo semelhante, considere qualquer curva que tenha um ponto de máximo
+nela (como a <a href="10.html#figure16">Figura 16</a>), ou como a <a href="#figure35">Figura 35</a>, onde
+a curva é <em>convexa</em>, e o ponto de máximo está
+marcado $M$. Neste caso, conforme a curva passa por $M$
+da esquerda para a direita, sua inclinação para cima é convertida
 
-into a downward or negative slope, so that in this
-case the “slope of the slope” $\dfrac{d^2y}{dx^2}$ is <em>negative</em>.
+em uma inclinação para baixo ou negativa, de modo que neste
+caso a “inclinação da inclinação” $\dfrac{d^2y}{dx^2}$ é <em>negativa</em>.
 
-<p>Go back now to the examples of the last chapter
-and verify in this way the conclusions arrived at as to
-whether in any particular case there is a maximum
-or a minimum. You will find below a few worked
-out examples.
+<p>Volte agora aos exemplos do capítulo anterior
+e verifique deste modo as conclusões a que se chegou quanto a
+haver, em qualquer caso particular, um máximo
+ou um mínimo. Você encontrará abaixo alguns exemplos
+resolvidos.
 
 <p><hr>
 
-<p>(1) Find the maximum or minimum of
+<p>(1) Encontre o máximo ou mínimo de
 \begin{align*}
 \text{(a)}\quad y &= 4x^2-9x-6; \qquad \text{(b)}\quad y = 6 + 9x-4x^2; \\
 \end{align*}
 
-and ascertain if it be a maximum or a minimum in each case.
+e verifique se é um máximo ou um mínimo em cada caso.
 
 \begin{align*}
 \text{(a)}\quad \dfrac{dy}{dx}
-  &= 8x-9=0;\quad x=1\tfrac{1}{8},\quad \text{and } y = -11.065.\\
+  &= 8x-9=0;\quad x=1\tfrac{1}{8},\quad \text{e } y = -11.065.\\
 
 \dfrac{d^2y}{dx^2}
-  &= 8;\quad \text{it is $+$; hence it is a minimum.} \\
+  &= 8;\quad \text{é $+$; logo é um mínimo.} \\
 
 \text{(b)}\quad {\dfrac{dy}{dx}}
-  &= 9-8x=0;\quad x = 1\tfrac{1}{8};\quad \text{and } y = +11.065.\\
+  &= 9-8x=0;\quad x = 1\tfrac{1}{8};\quad \text{e } y = +11.065.\\
 
 \dfrac{d^2y}{dx^2}
-  &= -8;\quad \text{it is $-$; hence it is a maximum.}
+  &= -8;\quad \text{é $-$; logo é um máximo.}
 \end{align*}
 
-<p>(2) Find the maxima and minima of the function
+<p>(2) Encontre os máximos e mínimos da função
 $y = x^3-3x+16$.
 \begin{align*}
 \dfrac{dy}{dx}
-  &= 3x^2 - 3 = 0;\quad x^2 = 1;\quad \text{and } x = ±1.\\
+  &= 3x^2 - 3 = 0;\quad x^2 = 1;\quad \text{e } x = ±1.\\
 
 \dfrac{d^2y}{dx^2}
-  &= 6x;\quad \text{for $x = 1$; it is $+$};
+  &= 6x;\quad \text{para $x = 1$; é $+$};
 \end{align*}
-hence $x=1$ corresponds to a minimum $y=14$. For
-$x=-1$ it is $-$; hence $x=-1$ corresponds to a maximum
+logo $x=1$ corresponde a um mínimo $y=14$. Para
+$x=-1$ é $-$; logo $x=-1$ corresponde a um máximo
 $y=+18$.
 
 
-<p>(3) Find the maxima and minima of $y=\dfrac{x-1}{x^2+2}$.
+<p>(3) Encontre os máximos e mínimos de $y=\dfrac{x-1}{x^2+2}$.
 \[
 \frac{dy}{dx} = \frac{(x^2+2) × 1 - (x-1) × 2x}{(x^2+2)^2}
   = \frac{2x - x^2 + 2}{(x^2 + 2)^2} = 0;
 \]
-or $x^2 - 2x - 2 = 0$, whose solutions are $x =+2.73$ and
+ou $x^2 - 2x - 2 = 0$, cujas soluções são $x =+2.73$ e
 $x=-0.73$.
 \begin{align*}
 \dfrac{d^2y}{dx^2}
@@ -148,206 +170,212 @@ $x=-0.73$.
   &= - \frac{2x^5 - 6x^4 - 8x^3 - 8x^2 - 24x + 8}{(x^2 + 2)^4}.
 \end{align*}
 
-<p>The denominator is always positive, so it is sufficient
-to ascertain the sign of the numerator.
+<p>O denominador é sempre positivo, de modo que basta
+averiguar o sinal do numerador.
 
-<p>If we put $x = 2.73$, the numerator is negative; the
-maximum, $y = 0.183$.
+<p>Se pusermos $x = 2.73$, o numerador é negativo; o
+máximo, $y = 0.183$.
 
-<p>If we put $x=-0.73$, the numerator is positive; the
-minimum, $y=-0.683$.
+<p>Se pusermos $x=-0.73$, o numerador é positivo; o
+mínimo, $y=-0.683$.
 
-<p>(4) The expense $C$ of handling the products of a
-certain factory varies with the weekly output $P$
-according to the relation $C = aP + \dfrac{b}{c+P} + d$, where
-$a$, $b$, $c$, $d$ are positive constants. For what output
-will the expense be least?
+<p>(4) A despesa $C$ de manusear os produtos de uma
+certa fábrica varia com a produção semanal $P$
+segundo a relação $C = aP + \dfrac{b}{c+P} + d$, onde
+$a$, $b$, $c$, $d$ são constantes positivas. Para que produção
+a despesa será menor?
 \[
-\dfrac{dC}{dP} = a - \frac{b}{(c+P)^2} = 0\quad \text{for maximum or minimum;}
+\dfrac{dC}{dP} = a - \frac{b}{(c+P)^2} = 0\quad \text{para máximo ou mínimo;}
 \]
-hence $a = \dfrac{b}{(c+P)^2}$ and $P = ±\sqrt{\dfrac{b}{a}} - c$.
+logo $a = \dfrac{b}{(c+P)^2}$ e $P = ±\sqrt{\dfrac{b}{a}} - c$.
 
-<p>As the output cannot be negative, $P=+\sqrt{\dfrac{b}{a}} - c$.
+<p>Como a produção não pode ser negativa, $P=+\sqrt{\dfrac{b}{a}} - c$.
 
 \begin{align*}
-   Now
+   Agora
 \frac{d^2C}{dP^2} &= + \frac{b(2c + 2P)}{(c + P)^4},
 \end{align*}
-which is positive for all the values of $P$; hence
-$P = +\sqrt{\dfrac{b}{a}} - c$ corresponds to a minimum.
+que é positivo para todos os valores de $P$; logo
+$P = +\sqrt{\dfrac{b}{a}} - c$ corresponde a um mínimo.
 
-<p>(5) The total cost per hour $C$ of lighting a building
-with $N$ lamps of a certain kind is
+<p>(5) O custo total por hora $C$ de iluminar um edifício
+com $N$ lâmpadas de certo tipo é
 \[
 C = N\left(\frac{C_l}{t} + \frac{EPC_e}{1000}\right),
 \]
-where $E$ is the commercial efficiency (watts per candle),
+onde $E$ é a eficiência comercial (watts por vela),
 
-$P$ is the candle power of each lamp,<br>
-$t$ is the average life of each lamp in hours,<br>
-$C_l =$ cost of renewal in pence per hour of use,<br>
-$C_e =$ cost of energy per $1000$ watts per hour.<br>
+$P$ é a potência em velas de cada lâmpada,<br>
+$t$ é a vida média de cada lâmpada em horas,<br>
+$C_l =$ custo de reposição em pence por hora de uso,<br>
+$C_e =$ custo da energia por $1000$ watts por hora.<br>
 
-<p>Moreover, the relation connecting the average life
-of a lamp with the commercial efficiency at which it
-is run is approximately $t = mE^n$, where $m$ and $n$ are
-constants depending on the kind of lamp.
+<p>Além disso, a relação que liga a vida média
+de uma lâmpada à eficiência comercial com que ela
+é operada é aproximadamente $t = mE^n$, onde $m$ e $n$ são
+constantes que dependem do tipo de lâmpada.
 
-<p>Find the commercial efficiency for which the total
-cost of lighting will be least.
+<p>Encontre a eficiência comercial para a qual o custo
+total de iluminação será mínimo.
 
 \begin{align*}
-\text{   We have}\;
+\text{   Temos}\;
 C &= N\left(\frac{C_l}{m} E^{-n} + \frac{PC_e}{1000} E\right), \\
 \dfrac{dC}{dE}
   &= \frac{PC_e}{1000} - \frac{nC_l}{m} E^{-(n+1)} = 0
 \end{align*}
-for maximum or minimum.
+para máximo ou mínimo.
 \[
-E^{n+1} = \frac{1000 × nC_l}{mPC_e}\quad \text{and}\quad
+E^{n+1} = \frac{1000 × nC_l}{mPC_e}\quad \text{e}\quad
 E = \sqrt[n+1]{\frac{1000 × nC_l}{mPC_e}}.
 \]
 
 
-<p>This is clearly for minimum, since
+<p>Isto é claramente para mínimo, pois
 \[
 \frac{d^2C}{dE^2} = (n + 1) \frac{nC_l}{m} E^{-(n+2)},
 \]
-which is positive for a positive value of $E$.
+que é positivo para um valor positivo de $E$.
 
-<p>For a particular type of $16$ candle-power lamps,
-$C_l= 17$ pence, $C_e=5$ pence; and it was found that
-$m=10$ and $n=3.6$.
+<p>Para um tipo particular de lâmpadas de $16$ velas,
+$C_l= 17$ pence, $C_e=5$ pence; e verificou-se que
+$m=10$ e $n=3.6$.
 \[
 E = \sqrt[4.6]{\frac{1000 × 3.6 × 17}{10 × 16 × 5}}
-  = 2.6\text{ watts per candle-power}.
+  = 2.6\text{ watts por vela}.
 \]
 
 <p>
-<hr><h3>Exercises X</h3> (You are advised to plot the graph
-of any numerical example.)
+<hr><h3>Exercícios X</h3> (Recomenda-se plotar o gráfico
+de qualquer exemplo numérico.)
 
-(1) Find the maxima and minima of
+(1) Encontre os máximos e mínimos de
 \[
 y = x^3 + x^2 - 10x + 8.
 \]
 
-<p>(2) Given $y = \dfrac{b}{a}x - cx^2$, find expressions for $\dfrac{dy}{dx}$, and
-for $\dfrac{d^2y}{dx^2}$, also find the value of $x$ which makes $y$ a
-maximum or a minimum, and show whether it is
-maximum or minimum.
+<p>(2) Dado $y = \dfrac{b}{a}x - cx^2$, encontre expressões para $\dfrac{dy}{dx}$, e
+para $\dfrac{d^2y}{dx^2}$, encontre também o valor de $x$ que torna $y$ um
+máximo ou um mínimo, e mostre se é
+máximo ou mínimo.
 
-<p>(3) Find how many maxima and how many minima
-there are in the curve, the equation to which is
+<p>(3) Encontre quantos máximos e quantos mínimos
+há na curva cuja equação é
 \[
 y = 1 - \frac{x^2}{2} + \frac{x^4}{24};
 \]
-and how many in that of which the equation is
+e quantos naquela cuja equação é
 \[
 y = 1 - \frac{x^2}{2} + \frac{x^4}{24} - \frac{x^6}{720}.
 \]
 
 
-<p>(4) Find the maxima and minima of
+<p>(4) Encontre os máximos e mínimos de
 \[
 y=2x+1+\frac{5}{x^2}.
 \]
 
-<p>(5) Find the maxima and minima of
+<p>(5) Encontre os máximos e mínimos de
 \[
 y=\frac{3}{x^2+x+1}.
 \]
 
-<p>(6) Find the maxima and minima of
+<p>(6) Encontre os máximos e mínimos de
 \[
 y=\frac{5x}{2+x^2}.
 \]
 
-<p>(7) Find the maxima and minima of
+<p>(7) Encontre os máximos e mínimos de
 \[
 y=\frac{3x}{x^2-3} + \frac{x}{2} + 5.
 \]
 
-<p>(8) Divide a number $N$ into two parts in such a
-way that three times the square of one part plus
-twice the square of the other part shall be a
-minimum.
+<p>(8) Divida um número $N$ em duas partes de tal
+modo que três vezes o quadrado de uma parte mais
+duas vezes o quadrado da outra parte seja um
+mínimo.
 
-<p>(9) The efficiency $u$ of an electric generator at
-different values of output $x$ is expressed by the
-general equation:
+<p>(9) A eficiência $u$ de um gerador elétrico em
+diferentes valores de saída $x$ é expressa pela
+equação geral:
 \[
 u=\frac{x}{a+bx+cx^2};
 \]
-where $a$ is a constant depending chiefly on the energy
-losses in the iron and $c$ a constant depending chiefly
-on the resistance of the copper parts. Find an expression
-for that value of the output at which the
-efficiency will be a maximum.
+onde $a$ é uma constante que depende principalmente das perdas
+de energia no ferro e $c$ uma constante que depende principalmente
+da resistência das partes de cobre. Encontre uma expressão
+para aquele valor da saída em que a
+eficiência será máxima.
 
 
-<p>(10) Suppose it to be known that consumption of
-coal by a certain steamer may be represented by the
-formula $y = 0.3 + 0.001v^3$; where $y$ is the number of
-tons of coal burned per hour and $v$ is the speed
-expressed in nautical miles per hour. The cost of
-wages, interest on capital, and depreciation of that
-ship are together equal, per hour, to the cost of
-$1$ ton of coal. What speed will make the total cost
-of a voyage of $1000$ nautical miles a minimum?
-And, if coal costs $10$ shillings per ton, what will that
-minimum cost of the voyage amount to?
+<p>(10) Suponha-se que o consumo de
+carvão de certo vapor possa ser representado pela
+fórmula $y = 0.3 + 0.001v^3$; onde $y$ é o número de
+toneladas de carvão queimadas por hora e $v$ é a velocidade
+expressa em milhas náuticas por hora. O custo de
+salários, juros sobre o capital e depreciação desse
+navio são, juntos, por hora, iguais ao custo de
+$1$ tonelada de carvão. Que velocidade tornará o custo total
+de uma viagem de $1000$ milhas náuticas um mínimo?
+E, se o carvão custa $10$ xelins por tonelada, a quanto
+ascenderá esse custo mínimo da viagem?
 
-<p>(11) Find the maxima and minima of<a name="ex10"/>
+<p>(11) Encontre os máximos e mínimos de<a name="ex10"/>
 \[
 y = ±\frac{x}{6}\sqrt{x(10-x)}.
 \]
 
-<p>(12) Find the maxima and minima of
+<p>(12) Encontre os máximos e mínimos de
 \[
 y= 4x^3 - x^2 - 2x + 1.
 \]
 
 
-<p><h3 class="answers">Answers</h3>
+<p><h3 class="answers">Respostas</h3>
 
-<p>(1)   Max.: $x = -2.19$, $y = 24.19$; min.:, $x = 1.52$, $y = -1.38$.
+<p>(1)   Máx.: $x = -2.19$, $y = 24.19$; mín.:, $x = 1.52$, $y = -1.38$.
 
-<p>(2)   $\dfrac{dy}{dx} = \dfrac{b}{a} - 2cx$; $\dfrac{d^2 y}{dx^2} = -2c$; $x = \dfrac{b}{2ac}$ (<em>a maximum</em>).
+<p>(2)   $\dfrac{dy}{dx} = \dfrac{b}{a} - 2cx$; $\dfrac{d^2 y}{dx^2} = -2c$; $x = \dfrac{b}{2ac}$ (<em>um máximo</em>).
 
-<p>(3)   (<em>a</em> ) One maximum and two minima.
-(<em>b</em> ) One maximum. ($x = 0$; other points unreal.)
+<p>(3)   (<em>a</em> ) Um máximo e dois mínimos.
+(<em>b</em> ) Um máximo. ($x = 0$; outros pontos irreais.)
 
-<p>(4)   Min.: $x = 1.71$, $y = 6.14$.
+<p>(4)   Mín.: $x = 1.71$, $y = 6.14$.
 
-<p>(5)   Max: $x = -.5$, $y = 4$.
+<p>(5)   Máx: $x = -.5$, $y = 4$.
 
-<p>(6)   Max.: $x = 1.414$, $y = 1.7675$.
-Min.: $x = -1.414$, $y = 1.7675$.
+<p>(6)   Máx.: $x = 1.414$, $y = 1.7675$.
+Mín.: $x = -1.414$, $y = 1.7675$.
 
-<p>(7)   Max.: $x = -3.565$, $y = 2.12$.
-Min.: $x = +3.565$, $y = 7.88$.
+<p>(7)   Máx.: $x = -3.565$, $y = 2.12$.
+Mín.: $x = +3.565$, $y = 7.88$.
 
 <p>(8)   $0.4N$, $0.6N$.
 
 <p>(9)   $x = \sqrt{\dfrac{a}{c}}$.
 
-<p>(10)   Speed $8.66$ nautical miles per hour. Time taken $115.47$ hours.
-Minimum cost £$112$. $12$<em>s</em> .
+<p>(10)   Velocidade $8.66$ milhas náuticas por hora. Tempo gasto $115.47$ horas.
+Custo mínimo £$112$. $12$<em>s</em> .
 
-<p>(11)   Max. and min. for $x = 7.5$, $y = ±5.414$. (See example
-no. 10, <a href="9.html#Example10">here</a>.)
+<p>(11)   Máx. e mín. para $x = 7.5$, $y = ±5.414$. (Ver exemplo
+nº 10, <a href="9.html#Example10">aqui</a>.)
 
-<p>(12)   Min.: $x = \frac{1}{2}$, $y= 0.25$; max.: $x = - \frac{1}{3}$, $y= 1.408$.
+<p>(12)   Mín.: $x = \frac{1}{2}$, $y= 0.25$; máx.: $x = - \frac{1}{3}$, $y= 1.408$.
 
 <br>
 {%include "buy_solutions.html" %}
 
 <hr>
-<a href="13.html">Next &rarr;</a><br>
-<a href="/">Main Page &uarr;</a><br>
+<a href="13.html">Próximo &rarr;</a><br>
+<a href="11.html">← Anterior</a><br>
+<a href="index.html">Página principal &uarr;</a><br>
+
+{% include "footer.html" %}
 
 <script src="j/jquery.js"></script>
 <script src="j/modernizr.js"></script>
 <script src="j/dih5.js"></script>
+<script src="j/notes-toggle.js"></script>
 {%include "googleanalytics.html" %}
+</body>
+</html>

@@ -1,6 +1,39 @@
 <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+
 <meta charset="utf-8">
-<title>Other Useful Dodges | Calculus Made Easy</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Outros Truques Úteis | Cálculo Tornado Fácil - Cap. XIII</title>
+<meta name="description" content="Capítulo XIII: outros truques úteis no cálculo.">
+<meta name="author" content="Thales Rodrigues; Silvanus P. Thompson">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="googlebot" content="index, follow">
+<meta name="language" content="Portuguese">
+<meta name="keywords" content="cálculo, calculus made easy, Silvanus Thompson, cálculo diferencial, cálculo integral, matemática, educação livre, português, Martin Gardner, Cálculo Tornado Fácil, Thales Rodrigues">
+<link rel="canonical" href="https://rodriguestmo.github.io/calculo-tornado-facil/13.html">
+<link rel="alternate" hreflang="pt-BR" href="https://rodriguestmo.github.io/calculo-tornado-facil/13.html">
+<link rel="alternate" hreflang="x-default" href="https://rodriguestmo.github.io/calculo-tornado-facil/">
+
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Cálculo Tornado Fácil">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Outros Truques Úteis | Cálculo Tornado Fácil - Cap. XIII">
+<meta property="og:description" content="Capítulo XIII: outros truques úteis no cálculo.">
+<meta property="og:url" content="https://rodriguestmo.github.io/calculo-tornado-facil/13.html">
+<meta property="og:image" content="https://rodriguestmo.github.io/calculo-tornado-facil/cover.jpg">
+
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Outros Truques Úteis | Cálculo Tornado Fácil - Cap. XIII">
+<meta name="twitter:description" content="Capítulo XIII: outros truques úteis no cálculo.">
+<meta name="twitter:image" content="https://rodriguestmo.github.io/calculo-tornado-facil/cover.jpg">
+
+
+<meta name="ai-content-declaration" content="human-authored translation and educational adaptation">
+<link rel="describedby" href="https://rodriguestmo.github.io/calculo-tornado-facil/llms.txt">
 <link rel="stylesheet" href="screen.css">
 <style>
 body{counter-reset:h1 13}
@@ -11,362 +44,401 @@ body{counter-reset:h1 13}
 <script type="text/javascript"
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Chapter",
+  "name": "Outros Truques Úteis",
+  "position": 13,
+  "isPartOf": {
+    "@type": "Book",
+    "name": "Cálculo Tornado Fácil",
+    "url": "https://rodriguestmo.github.io/calculo-tornado-facil/"
+  },
+  "author": {"@type": "Person", "name": "Silvanus P. Thompson"},
+  "translator": {"@type": "Person", "name": "Thales Rodrigues"},
+  "url": "https://rodriguestmo.github.io/calculo-tornado-facil/13.html",
+  "inLanguage": "pt-BR",
+  "isAccessibleForFree": true
+}
+</script>
+</head>
+<body>
+<!-- Barra fixa: navegação, modo das notas, tema -->
+<div id="site-toolbar" class="site-toolbar" role="region" aria-label="Controles do site">
+  <a class="tb-home" href="index.html">Cálculo Tornado Fácil</a>
 
-<h1><br>Other Useful Dodges</h1>
+  <div class="tb-controls">
+    <label class="tb-field" title="Como exibir as notas de Martin Gardner (1998)">
+      <span class="tb-label">Notas</span>
+      <select id="notes-mode" aria-label="Modo de exibição das notas">
+        <option value="all">Sempre visíveis</option>
+        <option value="click">Lupa (clique para abrir)</option>
+        <option value="off">Sempre ocultadas</option>
+      </select>
+    </label>
+
+    <button type="button" id="toggle-theme" class="tb-btn" title="Alternar tema claro/escuro" aria-pressed="false">
+      <span class="theme-label">Tema escuro</span>
+    </button>
+  </div>
+</div>
+
+<h1><br>Outros Truques Úteis</h1>
 <p class="a rotatedFloralHeartBullet">
 
-<p><h2>Partial Fractions.</h2>
+<p><h2>Frações Parciais.</h2>
 
-<p>We have seen that when we differentiate a fraction
-we have to perform a rather complicated operation;
-and, if the fraction is not itself a simple one, the result
-is bound to be a complicated expression. If we could
-split the fraction into two or more simpler fractions
-such that their sum is equivalent to the original
-fraction, we could then proceed by differentiating
-each of these simpler expressions. And the result of
-differentiating would be the sum of two (or more)
-differentials, each one of which is relatively simple;
-while the final expression, though of course it will be
-the same as that which could be obtained without
-resorting to this dodge, is thus obtained with much
-less effort and appears in a simplified form.
+<p>Vimos que, quando diferenciamos uma fração,
+temos de realizar uma operação bastante complicada;
+e, se a fração não for ela mesma simples, o resultado
+é inevitavelmente uma expressão complicada. Se pudéssemos
+partir a fração em duas ou mais frações mais simples
+tais que sua soma seja equivalente à fração original,
+poderíamos então proceder diferenciando
+cada uma dessas expressões mais simples. E o resultado de
+diferenciar seria a soma de dois (ou mais)
+diferenciais, cada um relativamente simples;
+enquanto a expressão final, embora seja claro que será
+a mesma que se poderia obter sem
+recorrer a este truque, é assim obtida com muito
+menos esforço e aparece em forma simplificada.
 
-<p>Let us see how to reach this result. Try first the
-job of adding two fractions together to form a resultant
-fraction. Take, for example, the two fractions $\dfrac{1}{x+1}$
-and $\dfrac{2}{x-1}$. Every schoolboy can add these together
-and find their sum to be $\dfrac{3x+1}{x^2-1}$. And in the same
+<p>Vejamos como chegar a esse resultado. Tente primeiro o
+trabalho de somar duas frações para formar uma fração
+resultante. Tome, por exemplo, as duas frações $\dfrac{1}{x+1}$
+e $\dfrac{2}{x-1}$. Todo estudante de escola consegue somá-las
+e achar que a soma é $\dfrac{3x+1}{x^2-1}$. E do mesmo
 
-way he can add together three or more fractions.
-Now this process can certainly be reversed:<a name="partfracs2"/> that is to
-say, that if this last expression were given, it is certain
-that it can somehow be split back again into its
-original components or partial fractions. Only we do
-not know in every case that may be presented to us
-<em>how</em> we can so split it. In order to find this out
-we shall consider a simple case at first. But it is
-important to bear in mind that all which follows
-applies only to what are called “proper” algebraic
-fractions, meaning fractions like the above, which have
-the numerator of <em>a lesser degree</em> than the denominator;
-that is, those in which the highest index of $x$ is less
-in the numerator than in the denominator. If we
-have to deal with such an expression as $\dfrac{x^2+2}{x^2-1}$, we can
-simplify it by division, since it is equivalent to
-$1+\dfrac{3}{x^2-1}$; and $\dfrac{3}{x^2-1}$ is a proper algebraic fraction
-to which the operation of splitting into partial fractions
-can be applied, as explained hereafter.
+modo ele pode somar três ou mais frações.
+Ora, este processo pode certamente ser invertido:<a name="partfracs2"/> isto é,
+se esta última expressão fosse dada, é certo
+que de algum modo ela pode ser partida de volta em seus
+componentes originais ou frações parciais. Só que não
+sabemos, em cada caso que nos for apresentado,
+<em>como</em> podemos parti-la assim. Para descobrir isso
+consideraremos primeiro um caso simples. Mas é
+importante ter em mente que tudo o que se segue
+aplica apenas ao que se chama “frações” algébricas
+“próprias”, significando frações como as acima, que têm
+o numerador de <em>grau menor</em> que o denominador;
+isto é, aquelas em que o maior índice de $x$ é menor
+no numerador do que no denominador. Se tivermos
+de lidar com uma expressão como $\dfrac{x^2+2}{x^2-1}$, podemos
+simplificá-la por divisão, pois ela é equivalente a
+$1+\dfrac{3}{x^2-1}$; e $\dfrac{3}{x^2-1}$ é uma fração algébrica própria
+à qual se pode aplicar a operação de partir em frações parciais,
+como se explica adiante.
 
 <p>
-<em>Case I.</em> If we perform many additions of two or
-more fractions the denominators of which contain only
-terms in $x$, and no terms in $x^2$, $x^3$, or any other powers
-of $x$, we <em>always</em> find that <em>the denominator of the final
-resulting fraction is the product of the denominators</em>
-of the fractions which were added to form the result.
-It follows that by factorizing the denominator of this
-final fraction, we can find every one of the denominators
-of the partial fractions of which we are in search.
+<em>Caso I.</em> Se realizarmos muitas adições de duas ou
+mais frações cujos denominadores contenham apenas
+termos em $x$, e nenhum termo em $x^2$, $x^3$, ou quaisquer outras potências
+de $x$, <em>sempre</em> encontramos que <em>o denominador da fração
+resultante final é o produto dos denominadores</em>
+das frações que foram somadas para formar o resultado.
+Segue-se que, ao fatorar o denominador desta
+fração final, podemos achar cada um dos denominadores
+das frações parciais que buscamos.
 
 
-<p>Suppose we wish to go back from $\dfrac{3x+1}{x^2-1}$ to the
-components which we know are $\dfrac{1}{x+1}$ and $\dfrac{2}{x-1}$. If
-we did not know what those components were we can
-still prepare the way by writing:
+<p>Suponha que queiramos voltar de $\dfrac{3x+1}{x^2-1}$ aos
+componentes que sabemos serem $\dfrac{1}{x+1}$ e $\dfrac{2}{x-1}$. Se
+não soubéssemos quais eram esses componentes, ainda
+podemos preparar o caminho escrevendo:
 \[
 \frac{3x+1}{x^2-1} = \frac{3x+1}{(x+1)(x-1)} = \frac{}{x+1} + \frac{}{x-1},
 \]
-leaving blank the places for the numerators until we
-know what to put there. We always may assume the
-sign between the partial fractions to be <em>plus</em>, since, if
-it be <em>minus</em>, we shall simply find the corresponding
-numerator to be negative. Now, since the partial
-fractions are <em>proper</em> fractions, the numerators are
-mere numbers without $x$ at all, and we can call them
-$A$, $B$, $C\dots$ as we please. So, in this case, we have:
+deixando em branco os lugares dos numeradores até
+sabermos o que colocar ali. Sempre podemos supor o
+sinal entre as frações parciais como <em>mais</em>, pois, se
+for <em>menos</em>, simplesmente acharemos o numerador correspondente
+negativo. Ora, como as frações
+parciais são frações <em>próprias</em>, os numeradores são
+meros números sem $x$ algum, e podemos chamá-los
+$A$, $B$, $C\dots$ como quisermos. Assim, neste caso, temos:
 \[
 \frac{3x+1}{x^2-1} = \frac{A}{x+1} + \frac{B}{x-1}.
 \]
 
-<p>If now we perform the addition of these two
-partial fractions, we get $\dfrac{A(x-1)+B(x+1)}{(x+1)(x-1)}$; and this
-must be equal to $\dfrac{3x+1}{(x+1)(x-1)}$. And, as the denominators
-in these two expressions are the same,
-the numerators must be equal, giving us:
+<p>Se agora realizarmos a adição dessas duas
+frações parciais, obtemos $\dfrac{A(x-1)+B(x+1)}{(x+1)(x-1)}$; e isto
+deve ser igual a $\dfrac{3x+1}{(x+1)(x-1)}$. E, como os denominadores
+nestas duas expressões são os mesmos,
+os numeradores devem ser iguais, o que nos dá:
 \[
 3x + 1 = A(x-1) + B(x + 1).
 \]
 
-<p>Now, this is an equation with two unknown
-quantities, and it would seem that we need another
-equation before we can solve them and find $A$ and $B$.
+<p>Ora, esta é uma equação com duas quantidades
+desconhecidas, e pareceria que precisamos de outra
+equação antes de podermos resolvê-las e achar $A$ e $B$.
 
-But there is another way out of this difficulty. The
-equation must be true for all values of $x$; therefore
-it must be true for such values of $x$ as will cause
-$x-1$ and $x+1$ to become zero, that is for $x=1$ and
-for $x=-1$ respectively. If we make $x=1$, we get
-$4 = (A × 0)+(B × 2)$, so that $B=2$; and if we make
-$x=-1$, we get $-2 = (A × -2) + (B × 0)$, so that $A=1$.
-Replacing the $A$ and $B$ of the partial fractions by
-these new values, we find them to become $\dfrac{1}{x+1}$ and
-$\dfrac{2}{x-1}$; and the thing is done.
+Mas há outra saída para esta dificuldade. A
+equação deve ser verdadeira para todos os valores de $x$; portanto
+deve ser verdadeira para tais valores de $x$ que façam
+$x-1$ e $x+1$ se tornarem zero, isto é, para $x=1$ e
+para $x=-1$ respectivamente. Se fizermos $x=1$, obtemos
+$4 = (A × 0)+(B × 2)$, de modo que $B=2$; e se fizermos
+$x=-1$, obtemos $-2 = (A × -2) + (B × 0)$, de modo que $A=1$.
+Substituindo o $A$ e o $B$ das frações parciais por
+esses novos valores, achamos que se tornam $\dfrac{1}{x+1}$ e
+$\dfrac{2}{x-1}$; e o negócio está feito.
 
-<p>As a farther example, let us take the fraction
-$\dfrac{4x^2 + 2x - 14}{x^3 + 3x^2 - x - 3}$. The denominator becomes zero when
-$x$ is given the value $1$; hence $x-1$ is a factor of it,
-and obviously then the other factor will be $x^2 + 4x + 3$;
-and this can again be decomposed into $(x+1)(x+3)$.
-So we may write the fraction thus:
+<p>Como exemplo adicional, tomemos a fração
+$\dfrac{4x^2 + 2x - 14}{x^3 + 3x^2 - x - 3}$. O denominador se anula quando
+$x$ recebe o valor $1$; logo $x-1$ é um fator dele,
+e obviamente então o outro fator será $x^2 + 4x + 3$;
+e este pode de novo ser decomposto em $(x+1)(x+3)$.
+Assim podemos escrever a fração deste modo:
 \[
 \frac{4x^2 + 2x - 14}{x^3 + 3x^2 - x - 3}
   = \frac{A}{x+1} + \frac{B}{x-1} + \frac{C}{x+3},
 \]
-making three partial factors.
+fazendo três fatores parciais.
 
-<p>Proceeding as before, we find
+<p>Procedendo como antes, achamos
 \[
 4x^2 + 2x - 14 = A(x-1)(x+3) + B(x+1)(x+3) + C(x+1)(x-1).
 \]
 
-<p>Now, if we make $x=1$, we get:
+<p>Ora, se fizermos $x=1$, obtemos:
 \[
--8 = (A × 0) + B(2 × 4) + (C × 0);\quad \text{that is, } B = -1.
+-8 = (A × 0) + B(2 × 4) + (C × 0);\quad \text{isto é, } B = -1.
 \]
 
-<p>If $x= -1$, we get:
+<p>Se $x= -1$, obtemos:
 \[
--12 = A(-2 × 2) + (B × 0) + (C × 0);\quad \text{whence } A = 3.
+-12 = A(-2 × 2) + (B × 0) + (C × 0);\quad \text{donde } A = 3.
 \]
 
 
-<p>If $x = -3$, we get:
+<p>Se $x = -3$, obtemos:
 \[
-16 = (A × 0) + (B × 0) + C(-2 × -4);\quad \text{whence } C = 2.
+16 = (A × 0) + (B × 0) + C(-2 × -4);\quad \text{donde } C = 2.
 \]
 
-<p>So then the partial fractions are:
+<p>Assim as frações parciais são:
 \[
 \frac{3}{x+1} - \frac{1}{x-1} + \frac{2}{x+3},
 \]
-which is far easier to differentiate with respect to $x$
-than the complicated expression from which it is
-derived.
+que é bem mais fácil de diferenciar em relação a $x$
+do que a expressão complicada da qual é
+derivada.
 
-<p><em>Case II.</em> If some of the factors of the denominator
-contain terms in $x^2$, and are not conveniently put
-into factors, then the corresponding numerator may
-contain a term in $x$, as well as a simple number; and
-hence it becomes necessary to represent this unknown
-numerator not by the symbol $A$ but by $Ax + B$; the
-rest of the calculation being made as before.
+<p><em>Caso II.</em> Se alguns dos fatores do denominador
+contiverem termos em $x^2$, e não puderem ser convenientemente
+postos em fatores, então o numerador correspondente pode
+conter um termo em $x$, bem como um número simples; e
+logo torna-se necessário representar este numerador desconhecido
+não pelo símbolo $A$ mas por $Ax + B$; o
+resto do cálculo sendo feito como antes.
 
 
-   Try, for instance:
+   Experimente, por exemplo:
 \[
 \frac{-x^2 - 3}{(x^2+1)(x+1)}. \\
 \frac{-x^2 - 3}{(x^2+1)(x+1)} = \frac{Ax+B}{x^2+1} + \frac{C}{x+1};\\
 -x^2 - 3 = (Ax + B)(x+1) + C(x^2+1).
 \]
 
-<p>Putting $x= -1$, we get $-4 = C × 2$; and $C = -2$;
+<p>Pondo $x= -1$, obtemos $-4 = C × 2$; e $C = -2$;
 \begin{align*}
- \text{hence } \;
+ \text{logo } \;
 -x^2 - 3 &= (Ax + B)(x + 1) - 2x^2 - 2; \\
-\text{and } \;
+\text{e } \;
 x^2 - 1 &= Ax(x+1) + B(x+1).
 \end{align*}
 
-<p>Putting $x = 0$, we get $-1 = B$;
-hence
+<p>Pondo $x = 0$, obtemos $-1 = B$;
+logo
 \[
-x^2 - 1 = Ax(x + 1) - x - 1;\quad \text{or } x^2 + x = Ax(x+1); \\
- \text{and}\;
+x^2 - 1 = Ax(x + 1) - x - 1;\quad \text{ou } x^2 + x = Ax(x+1); \\
+ \text{e}\;
 x+1 = A(x+1),
 \]
 
-so that $A=1$, and the partial fractions are:
+de modo que $A=1$, e as frações parciais são:
 \[
 \frac{x-1}{x^2+1} - \frac{2}{x+1}.
 \]
 
-<p>Take as another example the fraction
+<p>Tome como outro exemplo a fração
 \[
 \frac{x^3-2}{(x^2+1)(x^2+2)}.
 \]
 
-<p>We get
+<p>Obtemos
 \begin{align*}
 \frac{x^3-2}{(x^2+1)(x^2+2)}
   &= \frac{Ax+B}{x^2+1} + \frac{Cx+D}{x^2+2}\\
   &= \frac{(Ax+B)(x^2+2)+(Cx+D)(x^2+1)}{(x^2+1)(x^2+2)}.
 \end{align*}
 
-<p>In this case the determination of $A$, $B$, $C$, $D$ is not
-so easy. It will be simpler to proceed as follows:
-Since the given fraction and the fraction found by
-adding the partial fractions are equal, and have
-<em>identical</em> denominators, the numerators must also be
-identically the same. In such a case, and for such
-algebraical expressions as those with which we are
-dealing here, <em>the coefficients of the same powers of $x$
-are equal and of same sign</em>.
+<p>Neste caso a determinação de $A$, $B$, $C$, $D$ não é
+tão fácil. Será mais simples proceder do seguinte modo:
+Como a fração dada e a fração encontrada ao
+somar as frações parciais são iguais, e têm
+denominadores <em>idênticos</em>, os numeradores também devem ser
+identicamente os mesmos. Em tal caso, e para tais
+expressões algébricas como aquelas com que estamos
+lidando aqui, <em>os coeficientes das mesmas potências de $x$
+são iguais e de mesmo sinal</em>.
 
-<p>Hence, since
+<p>Logo, como
 \begin{align*}
 x^3-2
   &= (Ax+B)(x^2+2) + (Cx+D)(x^2+1) \\
   &= (A+C)x^3 + (B+D)x^2 + (2A+C)x + 2B+D,
 \end{align*}
-we have $1=A+C$; $0=B+D$ (the coefficient of $x^2$
-in the left expression being zero); $0=2A+C$; and
-$-2=2B+D$. Here are four equations, from which
-we readily obtain $A=-1$; $B=-2$; $C=2$; $D=0$;
-so that the partial fractions are $\dfrac{2(x+1)}{x^2+2} - \dfrac{x+2}{x^2+1}$.
+temos $1=A+C$; $0=B+D$ (o coeficiente de $x^2$
+na expressão da esquerda sendo zero); $0=2A+C$; e
+$-2=2B+D$. Aqui estão quatro equações, das quais
+obtemos prontamente $A=-1$; $B=-2$; $C=2$; $D=0$;
+de modo que as frações parciais são $\dfrac{2(x+1)}{x^2+2} - \dfrac{x+2}{x^2+1}$.
 
-This method can always be used; but the method
-shown first will be found the quickest in the case of
-factors in $x$ only.
+Este método pode sempre ser usado; mas o método
+mostrado primeiro será o mais rápido no caso de
+fatores apenas em $x$.
 
-<p><em>Case III.</em> When, among the factors of the denominator
-there are some which are raised to some power,
-one must allow for the possible existence of partial
-fractions having for denominator the several powers
-of that factor up to the highest. For instance, in
-splitting the fraction $\dfrac{3x^2-2x+1}{(x+1)^2(x-2)}$ we must allow for
-the possible existence of a denominator $x+1$ as well
-as $(x+1)^2$ and $(x-2)$.
+<p><em>Caso III.</em> Quando, entre os fatores do denominador,
+há alguns elevados a alguma potência,
+deve-se permitir a possível existência de frações
+parciais tendo por denominador as várias potências
+desse fator até a mais alta. Por exemplo, ao
+partir a fração $\dfrac{3x^2-2x+1}{(x+1)^2(x-2)}$ devemos permitir a
+possível existência de um denominador $x+1$ bem
+como $(x+1)^2$ e $(x-2)$.
 
-<p>It maybe thought, however, that, since the numerator
-of the fraction the denominator of which is $(x+1)^2$
-may contain terms in $x$, we must allow for this in
-writing $Ax+B$ for its numerator, so that
+<p>Pode-se pensar, contudo, que, como o numerador
+da fração cujo denominador é $(x+1)^2$
+pode conter termos em $x$, devemos permitir por isso ao
+escrever $Ax+B$ para seu numerador, de modo que
 \[
 \frac{3x^2 - 2x + 1}{(x+1)^2(x-2)}
   = \frac{Ax+B}{(x+1)^2} + \frac{C}{x+1} + \frac{D}{x-2}.
 \]
-If, however, we try to find $A$, $B$, $C$ and $D$ in this case,
-we fail, because we get four unknowns; and we have
-only three relations connecting them, yet
+Se, porém, tentarmos achar $A$, $B$, $C$ e $D$ neste caso,
+fracassamos, porque obtemos quatro desconhecidas; e temos
+apenas três relações ligando-as, e no entanto
 \[
 \frac{3x^2 - 2x + 1}{(x+1)^2(x-2)}
   = \frac{x-1}{(x+1)^2} + \frac{1}{x+1} + \frac{1}{x-2}.
 \]
 
-<p>But if we write
+<p>Mas se escrevermos
 \[
 \frac{3x^2 - 2x + 1}{(x+1)^2(x-2)}
   = \frac{A}{(x+1)^2} + \frac{B}{x+1} + \frac{C}{x-2},
 \]
-we get
+obtemos
 \[
 3x^2 - 2x+1 = A(x-2) + B(x+1)(x-2) + C(x+1)^2,
 \]
 
-which gives $C=1$ for $x=2$. Replacing $C$ by its value,
-transposing, gathering like terms and dividing by
-$x-2$, we get $-2x= A+B(x+1)$, which gives $A=-2$
-for $x=-1$. Replacing $A$ by its value, we get
+o que dá $C=1$ para $x=2$. Substituindo $C$ por seu valor,
+transpondo, reunindo termos semelhantes e dividindo por
+$x-2$, obtemos $-2x= A+B(x+1)$, o que dá $A=-2$
+para $x=-1$. Substituindo $A$ por seu valor, obtemos
 \[
 2x = -2+B(x+1).
 \]
 
-<p>Hence $B=2$; so that the partial fractions are:
+<p>Logo $B=2$; de modo que as frações parciais são:
 \[
 \frac{2}{x+1} - \frac{2}{(x+1)^2} + \frac{1}{x-2},
 \]
-instead of $\dfrac{1}{x+1} + \dfrac{x-1}{(x+1)^2} + \dfrac{1}{x-2}$ stated above as being
-the fractions from which $\dfrac{3x^2-2x+1}{(x+1)^2(x-2)}$ was obtained.
-The mystery is cleared if we observe that $\dfrac{x-1}{(x+1)^2}$ can
-itself be split into the two fractions $\dfrac{1}{x+1} - \dfrac{2}{(x+1)^2}$, so
-that the three fractions given are really equivalent to
+em vez de $\dfrac{1}{x+1} + \dfrac{x-1}{(x+1)^2} + \dfrac{1}{x-2}$ afirmado acima como sendo
+as frações das quais $\dfrac{3x^2-2x+1}{(x+1)^2(x-2)}$ foi obtida.
+O mistério se esclarece se observarmos que $\dfrac{x-1}{(x+1)^2}$ pode
+ela mesma ser partida nas duas frações $\dfrac{1}{x+1} - \dfrac{2}{(x+1)^2}$, de modo
+que as três frações dadas são realmente equivalentes a
 \[
 \frac{1}{x+1} + \frac{1}{x+1} - \frac{2}{(x+1)^2} + \frac{1}{x-2}
   = \frac{2}{x+1} - \frac{2}{(x+1)^2} + \frac{1}{x-2},
 \]
-which are the partial fractions obtained.
+que são as frações parciais obtidas.
 
-<p>We see that it is sufficient to allow for one numerical
-term in each numerator, and that we always get the
-ultimate partial fractions.
+<p>Vemos que basta permitir um termo numérico
+em cada numerador, e que sempre obtemos as
+frações parciais definitivas.
 
-<p>When there is a power of a factor of $x^2$ in the
-denominator, however, the corresponding numerators
-must be of the form $Ax+B$; for example,
+<p>Quando há uma potência de um fator de $x^2$ no
+denominador, porém, os numeradores correspondentes
+devem ser da forma $Ax+B$; por exemplo,
 \[
 \frac{3x-1}{(2x^2-1)^2(x+1)}
   = \frac{Ax+B}{(2x^2-1)^2} + \frac{Cx+D}{2x^2-1} + \frac{E}{x+1},
 \]
 
-which gives
+o que dá
 \[
 3x - 1 = (Ax + B)(x + 1)
        + (Cx + D)(x + 1)(2x^2 - 1) + E(2x^2 - 1)^2.
 \]
 
-<p>For $x = -1$, this gives $E = -4$. Replacing, transposing,
-collecting like terms, and dividing by $x + 1$,
-we get
+<p>Para $x = -1$, isto dá $E = -4$. Substituindo, transpondo,
+coletando termos semelhantes e dividindo por $x + 1$,
+obtemos
 \[
 16x^3 - 16x^2 + 3 = 2Cx^3 + 2Dx^2 + x(A - C) + (B - D).
 \]
 
-<p>Hence $2C = 16$ and $C = 8$; $2D = -16$ and $D = -8$;
-$A - C = 0$ or $A - 8 = 0$ and $A = 8$, and finally, $B - D = 3$
-or $B = -5$. So that we obtain as the partial fractions:
+<p>Logo $2C = 16$ e $C = 8$; $2D = -16$ e $D = -8$;
+$A - C = 0$ ou $A - 8 = 0$ e $A = 8$, e finalmente, $B - D = 3$
+ou $B = -5$. De modo que obtemos como frações parciais:
 \[
 \frac{(8x - 5)}{(2x^2 - 1)^2} + \frac{8(x - 1)}{2x^2 - 1} - \frac{4}{x + 1}.
 \]
 
-<p>It is useful to check the results obtained. The
-simplest way is to replace $x$ by a single value, say $+1$,
-both in the given expression and in the partial
-fractions obtained.
+<p>É útil verificar os resultados obtidos. O
+modo mais simples é substituir $x$ por um único valor, digamos $+1$,
+tanto na expressão dada quanto nas frações
+parciais obtidas.
 
-<p>Whenever the denominator contains but a power of
-a single factor, a very quick method is as follows:
+<p>Sempre que o denominador contiver apenas uma potência de
+um único fator, um método muito rápido é o seguinte:
 
-<p>Taking, for example, $\dfrac{4x + 1}{(x + 1)^3}$, let $x + 1 = z$; then
+<p>Tomando, por exemplo, $\dfrac{4x + 1}{(x + 1)^3}$, seja $x + 1 = z$; então
 $x = z - 1$.
 
-<p>Replacing, we get
+<p>Substituindo, obtemos
 \[
 \frac{4(z - 1) + 1}{z^3} = \frac{4z - 3}{z^3} = \frac{4}{z^2} - \frac{3}{z^3}.
 \]
 
-<p>The partial fractions are, therefore,
+<p>As frações parciais são, portanto,
 \[
 \frac{4}{(x + 1)^2} - \frac{3}{(x + 1)^3}.
 \]
 
 
-<p>Application to differentiation. Let it be required
-to differentiate $y = \dfrac{5-4x}{6x^2 + 7x - 3}$; we have
+<p>Aplicação à diferenciação. Seja necessário
+diferenciar $y = \dfrac{5-4x}{6x^2 + 7x - 3}$; temos
 \begin{align*}
 \frac{dy}{dx}
   &= -\frac{(6x^2+7x-3) × 4 + (5 - 4x)(12x + 7)}{(6x^2 + 7x - 3)^2}\\
   &=  \frac{24x^2 - 60x - 23}{(6x^2 + 7x - 3)^2}.
 \end{align*}
 
-<p>If we split the given expression into
+<p>Se partirmos a expressão dada em
 \[
 \frac{1}{3x-1} - \frac{2}{2x+3},
 \]
-we get, however,
+obtemos, porém,
 \[
 \frac{dy}{dx} = -\frac{3}{(3x-1)^2} + \frac{4}{(2x+3)^2},
 \]
-which is really the same result as above split into
-partial fractions. But the splitting, if done after
-differentiating, is more complicated, as will easily be
-seen. When we shall deal with the <em>integration</em> of
-such expressions, we shall find the splitting into
-partial fractions a precious auxiliary (see <a href="20.html#partfracs">here</a>).
+que é realmente o mesmo resultado acima partido em
+frações parciais. Mas a partição, se feita depois de
+diferenciar, é mais complicada, como se verá facilmente.
+Quando tratarmos da <em>integração</em> de
+tais expressões, acharemos a partição em
+frações parciais um auxiliar precioso (ver <a href="20.html#partfracs">aqui</a>).
 
 <p>
-<hr><h3>Exercises XI</h3>
-<p>Split into fractions:
+<hr><h3>Exercícios XI</h3>
+<p>Parta em frações:
 
 <p>(1) $\dfrac{3x + 5}{(x - 3)(x + 4)}$.
 <p>(2) $\dfrac{3x - 4}{(x - 1)(x - 2)}$.
@@ -387,7 +459,7 @@ partial fractions a precious auxiliary (see <a href="20.html#partfracs">here</a>
 <p>(17) $\dfrac{7x^2 + 9x - 1}{(3x - 2)^4}$.
 <p>(18) $\dfrac{x^2}{(x^3 - 8)(x - 2)}$.
 
-<p><h3 class="answers">Answers</h3>
+<p><h3 class="answers">Respostas</h3>
 
 <p>(1)   $\dfrac{2}{ x - 3} + \dfrac{1}{ x + 4}$.
 
@@ -430,60 +502,60 @@ partial fractions a precious auxiliary (see <a href="20.html#partfracs">here</a>
 
 <p>(18)  $\dfrac{1}{6(x - 2)} + \dfrac{1}{3(x - 2)^2} - \dfrac{x}{6(x^2 + 2x + 4)}$.
 <p>
-<h2>Differential of an Inverse Function.</h2>
+<h2>Diferencial de uma Função Inversa.</h2>
 
-<p>Consider the function (see <a href="3.html#function">here</a>) $y = 3x$; it can be
-expressed in the form $x = \dfrac{y}{3}$; this latter form is called
-the <em>inverse function</em> to the one originally given.
+<p>Considere a função (ver <a href="3.html#function">aqui</a>) $y = 3x$; ela pode ser
+expressa na forma $x = \dfrac{y}{3}$; esta última forma é chamada
+a <em>função inversa</em> da originalmente dada.
 
-<p>If $y = 3x$,&nbsp;&nbsp; $\dfrac{dy}{dx} = 3$; if $x=\dfrac{y}{3}$,&nbsp;&nbsp; $\dfrac{dx}{dy} = \dfrac{1}{3}$, and we see that
+<p>Se $y = 3x$,&nbsp;&nbsp; $\dfrac{dy}{dx} = 3$; se $x=\dfrac{y}{3}$,&nbsp;&nbsp; $\dfrac{dx}{dy} = \dfrac{1}{3}$, e vemos que
 \[
-\frac{dy}{dx} = \frac{1}{\ \dfrac{dx}{dy}\ }\quad \text{or}\quad
+\frac{dy}{dx} = \frac{1}{\ \dfrac{dx}{dy}\ }\quad \text{ou}\quad
 \frac{dy}{dx} × \frac{dx}{dy} = 1.
 \]
 
-<p>Consider $y= 4x^2$, $\dfrac{dy}{dx} = 8x$; the inverse function is
+<p>Considere $y= 4x^2$, $\dfrac{dy}{dx} = 8x$; a função inversa é
 \[
-x = \frac{y^{\frac{1}{2}}}{2},\quad \text{and}\quad
+x = \frac{y^{\frac{1}{2}}}{2},\quad \text{e}\quad
 \frac{dx}{dy} = \frac{1}{4\sqrt{y}} = \frac{1}{4 × 2x} = \frac{1}{8x}.
 \]
 
 \begin{align*}
-   \text{Here again}\;
+   \text{Aqui de novo}\;
 \frac{dy}{dx}×\frac{dx}{dy} &= 1.
 \end{align*}
 
-<p>It can be shown that for all functions which can be
-put into the inverse form, one can always write
+<p>Pode-se mostrar que, para todas as funções que podem ser
+postas na forma inversa, pode-se sempre escrever
 \[
-\frac{dy}{dx} × \frac{dx}{dy} = 1\quad \text{or}\quad
+\frac{dy}{dx} × \frac{dx}{dy} = 1\quad \text{ou}\quad
 \frac{dy}{dx} = \frac{1}{\ \dfrac{dx}{dy}\ }.
 \]
 
-<p>It follows that, being given a function, if it be
-easier to differentiate the inverse function, this may
-be done, and the reciprocal of the differential coefficient
-of the inverse function gives the differential coefficient
-of the given function itself.
+<p>Segue-se que, dada uma função, se for
+mais fácil diferenciar a função inversa, isso pode
+ser feito, e o recíproco do coeficiente diferencial
+da função inversa dá o coeficiente diferencial
+da própria função dada.
 
-<p>As an example, suppose that we wish to differentiate
-$y=\sqrt[2]{\dfrac{3}{x}-1}$. We have seen one way of doing this,
-by writing $u=\dfrac{3}{x}-1$, and finding $\dfrac{dy}{du}$ and $\dfrac{du}{dx}$. This
-gives
+<p>Como exemplo, suponha que queiramos diferenciar
+$y=\sqrt[2]{\dfrac{3}{x}-1}$. Vimos um modo de fazer isso,
+escrevendo $u=\dfrac{3}{x}-1$, e achando $\dfrac{dy}{du}$ e $\dfrac{du}{dx}$. Isso
+dá
 \[
 \frac{dy}{dx} = -\frac{3}{2x^2\sqrt{\dfrac{3}{x} -1}}.
 \]
 
-<p>If we had forgotten how to proceed by this method,
-or wished to check our result by some other way of
-obtaining the differential coefficient, or for any other
-reason we could not use the ordinary method, we can
-proceed as follows: The inverse function is $x=\dfrac{3}{1+y^2}$.
+<p>Se tivéssemos esquecido como proceder por este método,
+ou quiséssemos verificar nosso resultado por algum outro modo de
+obter o coeficiente diferencial, ou por qualquer outra
+razão não pudéssemos usar o método ordinário, podemos
+proceder do seguinte modo: A função inversa é $x=\dfrac{3}{1+y^2}$.
 \[
 \frac{dx}{dy} = -\frac{3 × 2y}{(1+y^2)^2} = -\frac{6y}{(1+y^2)^2};
 \]
 
-hence
+logo
 \[
 \frac{dy}{dx} = \frac{1}{\ \dfrac{dx}{dy}\ }
   = -\frac{(1+y^2)^2}{6y}
@@ -491,54 +563,79 @@ hence
   = -\frac{3}{2x^2\sqrt{\dfrac{3}{x}-1}}.
 \]
 
-<p>Let us take as an other example $y=\dfrac{1}{\sqrt[3]{\theta +5}}$.
+<p>Tomemos como outro exemplo $y=\dfrac{1}{\sqrt[3]{\theta +5}}$.
 
-<p>The inverse function is $\theta=\dfrac{1}{y^3}-5$ or $\theta=y^{-3}-5$, and
+<p>A função inversa é $\theta=\dfrac{1}{y^3}-5$ ou $\theta=y^{-3}-5$, e
 \[
 \frac{d\theta}{dy} = -3y^{-4} = -3\sqrt[3]{(\theta + 5)^4}.
 \]
 
-<p>It follows that $\dfrac{dy}{dx} = -\dfrac{1}{3\sqrt{(\theta +5)^4}}$, as might have
-been found otherwise.
+<p>Segue-se que $\dfrac{dy}{dx} = -\dfrac{1}{3\sqrt{(\theta +5)^4}}$, como se poderia ter
+achado de outro modo.
 
-<p>We shall find this dodge most useful later on;
-meanwhile you are advised to become familiar with
-it by verifying by its means the results obtained in
-Exercises I. (<a href="4.html#ex1">here</a>), Nos. 5, 6, 7; Examples (<a href="9.html#ExNo1">here</a>),
-Nos. 1, 2, 4; and Exercises VI. (<a href="9.html#ex6">here</a>), Nos. 1, 2, 3
-and 4.
+<p>Acharemos este truque muito útil mais adiante;
+entretanto aconselha-se a familiarizar-se com
+ele verificando por seu meio os resultados obtidos nos
+Exercícios I. (<a href="4.html#ex1">aqui</a>), nºs 5, 6, 7; Exemplos (<a href="9.html#ExNo1">aqui</a>),
+nºs 1, 2, 4; e Exercícios VI. (<a href="9.html#ex6">aqui</a>), nºs 1, 2, 3
+e 4.
 
 <p><hr>
 
-<p>You will surely realize from this chapter and the
-preceding, that in many respects the calculus is an
-<em>art</em> rather than a <em>science</em>: an art only to be acquired,
-as all other arts are, by practice. Hence you should
-work many examples, and set yourself other examples,
-to see if you can work them out, until the various
-artifices become familiar by use.
+<p>Você certamente perceberá, a partir deste capítulo e do
+precedente, que em muitos aspectos o cálculo é uma
+<em>arte</em> mais do que uma <em>ciência</em>: uma arte que só se adquire,
+como todas as outras artes, pela prática. Por isso você deve
+trabalhar muitos exemplos, e propor a si mesmo outros exemplos,
+para ver se consegue resolvê-los, até que os vários
+artifícios se tornem familiares pelo uso.
 
 <br>
-<script type="text/javascript" src="https://payhip.com/payhip.js"></script>
-<h3>Get Complete Step-by-Step Solutions</h3>
-<a href="https://payhip.com/b/2MVru"><img class="cover" src="cover-small.png" width="180px"></a>
-
-<ul>
-    <li>For all exercises in this book.</li>
-    <li>Check your work or get unstuck.</li>
-    <li>Written by CalculusMadeEasy.org</li>
-	<li>Support this website ❤️.</li>
-	<li>229 pages</li>
-    <li><a href="https://payhip.com/b/2MVru">More details</a></li>
-    <br>
-        <a href="https://payhip.com/b/2MVru" class="payhip-buy-button" data-theme="green" data-product="2MVru">Download for $9</a>
-</ul>
+<!-- Soluções comerciais removidas: projeto público e sem fins lucrativos -->
 
 <hr>
-<a href="14.html">Next &rarr;</a><br>
-<a href="/">Main Page &uarr;</a><br>
+<a href="14.html">Próximo &rarr;</a><br>
+<a href="12.html">← Anterior</a><br>
+<a href="index.html">Página principal &uarr;</a><br>
+
+<footer class="site-footer" role="contentinfo">
+  <p class="a rotatedFloralHeartBullet"></p>
+
+  <div class="manifesto">
+    <p class="manifesto-lead">
+      Este é um <strong>projeto público</strong>, sem fins lucrativos.
+      Não é permitido comercializá-lo, vendê-lo nem usá-lo como produto pago.
+    </p>
+    <p class="manifesto-quote">
+      A educação é um direito de todos.
+      O conhecimento deve ser livre sempre que não cause o mal:
+      deve circular, ensinar e libertar, nunca aprisionar quem aprende.
+    </p>
+    <p class="manifesto-sign">
+      - Thales Rodrigues
+    </p>
+  </div>
+
+  <nav class="author-links" aria-label="Redes de Thales Rodrigues">
+    <a href="https://www.linkedin.com/in/thales-oliveira-rodrigues/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    <span class="dot" aria-hidden="true">·</span>
+    <a href="https://github.com/Rodriguestmo" target="_blank" rel="noopener noreferrer">GitHub</a>
+  </nav>
+
+  <p class="footer-meta">
+    <small>
+      Tradução e adaptação PT-BR por Thales Rodrigues.
+      Texto de Silvanus P. Thompson em domínio público (Project Gutenberg).
+      Notas de contexto inspiradas na edição Gardner (1998).
+      Projeto público e gratuito.
+    </small>
+  </p>
+</footer>
 
 <script src="j/jquery.js"></script>
 <script src="j/modernizr.js"></script>
 <script src="j/dih5.js"></script>
+<script src="j/notes-toggle.js"></script>
 <!-- Analytics desativado na edição PT local -->
+</body>
+</html>

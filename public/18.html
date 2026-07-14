@@ -1,6 +1,39 @@
 <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+
 <meta charset="utf-8">
-<title>Integrating as the Reverse of Differentiating | Calculus Made Easy</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Integrar como Inverso | Cálculo Tornado Fácil - Cap. XVIII</title>
+<meta name="description" content="Capítulo XVIII: integrar como o inverso de diferenciar.">
+<meta name="author" content="Thales Rodrigues; Silvanus P. Thompson">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="googlebot" content="index, follow">
+<meta name="language" content="Portuguese">
+<meta name="keywords" content="cálculo, calculus made easy, Silvanus Thompson, cálculo diferencial, cálculo integral, matemática, educação livre, português, Martin Gardner, Cálculo Tornado Fácil, Thales Rodrigues">
+<link rel="canonical" href="https://rodriguestmo.github.io/calculo-tornado-facil/18.html">
+<link rel="alternate" hreflang="pt-BR" href="https://rodriguestmo.github.io/calculo-tornado-facil/18.html">
+<link rel="alternate" hreflang="x-default" href="https://rodriguestmo.github.io/calculo-tornado-facil/">
+
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Cálculo Tornado Fácil">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Integrar como Inverso | Cálculo Tornado Fácil - Cap. XVIII">
+<meta property="og:description" content="Capítulo XVIII: integrar como o inverso de diferenciar.">
+<meta property="og:url" content="https://rodriguestmo.github.io/calculo-tornado-facil/18.html">
+<meta property="og:image" content="https://rodriguestmo.github.io/calculo-tornado-facil/cover.jpg">
+
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Integrar como Inverso | Cálculo Tornado Fácil - Cap. XVIII">
+<meta name="twitter:description" content="Capítulo XVIII: integrar como o inverso de diferenciar.">
+<meta name="twitter:image" content="https://rodriguestmo.github.io/calculo-tornado-facil/cover.jpg">
+
+
+<meta name="ai-content-declaration" content="human-authored translation and educational adaptation">
+<link rel="describedby" href="https://rodriguestmo.github.io/calculo-tornado-facil/llms.txt">
 <link rel="stylesheet" href="screen.css">
 <style>
 body{counter-reset:h1 18}
@@ -11,166 +44,205 @@ body{counter-reset:h1 18}
 <script type="text/javascript"
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Chapter",
+  "name": "Integrar como o Inverso de Diferenciar",
+  "position": 18,
+  "isPartOf": {
+    "@type": "Book",
+    "name": "Cálculo Tornado Fácil",
+    "url": "https://rodriguestmo.github.io/calculo-tornado-facil/"
+  },
+  "author": {"@type": "Person", "name": "Silvanus P. Thompson"},
+  "translator": {"@type": "Person", "name": "Thales Rodrigues"},
+  "url": "https://rodriguestmo.github.io/calculo-tornado-facil/18.html",
+  "inLanguage": "pt-BR",
+  "isAccessibleForFree": true
+}
+</script>
+</head>
+<body>
+<!-- Barra fixa: navegação, modo das notas, tema -->
+<div id="site-toolbar" class="site-toolbar" role="region" aria-label="Controles do site">
+  <a class="tb-home" href="index.html">Cálculo Tornado Fácil</a>
 
-<h1><br>Integrating as the Reverse of Differentiating</h1>
+  <div class="tb-controls">
+    <label class="tb-field" title="Como exibir as notas de Martin Gardner (1998)">
+      <span class="tb-label">Notas</span>
+      <select id="notes-mode" aria-label="Modo de exibição das notas">
+        <option value="all">Sempre visíveis</option>
+        <option value="click">Lupa (clique para abrir)</option>
+        <option value="off">Sempre ocultadas</option>
+      </select>
+    </label>
+
+    <button type="button" id="toggle-theme" class="tb-btn" title="Alternar tema claro/escuro" aria-pressed="false">
+      <span class="theme-label">Tema escuro</span>
+    </button>
+  </div>
+</div>
+
+<h1><br>Integrar como o Inverso de Diferenciar</h1>
 <p class="a rotatedFloralHeartBullet">
-<p>Differentiating is the process by which when $y$ is
-given us (as a function of $x$), we can find $\dfrac{dy}{dx}$.
+<p>Diferenciar é o processo pelo qual, quando $y$ nos é
+dado (como função de $x$), podemos achar $\dfrac{dy}{dx}$.
 
 <p><a name="revdif"/>
-Like every other mathematical operation, the
-process of differentiation may be reversed; thus, if
-differentiating $y = x^4$ gives us $\dfrac{dy}{dx} = 4x^3$; if one begins
-with $\dfrac{dy}{dx} = 4x^3$ one would say that reversing the process
-would yield $y = x^4$.  But here comes in a curious
-point. We should get $\dfrac{dy}{dx} = 4x^3$ if we had begun with
-<em>any</em> of the following: $x^4$, or $x^4 + a$, or $x^4 + c$, or $x^4$
-with <em>any</em> added constant. So it is clear that in
-working backwards from $\dfrac{dy}{dx}$ to $y$, one must make
-provision for the possibility of there being an added
-constant, the value of which will be undetermined
+Como toda outra operação matemática, o processo de
+diferenciação pode ser invertido; assim, se
+diferenciar $y = x^4$ nos dá $\dfrac{dy}{dx} = 4x^3$; se alguém
+começar com $\dfrac{dy}{dx} = 4x^3$ diria que inverter o processo
+produz $y = x^4$. Mas aqui surge um ponto curioso. Também
+obteríamos $\dfrac{dy}{dx} = 4x^3$ se tivéssemos começado com
+<em>qualquer</em> das seguintes: $x^4$, ou $x^4 + a$, ou $x^4 + c$, ou
+$x^4$ com <em>qualquer</em> constante acrescentada. Fica claro,
+pois, que ao trabalhar de trás para a frente de
+$\dfrac{dy}{dx}$ até $y$, é preciso prever a possibilidade de
+haver uma constante acrescentada, cujo valor ficará
+indeterminado até ser apurado de outro modo. Assim,
+se diferenciar $x^n$ produz $nx^{n-1}$, voltando de
+$\dfrac{dy}{dx} = nx^{n-1}$ obteremos $y = x^n + C$; onde $C$
+representa a possível constante ainda indeterminada.
 
-until ascertained in some other way. So, if differentiating
-$x^n$ yields $nx^{n-1}$, going backwards from
-$\dfrac{dy}{dx} = nx^{n-1}$ will give us $y = x^n + C$; where $C$ stands
-for the yet undetermined possible constant.
+<p>Claramente, ao lidar com potências de $x$, a regra
+para trabalhar de trás para a frente será: Aumente
+a potência em $1$, depois divida por essa potência
+aumentada, e acrescente a constante indeterminada.
 
-<p>Clearly, in dealing with powers of $x$, the rule for
-working backwards will be: Increase the power by $1$,
-then divide by that increased power, and add the
-undetermined constant.
-
-<p>So, in the case where
+<p>Assim, no caso em que
 \[
 \frac{dy}{dx} = x^n,
 \]
-working backwards, we get
+trabalhando de trás para a frente, obtemos
 \[
 y = \frac{1}{n + 1} x^{n+1} + C.
 \]
 
-<p>If differentiating the equation $y = ax^n$ gives us
+<p>Se diferenciar a equação $y = ax^n$ nos dá
 \[
 \frac{dy}{dx} = anx^{n-1},
 \]
-it is a matter of common sense that beginning with
+é questão de bom senso que, começando com
 \[
 \frac{dy}{dx} = anx^{n-1},
 \]
-and reversing the process, will give us
+e invertendo o processo, obteremos
 \[
 y = ax^n.
 \]
-So, when we are dealing with a multiplying constant,
-we must simply put the constant as a multiplier of
-the result of the integration.
+Assim, quando lidamos com uma constante
+multiplicadora, basta colocar a constante como
+multiplicador do resultado da integração.
 
 
-<p>Thus, if $\dfrac{dy}{dx} = 4x^2$, the reverse process gives us
+<p>Assim, se $\dfrac{dy}{dx} = 4x^2$, o processo inverso nos dá
 $y = \frac{4}{3}x^3$.
 
-<p>But this is incomplete. For we must remember
-that if we had started with
+<p>Mas isso está incompleto. Pois devemos lembrar que
+se tivéssemos começado com
 \[
 y = ax^n + C,
 \]
-where $C$ is any constant quantity whatever, we should
-equally have found
+onde $C$ é qualquer quantidade constante, teríamos
+igualmente encontrado
 \[
 \frac{dy}{dx} = anx^{n-1}.
 \]
 
-<p>So, therefore, when we reverse the process we must
-always remember to add on this undetermined constant,
-even if we do not yet know what its value
-will be.
+<p>Portanto, ao inverter o processo, devemos sempre
+lembrar de acrescentar essa constante indeterminada,
+mesmo que ainda não saibamos qual será seu valor.
 
-<p>This process, the reverse of differentiating, is called
-<em>integrating</em>; for it consists in finding the value of
-the whole quantity $y$ when you are given only an
-expression for $dy$ or for $\dfrac{dy}{dx}$. Hitherto we have as
-much as possible kept $dy$ and $dx$ together as a differential
-coefficient: henceforth we shall more often
-have to separate them.
+<p>Esse processo, o inverso de diferenciar, chama-se
+<em>integrar</em>; pois consiste em achar o valor da
+quantidade total $y$ quando se tem apenas uma
+expressão para $dy$ ou para $\dfrac{dy}{dx}$. Até aqui, tanto
+quanto possível, mantivemos $dy$ e $dx$ juntos como
+uma derivada: de agora em diante teremos com mais
+frequência de separá-los.
 
-<p>If we begin with a simple case,
+<p>Se começarmos com um caso simples,
 \[
 \frac{dy}{dx} = x^2.
 \]
 
-<p>We may write this, if we like, as
+<p>Podemos escrever isso, se quisermos, como
 \[
 dy = x^2\, dx.
 \]
 
-<p>Now this is a  “differential equation”  which informs
-us that an element of $y$ is equal to the corresponding
-element of $x$ multiplied by $x^2$. Now, what we want
+<p>Agora isto é uma “equação diferencial” que nos
+informa que um elemento de $y$ é igual ao
+correspondente elemento de $x$ multiplicado por $x^2$.
+O que queremos
 
-is the integral; therefore, write down with the proper
-symbol the instructions to integrate both sides, thus:
+é a integral; portanto, escreva com o símbolo
+próprio as instruções para integrar ambos os lados,
+assim:
 \[
 \int dy = \int x^2\, dx.
 \]
 
-<p>[Note as to reading integrals: the above would be
-read thus:
-“<em>Integral dee-wy </em> equals <em>integral eks-squared dee-eks</em>.”]
+<p>[Nota sobre a leitura de integrais: o acima se
+leria assim:
+“<em>Integral de dê-ipsilon</em> é igual a <em>integral de
+xis ao quadrado dê-xis</em>.”]
 
 
-<p>We haven't yet integrated: we have only written
-down instructions to integrate–if we can. Let us
-try. Plenty of other fools can do it–why not we
-also? The left-hand side is simplicity itself. The
-sum of all the bits of $y$ is the same thing as $y$ itself.
-So we may at once put:
+<p>Ainda não integramos: só escrevemos as instruções
+para integrar - se pudermos. Vamos tentar. Um bocado
+de outros tolos consegue - por que nós também não?
+O lado esquerdo é simplicidade em si. A soma de
+todos os pedacinhos de $y$ é a mesma coisa que o
+próprio $y$. Assim podemos de uma vez pôr:
 \[
 y = \int x^2\, dx.
 \]
 
-<p>But when we come to the right-hand side of the
-equation we must remember that what we have got
-to sum up together is not all the $dx$'s, but all such
-terms as $x^2\, dx$; and this will <em>not</em> be the same as
-$x^2 \int dx$, because $x^2$ is not a constant. For some of the
-$dx$'s will be multiplied by big values of $x^2$, and some
-will be multiplied by small values of $x^2$, according to
-what $x$ happens to be. So we must bethink ourselves
-as to what we know about this process of integration
-being the reverse of differentiation. Now, our rule
-for this reversed process–see <a href="18.html#revdif">here</a> <em>ante</em> –when
-dealing with $x^n$ is “increase the power by one, and<a name="diffrule"/>
-divide by the same number as this increased power.”
+<p>Mas quando chegamos ao lado direito da equação
+devemos lembrar que o que temos de somar juntos não
+são todos os $dx$, e sim todos os termos como
+$x^2\, dx$; e isso <em>não</em> será o mesmo que $x^2 \int dx$,
+porque $x^2$ não é uma constante. Pois alguns dos $dx$
+serão multiplicados por valores grandes de $x^2$, e
+outros por valores pequenos de $x^2$, conforme o valor
+de $x$. Assim devemos refletir sobre o que sabemos
+desse processo de integração ser o inverso da
+diferenciação. Ora, nossa regra para esse processo
+invertido - veja <a href="18.html#revdif">aqui</a> <em>acima</em> - ao lidar com $x^n$
+é “aumente a potência em um, e<a name="diffrule"/> divida pelo mesmo
+número que essa potência aumentada.”
 
-That is to say, $x^2\, dx$ will be changed *
-to $\frac{1}{3} x^3$. Put
-this into the equation; but don't forget to add the
-“constant of integration” $C$ at the end. So we get:
+Isto é, $x^2\, dx$ será mudado *
+para $\frac{1}{3} x^3$. Ponha isso
+na equação; mas não esqueça de acrescentar a
+“constante de integração” $C$ no fim. Assim obtemos:
 \[
 y = \tfrac{1}{3} x^3 + C.
 \]
 
-<p>You have actually performed the integration. How
-easy!
-<p><note>*You may ask, what has become of the little $dx$ at the end?
-  Well, remember that it was really part of the differential coefficient,
-  and when changed over to the right-hand side, as in the $x^2\, dx$,
-  serves as a reminder that $x$ is the independent variable with respect
-  to which the operation is to be effected; and, as the result of the
-  product being totalled up, the power of $x$ has increased by <em>one</em>.
-  You will soon become familiar with all this.</note>
-<p>Let us try another simple case.
+<p>Você de fato realizou a integração. Que fácil!
+<p><note>*Você pode perguntar: o que aconteceu com o pequenino $dx$ no fim?
+  Bem, lembre-se de que ele era de fato parte da derivada,
+  e, quando passado para o lado direito, como em $x^2\, dx$,
+  serve de lembrete de que $x$ é a variável independente em relação
+  à qual a operação deve ser efetuada; e, como resultado do
+  produto ser totalizado, a potência de $x$ aumentou em <em>um</em>.
+  Você logo se familiarizará com tudo isso.</note>
+<p>Tentemos outro caso simples.
 
 <p>\begin{align*}
-   Let
+   Seja
 \dfrac{dy}{dx} &= ax^{12},
 \end{align*}
-where $a$ is any constant multiplier. Well, we found
-when differentiating (see <a href="5.html#differ">here</a>) that any constant
-factor in the value of $y$ reappeared unchanged in the
-value of $\dfrac{dy}{dx}$. In the reversed process of integrating,
-it will therefore also reappear in the value of $y$. So
-we may go to work as before, thus
+onde $a$ é qualquer multiplicador constante. Bem, vimos
+ao diferenciar (veja <a href="5.html#differ">aqui</a>) que qualquer fator
+constante no valor de $y$ reaparecia inalterado no
+valor de $\dfrac{dy}{dx}$. No processo invertido de integrar,
+portanto, ele também reaparecerá no valor de $y$.
+Assim podemos trabalhar como antes:
 \begin{align*}
 dy &= ax^{12} · dx,\\
 \int dy &= \int ax^{12} · dx,\\
@@ -178,45 +250,44 @@ dy &= ax^{12} · dx,\\
 y &= a × \tfrac{1}{13} x^{13} + C.
 \end{align*}
 
-<p>So that is done. How easy!
+<p>Pronto. Que fácil!
 
 
-<p>We begin to realize now that integrating is a
-process of <em>finding our way back</em>, as compared with
-differentiating. If ever, during differentiating, we
-have found any particular expression–in this example
-$ax^{12}$–we can find our way back to the $y$ from which
-it was derived. The contrast between the two
-processes may be illustrated by the following remark
-due to a well-known teacher. If a stranger were set
-down in Trafalgar Square, and told to find his way to
-Euston Station, he might find the task hopeless. But
-if he had previously been personally conducted from
-Euston Station to Trafalgar Square, it would be
-comparatively easy to him to find his way back to
-Euston Station.
+<p>Começamos a perceber agora que integrar é um
+processo de <em>achar o caminho de volta</em>, em comparação
+com diferenciar. Se alguma vez, ao diferenciar,
+encontramos alguma expressão particular - neste
+exemplo $ax^{12}$ - podemos achar o caminho de volta até
+o $y$ de onde ela veio. O contraste entre os dois
+processos pode ser ilustrado pela seguinte observação
+de um professor bem conhecido. Se um estranho fosse
+deixado na Trafalgar Square e mandado achar o caminho
+até a estação de Euston, poderia achar a tarefa
+desesperadora. Mas se antes tivesse sido conduzido
+pessoalmente da estação de Euston até a Trafalgar
+Square, seria comparativamente fácil achar o caminho
+de volta até Euston.
 
-<p><h2>Integration of the Sum or Difference of two
-Functions.</h2>
+<p><h2>Integração da soma ou diferença de duas
+funções.</h2>
 
 <p>\begin{align*}
-   \mbox{Let }
+   \mbox{Seja }
 \frac{dy}{dx} &= x^2 + x^3, \\
- \mbox{then }
+ \mbox{então }
 dy &= x^2\, dx + x^3\, dx.
 \end{align*}
 
-<p>There is no reason why we should not integrate
-each term separately: for, as may be seen on <a href="6.html#sumdiffer">here</a>,
-we found that when we differentiated the sum of two
-separate functions, the differential coefficient was
-simply the sum of the two separate differentiations.
-So, when we work backwards, integrating, the integration
-will be simply the sum of the two separate
-integrations.
+<p>Não há razão para não integrarmos cada termo em
+separado: pois, como se vê <a href="6.html#sumdiffer">aqui</a>, vimos que quando
+diferenciamos a soma de duas funções separadas, a
+derivada era simplesmente a soma das duas
+diferenciações separadas. Assim, quando trabalhamos
+de trás para a frente, integrando, a integração será
+simplesmente a soma das duas integrações separadas.
 
 
-<p>Our instructions will then be:
+<p>Nossas instruções serão então:
 \begin{align*}
 \int dy
   &= \int (x^2 + x^3)\, dx \\
@@ -224,168 +295,170 @@ integrations.
 y &= \tfrac{1}{3} x^3 + \tfrac{1}{4} x^4 + C.
 \end{align*}
 
-<p>If either of the terms had been a negative quantity,
-the corresponding term in the integral would have
-also been negative. So that differences are as readily
-dealt with as sums.
+<p>Se qualquer dos termos tivesse sido uma quantidade
+negativa, o termo correspondente na integral também
+teria sido negativo. Assim as diferenças se tratam
+tão prontamente quanto as somas.
 
-<p><h2>How to deal with Constant Terms.</h2>
+<p><h2>Como lidar com termos constantes.</h2>
 
-<p>Suppose there is in the expression to be integrated
-a constant term–such as this:
+<p>Suponha que na expressão a integrar haja um termo
+constante - como este:
 \[
 \frac{dy}{dx} = x^n + b.
 \]
 
-<p>This is laughably easy. For you have only to
-remember that when you differentiated the expression
-$y = ax$, the result was $\dfrac{dy}{dx} = a$. Hence, when you work
-the other way and integrate, the constant reappears
-multiplied by $x$. So we get
+<p>Isso é ridiculamente fácil. Pois basta lembrar que
+quando você diferenciou a expressão $y = ax$, o
+resultado foi $\dfrac{dy}{dx} = a$. Logo, quando trabalha no
+outro sentido e integra, a constante reaparece
+multiplicada por $x$. Assim obtemos
 \begin{align*}
 dy &= x^n\, dx + b · dx,  \\
 \int dy &= \int x^n\, dx + \int b\, dx, \\
 y &= \frac{1}{n+1} x^{n+1} + bx + C.
 \end{align*}
 
-<p>Here are a lot of examples on which to try your
-newly acquired powers.
+<p>Aqui vai um monte de exemplos para experimentar
+seus poderes recém-adquiridos.
 
 <p><hr>
 
 
 <p>
-<p><em>Examples</em>
-<p>(1) Given $\dfrac{dy}{dx} = 24x^{11}$. Find $y$.<p> <em>Ans</em> . $y = 2x^{12} + C$.
+<p><em>Exemplos</em>
+<p>(1) Dado $\dfrac{dy}{dx} = 24x^{11}$. Ache $y$.<p> <em>Resp</em> . $y = 2x^{12} + C$.
 
-<p>(2) Find $\int (a + b)(x + 1)\, dx$.<p> It is $(a + b) \int (x + 1)\, dx$
-or  $(a + b) \left[\int x\, dx + \int dx\right]$ or $(a + b) \left(\dfrac{x^2}{2} + x\right) + C$.
+<p>(2) Ache $\int (a + b)(x + 1)\, dx$.<p> É $(a + b) \int (x + 1)\, dx$
+ou  $(a + b) \left[\int x\, dx + \int dx\right]$ ou $(a + b) \left(\dfrac{x^2}{2} + x\right) + C$.
 
-<p>(3) Given $\dfrac{du}{dt} = gt^{\frac{1}{2}}$. Find $u$.<p> <em>Ans</em> . $u = \frac{2}{3} gt^{\frac{3}{2}} + C$.
+<p>(3) Dado $\dfrac{du}{dt} = gt^{\frac{1}{2}}$. Ache $u$.<p> <em>Resp</em> . $u = \frac{2}{3} gt^{\frac{3}{2}} + C$.
 
-<p>(4) $\dfrac{dy}{dx} = x^3 - x^2 + x$. Find $y$.
+<p>(4) $\dfrac{dy}{dx} = x^3 - x^2 + x$. Ache $y$.
 \begin{align*}
-dy &= (x^3 - x^2 + x)\, dx\quad\text{or} \\
+dy &= (x^3 - x^2 + x)\, dx\quad\text{ou} \\
 dy &= x^3\, dx - x^2\, dx + x\, dx;\quad
 y = \int x^3\, dx - \int x^2\, dx + \int x\, dx;
 \end{align*}
- and
+ e
 \begin{align*}
 
 y &= \tfrac{1}{4} x^4 - \tfrac{1}{3} x^3 + \tfrac{1}{2} x^2 + C.
 \end{align*}
 
-<p>(5) Integrate $9.75x^{2.25}\, dx$.<p> <em>Ans</em> . $y = 3x^{3.25} + C$.
+<p>(5) Integre $9.75x^{2.25}\, dx$.<p> <em>Resp</em> . $y = 3x^{3.25} + C$.
 
 <p><hr>
 
-<p>All these are easy enough. Let us try another case.
+<p>Tudo isso é fácil o bastante. Tentemos outro caso.
 
 
 <p>\begin{align*}
- Let
+ Seja
 \dfrac{dy}{dx} &= ax^{-1}.
 \end{align*}
 
-<p>Proceeding as before, we will write
+<p>Procedendo como antes, escreveremos
 \[
 dy = a x^{-1} · dx,\quad \int dy = a \int x^{-1}\, dx.
 \]
 
-<p>Well, but what is the integral of $x^{-1}\, dx$?
+<p>Bem, mas o que é a integral de $x^{-1}\, dx$?
 
-<p>If you look back amongst the results of differentiating
-$x^2$ and $x^3$ and $x^n$, etc., you will find we never
-got $x^{-1}$ from any one of them as the value of $\dfrac{dy}{dx}$.
-We got $3x^2$ from $x^3$; we got $2x$ from $x^2$; we got $1$
-from $x^1$ (that is, from $x$ itself); but we did not get
-$x^{-1}$ from $x^0$, for two very good reasons. <em>First</em>, $x^0$ is
-simply $= 1$, and is a constant, and could not have
+<p>Se você olhar de volta entre os resultados de
+diferenciar $x^2$ e $x^3$ e $x^n$, etc., verá que nunca
+obtivemos $x^{-1}$ de nenhum deles como valor de
+$\dfrac{dy}{dx}$. Obtivemos $3x^2$ de $x^3$; obtivemos $2x$ de
+$x^2$; obtivemos $1$ de $x^1$ (isto é, do próprio $x$);
+mas não obtivemos $x^{-1}$ de $x^0$, por duas ótimas
+razões. <em>Primeiro</em>, $x^0$ é simplesmente $= 1$, e é uma
+constante, e não poderia ter
 
-a differential coefficient. <em>Secondly</em>, even if it could
-be differentiated, its differential coefficient (got by
-slavishly following the usual rule) would be $0 × x^{-1}$,
-and that multiplication by zero gives it zero value!
-Therefore when we now come to try to integrate
-$x^{-1}\, dx$, we see that it does not come in anywhere
-in the powers of $x$ that are given by the rule:
+uma derivada. <em>Segundo</em>, mesmo que pudesse ser
+diferenciado, sua derivada (obtida seguindo
+escravosamente a regra usual) seria $0 × x^{-1}$, e essa
+multiplicação por zero dá valor zero! Portanto,
+quando agora tentamos integrar $x^{-1}\, dx$, vemos que
+ele não entra em lugar algum nas potências de $x$
+dadas pela regra:
 \[
 \int x^n\, dx = \dfrac{1}{n+1} x^{n+1}.
 \]
-It is an exceptional case.
+É um caso excepcional.
 
-<p>Well; but try again. Look through all the various
-differentials obtained from various functions of $x$, and
-try to find amongst them $x^{-1}$. A sufficient search
-will show that we actually did get $\dfrac{dy}{dx} = x^{-1}$ as the
-result of differentiating<a name="intex1"/> the function $y = \log_\epsilon x$ (see
-<a href="14.html#differlog">here</a>).
+<p>Bem; mas tente de novo. Examine todas as várias
+diferenciais obtidas de várias funções de $x$, e
+tente achar entre elas $x^{-1}$. Uma busca suficiente
+mostrará que de fato obtivemos $\dfrac{dy}{dx} = x^{-1}$ como
+resultado de diferenciar<a name="intex1"/> a função $y = \log_\epsilon x$ (veja
+<a href="14.html#differlog">aqui</a>).
 
-<p>Then, of course, since we know that differentiating
-$\log_\epsilon x$ gives us $x^{-1}$, we know that, by reversing the
-process, integrating $dy = x^{-1}\, dx$ will give us $y = \log_\epsilon x$.
-But we must not forget the constant factor $a$ that
-was given, nor must we omit to add the undetermined
-constant of integration. This then gives us as the
-solution to the present problem,
+<p>Então, claro, como sabemos que diferenciar
+$\log_\epsilon x$ nos dá $x^{-1}$, sabemos que, invertendo o
+processo, integrar $dy = x^{-1}\, dx$ nos dará $y = \log_\epsilon x$.
+Mas não devemos esquecer o fator constante $a$ que foi
+dado, nem omitir a constante indeterminada de
+integração. Isso então nos dá como solução do
+problema presente
 \[
 y = a \log_\epsilon x + C.
 \]
 
-<p><em>Note</em>–Here note this very remarkable fact, that we
-could not have integrated in the above case if we had
-not happened to know the corresponding differentiation.
-If no one had found out that differentiating
-$\log_\epsilon x$ gave $x^{-1}$, we should have been utterly stuck by
+<p><em>Nota</em> - Observe este fato muito notável: não
+poderíamos ter integrado no caso acima se por acaso
+não conhecêssemos a diferenciação correspondente.
+Se ninguém tivesse descoberto que diferenciar
+$\log_\epsilon x$ dava $x^{-1}$, teríamos ficado completamente
+travados pelo
 
-the problem how to integrate $x^{-1}\, dx$. Indeed it should
-be frankly admitted that this is one of the curious
-features of the integral calculus:–that you can't
-integrate anything before the reverse process of differentiating
-something else has yielded that expression
-which you want to integrate. No one, even to-day,
-is able to find the general integral of the expression,
+problema de como integrar $x^{-1}\, dx$. De fato deve-se
+admitir francamente que esta é uma das curiosas
+características do cálculo integral: você não
+consegue integrar coisa alguma antes que o processo
+inverso de diferenciar alguma outra coisa tenha
+produzido a expressão que você quer integrar. Ninguém,
+mesmo hoje, é capaz de achar a integral geral da
+expressão
 \[
 \frac{dy}{dx} = a^{-x^2},
 \]
-because $a^{-x^2}$ has never yet been found to result from
-differentiating anything else.
+porque $a^{-x^2}$ nunca foi encontrado como resultado de
+diferenciar coisa alguma.
 
 <p>
-<em>Another simple case.</em><p>
-Find $\int (x + 1)(x + 2)\, dx$.
+<em>Outro caso simples.</em><p>
+Ache $\int (x + 1)(x + 2)\, dx$.
 
-<p>On looking at the function to be integrated, you
-remark that it is the product of two different functions
-of $x$. You could, you think, integrate $(x + 1)\, dx$ by
-itself, or $(x + 2)\, dx$ by itself. Of course you could.
-But what to do with a product? None of the differentiations
-you have learned have yielded you for the
-differential coefficient a product like this. Failing
-such, the simplest thing is to multiply up the two
-functions, and then integrate. This gives us
+<p>Olhando a função a integrar, você observa que é o
+produto de duas funções diferentes de $x$. Você
+poderia, pensa, integrar $(x + 1)\, dx$ sozinho, ou
+$(x + 2)\, dx$ sozinho. Claro que poderia. Mas o que
+fazer com um produto? Nenhuma das diferenciações que
+você aprendeu lhe deu, como derivada, um produto
+como este. Falhando isso, o mais simples é multiplicar
+as duas funções e depois integrar. Isso nos dá
 \[
 \int (x^2 + 3x + 2)\, dx.
 \]
-And this is the same as
+E isto é o mesmo que
 \[
 \int x^2\, dx + \int 3x\, dx + \int 2\, dx.
 \]
-And performing the integrations, we get
+E realizando as integrações, obtemos
 \[
 \tfrac{1}{3} x^3 + \tfrac{3}{2} x^2 + 2x + C.
 \]
 
 
 <p>
-  <h2>Some other Integrals</h2>
+  <h2>Algumas outras integrais</h2>
 
 
-<p>Now that we know that integration is the reverse
-of differentiation, we may at once look up the differential
-coefficients we already know, and see from
-what functions they were derived. This gives us the
-following integrals ready made:<a name="intex2"/><a name="differ3"/><a name="cosax"/>
+<p>Agora que sabemos que a integração é o inverso da
+diferenciação, podemos de uma vez consultar as
+derivadas que já conhecemos e ver de que funções
+elas foram derivadas. Isso nos dá as seguintes
+integrais prontas:<a name="intex2"/><a name="differ3"/><a name="cosax"/>
 
 \begin{alignat*}{4}
 &x^{-1} &&\qquad &&
@@ -402,7 +475,7 @@ following integrals ready made:<a name="intex2"/><a name="differ3"/><a name="cos
   \int \epsilon^{-x}\, dx &&= -\epsilon^{-x} + C \\
 
 \end{alignat*}
-(for if $y = - \dfrac{1}{\epsilon^x}$, $\dfrac{dy}{dx} = -\dfrac{\epsilon^x × 0 - 1 × \epsilon^x}{\epsilon^{2x}} = \epsilon^{-x}$).
+(pois se $y = - \dfrac{1}{\epsilon^x}$, $\dfrac{dy}{dx} = -\dfrac{\epsilon^x × 0 - 1 × \epsilon^x}{\epsilon^{2x}} = \epsilon^{-x}$).
 \begin{alignat*}{4}
 
 
@@ -413,14 +486,14 @@ following integrals ready made:<a name="intex2"/><a name="differ3"/><a name="cos
   \int \cos x\, dx        &&= \sin x + C. \\
 
 \end{alignat*}
- Also we may deduce the following:
+ Também podemos deduzir o seguinte:
 \begin{alignat*}{4}
 
 &\log_\epsilon x; &&&&
   \int\log_\epsilon x\, dx &&= x(\log_\epsilon x - 1) + C \\
 
 \end{alignat*}
-(for if $y = x \log_\epsilon x - x$, $\dfrac{dy}{dx} = \dfrac{x}{x} + \log_\epsilon x - 1 = \log_\epsilon x$).
+(pois se $y = x \log_\epsilon x - x$, $\dfrac{dy}{dx} = \dfrac{x}{x} + \log_\epsilon x - 1 = \log_\epsilon x$).
 \begin{alignat*}{4}
 
 
@@ -433,8 +506,8 @@ following integrals ready made:<a name="intex2"/><a name="differ3"/><a name="cos
 % \label{cosax}
 &\cos ax; &&&& \int\cos ax\, dx     &&= \frac{1}{a} \sin ax + C \\
 \end{alignat*}
-(for if $y = \sin ax$, $\dfrac{dy}{dx} = a \cos ax$; hence to get $\cos ax$
-one must differentiate $y = \dfrac{1}{a} \sin ax$).
+(pois se $y = \sin ax$, $\dfrac{dy}{dx} = a \cos ax$; logo para obter $\cos ax$
+é preciso diferenciar $y = \dfrac{1}{a} \sin ax$).
 \begin{alignat*}{4}
 
 
@@ -442,16 +515,17 @@ one must differentiate $y = \dfrac{1}{a} \sin ax$).
 &\sin ax; &&&& \int\sin ax\, dx     &&= -\frac{1}{a} \cos ax + C. \\
 \end{alignat*}
 
-<p>Try also $\cos^2\theta$; a little dodge will simplify matters:
+<p>Tente também $\cos^2\theta$; um pequeno truque simplificará
+as coisas:
 \[
 \cos 2\theta = \cos^2\theta - \sin^2\theta
              = 2\cos^2 \theta - 1; \\
 \]
- hence
+ logo
 \[
 \cos^2\theta = \tfrac{1}{2}(\cos 2\theta + 1),
 \]
- and
+ e
 \begin{align*}
 
 \int\cos^2 \theta\, d\theta
@@ -459,128 +533,131 @@ one must differentiate $y = \dfrac{1}{a} \sin ax$).
   &= \tfrac{1}{2} \int \cos 2 \theta\, d\theta + \tfrac{1}{2} \int d\theta. \\
   &= \frac{\sin 2\theta}{4} + \frac{\theta}{2} + C.
 \end{align*}
-<p>(See also <a href="20.html#moreexamples">here</a>)
+<p>(Veja também <a href="20.html#moreexamples">aqui</a>)
 <p>
-See also the <a href="table.html">Table of Standard Forms</a>.
-You should make such a table for yourself, putting
-in it only the general functions which you have
-successfully differentiated and integrated. See to it
-that it grows steadily!
+Veja também a <a href="table.html">Tabela de Formas-Padrão</a>.
+Você deve fazer tal tabela para si mesmo, colocando
+nela apenas as funções gerais que tiver diferenciado
+e integrado com sucesso. Cuide para que ela cresça
+com constância!
 
 
 <p>
-  <h2>On Double and Triple Integrals.</h2>
+  <h2>Sobre integrais duplas e triplas.</h2>
 
 
-<p>In many cases it is necessary to integrate some
-expression for two or more variables contained in it;
-and in that case the sign of integration appears more
-than once. Thus,
+<p>Em muitos casos é necessário integrar alguma
+expressão para duas ou mais variáveis nela
+contidas; e nesse caso o sinal de integração aparece
+mais de uma vez. Assim,
 \[
 \iint f(x,y,)\, dx\, dy
 \]
-means that some function of the variables $x$ and $y$
-has to be integrated for each. It does not matter in
-which order they are done. Thus, take the function
-$x^2 + y^2$. Integrating it with respect to $x$ gives us:
+significa que alguma função das variáveis $x$ e $y$
+tem de ser integrada para cada uma. Não importa a
+ordem em que se faça. Assim, tome a função
+$x^2 + y^2$. Integrando-a em relação a $x$ obtemos:
 \[
 \int (x^2+y^2)\, dx = \tfrac{1}{3} x^3 + xy^2.
 \]
 
-<p>Now, integrate this with respect to $y$:
+<p>Agora, integre isso em relação a $y$:
 \[
 \int (\tfrac{1}{3} x^3 + xy^2)\, dy = \tfrac{1}{3} x^3y + \tfrac{1}{3} xy^3,
 \]
-to which of course a constant is to be added. If we
-had reversed the order of the operations, the result
-would have been the same.
+ao que, claro, se acrescenta uma constante. Se
+tivéssemos invertido a ordem das operações, o
+resultado teria sido o mesmo.
 
-<p>In dealing with areas of surfaces and of solids, we
-have often to integrate both for length and breadth,
-and thus have integrals of the form
+<p>Ao lidar com áreas de superfícies e de sólidos,
+muitas vezes temos de integrar tanto em comprimento
+quanto em largura, e assim temos integrais da forma
 \[
 \iint u · dx\, dy,
 \]
-where $u$ is some property that depends, at each point,
-on $x$ and on $y$. This would then be called a <em>surface-integral</em>.
-It indicates that the value of all such
+onde $u$ é alguma propriedade que depende, em cada
+ponto, de $x$ e de $y$. Isso se chamaria então uma
+<em>integral de superfície</em>.
+Indica que o valor de todos os
 
-elements as $u · dx · dy$ (that is to say, of the value of $u$
-over a little rectangle $dx$ long and $dy$ broad) has to be
-summed up over the whole length and whole breadth.
+elementos como $u · dx · dy$ (isto é, do valor de $u$
+sobre um retângulo pequenino de comprimento $dx$ e
+largura $dy$) tem de ser somado ao longo de todo o
+comprimento e de toda a largura.
 
-<p>Similarly in the case of solids, where we deal with
-three dimensions. Consider any element of volume,
-the small cube whose dimensions are $dx$ $dy$ $dz$. If
-the figure of the solid be expressed by the function
-$f(x, y, z)$, then the whole solid will have the <em>volume-integral</em>,
+<p>De modo semelhante no caso de sólidos, em que
+lidamos com três dimensões. Considere qualquer
+elemento de volume, o cubinho cujas dimensões são
+$dx$ $dy$ $dz$. Se a figura do sólido for expressa pela
+função $f(x, y, z)$, então o sólido inteiro terá a
+<em>integral de volume</em>
 \[
 \text{volume} = \iiint f(x,y,z) · dx · dy · dz.
 \]
-Naturally, such integrations have to be taken between
-appropriate limits (See <a href="19.html#limits">here</a> for integration between limits.)
-in each dimension; and the
-integration cannot be performed unless one knows in
-what way the boundaries of the surface depend on
-$x$, $y$, and $z$. If the limits for $x$ are from $x_1$ to $x_2$,
-those for $y$ from $y_1$ to $y_2$, and those for $z$ from $z_1$
-to $z_2$, then clearly we have
+Naturalmente, tais integrações têm de ser tomadas
+entre limites apropriados (Veja <a href="19.html#limits">aqui</a> sobre
+integração entre limites.) em cada dimensão; e a
+integração não pode ser realizada a menos que se
+saiba de que modo as fronteiras da superfície
+dependem de $x$, $y$ e $z$. Se os limites para $x$ vão
+de $x_1$ a $x_2$, os de $y$ de $y_1$ a $y_2$, e os de $z$ de
+$z_1$ a $z_2$, então claramente temos
 \[
 \text{volume} = \int_{z1}^{z2} \int_{y1}^{y2} \int_{x1}^{x2} f(x,y,z) · dx · dy · dz.
 \]
 
-<p>There are of course plenty of complicated and
-difficult cases; but, in general, it is quite easy to
-see the significance of the symbols where they are
-intended to indicate that a certain integration has to
-be performed over a given surface, or throughout a
-given solid space.
+<p>Há, claro, um bocado de casos complicados e
+difíceis; mas, em geral, é bastante fácil ver o
+significado dos símbolos quando se pretende indicar
+que certa integração deve ser realizada sobre uma
+superfície dada, ou ao longo de um espaço sólido
+dado.
 
 
 <p>
-<hr><h3>Exercises XVII</h3>
+<hr><h3>Exercícios XVII</h3>
 
 
-(1) Find  $\int y\, dx$ when  $y^2 = 4 ax$.
-
-<p>
-(2) Find  $\int \frac{3}{x^4}\, dx$.
-<p>(3) Find  $\int \frac{1}{a} x^3\, dx$.
+(1) Ache  $\int y\, dx$ quando  $y^2 = 4 ax$.
 
 <p>
-(4) Find  $\int (x^2 + a)\, dx$.
-<p>(5) Integrate $5x^{-\frac{7}{2}}$.
+(2) Ache  $\int \frac{3}{x^4}\, dx$.
+<p>(3) Ache  $\int \frac{1}{a} x^3\, dx$.
 
 <p>
-(6) Find  $\int (4x^3 + 3x^2 + 2x + 1)\, dx$.
-
-<p>(7) If $\dfrac{dy}{dx} = \dfrac{ax}{2} + \dfrac{bx^2}{3} + \dfrac{cx^3}{4}$; find $y$.
-
-<p>
-(8) Find $\int \left(\frac{x^2 + a}{x + a}\right) dx$.
-<p>(9)  Find $\int (x + 3)^3\, dx$.
+(4) Ache  $\int (x^2 + a)\, dx$.
+<p>(5) Integre $5x^{-\frac{7}{2}}$.
 
 <p>
-(10) Find $\int (x + 2)(x - a)\, dx$.
+(6) Ache  $\int (4x^3 + 3x^2 + 2x + 1)\, dx$.
 
-<p>(11) Find $\int (\sqrt x + \sqrt[3] x) 3a^2\, dx$.
-
-<p>(12) Find $\int (\sin \theta - \tfrac{1}{2})\, \frac{d\theta}{3}$.
+<p>(7) Se $\dfrac{dy}{dx} = \dfrac{ax}{2} + \dfrac{bx^2}{3} + \dfrac{cx^3}{4}$; ache $y$.
 
 <p>
-(13) Find  $\int \cos^2 a \theta\, d\theta$.
-<p>(14) Find  $\int \sin^2 \theta\, d\theta$.
+(8) Ache $\int \left(\frac{x^2 + a}{x + a}\right) dx$.
+<p>(9)  Ache $\int (x + 3)^3\, dx$.
 
 <p>
-(15) Find  $\int \sin^2 a \theta\, d\theta$.
-<p>(16) Find  $\int \epsilon^{3x}\, dx$.
+(10) Ache $\int (x + 2)(x - a)\, dx$.
+
+<p>(11) Ache $\int (\sqrt x + \sqrt[3] x) 3a^2\, dx$.
+
+<p>(12) Ache $\int (\sin \theta - \tfrac{1}{2})\, \frac{d\theta}{3}$.
 
 <p>
-(17) Find  $\int \dfrac{dx}{1 + x}$.
-<p>(18) Find  $\int \dfrac{dx}{1 - x}$.
+(13) Ache  $\int \cos^2 a \theta\, d\theta$.
+<p>(14) Ache  $\int \sin^2 \theta\, d\theta$.
+
+<p>
+(15) Ache  $\int \sin^2 a \theta\, d\theta$.
+<p>(16) Ache  $\int \epsilon^{3x}\, dx$.
+
+<p>
+(17) Ache  $\int \dfrac{dx}{1 + x}$.
+<p>(18) Ache  $\int \dfrac{dx}{1 - x}$.
 
 
-<p><h3 class="answers">Answers</h3>
+<p><h3 class="answers">Respostas</h3>
 
 <p>(1)  $\dfrac{4\sqrt{a} x^{\frac{3}{2}}}{3} + C$.
 
@@ -599,9 +676,9 @@ given solid space.
 <p>(7)  $\dfrac{ax^2}{4} + \dfrac{bx^3}{9} + \dfrac{cx^4}{16} + C$.
 
 
-<p>(8)   $\dfrac{x^2 + a}{x + a} = x - a + \dfrac{a^2 + a}{x + a}$ by division. Therefore the answer
-is $\dfrac{x^2}{2} - ax + (a^2 + a)\log_\epsilon (x + a) + C$.
-  (See pages <a href="18.html#intex1">here</a> and <a href="18.html#intex2">here</a>.)
+<p>(8)   $\dfrac{x^2 + a}{x + a} = x - a + \dfrac{a^2 + a}{x + a}$ por divisão. Portanto a resposta
+é $\dfrac{x^2}{2} - ax + (a^2 + a)\log_\epsilon (x + a) + C$.
+  (Veja as páginas <a href="18.html#intex1">aqui</a> e <a href="18.html#intex2">aqui</a>.)
 
 
 <p>(9)  $\dfrac{x^4}{4} + 3x^3 + \dfrac{27}{2} x^2 + 27x + C$.
@@ -628,27 +705,51 @@ is $\dfrac{x^2}{2} - ax + (a^2 + a)\log_\epsilon (x + a) + C$.
 
 <p>(18)  $-\log_\epsilon (1 - x) + C$.
 <br>
-<script type="text/javascript" src="https://payhip.com/payhip.js"></script>
-<h3>Get Complete Step-by-Step Solutions</h3>
-<a href="https://payhip.com/b/2MVru"><img class="cover" src="cover-small.png" width="180px"></a>
-
-<ul>
-    <li>For all exercises in this book.</li>
-    <li>Check your work or get unstuck.</li>
-    <li>Written by CalculusMadeEasy.org</li>
-	<li>Support this website ❤️.</li>
-	<li>229 pages</li>
-    <li><a href="https://payhip.com/b/2MVru">More details</a></li>
-    <br>
-        <a href="https://payhip.com/b/2MVru" class="payhip-buy-button" data-theme="green" data-product="2MVru">Download for $9</a>
-</ul>
+<!-- Soluções comerciais removidas: projeto público e sem fins lucrativos -->
 
 <hr>
-<a href="19.html">Next &rarr;</a><br>
-<a href="/">Main Page &uarr;</a><br>
+<a href="19.html">Próximo &rarr;</a><br>
+<a href="17.html">← Anterior</a><br>
+<a href="index.html">Página principal &uarr;</a><br>
+
+<footer class="site-footer" role="contentinfo">
+  <p class="a rotatedFloralHeartBullet"></p>
+
+  <div class="manifesto">
+    <p class="manifesto-lead">
+      Este é um <strong>projeto público</strong>, sem fins lucrativos.
+      Não é permitido comercializá-lo, vendê-lo nem usá-lo como produto pago.
+    </p>
+    <p class="manifesto-quote">
+      A educação é um direito de todos.
+      O conhecimento deve ser livre sempre que não cause o mal:
+      deve circular, ensinar e libertar, nunca aprisionar quem aprende.
+    </p>
+    <p class="manifesto-sign">
+      - Thales Rodrigues
+    </p>
+  </div>
+
+  <nav class="author-links" aria-label="Redes de Thales Rodrigues">
+    <a href="https://www.linkedin.com/in/thales-oliveira-rodrigues/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    <span class="dot" aria-hidden="true">·</span>
+    <a href="https://github.com/Rodriguestmo" target="_blank" rel="noopener noreferrer">GitHub</a>
+  </nav>
+
+  <p class="footer-meta">
+    <small>
+      Tradução e adaptação PT-BR por Thales Rodrigues.
+      Texto de Silvanus P. Thompson em domínio público (Project Gutenberg).
+      Notas de contexto inspiradas na edição Gardner (1998).
+      Projeto público e gratuito.
+    </small>
+  </p>
+</footer>
 
 <script src="j/jquery.js"></script>
 <script src="j/modernizr.js"></script>
 <script src="j/dih5.js"></script>
-<!-- Google tag (gtag.js) -->
+<script src="j/notes-toggle.js"></script>
 <!-- Analytics desativado na edição PT local -->
+</body>
+</html>

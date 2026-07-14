@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<meta charset="utf-8">
-<title>Table of Standard Forms | Calculus Made Easy</title>
+<html lang="pt-BR">
+<head>
+{% include "seo_head.html" %}
 <link rel="stylesheet" href="screen.css">
 <style>
-body{counter-reset:h1 23}
+body{counter-reset:h1 0}
 </style>
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
@@ -11,13 +12,33 @@ body{counter-reset:h1 23}
 <script type="text/javascript"
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Chapter",
+  "name": "Tabela de Formas-Padrão",
+  "isPartOf": {
+    "@type": "Book",
+    "name": "Cálculo Tornado Fácil",
+    "url": "{{ site_url }}/"
+  },
+  "author": {"@type": "Person", "name": "Silvanus P. Thompson"},
+  "translator": {"@type": "Person", "name": "Thales Rodrigues"},
+  "url": "{{ site_url }}/table.html",
+  "inLanguage": "pt-BR",
+  "isAccessibleForFree": true
+}
+</script>
+</head>
+<body>
+{% include "toolbar.html" %}
 
-<h1><br>Table of Standard Forms</h1>
+<h1><br>Tabela de Formas-Padrão</h1>
 <p class="a rotatedFloralHeartBullet">
 
 <table rules=all>
 	<tr><th>$\dfrac{dy}{dx}$</th><th>$y$</th><th>$\int y\, dx$</th></tr>
-	<tr><td colspan=3><b><center>Algebraic.</center></b></td></tr>
+	<tr><td colspan=3><b><center>Algébricas.</center></b></td></tr>
 
 <tr><td>$1$ </td><td> $x$     </td><td> $\frac{1}{2} x^2 + C$ </td></tr>
 <tr><td>$0$ </td><td> $a$     </td><td> $ax + C $             </td></tr>
@@ -29,32 +50,32 @@ body{counter-reset:h1 23}
 <tr><td>$\dfrac{du}{dx} ± \dfrac{dv}{dx} ± \dfrac{dw}{dx}$
    </td><td> $u ± v ± w$     </td><td> $\int u\, dx ± \int v\, dx ± \int w\, dx$ </td></tr>
 <tr><td>$u\, \dfrac{dv}{dx} + v\, \dfrac{du}{dx}$
-   </td><td> $uv$  </td><td> No general form known </td></tr>
+   </td><td> $uv$  </td><td> Nenhuma forma geral conhecida </td></tr>
 <tr><td>$\dfrac{v\, \dfrac{du}{dx} - u\, \dfrac{dv}{dx}}{v^2}$
-   </td><td> $\dfrac{u}{v}$ </td><td> No general form known </td></tr>
+   </td><td> $\dfrac{u}{v}$ </td><td> Nenhuma forma geral conhecida </td></tr>
 <tr><td>$\dfrac{du}{dx}$ </td><td> $u$ </td><td> $ux - \int x\, du + C$ </td></tr>
 
-	<tr><td colspan=3><b><center>Exponential and Logarithmic.</center></b></td></tr>
+	<tr><td colspan=3><b><center>Exponenciais e logarítmicas.</center></b></td></tr>
 <tr><td>$\epsilon^x$ </td><td> $\epsilon^x$ </td><td> $\epsilon^x + C$
 <tr><td>$x^{-1}$     </td><td> $\log_\epsilon x$ </td><td> $ x(\log_\epsilon x - 1) + C$
 <tr><td>$0.4343 × x^{-1}$ </td><td> $\log_{10} x$ </td><td> $0.4343x (\log_\epsilon x - 1) + C$ </td></tr>
 <tr><td>$a^x \log_\epsilon a$ </td><td> $a^x$ </td><td> $\dfrac{a^x}{\log_\epsilon a} + C$ </td></tr>
 
-	<tr><td colspan=3><b><center>Trigonometrical.</center></b></td></tr>
+	<tr><td colspan=3><b><center>Trigonométricas.</center></b></td></tr>
 <tr><td>$\cos x$  </td><td> $\sin x$ </td><td> $-\cos x + C $ </td></tr>
 <tr><td>$-\sin x$ </td><td> $\cos x$ </td><td> $\sin x + C $ </td></tr>
 <tr><td>$\sec^2 x$</td><td> $\tan x$ </td><td> $-\log_\epsilon \cos x + C $ </td></tr>
 
-	<tr><td colspan=3><b><center>Circular (Inverse).</center></b></td></tr>
+	<tr><td colspan=3><b><center>Circulares (inversas).</center></b></td></tr>
 <tr><td>$\dfrac{1}{\sqrt{(1-x^2)}}$ </td><td> $\arcsin x$ </td><td> $x · \arcsin x + \sqrt{1 - x^2} + C$ </td></tr>
 <tr><td>$-\dfrac{1}{\sqrt{(1-x^2)}}$ </td><td> $\arccos x$ </td><td> $x · \arccos x - \sqrt{1 - x^2} + C$ </td></tr>
 <tr><td>$\dfrac{1}{1+x^2}$ </td><td> $\arctan x$ </td><td> $x · \arctan x - \frac{1}{2} \log_\epsilon (1 + x^2) + C$ </td></tr>
 
-<tr><td colspan=3><b><center>Hyperbolic.</center></b></td></tr>
+<tr><td colspan=3><b><center>Hiperbólicas.</center></b></td></tr>
 <tr><td>$\cosh x   $ </td><td> $\sinh x$ </td><td> $\cosh x + C$ </td></tr>
 <tr><td>$\sinh x   $ </td><td> $\cosh x$ </td><td> $\sinh x + C$ </td></tr>
 <tr><td>$\text{sech}^2 x $ </td><td> $\tanh x$ </td><td> $\log_\epsilon \cosh x + C $ </td></tr>
-	<tr><td colspan=3><b><center>Miscellaneous.</center></b></td></tr>
+	<tr><td colspan=3><b><center>Miscelânea.</center></b></td></tr>
 
 
 <tr><td>$-\dfrac{1}{(x + a)^2}$ </td><td> $\dfrac{1}{x + a}$ </td><td> $ \log_\epsilon (x+a) + C $ </td></tr>
@@ -96,17 +117,15 @@ body{counter-reset:h1 23}
 
 <br>
 <hr>
-<a href="/">Main Page &uarr;</a><br>
+<a href="index.html">Página principal &uarr;</a><br>
+<a href="epilogue.html">← Anterior</a><br>
+
+{% include "footer.html" %}
 
 <script src="j/jquery.js"></script>
 <script src="j/modernizr.js"></script>
 <script src="j/dih5.js"></script>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-101178221-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-101178221-1');
-</script>
+<script src="j/notes-toggle.js"></script>
+{%include "googleanalytics.html" %}
+</body>
+</html>

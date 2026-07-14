@@ -1,9 +1,42 @@
 <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+
 <meta charset="utf-8">
-<title>Table of Standard Forms | Calculus Made Easy</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Tabela de Formas-Padrão | Cálculo Tornado Fácil</title>
+<meta name="description" content="Tabela de formas-padrão de derivadas e integrais.">
+<meta name="author" content="Thales Rodrigues; Silvanus P. Thompson">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="googlebot" content="index, follow">
+<meta name="language" content="Portuguese">
+<meta name="keywords" content="cálculo, calculus made easy, Silvanus Thompson, cálculo diferencial, cálculo integral, matemática, educação livre, português, Martin Gardner, Cálculo Tornado Fácil, Thales Rodrigues">
+<link rel="canonical" href="https://rodriguestmo.github.io/calculo-tornado-facil/table.html">
+<link rel="alternate" hreflang="pt-BR" href="https://rodriguestmo.github.io/calculo-tornado-facil/table.html">
+<link rel="alternate" hreflang="x-default" href="https://rodriguestmo.github.io/calculo-tornado-facil/">
+
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Cálculo Tornado Fácil">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Tabela de Formas-Padrão | Cálculo Tornado Fácil">
+<meta property="og:description" content="Tabela de formas-padrão de derivadas e integrais.">
+<meta property="og:url" content="https://rodriguestmo.github.io/calculo-tornado-facil/table.html">
+<meta property="og:image" content="https://rodriguestmo.github.io/calculo-tornado-facil/cover.jpg">
+
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Tabela de Formas-Padrão | Cálculo Tornado Fácil">
+<meta name="twitter:description" content="Tabela de formas-padrão de derivadas e integrais.">
+<meta name="twitter:image" content="https://rodriguestmo.github.io/calculo-tornado-facil/cover.jpg">
+
+
+<meta name="ai-content-declaration" content="human-authored translation and educational adaptation">
+<link rel="describedby" href="https://rodriguestmo.github.io/calculo-tornado-facil/llms.txt">
 <link rel="stylesheet" href="screen.css">
 <style>
-body{counter-reset:h1 23}
+body{counter-reset:h1 0}
 </style>
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
@@ -11,13 +44,51 @@ body{counter-reset:h1 23}
 <script type="text/javascript"
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Chapter",
+  "name": "Tabela de Formas-Padrão",
+  "isPartOf": {
+    "@type": "Book",
+    "name": "Cálculo Tornado Fácil",
+    "url": "https://rodriguestmo.github.io/calculo-tornado-facil/"
+  },
+  "author": {"@type": "Person", "name": "Silvanus P. Thompson"},
+  "translator": {"@type": "Person", "name": "Thales Rodrigues"},
+  "url": "https://rodriguestmo.github.io/calculo-tornado-facil/table.html",
+  "inLanguage": "pt-BR",
+  "isAccessibleForFree": true
+}
+</script>
+</head>
+<body>
+<!-- Barra fixa: navegação, modo das notas, tema -->
+<div id="site-toolbar" class="site-toolbar" role="region" aria-label="Controles do site">
+  <a class="tb-home" href="index.html">Cálculo Tornado Fácil</a>
 
-<h1><br>Table of Standard Forms</h1>
+  <div class="tb-controls">
+    <label class="tb-field" title="Como exibir as notas de Martin Gardner (1998)">
+      <span class="tb-label">Notas</span>
+      <select id="notes-mode" aria-label="Modo de exibição das notas">
+        <option value="all">Sempre visíveis</option>
+        <option value="click">Lupa (clique para abrir)</option>
+        <option value="off">Sempre ocultadas</option>
+      </select>
+    </label>
+
+    <button type="button" id="toggle-theme" class="tb-btn" title="Alternar tema claro/escuro" aria-pressed="false">
+      <span class="theme-label">Tema escuro</span>
+    </button>
+  </div>
+</div>
+
+<h1><br>Tabela de Formas-Padrão</h1>
 <p class="a rotatedFloralHeartBullet">
 
 <table rules=all>
 	<tr><th>$\dfrac{dy}{dx}$</th><th>$y$</th><th>$\int y\, dx$</th></tr>
-	<tr><td colspan=3><b><center>Algebraic.</center></b></td></tr>
+	<tr><td colspan=3><b><center>Algébricas.</center></b></td></tr>
 
 <tr><td>$1$ </td><td> $x$     </td><td> $\frac{1}{2} x^2 + C$ </td></tr>
 <tr><td>$0$ </td><td> $a$     </td><td> $ax + C $             </td></tr>
@@ -29,32 +100,32 @@ body{counter-reset:h1 23}
 <tr><td>$\dfrac{du}{dx} ± \dfrac{dv}{dx} ± \dfrac{dw}{dx}$
    </td><td> $u ± v ± w$     </td><td> $\int u\, dx ± \int v\, dx ± \int w\, dx$ </td></tr>
 <tr><td>$u\, \dfrac{dv}{dx} + v\, \dfrac{du}{dx}$
-   </td><td> $uv$  </td><td> No general form known </td></tr>
+   </td><td> $uv$  </td><td> Nenhuma forma geral conhecida </td></tr>
 <tr><td>$\dfrac{v\, \dfrac{du}{dx} - u\, \dfrac{dv}{dx}}{v^2}$
-   </td><td> $\dfrac{u}{v}$ </td><td> No general form known </td></tr>
+   </td><td> $\dfrac{u}{v}$ </td><td> Nenhuma forma geral conhecida </td></tr>
 <tr><td>$\dfrac{du}{dx}$ </td><td> $u$ </td><td> $ux - \int x\, du + C$ </td></tr>
 
-	<tr><td colspan=3><b><center>Exponential and Logarithmic.</center></b></td></tr>
+	<tr><td colspan=3><b><center>Exponenciais e logarítmicas.</center></b></td></tr>
 <tr><td>$\epsilon^x$ </td><td> $\epsilon^x$ </td><td> $\epsilon^x + C$
 <tr><td>$x^{-1}$     </td><td> $\log_\epsilon x$ </td><td> $ x(\log_\epsilon x - 1) + C$
 <tr><td>$0.4343 × x^{-1}$ </td><td> $\log_{10} x$ </td><td> $0.4343x (\log_\epsilon x - 1) + C$ </td></tr>
 <tr><td>$a^x \log_\epsilon a$ </td><td> $a^x$ </td><td> $\dfrac{a^x}{\log_\epsilon a} + C$ </td></tr>
 
-	<tr><td colspan=3><b><center>Trigonometrical.</center></b></td></tr>
+	<tr><td colspan=3><b><center>Trigonométricas.</center></b></td></tr>
 <tr><td>$\cos x$  </td><td> $\sin x$ </td><td> $-\cos x + C $ </td></tr>
 <tr><td>$-\sin x$ </td><td> $\cos x$ </td><td> $\sin x + C $ </td></tr>
 <tr><td>$\sec^2 x$</td><td> $\tan x$ </td><td> $-\log_\epsilon \cos x + C $ </td></tr>
 
-	<tr><td colspan=3><b><center>Circular (Inverse).</center></b></td></tr>
+	<tr><td colspan=3><b><center>Circulares (inversas).</center></b></td></tr>
 <tr><td>$\dfrac{1}{\sqrt{(1-x^2)}}$ </td><td> $\arcsin x$ </td><td> $x · \arcsin x + \sqrt{1 - x^2} + C$ </td></tr>
 <tr><td>$-\dfrac{1}{\sqrt{(1-x^2)}}$ </td><td> $\arccos x$ </td><td> $x · \arccos x - \sqrt{1 - x^2} + C$ </td></tr>
 <tr><td>$\dfrac{1}{1+x^2}$ </td><td> $\arctan x$ </td><td> $x · \arctan x - \frac{1}{2} \log_\epsilon (1 + x^2) + C$ </td></tr>
 
-<tr><td colspan=3><b><center>Hyperbolic.</center></b></td></tr>
+<tr><td colspan=3><b><center>Hiperbólicas.</center></b></td></tr>
 <tr><td>$\cosh x   $ </td><td> $\sinh x$ </td><td> $\cosh x + C$ </td></tr>
 <tr><td>$\sinh x   $ </td><td> $\cosh x$ </td><td> $\sinh x + C$ </td></tr>
 <tr><td>$\text{sech}^2 x $ </td><td> $\tanh x$ </td><td> $\log_\epsilon \cosh x + C $ </td></tr>
-	<tr><td colspan=3><b><center>Miscellaneous.</center></b></td></tr>
+	<tr><td colspan=3><b><center>Miscelânea.</center></b></td></tr>
 
 
 <tr><td>$-\dfrac{1}{(x + a)^2}$ </td><td> $\dfrac{1}{x + a}$ </td><td> $ \log_\epsilon (x+a) + C $ </td></tr>
@@ -96,17 +167,47 @@ body{counter-reset:h1 23}
 
 <br>
 <hr>
-<a href="/">Main Page &uarr;</a><br>
+<a href="index.html">Página principal &uarr;</a><br>
+<a href="epilogue.html">← Anterior</a><br>
+
+<footer class="site-footer" role="contentinfo">
+  <p class="a rotatedFloralHeartBullet"></p>
+
+  <div class="manifesto">
+    <p class="manifesto-lead">
+      Este é um <strong>projeto público</strong>, sem fins lucrativos.
+      Não é permitido comercializá-lo, vendê-lo nem usá-lo como produto pago.
+    </p>
+    <p class="manifesto-quote">
+      A educação é um direito de todos.
+      O conhecimento deve ser livre sempre que não cause o mal:
+      deve circular, ensinar e libertar, nunca aprisionar quem aprende.
+    </p>
+    <p class="manifesto-sign">
+      - Thales Rodrigues
+    </p>
+  </div>
+
+  <nav class="author-links" aria-label="Redes de Thales Rodrigues">
+    <a href="https://www.linkedin.com/in/thales-oliveira-rodrigues/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    <span class="dot" aria-hidden="true">·</span>
+    <a href="https://github.com/Rodriguestmo" target="_blank" rel="noopener noreferrer">GitHub</a>
+  </nav>
+
+  <p class="footer-meta">
+    <small>
+      Tradução e adaptação PT-BR por Thales Rodrigues.
+      Texto de Silvanus P. Thompson em domínio público (Project Gutenberg).
+      Notas de contexto inspiradas na edição Gardner (1998).
+      Projeto público e gratuito.
+    </small>
+  </p>
+</footer>
 
 <script src="j/jquery.js"></script>
 <script src="j/modernizr.js"></script>
 <script src="j/dih5.js"></script>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-101178221-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-101178221-1');
-</script>
+<script src="j/notes-toggle.js"></script>
+<!-- Analytics desativado na edição PT local -->
+</body>
+</html>

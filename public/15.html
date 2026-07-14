@@ -1,6 +1,39 @@
 <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+
 <meta charset="utf-8">
-<title>How to deal with Sines and Cosines | Calculus Made Easy</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Senos e Cossenos | Cálculo Tornado Fácil - Cap. XV</title>
+<meta name="description" content="Capítulo XV: como lidar com senos e cossenos no cálculo.">
+<meta name="author" content="Thales Rodrigues; Silvanus P. Thompson">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="googlebot" content="index, follow">
+<meta name="language" content="Portuguese">
+<meta name="keywords" content="cálculo, calculus made easy, Silvanus Thompson, cálculo diferencial, cálculo integral, matemática, educação livre, português, Martin Gardner, Cálculo Tornado Fácil, Thales Rodrigues">
+<link rel="canonical" href="https://rodriguestmo.github.io/calculo-tornado-facil/15.html">
+<link rel="alternate" hreflang="pt-BR" href="https://rodriguestmo.github.io/calculo-tornado-facil/15.html">
+<link rel="alternate" hreflang="x-default" href="https://rodriguestmo.github.io/calculo-tornado-facil/">
+
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Cálculo Tornado Fácil">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Senos e Cossenos | Cálculo Tornado Fácil - Cap. XV">
+<meta property="og:description" content="Capítulo XV: como lidar com senos e cossenos no cálculo.">
+<meta property="og:url" content="https://rodriguestmo.github.io/calculo-tornado-facil/15.html">
+<meta property="og:image" content="https://rodriguestmo.github.io/calculo-tornado-facil/cover.jpg">
+
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Senos e Cossenos | Cálculo Tornado Fácil - Cap. XV">
+<meta name="twitter:description" content="Capítulo XV: como lidar com senos e cossenos no cálculo.">
+<meta name="twitter:image" content="https://rodriguestmo.github.io/calculo-tornado-facil/cover.jpg">
+
+
+<meta name="ai-content-declaration" content="human-authored translation and educational adaptation">
+<link rel="describedby" href="https://rodriguestmo.github.io/calculo-tornado-facil/llms.txt">
 <link rel="stylesheet" href="screen.css">
 <style>
 body{counter-reset:h1 15}
@@ -11,16 +44,55 @@ body{counter-reset:h1 15}
 <script type="text/javascript"
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Chapter",
+  "name": "Como Lidar com Senos e Cossenos",
+  "position": 15,
+  "isPartOf": {
+    "@type": "Book",
+    "name": "Cálculo Tornado Fácil",
+    "url": "https://rodriguestmo.github.io/calculo-tornado-facil/"
+  },
+  "author": {"@type": "Person", "name": "Silvanus P. Thompson"},
+  "translator": {"@type": "Person", "name": "Thales Rodrigues"},
+  "url": "https://rodriguestmo.github.io/calculo-tornado-facil/15.html",
+  "inLanguage": "pt-BR",
+  "isAccessibleForFree": true
+}
+</script>
+</head>
+<body>
+<!-- Barra fixa: navegação, modo das notas, tema -->
+<div id="site-toolbar" class="site-toolbar" role="region" aria-label="Controles do site">
+  <a class="tb-home" href="index.html">Cálculo Tornado Fácil</a>
 
-<h1><br>How to deal with Sines and Cosines</h1>
+  <div class="tb-controls">
+    <label class="tb-field" title="Como exibir as notas de Martin Gardner (1998)">
+      <span class="tb-label">Notas</span>
+      <select id="notes-mode" aria-label="Modo de exibição das notas">
+        <option value="all">Sempre visíveis</option>
+        <option value="click">Lupa (clique para abrir)</option>
+        <option value="off">Sempre ocultadas</option>
+      </select>
+    </label>
+
+    <button type="button" id="toggle-theme" class="tb-btn" title="Alternar tema claro/escuro" aria-pressed="false">
+      <span class="theme-label">Tema escuro</span>
+    </button>
+  </div>
+</div>
+
+<h1><br>Como Lidar com Senos e Cossenos</h1>
 <p class="a rotatedFloralHeartBullet">
 
 
-<p>Greek letters being usual to denote angles, we will
-take as the usual letter for any variable angle the
-letter $\theta$ (“theta”).
+<p>Sendo usual as letras gregas denotarem ângulos, tomaremos
+como letra usual para qualquer ângulo variável a
+letra $\theta$ (“teta”).
 
-<p>Let us consider the function
+<p>Consideremos a função
 \[
 y= \sin \theta.
 \]
@@ -28,62 +100,62 @@ y= \sin \theta.
 <a name="figure3">
 <p><img src="33283-t/images/177a.pdf.png-1.png">
 
-<p>What we have to investigate is the value of $\dfrac{d(\sin \theta)}{d \theta}$;
-or, in other words, if the angle $\theta$ varies, we have to
-find the relation between the increment of the sine
-and the increment of the angle, both increments being
-indefinitely small in themselves. Examine <a href="#figure43">Figure 43</a>,
-wherein, if the radius of the circle is unity, the height
-of $y$ is the sine, and $\theta$ is the angle. Now, if $\theta$ is
+<p>O que temos de investigar é o valor de $\dfrac{d(\sin \theta)}{d \theta}$;
+ou, em outras palavras, se o ângulo $\theta$ varia, temos de
+achar a relação entre o incremento do seno
+e o incremento do ângulo, ambos os incrementos sendo
+indefinidamente pequenos em si mesmos. Examine a <a href="#figure43">Figura 43</a>,
+em que, se o raio do círculo for a unidade, a altura
+de $y$ é o seno, e $\theta$ é o ângulo. Ora, se $\theta$ for
 
-supposed to increase by the addition to it of the
-small angle $d \theta$–an element of angle–the height
-of $y$, the sine, will be increased by a small element $dy$.
-The new height $y + dy$ will be the sine of the new
-angle $\theta + d \theta$, or, stating it as an equation,
+suposto aumentar pela adição a ele do
+pequeno ângulo $d \theta$ - um elemento de ângulo - a altura
+de $y$, o seno, será aumentada por um pequeno elemento $dy$.
+A nova altura $y + dy$ será o seno do novo
+ângulo $\theta + d \theta$, ou, enunciando como equação,
 \[
 y+dy = \sin(\theta + d \theta);
 \]
-and subtracting from this the first equation gives
+e subtraindo desta a primeira equação dá
 \[
 dy = \sin(\theta + d \theta)- \sin \theta.
 \]
 
-<p>The quantity on the right-hand side is the difference
-between two sines, and books on trigonometry tell
-us how to work this out. For they tell us that if
-$M$ and $N$ are two different angles,
+<p>A quantidade no lado direito é a diferença
+entre dois senos, e os livros de trigonometria nos dizem
+como calcular isto. Pois eles nos dizem que se
+$M$ e $N$ forem dois ângulos diferentes,
 \[
 \sin M - \sin N = 2 \cos\frac{M+N}{2}·\sin\frac{M-N}{2}.
 \]
 
-<p>If, then, we put $M= \theta + d \theta$ for one angle, and
-$N= \theta$ for the other, we may write
+<p>Se, então, pusermos $M= \theta + d \theta$ para um ângulo, e
+$N= \theta$ para o outro, podemos escrever
 \begin{align*}
 dy &= 2 \cos\frac{\theta + d\theta + \theta}{2}
       · \sin\frac{\theta + d\theta - \theta}{2},\\
 
-\text{or,}\;
+\text{ou,}\;
 
 dy &= 2\cos(\theta + \tfrac{1}{2}d\theta)
      · \sin\tfrac{1}{2} d\theta.
 \end{align*}
 
-<p>But if we regard $d \theta$ as indefinitely small, then in
-the limit we may neglect $\frac{1}{2} d \theta$ by comparison with $\theta$,
-and may also take $\sin\frac{1}{2} d \theta$ as being the same as $\frac{1}{2} d \theta$.
-The equation then becomes:<a name="differsin"/>
+<p>Mas se considerarmos $d \theta$ como indefinidamente pequeno, então no
+limite podemos desprezar $\frac{1}{2} d \theta$ por comparação com $\theta$,
+e também tomar $\sin\frac{1}{2} d \theta$ como sendo o mesmo que $\frac{1}{2} d \theta$.
+A equação então se torna:<a name="differsin"/>
 \begin{align*}
 dy &= 2 \cos \theta × \tfrac{1}{2} d \theta; \\
 dy &= \cos \theta · d \theta, \\
-\text{ and, finally,}\;
+\text{ e, finalmente,}\;
 \dfrac{dy}{d \theta} &= \cos \theta.
 \end{align*}
 
 
-<p>The accompanying curves, <a href="#figure44">Fig. 44</a> and <a href="#figure45">Fig. 45</a> show,
-plotted to scale, the values of $y=\sin \theta$, and $\dfrac{dy}{d\theta}=\cos\theta$,
-for the corresponding values of $\theta$.
+<p>As curvas acompanhantes, <a href="#figure44">Fig. 44</a> e <a href="#figure45">Fig. 45</a> mostram,
+plotadas em escala, os valores de $y=\sin \theta$, e $\dfrac{dy}{d\theta}=\cos\theta$,
+para os valores correspondentes de $\theta$.
 
 <a name="figure44">
 <p><img src="33283-t/images/179a.pdf.png-1.png"><a name="erratum2"/>
@@ -92,13 +164,13 @@ for the corresponding values of $\theta$.
 <hr>
 
 
-<p>Take next the cosine.<a name="differcos"/>
+<p>Tome em seguida o cosseno.<a name="differcos"/>
 
-<p>Let $y=\cos \theta$.
+<p>Seja $y=\cos \theta$.
 
-<p>Now $\cos \theta=\sin\left(\dfrac{\pi}{2}-\theta\right)$.
+<p>Ora $\cos \theta=\sin\left(\dfrac{\pi}{2}-\theta\right)$.
 
-<p>Therefore
+<p>Portanto
 \begin{align*}
 &\begin{aligned}
 dy = d\left(\sin\left(\frac{\pi}{2} - \theta\right)\right)
@@ -107,26 +179,26 @@ dy = d\left(\sin\left(\frac{\pi}{2} - \theta\right)\right)
 \end{aligned} \\
 &\frac{dy}{d\theta} = -\cos\left(\frac{\pi}{2} - \theta\right).
 \end{align*}
-And it follows that
+E segue-se que
 \begin{align*}
 &\frac{dy}{d\theta} = -\sin \theta.
 \end{align*}
 
 <p><hr>
 
-<p>Lastly, take the tangent.
-   Let
+<p>Por último, tome a tangente.
+   Seja
 \begin{align*}
 y  &= \tan \theta, \\
 dy &= \tan(\theta + d\theta) - \tan\theta. \\
 \end{align*}
-Expanding, as shown in books on trigonometry,
+Expandindo, como se mostra nos livros de trigonometria,
 \begin{align*}
 
 \tan(\theta + d\theta)
    &= \frac{\tan\theta + \tan d\theta}
            {1 - \tan\theta·\tan d\theta}; \\
- \text{whence}\;
+ \text{donde}\;
 dy &= \frac{\tan\theta + \tan d\theta}
            {1-\tan\theta·\tan d\theta} - \tan\theta \\
    &= \frac{(1 + \tan^2\theta)\tan d\theta}
@@ -134,19 +206,19 @@ dy &= \frac{\tan\theta + \tan d\theta}
 \end{align*}
 
 
-<p>Now remember that if $d\theta$ is indefinitely diminished,
-the value of $\tan d\theta$ becomes identical with $d\theta$, and
-$\tan\theta · d\theta$ is negligibly small compared with $1$, so that
-the expression reduces to
+<p>Ora lembre-se de que se $d\theta$ for indefinidamente diminuído,
+o valor de $\tan d\theta$ se torna idêntico a $d\theta$, e
+$\tan\theta · d\theta$ é negligenciavelmente pequeno comparado com $1$, de modo que
+a expressão se reduz a
 \begin{align*}
 dy &= \frac{(1+\tan^2 \theta)\, d\theta}{1}, \\
- \text{so that}\;
+ \text{de modo que}\;
 \frac{dy}{d\theta} &= 1 + \tan^2\theta, \\
- \text{or}\;
+ \text{ou}\;
 \frac{dy}{d\theta} &= \sec^2 \theta.
 \end{align*}
 
-<p>Collecting these results, we have:
+<p>Reunindo estes resultados, temos:
   <table>
     <tr><th>$y$</th><th>$\dfrac{dy}{d\theta}$</th></tr>
     <tr><td>$\sin\theta$</td><td>$\cos\theta$</td></tr>
@@ -155,110 +227,110 @@ dy &= \frac{(1+\tan^2 \theta)\, d\theta}{1}, \\
   </table>
 
 
-<p>Sometimes, in mechanical and physical questions,
-as, for example, in simple harmonic motion and in
-wave-motions, we have to deal with angles that increase
-in proportion to the time. Thus, if $T$ be the
-time of one complete <em>period</em>, or movement round the
-circle, then, since the angle all round the circle is $2\pi$ radians,
-or $360°$, the amount of angle moved through
-in time $t$, will be
+<p>Às vezes, em questões mecânicas e físicas,
+como, por exemplo, no movimento harmônico simples e em
+movimentos ondulatórios, temos de lidar com ângulos que aumentam
+em proporção ao tempo. Assim, se $T$ for o
+tempo de um <em>período</em> completo, ou movimento em torno do
+círculo, então, como o ângulo em torno do círculo todo é $2\pi$ radianos,
+ou $360°$, a quantidade de ângulo percorrida
+no tempo $t$, será
 \begin{align*}
-\theta &= 2\pi\frac{t}{T},\quad \text{in radians,} \\
-\text{or}\;
-\theta &= 360\frac{t}{T},\quad \text{in degrees.}
+\theta &= 2\pi\frac{t}{T},\quad \text{em radianos,} \\
+\text{ou}\;
+\theta &= 360\frac{t}{T},\quad \text{em graus.}
 \end{align*}
 
 
-<p>If the <em>frequency</em>, or number of periods per second,
-be denoted by $n$, then $n = \dfrac{1}{T}$, and we may then write:
+<p>Se a <em>frequência</em>, ou número de períodos por segundo,
+for denotada por $n$, então $n = \dfrac{1}{T}$, e podemos então escrever:
 \[
 \theta=2\pi nt.
 \]
-Then we shall have
+Então teremos
 \[
 y = \sin 2\pi nt.
 \]
 
-<p>If, now, we wish to know how the sine varies with
-respect to time, we must differentiate with respect, not
-to $\theta$, but to $t$. For this we must resort to the artifice
-explained in <a href="9.html">Chapter IX</a>., and put
+<p>Se, agora, quisermos saber como o seno varia em
+relação ao tempo, devemos diferenciar em relação, não
+a $\theta$, mas a $t$. Para isto devemos recorrer ao artifício
+explicado no <a href="9.html">Capítulo IX</a>., e por
 \[
 \frac{dy}{dt} = \frac{dy}{d\theta} · \frac{d\theta}{dt}.
 \]
 
-<p>Now $\dfrac{d\theta}{dt}$ will obviously be $2\pi n$; so that
+<p>Ora $\dfrac{d\theta}{dt}$ será obviamente $2\pi n$; de modo que
 \begin{align*}
 \frac{dy}{dt} &= \cos \theta × 2\pi n \\
               &= 2\pi n · \cos 2\pi nt. \\
 \end{align*}
- Similarly, it follows that
+ De modo semelhante, segue-se que
 \begin{align*}
 \frac{d(\cos 2\pi nt)}{dt} &= -2\pi n · \sin 2\pi nt.
 \end{align*}
 
 <p>
-<h2>Second Differential Coefficient of Sine or Cosine.</h2>
+<h2>Segundo Coeficiente Diferencial do Seno ou Cosseno.</h2>
 
-<p>We have seen that when $\sin \theta$ is differentiated with
-respect to $\theta$ it becomes $\cos \theta$; and that when $\cos \theta$ is
-differentiated with respect to $\theta$ it becomes $-\sin \theta$;
-or, in symbols,
+<p>Vimos que quando $\sin \theta$ é diferenciado em
+relação a $\theta$ ele se torna $\cos \theta$; e que quando $\cos \theta$ é
+diferenciado em relação a $\theta$ ele se torna $-\sin \theta$;
+ou, em símbolos,
 \[
 \frac{d^2(\sin \theta)}{d\theta^2} = -\sin \theta.
 \]
 
 
-<p>So we have this curious result that we have found
-a function such that if we differentiate it twice over,
-we get the same thing from which we started, but
-with the sign changed from $+$ to $-$.
+<p>Assim temos este resultado curioso de que encontramos
+uma função tal que se a diferenciarmos duas vezes,
+obtemos a mesma coisa de que partimos, mas
+com o sinal mudado de $+$ para $-$.
 
-<p>The same thing is true for the cosine; for differentiating
-$\cos\theta$ gives us $-\sin\theta$, and differentiating
-$-\sin\theta$ gives us $-\cos\theta$; or thus:
+<p>A mesma coisa é verdadeira para o cosseno; pois diferenciar
+$\cos\theta$ nos dá $-\sin\theta$, e diferenciar
+$-\sin\theta$ nos dá $-\cos\theta$; ou assim:
 \[
 \frac{d^2(\cos\theta)}{d\theta^2} = -\cos\theta.
 \]
 
-<p><em>Sines and cosines are the only functions of which
-the second differential coefficient is equal (and of
-opposite sign to) the original function.</em>
+<p><em>Senos e cossenos são as únicas funções das quais
+o segundo coeficiente diferencial é igual (e de
+sinal oposto) à função original.</em>
 
 <p><hr>
 
-<p><em>Examples</em><a name="intex3"/>
-With what we have so far learned we can now
-differentiate expressions of a more complex nature.
+<p><em>Exemplos</em><a name="intex3"/>
+Com o que aprendemos até agora podemos agora
+diferenciar expressões de natureza mais complexa.
 
 <p>(1) $y=\arcsin x$.
 
-<p>If $y$ is the arc whose sine is $x$, then $x = \sin y$.
+<p>Se $y$ for o arco cujo seno é $x$, então $x = \sin y$.
 \[
 \frac{dx}{dy}=\cos y.
 \]
 
-<p>Passing now from the inverse function to the original
-one, we get
+<p>Passando agora da função inversa para a original,
+obtemos
 \begin{align*}
 \frac{dy}{dx}
   &= \frac{1}{\;\dfrac{dx}{dy}\;} = \frac{1}{\cos y}. \\
-   \text{Now}\;
+   \text{Ora}\;
 \cos y
   &= \sqrt{1-\sin^2 y}=\sqrt{1-x^2}; \\
- \text{hence}\;
+ \text{logo}\;
 \frac{dy}{dx}
   &= \frac{1}{\sqrt{1-x^2}},
 \end{align*}
-a rather unexpected result.
+um resultado um tanto inesperado.
 
 
 <p>(2) $y=\cos^3 \theta$.
 
-<p>This is the same thing as $y=(\cos \theta)^3$.
+<p>Isto é a mesma coisa que $y=(\cos \theta)^3$.
 
-<p>Let $\cos\theta=v$; then $y=v^3$; $\dfrac{dy}{dv}=3v^2$.
+<p>Seja $\cos\theta=v$; então $y=v^3$; $\dfrac{dy}{dv}=3v^2$.
 \begin{align*}
 \frac{dv}{d\theta} &= -\sin\theta.\\
 \frac{dy}{d\theta} &=  \frac{dy}{dv} × \frac{dv}{d\theta}
@@ -267,16 +339,16 @@ a rather unexpected result.
 
 <p>(3) $y=\sin(x+a)$.
 
-<p>Let $x+a=v$; then $y=\sin v$.
+<p>Seja $x+a=v$; então $y=\sin v$.
 \[
 \frac{dy}{dv}=\cos v;\qquad
-\frac{dv}{dx}=1 \quad\text{and}\quad
+\frac{dv}{dx}=1 \quad\text{e}\quad
 \frac{dy}{dx}=\cos(x+a).
 \]
 
 <p>(4) $y=\log_\epsilon \sin \theta$.
 
-<p>Let $\sin\theta=v$; $y=\log_\epsilon v$.
+<p>Seja $\sin\theta=v$; $y=\log_\epsilon v$.
 \begin{align*}
 \frac{dy}{dv}      &= \frac{1}{v};\quad \frac{dv}{d\theta}=\cos\theta;\\
 \frac{dy}{d\theta} &= \frac{1}{\sin\theta} × \cos\theta = \cot\theta.
@@ -291,7 +363,7 @@ a rather unexpected result.
 
 <p>(6) $y=\tan 3\theta$.
 
-<p>Let $3\theta=v$; $y=\tan v$; $\dfrac{dy}{dv}=\sec^2 v$.
+<p>Seja $3\theta=v$; $y=\tan v$; $\dfrac{dy}{dv}=\sec^2 v$.
 \[
 \frac{dv}{d\theta}=3;\quad
 \frac{dy}{d\theta}=3 \sec^2 3\theta.
@@ -300,24 +372,24 @@ a rather unexpected result.
 
 <p>(7) $y = \sqrt{1+3\tan^2\theta}$; $y=(1+3 \tan^2 \theta)^{\frac{1}{2}}$.
 
-<p>Let $3\tan^2\theta=v$.
+<p>Seja $3\tan^2\theta=v$.
 \begin{align*}
 y &= (1+v)^{\frac{1}{2}};\quad
 \frac{dy}{dv} = \frac{1}{2\sqrt{1+v}}
 \end{align*}
-(see <a href="9.html#ExNo1">here</a>);
+(ver <a href="9.html#ExNo1">aqui</a>);
 \begin{align*}
 \frac{dv}{d\theta}
   &= 6\tan\theta \sec^2 \theta \\
 \end{align*}
-for, if $\tan \theta = u$,
+pois, se $\tan \theta = u$,
 \begin{align*}
 v &= 3u^2;\quad \frac{dv}{du} = 6u;\quad \frac{du}{d\theta} = \sec^2 \theta; \\
 
- hence
+ logo
 \frac{dv}{d\theta}
   &= 6 (\tan \theta \sec^2 \theta) \\
- hence
+ logo
 
 \frac{dy}{d\theta}
   &= \frac{6\tan\theta \sec^2\theta}{2\sqrt{1 + 3\tan^2\theta}}.
@@ -331,46 +403,46 @@ v &= 3u^2;\quad \frac{dv}{du} = 6u;\quad \frac{du}{d\theta} = \sec^2 \theta; \\
 \end{align*}
 
 <p>
-<hr><h3>Exercises XIV</h3>
+<hr><h3>Exercícios XIV</h3>
 
-(1) Differentiate the following:
+(1) Diferencie o seguinte:
 \begin{align*}
 \text{(i)}\quad   y &= A \sin\left(\theta - \frac{\pi}{2}\right).\\
-\text{(ii)}\quad  y &= \sin^2 \theta;\quad \text{and } y = \sin 2\theta.\\
-\text{(iii)}\quad y &= \sin^3 \theta;\quad \text{and } y = \sin 3\theta.
+\text{(ii)}\quad  y &= \sin^2 \theta;\quad \text{e } y = \sin 2\theta.\\
+\text{(iii)}\quad y &= \sin^3 \theta;\quad \text{e } y = \sin 3\theta.
 \end{align*}
 
-<p>(2) Find the value of $\theta$ for which $\sin\theta × \cos\theta$ is a
-maximum.
+<p>(2) Encontre o valor de $\theta$ para o qual $\sin\theta × \cos\theta$ é um
+máximo.
 
-<p>(3) Differentiate $y=\dfrac{1}{2\pi} \cos 2\pi nt$.
+<p>(3) Diferencie $y=\dfrac{1}{2\pi} \cos 2\pi nt$.
 
 
-<p>(4) If $y = \sin a^x$, find $\dfrac{dy}{dx}$.
+<p>(4) Se $y = \sin a^x$, encontre $\dfrac{dy}{dx}$.
 
-<p>(5) Differentiate $y=\log_\epsilon \cos x$.
+<p>(5) Diferencie $y=\log_\epsilon \cos x$.
 
-<p>(6) Differentiate $y=18.2 \sin(x+26°)$.
+<p>(6) Diferencie $y=18.2 \sin(x+26°)$.
 
-<p>(7) Plot the curve $y=100 \sin(\theta-15°)$; and show
-that the slope of the curve at $\theta = 75°$ is half the
-maximum slope.
+<p>(7) Plote a curva $y=100 \sin(\theta-15°)$; e mostre
+que a inclinação da curva em $\theta = 75°$ é metade da
+inclinação máxima.
 
-<p>(8) If $y=\sin \theta·\sin 2\theta$, find $\dfrac{dy}{d\theta}$.
+<p>(8) Se $y=\sin \theta·\sin 2\theta$, encontre $\dfrac{dy}{d\theta}$.
 
-<p>(9)  If $y=a·\tan^m(\theta^n)$, find the differential coefficient
-of $y$ with respect to $\theta$.
+<p>(9)  Se $y=a·\tan^m(\theta^n)$, encontre o coeficiente diferencial
+de $y$ em relação a $\theta$.
 
-<p>(10) Differentiate $y=\epsilon^x \sin^2 x$.
+<p>(10) Diferencie $y=\epsilon^x \sin^2 x$.
 
-<p>(11) Differentiate the three equations of Exercises XIII.
-(<a href="14b.html">here</a>), No. 4, and compare their differential
-coefficients, as to whether they are equal, or nearly
-equal, for very small values of $x$, or for very large
-values of $x$, or for values of $x$ in the neighbourhood
-of $x=30$.
+<p>(11) Diferencie as três equações dos Exercícios XIII.
+(<a href="14b.html">aqui</a>), nº 4, e compare seus coeficientes
+diferenciais, quanto a se são iguais, ou quase
+iguais, para valores muito pequenos de $x$, ou para valores muito grandes
+de $x$, ou para valores de $x$ na vizinhança
+de $x=30$.
 
-<p>(12) Differentiate the following:
+<p>(12) Diferencie o seguinte:
 \begin{align*}
 \text{(i)}\quad   y &= \sec x.    \\
 \text{(ii)}\quad  y &= \arccos x. \\
@@ -379,26 +451,26 @@ of $x=30$.
 \text{(v)}\quad   y &= \tan x × \sqrt{3 \sec x}. &&
 \end{align*}
 
-<p>(13) Differentiate $y=\sin(2\theta +3)^{2.3}$.
+<p>(13) Diferencie $y=\sin(2\theta +3)^{2.3}$.
 
-<p>(14) Differentiate $y=\theta^3+3 \sin(\theta+3)-3^{\sin \theta} - 3^\theta$.
+<p>(14) Diferencie $y=\theta^3+3 \sin(\theta+3)-3^{\sin \theta} - 3^\theta$.
 
-<p>(15) Find the maximum or minimum of $y=\theta \cos \theta$.
+<p>(15) Encontre o máximo ou mínimo de $y=\theta \cos \theta$.
 
-<p><h3 class="answers">Answers</h3>
+<p><h3 class="answers">Respostas</h3>
 
 <p>(1)  (i) $\dfrac{dy}{d\theta} = A \cos \left( \theta - \dfrac{\pi}{2} \right)$;
 
-<p>(ii) $\dfrac{dy}{d\theta} = 2\sin\theta \cos\theta = \sin2\theta$ and $\dfrac{dy}{d\theta} = 2\cos2\theta$;
-<p>(iii) $\dfrac{dy}{d\theta} = 3\sin^2 \theta \cos\theta$ and $\dfrac{dy}{d\theta} = 3\cos3\theta$.
-<p>(2)   $\theta = 45°$ or $\dfrac{\pi}{4}$ radians.
+<p>(ii) $\dfrac{dy}{d\theta} = 2\sin\theta \cos\theta = \sin2\theta$ e $\dfrac{dy}{d\theta} = 2\cos2\theta$;
+<p>(iii) $\dfrac{dy}{d\theta} = 3\sin^2 \theta \cos\theta$ e $\dfrac{dy}{d\theta} = 3\cos3\theta$.
+<p>(2)   $\theta = 45°$ ou $\dfrac{\pi}{4}$ radianos.
 <p>(3)   $\dfrac{dy}{dt} = -n \sin 2\pi nt$.
 <p>(4)   $a^x \log_\epsilon a \cos a^x$.
 <p>(5)   $\dfrac{\cos x}{\sin x} = \text{cotan}\; x$
 <p>(6)   $18.2 \cos \left(x + 26° \right)$.
-<p>(7)  The slope is $\dfrac{dy}{d\theta} = 100\cos\left(\theta - 15° \right)$, which is a maximum
- when $(\theta -15°) = 0$, or $\theta = 15°$; the value of the slope
- being then ${}= 100$. When $\theta = 75°$ the slope is
+<p>(7)  A inclinação é $\dfrac{dy}{d\theta} = 100\cos\left(\theta - 15° \right)$, que é um máximo
+ quando $(\theta -15°) = 0$, ou $\theta = 15°$; o valor da inclinação
+ sendo então ${}= 100$. Quando $\theta = 75°$ a inclinação é
  $100\cos(75°  - 15°) = 100\cos 60° = 100 × \frac{1}{2} = 50$.
 <p>(8)  $\begin{aligned}[t]
   \cos\theta \sin2\theta + 2\cos2\theta \sin\theta
@@ -427,30 +499,55 @@ of $x=30$.
 
 <p>(14)   $\dfrac{dy}{d\theta} = 3\theta^2 + 3\cos \left( \theta + 3 \right) - \log_\epsilon 3 \left( \cos\theta × 3^{\sin\theta} + 3\theta \right)$.
 
-<p>(15)   $\theta = \cot\theta; \theta = ±0.86$; is max. for $+\theta$, min. for $-\theta$.
+<p>(15)   $\theta = \cot\theta; \theta = ±0.86$; é máx. para $+\theta$, mín. para $-\theta$.
 
 
 <br>
-<script type="text/javascript" src="https://payhip.com/payhip.js"></script>
-<h3>Get Complete Step-by-Step Solutions</h3>
-<a href="https://payhip.com/b/2MVru"><img class="cover" src="cover-small.png" width="180px"></a>
-
-<ul>
-    <li>For all exercises in this book.</li>
-    <li>Check your work or get unstuck.</li>
-    <li>Written by CalculusMadeEasy.org</li>
-	<li>Support this website ❤️.</li>
-	<li>229 pages</li>
-    <li><a href="https://payhip.com/b/2MVru">More details</a></li>
-    <br>
-        <a href="https://payhip.com/b/2MVru" class="payhip-buy-button" data-theme="green" data-product="2MVru">Download for $9</a>
-</ul>
+<!-- Soluções comerciais removidas: projeto público e sem fins lucrativos -->
 
 <hr>
-<a href="16.html">Next &rarr;</a><br>
-<a href="/">Main Page &uarr;</a><br>
+<a href="16.html">Próximo &rarr;</a><br>
+<a href="14b.html">← Anterior</a><br>
+<a href="index.html">Página principal &uarr;</a><br>
+
+<footer class="site-footer" role="contentinfo">
+  <p class="a rotatedFloralHeartBullet"></p>
+
+  <div class="manifesto">
+    <p class="manifesto-lead">
+      Este é um <strong>projeto público</strong>, sem fins lucrativos.
+      Não é permitido comercializá-lo, vendê-lo nem usá-lo como produto pago.
+    </p>
+    <p class="manifesto-quote">
+      A educação é um direito de todos.
+      O conhecimento deve ser livre sempre que não cause o mal:
+      deve circular, ensinar e libertar, nunca aprisionar quem aprende.
+    </p>
+    <p class="manifesto-sign">
+      - Thales Rodrigues
+    </p>
+  </div>
+
+  <nav class="author-links" aria-label="Redes de Thales Rodrigues">
+    <a href="https://www.linkedin.com/in/thales-oliveira-rodrigues/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    <span class="dot" aria-hidden="true">·</span>
+    <a href="https://github.com/Rodriguestmo" target="_blank" rel="noopener noreferrer">GitHub</a>
+  </nav>
+
+  <p class="footer-meta">
+    <small>
+      Tradução e adaptação PT-BR por Thales Rodrigues.
+      Texto de Silvanus P. Thompson em domínio público (Project Gutenberg).
+      Notas de contexto inspiradas na edição Gardner (1998).
+      Projeto público e gratuito.
+    </small>
+  </p>
+</footer>
 
 <script src="j/jquery.js"></script>
 <script src="j/modernizr.js"></script>
 <script src="j/dih5.js"></script>
+<script src="j/notes-toggle.js"></script>
 <!-- Analytics desativado na edição PT local -->
+</body>
+</html>

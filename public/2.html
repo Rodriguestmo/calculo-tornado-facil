@@ -1,6 +1,39 @@
 <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+
 <meta charset="utf-8">
-<title>On Different Degrees of Smallness | Calculus Made Easy</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Graus de Pequenez | Cálculo Tornado Fácil - Cap. II</title>
+<meta name="description" content="Capítulo II: sobre diferentes graus de pequenez e quantidades infinitesimais.">
+<meta name="author" content="Thales Rodrigues; Silvanus P. Thompson">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="googlebot" content="index, follow">
+<meta name="language" content="Portuguese">
+<meta name="keywords" content="cálculo, calculus made easy, Silvanus Thompson, cálculo diferencial, cálculo integral, matemática, educação livre, português, Martin Gardner, Cálculo Tornado Fácil, Thales Rodrigues">
+<link rel="canonical" href="https://rodriguestmo.github.io/calculo-tornado-facil/2.html">
+<link rel="alternate" hreflang="pt-BR" href="https://rodriguestmo.github.io/calculo-tornado-facil/2.html">
+<link rel="alternate" hreflang="x-default" href="https://rodriguestmo.github.io/calculo-tornado-facil/">
+
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Cálculo Tornado Fácil">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Graus de Pequenez | Cálculo Tornado Fácil - Cap. II">
+<meta property="og:description" content="Capítulo II: sobre diferentes graus de pequenez e quantidades infinitesimais.">
+<meta property="og:url" content="https://rodriguestmo.github.io/calculo-tornado-facil/2.html">
+<meta property="og:image" content="https://rodriguestmo.github.io/calculo-tornado-facil/cover.jpg">
+
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Graus de Pequenez | Cálculo Tornado Fácil - Cap. II">
+<meta name="twitter:description" content="Capítulo II: sobre diferentes graus de pequenez e quantidades infinitesimais.">
+<meta name="twitter:image" content="https://rodriguestmo.github.io/calculo-tornado-facil/cover.jpg">
+
+
+<meta name="ai-content-declaration" content="human-authored translation and educational adaptation">
+<link rel="describedby" href="https://rodriguestmo.github.io/calculo-tornado-facil/llms.txt">
 <link rel="stylesheet" href="screen.css">
 <style>
 body{counter-reset:h1 2}
@@ -11,127 +44,168 @@ body{counter-reset:h1 2}
 <script type="text/javascript"
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Chapter",
+  "name": "Sobre Diferentes Graus de Pequenez",
+  "position": 2,
+  "isPartOf": {
+    "@type": "Book",
+    "name": "Cálculo Tornado Fácil",
+    "url": "https://rodriguestmo.github.io/calculo-tornado-facil/"
+  },
+  "author": {"@type": "Person", "name": "Silvanus P. Thompson"},
+  "translator": {"@type": "Person", "name": "Thales Rodrigues"},
+  "url": "https://rodriguestmo.github.io/calculo-tornado-facil/2.html",
+  "inLanguage": "pt-BR",
+  "isAccessibleForFree": true
+}
+</script>
+</head>
+<body>
+<!-- Barra fixa: navegação, modo das notas, tema -->
+<div id="site-toolbar" class="site-toolbar" role="region" aria-label="Controles do site">
+  <a class="tb-home" href="index.html">Cálculo Tornado Fácil</a>
 
-<h1><br>On Different Degrees of Smallness</h1>
+  <div class="tb-controls">
+    <label class="tb-field" title="Como exibir as notas de Martin Gardner (1998)">
+      <span class="tb-label">Notas</span>
+      <select id="notes-mode" aria-label="Modo de exibição das notas">
+        <option value="all">Sempre visíveis</option>
+        <option value="click">Lupa (clique para abrir)</option>
+        <option value="off">Sempre ocultadas</option>
+      </select>
+    </label>
+
+    <button type="button" id="toggle-theme" class="tb-btn" title="Alternar tema claro/escuro" aria-pressed="false">
+      <span class="theme-label">Tema escuro</span>
+    </button>
+  </div>
+</div>
+
+<h1><br>Sobre Diferentes Graus de Pequenez</h1>
 <p class="a rotatedFloralHeartBullet">
 
-<p>We shall find that in our processes of calculation we
-have to deal with small quantities of various degrees
-of smallness.
+<p>Veremos que, em nossos processos de cálculo, temos
+de lidar com quantidades pequenas de vários graus
+de pequenez.
 
-<p>We shall have also to learn under what circumstances
-we may consider small quantities to be so minute
-that we may omit them from consideration. Everything
-depends upon relative minuteness.
+<p>Teremos também de aprender em quais circunstâncias
+podemos considerar quantidades pequenas tão miúdas
+que as omitimos da consideração. Tudo
+depende da miudeza relativa.
 
-<p>Before we fix any rules let us think of some
-familiar cases. There are $60$ minutes in the hour,
-$24$ hours in the day, $7$ days in the week. There are
-therefore $1440$ minutes in the day and $10080$ minutes
-in the week.
+<p>Antes de fixar quaisquer regras, pensemos em alguns
+casos familiares. Há $60$ minutos na hora,
+$24$ horas no dia, $7$ dias na semana. Há
+portanto $1440$ minutos no dia e $10080$ minutos
+na semana.
 
-<p>Obviously $1$ minute is a very small quantity of
-time compared with a whole week. Indeed, our
-forefathers considered it small as compared with an
+<p>Obviamente $1$ minuto é uma quantidade muito pequena de
+tempo comparada com uma semana inteira. De fato, nossos
+antepassados o consideravam pequeno comparado com uma
 
-hour, and called it “one minùte,” meaning a minute
-fraction–namely one sixtieth–of an hour. When
-they came to require still smaller subdivisions of time,
-they divided each minute into $60$ still smaller parts,
-which, in Queen Elizabeth's days, they called “second
-minùtes” (<em>i.e.:</em> small quantities of the second order of
-minuteness). Nowadays we call these small quantities
+hora, e o chamaram de “um minuto” (do latim <em>minutus</em>),
+significando uma fração miúda - a saber, um sessenta avos - de
+uma hora. Quando precisaram de subdivisões de tempo
+ainda menores, dividiram cada minuto em $60$ partes
+ainda menores, que, nos dias da rainha Elizabeth,
+chamaram de “minutos segundos” (<em>i.e.:</em> quantidades
+pequenas da segunda ordem de miudeza). Hoje
+chamamos essas quantidades pequenas
 
-of the second order of smallness “seconds.” But few
-people know <em>why</em> they are so called.
+da segunda ordem de pequenez de “segundos.” Mas poucas
+pessoas sabem <em>por que</em> se chamam assim.
 
-<p>Now if one minute is so small as compared with a
-whole day, how much smaller by comparison is one
-second!
+<p>Ora, se um minuto é tão pequeno comparado com um
+dia inteiro, quanto menor por comparação é um
+segundo!
 
-<p>Again, think of a farthing as compared with a
-sovereign: it is barely worth more than $\frac{1}{1000}$ part.
-A farthing more or less is of precious little importance
-compared with a sovereign: it may certainly be regarded
-as a <em>small</em> quantity. But compare a farthing
-with £$1000$: relatively to this greater sum, the
-farthing is of no more importance than $\frac{1}{1000}$ of a
-farthing would be to a sovereign. Even a golden
-sovereign is relatively a negligible quantity in the
-wealth of a millionaire.
+<p>Outra vez: pense num centavo comparado com cem
+reais: mal vale mais do que $\frac{1}{1000}$ parte.
+Um centavo a mais ou a menos tem bem pouca importância
+comparado com cem reais: pode certamente ser considerado
+uma quantidade <em>pequena</em>. Mas compare um centavo
+com R$ $100.000$: relativamente a essa soma maior, o
+centavo não tem mais importância do que $\frac{1}{1000}$ de um
+centavo teria perante cem reais. Até um real
+em ouro (ou uma nota de cem) é relativamente uma quantidade
+desprezível na fortuna de um milionário.
 
-<p>Now if we fix upon any numerical fraction as
-constituting the proportion which for any purpose
-we call relatively small, we can easily state other
-fractions of a higher degree of smallness. Thus if,
-for the purpose of time, $\frac{1}{60}$ be called a <em>small</em> fraction,
-then $\frac{1}{60}$ of $\frac{1}{60}$ (being a <em>small</em> fraction of a <em>small</em>
-fraction) may be regarded as a <em>small quantity of the
-second order</em><a name="smallness"/> of smallness.*
-<p><note>*The mathematicians talk about the second order of “magnitude”
-  (<em>i.e.:</em> greatness) when they really mean second order of <em>smallness</em>.
-  This is very confusing to beginners.</note>
+<p>Agora, se fixarmos qualquer fração numérica como
+constituindo a proporção que, para qualquer fim,
+chamamos relativamente pequena, podemos facilmente enunciar
+outras frações de um grau mais alto de pequenez. Assim, se,
+para o fim do tempo, $\frac{1}{60}$ for chamado uma fração <em>pequena</em>,
+então $\frac{1}{60}$ de $\frac{1}{60}$ (sendo uma fração <em>pequena</em> de uma fração
+<em>pequena</em>) pode ser considerado uma <em>quantidade pequena da
+segunda ordem</em><a name="smallness"/> de pequenez.*
+<p><note>*Os matemáticos falam da segunda ordem de “magnitude”
+  (<em>i.e.:</em> grandeza) quando na verdade querem dizer segunda ordem de <em>pequenez</em>.
+  Isso confunde bastante os principiantes.</note>
 
-<p>Or, if for any purpose we were to take $1$ per cent. (<em>i.e.:</em> $\frac{1}{100}$) as a <em>small</em> fraction, then $1$ per cent. of
-$1$ per cent. (<em>i.e.:</em> $\frac{1}{10,000}$) would be a small fraction
-of the second order of smallness; and $\frac{1}{1,000,000}$ would
+<p>Ou, se para qualquer fim tomássemos $1$ por cento (<em>i.e.:</em> $\frac{1}{100}$)
+como uma fração <em>pequena</em>, então $1$ por cento de
+$1$ por cento (<em>i.e.:</em> $\frac{1}{10.000}$) seria uma fração pequena
+da segunda ordem de pequenez; e $\frac{1}{1.000.000}$ seria
 
-be a small fraction of the third order of smallness,
-being $1$ per cent. of $1$ per cent. of $1$ per cent.
+uma fração pequena da terceira ordem de pequenez,
+sendo $1$ por cento de $1$ por cento de $1$ por cento.
 <a id="fn1-top">
-<p>Lastly, suppose that for some very precise purpose
-we should regard $\frac{1}{1,000,000}$ as “small.” Thus, if a
-first-rate chronometer is not to lose or gain more than
-half a minute in a year, it must keep time with an
-accuracy of $1$ part in $1,051,200$. Now if, for such a
-purpose, we regard $\frac{1}{1,000,000}$ (or one millionth) as a
-small quantity, then $\frac{1}{1,000,000}$ of $\frac{1}{1,000,000}$, that is
-$\frac{1}{1,000,000,000,000}$ (or one billionth<sup><a href="#fn1">†</a></sup>) will be a small
-quantity of the second order of smallness, and may
-be utterly disregarded, by comparison.
+<p>Por fim, suponha que para algum fim muito preciso
+consideremos $\frac{1}{1.000.000}$ como “pequeno.” Assim, se um
+cronômetro de primeira linha não deve adiantar nem atrasar
+mais do que meio minuto num ano, precisa manter o tempo com
+uma precisão de $1$ parte em $1.051.200$. Ora, se, para tal
+fim, considerarmos $\frac{1}{1.000.000}$ (ou um milionésimo) como uma
+quantidade pequena, então $\frac{1}{1.000.000}$ de $\frac{1}{1.000.000}$, isto é
+$\frac{1}{1.000.000.000.000}$ (ou um bilionésimo<sup><a href="#fn1">†</a></sup>) será uma quantidade
+pequena da segunda ordem de pequenez, e pode
+ser completamente desconsiderada, por comparação.
 
 
-<p>Then we see that the smaller a small quantity itself
-is, the more negligible does the corresponding small
-quantity of the second order become. Hence we
-know that <em>in all cases we are justified in neglecting
-the small quantities of the second–or third (or
-higher)–orders</em>, if only we take the small quantity
-of the first order small enough in itself.
+<p>Vemos então que quanto menor for a própria quantidade
+pequena, mais desprezível se torna a correspondente
+quantidade pequena da segunda ordem. Donde
+sabemos que <em>em todos os casos temos justificação para
+desprezar as quantidades pequenas das ordens segunda - ou
+terceira (ou superior)</em>, se apenas tomarmos a quantidade
+pequena da primeira ordem suficientemente pequena em si.
 
-<p>But, it must be remembered, that small quantities
-if they occur in our expressions as factors multiplied
-by some other factor, may become important if the
-other factor is itself large. Even a farthing becomes
-important if only it is multiplied by a few hundred.
+<p>Mas deve-se lembrar que quantidades pequenas,
+se ocorrerem em nossas expressões como fatores multiplicados
+por algum outro fator, podem se tornar importantes se o
+outro fator for ele mesmo grande. Até um centavo se
+torna importante se for multiplicado por algumas centenas.
 
-<p>Now in the calculus we write $dx$ for a little bit
-of $x$. These things such as $dx$, and $du$, and $dy$, are
-called “differentials,” the differential of $x$, or of $u$,
-or of $y$, as the case may be. [You <em>read</em> them as
-<em>dee-eks</em>, or <em>dee-you</em>, or <em>dee-wy</em>.] If $dx$ be a small bit
-of $x$, and relatively small of itself, it does not follow
-that such quantities as $x · dx$, or $x^2\, dx$, or $a^x\, dx$ are
-negligible. But $dx × dx$ would be negligible, being a
-small quantity of the second order.
+<p>Agora, no cálculo escrevemos $dx$ para um pedacinho
+de $x$. Essas coisas como $dx$, e $du$, e $dy$, são
+chamadas “diferenciais,” o diferencial de $x$, ou de $u$,
+ou de $y$, conforme o caso. [Você as <em>lê</em> como
+<em>dê-équis</em>, ou <em>dê-u</em>, ou <em>dê-ípsilon</em>.] Se $dx$ for um pedacinho
+de $x$, e relativamente pequeno por si, não se segue
+que quantidades como $x · dx$, ou $x^2\, dx$, ou $a^x\, dx$ sejam
+desprezíveis. Mas $dx × dx$ seria desprezível, por ser uma
+quantidade pequena da segunda ordem.
 
-<p>A very simple example will serve as illustration.
+<p>Um exemplo bem simples servirá de ilustração.
 
-<p>Let us think of $x$ as a quantity that can grow by
-a small amount so as to become $x + dx$, where $dx$ is
-the small increment added by growth. The square
-of this is $x^2 + 2x · dx + (dx)^2$. The second term is
-not negligible because it is a first-order quantity;
-while the third term is of the second order of smallness,
-being a bit of,
-a bit of $x^2$. Thus if we took
-$dx$ to mean numerically, say, $\frac{1}{60}$ of $x$, then the second
-term would be $\frac{2}{60}$ of $x^2$, whereas the third term would
-be $\frac{1}{3600}$ of $x^2$. This last term is clearly less important
-than the second. But if we go further and take
-$dx$ to mean only $\frac{1}{1000}$ of $x$, then the second term
-will be $\frac{2}{1000}$ of $x^2$, while the third term will be
-only $\frac{1}{1,000,000}$ of $x^2$.
+<p>Pensemos em $x$ como uma quantidade que pode crescer por
+uma quantia pequena de modo a se tornar $x + dx$, onde $dx$ é
+o pequeno incremento acrescentado pelo crescimento. O quadrado
+disso é $x^2 + 2x · dx + (dx)^2$. O segundo termo não
+é desprezível porque é uma quantidade de primeira ordem;
+enquanto o terceiro termo é da segunda ordem de pequenez,
+sendo um pedacinho de
+um pedacinho de $x^2$. Assim, se tomássemos
+$dx$ para significar numericamente, digamos, $\frac{1}{60}$ de $x$, então o segundo
+termo seria $\frac{2}{60}$ de $x^2$, ao passo que o terceiro termo seria
+$\frac{1}{3600}$ de $x^2$. Este último termo é claramente menos importante
+que o segundo. Mas se formos além e tomarmos
+$dx$ para significar apenas $\frac{1}{1000}$ de $x$, então o segundo termo
+será $\frac{2}{1000}$ de $x^2$, enquanto o terceiro termo será
+apenas $\frac{1}{1.000.000}$ de $x^2$.
 
 <p><a name="figure1">
 <img src="33283-t/images/018a.pdf.png-1.png">
@@ -140,71 +214,109 @@ only $\frac{1}{1,000,000}$ of $x^2$.
 <img src="33283-t/images/019a.pdf.png-1.png">
 
 
-<p>Geometrically this may be depicted as follows:
-Draw a square (<a href="#figure1">Figure 1</a>) the side of which we will
-take to represent $x$. Now suppose the square to
-grow by having a bit $dx$ added to its size each
-way. The enlarged square is made up of the original
-square $x^2$, the two rectangles at the top and on the
-right, each of which is of area $x · dx$ (or together
-$2x · dx$), and the little square at the top right-hand
-corner which is $(dx)^2$. In <a href="#figure2">Figure 2</a> we have taken $dx$ as
-quite a big fraction of $x$–about $\frac{1}{5}$. But suppose we
-had taken it only $\frac{1}{100}$–about the thickness of an
-inked line drawn with a fine pen. Then the little
-corner square will have an area of only $\frac{1}{10,000}$ of $x^2$,
-and be practically invisible. Clearly $(dx)^2$ is negligible
-if only we consider the increment $dx$ to be itself
-small enough.
+<p>Geometricamente isso pode ser representado assim:
+Desenhe um quadrado (<a href="#figure1">Figura 1</a>) cujo lado tomaremos
+para representar $x$. Agora suponha que o quadrado
+cresça ao ter um pedacinho $dx$ acrescentado ao seu tamanho
+em cada direção. O quadrado ampliado é feito do quadrado
+original $x^2$, dos dois retângulos no topo e à
+direita, cada um com área $x · dx$ (ou juntos
+$2x · dx$), e do quadradinho no canto superior direito
+que é $(dx)^2$. Na <a href="#figure2">Figura 2</a> tomamos $dx$ como
+uma fração bem grande de $x$ - cerca de $\frac{1}{5}$. Mas suponha que
+o tivéssemos tomado apenas $\frac{1}{100}$ - aproximadamente a espessura de uma
+linha de tinta traçada com uma caneta fina. Então o
+quadradinho do canto terá uma área de apenas $\frac{1}{10.000}$ de $x^2$,
+e será praticamente invisível. Claramente $(dx)^2$ é desprezível
+se apenas considerarmos o incremento $dx$ como sendo ele mesmo
+suficientemente pequeno.
 <p><a name="figure3">
 <img src="33283-t/images/019b.pdf.png-1.png">
 
-<p>Let us consider a simile.
+<p>Consideremos uma comparação.
 
-<p>Suppose a millionaire were to say to his secretary:
-next week I will give you a small fraction of any
-money that comes in to me. Suppose that the
-secretary were to say to his boy: I will give you a
-small fraction of what I get. Suppose the fraction
-in each case to be $\frac{1}{100}$ part. Now if Mr. Millionaire
-received during the next week £$1000$, the secretary
+<p>Suponha que um milionário diga ao seu secretário:
+na próxima semana darei a você uma pequena fração de qualquer
+dinheiro que me entrar. Suponha que o
+secretário diga ao seu menino: darei a você uma
+pequena fração do que eu receber. Suponha que a fração
+em cada caso seja a parte de $\frac{1}{100}$. Ora, se o Sr. Milionário
+recebeu durante a próxima semana R$ $1000$, o secretário
 
-would receive £$10$ and the boy $2$ shillings. Ten
-pounds would be a small quantity compared with
-£$1000$; but two shillings is a small small quantity
-indeed, of a very secondary order. But what would
-be the disproportion if the fraction, instead of being $\frac{1}{100}$,
-had been settled at $\frac{1}{1000}$ part? Then, while
-Mr. Millionaire got his £$1000$, Mr. Secretary would
-get only £$1$, and the boy less than one farthing!
+receberia R$ $10$ e o menino R$ $0,10$. Dez
+reais seriam uma quantidade pequena comparada com
+R$ $1000$; mas dez centavos é uma quantidade pequenininha
+mesmo, de uma ordem bem secundária. Mas qual seria
+a desproporção se a fração, em vez de ser $\frac{1}{100}$,
+tivesse sido fixada em $\frac{1}{1000}$? Então, enquanto
+o Sr. Milionário obtivesse seus R$ $1000$, o Sr. Secretário
+obteria apenas R$ $1$, e o menino menos de um centavo!
 
-<p>The witty Dean Swift*
-once wrote:
+<p>O espirituoso Decão Swift*
+uma vez escreveu:
 <blockquote><pre>
-So, Nat'ralists observe, a Flea
-Hath smaller Fleas that on him prey.
-And these have smaller Fleas to bite 'em,
-And so proceed ad infinitum." </pre>
+Assim, notam os naturalistas, uma pulga
+Tem pulgas menores que nela se alimentam.
+E estas têm pulgas menores que as mordem,
+E assim prosseguem ad infinitum." </pre>
 </blockquote>
-  <p><note><em>*On Poetry: a Rhapsody</em> (p. 20), printed 1733–usually misquoted.</note>
+  <p><note><em>*On Poetry: a Rhapsody</em> (p. 20), impresso em 1733 - usualmente
+  citado de forma errada.</note>
 
-<p>An ox might worry about a flea of ordinary
-size–a small creature of the first order of smallness.
-But he would probably not trouble himself about a
-flea's flea; being of the second order of smallness, it
-would be negligible. Even a gross of fleas' fleas
-would not be of much account to the ox.
+<p>Um boi poderia se preocupar com uma pulga de tamanho
+comum - uma criatura pequena da primeira ordem de pequenez.
+Mas provavelmente não se incomodaria com uma
+pulga da pulga; sendo da segunda ordem de pequenez, ela
+seria desprezível. Até uma dúzia de dúzias de pulgas de pulgas
+não importaria muito ao boi.
 <br>
 <hr>
 
-<p><a id="fn1"/><note><sup><a href="#fn1-top">†</a></sup>The term <em>billion</em> here means $10^{12}$ in old British
-English, ie, trillion in <a href="https://en.wikipedia.org/wiki/Long_and_short_scales">modern use</a>.</note>
+<p><a id="fn1"/><note><sup><a href="#fn1-top">†</a></sup>O termo <em>billion</em> aqui significa $10^{12}$ no inglês
+britânico antigo, isto é, trilhão no <a href="https://en.wikipedia.org/wiki/Long_and_short_scales">uso moderno</a>.</note>
 <hr>
-<a href="3.html">Next &rarr;</a><br>
-<a href="/">Main Page &uarr;</a><br>
+<a href="3.html">Próximo &rarr;</a><br>
+<a href="1.html">← Anterior</a><br>
+<a href="index.html">Página principal &uarr;</a><br>
 
+<footer class="site-footer" role="contentinfo">
+  <p class="a rotatedFloralHeartBullet"></p>
+
+  <div class="manifesto">
+    <p class="manifesto-lead">
+      Este é um <strong>projeto público</strong>, sem fins lucrativos.
+      Não é permitido comercializá-lo, vendê-lo nem usá-lo como produto pago.
+    </p>
+    <p class="manifesto-quote">
+      A educação é um direito de todos.
+      O conhecimento deve ser livre sempre que não cause o mal:
+      deve circular, ensinar e libertar, nunca aprisionar quem aprende.
+    </p>
+    <p class="manifesto-sign">
+      - Thales Rodrigues
+    </p>
+  </div>
+
+  <nav class="author-links" aria-label="Redes de Thales Rodrigues">
+    <a href="https://www.linkedin.com/in/thales-oliveira-rodrigues/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    <span class="dot" aria-hidden="true">·</span>
+    <a href="https://github.com/Rodriguestmo" target="_blank" rel="noopener noreferrer">GitHub</a>
+  </nav>
+
+  <p class="footer-meta">
+    <small>
+      Tradução e adaptação PT-BR por Thales Rodrigues.
+      Texto de Silvanus P. Thompson em domínio público (Project Gutenberg).
+      Notas de contexto inspiradas na edição Gardner (1998).
+      Projeto público e gratuito.
+    </small>
+  </p>
+</footer>
 
 <script src="j/jquery.js"></script>
 <script src="j/modernizr.js"></script>
 <script src="j/dih5.js"></script>
+<script src="j/notes-toggle.js"></script>
 <!-- Analytics desativado na edição PT local -->
+</body>
+</html>

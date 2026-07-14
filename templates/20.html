@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<meta charset="utf-8">
-<title>Dodges, Pitfalls, and Triumphs | Calculus Made Easy</title>
+<html lang="pt-BR">
+<head>
+{% include "seo_head.html" %}
 <link rel="stylesheet" href="screen.css">
 <style>
 body{counter-reset:h1 20}
@@ -11,70 +12,91 @@ body{counter-reset:h1 20}
 <script type="text/javascript"
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Chapter",
+  "name": "Truques, Armadilhas e Triunfos",
+  "position": 20,
+  "isPartOf": {
+    "@type": "Book",
+    "name": "Cálculo Tornado Fácil",
+    "url": "{{ site_url }}/"
+  },
+  "author": {"@type": "Person", "name": "Silvanus P. Thompson"},
+  "translator": {"@type": "Person", "name": "Thales Rodrigues"},
+  "url": "{{ site_url }}/20.html",
+  "inLanguage": "pt-BR",
+  "isAccessibleForFree": true
+}
+</script>
+</head>
+<body>
+{% include "toolbar.html" %}
 
-<h1><br>Dodges, Pitfalls, and Triumphs</h1>
+<h1><br>Truques, Armadilhas e Triunfos</h1>
 <p class="a rotatedFloralHeartBullet">
 
-<p><em>Dodges.</em> A great part of the labour of integrating
-things consists in licking them into some shape that
-can be integrated. The books–and by this is meant
-the serious books–on the Integral Calculus are full
-of plans and methods and dodges and artifices for
-this kind of work. The following are a few of
-them.
+<p><em>Truques.</em> Grande parte do trabalho de integrar
+coisas consiste em amoldá-las a alguma forma que se
+possa integrar. Os livros - e por isso se entendem
+os livros sérios - sobre o Cálculo Integral estão
+cheios de planos e métodos e truques e artifícios
+para esse tipo de trabalho. Os seguintes são
+alguns deles.
 
-<p><em>Integration by Parts.</em><a name="intparts"/> This name is given to a
-dodge, the formula for which is
+<p><em>Integração por partes.</em><a name="intparts"/> Dá-se esse nome a um
+truque, cuja fórmula é
 \[
 \int u\, dx = ux - \int x\, du + C.
 \]
-It is useful in some cases that you can't tackle
-directly, for it shows that if in any case $\int x\, du$ can
-be found, then $\int u\, dx$ can also be found. The formula
-can be deduced as follows. From <a href="6.html#differprod">here</a>, we have,
+É útil em alguns casos que você não consegue atacar
+diretamente, pois mostra que se em qualquer caso
+$\int x\, du$ puder ser encontrado, então $\int u\, dx$ também
+poderá. A fórmula se deduz assim. De <a href="6.html#differprod">aqui</a>, temos
 \[
 d(ux) = u\, dx + x\, du,
 \]
-which may be written
+que se pode escrever
 \[
 u(dx) = d(ux) - x\, du,
 \]
-which by direct integration gives the above expression.
+que por integração direta dá a expressão acima.
 
 
 <p>
-<p><em>Examples</em>
-(1) Find $\int w · \sin w\, dw$.
+<p><em>Exemplos</em>
+(1) Ache $\int w · \sin w\, dw$.
 
-<p>Write $u = w$, and for $\sin w · dw$ write $dx$. We shall
-then have $du = dw$, while $\int \sin w · dw = -\cos w = x$.
+<p>Escreva $u = w$, e para $\sin w · dw$ escreva $dx$.
+Teremos então $du = dw$, enquanto $\int \sin w · dw = -\cos w = x$.
 
-<p>Putting these into the formula, we get
+<p>Pondo isso na fórmula, obtemos
 \begin{align*}
 \int w · \sin w\, dw &= w(-\cos w) - \int -\cos w\, dw  \\
                      &=-w \cos w + \sin w + C.
 \end{align*}
 
-<p>(2) Find $\int x \epsilon^x\, dx$.
+<p>(2) Ache $\int x \epsilon^x\, dx$.
 \begin{align*}
-   \text{Write}\;
+   \text{Escreva}\;
  u &=  x, & \epsilon^x\, dx&=dv; \\
- \text{then }\;
+ \text{então }\;
 du &= dx, & v &=\epsilon^x,
 \end{align*}
 
- and
+ e
 \[
 \int x\epsilon^x\, dx
    = x\epsilon^x - \int \epsilon^x\, dx
-      \quad \text{(by the formula)} \\
+      \quad \text{(pela fórmula)} \\
    = x \epsilon^x - \epsilon^x = \epsilon^x(x-1) + C.
 \]
 
-<p>(3) Try $\int \cos^2 \theta\, d\theta$.<a name="moreexamples"/>
+<p>(3) Tente $\int \cos^2 \theta\, d\theta$.<a name="moreexamples"/>
 \begin{align*}
 u &= \cos \theta, &\cos \theta\, d\theta &= dv. \\
-   \text{Hence }\;
+   \text{Logo }\;
 du&= -\sin \theta\, d\theta, & v &=\sin \theta,
 \end{align*}
 \begin{align*}
@@ -84,103 +106,104 @@ du&= -\sin \theta\, d\theta, & v &=\sin \theta,
   &= \frac{\sin 2\theta}{2} + \int d\theta - \int \cos^2 \theta\, d\theta.
 \end{align*}
 \begin{align*}
-   \text{Hence}\;
+   \text{Logo}\;
 2 \int \cos^2 \theta\, d\theta
   &= \frac{\sin 2\theta}{2} + \theta \\
- and
+ e
 \int \cos^2 \theta\, d\theta
   &= \frac{\sin 2\theta}{4} + \frac{\theta}{2} + C.
 \end{align*}
 
 
-<p>(4) Find $\int x^2 \sin x\, dx$.
+<p>(4) Ache $\int x^2 \sin x\, dx$.
 
 \begin{align*}
-   \text{Write }\;
+   \text{Escreva }\;
 x^2  &= u, & \sin x\, dx &= dv; \\
- \text{then }\;
+ \text{então }\;
 du &= 2x\, dx, & v &= -\cos x,
 \end{align*}
 \[
 \int x^2 \sin x\, dx = -x^2 \cos x + 2 \int x \cos x\, dx.
 \]
 
-<p>Now find $\int x \cos x\, dx$, integrating by parts (as in
-Example 1 above):
+<p>Agora ache $\int x \cos x\, dx$, integrando por partes
+(como no Exemplo 1 acima):
 \[
 \int x \cos x\, dx = x \sin x + \cos x+C.
 \]
 
-<p>Hence
+<p>Logo
 \begin{align*}
 \int x^2 \sin x\, dx
   &= -x^2 \cos x + 2x \sin x + 2 \cos x + C' \\
   &= 2 \left[ x \sin x + \cos x \left(1 - \frac{x^2}{2}\right) \right] +C'.
 \end{align*}
 
-<p>(5) Find $\int \sqrt{1-x^2}\, dx$.
+<p>(5) Ache $\int \sqrt{1-x^2}\, dx$.
 \begin{align*}
- \text{Write}\;
+ \text{Escreva}\;
 u &= \sqrt{1-x^2},\quad dx=dv;  \\
- \text{then }\;
-du &= -\frac{x\, dx}{\sqrt{1-x^2}}\quad \text{(see } 
+ \text{então }\;
+du &= -\frac{x\, dx}{\sqrt{1-x^2}}\quad \text{(veja } 
 \style{
   border-bottom-width: 1px; 
   border-bottom-style: dotted;
-}{\href{9.html}{\text{Chap. IX}}}) 
+}{\href{9.html}{\text{Cap. IX}}}) 
 \end{align*} 
-and $x=v$; so that
+e $x=v$; de modo que
 \[
 \int \sqrt{1-x^2}\, dx=x \sqrt{1-x^2} + \int \frac{x^2\, dx}{\sqrt{1-x^2}}.
 \]
 
-<p>Here we may use a little dodge, for we can write
+<p>Aqui podemos usar um pequeno truque, pois podemos
+escrever
 \[
 \int \sqrt{1-x^2}\, dx
   = \int \frac{(1-x^2)\, dx}{\sqrt{1-x^2}}
   = \int \frac{dx}{\sqrt{1-x^2}} - \int \frac{x^2\, dx}{\sqrt{1-x^2}}.
 \]
 
-<p>Adding these two last equations, we get rid of
-$\int \dfrac{x^2\, dx}{\sqrt{1-x^2}}$, and we have
+<p>Somando essas duas últimas equações, nos livramos
+de $\int \dfrac{x^2\, dx}{\sqrt{1-x^2}}$, e temos
 \[
 2 \int \sqrt{1-x^2}\, dx = x\sqrt{1-x^2} + \int \frac{dx}{\sqrt{1-x^2}}.
 \]
 
 
-<p>Do you remember meeting $\dfrac {dx}{\sqrt{1-x^2}}$? it is got by
-differentiating $y=\arcsin x$ (see <a href="15.html#intex3">here</a>); hence its integral
-is $\arcsin x$, and so
+<p>Você se lembra de ter encontrado $\dfrac {dx}{\sqrt{1-x^2}}$? Ele se
+obtém diferenciando $y=\arcsin x$ (veja <a href="15.html#intex3">aqui</a>); logo
+sua integral é $\arcsin x$, e assim
 \[
 \int \sqrt{1-x^2}\, dx = \frac{x \sqrt{1-x^2}}{2} + \tfrac{1}{2} \arcsin x +C.
 \]
 
-<p>You can try now some exercises by yourself; you
-will find some at the end of this chapter.
+<p>Você pode agora tentar alguns exercícios sozinho;
+encontrará alguns no fim deste capítulo.
 
-<p><em>Substitution.</em> This is the same dodge as explained
-in <a href="9.html">Chap. IX</a>. Let us illustrate its application
-to integration by a few examples.
+<p><em>Substituição.</em> Este é o mesmo truque explicado no
+<a href="9.html">Cap. IX</a>. Ilustremos sua aplicação à integração com
+alguns exemplos.
 
 <p>(1)
 
 $\int \sqrt{3+x}\, dx$.
 \begin{align*}
-   Let
+   Seja
 3+x &= u,\quad dx = du; \\
- replace
+ substitua
 \int u^{\frac{1}{2}}\, du
   &= \tfrac{2}{3} u^{\frac{3}{2}} = \tfrac{2}{3}(3+x)^{\frac{3}{2}}.
 \end{align*}
 
 <p>(2) $\int \dfrac{dx}{\epsilon^x+\epsilon^{-x}}$.
 
-   Let
+   Seja
  \[
-\epsilon^x = u,\quad \frac{du}{dx} = \epsilon^x,\quad\text{and}\quad
+\epsilon^x = u,\quad \frac{du}{dx} = \epsilon^x,\quad\text{e}\quad
 dx = \frac{du}{\epsilon^x}; \\
 \]
- so that
+ de modo que
  \[
 \int \frac{dx}{\epsilon^x+\epsilon^{-x}}
   = \int \frac{du}{\epsilon^x(\epsilon^x+\epsilon^{-x})}
@@ -188,103 +211,105 @@ dx = \frac{du}{\epsilon^x}; \\
   = \int \frac{du}{u^2+1}.
 \]
 
-<p>$\dfrac{du}{1+u^2}$ is the result of differentiating $\arctan x$.
+<p>$\dfrac{du}{1+u^2}$ é o resultado de diferenciar $\arctan x$.
 
-<p>Hence the integral is $\arctan \epsilon^x$.
+<p>Logo a integral é $\arctan \epsilon^x$.
 
 <p>(3) $\int \dfrac{dx}{x^2+2x+3} = \int \dfrac{dx}{x^2+2x+1+2} = \int \dfrac{dx}{(x+1)^2+(\sqrt 2)^2}$.
 
 
-<p>   Let $x+1=u,\quad dx=du$; then the integral becomes $\int \dfrac{du}{u^2+(\sqrt2)^2}$; but $\dfrac{du}{u^2+a^2}$ is
-the result of differentiating $u=\dfrac{1}{a} \arctan \dfrac{u}{a}$.
+<p>   Seja $x+1=u,\quad dx=du$; então a integral se torna $\int \dfrac{du}{u^2+(\sqrt2)^2}$; mas $\dfrac{du}{u^2+a^2}$ é
+o resultado de diferenciar $u=\dfrac{1}{a} \arctan \dfrac{u}{a}$.
 
-<p>Hence one has finally $\dfrac{1}{\sqrt2} \arctan \dfrac{x+1}{\sqrt 2}$ for the value
-of the given integral.
+<p>Logo tem-se finalmente $\dfrac{1}{\sqrt2} \arctan \dfrac{x+1}{\sqrt 2}$ como valor
+da integral dada.
 
-<p><em>Formulæ of Reduction</em> are special forms applicable
-chiefly to binomial and trigonometrical expressions
-that have to be integrated, and have to be reduced
-into some form of which the integral is known.
+<p><em>Fórmulas de redução</em> são formas especiais
+aplicáveis principalmente a expressões binomiais e
+trigonométricas que devem ser integradas, e que
+precisam ser reduzidas a alguma forma cuja integral
+seja conhecida.
 
-<p><em>Rationalization</em> , and <em>Factorization of Denominator</em>
-are dodges applicable in special cases, but they do not
-admit of any short or general explanation. Much
-practice is needed to become familiar with these preparatory
-processes.
+<p><em>Racionalização</em>, e <em>Fatoração do denominador</em> são
+truques aplicáveis em casos especiais, mas não
+admitem nenhuma explicação curta ou geral. É
+preciso muita prática para se familiarizar com esses
+processos preparatórios.
 
-<p>The following example shows how the process of
-splitting<a name="partfracs"/> into partial fractions, which we learned in
-Chap. XIII., <a href="13.html#partfracs2">here</a>, can be made use of in integration.
+<p>O exemplo seguinte mostra como o processo de
+dividir<a name="partfracs"/> em frações parciais, que aprendemos no
+Cap. XIII, <a href="13.html#partfracs2">aqui</a>, pode ser usado na integração.
 
-<p>Take again $\int \dfrac{dx}{x^2+2x+3}$; if we split $\dfrac{1}{x^2+2x+3}$
-into partial fractions, this becomes (see <a href="20.html#partfracs3">here</a>):
+<p>Tome de novo $\int \dfrac{dx}{x^2+2x+3}$; se dividirmos
+$\dfrac{1}{x^2+2x+3}$ em frações parciais, isso se torna (veja
+<a href="20.html#partfracs3">aqui</a>):
 \[
 \dfrac{1}{2\sqrt{-2}} \left[\int \dfrac{dx}{x+1-\sqrt{-2}} - \int \dfrac{dx}{x+1+\sqrt{-2}} \right]
 \]
 \[
 =\dfrac{1}{2\sqrt{-2}} \log_\epsilon \dfrac{x+1-\sqrt{-2}}{x+1+\sqrt{-2}}.
 \]
-Notice that the same integral can be expressed
+Observe que a mesma integral pode ser expressa
 
-sometimes in more than one way (which are equivalent
-to one another).
+às vezes de mais de um modo (equivalentes entre si).
 
-<p><em>Pitfalls.</em> A beginner is liable to overlook certain
-points that a practised hand would avoid; such as
-the use of factors that are equivalent to either zero or
-infinity, and the occurrence of indeterminate quantities
-such as $\tfrac{0}{0}$. There is no golden rule that will meet
-every possible case. Nothing but practice and intelligent
-care will avail. An example of a pitfall which
-had to be circumvented arose in <a href="18.html">Chap. XVIII</a>,
-when we came to the problem of integrating $x^{-1}\, dx$.
+<p><em>Armadilhas.</em> Um principiante está sujeito a
+deixar passar certos pontos que uma mão experiente
+evitaria; tais como o uso de fatores equivalentes a
+zero ou a infinito, e a ocorrência de quantidades
+indeterminadas como $\tfrac{0}{0}$. Não há regra de ouro que
+cubra todo caso possível. Nada senão a prática e o
+cuidado inteligente valerão. Um exemplo de armadilha
+que teve de ser contornada surgiu no <a href="18.html">Cap. XVIII</a>,
+quando chegamos ao problema de integrar $x^{-1}\, dx$.
 
-<p><em>Triumphs.</em> By triumphs must be understood the
-successes with which the calculus has been applied to
-the solution of problems otherwise intractable. Often
-in the consideration of physical relations one is able
-to build up an expression for the law governing the
-interaction of the parts or of the forces that govern
-them, such expression being naturally in the form of
-a <em>differential equation</em>, that is an equation containing
-differential coefficients with or without other algebraic
-quantities. And when such a differential equation
-has been found, one can get no further until it has
-been integrated. Generally it is much easier to state
-the appropriate differential equation than to solve it:–the
-real trouble begins then only when one wants to
-integrate, unless indeed the equation is seen to possess
-some standard form of which the integral is known,
-and then the triumph is easy. The equation which
-results from integrating a differential equation is
+<p><em>Triunfos.</em> Por triunfos se deve entender os
+sucessos com que o cálculo tem sido aplicado à
+solução de problemas de outro modo intratáveis.
+Muitas vezes, na consideração de relações físicas,
+consegue-se construir uma expressão para a lei que
+governa a interação das partes ou das forças que as
+governam, tal expressão sendo naturalmente na forma
+de uma <em>equação diferencial</em>, isto é uma equação
+contendo derivadas com ou sem outras quantidades
+algébricas. E quando tal equação diferencial foi
+encontrada, não se avança mais até que ela tenha
+sido integrada. Em geral é muito mais fácil
+enunciar a equação diferencial apropriada do que
+resolvê-la: o verdadeiro trabalho começa só quando
+se quer integrar, a menos, de fato, que a equação
+se veja possuir alguma forma-padrão cuja integral
+seja conhecida, e então o triunfo é fácil. A
+equação que resulta de integrar uma equação
+diferencial se
 
-called* its “solution”; and it is quite astonishing
-how in many cases the solution looks as if it had no
-relation to the differential equation of which it is
-the integrated form. The solution often seems as
-different from the original expression as a butterfly
-does from the caterpillar that it was. Who would
-have supposed that such an innocent thing as
+chama* sua “solução”; e é bastante assombroso como,
+em muitos casos, a solução parece não ter relação
+com a equação diferencial da qual é a forma
+integrada. A solução muitas vezes parece tão
+diferente da expressão original quanto uma borboleta
+da lagarta que ela foi. Quem teria suposto que
+coisa tão inocente quanto
 \[
 \dfrac{dy}{dx} = \dfrac{1}{a^2-x^2}
 \]
-could blossom out into
+pudesse desabrochar em
 \[
 y = \dfrac{1}{2a} \log_\epsilon \dfrac{a+x}{a-x} + C?
 \]
-yet the latter is the <em>solution</em>  of the former.
+e no entanto a última é a <em>solução</em> da primeira.
 
-<p><note>*This means that the actual result of solving it is called its
-“solution.” But many mathematicians would say, with Professor
-Forsyth, “every differential equation <em>is considered as solved</em> when
-the value of the dependent variable is expressed as a function of
-the independent variable by means either of known functions, or of
-integrals, whether the integrations in the latter can or cannot be
-expressed in terms of functions already known.”</note>
+<p><note>*Isso significa que o resultado real de resolvê-la se chama sua
+“solução.” Mas muitos matemáticos diriam, com o Professor
+Forsyth, “toda equação diferencial <em>se considera resolvida</em> quando
+o valor da variável dependente se expressa como função da
+variável independente por meio ou de funções conhecidas, ou de
+integrais, quer as integrações nestas últimas possam ou não ser
+expressas em termos de funções já conhecidas.”</note>
 
-<p>As a last example, let us work out the above together.
+<p>Como último exemplo, resolvamos o acima juntos.
 
-<p>By partial fractions,<a name="partfracs3"/>
+<p>Por frações parciais,<a name="partfracs3"/>
 \begin{align*}
 \frac{1}{a^2-x^2} &= \frac{1}{2a(a+x)} + \frac{1}{2a(a-x)},  \\
 dy &= \frac {dx}{2a(a+x)}+ \frac{dx}{2a(a-x)},  \\
@@ -296,33 +321,34 @@ y  &= \frac{1}{2a}
 \end{align*}
 
 
-  Not a very difficult metamorphosis!
+  Não é uma metamorfose muito difícil!
 
-<p>There are whole treatises, such as Boole's <em>Differential
-Equations</em> , devoted to the subject of thus finding
-the “solutions” for different original forms.
-
-<p>
-<hr><h3>Exercises XIX</h3>
+<p>Há tratados inteiros, como as <em>Equações
+Diferenciais</em> de Boole, dedicados ao assunto de
+assim achar as “soluções” para diferentes formas
+originais.
 
 <p>
-<p>(1) Find $\int \sqrt {a^2 - x^2}\, dx$.
-<p>(2) Find $\int x \log_\epsilon x\, dx$.
-<p>(3) Find $\int x^a \log_\epsilon x\, dx$.
-<p>(4) Find $\int \epsilon^x \cos \epsilon^x\, dx$.
-<p>(5) Find $\int \dfrac{1}{x} \cos (\log_\epsilon x)\, dx$.
-<p>(6) Find $\int x^2 \epsilon^x\, dx$.
-<p>(7) Find $\int \dfrac{(\log_\epsilon x)^a}{x}\, dx$.
-<p>(8) Find $\int \dfrac{dx}{x \log_\epsilon x}$.
-<p>(9) Find $\int \dfrac{5x+1}{x^2 +x-2}\, dx$.
-<p>(10) Find $\int \dfrac{(x^2 -3)\, dx}{x^3 - 7x+6}$.
-<p>(11) Find $\int \dfrac{b\, dx}{x^2 -a^2}$.
-<p>(12) Find $\int \dfrac{4x\, dx}{x^4 -1}$.
-<p>(13) Find $\int \dfrac{dx}{1-x^4}$.
-<p>(14) Find $\int \dfrac{dx}{x \sqrt {a-bx^2}}$.
+<hr><h3>Exercícios XIX</h3>
+
+<p>
+<p>(1) Ache $\int \sqrt {a^2 - x^2}\, dx$.
+<p>(2) Ache $\int x \log_\epsilon x\, dx$.
+<p>(3) Ache $\int x^a \log_\epsilon x\, dx$.
+<p>(4) Ache $\int \epsilon^x \cos \epsilon^x\, dx$.
+<p>(5) Ache $\int \dfrac{1}{x} \cos (\log_\epsilon x)\, dx$.
+<p>(6) Ache $\int x^2 \epsilon^x\, dx$.
+<p>(7) Ache $\int \dfrac{(\log_\epsilon x)^a}{x}\, dx$.
+<p>(8) Ache $\int \dfrac{dx}{x \log_\epsilon x}$.
+<p>(9) Ache $\int \dfrac{5x+1}{x^2 +x-2}\, dx$.
+<p>(10) Ache $\int \dfrac{(x^2 -3)\, dx}{x^3 - 7x+6}$.
+<p>(11) Ache $\int \dfrac{b\, dx}{x^2 -a^2}$.
+<p>(12) Ache $\int \dfrac{4x\, dx}{x^4 -1}$.
+<p>(13) Ache $\int \dfrac{dx}{1-x^4}$.
+<p>(14) Ache $\int \dfrac{dx}{x \sqrt {a-bx^2}}$.
 
 
-<p><h3 class="answers">Answers</h3>
+<p><h3 class="answers">Respostas</h3>
 
 <p>(1)  $\dfrac{x\sqrt{a^2 - x^2}}{2} + \dfrac{a^2}{2} \sin^{-1} \dfrac{x}{a} + C$.
 
@@ -357,16 +383,22 @@ the “solutions” for different original forms.
 
 <p>(13)  $\frac{1}{4} \log_\epsilon \dfrac{1 + x}{1 - x} + \frac{1}{2} \arctan x + C$.
 
-<p>(14)  $\dfrac{1}{\sqrt{a}} \log_\epsilon \dfrac{\sqrt{a} - \sqrt{a - bx^2}}{x\sqrt{a}}$. (Let $\dfrac{1}{x} = v$; then, in the result,
-let $\sqrt{v^2 - \dfrac{b}{a}} = v - u$.)
+<p>(14)  $\dfrac{1}{\sqrt{a}} \log_\epsilon \dfrac{\sqrt{a} - \sqrt{a - bx^2}}{x\sqrt{a}}$. (Seja $\dfrac{1}{x} = v$; então, no resultado,
+seja $\sqrt{v^2 - \dfrac{b}{a}} = v - u$.)
 <br>
 {%include "buy_solutions.html" %}
 
 <hr>
-<a href="21.html">Next &rarr;</a><br>
-<a href="/">Main Page &uarr;</a><br>
+<a href="21.html">Próximo &rarr;</a><br>
+<a href="19.html">← Anterior</a><br>
+<a href="index.html">Página principal &uarr;</a><br>
+
+{% include "footer.html" %}
 
 <script src="j/jquery.js"></script>
 <script src="j/modernizr.js"></script>
 <script src="j/dih5.js"></script>
+<script src="j/notes-toggle.js"></script>
 {%include "googleanalytics.html" %}
+</body>
+</html>

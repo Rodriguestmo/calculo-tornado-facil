@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<meta charset="utf-8">
-<title>Geometrical Meaning of Differentiation | Calculus Made Easy</title>
+<html lang="pt-BR">
+<head>
+{% include "seo_head.html" %}
 <link rel="stylesheet" href="screen.css">
 <style>
 body{counter-reset:h1 10}
@@ -11,192 +12,213 @@ body{counter-reset:h1 10}
 <script type="text/javascript"
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Chapter",
+  "name": "Significado Geométrico da Diferenciação",
+  "position": 10,
+  "isPartOf": {
+    "@type": "Book",
+    "name": "Cálculo Tornado Fácil",
+    "url": "{{ site_url }}/"
+  },
+  "author": {"@type": "Person", "name": "Silvanus P. Thompson"},
+  "translator": {"@type": "Person", "name": "Thales Rodrigues"},
+  "url": "{{ site_url }}/10.html",
+  "inLanguage": "pt-BR",
+  "isAccessibleForFree": true
+}
+</script>
+</head>
+<body>
+{% include "toolbar.html" %}
 
-<h1><br>Geometrical Meaning of Differentiation Smallness</h1>
+<h1><br>Significado Geométrico da Diferenciação</h1>
 <p class="a rotatedFloralHeartBullet">
 
 
-<p>It is useful to consider what geometrical meaning can
-be given to the differential coefficient.
+<p>É útil considerar que significado geométrico se pode
+dar ao coeficiente diferencial.
 
-<p>In the first place, any function of $x$, such, for
-example, as $x^2$, or $\sqrt{x}$, or $ax+b$, can be plotted as
-a curve; and nowadays every schoolboy is familiar
-with the process of curve-plotting.
+<p>Em primeiro lugar, qualquer função de $x$, como, por
+exemplo, $x^2$, ou $\sqrt{x}$, ou $ax+b$, pode ser traçada como
+uma curva; e hoje em dia todo estudante está familiarizado
+com o processo de traçar curvas.
 
 <p><a name="figure7">
 <img src="33283-t/images/088a.pdf.png-1.png">
 
-<p>Let $PQR$, in <a href="#figure7">Figure 7</a>, be a portion of a curve plotted
-with respect to the axes of coordinates $OX$ and $OY$.
-Consider any point $Q$ on this curve, where the
-abscissa of the point is $x$ and its ordinate is $y$.
-Now observe how $y$ changes when $x$ is varied. If $x$
+<p>Seja $PQR$, na <a href="#figure7">Figura 7</a>, uma porção de uma curva traçada
+em relação aos eixos de coordenadas $OX$ e $OY$.
+Considere qualquer ponto $Q$ sobre essa curva, em que a
+abscissa do ponto é $x$ e sua ordenada é $y$.
+Observe agora como $y$ muda quando $x$ é variado. Se $x$
 
-is made to increase by a small increment $dx$, to the
-right, it will be observed that $y$ also (in <em>this</em> particular
-curve) increases by a small increment $dy$ (because this
-particular curve happens to be an <em>ascending</em> curve).
-Then the ratio of $dy$ to $dx$ is a measure of the degree
-to which the curve is sloping up between the two
-points $Q$ and $T$. As a matter of fact, it can be seen
-on the figure that the curve between $Q$ and $T$ has
-many different slopes, so that we cannot very well
-speak of<a name="slope"/> the slope of the curve between $Q$ and $T$. If,
-however, $Q$ and $T$ are so near each other that the
-small portion $QT$ of the curve is practically straight,
-then it is true to say that the ratio $\dfrac{dy}{dx}$ is the slope of
-the curve along $QT$. The straight line $QT$ produced
-on either side touches the curve along the portion $QT$
-only, and if this portion is indefinitely small, the
-straight line will touch the curve at practically
-one point only, and be therefore a <em>tangent</em> to the
-curve.
+é feito aumentar por um pequeno incremento $dx$, para a
+direita, observar-se-á que $y$ também (nesta curva
+<em>particular</em>) aumenta por um pequeno incremento $dy$ (porque esta
+curva particular acontece de ser uma curva <em>ascendente</em>).
+Então a razão de $dy$ para $dx$ é uma medida do grau
+em que a curva está inclinada para cima entre os dois
+pontos $Q$ e $T$. De fato, pode-se ver
+na figura que a curva entre $Q$ e $T$ tem
+muitas inclinações diferentes, de modo que não podemos muito bem
+falar da<a name="slope"/> inclinação da curva entre $Q$ e $T$. Se,
+porém, $Q$ e $T$ estiverem tão próximos um do outro que a
+pequena porção $QT$ da curva seja praticamente reta,
+então é verdade dizer que a razão $\dfrac{dy}{dx}$ é a inclinação da
+curva ao longo de $QT$. A reta $QT$ prolongada
+de um lado e de outro toca a curva ao longo da porção $QT$
+apenas, e se essa porção for indefinidamente pequena, a
+reta tocará a curva em praticamente
+um único ponto, e será portanto uma <em>tangente</em> à
+curva.
 
-<p>This tangent to the curve has evidently the same
-slope as $QT$, so that $\dfrac{dy}{dx}$ is the slope of the tangent to
-the curve at the point $Q$ for which the value of $\dfrac{dy}{dx}$ is
-found.
+<p>Essa tangente à curva tem evidentemente a mesma
+inclinação que $QT$, de modo que $\dfrac{dy}{dx}$ é a inclinação da tangente à
+curva no ponto $Q$ para o qual o valor de $\dfrac{dy}{dx}$ é
+encontrado.
 
-<p>We have seen that the short expression “the slope
-of a curve” has no precise meaning, because a curve
-has so many slopes–in fact, every small portion of a
-curve has a different slope. “The slope of a curve <em>at
-a point</em>” is, however, a perfectly defined thing; it is
+<p>Vimos que a expressão curta “a inclinação
+de uma curva” não tem significado preciso, porque uma curva
+tem tantas inclinações - de fato, cada pequena porção de uma
+curva tem uma inclinação diferente. “A inclinação de uma curva <em>em
+um ponto</em>” é, porém, uma coisa perfeitamente definida; é
 
-the slope of a very small portion of the curve situated
-just at that point; and we have seen that this is the
-same as “the slope of the tangent to the curve at that
-point.”
+a inclinação de uma porção muito pequena da curva situada
+justamente naquele ponto; e vimos que isto é o
+mesmo que “a inclinação da tangente à curva naquele
+ponto.”
 
-<p>Observe that $dx$ is a short step to the right, and
-$dy$ the corresponding short step upwards. These
-steps must be considered as short as possible–in fact
-indefinitely short,–though in diagrams we have to
-represent them by bits that are not infinitesimally
-small, otherwise they could not be seen.
+<p>Observe que $dx$ é um curto passo para a direita, e
+$dy$ o correspondente curto passo para cima. Esses
+passos devem ser considerados tão curtos quanto possível - de fato
+indefinidamente curtos - embora nos diagramas tenhamos de
+representá-los por pedaços que não são infinitesimalmente
+pequenos, caso contrário não poderiam ser vistos.
 
-<p><em>We shall hereafter make considerable use of this
-circumstance that $\dfrac{dy}{dx}$ represents the slope of the curve
-at any point.</em>
+<p><em>Daqui em diante faremos considerável uso desta
+circunstância de que $\dfrac{dy}{dx}$ representa a inclinação da curva
+em qualquer ponto.</em>
 
 <p><a name="figure8">
 <img src="33283-t/images/090a.pdf.png-1.png">
 
-<p>If a curve is sloping up at $45°$ at a particular point,
-as in <a href="#figure8">Figure 8</a>, $dy$ and $dx$ will be equal, and the value
-of $\dfrac{dy}{dx} = 1$.
+<p>Se uma curva está inclinada a $45°$ em um ponto particular,
+como na <a href="#figure8">Figura 8</a>, $dy$ e $dx$ serão iguais, e o valor
+de $\dfrac{dy}{dx} = 1$.
 
 
-<p>If the curve slopes up steeper than $45°$ (<a href="#figure9">Figure 9</a>),
-$\dfrac{dy}{dx}$ will be greater than $1$.
+<p>Se a curva sobe mais íngreme do que $45°$ (<a href="#figure9">Figura 9</a>),
+$\dfrac{dy}{dx}$ será maior do que $1$.
 
 <p><a name="figure9">
 <img src="33283-t/images/091a.pdf.png-1.png">
 
 
-<p>If the curve slopes up very gently, as in <a href="#figure10">Figure 10</a>,
-$\dfrac{dy}{dx}$ will be a fraction smaller than $1$.
+<p>Se a curva sobe muito suavemente, como na <a href="#figure10">Figura 10</a>,
+$\dfrac{dy}{dx}$ será uma fração menor do que $1$.
 
 <p><a name="figure10">
 <img src="33283-t/images/091b.pdf.png-1.png">
 
-<p>For a horizontal line, or a horizontal place in a
-curve, $dy=0$, and therefore $\dfrac{dy}{dx}=0$.
+<p>Para uma linha horizontal, ou um trecho horizontal em uma
+curva, $dy=0$, e portanto $\dfrac{dy}{dx}=0$.
 
 <a name="figure11">
 <img src="33283-t/images/091c.pdf.png-1.png">
 
-<p>If a curve slopes <em>downward</em>, as in <a href="#figure11">Figure 11</a>, $dy$ will
-be a step down, and must therefore be reckoned of
+<p>Se uma curva desce <em>para baixo</em>, como na <a href="#figure11">Figura 11</a>, $dy$ será
+um passo para baixo, e deve portanto ser contado de
 
-negative value; hence $\dfrac{dy}{dx}$ will have negative sign
-also.
+valor negativo; logo $\dfrac{dy}{dx}$ terá sinal negativo
+também.
 
-<p>If the “curve” happens to be a straight line, like
-that in <a href="#figure12">Figure 12</a>, the value of $\dfrac{dy}{dx}$ will be the same at
-all points along it. In other words its <em>slope</em> is constant.
+<p>Se a “curva” acontece de ser uma reta, como
+a da <a href="#figure12">Figura 12</a>, o valor de $\dfrac{dy}{dx}$ será o mesmo em
+todos os pontos ao longo dela. Em outras palavras sua <em>inclinação</em> é constante.
 
 <p><a name="figure12">
 <img src="33283-t/images/092a.pdf.png-1.png">
 
-<p>If a curve is one that turns more upwards as it
-goes along to the right, the values of $\dfrac{dy}{dx}$ will become
-greater and greater with the increasing steepness, as
-in <a href="#figure13">Figure 13</a>.
+<p>Se uma curva é uma que vira mais para cima conforme
+avança para a direita, os valores de $\dfrac{dy}{dx}$ se tornarão
+cada vez maiores com a íngreme crescente, como
+na <a href="#figure13">Figura 13</a>.
 
 <p><a name="figure13">
 <img src="33283-t/images/092b.pdf.png-1.png">
 
-<p>If a curve<a name="curve"/> is one that gets flatter and flatter as it
-goes along, the values of $\dfrac{dy}{dx}$ will become smaller and
-smaller as the flatter part is reached, as in <a href="#figure14">Figure 14</a>.
+<p>Se uma curva<a name="curve"/> é uma que fica cada vez mais achatada conforme
+avança, os valores de $\dfrac{dy}{dx}$ se tornarão cada vez
+menores à medida que a parte mais plana é alcançada, como na <a href="#figure14">Figura 14</a>.
 
 <p><a name="figure14">
 <img src="33283-t/images/093a.pdf.png-1.png">
 <p><a name="figure15">
 <img src="33283-t/images/093b.pdf.png-1.png">
 
-<p>If a curve first descends, and then goes up again,
-as in <a href="#figure15">Figure 15</a>, presenting a concavity upwards, then
-clearly $\dfrac{dy}{dx}$ will first be negative, with diminishing
-values as the curve flattens, then will be zero at the
-point where the bottom of the trough of the curve is
-reached; and from this point onward $\dfrac{dy}{dx}$ will have
-positive values that go on increasing. In such a case
-$y$ is said to pass by a <em>minimum</em>. The minimum
-value of $y$ is not necessarily the smallest value of $y$,
-it is that value of $y$ corresponding to the bottom of
-the trough; for instance, in <a href="11.html#figure28">Figure 28</a> (the
-value of $y$ corresponding to the bottom of the trough
-is $1$, while $y$ takes elsewhere values which are smaller
-than this. The characteristic of a minimum is that
-$y$ must increase <em>on either side</em> of it.
+<p>Se uma curva primeiro desce, e depois sobe de novo,
+como na <a href="#figure15">Figura 15</a>, apresentando uma concavidade para cima, então
+claramente $\dfrac{dy}{dx}$ será primeiro negativo, com valores
+decrescentes conforme a curva se achata, depois será zero no
+ponto em que o fundo da calha da curva é
+atingido; e a partir desse ponto em diante $\dfrac{dy}{dx}$ terá
+valores positivos que vão aumentando. Nesse caso
+diz-se que $y$ passa por um <em>mínimo</em>. O valor mínimo
+de $y$ não é necessariamente o menor valor de $y$,
+é aquele valor de $y$ correspondente ao fundo da
+calha; por exemplo, na <a href="11.html#figure28">Figura 28</a> (o
+valor de $y$ correspondente ao fundo da calha
+é $1$, enquanto $y$ toma em outras partes valores que são menores
+do que este. A característica de um mínimo é que
+$y$ deve aumentar <em>de um lado e do outro</em> dele.
 
 
-<p><em>Note</em>–For the particular value of $x$ that makes
-$y$ <em>a minimum</em>, the value of $\dfrac{dy}{dx} = 0$.
+<p><em>Nota</em> - Para o valor particular de $x$ que faz
+$y$ <em>um mínimo</em>, o valor de $\dfrac{dy}{dx} = 0$.
 
-<p>If a curve first ascends and then descends, the
-values of $\dfrac{dy}{dx}$ will be positive at first; then zero, as
-the summit is reached; then negative, as the curve
-slopes downwards, as in <a href="#figure16">Figure 16</a>. In this case $y$ is
-said to pass by a <em>maximum</em>, but the maximum
-value of $y$ is not necessarily the greatest value of $y$.
-In <a href="11.html#figure28">Figure 28</a>, the maximum of $y$ is $2\frac{1}{3}$, but this is by no
-means the greatest value $y$ can have at some other
-point of the curve.
+<p>Se uma curva primeiro sobe e depois desce, os
+valores de $\dfrac{dy}{dx}$ serão positivos a princípio; depois zero, quando
+o cume é atingido; depois negativos, conforme a curva
+desce, como na <a href="#figure16">Figura 16</a>. Nesse caso diz-se que $y$
+passa por um <em>máximo</em>, mas o valor máximo
+de $y$ não é necessariamente o maior valor de $y$.
+Na <a href="11.html#figure28">Figura 28</a>, o máximo de $y$ é $2\frac{1}{3}$, mas isto de modo algum
+é o maior valor que $y$ pode ter em algum outro
+ponto da curva.
 
 <a name="figure16">
 <img src="33283-t/images/094a.pdf.png-1.png">
 <a name="figure17">
 <img src="33283-t/images/094b.pdf.png-1.png">
 
-<p><em>Note</em>–For the particular value of $x$ that makes
-$y$ <em>a maximum</em>, the value of $\dfrac{dy}{dx}= 0$.
+<p><em>Nota</em> - Para o valor particular de $x$ que faz
+$y$ <em>um máximo</em>, o valor de $\dfrac{dy}{dx}= 0$.
 
-<p>If a curve has the peculiar form of <a href="#figure17">Figure 17</a>, the
-values of $\dfrac{dy}{dx}$ will always be positive; but there will
-be one particular place where the slope is least steep,
-where the value of $\dfrac{dy}{dx}$ will be a minimum; that is,
-less than it is at any other part of the curve.
+<p>Se uma curva tem a forma peculiar da <a href="#figure17">Figura 17</a>, os
+valores de $\dfrac{dy}{dx}$ serão sempre positivos; mas haverá
+um lugar particular em que a inclinação é menos íngreme,
+onde o valor de $\dfrac{dy}{dx}$ será um mínimo; isto é,
+menor do que em qualquer outra parte da curva.
 
 
-<p>If a curve has the form of <a href="#figure18">Figure 18</a>, the value of $\dfrac{dy}{dx}$
-will be negative in the upper part, and positive in the
-lower part; while at the nose of the curve where it
-becomes actually perpendicular, the value of $\dfrac{dy}{dx}$ will
-be infinitely great.
+<p>Se uma curva tem a forma da <a href="#figure18">Figura 18</a>, o valor de $\dfrac{dy}{dx}$
+será negativo na parte superior, e positivo na
+parte inferior; enquanto no nariz da curva onde ela
+se torna realmente perpendicular, o valor de $\dfrac{dy}{dx}$ será
+infinitamente grande.
 
 <a name="figure8">
 <img src="33283-t/images/095a.pdf.png-1.png">
 
-<p>Now that we understand that $\dfrac{dy}{dx}$ measures the
-steepness of a curve at any point, let us turn to some
-of the equations which we have already learned how
-to differentiate.
+<p>Agora que entendemos que $\dfrac{dy}{dx}$ mede a
+íngreme de uma curva em qualquer ponto, voltemo-nos a algumas
+das equações que já aprendemos a
+diferenciar.
 
-<p>(1) As the simplest case take this:
+<p>(1) Como o caso mais simples tome este:
 \[
 y=x+b.
 \]
@@ -206,52 +228,52 @@ y=x+b.
 <a name="figure20">
 <img src="33283-t/images/096b.pdf.png-1.png">
 
-<p>It is plotted out in <a href="#figure19">Figure 19</a>, using equal scales
-for $x$ and $y$. If we put $x = 0$, then the corresponding
-ordinate will be $y = b$; that is to say, the “curve”
-crosses the $y$-axis at the height $b$. From here it
-ascends at $45°$; for whatever values we give to $x$ to
-the right, we have an equal $y$ to ascend. The line
-has a gradient of $1$ in $1$.
+<p>Está traçada na <a href="#figure19">Figura 19</a>, usando escalas iguais
+para $x$ e $y$. Se pusermos $x = 0$, então a correspondente
+ordenada será $y = b$; isto é, a “curva”
+cruza o eixo $y$ na altura $b$. Dali ela
+sobe a $45°$; pois quaisquer valores que demos a $x$ para a
+direita, temos um $y$ igual a subir. A reta
+tem um gradiente de $1$ em $1$.
 
-<p>Now differentiate $y = x+b$, by the rules we have
-already learned (<a href="4.html#diffrule1">here</a> and <a href="5.html#diffrule2">here</a>), and we get $\dfrac{dy}{dx} = 1$.
+<p>Agora diferencie $y = x+b$, pelas regras que já
+aprendemos (<a href="4.html#diffrule1">aqui</a> e <a href="5.html#diffrule2">aqui</a>), e obtemos $\dfrac{dy}{dx} = 1$.
 
-<p>The slope of the line is such that for every little
-step $dx$ to the right, we go an equal little step $dy$
-upward. And this slope is constant–always the
-same slope.
+<p>A inclinação da reta é tal que para cada pequeno
+passo $dx$ para a direita, damos um pequeno passo igual $dy$
+para cima. E essa inclinação é constante - sempre a
+mesma inclinação.
 
-<p>(2) Take another case:<a name="Case2"/>
+<p>(2) Tome outro caso:<a name="Case2"/>
 \[
 y = ax+b.
 \]
-We know that this curve, like the preceding one, will
-start from a height $b$ on the $y$-axis. But before we
-draw the curve, let us find its slope by differentiating;
-which gives $\dfrac{dy}{dx} = a$. The slope will be constant, at
-an angle, the tangent of which is here called $a$. Let
-us assign to $a$ some numerical value–say $\frac{1}{3}$. Then we
-must give it such a slope that it ascends $1$ in $3$; or
+Sabemos que essa curva, como a precedente,
+começará a partir de uma altura $b$ no eixo $y$. Mas antes de
+traçarmos a curva, encontremos sua inclinação diferenciando;
+o que dá $\dfrac{dy}{dx} = a$. A inclinação será constante, a
+um ângulo cuja tangente é aqui chamada $a$. Atribuamos a $a$
+algum valor numérico - digamos $\frac{1}{3}$. Então devemos
+dar-lhe tal inclinação que suba $1$ em $3$; ou
 
-$dx$ will be $3$ times as great as $dy$; as magnified in
-<a href="#figure21">Figure 21</a>. So, draw the line in <a href="#figure20">Figure 20</a> at this slope.
+$dx$ será $3$ vezes tão grande quanto $dy$; como ampliado na
+<a href="#figure21">Figura 21</a>. Assim, trace a reta na <a href="#figure20">Figura 20</a> com essa inclinação.
 <p>
 <a name="figure21">
 <p><img src="33283-t/images/097a.pdf.png-1.png">
 <p>
-(3) Now for a slightly harder case.
+(3) Agora um caso um pouco mais difícil.
 \begin{align*}
-   Let
+   \text{Seja}
 y= ax^2 + b.
 \end{align*}
 
-<p>Again the curve will start on the $y$-axis at a height $b$
-above the origin.
+<p>De novo a curva começará no eixo $y$ a uma altura $b$
+acima da origem.
 
-<p>Now differentiate. [If you have forgotten, turn
-back to <a href="5.html#diffrule2">here</a>; or, rather, <em>don't</em> turn back, but think
-out the differentiation.]
+<p>Agora diferencie. [Se você esqueceu, volte
+<a href="5.html#diffrule2">aqui</a>; ou, melhor, <em>não</em> volte, mas pense
+a diferenciação por conta própria.]
 \[
 \frac{dy}{dx} = 2ax.
 \]
@@ -259,28 +281,28 @@ out the differentiation.]
 <a name="figure22">
 <img src="33283-t/images/097b.pdf.png-1.png">
 
-<p>This shows that the steepness will not be constant:
-it increases as $x$ increases. At the starting point $P$,
+<p>Isso mostra que a íngreme não será constante:
+ela aumenta conforme $x$ aumenta. No ponto de partida $P$,
 
-where $x = 0$, the curve (<a href="#figure22">Figure 22</a>) has no steepness–that
-is, it is level. On the left of the origin, where
-$x$ has negative values, $\dfrac{dy}{dx}$ will also have negative
-values, or will descend from left to right, as in the
-Figure.
+onde $x = 0$, a curva (<a href="#figure22">Figura 22</a>) não tem íngreme - isto
+é, está nivelada. À esquerda da origem, onde
+$x$ tem valores negativos, $\dfrac{dy}{dx}$ também terá valores
+negativos, ou descerá da esquerda para a direita, como na
+Figura.
 
-<p>Let us illustrate this by working out a particular
-instance. Taking the equation
+<p>Ilustremos isso trabalhando um exemplo
+particular. Tomando a equação
 \[
 y = \tfrac{1}{4}x^2 + 3,
 \]
-and differentiating it, we get
+e diferenciando-a, obtemos
 \[
 \dfrac{dy}{dx} = \tfrac{1}{2}x.
 \]
-Now assign a few successive values, say from $0$ to $5$,
-to $x$; and calculate the corresponding values of $y$
-by the first equation; and of $\dfrac{dy}{dx}$ from the second
-equation. Tabulating results, we have:
+Agora atribua alguns valores sucessivos, digamos de $0$ a $5$,
+a $x$; e calcule os valores correspondentes de $y$
+pela primeira equação; e de $\dfrac{dy}{dx}$ pela segunda
+equação. Tabelando os resultados, temos:
 
 
 <table>
@@ -289,114 +311,114 @@ equation. Tabulating results, we have:
 <tr><td>$d$</td><td>$0$</td><td>$\frac{1}{2}$</td><td>$1$</td><td>$1\frac{1}{2}$</td><td>$2$</td><td>$2\frac{1}{2}$</td></tr>
 </table>
 
-Then plot them out in two curves,
-in <a href="#figure23">Figure 23</a> plotting the values of $y$ against those of $x$
-and in <a href="#figure24">Figure 24</a> those of $\dfrac{dy}{dx}$ against those of $x$. For
+Então trace-os em duas curvas,
+na <a href="#figure23">Figura 23</a> plotando os valores de $y$ contra os de $x$
+e na <a href="#figure24">Figura 24</a> os de $\dfrac{dy}{dx}$ contra os de $x$. Para
 
-any assigned value of $x$, the <em>height</em> of the ordinate
-in the second curve is proportional to the <em>slope</em> of the
-first curve.
+qualquer valor atribuído de $x$, a <em>altura</em> da ordenada
+na segunda curva é proporcional à <em>inclinação</em> da
+primeira curva.
 
 <a name="figure23">
 <img src="33283-t/images/099a.pdf.png-1.png">
 <a name="figure24">
 <img src="33283-t/images/099b.pdf.png-1.png">
 
-<p>If a curve comes to a sudden cusp, as in <a href="#figure25">Figure 25</a>,
-the slope at that point suddenly changes from a slope
-upward to a slope downward. In that case $\dfrac{dy}{dx}$ will
-clearly undergo an abrupt change from a positive to
-a negative value.
+<p>Se uma curva chega a uma cúspide súbita, como na <a href="#figure25">Figura 25</a>,
+a inclinação naquele ponto muda de repente de uma inclinação
+para cima para uma inclinação para baixo. Nesse caso $\dfrac{dy}{dx}$ sofrerá
+claramente uma mudança abrupta de um valor positivo para
+um valor negativo.
 
 <a name="figure25">
 <img src="33283-t/images/099c.pdf.png-1.png">
 
 
-<p>The following examples show further applications
-of the principles just explained.
+<p>Os exemplos seguintes mostram outras aplicações
+dos princípios acabados de explicar.
 
-<p>(4) Find the slope of the tangent to the curve
+<p>(4) Encontre a inclinação da tangente à curva
 \[
 y = \frac{1}{2x} + 3,
 \]
-at the point where $x = -1$. Find the angle which this
-tangent makes with the curve $y = 2x^2 + 2$.
+no ponto em que $x = -1$. Encontre o ângulo que essa
+tangente faz com a curva $y = 2x^2 + 2$.
 
-<p>The slope of the tangent is the slope of the curve at
-the point where they touch one another (see <a href="10.html#slope">here</a>);
-that is, it is the $\dfrac{dy}{dx}$ of the curve for that point. Here
-$\dfrac{dy}{dx} = -\dfrac{1}{2x^2}$ and for $x = -1$, $\dfrac{dy}{dx} = -\dfrac{1}{2}$, which is the
-slope of the tangent and of the curve at that point.
-The tangent, being a straight line, has for equation
-$y = ax + b$, and its slope is $\dfrac{dy}{dx} = a$, hence $a = -\dfrac{1}{2}$. Also
-if $x= -1$, $y = \dfrac{1}{2(-1)} + 3 = 2\frac{1}{2}$; and as the tangent
-passes by this point, the coordinates of the point must
-satisfy the equation of the tangent, namely
+<p>A inclinação da tangente é a inclinação da curva no
+ponto em que se tocam (veja <a href="10.html#slope">aqui</a>);
+isto é, é o $\dfrac{dy}{dx}$ da curva para aquele ponto. Aqui
+$\dfrac{dy}{dx} = -\dfrac{1}{2x^2}$ e para $x = -1$, $\dfrac{dy}{dx} = -\dfrac{1}{2}$, que é a
+inclinação da tangente e da curva naquele ponto.
+A tangente, sendo uma reta, tem por equação
+$y = ax + b$, e sua inclinação é $\dfrac{dy}{dx} = a$, logo $a = -\dfrac{1}{2}$. Também
+se $x= -1$, $y = \dfrac{1}{2(-1)} + 3 = 2\frac{1}{2}$; e como a tangente
+passa por esse ponto, as coordenadas do ponto devem
+satisfazer a equação da tangente, a saber
 \[
   y = -\dfrac{1}{2} x + b,
 \]
-so that $2\frac{1}{2} = -\dfrac{1}{2} × (-1) + b$ and $b = 2$; the equation of
-the tangent is therefore $y = -\dfrac{1}{2} x + 2$.
+de modo que $2\frac{1}{2} = -\dfrac{1}{2} × (-1) + b$ e $b = 2$; a equação da
+tangente é portanto $y = -\dfrac{1}{2} x + 2$.
 
-<p>Now, when two curves meet, the intersection being
-a point common to both curves, its coordinates must
-satisfy the equation of each one of the two curves;
+<p>Agora, quando duas curvas se encontram, a interseção sendo
+um ponto comum a ambas as curvas, suas coordenadas devem
+satisfazer a equação de cada uma das duas curvas;
 
-that is, it must be a solution of the system of simultaneous
-equations formed by coupling together the
-equations of the curves. Here the curves meet one
-another at points given by the solution of
+isto é, deve ser uma solução do sistema de equações
+simultâneas formado ao acoplar as
+equações das curvas. Aqui as curvas se encontram
+em pontos dados pela solução de
 
 \begin{aligned}
   y &= 2x^2 + 2, \\
-  y &= -\tfrac{1}{2} x + 2 \quad\text{or}\quad  2x^2 + 2 = -\tfrac{1}{2} x + 2;
+  y &= -\tfrac{1}{2} x + 2 \quad\text{ou}\quad  2x^2 + 2 = -\tfrac{1}{2} x + 2;
 \end{aligned}
 
- that is,
+ isto é,
 \[
 x(2x + \tfrac{1}{2}) = 0.
 \]
 
-<p>This equation has for its solutions $x = 0$ and $x = -\tfrac{1}{4}$.
-The slope of the curve $y = 2x^2 + 2$ at any point is
+<p>Essa equação tem por soluções $x = 0$ e $x = -\tfrac{1}{4}$.
+A inclinação da curva $y = 2x^2 + 2$ em qualquer ponto é
 \[
 \dfrac{dy}{dx} = 4x.
 \]
 
-<p>For the point where $x = 0$, this slope is zero; the curve
-is horizontal. For the point where
+<p>Para o ponto em que $x = 0$, essa inclinação é zero; a curva
+é horizontal. Para o ponto em que
 \[
 x = -\dfrac{1}{4},\quad \dfrac{dy}{dx} = -1;
 \]
-hence the curve at that point slopes downwards to
-the right at such an angle $\theta$ with the horizontal that
-$\tan \theta = 1$; that is, at $45°$ to the horizontal.
+logo a curva naquele ponto desce para a
+direita a um ângulo $\theta$ com a horizontal tal que
+$\tan \theta = 1$; isto é, a $45°$ com a horizontal.
 
-<p>The slope of the straight line is $-\tfrac{1}{2}$; that is, it slopes
-downwards to the right and makes with the horizontal
-an angle $\phi$ such that $\tan \phi = \tfrac{1}{2}$; that is, an angle of
-$26° 34'$. It follows that at the first point the curve
-cuts the straight line at an angle of $26° 34'$, while at
-the second it cuts it at an angle of $45° - 26° 34' = 18° 26'$.
+<p>A inclinação da reta é $-\tfrac{1}{2}$; isto é, ela desce
+para a direita e faz com a horizontal
+um ângulo $\phi$ tal que $\tan \phi = \tfrac{1}{2}$; isto é, um ângulo de
+$26° 34'$. Segue que no primeiro ponto a curva
+corta a reta a um ângulo de $26° 34'$, enquanto no
+segundo a corta a um ângulo de $45° - 26° 34' = 18° 26'$.
 
-<p>(5) A straight line is to be drawn, through a point
-whose coordinates are $x = 2$, $y = -1$, as tangent to the
-curve $y = x^2 - 5x + 6$. Find the coordinates of the
-point of contact.
+<p>(5) Uma reta deve ser traçada, por um ponto
+cujas coordenadas são $x = 2$, $y = -1$, como tangente à
+curva $y = x^2 - 5x + 6$. Encontre as coordenadas do
+ponto de contato.
 
 
-<p>The slope of the tangent must be the same as the
-$\dfrac{dy}{dx}$ of the curve; that is, $2x - 5$.
+<p>A inclinação da tangente deve ser a mesma que o
+$\dfrac{dy}{dx}$ da curva; isto é, $2x - 5$.
 
-<p>The equation of the straight line is $y = ax + b$, and
-as it is satisfied for the values $x = 2$, $y = -1$, then
-$-1 = a×2 + b$; also, its $\dfrac{dy}{dx} = a = 2x - 5$.
+<p>A equação da reta é $y = ax + b$, e
+como ela é satisfeita para os valores $x = 2$, $y = -1$, então
+$-1 = a×2 + b$; também, seu $\dfrac{dy}{dx} = a = 2x - 5$.
 
-<p>The $x$ and the $y$ of the point of contact must also
-satisfy both the equation of the tangent and the
-equation of the curve.
+<p>O $x$ e o $y$ do ponto de contato devem também
+satisfazer tanto a equação da tangente quanto a
+equação da curva.
 
-<p>We have then
+<p>Temos então
 \begin{aligned}
    y &= x^2 - 5x + 6, \,\,\,\,\,(i)  \\
 \end{aligned}
@@ -411,101 +433,107 @@ equation of the curve.
 \end{aligned}
 
 
-four equations in $a$, $b$, $x$, $y$.
+quatro equações em $a$, $b$, $x$, $y$.
 
-<p>Equations (i) and (ii) give $x^2 - 5x + 6 = ax+b$.
+<p>As equações (i) e (ii) dão $x^2 - 5x + 6 = ax+b$.
 
-<p>Replacing $a$ and $b$ by their value in this, we get
+<p>Substituindo $a$ e $b$ por seus valores nisso, obtemos
 \[
   x^2 - 5x + 6 = (2x - 5)x - 1 - 2(2x - 5),
 \]
-which simplifies to $x^2 - 4x + 3 = 0$, the solutions of
-which are: $x = 3$ and $x = 1$. Replacing in (i), we get
-$y = 0$ and $y = 2$ respectively; the two points of contact
-are then $x = 1$, $y = 2$, and $x = 3$, $y = 0$.
+que se simplifica a $x^2 - 4x + 3 = 0$, cujas soluções
+são: $x = 3$ e $x = 1$. Substituindo em (i), obtemos
+$y = 0$ e $y = 2$ respectivamente; os dois pontos de contato
+são então $x = 1$, $y = 2$, e $x = 3$, $y = 0$.
 
-<p><em>Note.</em>–In all exercises dealing with curves, students
-will find it extremely instructive to verify the deductions
-obtained by actually plotting the curves.
+<p><em>Nota.</em> - Em todos os exercícios que lidam com curvas, os estudantes
+acharão extremamente instrutivo verificar as deduções
+obtidas traçando de fato as curvas.
 
-
-<p>
-<hr><h3>Exercises VIII</h3>
 
 <p>
-(1) Plot the curve $y = \tfrac{3}{4} x^2 - 5$, using a scale of
-millimetres. Measure at points corresponding to
-different values of $x$, the angle of its slope.
+<hr><h3>Exercícios VIII</h3>
 
-<p>Find, by differentiating the equation, the expression
-for slope; and see, from a Table of Natural Tangents,
-whether this agrees with the measured angle.
+<p>
+(1) Trace a curva $y = \tfrac{3}{4} x^2 - 5$, usando uma escala de
+milímetros. Meça em pontos correspondentes a
+diferentes valores de $x$, o ângulo de sua inclinação.
 
-<p>(2) Find what will be the slope of the curve
+<p>Encontre, diferenciando a equação, a expressão
+para a inclinação; e veja, numa Tabela de Tangentes Naturais,
+se isto concorda com o ângulo medido.
+
+<p>(2) Encontre qual será a inclinação da curva
 \[
 y = 0.12x^3 - 2,
 \]
-at the particular point that has as abscissa $x = 2$.
+no ponto particular que tem como abscissa $x = 2$.
 
-<p>(3) If $y = (x - a)(x - b)$, show that at the particular
-point of the curve where $\dfrac{dy}{dx} = 0$, $x$ will have the value
+<p>(3) Se $y = (x - a)(x - b)$, mostre que no ponto particular
+da curva em que $\dfrac{dy}{dx} = 0$, $x$ terá o valor
 $\tfrac{1}{2} (a + b)$.
 
-<p>(4) Find the $\dfrac{dy}{dx}$ of the equation $y = x^3 + 3x$; and
-calculate the numerical values of $\dfrac{dy}{dx}$ for the points
-corresponding to $x = 0$, $x = \tfrac{1}{2}$, $x = 1$, $x = 2$.
+<p>(4) Encontre o $\dfrac{dy}{dx}$ da equação $y = x^3 + 3x$; e
+calcule os valores numéricos de $\dfrac{dy}{dx}$ para os pontos
+correspondentes a $x = 0$, $x = \tfrac{1}{2}$, $x = 1$, $x = 2$.
 
-<p>(5) In the curve to which the equation is $x^2 + y^2 = 4$,
-find the values of $x$ at those points where the slope ${} = 1$.
+<p>(5) Na curva cuja equação é $x^2 + y^2 = 4$,
+encontre os valores de $x$ naqueles pontos em que a inclinação ${} = 1$.
 
-<p>(6) Find the slope, at any point, of the curve whose
-equation is $\dfrac{x^2 }{3^2} + \dfrac{y^2}{2^2} = 1$; and give the numerical value
-of the slope at the place where $x = 0$, and at that
-where $x = 1$.
+<p>(6) Encontre a inclinação, em qualquer ponto, da curva cuja
+equação é $\dfrac{x^2 }{3^2} + \dfrac{y^2}{2^2} = 1$; e dê o valor numérico
+da inclinação no lugar em que $x = 0$, e naquele
+em que $x = 1$.
 
-<p>(7) The equation of a tangent to the curve
-$y = 5 - 2x + 0.5x^3$, being of the form $y = mx + n$, where
-$m$ and $n$ are constants, find the value of $m$ and $n$ if
+<p>(7) A equação de uma tangente à curva
+$y = 5 - 2x + 0.5x^3$, sendo da forma $y = mx + n$, onde
+$m$ e $n$ são constantes, encontre o valor de $m$ e $n$ se
 
-the point where the tangent touches the curve has
-$x=2$ for abscissa.
+o ponto em que a tangente toca a curva tem
+$x=2$ por abscissa.
 
-<p>(8) At what angle do the two curves
+<p>(8) A que ângulo as duas curvas
 \[
-y = 3.5x^2 + 2 \quad \text{and} \quad y = x^2 - 5x + 9.5
+y = 3.5x^2 + 2 \quad \text{e} \quad y = x^2 - 5x + 9.5
 \]
-cut one another?
+se cortam?
 
-<p>(9) Tangents to the curve $y = ± \sqrt{25-x^2}$ are drawn
-at points for which $x = 3$ and $x = 4$. Find the coordinates
-of the point of intersection of the tangents
-and their mutual inclination.
+<p>(9) Tangentes à curva $y = ± \sqrt{25-x^2}$ são traçadas
+em pontos para os quais $x = 3$ e $x = 4$. Encontre as coordenadas
+do ponto de interseção das tangentes
+e sua inclinação mútua.
 
-<p>(10) A straight line $y = 2x - b$ touches a curve
-$y = 3x^2 + 2$ at one point. What are the coordinates
-of the point of contact, and what is the value of $b$?
+<p>(10) Uma reta $y = 2x - b$ toca uma curva
+$y = 3x^2 + 2$ em um ponto. Quais são as coordenadas
+do ponto de contato, e qual é o valor de $b$?
 
 
-<p><h3 class="answers">Answers</h3>
+<p><h3 class="answers">Respostas</h3>
 
-<p>(2)   $1.44$.
-<p>(4)   $\dfrac{dy}{dx} = 3x^2 + 3$; and the numerical values are:
-     $3$, $3 \frac{3}{4}$, $6$, and $15$.
+<p>(2)   $1,44$.
+<p>(4)   $\dfrac{dy}{dx} = 3x^2 + 3$; e os valores numéricos são:
+     $3$, $3 \frac{3}{4}$, $6$, e $15$.
 <p>(5)   $ ± \sqrt{2}$.
-<p>(6)   $ \dfrac{dy}{dx} = - \dfrac{4}{9} \dfrac{x}{y}$. Slope is zero where $x = 0$; and is $\mp \dfrac{1}{3 \sqrt{2}}$ where $x = 1$.
+<p>(6)   $ \dfrac{dy}{dx} = - \dfrac{4}{9} \dfrac{x}{y}$. A inclinação é zero onde $x = 0$; e é $\mp \dfrac{1}{3 \sqrt{2}}$ onde $x = 1$.
 <p>(7)   $m = 4$, $n = -3$.
-<p>(8)   Intersections at $x = 1$, $x = -3$. Angles $153°\;26'$, $2°\;28'$.
-<p>(9)   Intersection at $x = 3.57$, $y = 3.50$. Angle $16°\;16'$.
+<p>(8)   Interseções em $x = 1$, $x = -3$. Ângulos $153°\;26'$, $2°\;28'$.
+<p>(9)   Interseção em $x = 3,57$, $y = 3,50$. Ângulo $16°\;16'$.
 <p>(10)   $x = \frac{1}{3}$, $y = 2 \frac{1}{3}$, $b = -\frac{5}{3}$.
 
 <br>
 {%include "buy_solutions.html" %}
 
 <hr>
-<a href="11.html">Next &rarr;</a><br>
-<a href="/">Main Page &uarr;</a><br>
+<a href="11.html">Próximo &rarr;</a><br>
+<a href="9.html">← Anterior</a><br>
+<a href="index.html">Página principal &uarr;</a><br>
+
+{% include "footer.html" %}
 
 <script src="j/jquery.js"></script>
 <script src="j/modernizr.js"></script>
 <script src="j/dih5.js"></script>
+<script src="j/notes-toggle.js"></script>
 {%include "googleanalytics.html" %}
+</body>
+</html>

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<meta charset="utf-8">
-<title>Sums, Differences, Products and Quotients | Calculus Made Easy</title>
+<html lang="pt-BR">
+<head>
+{% include "seo_head.html" %}
 <link rel="stylesheet" href="screen.css">
 <style>
 body{counter-reset:h1 6}
@@ -11,158 +12,179 @@ body{counter-reset:h1 6}
 <script type="text/javascript"
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Chapter",
+  "name": "Somas, Diferenças, Produtos e Quocientes",
+  "position": 6,
+  "isPartOf": {
+    "@type": "Book",
+    "name": "Cálculo Tornado Fácil",
+    "url": "{{ site_url }}/"
+  },
+  "author": {"@type": "Person", "name": "Silvanus P. Thompson"},
+  "translator": {"@type": "Person", "name": "Thales Rodrigues"},
+  "url": "{{ site_url }}/6.html",
+  "inLanguage": "pt-BR",
+  "isAccessibleForFree": true
+}
+</script>
+</head>
+<body>
+{% include "toolbar.html" %}
 
-<h1><br>Sums, Differences, Products and Quotients</h1>
+<h1><br>Somas, Diferenças, Produtos e Quocientes</h1>
 <p class="a rotatedFloralHeartBullet">
 
 
-<p>We have learned how to differentiate simple algebraical
-functions such as $x^2 + c$ or $ax^4$, and we have
-now to consider how to tackle the <em>sum</em><a name="sumdiffer"/> of two or
-more functions.
+<p>Aprendemos como diferenciar funções algébricas
+simples tais como $x^2 + c$ ou $ax^4$, e agora
+temos de considerar como atacar a <em>soma</em><a name="sumdiffer"/> de duas ou
+mais funções.
 
-<p>For instance, let
+<p>Por exemplo, seja
 \[
 y = (x^2+c) + (ax^4+b);
 \]
-what will its $\dfrac{dy}{dx}$ be? How are we to go to work
-on this new job?
+qual será seu $\dfrac{dy}{dx}$? Como devemos proceder
+neste novo trabalho?
 
-<p>The answer to this question is quite simple: just
-differentiate them, one after the other, thus:
+<p>A resposta a esta pergunta é bem simples: basta
+diferenciá-las, uma após a outra, assim:
 \[
-\dfrac{dy}{dx} = 2x + 4ax^3. (Ans.)
+\dfrac{dy}{dx} = 2x + 4ax^3. \text{(Resp.)}
 \]
 
-<p>If you have any doubt whether this is right, try
-a more general case, working it by first principles.
-And this is the way.
+<p>Se tiver qualquer dúvida se isto está certo, experimente
+um caso mais geral, trabalhando-o por primeiros princípios.
+E o caminho é este.
 
-<p>Let $y = u+v$, where $u$ is any function of $x$, and $v$
-any other function of $x$. Then, letting $x$ increase
-to $x+dx$, $y$ will increase to $y+dy$; and $u$ will
-increase to $u+du$; and $v$ to $v+dv$.
+<p>Seja $y = u+v$, onde $u$ é qualquer função de $x$, e $v$
+qualquer outra função de $x$. Então, deixando $x$ aumentar
+para $x+dx$, $y$ aumentará para $y+dy$; e $u$
+aumentará para $u+du$; e $v$ para $v+dv$.
 
-<p>And we shall have:
+<p>E teremos:
 
 <p>$  y+dy = u+du + v+dv.$
-<p>Subtracting the original $y = u+v$, we get
+<p>Subtraindo o $y = u+v$ original, obtemos
 <p>$dy = du+dv, $
-<p>and dividing through by $dx$, we get:
+<p>e dividindo por $dx$, obtemos:
 <p>$\dfrac{dy}{dx} = \dfrac{du}{dx} + \dfrac{dv}{dx}.$
 
 
-<p>This justifies the procedure. You differentiate each
-function separately and add the results. So if now
-we take the example of the preceding paragraph, and
-put in the values of the two functions, we shall have,
-using the notation shown (<a href="3.html#note">chapter III</a>),
+<p>Isso justifica o procedimento. Você diferencia cada
+função separadamente e soma os resultados. Assim se agora
+tomarmos o exemplo do parágrafo precedente, e
+pusermos os valores das duas funções, teremos,
+usando a notação mostrada (<a href="3.html#note">capítulo III</a>),
 \begin{alignat*}{2}
 \frac{dy}{dx}
   & = \frac{d(x^2+c)}{dx} &&+ \frac{d(ax^4+b)}{dx} \\
   & = 2x                  &&+ 4ax^3,
 \end{alignat*}
-exactly as before.
+exatamente como antes.
 
-<p>If there were three functions of $x$, which we may
-call $u$, $v$ and $w$, so that
+<p>Se houvesse três funções de $x$, que podemos
+chamar $u$, $v$ e $w$, de modo que
 \begin{align*}
 y &= u+v+w; \\
- \text{then}\;
+ \text{então}\;
 \frac{dy}{dx} &= \frac{du}{dx} + \frac{dv}{dx} + \frac{dw}{dx}.
 \end{align*}
 
-<p>As for <em>subtraction</em>, it follows at once; for if the
-function $v$ had itself had a negative sign, its
-differential coefficient would also be negative; so
-that by differentiating
+<p>Quanto à <em>subtração</em>, segue de imediato; pois se a
+função $v$ tivesse ela mesma um sinal negativo, seu
+coeficiente diferencial também seria negativo; de modo
+que ao diferenciar
 \begin{align*}
 y &= u-v, \\
-\text{ we should get}\;
+\text{ obteríamos}\;
 \frac{dy}{dx} &= \frac{du}{dx} - \frac{dv}{dx}.
 \end{align*}
 
 
-<p>But when we come to do with <em>Products</em>, the thing
-is not quite so simple.
+<p>Mas quando chegamos a lidar com <em>Produtos</em>, a coisa
+não é bem tão simples.
 
-<p>Suppose we were asked to differentiate the expression
+<p>Suponha que nos pedissem para diferenciar a expressão
 \[
 y = (x^2+c) × (ax^4+b),
 \]
-what are we to do? The result will certainly <em>not</em>
-be $2x × 4ax^3$; for it is easy to see that neither $c × ax^4$,
-nor $x^2 × b$, would have been taken into that product.
+o que devemos fazer? O resultado certamente <em>não</em>
+será $2x × 4ax^3$; pois é fácil ver que nem $c × ax^4$,
+nem $x^2 × b$, teriam sido incluídos naquele produto.
 
-<p>Now there are two ways in which we may go
-to work.
+<p>Ora há dois modos pelos quais podemos
+proceder.
 
-<p><em>First way.</em> Do the multiplying first, and, having
-worked it out, then differentiate.
+<p><em>Primeiro modo.</em> Faça a multiplicação primeiro, e, tendo
+elaborado, então diferencie.
 
-<p>Accordingly, we multiply together $x^2 + c$ and $ax^4 + b$.
+<p>Consequentemente, multiplicamos juntos $x^2 + c$ e $ax^4 + b$.
 
-<p>This gives $ax^6 + acx^4 + bx^2 + bc$.
+<p>Isso dá $ax^6 + acx^4 + bx^2 + bc$.
 
-<p>Now differentiate, and we get:
+<p>Agora diferencie, e obtemos:
 \[
 \dfrac{dy}{dx} = 6ax^5 + 4acx^3 + 2bx.
 \]
 
-<p><em>Second way.</em> Go back to first principles, and
-consider the equation
+<p><em>Segundo modo.</em> Volte aos primeiros princípios, e
+considere a equação
 \[
 y = u × v;
 \]
-where $u$ is one function of $x$, and $v$ is any other
-function of $x$. Then, if $x$ grows to be $x+dx$; and $y$
-to $y+dy$; and $u$ becomes $u+du$, and $v$ becomes $v+dv$,
-we shall have:
+onde $u$ é uma função de $x$, e $v$ é qualquer outra
+função de $x$. Então, se $x$ cresce para ser $x+dx$; e $y$
+para $y+dy$; e $u$ se torna $u+du$, e $v$ se torna $v+dv$,
+teremos:
 \begin{align*}
  y + dy &= (u + du) × (v + dv) \\
         &= u · v + u · dv + v · du + du · dv.
 \end{align*}
 
-<p>Now $du · dv$ is a small quantity of the second order
-of smallness, and therefore in the limit may be
-discarded, leaving
+<p>Ora $du · dv$ é uma quantidade pequena da segunda ordem
+de pequenez, e portanto no limite pode ser
+descartada, deixando
 \[
 y + dy = u · v + u · dv + v · du.
 \]
 
 
-<p>Then, subtracting the original $y = u· v$, we have left
+<p>Então, subtraindo o $y = u· v$ original, ficamos com
 \[
 dy = u · dv + v · du;
 \]
-and, dividing through by $dx$, we get the result:
+e, dividindo por $dx$, obtemos o resultado:
 \[
 \dfrac{dy}{dx} = u\, \dfrac{dv}{dx} + v\, \dfrac{du}{dx}.
 \]
 
-<p>This shows that our instructions will be as follows:<a name="differprod"/>
-<em>To differentiate the product of two functions, multiply
-each function by the differential coefficient of the
-other, and add together the two products so obtained.</em>
+<p>Isto mostra que nossas instruções serão as seguintes:<a name="differprod"/>
+<em>Para diferenciar o produto de duas funções, multiplique
+cada função pelo coeficiente diferencial da
+outra, e some juntos os dois produtos assim obtidos.</em>
 
-<p>You should note that this process amounts to
-the following: Treat $u$ as constant while you
-differentiate $v$; then treat $v$ as constant while you
-differentiate $u$; and the whole differential coefficient $\dfrac{dy}{dx}$
-will be the sum of these two treatments.
+<p>Você deve notar que este processo equivale ao
+seguinte: Trate $u$ como constante enquanto
+diferencia $v$; então trate $v$ como constante enquanto
+diferencia $u$; e o coeficiente diferencial inteiro $\dfrac{dy}{dx}$
+será a soma desses dois tratamentos.
 
-<p>Now, having found this rule, apply it to the
-concrete example which was considered above.
+<p>Ora, tendo achado esta regra, aplique-a ao
+exemplo concreto que foi considerado acima.
 
-<p>We want to differentiate the product
+<p>Queremos diferenciar o produto
 \[
 (x^2 + c) × (ax^4 + b).
 \]
 
-<p>Call $(x^2 + c) = u$; and $(ax^4 + b) = v$.
+<p>Chame $(x^2 + c) = u$; e $(ax^4 + b) = v$.
 
-<p>Then, by the general rule just established, we
-may write:
+<p>Então, pela regra geral que acabamos de estabelecer, podemos
+escrever:
 \begin{alignat*}{2}
 \dfrac{dy}{dx}
 &= (x^2 + c)\, \frac{d(ax^4 + b)}{dx} &&+ (ax^4 + b)\, \frac{d(x^2 + c)}{dx} \\
@@ -172,151 +194,151 @@ may write:
 \dfrac{dy}{dx}
 &= 6ax^5 + 4acx^3                     &&+ 2bx,
 \end{alignat*}
-exactly as before.
+exatamente como antes.
 
 
-<p>Lastly, we have to differentiate <em>quotients</em>.
+<p>Por fim, temos de diferenciar <em>quocientes</em>.
 
 
-<p>Think of this example, $y = \dfrac{bx^5 + c}{x^2 + a}$. In such a case
-it is no use to try to work out the division beforehand,
-because $x^2 + a$ will not divide into $bx^5 + c$, neither
-have they any common factor. So there is nothing
-for it but to go back to first principles, and find a
-rule.
+<p>Pense neste exemplo, $y = \dfrac{bx^5 + c}{x^2 + a}$. Em tal caso
+não adianta tentar realizar a divisão de antemão,
+porque $x^2 + a$ não dividirá $bx^5 + c$, nem
+têm fator comum. Assim não resta senão
+voltar aos primeiros princípios, e achar uma
+regra.
 
 
-   So we will put
+   Assim poremos
 \[
 y = \frac{u}{v};
 \]
-where $u$ and $v$ are two different functions of the
-independent variable $x$.  Then, when $x$ becomes
-$x + dx$, $y$ will become $y + dy$; and $u$ will become
-$u + du$; and $v$ will become $v + dv$. So then
+onde $u$ e $v$ são duas funções diferentes da
+variável independente $x$.  Então, quando $x$ se torna
+$x + dx$, $y$ se tornará $y + dy$; e $u$ se tornará
+$u + du$; e $v$ se tornará $v + dv$. Assim então
 \[
 y + dy = \dfrac{u + du}{v + dv}.
 \]
 
-<p>Now perform the algebraic division, thus:
+<p>Agora realize a divisão algébrica, assim:
 <a name="figure666a">
 <img src="33283-t/images/666a.pdf.png-1.png">
 
-<p>As both these remainders are small quantities of
-the second order, they may be neglected, and the
-division may stop here, since any further remainders
-would be of still smaller magnitudes.
+<p>Como ambos esses restos são quantidades pequenas da
+segunda ordem, podem ser desprezados, e a
+divisão pode parar aqui, pois quaisquer restos ulteriores
+seriam de magnitudes ainda menores.
 
-<p>So we have got:
+<p>Assim obtivemos:
 \begin{align*}
 y + dy &= \dfrac{u}{v} + \dfrac{du}{v} - \dfrac{u· dv}{v^2}; \\
 \end{align*}
-which may be written
+que pode ser escrito
 \begin{align*}
 &= \dfrac{u}{v} + \dfrac{v· du - u· dv}{v^2}. \\
 \end{align*}
-Now subtract the original $y = \dfrac{u}{v}$, and we have left:
+Agora subtraia o $y = \dfrac{u}{v}$ original, e ficamos com:
 \begin{align*}
 dy &= \dfrac{v· du - u· dv}{v^2}; \\
 
- \text{whence}\;
+ \text{donde}\;
 \dfrac{dy}{dx}
 &= \dfrac{v\, \dfrac{du}{dx} - u\, \dfrac{dv}{dx}}{v^2}.
 \end{align*}
 
-<p>This gives us our instructions as to <em>how to differentiate
-a quotient of two functions. Multiply the
-divisor function by the differential coefficient of
-the dividend function; then multiply the dividend
-function by the differential coefficient of the divisor
-function; and subtract. Lastly divide by the square
-of the divisor function</em>.
+<p>Isto nos dá nossas instruções quanto a <em>como diferenciar
+um quociente de duas funções. Multiplique a
+função divisor pelo coeficiente diferencial da
+função dividendo; então multiplique a função
+dividendo pelo coeficiente diferencial da função
+divisor; e subtraia. Por fim divida pelo quadrado
+da função divisor</em>.
 
 <p>
-Going back to our example $y = \dfrac{bx^5 + c}{x^2 + a}$,
+Voltando ao nosso exemplo $y = \dfrac{bx^5 + c}{x^2 + a}$,
 \begin{align*}
-\text{ write}\;
+\text{ escreva}\;
 bx^5 + c &= u; \\
- \text{and}\;
+ \text{e}\;
 x^2  + a &= v.
 \end{align*}
 
-<p>Then
+<p>Então
 \begin{align*}
 \frac{dy}{dx}
 &= \frac{(x^2 + a)\, \dfrac{d(bx^5 + c)}{dx} - (bx^5 + c)\, \dfrac{d(x^2 + a)}{dx}}{(x^2 + a)^2} \\
 &= \frac{(x^2 + a)(5bx^4) - (bx^5 + c)(2x)}{(x^2 + a)^2}, \\
 \frac{dy}{dx}
-&= \frac{3bx^6 + 5abx^4 - 2cx}{(x^2 + a)^2}.\quad\text{(Answer.)}
+&= \frac{3bx^6 + 5abx^4 - 2cx}{(x^2 + a)^2}.\quad\text{(Resposta.)}
 \end{align*}
 
-<p>The working out of quotients is often tedious, but
-there is nothing difficult about it.
+<p>O desenvolvimento de quocientes é frequentemente tedioso, mas
+não há nada de difícil nisso.
 
-<p>Some further examples fully worked out are given
-hereafter.<a name="examples3"/>
+<p>Alguns exemplos adicionais plenamente elaborados são dados
+a seguir.<a name="examples3"/>
 
-<p>(1) Differentiate $y = \dfrac{a}{b^2} x^3 - \dfrac{a^2}{b} x + \dfrac{a^2}{b^2}$.
+<p>(1) Diferencie $y = \dfrac{a}{b^2} x^3 - \dfrac{a^2}{b} x + \dfrac{a^2}{b^2}$.
 
-<p>Being a constant, $\dfrac{a^2}{b^2}$ vanishes,
-and we have
+<p>Sendo uma constante, $\dfrac{a^2}{b^2}$ some,
+e temos
 \[
 \frac{dy}{dx} = \frac{a}{b^2} × 3 × x^{3-1} - \frac{a^2}{b} × 1 × x^{1-1}.
 \]
 
-<p>But $x^{1-1} = x^0 = 1$; so we get:
+<p>Mas $x^{1-1} = x^0 = 1$; assim obtemos:
 \[
 \frac{dy}{dx} = \frac{3a}{b^2} x^2 - \frac{a^2}{b}.
 \]
 
-<p>(2) Differentiate $y = 2a\sqrt{bx^3} - \dfrac{3b \sqrt[3]{a}}{x} - 2\sqrt{ab}$.
+<p>(2) Diferencie $y = 2a\sqrt{bx^3} - \dfrac{3b \sqrt[3]{a}}{x} - 2\sqrt{ab}$.
 
-<p>Putting $x$ in the index form, we get
+<p>Pondo $x$ na forma de índice, obtemos
 \[
 y = 2a\sqrt{b} x^{\frac{3}{2}} - 3b \sqrt[3]{a} x^{-1} - 2\sqrt{ab}.
 \]
 
-<p>Now
+<p>Agora
 \[
 \frac{dy}{dx} = 2a\sqrt{b} × \tfrac{3}{2} × x^{\frac{3}{2}-1} - 3b\sqrt[3]{a} × (-1) × x^{-1-1}; \\
- \text{or, }\;
+ \text{ou, }\;
 \frac{dy}{dx} = 3a\sqrt{bx} + \frac{3b\sqrt[3]{a}}{x^2}.
 \]
 
 
-<p>(3) Differentiate $z = 1.8 \sqrt[3]{\dfrac{1}{\theta^2}} - \dfrac{4.4}{\sqrt[5]{\theta}} - 27°$.
+<p>(3) Diferencie $z = 1.8 \sqrt[3]{\dfrac{1}{\theta^2}} - \dfrac{4.4}{\sqrt[5]{\theta}} - 27°$.
 
-<p>This may be written: $z= 1.8\, \theta^{-\frac{2}{3}} - 4.4\, \theta^{-\frac{1}{5}} - 27°$.
+<p>Isto pode ser escrito: $z= 1.8\, \theta^{-\frac{2}{3}} - 4.4\, \theta^{-\frac{1}{5}} - 27°$.
 
-<p>The $27°$ vanishes, and we have
+<p>O $27°$ some, e temos
 \[
 \frac{dz}{d\theta}
   = 1.8 × -\tfrac{2}{3} × \theta^{-\frac{2}{3}-1}
   - 4.4 × \left(-\tfrac{1}{5}\right)\theta^{-\frac{1}{5}-1}; \\
- \text{or}\;,
+ \text{ou}\;,
 \frac{dz}{d\theta}
   = -1.2\, \theta^{-\frac{5}{3}} + 0.88\, \theta^{-\frac{6}{5}}; \\
-\text{or,}\;
+\text{ou,}\;
 \frac{dz}{d\theta} = \frac{0.88}{\sqrt[5]{\theta^6}}
   - \frac{1.2}{\sqrt[3]{\theta^5}}.
 \]
 
-<p>(4) Differentiate $v = (3t^2 - 1.2 t + 1)^3$.
+<p>(4) Diferencie $v = (3t^2 - 1.2 t + 1)^3$.
 
-<p>A direct way of doing this will be explained later
-(see <a href="9.html#dodge">here</a>); but we can nevertheless manage it now
-without any difficulty.
+<p>Um modo direto de fazer isto será explicado mais tarde
+(veja <a href="9.html#dodge">aqui</a>); mas podemos não obstante gerenciá-lo agora
+sem qualquer dificuldade.
 
-<p>Developing the cube, we get
+<p>Desenvolvendo o cubo, obtemos
 \[
 v = 27t^6 - 32.4t^5 + 39.96t^4 - 23.328t^3 + 13.32t^2 - 3.6t + 1;
 \]
-hence
+donde
 \[
 \frac{dv}{dt} = 162t^5 - 162t^4 + 159.84t^3 - 69.984t^2 + 26.64t - 3.6.
 \]
 
-<p>(5) Differentiate $y = (2x - 3)(x + 1)^2$.
+<p>(5) Diferencie $y = (2x - 3)(x + 1)^2$.
 \begin{alignat*}{2}
 \frac{dy}{dx}
   &= (2x - 3)\, \frac{d\bigl[(x + 1)(x + 1)\bigr]}{dx}
@@ -327,22 +349,22 @@ hence
 
   &= 2(x + 1)\bigl[(2x - 3) + (x + 1)\bigr] &&= 2(x + 1)(3x - 2)
 \end{alignat*}
-or, more simply, multiply out and then differentiate.
+ou, mais simplesmente, multiplique e então diferencie.
 
 
-<p>(6) Differentiate $y = 0.5 x^3(x-3)$.
+<p>(6) Diferencie $y = 0.5 x^3(x-3)$.
 \begin{align*}
 \frac{dy}{dx}
   &= 0.5\left[x^3 \frac{d(x-3)}{dx} + (x-3) \frac{d(x^3)}{dx}\right] \\
   &= 0.5\left[x^3 + (x-3) × 3x^2\right] = 2x^3 - 4.5x^2.
 \end{align*}
 
-<p>Same remarks as for preceding example.
+<p>Mesmas observações que para o exemplo precedente.
 
-<p>(7) Differentiate $w = \left(\theta + \dfrac{1}{\theta}\right)
+<p>(7) Diferencie $w = \left(\theta + \dfrac{1}{\theta}\right)
    \left(\sqrt{\theta} + \dfrac{1}{\sqrt{\theta}}\right)$.
 
-<p>This may be written
+<p>Isto pode ser escrito
 \begin{gather*}
 w = (\theta + \theta^{-1})(\theta^{\frac{1}{2}} + \theta^{-\frac{1}{2}}). \\
 \begin{aligned}
@@ -366,13 +388,13 @@ w = (\theta + \theta^{-1})(\theta^{\frac{1}{2}} + \theta^{-\frac{1}{2}}). \\
 \end{aligned}
 \end{gather*}
 
-<p>This, again, could be obtained more simply by
-multiplying the two factors first, and differentiating
-afterwards. This is not, however, always possible;
-see, for instance, <a href="16.html#example1">here</a>, example 8, in which the
-rule for differentiating a product <em>must</em> be used.
+<p>Isto, de novo, poderia ser obtido mais simplesmente ao
+multiplicar os dois fatores primeiro, e diferenciar
+depois. Isto não é, contudo, sempre possível;
+veja, por exemplo, <a href="16.html#example1">aqui</a>, exemplo 8, no qual a
+regra para diferenciar um produto <em>deve</em> ser usada.
 
-<p>(8) Differentiate $y =\dfrac{a}{1 + a\sqrt{x} + a^2x}$.
+<p>(8) Diferencie $y =\dfrac{a}{1 + a\sqrt{x} + a^2x}$.
 \begin{align*}
 \frac{dy}{dx}
   &= \frac{(1 + ax^{\frac{1}{2}} + a^2x) × 0 - a\dfrac{d(1 + ax^{\frac{1}{2}} + a^2x)}{dx}}
@@ -382,14 +404,14 @@ rule for differentiating a product <em>must</em> be used.
 \end{align*}
 
 
-<p>(9) Differentiate $y = \dfrac{x^2}{x^2 + 1}$.
+<p>(9) Diferencie $y = \dfrac{x^2}{x^2 + 1}$.
 \[
 \dfrac{dy}{dx} = \dfrac{(x^2 + 1)\, 2x - x^2 × 2x}{(x^2 + 1)^2} = \dfrac{2x}{(x^2 + 1)^2}.
 \]
 
-<p>(10) Differentiate $y = \dfrac{a + \sqrt{x}}{a - \sqrt{x}}$.
+<p>(10) Diferencie $y = \dfrac{a + \sqrt{x}}{a - \sqrt{x}}$.
 
-<p>In the indexed form, $y = \dfrac{a + x^{\frac{1}{2}}}{a - x^{\frac{1}{2}}}$.
+<p>Na forma de índice, $y = \dfrac{a + x^{\frac{1}{2}}}{a - x^{\frac{1}{2}}}$.
 \[
 \frac{dy}{dx}
   = \frac{(a - x^{\frac{1}{2}})( \tfrac{1}{2} x^{-\frac{1}{2}})
@@ -398,15 +420,15 @@ rule for differentiating a product <em>must</em> be used.
   = \frac{ a - x^{\frac{1}{2}}
          + a + x^{\frac{1}{2}}}
         {2(a - x^{\frac{1}{2}})^2\, x^{\frac{1}{2}}}; \\
- \text{hence}\;
+ \text{donde}\;
 \frac{dy}{dx} = \frac{a}{(a - \sqrt{x})^2\, \sqrt{x}}.
 \]
 
-<p>(11) Differentiate
+<p>(11) Diferencie
 
 <p>\begin{align*}
 \theta &= \frac{1 - a \sqrt[3]{t^2}}{1 + a \sqrt[2]{t^3}}. \\
-   \text{Now}\;
+   \text{Ora}\;
 \theta &= \frac{1 - at^{\frac{2}{3}}}{1 + at^{\frac{3}{2}}}.
 \end{align*}
 \begin{align*}
@@ -418,81 +440,81 @@ rule for differentiating a product <em>must</em> be used.
           {6(1 + a \sqrt[2]{t^3})^2}.
 \end{align*}
 
-<p>(12) A reservoir of square cross-section has sides
-sloping at an angle of $45°$ with the vertical. The side
+<p>(12) Um reservatório de seção transversal quadrada tem lados
+inclinados a um ângulo de $45°$ com a vertical. O lado
 
-of the bottom is $200$ feet. Find an expression for the
-quantity pouring in or out when the depth of water
-varies by $1$ foot; hence find, in gallons, the quantity
-withdrawn hourly when the depth is reduced from
-$14$ to $10$ feet in $24$ hours.
+do fundo é $200$ pés. Ache uma expressão para a
+quantidade entrando ou saindo quando a profundidade da água
+varia em $1$ pé; daí ache, em galões, a quantidade
+retirada por hora quando a profundidade é reduzida de
+$14$ para $10$ pés em $24$ horas.
 
-<p>The volume of a frustum of pyramid of height $H$,
-and of bases $A$ and $a$, is $V = \dfrac{H}{3} (A + a + \sqrt{Aa} )$. It is
-easily seen that, the slope being $45°$, if the depth be
-$h$, the length of the side of the square surface of the
-water is $200 + 2h$ feet, so that the volume of water is
+<p>O volume de um tronco de pirâmide de altura $H$,
+e de bases $A$ e $a$, é $V = \dfrac{H}{3} (A + a + \sqrt{Aa} )$. Vê-se
+facilmente que, sendo a inclinação $45°$, se a profundidade for
+$h$, o comprimento do lado da superfície quadrada da
+água é $200 + 2h$ pés, de modo que o volume de água é
 \[
 \dfrac{h}{3} [200^2 + (200 + 2h)^2 + 200(200 + 2h)]
-= 40,000h + 400h^2 + \dfrac{4h^3}{3}.
+= 40.000h + 400h^2 + \dfrac{4h^3}{3}.
 \]
 
-<p>$\dfrac{dV}{dh} = 40,000 + 800h + 4h^2 = {}$ cubic feet per foot of depth
-variation. The mean level from $14$ to $10$ feet is
-$12$ feet, when $h = 12$, $\dfrac{dV}{dh} = 50,176$ cubic feet.
+<p>$\dfrac{dV}{dh} = 40.000 + 800h + 4h^2 = {}$ pés cúbicos por pé de variação
+de profundidade. O nível médio de $14$ a $10$ pés é
+$12$ pés, quando $h = 12$, $\dfrac{dV}{dh} = 50.176$ pés cúbicos.
 
-<p>Gallons per hour corresponding to a change of depth
-of $4$ ft. in $24$ hours ${} = \dfrac{4 × 50,176 × 6.25}{24} = 52,267$ gallons.
+<p>Galões por hora correspondentes a uma mudança de profundidade
+de $4$ pés em $24$ horas ${} = \dfrac{4 × 50.176 × 6.25}{24} = 52.267$ galões.
 
-<p>(13) The absolute pressure, in atmospheres, $P$, of
-saturated steam at the temperature $t°$ C. is given by
-Dulong as being $P = \left( \dfrac{40 + t}{140} \right)^5$  as long as $t$ is above
-$80°$. Find the rate of variation of the pressure with
-the temperature at $100°$ C.
+<p>(13) A pressão absoluta, em atmosferas, $P$, de
+vapor saturado na temperatura $t°$ C. é dada por
+Dulong como sendo $P = \left( \dfrac{40 + t}{140} \right)^5$  enquanto $t$ estiver acima de
+$80°$. Ache a taxa de variação da pressão com
+a temperatura a $100°$ C.
 
 
-<p>Expand the numerator by the binomial theorem
-(see <a href="14.html#binomtheo">here</a>).
+<p>Expanda o numerador pelo teorema binomial
+(veja <a href="14.html#binomtheo">aqui</a>).
 \[
 P = \frac{1}{140^5} (40^5 + 5×40^4 t + 10 × 40^3 t^2 + 10 × 40^2 t^3
                             + 5 × 40t^4 + t^5);
 \]
 \begin{align*}
- \text{hence}\;  \dfrac{dP}{dt} = &\dfrac{1}{537,824 × 10^5}\\
+ \text{donde}\;  \dfrac{dP}{dt} = &\dfrac{1}{537.824 × 10^5}\\
       &(5 × 40^4 + 20 × 40^3 t + 30 × 40^2 t^2 + 20 × 40t^3 + 5t^4),
 \end{align*}
-when $t = 100$ this becomes $0.036$ atmosphere per
-degree Centigrade change of temperature.
+quando $t = 100$ isto se torna $0.036$ atmosfera por
+grau Celsius de mudança de temperatura.
 
 <p>
-<hr><h3>Exercises III</h3>
+<hr><h3>Exercícios III</h3>
 
 <p>
-(1) Differentiate<a name="examples2"/>
+(1) Diferencie<a name="examples2"/>
 
 <p>(<em>a</em>)  $u = 1 + x + \dfrac{x^2}{1 × 2} + \dfrac{x^3}{1 × 2 × 3} + \dotsb$.
 <p>(<em>b</em>)  $y = ax^2 + bx + c$. (<em>c</em> ) $y = (x + a)^2$.
 <p>(<em>d</em>)  $y = (x + a)^3$.
 
-<p>(2) If $w = at - \frac{1}{2}bt^2$, find $\dfrac{dw}{dt}$.
+<p>(2) Se $w = at - \frac{1}{2}bt^2$, ache $\dfrac{dw}{dt}$.
 
-<p>(3) Find the differential coefficient of
+<p>(3) Ache o coeficiente diferencial de
 \[
 y = (x + \sqrt{-1}) × (x - \sqrt{-1}).
 \]
 
-<p>(4) Differentiate
+<p>(4) Diferencie
 \[
 y = (197x - 34x^2) × (7 + 22x - 83x^3).
 \]
 
-<p>(5) If $x = (y + 3) × (y + 5)$, find $\dfrac{dx}{dy}$.
+<p>(5) Se $x = (y + 3) × (y + 5)$, ache $\dfrac{dx}{dy}$.
 
-<p>(6) Differentiate $y = 1.3709x × (112.6 + 45.202x^2)$.
+<p>(6) Diferencie $y = 1.3709x × (112.6 + 45.202x^2)$.
 
 
 
-<p>Find the differential coefficients of
+<p>Ache os coeficientes diferenciais de
 
 <p>(7) $y = \dfrac{2x + 3}{3x + 2}$.
 <p>(8) $y = \dfrac{1 + x + 2x^2 + 3x^3}{1 + x + 2x^2}$.
@@ -500,57 +522,57 @@ y = (197x - 34x^2) × (7 + 22x - 83x^3).
 <p>(10) $y = \dfrac{x^n + a}{x^{-n} + b}$.
 
 
-<p>(11) The temperature $t$ of the filament of an incandescent
-electric lamp is connected to the current
-passing through the lamp by the relation
+<p>(11) A temperatura $t$ do filamento de uma lâmpada
+elétrica incandescente está ligada à corrente
+que passa pela lâmpada pela relação
 \[
 C = a + bt + ct^2.
 \]
 
-<p>Find an expression giving the variation of the
-current corresponding to a variation of temperature.
+<p>Ache uma expressão dando a variação da
+corrente correspondente a uma variação de temperatura.
 
-<p>(12) The following formulae have been proposed to
-express the relation between the electric resistance $R$
-of a wire at the temperature $t°$ C., and the resistance
-$R_0$ of that same wire at $0°$ Centigrade, $a$, $b$, $c$ being
-constants.
+<p>(12) As seguintes fórmulas foram propostas para
+expressar a relação entre a resistência elétrica $R$
+de um fio na temperatura $t°$ C., e a resistência
+$R_0$ daquele mesmo fio a $0°$ Celsius, $a$, $b$, $c$ sendo
+constantes.
 \begin{align*}
 R &= R_0(1 + at + bt^2). \\
 R &= R_0(1 + at + b\sqrt{t}). \\
 R &= R_0(1 + at + bt^2)^{-1}.
 \end{align*}
 
-<p>Find the rate of variation of the resistance with
-regard to temperature as given by each of these
-formulae.
+<p>Ache a taxa de variação da resistência com
+respeito à temperatura como dada por cada uma dessas
+fórmulas.
 
-<p>(13) The electromotive-force $E$ of a certain type of
-standard cell has been found to vary with the temperature $t$
-according to the relation
+<p>(13) A força eletromotriz $E$ de certo tipo de
+célula padrão achou-se variar com a temperatura $t$
+segundo a relação
 \[
 E = 1.4340 \bigl[1 - 0.000814(t-15)
                  + 0.000007(t-15)^2\bigr] \text{ volts}.
 \]
 
-<p>Find the change of electromotive-force per degree,
-at $15°$, $20°$ and $25°$.
+<p>Ache a mudança de força eletromotriz por grau,
+a $15°$, $20°$ e $25°$.
 
 
-<p>(14) The electromotive-force necessary to maintain
-an electric arc of length $l$ with a current of intensity $i$
-has been found by Mrs. Ayrton to be
+<p>(14) A força eletromotriz necessária para manter
+um arco elétrico de comprimento $l$ com uma corrente de intensidade $i$
+foi achada pela Sra. Ayrton ser
 \[
 E = a + bl + \frac{c + kl}{i},
 \]
-where $a$, $b$, $c$, $k$ are constants.
+onde $a$, $b$, $c$, $k$ são constantes.
 
-<p>Find an expression for the variation of the electromotive-force
-(<em>a</em>) with regard to the length of the arc;
-(<em>b</em>) with regard to the strength of the current.
+<p>Ache uma expressão para a variação da força eletromotriz
+(<em>a</em>) com respeito ao comprimento do arco;
+(<em>b</em>) com respeito à intensidade da corrente.
 
 
-<p><h3 class="answers">Answers</h3>
+<p><h3 class="answers">Respostas</h3>
 
 
 
@@ -570,7 +592,7 @@ where $a$, $b$, $c$, $k$ are constants.
 <p>(10)  $\dfrac{anx^{-n-1} + bnx^{n-1} + 2nx^{-1}}{(x^{-n} + b)^2}$.
 <p>(11)  $b + 2ct$.
 <p>(12)  $R_0(a + 2bt)$,&nbsp;&nbsp; $R_0 \left(a + \dfrac{b}{2\sqrt{t}}\right)$,&nbsp;&nbsp;
-  $-\dfrac{R_0(a + 2bt)}{(1 + at + bt^2)^2}$&nbsp;&nbsp; or&nbsp;&nbsp; $\dfrac{R^2 (a + 2bt)}{R_0}$.
+  $-\dfrac{R_0(a + 2bt)}{(1 + at + bt^2)^2}$&nbsp;&nbsp; ou&nbsp;&nbsp; $\dfrac{R^2 (a + 2bt)}{R_0}$.
 
 <p>(13)  $1.4340(0.000014t - 0.001024)$,&nbsp;&nbsp; $-0.00117$,&nbsp;&nbsp; $-0.00107$,&nbsp;&nbsp; $-0.00097$.
 
@@ -578,16 +600,21 @@ where $a$, $b$, $c$, $k$ are constants.
 
 <p>
 
+
 <br>
 {%include "buy_solutions.html" %}
 
 <hr>
-<a href="7.html">Next &rarr;</a><br>
-<a href="/">Main Page &uarr;</a><br>
+<a href="7.html">Próximo &rarr;</a><br>
+<a href="5.html">← Anterior</a><br>
+<a href="index.html">Página principal &uarr;</a><br>
+
+{% include "footer.html" %}
 
 <script src="j/jquery.js"></script>
 <script src="j/modernizr.js"></script>
 <script src="j/dih5.js"></script>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-101178221-1"></script>
+<script src="j/notes-toggle.js"></script>
 {%include "googleanalytics.html" %}
+</body>
+</html>

@@ -1,6 +1,39 @@
 <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+
 <meta charset="utf-8">
-<title>(b)The Die-away Curve | Calculus Made Easy</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Curva de Decaimento | Cálculo Tornado Fácil - Cap. XIV(b)</title>
+<meta name="description" content="Capítulo XIV(b): a curva de decaimento.">
+<meta name="author" content="Thales Rodrigues; Silvanus P. Thompson">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="googlebot" content="index, follow">
+<meta name="language" content="Portuguese">
+<meta name="keywords" content="cálculo, calculus made easy, Silvanus Thompson, cálculo diferencial, cálculo integral, matemática, educação livre, português, Martin Gardner, Cálculo Tornado Fácil, Thales Rodrigues">
+<link rel="canonical" href="https://rodriguestmo.github.io/calculo-tornado-facil/14b.html">
+<link rel="alternate" hreflang="pt-BR" href="https://rodriguestmo.github.io/calculo-tornado-facil/14b.html">
+<link rel="alternate" hreflang="x-default" href="https://rodriguestmo.github.io/calculo-tornado-facil/">
+
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Cálculo Tornado Fácil">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Curva de Decaimento | Cálculo Tornado Fácil - Cap. XIV(b)">
+<meta property="og:description" content="Capítulo XIV(b): a curva de decaimento.">
+<meta property="og:url" content="https://rodriguestmo.github.io/calculo-tornado-facil/14b.html">
+<meta property="og:image" content="https://rodriguestmo.github.io/calculo-tornado-facil/cover.jpg">
+
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Curva de Decaimento | Cálculo Tornado Fácil - Cap. XIV(b)">
+<meta name="twitter:description" content="Capítulo XIV(b): a curva de decaimento.">
+<meta name="twitter:image" content="https://rodriguestmo.github.io/calculo-tornado-facil/cover.jpg">
+
+
+<meta name="ai-content-declaration" content="human-authored translation and educational adaptation">
+<link rel="describedby" href="https://rodriguestmo.github.io/calculo-tornado-facil/llms.txt">
 <link rel="stylesheet" href="screen.css">
 <style>
 body{counter-reset:h1 14}
@@ -11,116 +44,155 @@ body{counter-reset:h1 14}
 <script type="text/javascript"
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Chapter",
+  "name": "(b) A Curva de Decaimento",
+  "position": 14,
+  "isPartOf": {
+    "@type": "Book",
+    "name": "Cálculo Tornado Fácil",
+    "url": "https://rodriguestmo.github.io/calculo-tornado-facil/"
+  },
+  "author": {"@type": "Person", "name": "Silvanus P. Thompson"},
+  "translator": {"@type": "Person", "name": "Thales Rodrigues"},
+  "url": "https://rodriguestmo.github.io/calculo-tornado-facil/14b.html",
+  "inLanguage": "pt-BR",
+  "isAccessibleForFree": true
+}
+</script>
+</head>
+<body>
+<!-- Barra fixa: navegação, modo das notas, tema -->
+<div id="site-toolbar" class="site-toolbar" role="region" aria-label="Controles do site">
+  <a class="tb-home" href="index.html">Cálculo Tornado Fácil</a>
 
-<h1><br>(b)The Die-away Curve</h1>
+  <div class="tb-controls">
+    <label class="tb-field" title="Como exibir as notas de Martin Gardner (1998)">
+      <span class="tb-label">Notas</span>
+      <select id="notes-mode" aria-label="Modo de exibição das notas">
+        <option value="all">Sempre visíveis</option>
+        <option value="click">Lupa (clique para abrir)</option>
+        <option value="off">Sempre ocultadas</option>
+      </select>
+    </label>
+
+    <button type="button" id="toggle-theme" class="tb-btn" title="Alternar tema claro/escuro" aria-pressed="false">
+      <span class="theme-label">Tema escuro</span>
+    </button>
+  </div>
+</div>
+
+<h1><br>(b) A Curva de Decaimento</h1>
 <p class="a rotatedFloralHeartBullet">
 
 
-<p>If we were to take $p$ as a proper fraction (less than
-unity), the curve would obviously tend to sink downwards,
-as in <a href="#figure42">Figure 42</a>, where each successive ordinate
-is $\frac{3}{4}$ of the height of the preceding one.
+<p>Se tomássemos $p$ como uma fração própria (menor que
+a unidade), a curva tenderia obviamente a afundar para baixo,
+como na <a href="#figure42">Figura 42</a>, onde cada ordenada sucessiva
+é $\frac{3}{4}$ da altura da precedente.
 
 
 <a name="figure42">
 <p><img src="33283-t/images/168a.pdf.png-1.png">
 
-<p>The equation is still
+<p>A equação ainda é
 \[
 y=bp^x;
-\] but since $p$ is less than one, $\log_\epsilon p$ will be a negative
-quantity, and may be written $-a$; so that $p=\epsilon^{-a}$,
-and now our equation for the curve takes the form
+\] mas como $p$ é menor que um, $\log_\epsilon p$ será uma quantidade
+negativa, e pode ser escrito $-a$; de modo que $p=\epsilon^{-a}$,
+e agora nossa equação para a curva toma a forma
 \[
 y=b\epsilon^{-ax}.
 \]
 
-<p>The importance of this expression is that, in the
-case where the independent variable is <em>time</em>, the
-equation represents the course of a great many
-physical processes in which something is <em>gradually
-dying away</em>. Thus, the cooling of a hot body is
-represented (in Newton's celebrated “law of cooling”)
-by the equation
+<p>A importância desta expressão é que, no
+caso em que a variável independente é o <em>tempo</em>, a
+equação representa o curso de um grande número de
+processos físicos em que algo está <em>gradualmente
+morrendo</em> (decaindo). Assim, o resfriamento de um corpo quente é
+representado (na célebre “lei do resfriamento” de Newton)
+pela equação
 \[
 \theta_t=\theta_0 \epsilon^{-at};
 \]
 
-where $\theta_0$ is the original excess of temperature of a
-hot body over that of its surroundings, $\theta_t$ the excess
-of temperature at the end of time $t$, and $a$ is a constant–namely,
-the constant of decrement, depending
-on the amount of surface exposed by the body, and
-on its coefficients of conductivity and emissivity,
+onde $\theta_0$ é o excesso original de temperatura de um
+corpo quente sobre a de suas vizinhanças, $\theta_t$ o excesso
+de temperatura ao fim do tempo $t$, e $a$ é uma constante - a saber,
+a constante de decréscimo, dependendo
+da quantidade de superfície exposta pelo corpo, e
+de seus coeficientes de condutividade e emissividade,
 etc.
 
-<p>A similar formula,
+<p>Uma fórmula semelhante,
 \[
 Q_t=Q_0 \epsilon^{-at},
 \]
-is used to express the charge of an electrified body,
-originally having a charge $Q_0$, which is leaking away
-with a constant of decrement $a$; which constant
-depends in this case on the capacity of the body and
-on the resistance of the leakage-path.
+é usada para expressar a carga de um corpo eletrizado,
+tendo originalmente uma carga $Q_0$, que está vazando
+com uma constante de decréscimo $a$; a qual constante
+depende neste caso da capacidade do corpo e
+da resistência do caminho de fuga.
 
-<p>Oscillations given to a flexible spring die out after
-a time; and the dying-out of the amplitude of the
-motion may be expressed in a similar way.
+<p>Oscilações dadas a uma mola flexível morrem após
+um tempo; e o decaimento da amplitude do
+movimento pode ser expresso de modo semelhante.
 
-<p>In fact $\epsilon^{-at}$ serves as a <em>die-away factor</em> for all
-those phenomena in which the rate of decrease
-is proportional to the magnitude of that which is
-decreasing; or where, in our usual symbols, $\dfrac{dy}{dt}$ is
-proportional at every moment to the value that $y$ has
-at that moment. For we have only to inspect the
-curve, <a href="#figure42">Figure 42</a> above, to see that, at every part of it,
-the slope $\dfrac{dy}{dx}$ is proportional to the height $y$; the
-curve becoming flatter as $y$ grows smaller. In symbols,
-thus
+<p>De fato $\epsilon^{-at}$ serve como um <em>fator de decaimento</em> para todos
+aqueles fenômenos em que a taxa de diminuição
+é proporcional à magnitude daquilo que está
+diminuindo; ou onde, em nossos símbolos usuais, $\dfrac{dy}{dt}$ é
+proporcional a cada instante ao valor que $y$ tem
+naquele instante. Pois só precisamos inspecionar a
+curva, <a href="#figure42">Figura 42</a> acima, para ver que, em cada parte dela,
+a inclinação $\dfrac{dy}{dx}$ é proporcional à altura $y$; a
+curva tornando-se mais plana à medida que $y$ fica menor. Em símbolos,
+assim
 
-$y=b\epsilon^{-ax}$ or
+$y=b\epsilon^{-ax}$ ou
 \[
 \log_\epsilon y
   = \log_\epsilon b - ax \log_\epsilon \epsilon
   = \log_\epsilon b - ax,\\
- \text{and, differentiating,}\;
+ \text{e, diferenciando,}\;
 \frac{1}{y}\, \frac{dy}{dx} = -a;\\
- \text{hence}\;  \frac{dy}{dx} = b\epsilon^{-ax} × (-a) = -ay;
+ \text{logo}\;  \frac{dy}{dx} = b\epsilon^{-ax} × (-a) = -ay;
 \]
-or, in words, the slope of the curve is downward, and
-proportional to $y$ and to the constant $a$.
+ou, em palavras, a inclinação da curva é para baixo, e
+proporcional a $y$ e à constante $a$.
 
-<p>We should have got the same result if we had
-taken the equation in the form
+<p>Teríamos obtido o mesmo resultado se tivéssemos
+tomado a equação na forma
 \begin{align*}
 y &= bp^x; \\
- \text{for then}\;
+ \text{pois então}\;
 \frac{dy}{dx}
   &= bp^x × \log_\epsilon p. \\
-   \text{But}\;
+   \text{Mas}\;
 \log_\epsilon p &= -a; \\
- \text{giving us}\;
+ \text{dando-nos}\;
 \frac{dy}{dx} &= y × (-a) = -ay,
 \end{align*}
-as before.
+como antes.
 
-<p><em>The Time-constant.</em> In the expression for the “die-away
-factor” $\epsilon^{-at}$, the quantity $a$ is the reciprocal of
-another quantity known as “<em>the time-constant</em>,” which
-we may denote by the symbol $T$. Then the die-away
-factor will be written $\epsilon^{-\frac{t}{T}}$; and it will be seen, by
-making $t = T$ that the meaning of $T$ $\left(\text{or of} \dfrac{1}{a}\right)$ is that
-this is the length of time which it takes for the original
-quantity (called $\theta_0$ or $Q_0$ in the preceding instances)
-to die away $\dfrac{1}{\epsilon}$th part–that is to $0.3678$–of its
-original value.
+<p><em>A Constante de Tempo.</em> Na expressão para o “fator de
+decaimento” $\epsilon^{-at}$, a quantidade $a$ é o recíproco de
+outra quantidade conhecida como “<em>a constante de tempo</em>,” que
+podemos denotar pelo símbolo $T$. Então o fator de decaimento
+será escrito $\epsilon^{-\frac{t}{T}}$; e ver-se-á, ao
+fazer $t = T$, que o significado de $T$ $\left(\text{ou de} \dfrac{1}{a}\right)$ é que
+este é o comprimento de tempo que leva para a quantidade original
+(chamada $\theta_0$ ou $Q_0$ nos exemplos precedentes)
+decair até $\dfrac{1}{\epsilon}$ da parte - isto é, até $0.3678$ - de seu
+valor original.
 
 
-<p>The values of $\epsilon^x$ and $\epsilon^{-x}$ are continually required
-in different branches of physics, and as they are given
-in very few sets of mathematical tables, some of the
-values are tabulated here for convenience.
+<p>Os valores de $\epsilon^x$ e $\epsilon^{-x}$ são continuamente requeridos
+em diferentes ramos da física, e como eles são dados
+em bem poucos conjuntos de tabelas matemáticas, alguns dos
+valores são tabulados aqui por conveniência.
 
 <p>
 
@@ -157,239 +229,264 @@ values are tabulated here for convenience.
 <tr><td>$10.00$</td><td>$22026.5$</td><td>$0.000045$</td><td>$0.999955$</td></tr>
 </table>
 
-<p>As an example of the use of this table, suppose
-there is a hot body cooling, and that at the beginning
-of the experiment (<em>i.e.:</em> when $t = 0$) it is $72°$ hotter than
-the surrounding objects, and if the time-constant of its
-cooling is $20$ minutes (that is, if it takes $20$ minutes
-for its excess of temperature to fall to $\dfrac{1}{\epsilon}$ part of $72°$),
-then we can calculate to what it will have fallen in
-any given time $t$. For instance, let $t$ be $60$ minutes.
-Then $\dfrac{t}{T} = 60 ÷ 20 = 3$, and we shall have to find the
-value of $\epsilon^{-3}$, and then multiply the original $72°$ by
-this. The table shows that $\epsilon^{-3}$ is $0.0498$. So that
-at the end of $60$ minutes the excess of temperature
-will have fallen to $72° × 0.0498 = 3.586°$.
+<p>Como exemplo do uso desta tabela, suponha
+que há um corpo quente resfriando, e que no começo
+do experimento (<em>i.e.:</em> quando $t = 0$) ele está $72°$ mais quente que
+os objetos circundantes, e se a constante de tempo de seu
+resfriamento for $20$ minutos (isto é, se leva $20$ minutos
+para seu excesso de temperatura cair a $\dfrac{1}{\epsilon}$ parte de $72°$),
+então podemos calcular a que terá caído em
+qualquer tempo dado $t$. Por exemplo, seja $t$ $60$ minutos.
+Então $\dfrac{t}{T} = 60 ÷ 20 = 3$, e teremos de achar o
+valor de $\epsilon^{-3}$, e então multiplicar os $72°$ originais por
+isto. A tabela mostra que $\epsilon^{-3}$ é $0.0498$. De modo que
+ao fim de $60$ minutos o excesso de temperatura
+terá caído a $72° × 0.0498 = 3.586°$.
 
 <p><hr>
 
-<p><em>Further Examples.</em>
-<p>(1) The strength of an electric current in a conductor
-at a time $t$ secs. after the application of the
-electromotive force producing it is given by the expression
+<p><em>Mais Exemplos.</em>
+<p>(1) A intensidade de uma corrente elétrica em um condutor
+em um tempo $t$ segs. após a aplicação da
+força eletromotriz que a produz é dada pela expressão
 $C = \dfrac{E}{R}\left\{1 - \epsilon^{-\frac{Rt}{L}}\right\}$.
 
-<p>The time constant is $\dfrac{L}{R}$.
+<p>A constante de tempo é $\dfrac{L}{R}$.
 
-<p>If $E = 10$, $R =1$, $L = 0.01$; then when $t$ is very large
-the term $\epsilon^{-\frac{Rt}{L}}$ becomes $1$, and $C = \dfrac{E}{R} = 10$; also
+<p>Se $E = 10$, $R =1$, $L = 0.01$; então quando $t$ é muito grande
+o termo $\epsilon^{-\frac{Rt}{L}}$ se torna $1$, e $C = \dfrac{E}{R} = 10$; também
 \[
 \frac{L}{R} = T = 0.01.
 \]
 
-<p>Its value at any time may be written:
+<p>Seu valor em qualquer tempo pode ser escrito:
 \[
 C = 10 - 10\epsilon^{-\frac{t}{0.01}},
 \]
 
-the time-constant being $0.01$. This means that it
-takes $0.01$ sec. for the variable term to fall by
-$\dfrac{1}{\epsilon} = 0.3678$ of its initial value $10\epsilon^{-\frac{0}{0.01}} = 10$.
+a constante de tempo sendo $0.01$. Isto significa que leva
+$0.01$ seg. para o termo variável cair em
+$\dfrac{1}{\epsilon} = 0.3678$ de seu valor inicial $10\epsilon^{-\frac{0}{0.01}} = 10$.
 
-<p>To find the value of the current when $t = 0.001 \text{sec.}$,
-say, $\dfrac{t}{T} = 0.1$, $\epsilon^{-0.1} = 0.9048$ (from table).
+<p>Para achar o valor da corrente quando $t = 0.001 \text{seg.}$,
+digamos, $\dfrac{t}{T} = 0.1$, $\epsilon^{-0.1} = 0.9048$ (da tabela).
 
-<p>It follows that, after $0.001$ sec., the variable term
-is $0.9048 × 10 = 9.048$, and the actual current is
+<p>Segue-se que, após $0.001$ seg., o termo variável
+é $0.9048 × 10 = 9.048$, e a corrente real é
 $10 - 9.048 = 0.952$.
 
-<p>Similarly, at the end of $0.1$ sec.,
+<p>De modo semelhante, ao fim de $0.1$ seg.,
 \[
 \frac{t}{T} = 10;\quad \epsilon^{-10} = 0.000045;
 \]
-the variable term is $10 × 0.000045 = 0.00045$, the current
-being $9.9995$.
+o termo variável é $10 × 0.000045 = 0.00045$, a corrente
+sendo $9.9995$.
 
-<p>(2) The intensity $I$ of a beam of light which has
-passed through a thickness $l$ cm. of some transparent
-medium is $I = I_0\epsilon^{-Kl}$, where $I_0$ is the initial intensity
-of the beam and $K$ is a “constant of absorption.”
+<p>(2) A intensidade $I$ de um feixe de luz que
+passou através de uma espessura $l$ cm. de algum meio
+transparente é $I = I_0\epsilon^{-Kl}$, onde $I_0$ é a intensidade inicial
+do feixe e $K$ é uma “constante de absorção.”
 
-<p>This constant is usually found by experiments. If
-it be found, for instance, that a beam of light has
-its intensity diminished by 18% in passing through
-$10$ cms. of a certain transparent medium, this means
-that $82 = 100 × \epsilon^{-K×10}$ or $\epsilon^{-10K} = 0.82$, and from the
-table one sees that $10K = 0.20$ very nearly; hence
+<p>Esta constante é usualmente achada por experimentos. Se
+for achado, por exemplo, que um feixe de luz tem
+sua intensidade diminuída em 18% ao passar através de
+$10$ cms. de certo meio transparente, isto significa
+que $82 = 100 × \epsilon^{-K×10}$ ou $\epsilon^{-10K} = 0.82$, e da
+tabela se vê que $10K = 0.20$ muito aproximadamente; logo
 $K = 0.02$.
 
-<p>To find the thickness that will reduce the intensity
-to half its value, one must find the value of $l$ which
-satisfies the equality $50 = 100 × \epsilon^{-0.02l}$, or $0.5 = \epsilon^{-0.02l}$.
+<p>Para achar a espessura que reduzirá a intensidade
+à metade de seu valor, deve-se achar o valor de $l$ que
+satisfaz a igualdade $50 = 100 × \epsilon^{-0.02l}$, ou $0.5 = \epsilon^{-0.02l}$.
 
-It is found by putting this equation in its logarithmic
-form, namely,
+Isto se acha pondo esta equação em sua forma logarítmica,
+a saber,
 \[
 \log 0.5 = -0.02 × l × \log \epsilon,
 \]
-which gives
+que dá
 \[
 
 l = \frac{-0.3010}{-0.02 × 0.4343}
- = 34.7 \text{centimetres nearly}.
+ = 34.7 \text{centímetros aproximadamente}.
 \]
 
-<p>(3) The quantity $Q$ of a radio-active substance
-which has not yet undergone transformation is known
-to be related to the initial quantity $Q_0$ of the substance
-by the relation $Q = Q_0 \epsilon^{-\lambda t}$, where $\lambda$ is a constant
-and $t$ the time in seconds elapsed since the transformation
-began.
+<p>(3) A quantidade $Q$ de uma substância radioativa
+que ainda não sofreu transformação é conhecida
+por estar relacionada à quantidade inicial $Q_0$ da substância
+pela relação $Q = Q_0 \epsilon^{-\lambda t}$, onde $\lambda$ é uma constante
+e $t$ o tempo em segundos decorrido desde que a transformação
+começou.
 
-<p>For “Radium $A$,” if time is expressed in seconds,
-experiment shows that $\lambda = 3.85 × 10^{-3}$. Find the time
-required for transforming half the substance. (This
-time is called the “mean life” of the substance.)
+<p>Para o “Rádio $A$,” se o tempo for expresso em segundos,
+a experiência mostra que $\lambda = 3.85 × 10^{-3}$. Encontre o tempo
+requerido para transformar metade da substância. (Este
+tempo é chamado a “vida média” da substância.)
 
-<p>We have $0.5 = \epsilon^{-0.00385t}$.<a name="erratum0a"/>
+<p>Temos $0.5 = \epsilon^{-0.00385t}$.<a name="erratum0a"/>
 \begin{align*}
 \log 0.5 &= -0.00385t × \log \epsilon; \\
- \text{and}\;
-t &= 3\text{ minutes very nearly}.
+ \text{e}\;
+t &= 3\text{ minutos aproximadamente}.
 \end{align*}
 
 <p>
-<hr><h3>Exercises XIII</h3>
+<hr><h3>Exercícios XIII</h3>
 
-(1) Draw the curve $y = b \epsilon^{-\frac{t}{T}}$; where $b = 12$, $T = 8$,
-and $t$ is given various values from $0$ to $20$.
+(1) Desenhe a curva $y = b \epsilon^{-\frac{t}{T}}$; onde $b = 12$, $T = 8$,
+e $t$ recebe vários valores de $0$ a $20$.
 
-<p>(2) If a hot body cools so that in $24$ minutes its
-excess of temperature has fallen to half the initial
-amount, deduce the time-constant, and find how long
-it will be in cooling down to $1$ per cent. of the original
-excess.
+<p>(2) Se um corpo quente resfria de tal modo que em $24$ minutos seu
+excesso de temperatura caiu à metade da quantidade inicial,
+deduza a constante de tempo, e ache quanto tempo
+levará para resfriar até $1$ por cento do excesso
+original.
 
 
-<p>(3) Plot the curve $y = 100(1-\epsilon^{-2t})$.
+<p>(3) Plote a curva $y = 100(1-\epsilon^{-2t})$.
 
-<p>(4) The following equations give very similar curves:
+<p>(4) As seguintes equações dão curvas muito semelhantes:
 \begin{align*}
 \text{(i)}\   y &= \frac{ax}{x + b}; \\
 \text{(ii)}\  y &= a(1 - \epsilon^{-\frac{x}{b}}); \\
 \text{(iii)}\ y &= \frac{a}{90°} \arctan \left(\frac{x}{b}\right).
 \end{align*}
 
-<p>Draw all three curves, taking $a= 100$ millimetres;
-$b = 30$ millimetres.
+<p>Desenhe as três curvas, tomando $a= 100$ milímetros;
+$b = 30$ milímetros.
 
-<p>(5) Find the differential coefficient of $y$ with respect
-to $x$, if
+<p>(5) Encontre o coeficiente diferencial de $y$ em relação
+a $x$, se
 \[
 (a) y = x^x;\quad
 (b) y = (\epsilon^x)^x;\quad
 (c) y = \epsilon^{x^x}.
 \]
 
-<p>(6) For “Thorium $A$,” the value of $\lambda$ is $5$; find the
-“mean life,” that is, the time taken by the transformation
-of a quantity $Q$ of “Thorium $A$” equal to
-half the initial quantity $Q_0$ in the expression
+<p>(6) Para o “Tório $A$,” o valor de $\lambda$ é $5$; ache a
+“vida média,” isto é, o tempo tomado pela transformação
+de uma quantidade $Q$ de “Tório $A$” igual a
+metade da quantidade inicial $Q_0$ na expressão
 \[
 Q = Q_0 \epsilon^{-\lambda t};
 \]
-$t$ being in seconds.
+$t$ sendo em segundos.
 
-<p>(7) A condenser of capacity $K = 4 × 10^{-6}$, charged
-to a potential $V_0 = 20$, is discharging through a resistance
-of $10,000$ ohms. Find the potential $V$ after (<em>a</em> ) $0.1$
-second; (<em>b</em> ) $0.01$ second; assuming that the fall of
-potential follows the rule $V = V_0 \epsilon^{-\frac{t}{KR}}$.
+<p>(7) Um condensador de capacidade $K = 4 × 10^{-6}$, carregado
+a um potencial $V_0 = 20$, está descarregando através de uma resistência
+de $10{,}000$ ohms. Encontre o potencial $V$ após (<em>a</em> ) $0.1$
+segundo; (<em>b</em> ) $0.01$ segundo; assumindo que a queda de
+potencial segue a regra $V = V_0 \epsilon^{-\frac{t}{KR}}$.
 
-<p>(8) The charge $Q$ of an electrified insulated metal
-sphere is reduced from $20$ to $16$ units in $10$ minutes.
-Find the coefficient $\mu$ of leakage, if $Q = Q_0 × \epsilon^{-\mu t}$; $Q_0$
-being the initial charge and $t$ being in seconds. Hence
-find the time taken by half the charge to leak away.
+<p>(8) A carga $Q$ de uma esfera metálica isolada eletrizada
+é reduzida de $20$ a $16$ unidades em $10$ minutos.
+Encontre o coeficiente $\mu$ de fuga, se $Q = Q_0 × \epsilon^{-\mu t}$; $Q_0$
+sendo a carga inicial e $t$ sendo em segundos. Daí
+ache o tempo tomado por metade da carga para vazar.
 
 
-<p>(9) The damping on a telephone line can be ascertained
-from the relation $i = i_0 \epsilon^{-\beta l}$, where $i$ is the
-strength, after $t$ seconds, of a telephonic current of
-initial strength $i_0$; $l$ is the length of the line in kilometres,
-and $\beta$ is a constant. For the Franco-English
-submarine cable laid in 1910, $\beta = 0.0114$. Find the
-damping at the end of the cable ($40$ kilometres), and
-the length along which $i$ is still $8$% of the original
-current (limiting value of very good audition).
+<p>(9) O amortecimento em uma linha telefônica pode ser apurado
+a partir da relação $i = i_0 \epsilon^{-\beta l}$, onde $i$ é a
+intensidade, após $t$ segundos, de uma corrente telefônica de
+intensidade inicial $i_0$; $l$ é o comprimento da linha em quilômetros,
+e $\beta$ é uma constante. Para o cabo submarino
+franco-inglês lançado em 1910, $\beta = 0.0114$. Encontre o
+amortecimento no fim do cabo ($40$ quilômetros), e
+o comprimento ao longo do qual $i$ ainda é $8$% da corrente original
+(valor limite de audição muito boa).
 
-<p>(10) The pressure $p$ of the atmosphere at an altitude
-$h$ kilometres is given by $p=p_0 \epsilon^{-kh}$; $p_0$ being the
-pressure at sea-level ($760$ millimetres).
+<p>(10) A pressão $p$ da atmosfera a uma altitude
+$h$ quilômetros é dada por $p=p_0 \epsilon^{-kh}$; $p_0$ sendo a
+pressão ao nível do mar ($760$ milímetros).
 
-<p>The pressures at $10$, $20$ and $50$ kilometres being
-$199.2$, $42.2$, $0.32$ respectively, find $k$ in each case.
-Using the mean value of $k$, find the percentage error
-in each case.
+<p>As pressões a $10$, $20$ e $50$ quilômetros sendo
+$199.2$, $42.2$, $0.32$ respectivamente, ache $k$ em cada caso.
+Usando o valor médio de $k$, ache o erro percentual
+em cada caso.
 
-<p>(11) Find the minimum or maximum of $y = x^x$.
+<p>(11) Encontre o mínimo ou máximo de $y = x^x$.
 
-<p>(12) Find the minimum or maximum of $y = x^{\frac{1}{x}}$.
+<p>(12) Encontre o mínimo ou máximo de $y = x^{\frac{1}{x}}$.
 
-<p>(13) Find the minimum or maximum of $y = xa^{\frac{1}{x}}$.
+<p>(13) Encontre o mínimo ou máximo de $y = xa^{\frac{1}{x}}$.
 
-<p><h3 class="answers">Answers</h3>
+<p><h3 class="answers">Respostas</h3>
 
-<p>(1)   Let $\dfrac{t}{T} = x$ ($\therefore t = 8x$), and use the Table above.
+<p>(1)   Seja $\dfrac{t}{T} = x$ ($\therefore t = 8x$), e use a Tabela acima.
 
-<p>(2)   $T = 34.627$; $159.46$ minutes.
+<p>(2)   $T = 34.627$; $159.46$ minutos.
 
-<p>(3)   Take $2t = x$; and use the Table above.
+<p>(3)   Tome $2t = x$; e use a Tabela acima.
 
 <p>(5)   (<em>a</em> ) $x^x \left(1 + \log_\epsilon x\right)$;&nbsp;&nbsp;
 (<em>b</em> ) $2x(\epsilon^x)^x$;&nbsp;&nbsp;
 (<em>c</em> ) $\epsilon^{x^x} × x^x \left(1 + \log_\epsilon x\right)$.
 
 
-<p>(6)   $0.14$ second.
+<p>(6)   $0.14$ segundo.
 
 <p>(7)   (<em>a</em> ) $1.642$;&nbsp;&nbsp; (<em>b</em> ) $15.58$.
 
 
 <p>(8)   $\mu = 0.00037$, $31^m \frac{1}{4}$.
 
-<p>(9)   $i$ is $63.4$% of $i_0$, $220$ kilometres.
+<p>(9)   $i$ é $63.4$% de $i_0$, $220$ quilômetros.
 
-<p>(10)   $0.133$, $0.145$, $0.155$, mean $0.144$; $-10.2$%, $-0.9$%, $+77.2$%.
-
-
-<p>(11)   Min. for $x = \dfrac{1}{\epsilon}$.
-
-<p>(12)   Max. for $x = \epsilon$.
+<p>(10)   $0.133$, $0.145$, $0.155$, média $0.144$; $-10.2$%, $-0.9$%, $+77.2$%.
 
 
-<p>(13)   Min. for $x = \log_\epsilon a$.
+<p>(11)   Mín. para $x = \dfrac{1}{\epsilon}$.
+
+<p>(12)   Máx. para $x = \epsilon$.
+
+
+<p>(13)   Mín. para $x = \log_\epsilon a$.
 <br>
-<script type="text/javascript" src="https://payhip.com/payhip.js"></script>
-<h3>Get Complete Step-by-Step Solutions</h3>
-<a href="https://payhip.com/b/2MVru"><img class="cover" src="cover-small.png" width="180px"></a>
-
-<ul>
-    <li>For all exercises in this book.</li>
-    <li>Check your work or get unstuck.</li>
-    <li>Written by CalculusMadeEasy.org</li>
-	<li>Support this website ❤️.</li>
-	<li>229 pages</li>
-    <li><a href="https://payhip.com/b/2MVru">More details</a></li>
-    <br>
-        <a href="https://payhip.com/b/2MVru" class="payhip-buy-button" data-theme="green" data-product="2MVru">Download for $9</a>
-</ul>
+<!-- Soluções comerciais removidas: projeto público e sem fins lucrativos -->
 
 <hr>
-<a href="15.html">Next &rarr;</a><br>
-<a href="/">Main Page &uarr;</a><br>
+<a href="15.html">Próximo &rarr;</a><br>
+<a href="14.html">← Anterior</a><br>
+<a href="index.html">Página principal &uarr;</a><br>
+
+<footer class="site-footer" role="contentinfo">
+  <p class="a rotatedFloralHeartBullet"></p>
+
+  <div class="manifesto">
+    <p class="manifesto-lead">
+      Este é um <strong>projeto público</strong>, sem fins lucrativos.
+      Não é permitido comercializá-lo, vendê-lo nem usá-lo como produto pago.
+    </p>
+    <p class="manifesto-quote">
+      A educação é um direito de todos.
+      O conhecimento deve ser livre sempre que não cause o mal:
+      deve circular, ensinar e libertar, nunca aprisionar quem aprende.
+    </p>
+    <p class="manifesto-sign">
+      - Thales Rodrigues
+    </p>
+  </div>
+
+  <nav class="author-links" aria-label="Redes de Thales Rodrigues">
+    <a href="https://www.linkedin.com/in/thales-oliveira-rodrigues/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    <span class="dot" aria-hidden="true">·</span>
+    <a href="https://github.com/Rodriguestmo" target="_blank" rel="noopener noreferrer">GitHub</a>
+  </nav>
+
+  <p class="footer-meta">
+    <small>
+      Tradução e adaptação PT-BR por Thales Rodrigues.
+      Texto de Silvanus P. Thompson em domínio público (Project Gutenberg).
+      Notas de contexto inspiradas na edição Gardner (1998).
+      Projeto público e gratuito.
+    </small>
+  </p>
+</footer>
 
 <script src="j/jquery.js"></script>
 <script src="j/modernizr.js"></script>
 <script src="j/dih5.js"></script>
+<script src="j/notes-toggle.js"></script>
 <!-- Analytics desativado na edição PT local -->
+</body>
+</html>

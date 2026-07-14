@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<meta charset="utf-8">
-<title>Maxima and Minima | Calculus Made Easy</title>
+<html lang="pt-BR">
+<head>
+{% include "seo_head.html" %}
 <link rel="stylesheet" href="screen.css">
 <style>
 body{counter-reset:h1 11}
@@ -11,313 +12,333 @@ body{counter-reset:h1 11}
 <script type="text/javascript"
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Chapter",
+  "name": "Máximos e Mínimos",
+  "position": 11,
+  "isPartOf": {
+    "@type": "Book",
+    "name": "Cálculo Tornado Fácil",
+    "url": "{{ site_url }}/"
+  },
+  "author": {"@type": "Person", "name": "Silvanus P. Thompson"},
+  "translator": {"@type": "Person", "name": "Thales Rodrigues"},
+  "url": "{{ site_url }}/11.html",
+  "inLanguage": "pt-BR",
+  "isAccessibleForFree": true
+}
+</script>
+</head>
+<body>
+{% include "toolbar.html" %}
 
-<h1><br>Maxima and Minima</h1>
+<h1><br>Máximos e Mínimos</h1>
 <p class="a rotatedFloralHeartBullet">
 
-<p>One of the principal uses of the process of differentiating
-is to find out under what conditions the value
-of the thing differentiated becomes a maximum, or a
-minimum. This is often exceedingly important in
-engineering questions, where it is most desirable to
-know what conditions will make the cost of working
-a minimum, or will make the efficiency a maximum.
+<p>Um dos principais usos do processo de diferenciar
+é descobrir sob que condições o valor
+da coisa diferenciada se torna um máximo, ou um
+mínimo. Isto é frequentemente extremamente importante em
+questões de engenharia, onde é muito desejável
+saber quais condições farão o custo de operação
+um mínimo, ou farão a eficiência um máximo.
 
-<p>Now, to begin with a concrete case, let us take the
-equation
+<p>Ora, para começar com um caso concreto, tomemos a
+equação
 \[
 y = x^2 - 4x + 7.
 \]
 <a name="figure26">
 <p><img src="33283-t/images/105a.pdf.png-1.png">
 
-<p>By assigning a number of successive values to $x$,
-and finding the corresponding values of $y$, we can
+<p>Atribuindo um número de valores sucessivos a $x$,
+e encontrando os valores correspondentes de $y$, podemos
 
-readily see that the equation represents a curve with
-a minimum.
+prontamente ver que a equação representa uma curva com
+um mínimo.
 <table>
 <tr><td>$x$</td><td>$ 0$</td><td>$ 1 $</td><td>$2 $</td><td>$3 $</td><td>$4$</td><td>$ 5$</td></tr>
 <tr><td>$y$</td><td>$ 7$</td><td>$ 4 $</td><td>$3 $</td><td>$4 $</td><td>$7$</td><td>$ 12$</td></tr>
 </table>
 
 
-<p>These values are plotted in <a href="#figure26">Figure 26</a>, which shows
-that $y$ has apparently a minimum value of $3$, when $x$
-is made equal to $2$. But are you sure that the
-minimum occurs at $2$, and not at $2 \tfrac{1}{4}$ or at $1 \tfrac{3}{4}$?
+<p>Esses valores estão traçados na <a href="#figure26">Figura 26</a>, que mostra
+que $y$ tem aparentemente um valor mínimo de $3$, quando $x$
+é feito igual a $2$. Mas você tem certeza de que o
+mínimo ocorre em $2$, e não em $2 \tfrac{1}{4}$ ou em $1 \tfrac{3}{4}$?
 
-<p>Of course it would be possible with any algebraic
-expression to work out a lot of values, and in this
-way arrive gradually at the particular value that
-may be a maximum or a minimum.
+<p>Claro que seria possível com qualquer expressão algébrica
+calcular um monte de valores, e desse
+modo chegar gradualmente ao valor particular que
+pode ser um máximo ou um mínimo.
 
 
 <a name="figure27">
 <p><img src="33283-t/images/106a.pdf.png-1.png">
 
-<p>Here is another example:
+<p>Aqui está outro exemplo:
 
-<p>Let $y = 3x - x^2$.
+<p>Seja $y = 3x - x^2$.
 
-<p>Calculate a few values thus:
+<p>Calcule alguns valores assim:
 
 <table>
 <tr><td>$x$</td><td>$-1$</td><td>$0$</td><td>$1$</td><td>$2$</td><td>$3$</td><td>$4$</td><td>$5$</td></tr>
 <tr><td>$y$</td><td>$-4$</td><td>$0$</td><td>$2$</td><td>$2$</td><td>$0$</td><td>$-4$</td><td>$-10$</td></tr>
 </table>
 
-<p>Plot these values as in <a href="#figure27">Figure 27</a>.
+<p>Trace esses valores como na <a href="#figure27">Figura 27</a>.
 
-<p>It will be evident that there will be a maximum
-somewhere between $x = 1$ and $x = 2$; and the thing
-<em>looks</em> as if the maximum value of $y$ ought to be
-about $2 \tfrac{1}{4}$. Try some intermediate values. If $x = 1 \tfrac{1}{4}$,
-$y = 2.187$; if $x = 1 \tfrac{1}{2}$, $y = 2.25$; if $x = 1.6$, $y = 2.24$.
-How can we be sure that $2.25$ is the real maximum,
-or that it occurs exactly when $x = 1 \tfrac{1}{2}$?
+<p>Ficará evidente que haverá um máximo
+em algum lugar entre $x = 1$ e $x = 2$; e a coisa
+<em>parece</em> como se o valor máximo de $y$ devesse ser
+cerca de $2 \tfrac{1}{4}$. Tente alguns valores intermediários. Se $x = 1 \tfrac{1}{4}$,
+$y = 2.187$; se $x = 1 \tfrac{1}{2}$, $y = 2.25$; se $x = 1.6$, $y = 2.24$.
+Como podemos ter certeza de que $2.25$ é o máximo real,
+ou de que ocorre exatamente quando $x = 1 \tfrac{1}{2}$?
 
-<p>Now it may sound like juggling to be assured that
-there is a way by which one can arrive straight at a
-maximum (or minimum) value without making a lot of
-preliminary trials or guesses. And that way depends
-on differentiating. Look back to an earlier page (<a href="10.html#curve">here</a>) for
-the remarks about <a href="#figure14">Fig. 14</a> and <a href="#figure15">Fig. 15</a>, and you will see
-that whenever a curve gets either to its maximum
-or to its minimum height, at that point its $\dfrac{dy}{dx} = 0$.
-Now this gives us the clue to the dodge that is
-wanted. When there is put before you an equation,
-and you want to find that value of $x$ that will make
-its $y$ a minimum (or a maximum), <em>first differentiate
-it</em>, and having done so, write its $\dfrac{dy}{dx}$ as <em>equal to zero</em>,
-and then solve for $x$. Put this particular value of $x$
-into the original equation, and you will then get the
-required value of $y$. This process is commonly called
-“equating to zero.”
+<p>Ora, pode parecer prestidigitação ser assegurado de que
+há um jeito pelo qual se chega direto a um
+valor máximo (ou mínimo) sem fazer um monte de
+ensaios preliminares ou palpites. E esse jeito depende
+de diferenciar. Volte a uma página anterior (<a href="10.html#curve">aqui</a>) para
+as observações sobre as <a href="10.html#figure14">Fig. 14</a> e <a href="10.html#figure15">Fig. 15</a>, e verá
+que sempre que uma curva chega ou à sua altura máxima
+ou à sua altura mínima, naquele ponto seu $\dfrac{dy}{dx} = 0$.
+Ora, isto nos dá a pista para o truque que é
+desejado. Quando se coloca diante de você uma equação,
+e você quer encontrar aquele valor de $x$ que fará
+seu $y$ um mínimo (ou um máximo), <em>primeiro diferencie-a</em>,
+e tendo feito isso, escreva seu $\dfrac{dy}{dx}$ como <em>igual a zero</em>,
+e então resolva para $x$. Coloque esse valor particular de $x$
+na equação original, e você obterá então o
+valor requerido de $y$. Esse processo é comumente chamado
+de “igualar a zero.”
 
-<p>To see how simply it works, take the example with
-which this chapter opens, namely
+<p>Para ver quão simplesmente funciona, tome o exemplo com
+que este capítulo se abre, a saber
 \[
 y = x^2 - 4x + 7.
 \]
 
 
-Differentiating, we get:
+Diferenciando, obtemos:
 \[
 \dfrac{dy}{dx} = 2x - 4.
 \]
-Now equate this to zero, thus:
+Agora iguale isto a zero, assim:
 \[
 2x - 4 = 0.
 \]
-Solving this equation for $x$, we get:
+Resolvendo essa equação para $x$, obtemos:
 \begin{align*}
 2x &= 4, \\
  x &= 2.
 \end{align*}
 
-<p>Now, we know that the maximum (or minimum)
-will occur exactly when $x=2$.
+<p>Ora, sabemos que o máximo (ou mínimo)
+ocorrerá exatamente quando $x=2$.
 
-<p>Putting the value $x=2$ into the original equation,
-we get
+<p>Colocando o valor $x=2$ na equação original,
+obtemos
 \begin{align*}
 y &= 2^2 - (4×2) + 7 \\
   &= 4 - 8 + 7       \\
   &= 3.
 \end{align*}
 
-<p>Now look back at <a href="#figure26">Figure 26</a>, and you will see that the
-minimum occurs when $x = 2$, and that this minimum
-of $y = 3$.
+<p>Agora olhe de volta para a <a href="#figure26">Figura 26</a>, e verá que o
+mínimo ocorre quando $x = 2$, e que esse mínimo
+de $y = 3$.
 
-<p>Try the second example (<a href="#figure24">Figure 24</a>), which is
+<p>Tente o segundo exemplo (<a href="#figure24">Figura 24</a>), que é
 \begin{align*}
 y &= 3x - x^2. \\
-   \text{Differentiating,}\;
+   \text{Diferenciando,}\;
 \frac{dy}{dx} &= 3 - 2x. \\
 \end{align*}
-Equating to zero,
+Igualando a zero,
 \begin{align*}
 
 3 - 2x &= 0, \\
- \text{whence}\;
+ \text{de onde}\;
 x &= 1 \tfrac{1}{2}; \\
 \end{align*}
-and putting this value of $x$ into the original equation, we find:
+e colocando esse valor de $x$ na equação original, encontramos:
 \begin{align*}
 y &= 4 \tfrac{1}{2} - (1 \tfrac{1}{2} × 1 \tfrac{1}{2}), \\
 y &= 2 \tfrac{1}{4}.
 \end{align*}
-This gives us exactly the information as to which
-the method of trying a lot of values left us uncertain.
+Isto nos dá exatamente a informação a respeito da qual
+o método de tentar um monte de valores nos deixava incertos.
 
 
-<p>Now, before we go on to any further cases, we have
-two remarks to make. When you are told to equate
-$\dfrac{dy}{dx}$ to zero, you feel at first (that is if you have any
-wits of your own) a kind of resentment, because you
-know that $\dfrac{dy}{dx}$ has all sorts of different values at
-different parts of the curve, according to whether it
-is sloping up or down. So, when you are suddenly
-told to write
+<p>Ora, antes de passarmos a quaisquer casos ulteriores, temos
+duas observações a fazer. Quando se lhe diz para igualar
+$\dfrac{dy}{dx}$ a zero, você sente a princípio (isto é, se tem algum
+juízo próprio) uma espécie de ressentimento, porque sabe
+que $\dfrac{dy}{dx}$ tem todo tipo de valores diferentes em
+diferentes partes da curva, conforme ela esteja
+subindo ou descendo. Assim, quando de repente se
+lhe diz para escrever
 \[
 \frac{dy}{dx} = 0,
 \]
-you resent it, and feel inclined to say that it can't be
-true. Now you will have to understand the essential
-difference between “an equation,” and “an equation
-of condition.” Ordinarily you are dealing with equations
-that are true in themselves, but, on occasions,
-of which the present are examples, you have to write
-down equations that are not necessarily true, but are
-only true if certain conditions are to be fulfilled; and
-you write them down in order, by solving them, to
-find the conditions which make them true. Now we
-want to find the particular value that $x$ has when
-the curve is neither sloping up nor sloping down, that
-is, at the particular place where $\dfrac{dy}{dx} = 0$. So, writing
-$\dfrac{dy}{dx} = 0$ does <em>not</em> mean that it always is $=0$; but you
-write it down <em>as a condition</em> in order to see how
-much $x$ will come out if $\dfrac{dy}{dx}$ is to be zero.
+você se ressente, e sente vontade de dizer que isso não pode ser
+verdade. Ora, você terá de entender a diferença essencial
+entre “uma equação” e “uma equação
+de condição.” Ordinariamente você lida com equações
+que são verdadeiras em si mesmas, mas, em ocasiões
+das quais as presentes são exemplos, você tem de escrever
+equações que não são necessariamente verdadeiras, mas são
+apenas verdadeiras se certas condições devem ser cumpridas; e
+você as escreve a fim de, resolvendo-as,
+encontrar as condições que as tornam verdadeiras. Ora queremos
+encontrar o valor particular que $x$ tem quando
+a curva não está nem subindo nem descendo, isto
+é, no lugar particular em que $\dfrac{dy}{dx} = 0$. Assim, escrever
+$\dfrac{dy}{dx} = 0$ <em>não</em> significa que ele sempre é $=0$; mas você
+o escreve <em>como uma condição</em> a fim de ver quanto
+$x$ resultará se $\dfrac{dy}{dx}$ deve ser zero.
 
 
-<p>The second remark is one which (if you have any
-wits of your own) you will probably have already
-made: namely, that this much-belauded process of
-equating to zero entirely fails to tell you whether
-the $x$ that you thereby find is going to give you
-a <em>maximum</em> value of $y$ or a <em>minimum</em> value of $y$.
-Quite so. It does not of itself discriminate; it finds
-for you the right value of $x$ but leaves you to find
-out for yourselves whether the corresponding $y$ is a
-maximum or a minimum. Of course, if you have
-plotted the curve, you know already which it will be.
+<p>A segunda observação é uma que (se você tem algum
+juízo próprio) provavelmente já
+terá feito: a saber, que esse processo tão elogiado de
+igualar a zero falha inteiramente em dizer-lhe se
+o $x$ que você encontra com ele vai lhe dar
+um valor <em>máximo</em> de $y$ ou um valor <em>mínimo</em> de $y$.
+Exatamente. Ele não discrimina por si; encontra
+para você o valor certo de $x$ mas deixa a você descobrir
+por conta própria se o $y$ correspondente é um
+máximo ou um mínimo. Claro, se você
+traçou a curva, já sabe qual será.
 
-<p>For instance, take the equation:
+<p>Por exemplo, tome a equação:
 \[
 y = 4x + \frac{1}{x}.
 \]
 
-<p>Without stopping to think what curve it corresponds
-to, differentiate it, and equate to zero:
+<p>Sem parar para pensar a que curva ela corresponde,
+diferencie-a, e iguale a zero:
 \begin{align*}
 \frac{dy}{dx}  &= 4 - x^{-2} = 4 - \frac{1}{x^2} = 0; \\
-\text{ whence}\;
+\text{ de onde}\;
 x &= \tfrac{1}{2}; \\
 \end{align*}
-and, inserting this value,
+e, inserindo esse valor,
 \begin{align*}
 y &= 4
 \end{align*}
-will be either a maximum or else a minimum. But
-which? You will hereafter be told a way, depending
-upon a second differentiation, (see <a href="11.html">Chap. XII.</a>).
-But at present it is enough if you will simply try
-any other value of $x$ differing a little from the one
-found, and see whether with this altered value the
-corresponding value of $y$ is less or greater than that
-already found.
+será ou um máximo ou então um mínimo. Mas
+qual? Mais adiante se lhe dirá um jeito, dependendo
+de uma segunda diferenciação, (veja <a href="12.html">Cap. XII.</a>).
+Mas por ora basta que você simplesmente tente
+qualquer outro valor de $x$ que difira um pouco daquele
+encontrado, e veja se com esse valor alterado o
+valor correspondente de $y$ é menor ou maior do que o
+já encontrado.
 
 
-<p>Try another simple problem in maxima and minima.
-Suppose you were asked to divide any number into
-two parts, such that the product was a maximum?
-How would you set about it if you did not know
-the trick of equating to zero? I suppose you could
-worry it out by the rule of try, try, try again. Let
-$60$ be the number. You can try cutting it into two
-parts, and multiplying them together. Thus, $50$ times
-$10$ is $500$; $52$ times $8$ is $416$; $40$ times $20$ is $800$; $45$
-times $15$ is $675$; $30$ times $30$ is $900$. This looks like
-a maximum: try varying it. $31$ times $29$ is $899$,
-which is not so good; and $32$ times $28$ is $896$, which
-is worse. So it seems that the biggest product will
-be got by dividing into two equal halves.
+<p>Tente outro problema simples de máximos e mínimos.
+Suponha que se lhe peça dividir um número qualquer em
+duas partes, de tal modo que o produto seja um máximo?
+Como você se poria a isso se não conhecesse
+o truque de igualar a zero? Suponho que poderia
+resolver à força pela regra de tente, tente, tente de novo. Seja
+$60$ o número. Você pode tentar cortá-lo em duas
+partes, e multiplicá-las. Assim, $50$ vezes
+$10$ é $500$; $52$ vezes $8$ é $416$; $40$ vezes $20$ é $800$; $45$
+vezes $15$ é $675$; $30$ vezes $30$ é $900$. Isto parece um
+máximo: tente variá-lo. $31$ vezes $29$ é $899$,
+que não é tão bom; e $32$ vezes $28$ é $896$, que
+é pior. Assim parece que o maior produto se
+obterá dividindo em duas metades iguais.
 
-<p>Now see what the calculus tells you. Let the
-number to be cut into two parts be called $n$. Then
-if $x$ is one part, the other will be $n-x$, and the product
-will be $x(n-x)$ or $nx-x^2$. So we write $y=nx-x^2$.
-Now differentiate and equate to zero;
+<p>Agora veja o que o cálculo lhe diz. Seja o
+número a ser cortado em duas partes chamado $n$. Então
+se $x$ é uma parte, a outra será $n-x$, e o produto
+será $x(n-x)$ ou $nx-x^2$. Assim escrevemos $y=nx-x^2$.
+Agora diferencie e iguale a zero;
 \begin{align*}
 \dfrac{dy}{dx} = n - 2x = 0\\
- \text{Solving for $x$, we get}\;  \dfrac{n}{2} = x.\\
+ \text{Resolvendo para $x$, obtemos}\;  \dfrac{n}{2} = x.\\
 \end{align*}
-So now we <em>know</em> that whatever number $n$ may be,
-we must divide it into two equal parts if the product
-of the parts is to be a maximum; and the value of
-that maximum product will always be $ = \tfrac{1}{4} n^2$.
+Assim agora <em>sabemos</em> que qualquer que seja o número $n$,
+devemos dividi-lo em duas partes iguais se o produto
+das partes deve ser um máximo; e o valor desse
+produto máximo será sempre $ = \tfrac{1}{4} n^2$.
 
-<p>This is a very useful rule, and applies to any number
-of factors, so that if $m+n+p=$ a constant number,
-$m×n×p$ is a maximum when $m=n=p$.
+<p>Esta é uma regra muito útil, e se aplica a qualquer número
+de fatores, de modo que se $m+n+p=$ um número constante,
+$m×n×p$ é um máximo quando $m=n=p$.
 
 
 <p>
 
-<em>Test Case.</em><p>
-Let us at once apply our knowledge to a case that
-we can test.
+<em>Caso de teste.</em><p>
+Apliquemos de uma vez nosso conhecimento a um caso que
+podemos testar.
 
 \begin{align*}
-  \text{Let }   y &= x^2 - x;
+  \text{Seja }   y &= x^2 - x;
 \end{align*}
-and let us find whether this function has a maximum
-or minimum; and if so, test whether it is a maximum
-or a minimum.
+e encontremos se essa função tem um máximo
+ou mínimo; e se tem, testemos se é um máximo
+ou um mínimo.
 
-<p>Differentiating, we get
+<p>Diferenciando, obtemos
 \begin{align*}
 \frac{dy}{dx} &= 2x - 1. \\
- \text{ Equating to zero, we get }\;
+ \text{ Igualando a zero, obtemos }\;
 2x - 1 &= 0, \\
- \text{whence }\;
+ \text{de onde }\;
 2x &= 1, \\
- \text{or } \;
+ \text{ou } \;
 x &= \tfrac{1}{2}.
 \end{align*}
 
-<p>That is to say, when $x$ is made $=\frac{1}{2}$, the corresponding
-value of $y$ will be either a maximum or a minimum.
-Accordingly, putting $x=\frac{1}{2}$ in the original equation, we
-get
+<p>Isto é, quando $x$ é feito $=\frac{1}{2}$, o valor correspondente
+de $y$ será ou um máximo ou um mínimo.
+Consequentemente, pondo $x=\frac{1}{2}$ na equação original, obtemos
 \begin{align*}
 y &= (\tfrac{1}{2})^2 - \tfrac{1}{2}, \\
- or \;
+ ou \;
 y &= -\tfrac{1}{4}.
 \end{align*}
 
-<p>Is this a maximum or a minimum? To test it, try
-putting $x$ a little bigger than $\frac{1}{2}$,–say make $x=0.6$.
-Then
+<p>Isto é um máximo ou um mínimo? Para testar, tente
+pôr $x$ um pouco maior do que $\frac{1}{2}$, digamos faça $x=0.6$.
+Então
 \[
 y = (0.6)^2 - 0.6 = 0.36 - 0.6 = -0.24,
 \]
-which is higher up than $-0.25$; showing that
-$y = -0.25$ is a <em>minimum</em>.
+que está mais alto do que $-0.25$; mostrando que
+$y = -0.25$ é um <em>mínimo</em>.
 
-<p>Plot the curve for yourself, and verify the calculation.
+<p>Trace a curva por conta própria, e verifique o cálculo.
 
 
 <p>
-<p><em>Further Examples</em>.
-A most interesting example is afforded by a curve
-that has both a maximum and a minimum. Its
-equation is:
+<p><em>Outros exemplos</em>.
+Um exemplo muito interessante é oferecido por uma curva
+que tem tanto um máximo quanto um mínimo. Sua
+equação é:
 \begin{align*}
 y &=\tfrac{1}{3} x^3 - 2x^2 + 3x + 1. \\
-   Now \; \dfrac{dy}{dx} &= x^2 - 4x +3.
+   \text{Agora } \; \dfrac{dy}{dx} &= x^2 - 4x +3.
 \end{align*}
 
 <a name="figure28">
 <p><img src="33283-t/images/113a.pdf.png-1.png">
 
-<p>Equating to zero, we get the quadratic,
+<p>Igualando a zero, obtemos a quadrática,
 \[
 x^2 - 4x +3 = 0;
 \]
-and solving the quadratic gives us <em>two</em> roots, viz.
+e resolvendo a quadrática nos dá <em>duas</em> raízes, a saber
 \[
 \left\{
 \begin{aligned}
@@ -327,25 +348,25 @@ x &= 1.
 \right.
 \]
 
-<p>Now, when $x=3$, $y=1$; and when $x=1$, $y=2\frac{1}{3}$.
-The first of these is a minimum, the second a
-maximum.
+<p>Ora, quando $x=3$, $y=1$; e quando $x=1$, $y=2\frac{1}{3}$.
+O primeiro desses é um mínimo, o segundo um
+máximo.
 
-<p>The curve itself may be plotted (as in <a href="#figure28">Figure 28</a>)
+<p>A própria curva pode ser traçada (como na <a href="#figure28">Figura 28</a>)
 
-from the values calculated, as below, from the
-original equation.
+a partir dos valores calculados, como abaixo, a partir da
+equação original.
 <table>
   <tr><td>$x$</td><td>$-1$</td><td>$0$</td><td>$1$</td><td>$2$</td><td>$3$</td><td>$4$</td><td>$5$</td><td>$6$</td></tr>
 <tr><td>$y$</td><td>$-4\frac{1}{3}$</td><td>$1$</td><td>$2\frac{1}{3}$</td><td>$1\frac{2}{3}$</td><td>$1$</td><td>$2\frac{1}{3}$</td><td>$7\frac{2}{3}$</td><td>$19$</td></tr>
 </table>
 
-<p>A further exercise in maxima and minima is
-afforded by the following example:
+<p>Um exercício ulterior de máximos e mínimos é
+oferecido pelo seguinte exemplo:
 
-<p>The equation to a circle of radius $r$, having its
-centre $C$ at the point whose coordinates are $x=a$,
-$y=b$, as depicted in <a href="#figure29">Figure 29</a>, is:
+<p>A equação de um círculo de raio $r$, tendo seu
+centro $C$ no ponto cujas coordenadas são $x=a$,
+$y=b$, como representado na <a href="#figure29">Figura 29</a>, é:
 \[
 (y-b)^2 + (x-a)^2 = r^2.
 \]
@@ -353,345 +374,351 @@ $y=b$, as depicted in <a href="#figure29">Figure 29</a>, is:
 <a name="figure29">
 <p><img src="33283-t/images/114a.pdf.png-1.png">
 
-<p>This may be transformed into
+<p>Isto pode ser transformado em
 \[
 y = \sqrt{r^2-(x-a)^2} + b.
 \]
 
-<p>Now we know beforehand, by mere inspection of
-the figure, that when $x=a$, $y$ will be either at its
-maximum value, $b+r$, or else at its minimum
-value, $b-r$. But let us not take advantage of this
+<p>Ora, sabemos de antemão, por mera inspeção da
+figura, que quando $x=a$, $y$ estará ou em seu
+valor máximo, $b+r$, ou então em seu valor mínimo,
+$b-r$. Mas não tiremos proveito desse
 
-knowledge; let us set about finding what value
-of $x$ will make $y$ a maximum or a minimum, by the
-process of differentiating and equating to zero.
+conhecimento; ponhamo-nos a encontrar que valor
+de $x$ fará $y$ um máximo ou um mínimo, pelo
+processo de diferenciar e igualar a zero.
 \begin{align*}
 \frac{dy}{dx} &= \frac{1}{2} \frac{1}{\sqrt{r^2-(x-a)^2}} × (2a-2x), \\
-\text{which reduces to}\;
+\text{que se reduz a}\;
 \frac{dy}{dx} &= \frac{a-x}{\sqrt{r^2-(x-a)^2}}.
 \end{align*}
 
-<p>Then the condition for $y$ being maximum or
-minimum is:
+<p>Então a condição para $y$ ser máximo ou
+mínimo é:
 \[
 \frac{a-x}{\sqrt{r^2-(x-a)^2}} = 0.
 \]
 
-<p>Since no value whatever of $x$ will make the denominator
-infinite, the only condition to give zero is
+<p>Como nenhum valor qualquer de $x$ fará o denominador
+infinito, a única condição para dar zero é
 \begin{align*}
 x &= a.
 \end{align*}
-Inserting this value in the original equation for
-the circle, we find
+Inserindo esse valor na equação original do
+círculo, encontramos
 \begin{align*}
 y &= \sqrt{r^2}+b;
 \end{align*}
-and as the root of $r^2$ is either $+r$ or $-r$, we have
-two resulting values of $y$
+e como a raiz de $r^2$ é ou $+r$ ou $-r$, temos
+dois valores resultantes de $y$
 \begin{align*}
 \left\{\begin{aligned}y \\ y\end{aligned}\right. &
 \begin{aligned}= b & + r \\ = b & - r.\end{aligned}
 \end{align*}
 
-<p>The first of these is the maximum, at the top;
-the second the minimum, at the bottom.
+<p>O primeiro desses é o máximo, no topo;
+o segundo o mínimo, no fundo.
 
 
-<p>If the curve is such that there is no place that is a
-maximum or minimum, the process of equating to
-zero will yield an impossible result. For instance:
+<p>Se a curva é tal que não há lugar que seja um
+máximo ou mínimo, o processo de igualar a
+zero renderá um resultado impossível. Por exemplo:
 \begin{align*}
-   Let \;
+   \text{Seja } \;
 y &= ax^3 + bx + c. \\
-   Then \;
+   \text{Então } \;
 \frac{dy}{dx} &= 3ax^2 + b.
 \end{align*}
 
-<p>Equating this to zero, we get $3ax^2 + b = 0$,
+<p>Igualando isto a zero, obtemos $3ax^2 + b = 0$,
 \[
-x^2 = \frac{-b}{3a}, \quad\text{and}\quad x = \sqrt{\frac{-b}{3a}},\;\text{ which is impossible.}
+x^2 = \frac{-b}{3a}, \quad\text{e}\quad x = \sqrt{\frac{-b}{3a}},\;\text{ que é impossível.}
 \]
-Therefore $y$ has no maximum nor minimum.
+Portanto $y$ não tem máximo nem mínimo.
 
-<p>A few more worked examples will enable you to
-thoroughly master this most interesting and useful
-application of the calculus.
+<p>Mais alguns exemplos trabalhados permitirão a você
+dominar de todo esta aplicação tão interessante e útil
+do cálculo.
 
-<p>(1) What are the sides of the rectangle of maximum
-area inscribed in a circle of radius $R$?
+<p>(1) Quais são os lados do retângulo de área máxima
+inscrito em um círculo de raio $R$?
 
-<p>If one side be called $x$,
+<p>Se um lado se chama $x$,
 \[
-\text{the other side} = \sqrt{(\text{diagonal})^2 - x^2};
+\text{o outro lado} = \sqrt{(\text{diagonal})^2 - x^2};
 \]
-and as the diagonal of the rectangle is necessarily a
-diameter, the other side $ = \sqrt{4R^2 - x^2}$.
+e como a diagonal do retângulo é necessariamente um
+diâmetro, o outro lado $ = \sqrt{4R^2 - x^2}$.
 
-<p>Then, area of rectangle $S = x\sqrt{4R^2 - x^2}$,
+<p>Então, área do retângulo $S = x\sqrt{4R^2 - x^2}$,
 \[
 \frac{dS}{dx} = x × \dfrac{d\left(\sqrt{4R^2 - x^2}\,\right)}{dx} + \sqrt{4R^2 - x^2} × \dfrac{d(x)}{dx}.
 \]
 
-<p>If you have forgotten how to differentiate $\sqrt{4R^2-x^2}$,
-here is a hint: write $4R^2-x^2=w$ and $y=\sqrt{w}$, and
-seek $\dfrac{dy}{dw}$ and $\dfrac{dw}{dx}$; fight it out, and only if you can't
-get on refer to <a href="9.html#dodge">here</a>.
+<p>Se você esqueceu como diferenciar $\sqrt{4R^2-x^2}$,
+aqui vai uma dica: escreva $4R^2-x^2=w$ e $y=\sqrt{w}$, e
+procure $\dfrac{dy}{dw}$ e $\dfrac{dw}{dx}$; lute com isso, e só se não
+conseguir continue, consulte <a href="9.html#dodge">aqui</a>.
 
 
-<p>You will get
+<p>Você obterá
 \[
 \dfrac{dS}{dx}
   = x × -\dfrac{x}{\sqrt{4R^2 - x^2}} + \sqrt{4R^2 - x^2}
   = \dfrac{4R^2 - 2x^2}{\sqrt{4R^2 - x^2}}.
 \]
 
-<p>For maximum or minimum we must have
+<p>Para máximo ou mínimo devemos ter
 \[
 \dfrac{4R^2 - 2x^2}{\sqrt{4R^2 - x^2}} = 0;
 \]
-that is, $4R^2 - 2x^2 = 0$ and $x = R\sqrt{2}$.
+isto é, $4R^2 - 2x^2 = 0$ e $x = R\sqrt{2}$.
 
-<p>The other side ${} = \sqrt{4R^2 - 2R^2} = R\sqrt{2}$; the two sides
-are equal; the figure is a square the side of which is
-equal to the diagonal of the square constructed on the
-radius. In this case it is, of course, a maximum with
-which we are dealing.
+<p>O outro lado ${} = \sqrt{4R^2 - 2R^2} = R\sqrt{2}$; os dois lados
+são iguais; a figura é um quadrado cujo lado é
+igual à diagonal do quadrado construído sobre o
+raio. Neste caso é, claro, um máximo com
+que estamos lidando.
 
-<p>(2) What is the radius of the opening of a conical
-vessel the sloping side of which has a length $l$ when
-the capacity of the vessel is greatest?
+<p>(2) Qual é o raio da abertura de um vaso cônico
+cujo lado inclinado tem comprimento $l$ quando
+a capacidade do vaso é máxima?
 
-<p>If $R$ be the radius and $H$ the corresponding height,
+<p>Se $R$ for o raio e $H$ a altura correspondente,
 $H = \sqrt{l^2 - R^2}$.
 \[
 \text{Volume } V = \pi R^2 × \dfrac{H}{3} = \pi R^2 × \dfrac{\sqrt{l^2 - R^2}}{3}.
 \]
 
-<p>Proceeding as in the previous problem, we get
+<p>Procedendo como no problema anterior, obtemos
 \begin{align*}
 \dfrac{dV}{dR}
   &= \pi R^2 × -\dfrac{R}{3\sqrt{l^2 - R^2}} + \dfrac{2\pi R}{3} \sqrt{l^2 - R^2} \\
   &= \dfrac{2\pi R(l^2 - R^2) - \pi R^3}{3\sqrt{l^2 - R^2}} = 0
 \end{align*}
-for maximum or minimum.
+para máximo ou mínimo.
 
-<p>Or, $2\pi R(l^2 - R^2) - \pi R^2 = 0$, and $R = l\sqrt{\tfrac{2}{3}}$, for a maximum,
-obviously.
+<p>Ou, $2\pi R(l^2 - R^2) - \pi R^2 = 0$, e $R = l\sqrt{\tfrac{2}{3}}$, para um máximo,
+obviamente.
 
 
-<p>(3) Find the maxima and minima of the function
+<p>(3) Encontre os máximos e mínimos da função
 \[
 y = \dfrac{x}{4-x} + \dfrac{4-x}{x}.
 \]
 
-<p>We get
+<p>Obtemos
 \[
 \dfrac{dy}{dx} = \dfrac{(4-x)-(-x)}{(4-x)^2} + \dfrac{-x - (4-x)}{x^2} = 0
 \]
-for maximum or minimum; or
+para máximo ou mínimo; ou
 \[
-\dfrac{4}{(4-x)^2} - \dfrac{4}{x^2} = 0 \quad\text{and}\quad x = 2.
+\dfrac{4}{(4-x)^2} - \dfrac{4}{x^2} = 0 \quad\text{e}\quad x = 2.
 \]
 
-<p>There is only one value, hence only one maximum
-or minimum.
+<p>Há apenas um valor, logo apenas um máximo
+ou mínimo.
 \begin{align*}
-\text{For}\quad x &= 2,\phantom{.5}\quad y = 2, \\
-\text{for}\quad x &= 1.5,\quad y = 2.27,   \\
-\text{for}\quad x &= 2.5,\quad y = 2.27;
+\text{Para}\quad x &= 2,\phantom{.5}\quad y = 2, \\
+\text{para}\quad x &= 1.5,\quad y = 2.27,   \\
+\text{para}\quad x &= 2.5,\quad y = 2.27;
 \end{align*}
-it is therefore a minimum. (It is instructive to plot
-the graph of the function.)
+é portanto um mínimo. (É instrutivo traçar
+o gráfico da função.)
 
-<p>(4) Find the maxima and minima of the function
-$y = \sqrt{1+x} + \sqrt{1-x}$. (It will be found instructive to
-plot the graph.)
+<p>(4) Encontre os máximos e mínimos da função
+$y = \sqrt{1+x} + \sqrt{1-x}$. (Será instrutivo
+traçar o gráfico.)
 
-<p>Differentiating gives at once (see example No. 1,
-<a href="9.html#ExNo1">here</a>)
+<p>Diferenciar dá de uma vez (veja o exemplo nº 1,
+<a href="9.html#ExNo1">aqui</a>)
 \[
 \dfrac{dy}{dx} = \dfrac{1}{2\sqrt{1+x}} - \dfrac{1}{2\sqrt{1-x}} = 0
 \]
-for maximum or minimum.
+para máximo ou mínimo.
 
-<p>Hence $\sqrt{1+x} = \sqrt{1-x}$ and $x = 0$, the only solution
+<p>Logo $\sqrt{1+x} = \sqrt{1-x}$ e $x = 0$, a única solução
 
-<p>For $x=0$, $y=2$.
+<p>Para $x=0$, $y=2$.
 
-<p>For $x=±0.5$, $y= 1.932$, so this is a maximum.
+<p>Para $x=±0.5$, $y= 1.932$, de modo que isto é um máximo.
 
 
-<p>(5) Find the maxima and minima of the function
+<p>(5) Encontre os máximos e mínimos da função
 \[
 y = \dfrac{x^2-5}{2x-4}.
 \]
 
-<p>We have
+<p>Temos
 \[
 \dfrac{dy}{dx} = \dfrac{(2x-4) × 2x - (x^2-5)2}{(2x-4)^2} = 0
 \]
-for maximum or minimum; or
+para máximo ou mínimo; ou
 \[
 \dfrac{2x^2 - 8x + 10}{(2x - 4)^2} = 0;
 \]
-or $x^2 - 4x + 5 = 0$; which has for solutions
+ou $x^2 - 4x + 5 = 0$; que tem por soluções
 \[
 x = \tfrac{5}{2} ± \sqrt{-1}.
 \]
 
-<p>These being imaginary, there is no real value of $x$
-for which $\dfrac{dy}{dx} = 0$; hence there is neither maximum nor
-minimum.
+<p>Sendo estas imaginárias, não há valor real de $x$
+para o qual $\dfrac{dy}{dx} = 0$; logo não há máximo nem
+mínimo.
 
-<p>(6) Find the maxima and minima of the function
+<p>(6) Encontre os máximos e mínimos da função
 \[
 (y-x^2)^2 = x^5.
 \]
 
-<p>This may be written $y = x^2 ± x^{\frac{5}{2}}$.
+<p>Isto pode ser escrito $y = x^2 ± x^{\frac{5}{2}}$.
 \[
-\dfrac{dy}{dx} = 2x ± \tfrac{5}{2} x^{\frac{3}{2}} = 0 \quad\text{for maximum or minimum};
+\dfrac{dy}{dx} = 2x ± \tfrac{5}{2} x^{\frac{3}{2}} = 0 \quad\text{para máximo ou mínimo};
 \]
-that is, $x(2 ± \tfrac{5}{2} x^{\frac{1}{2}}) = 0$, which is satisfied for $x = 0$,
-and for $2 ± \tfrac{5}{2} x^{\frac{1}{2}} = 0$, that is for $x=\tfrac{16}{25}$. So there are
-two solutions.
+isto é, $x(2 ± \tfrac{5}{2} x^{\frac{1}{2}}) = 0$, que é satisfeito para $x = 0$,
+e para $2 ± \tfrac{5}{2} x^{\frac{1}{2}} = 0$, isto é para $x=\tfrac{16}{25}$. Assim há
+duas soluções.
 
-<p>Taking first $x = 0$. If $x = -0.5$, $y = 0.25 ± \sqrt[2]{-(.5)^5}$,
-and if $x = +0.5$, $y = 0.25 ± \sqrt[2]{(.5)^5}$. On one side $y$ is
-imaginary; that is, there is no value of $y$ that can be
-represented by a graph; the latter is therefore entirely
-on the right side of the axis of $y$ (see <a href="#figure30">Figure 30</a>).
+<p>Tomando primeiro $x = 0$. Se $x = -0.5$, $y = 0.25 ± \sqrt[2]{-(.5)^5}$,
+e se $x = +0.5$, $y = 0.25 ± \sqrt[2]{(.5)^5}$. De um lado $y$ é
+imaginário; isto é, não há valor de $y$ que possa ser
+representado por um gráfico; este está portanto inteiramente
+do lado direito do eixo de $y$ (veja a <a href="#figure30">Figura 30</a>).
 
-<p>On plotting the graph it will be found that the
+<p>Ao traçar o gráfico se achará que a
 
-curve goes to the origin, as if there were a minimum
-there; but instead of continuing beyond, as it should
-do for a minimum, it retraces its steps (forming what
-is called a “cusp”). There is no minimum, therefore,
-although the condition for a minimum is satisfied,
-namely $\dfrac{dy}{dx} = 0$. It is necessary therefore always to
-check by taking one value on either side.
+curva vai até a origem, como se houvesse um mínimo
+ali; mas em vez de continuar além, como deveria
+fazer para um mínimo, ela refaz seus passos (formando o que
+se chama uma “cúspide”). Não há mínimo, portanto,
+embora a condição para um mínimo esteja satisfeita,
+a saber $\dfrac{dy}{dx} = 0$. É necessário portanto sempre
+verificar tomando um valor de cada lado.
 
 <a name="figure30">
 <p><img src="33283-t/images/120a.pdf.png-1.png">
 
-<p>Now, if we take $x = \tfrac{16}{25} = 0.64$. If $x = 0.64$, $y = 0.7373$
-and $y = 0.0819$; if $x = 0.6$, $y$ becomes $0.6389$ and $0.0811$;
-and if $x = 0.7$, $y$ becomes $0.8996$ and $0.0804$.
+<p>Agora, se tomamos $x = \tfrac{16}{25} = 0.64$. Se $x = 0.64$, $y = 0.7373$
+e $y = 0.0819$; se $x = 0.6$, $y$ se torna $0.6389$ e $0.0811$;
+e se $x = 0.7$, $y$ se torna $0.8996$ e $0.0804$.
 
-<p>This shows that there are two branches of the curve;
-the upper one does not pass through a maximum, but
-the lower one does.
+<p>Isto mostra que há dois ramos da curva;
+o superior não passa por um máximo, mas
+o inferior passa.
 
-<p>(7) A cylinder whose height is twice the radius of
-the base is increasing in volume, so that all its parts
+<p>(7) Um cilindro cuja altura é o dobro do raio da
+base está aumentando de volume, de modo que todas as suas partes
 
-keep always in the same proportion to each other;
-that is, at any instant, the cylinder is <em>similar</em> to the
-original cylinder. When the radius of the base is
-$r$ feet, the surface area is increasing at the rate of
-$20$ square inches per second; at what rate is its
-volume then increasing?
+guardam sempre a mesma proporção umas com as outras;
+isto é, a qualquer instante, o cilindro é <em>semelhante</em> ao
+cilindro original. Quando o raio da base é
+$r$ pés, a área da superfície está aumentando à taxa de
+$20$ polegadas quadradas por segundo; a que taxa seu
+volume está então aumentando?
 \begin{align*}
-\text{Area}   &= S = 2(\pi r^2)+ 2 \pi r × 2r = 6 \pi r^2.\\
+\text{Área}   &= S = 2(\pi r^2)+ 2 \pi r × 2r = 6 \pi r^2.\\
 \text{Volume} &= V = \pi r^2 × 2r=2 \pi r^3.\\
 \frac{dS}{dr} &= 12\pi r,\quad \frac{dV}{dr}=6 \pi r^2,\\
 dS            &= 12\pi r\, dr=20,\quad dr=\frac{20}{12 \pi r},\\
 dV            &=  6\pi r^2\, dr = 6 \pi r^2 × \frac{20}{12 \pi r} = 10r.
 \end{align*}
 
-<p>The volume changes at the rate of $10r$ cubic inches.
+<p>O volume muda à taxa de $10r$ polegadas cúbicas.
 
 <p><hr>
 
-<p>Make other examples for yourself. There are few
-subjects which offer such a wealth for interesting
-examples.
+<p>Faça outros exemplos por conta própria. Há poucos
+assuntos que ofereçam tal riqueza de exemplos
+interessantes.
 
 <p>
-<hr><h3>Exercises IX</h3>
+<hr><h3>Exercícios IX</h3>
 
 <p>
-(1) What values of $x$ will make $y$ a maximum
-and a minimum, if $y=\dfrac{x^2}{x+1}$?
+(1) Que valores de $x$ farão $y$ um máximo
+e um mínimo, se $y=\dfrac{x^2}{x+1}$?
 
-<p>(2) What value of $x$ will make $y$ a maximum in
-the equation $y=\dfrac{x}{a^2+x^2}$?
+<p>(2) Que valor de $x$ fará $y$ um máximo na
+equação $y=\dfrac{x}{a^2+x^2}$?
 
 
-<p>(3) A line of length $p$ is to be cut up into $4$ parts
-and put together as a rectangle. Show that the area
-of the rectangle will be a maximum if each of its
-sides is equal to $\frac{1}{4}p$.
+<p>(3) Uma linha de comprimento $p$ deve ser cortada em $4$ partes
+e montada como um retângulo. Mostre que a área
+do retângulo será um máximo se cada um de seus
+lados for igual a $\frac{1}{4}p$.
 
-<p>(4) A piece of string $30$ inches long has its two
-ends joined together and is stretched by $3$ pegs so
-as to form a triangle. What is the largest triangular
-area that can be enclosed by the string?
+<p>(4) Um pedaço de barbante de $30$ polegadas de comprimento tem suas duas
+extremidades unidas e é esticado por $3$ pinos de modo
+a formar um triângulo. Qual é a maior área triangular
+que pode ser encerrada pelo barbante?
 
-<p>(5) Plot the curve corresponding to the equation
+<p>(5) Trace a curva correspondente à equação
 \[
 y = \frac{10}{x} + \frac{10}{8-x};
 \]
-also find $\dfrac{dy}{dx}$, and deduce the value of $x$ that will
-make $y$ a minimum; and find that minimum value
-of $y$.
+encontre também $\dfrac{dy}{dx}$, e deduza o valor de $x$ que fará
+$y$ um mínimo; e encontre esse valor mínimo
+de $y$.
 
-<p>(6) If $y = x^5-5x$, find what values of $x$ will make
-$y$ a maximum or a minimum.
+<p>(6) Se $y = x^5-5x$, encontre que valores de $x$ farão
+$y$ um máximo ou um mínimo.
 
-<p>(7) What is the smallest square that can be inscribed
-in a given square?
+<p>(7) Qual é o menor quadrado que pode ser inscrito
+em um quadrado dado?
 
-<p>(8) Inscribe in a given cone, the height of which
-is equal to the radius of the base, a cylinder
-(<em>a</em>) whose volume is a maximum; (<em>b</em>) whose lateral
-area is a maximum; (<em>c</em> ) whose total area is a
-maximum.
+<p>(8) Inscreva em um cone dado, cuja altura
+é igual ao raio da base, um cilindro
+(<em>a</em>) cujo volume é um máximo; (<em>b</em>) cuja área lateral
+é um máximo; (<em>c</em> ) cuja área total é um
+máximo.
 
-<p>(9) Inscribe in a sphere, a cylinder (<em>a</em>) whose
-volume is a maximum; (<em>b</em>) whose lateral area is a
-maximum; (<em>c</em>) whose total area is a maximum.
-
-
-<p>(10) A spherical balloon is increasing in volume.
-If, when its radius is $r$ feet, its volume is increasing
-at the rate of $4$ cubic feet per second, at what rate is
-its surface then increasing?
-
-<p>(11) Inscribe in a given sphere a cone whose volume
-is a maximum.
-
-<p>(12) The current $C$ given by a battery of $N$ similar
-voltaic cells is $C=\dfrac{n×E}{R+\dfrac{rn^2}{N}}$, where $E$, $R$, $r$, are constants
-and $n$ is the number of cells coupled in series. Find
-the proportion of $n$ to $N$ for which the current is
-greatest.
+<p>(9) Inscreva em uma esfera um cilindro (<em>a</em>) cujo
+volume é um máximo; (<em>b</em>) cuja área lateral é um
+máximo; (<em>c</em>) cuja área total é um máximo.
 
 
-<p><h3 class="answers">Answers</h3>
+<p>(10) Um balão esférico está aumentando de volume.
+Se, quando seu raio é $r$ pés, seu volume está aumentando
+à taxa de $4$ pés cúbicos por segundo, a que taxa sua
+superfície está então aumentando?
 
-<p>(1)   Min.: $x = 0$, $y = 0$; max.: $x = -2$, $y = -4$.
+<p>(11) Inscreva em uma esfera dada um cone cujo volume
+é um máximo.
+
+<p>(12) A corrente $C$ dada por uma bateria de $N$ células
+voltaicas semelhantes é $C=\dfrac{n×E}{R+\dfrac{rn^2}{N}}$, onde $E$, $R$, $r$, são constantes
+e $n$ é o número de células acopladas em série. Encontre
+a proporção de $n$ para $N$ para a qual a corrente é
+máxima.
+
+
+<p><h3 class="answers">Respostas</h3>
+
+<p>(1)   Mín.: $x = 0$, $y = 0$; máx.: $x = -2$, $y = -4$.
 <p>(2)   $x = a$.
-<p>(4)   $25 \sqrt{3}$ square inches.
+<p>(4)   $25 \sqrt{3}$ polegadas quadradas.
 <p>(5)   $\dfrac{dy}{dx} = - \dfrac{10}{x^2} + \dfrac{10}{(8 - x)^2}$; $x = 4$; $y = 5$.
-<p>(6)   Max. for $x = -1$; min. for $x = 1$.
-<p>(7)   Join the middle points of the four sides.
-<p>(8)   $r = \frac{2}{3} R$, $r = \dfrac{R}{2}$, no max.
+<p>(6)   Máx. para $x = -1$; mín. para $x = 1$.
+<p>(7)   Una os pontos médios dos quatro lados.
+<p>(8)   $r = \frac{2}{3} R$, $r = \dfrac{R}{2}$, sem máx.
 <p>(9)   $r = R \sqrt{\dfrac{2}{3}}$, $r = \dfrac{R}{\sqrt{2}}$, $r = 0.8506R$.
-<p>(10)   At the rate of $\dfrac{8}{r}$ square feet per second.
+<p>(10)   À taxa de $\dfrac{8}{r}$ pés quadrados por segundo.
 <p>(11)   $r = \dfrac{R \sqrt{8}}{3}$.
 <p>(12)   $n = \sqrt{\dfrac{NR}{r}}$.
 <br>
 {%include "buy_solutions.html" %}
 
 <hr>
-<a href="12.html">Next &rarr;</a><br>
-<a href="/">Main Page &uarr;</a><br>
+<a href="12.html">Próximo &rarr;</a><br>
+<a href="10.html">← Anterior</a><br>
+<a href="index.html">Página principal &uarr;</a><br>
+
+{% include "footer.html" %}
 
 <script src="j/jquery.js"></script>
 <script src="j/modernizr.js"></script>
 <script src="j/dih5.js"></script>
+<script src="j/notes-toggle.js"></script>
 {%include "googleanalytics.html" %}
+</body>
+</html>
