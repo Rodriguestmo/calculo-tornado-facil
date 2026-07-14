@@ -34,7 +34,39 @@
 body{counter-reset:h1 3}
 </style>
 <script type="text/x-mathjax-config">
-  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\(','\)']],
+      displayMath: [['$$','$$'], ['\[','\]']],
+      processEscapes: true
+    },
+    TeX: {
+      extensions: ["AMSmath.js","AMSsymbols.js"],
+      equationNumbers: { autoNumber: "none" }
+    },
+    "HTML-CSS": {
+      linebreaks: { automatic: false },
+      styles: {
+        ".MathJax_Display": {
+          "margin": "1.5em 0",
+          "overflow-x": "auto",
+          "overflow-y": "hidden"
+        },
+        ".MathJax .mtable .mtd": {
+          "padding-top": "0.45em",
+          "padding-bottom": "0.45em"
+        },
+        ".MathJax .mtr + .mtr .mtd": {
+          "padding-top": "0.65em"
+        }
+      }
+    },
+    CommonHTML: {
+      styles: {
+        ".MJXc-display": { "margin": "1.5em 0" }
+      }
+    }
+  });
 </script>
 <script type="text/javascript"
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
@@ -207,7 +239,8 @@ polegadas. Ora o incremento de $x$ que chamamos $dx$,
 <p>Quanto será $y$ diminuído? A nova altura
 será $y - dy$. Se calculamos a altura pelo teorema de Pitágoras
 (Euclides I. 47), então seremos capazes de achar quanto $dy$
-será. O comprimento da escada é
+será. O comprimento da escada é</p>
+
 \[
 \sqrt{ (180)^2 + (19)^2 } = 181 \text{ polegadas}.
 \]
@@ -222,7 +255,8 @@ Ora $y$ é $180$, de modo que $dy$ é $180 - 179.89 = 0.11$ polegada.
 <p>Assim vemos que fazer $dx$ um aumento de $1$ polegada
 resultou em fazer $dy$ uma diminuição de $0.11$ polegada.
 
-<p>E a razão de $dy$ para $dx$ pode ser enunciada assim:
+<p>E a razão de $dy$ para $dx$ pode ser enunciada assim:</p>
+
 \[
 \frac{dy}{dx} = - \frac{0.11}{1}.
 \]

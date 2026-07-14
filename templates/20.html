@@ -7,7 +7,39 @@
 body{counter-reset:h1 20}
 </style>
 <script type="text/x-mathjax-config">
-  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\(','\)']],
+      displayMath: [['$$','$$'], ['\[','\]']],
+      processEscapes: true
+    },
+    TeX: {
+      extensions: ["AMSmath.js","AMSsymbols.js"],
+      equationNumbers: { autoNumber: "none" }
+    },
+    "HTML-CSS": {
+      linebreaks: { automatic: false },
+      styles: {
+        ".MathJax_Display": {
+          "margin": "1.5em 0",
+          "overflow-x": "auto",
+          "overflow-y": "hidden"
+        },
+        ".MathJax .mtable .mtd": {
+          "padding-top": "0.45em",
+          "padding-bottom": "0.45em"
+        },
+        ".MathJax .mtr + .mtr .mtd": {
+          "padding-top": "0.65em"
+        }
+      }
+    },
+    CommonHTML: {
+      styles: {
+        ".MJXc-display": { "margin": "1.5em 0" }
+      }
+    }
+  });
 </script>
 <script type="text/javascript"
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
@@ -71,13 +103,15 @@ que por integração direta dá a expressão acima.
 <p>Escreva $u = w$, e para $\sin w · dw$ escreva $dx$.
 Teremos então $du = dw$, enquanto $\int \sin w · dw = -\cos w = x$.
 
-<p>Pondo isso na fórmula, obtemos
+<p>Pondo isso na fórmula, obtemos</p>
+
 \begin{align*}
 \int w · \sin w\, dw &= w(-\cos w) - \int -\cos w\, dw  \\
                      &=-w \cos w + \sin w + C.
 \end{align*}
 
-<p>(2) Ache $\int x \epsilon^x\, dx$.
+<p>(2) Ache $\int x \epsilon^x\, dx$.</p>
+
 \begin{align*}
    \text{Escreva}\;
  u &=  x, & \epsilon^x\, dx&=dv; \\
@@ -93,7 +127,8 @@ du &= dx, & v &=\epsilon^x,
    = x \epsilon^x - \epsilon^x = \epsilon^x(x-1) + C.
 \]
 
-<p>(3) Tente $\int \cos^2 \theta\, d\theta$.<a name="moreexamples"/>
+<p>(3) Tente $\int \cos^2 \theta\, d\theta$.<a name="moreexamples"/></p>
+
 \begin{align*}
 u &= \cos \theta, &\cos \theta\, d\theta &= dv. \\
    \text{Logo }\;
@@ -114,8 +149,8 @@ du&= -\sin \theta\, d\theta, & v &=\sin \theta,
   &= \frac{\sin 2\theta}{4} + \frac{\theta}{2} + C.
 \end{align*}
 
-
 <p>(4) Ache $\int x^2 \sin x\, dx$.
+</p>
 
 \begin{align*}
    \text{Escreva }\;
@@ -128,19 +163,22 @@ du &= 2x\, dx, & v &= -\cos x,
 \]
 
 <p>Agora ache $\int x \cos x\, dx$, integrando por partes
-(como no Exemplo 1 acima):
+(como no Exemplo 1 acima):</p>
+
 \[
 \int x \cos x\, dx = x \sin x + \cos x+C.
 \]
 
-<p>Logo
+<p>Logo</p>
+
 \begin{align*}
 \int x^2 \sin x\, dx
   &= -x^2 \cos x + 2x \sin x + 2 \cos x + C' \\
   &= 2 \left[ x \sin x + \cos x \left(1 - \frac{x^2}{2}\right) \right] +C'.
 \end{align*}
 
-<p>(5) Ache $\int \sqrt{1-x^2}\, dx$.
+<p>(5) Ache $\int \sqrt{1-x^2}\, dx$.</p>
+
 \begin{align*}
  \text{Escreva}\;
 u &= \sqrt{1-x^2},\quad dx=dv;  \\
@@ -157,7 +195,8 @@ e $x=v$; de modo que
 \]
 
 <p>Aqui podemos usar um pequeno truque, pois podemos
-escrever
+escrever</p>
+
 \[
 \int \sqrt{1-x^2}\, dx
   = \int \frac{(1-x^2)\, dx}{\sqrt{1-x^2}}
@@ -165,11 +204,11 @@ escrever
 \]
 
 <p>Somando essas duas últimas equações, nos livramos
-de $\int \dfrac{x^2\, dx}{\sqrt{1-x^2}}$, e temos
+de $\int \dfrac{x^2\, dx}{\sqrt{1-x^2}}$, e temos</p>
+
 \[
 2 \int \sqrt{1-x^2}\, dx = x\sqrt{1-x^2} + \int \frac{dx}{\sqrt{1-x^2}}.
 \]
-
 
 <p>Você se lembra de ter encontrado $\dfrac {dx}{\sqrt{1-x^2}}$? Ele se
 obtém diferenciando $y=\arcsin x$ (veja <a href="15.html#intex3">aqui</a>); logo
@@ -187,7 +226,8 @@ alguns exemplos.
 
 <p>(1)
 
-$\int \sqrt{3+x}\, dx$.
+$\int \sqrt{3+x}\, dx$.</p>
+
 \begin{align*}
    Seja
 3+x &= u,\quad dx = du; \\
@@ -309,7 +349,8 @@ expressas em termos de funções já conhecidas.”</note>
 
 <p>Como último exemplo, resolvamos o acima juntos.
 
-<p>Por frações parciais,<a name="partfracs3"/>
+<p>Por frações parciais,<a name="partfracs3"/></p>
+
 \begin{align*}
 \frac{1}{a^2-x^2} &= \frac{1}{2a(a+x)} + \frac{1}{2a(a-x)},  \\
 dy &= \frac {dx}{2a(a+x)}+ \frac{dx}{2a(a-x)},  \\

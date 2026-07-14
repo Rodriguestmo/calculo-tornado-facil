@@ -34,7 +34,39 @@
 body{counter-reset:h1 13}
 </style>
 <script type="text/x-mathjax-config">
-  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\(','\)']],
+      displayMath: [['$$','$$'], ['\[','\]']],
+      processEscapes: true
+    },
+    TeX: {
+      extensions: ["AMSmath.js","AMSsymbols.js"],
+      equationNumbers: { autoNumber: "none" }
+    },
+    "HTML-CSS": {
+      linebreaks: { automatic: false },
+      styles: {
+        ".MathJax_Display": {
+          "margin": "1.5em 0",
+          "overflow-x": "auto",
+          "overflow-y": "hidden"
+        },
+        ".MathJax .mtable .mtd": {
+          "padding-top": "0.45em",
+          "padding-bottom": "0.45em"
+        },
+        ".MathJax .mtr + .mtr .mtd": {
+          "padding-top": "0.65em"
+        }
+      }
+    },
+    CommonHTML: {
+      styles: {
+        ".MJXc-display": { "margin": "1.5em 0" }
+      }
+    }
+  });
 </script>
 <script type="text/javascript"
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
@@ -178,7 +210,8 @@ das frações parciais que buscamos.
 <p>Suponha que queiramos voltar de $\dfrac{3x+1}{x^2-1}$ aos
 componentes que sabemos serem $\dfrac{1}{x+1}$ e $\dfrac{2}{x-1}$. Se
 não soubéssemos quais eram esses componentes, ainda
-podemos preparar o caminho escrevendo:
+podemos preparar o caminho escrevendo:</p>
+
 \[
 \frac{3x+1}{x^2-1} = \frac{3x+1}{(x+1)(x-1)} = \frac{}{x+1} + \frac{}{x-1},
 \]
@@ -198,7 +231,8 @@ $A$, $B$, $C\dots$ como quisermos. Assim, neste caso, temos:
 frações parciais, obtemos $\dfrac{A(x-1)+B(x+1)}{(x+1)(x-1)}$; e isto
 deve ser igual a $\dfrac{3x+1}{(x+1)(x-1)}$. E, como os denominadores
 nestas duas expressões são os mesmos,
-os numeradores devem ser iguais, o que nos dá:
+os numeradores devem ser iguais, o que nos dá:</p>
+
 \[
 3x + 1 = A(x-1) + B(x + 1).
 \]
@@ -223,35 +257,40 @@ $\dfrac{4x^2 + 2x - 14}{x^3 + 3x^2 - x - 3}$. O denominador se anula quando
 $x$ recebe o valor $1$; logo $x-1$ é um fator dele,
 e obviamente então o outro fator será $x^2 + 4x + 3$;
 e este pode de novo ser decomposto em $(x+1)(x+3)$.
-Assim podemos escrever a fração deste modo:
+Assim podemos escrever a fração deste modo:</p>
+
 \[
 \frac{4x^2 + 2x - 14}{x^3 + 3x^2 - x - 3}
   = \frac{A}{x+1} + \frac{B}{x-1} + \frac{C}{x+3},
 \]
 fazendo três fatores parciais.
 
-<p>Procedendo como antes, achamos
+<p>Procedendo como antes, achamos</p>
+
 \[
 4x^2 + 2x - 14 = A(x-1)(x+3) + B(x+1)(x+3) + C(x+1)(x-1).
 \]
 
-<p>Ora, se fizermos $x=1$, obtemos:
+<p>Ora, se fizermos $x=1$, obtemos:</p>
+
 \[
 -8 = (A × 0) + B(2 × 4) + (C × 0);\quad \text{isto é, } B = -1.
 \]
 
-<p>Se $x= -1$, obtemos:
+<p>Se $x= -1$, obtemos:</p>
+
 \[
 -12 = A(-2 × 2) + (B × 0) + (C × 0);\quad \text{donde } A = 3.
 \]
 
+<p>Se $x = -3$, obtemos:</p>
 
-<p>Se $x = -3$, obtemos:
 \[
 16 = (A × 0) + (B × 0) + C(-2 × -4);\quad \text{donde } C = 2.
 \]
 
-<p>Assim as frações parciais são:
+<p>Assim as frações parciais são:</p>
+
 \[
 \frac{3}{x+1} - \frac{1}{x-1} + \frac{2}{x+3},
 \]
@@ -275,7 +314,8 @@ resto do cálculo sendo feito como antes.
 -x^2 - 3 = (Ax + B)(x+1) + C(x^2+1).
 \]
 
-<p>Pondo $x= -1$, obtemos $-4 = C × 2$; e $C = -2$;
+<p>Pondo $x= -1$, obtemos $-4 = C × 2$; e $C = -2$;</p>
+
 \begin{align*}
  \text{logo } \;
 -x^2 - 3 &= (Ax + B)(x + 1) - 2x^2 - 2; \\
@@ -284,7 +324,8 @@ x^2 - 1 &= Ax(x+1) + B(x+1).
 \end{align*}
 
 <p>Pondo $x = 0$, obtemos $-1 = B$;
-logo
+logo</p>
+
 \[
 x^2 - 1 = Ax(x + 1) - x - 1;\quad \text{ou } x^2 + x = Ax(x+1); \\
  \text{e}\;
@@ -296,12 +337,14 @@ de modo que $A=1$, e as frações parciais são:
 \frac{x-1}{x^2+1} - \frac{2}{x+1}.
 \]
 
-<p>Tome como outro exemplo a fração
+<p>Tome como outro exemplo a fração</p>
+
 \[
 \frac{x^3-2}{(x^2+1)(x^2+2)}.
 \]
 
-<p>Obtemos
+<p>Obtemos</p>
+
 \begin{align*}
 \frac{x^3-2}{(x^2+1)(x^2+2)}
   &= \frac{Ax+B}{x^2+1} + \frac{Cx+D}{x^2+2}\\
@@ -318,7 +361,8 @@ expressões algébricas como aquelas com que estamos
 lidando aqui, <em>os coeficientes das mesmas potências de $x$
 são iguais e de mesmo sinal</em>.
 
-<p>Logo, como
+<p>Logo, como</p>
+
 \begin{align*}
 x^3-2
   &= (Ax+B)(x^2+2) + (Cx+D)(x^2+1) \\
@@ -346,7 +390,8 @@ como $(x+1)^2$ e $(x-2)$.
 <p>Pode-se pensar, contudo, que, como o numerador
 da fração cujo denominador é $(x+1)^2$
 pode conter termos em $x$, devemos permitir por isso ao
-escrever $Ax+B$ para seu numerador, de modo que
+escrever $Ax+B$ para seu numerador, de modo que</p>
+
 \[
 \frac{3x^2 - 2x + 1}{(x+1)^2(x-2)}
   = \frac{Ax+B}{(x+1)^2} + \frac{C}{x+1} + \frac{D}{x-2}.
@@ -359,7 +404,8 @@ apenas três relações ligando-as, e no entanto
   = \frac{x-1}{(x+1)^2} + \frac{1}{x+1} + \frac{1}{x-2}.
 \]
 
-<p>Mas se escrevermos
+<p>Mas se escrevermos</p>
+
 \[
 \frac{3x^2 - 2x + 1}{(x+1)^2(x-2)}
   = \frac{A}{(x+1)^2} + \frac{B}{x+1} + \frac{C}{x-2},
@@ -377,7 +423,8 @@ para $x=-1$. Substituindo $A$ por seu valor, obtemos
 2x = -2+B(x+1).
 \]
 
-<p>Logo $B=2$; de modo que as frações parciais são:
+<p>Logo $B=2$; de modo que as frações parciais são:</p>
+
 \[
 \frac{2}{x+1} - \frac{2}{(x+1)^2} + \frac{1}{x-2},
 \]
@@ -398,7 +445,8 @@ frações parciais definitivas.
 
 <p>Quando há uma potência de um fator de $x^2$ no
 denominador, porém, os numeradores correspondentes
-devem ser da forma $Ax+B$; por exemplo,
+devem ser da forma $Ax+B$; por exemplo,</p>
+
 \[
 \frac{3x-1}{(2x^2-1)^2(x+1)}
   = \frac{Ax+B}{(2x^2-1)^2} + \frac{Cx+D}{2x^2-1} + \frac{E}{x+1},
@@ -412,14 +460,16 @@ o que dá
 
 <p>Para $x = -1$, isto dá $E = -4$. Substituindo, transpondo,
 coletando termos semelhantes e dividindo por $x + 1$,
-obtemos
+obtemos</p>
+
 \[
 16x^3 - 16x^2 + 3 = 2Cx^3 + 2Dx^2 + x(A - C) + (B - D).
 \]
 
 <p>Logo $2C = 16$ e $C = 8$; $2D = -16$ e $D = -8$;
 $A - C = 0$ ou $A - 8 = 0$ e $A = 8$, e finalmente, $B - D = 3$
-ou $B = -5$. De modo que obtemos como frações parciais:
+ou $B = -5$. De modo que obtemos como frações parciais:</p>
+
 \[
 \frac{(8x - 5)}{(2x^2 - 1)^2} + \frac{8(x - 1)}{2x^2 - 1} - \frac{4}{x + 1}.
 \]
@@ -435,26 +485,29 @@ um único fator, um método muito rápido é o seguinte:
 <p>Tomando, por exemplo, $\dfrac{4x + 1}{(x + 1)^3}$, seja $x + 1 = z$; então
 $x = z - 1$.
 
-<p>Substituindo, obtemos
+<p>Substituindo, obtemos</p>
+
 \[
 \frac{4(z - 1) + 1}{z^3} = \frac{4z - 3}{z^3} = \frac{4}{z^2} - \frac{3}{z^3}.
 \]
 
-<p>As frações parciais são, portanto,
+<p>As frações parciais são, portanto,</p>
+
 \[
 \frac{4}{(x + 1)^2} - \frac{3}{(x + 1)^3}.
 \]
 
-
 <p>Aplicação à diferenciação. Seja necessário
-diferenciar $y = \dfrac{5-4x}{6x^2 + 7x - 3}$; temos
+diferenciar $y = \dfrac{5-4x}{6x^2 + 7x - 3}$; temos</p>
+
 \begin{align*}
 \frac{dy}{dx}
   &= -\frac{(6x^2+7x-3) × 4 + (5 - 4x)(12x + 7)}{(6x^2 + 7x - 3)^2}\\
   &=  \frac{24x^2 - 60x - 23}{(6x^2 + 7x - 3)^2}.
 \end{align*}
 
-<p>Se partirmos a expressão dada em
+<p>Se partirmos a expressão dada em</p>
+
 \[
 \frac{1}{3x-1} - \frac{2}{2x+3},
 \]
@@ -541,13 +594,15 @@ frações parciais um auxiliar precioso (ver <a href="20.html#partfracs">aqui</a
 expressa na forma $x = \dfrac{y}{3}$; esta última forma é chamada
 a <em>função inversa</em> da originalmente dada.
 
-<p>Se $y = 3x$,&nbsp;&nbsp; $\dfrac{dy}{dx} = 3$; se $x=\dfrac{y}{3}$,&nbsp;&nbsp; $\dfrac{dx}{dy} = \dfrac{1}{3}$, e vemos que
+<p>Se $y = 3x$,&nbsp;&nbsp; $\dfrac{dy}{dx} = 3$; se $x=\dfrac{y}{3}$,&nbsp;&nbsp; $\dfrac{dx}{dy} = \dfrac{1}{3}$, e vemos que</p>
+
 \[
 \frac{dy}{dx} = \frac{1}{\ \dfrac{dx}{dy}\ }\quad \text{ou}\quad
 \frac{dy}{dx} × \frac{dx}{dy} = 1.
 \]
 
-<p>Considere $y= 4x^2$, $\dfrac{dy}{dx} = 8x$; a função inversa é
+<p>Considere $y= 4x^2$, $\dfrac{dy}{dx} = 8x$; a função inversa é</p>
+
 \[
 x = \frac{y^{\frac{1}{2}}}{2},\quad \text{e}\quad
 \frac{dx}{dy} = \frac{1}{4\sqrt{y}} = \frac{1}{4 × 2x} = \frac{1}{8x}.
@@ -559,7 +614,8 @@ x = \frac{y^{\frac{1}{2}}}{2},\quad \text{e}\quad
 \end{align*}
 
 <p>Pode-se mostrar que, para todas as funções que podem ser
-postas na forma inversa, pode-se sempre escrever
+postas na forma inversa, pode-se sempre escrever</p>
+
 \[
 \frac{dy}{dx} × \frac{dx}{dy} = 1\quad \text{ou}\quad
 \frac{dy}{dx} = \frac{1}{\ \dfrac{dx}{dy}\ }.
@@ -574,7 +630,8 @@ da própria função dada.
 <p>Como exemplo, suponha que queiramos diferenciar
 $y=\sqrt[2]{\dfrac{3}{x}-1}$. Vimos um modo de fazer isso,
 escrevendo $u=\dfrac{3}{x}-1$, e achando $\dfrac{dy}{du}$ e $\dfrac{du}{dx}$. Isso
-dá
+dá</p>
+
 \[
 \frac{dy}{dx} = -\frac{3}{2x^2\sqrt{\dfrac{3}{x} -1}}.
 \]
@@ -583,7 +640,8 @@ dá
 ou quiséssemos verificar nosso resultado por algum outro modo de
 obter o coeficiente diferencial, ou por qualquer outra
 razão não pudéssemos usar o método ordinário, podemos
-proceder do seguinte modo: A função inversa é $x=\dfrac{3}{1+y^2}$.
+proceder do seguinte modo: A função inversa é $x=\dfrac{3}{1+y^2}$.</p>
+
 \[
 \frac{dx}{dy} = -\frac{3 × 2y}{(1+y^2)^2} = -\frac{6y}{(1+y^2)^2};
 \]
@@ -598,7 +656,8 @@ logo
 
 <p>Tomemos como outro exemplo $y=\dfrac{1}{\sqrt[3]{\theta +5}}$.
 
-<p>A função inversa é $\theta=\dfrac{1}{y^3}-5$ ou $\theta=y^{-3}-5$, e
+<p>A função inversa é $\theta=\dfrac{1}{y^3}-5$ ou $\theta=y^{-3}-5$, e</p>
+
 \[
 \frac{d\theta}{dy} = -3y^{-4} = -3\sqrt[3]{(\theta + 5)^4}.
 \]

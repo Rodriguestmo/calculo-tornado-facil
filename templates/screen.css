@@ -1068,3 +1068,54 @@ html.theme-dark #hl-note-input {
     gap: 0.35em 0.5em;
   }
 }
+
+/* ---------- Equações / MathJax: respiro e legibilidade ---------- */
+.MathJax_Display,
+.MJXc-display {
+  margin: 1.55em 0 !important;
+  padding: 0.15em 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  max-width: 100%;
+}
+
+/* linhas de align/gather mais arejadas */
+.MathJax .mtable .mtd {
+  padding-top: 0.4em !important;
+  padding-bottom: 0.4em !important;
+}
+.MathJax .mtr + .mtr > .mtd {
+  padding-top: 0.7em !important;
+}
+
+/* SVG/HTML-CSS variants */
+.MathJax_SVG_Display {
+  margin: 1.55em 0 !important;
+}
+
+/* parágrafos de exemplos/enunciados um pouco mais soltos perto de math */
+body p {
+  margin-top: 1.15em;
+  margin-bottom: 1.15em;
+}
+body p + .MathJax_Display,
+body p + script + .MathJax_Display {
+  margin-top: 0.85em !important;
+}
+
+/* imagens de fórmulas do livro original */
+body img[src*="33283-t/"] {
+  display: block;
+  margin: 1.4em auto;
+  max-width: 100%;
+  height: auto;
+}
+
+/* listas de exercícios */
+body ol, body ul {
+  margin-top: 1.2em;
+  margin-bottom: 1.2em;
+}
+body li {
+  margin: 0.45em 0;
+}

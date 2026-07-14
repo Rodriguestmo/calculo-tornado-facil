@@ -34,7 +34,39 @@
 body{counter-reset:h1 21}
 </style>
 <script type="text/x-mathjax-config">
-  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\(','\)']],
+      displayMath: [['$$','$$'], ['\[','\]']],
+      processEscapes: true
+    },
+    TeX: {
+      extensions: ["AMSmath.js","AMSsymbols.js"],
+      equationNumbers: { autoNumber: "none" }
+    },
+    "HTML-CSS": {
+      linebreaks: { automatic: false },
+      styles: {
+        ".MathJax_Display": {
+          "margin": "1.5em 0",
+          "overflow-x": "auto",
+          "overflow-y": "hidden"
+        },
+        ".MathJax .mtable .mtd": {
+          "padding-top": "0.45em",
+          "padding-bottom": "0.45em"
+        },
+        ".MathJax .mtr + .mtr .mtd": {
+          "padding-top": "0.65em"
+        }
+      }
+    },
+    CommonHTML: {
+      styles: {
+        ".MJXc-display": { "margin": "1.5em 0" }
+      }
+    }
+  });
 </script>
 <script type="text/javascript"
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
@@ -145,11 +177,11 @@ diferencial
 ay + b \frac{dy}{dx} = 0.
 \]
 
-<p>Transpondo, temos
+<p>Transpondo, temos</p>
+
 \[
 b \frac{dy}{dx} = -ay.
 \]
-
 
 <p>Ora, a mera inspeção dessa relação nos diz que
 temos de lidar com um caso em que $\dfrac{dy}{dx}$ é
@@ -167,7 +199,8 @@ lados opostos, não podemos fazer nada até
 colocarmos tanto $y$ quanto $dy$ de um lado, e $dx$ do
 outro. Para isso, devemos separar nossos
 companheiros de costume inseparáveis $dy$ e $dx$ um
-do outro.
+do outro.</p>
+
 \[
 \frac{dy}{y} = - \frac{a}{b}\, dx.
 \]
@@ -210,17 +243,20 @@ $y = C \epsilon^{-0}$; e como $\epsilon^{-0} = 1$ vemos que $C$ não é
 outra coisa senão o valor particular*
  de $y$ no
 início. Podemos chamar isso de $y_0$, e assim
-escrever a solução como
+escrever a solução como</p>
+
 \[
 y = y_0 \epsilon^{-\frac{a}{b} x}.
 \]
+
 <p><note>*Compare o que se disse sobre a “constante de integração,”
   com referência à <a href="17.html#figure48">Figura 48</a> <a href="17.html#constant">aqui</a>, e à <a href="17.html#figure51">Figura 51</a>.</note>
 <p><hr>
 
 <p><em>Exemplo (2.)</em>
 
-<p>Tomemos como exemplo a resolver
+<p>Tomemos como exemplo a resolver</p>
+
 \[
 ay + b \frac{dy}{dx} = g,
 \]
@@ -261,13 +297,15 @@ que é <em>a solução</em>.
 
 <p>Se a condição imposta for que $y = 0$ quando $x = 0$,
 podemos achar $C$; pois então a exponencial se torna
-$= 1$; e temos
+$= 1$; e temos</p>
+
 \begin{align*}
                 0 &= \frac{g}{a} + C, \\
  \text{ou}\;  C &= -\frac{g}{a}.
 \end{align*}
 
-<p>Pondo esse valor, a solução se torna
+<p>Pondo esse valor, a solução se torna</p>
+
 \[
 y = \frac{g}{a} (1-\epsilon^{-\frac{a}{b} x}).
 \]
@@ -275,7 +313,8 @@ y = \frac{g}{a} (1-\epsilon^{-\frac{a}{b} x}).
 <p>Mas além disso, se $x$ cresce indefinidamente, $y$
 crescerá até um máximo; pois quando $x=\infty$, a
 exponencial $= 0$, dando $y_{\text{máx.}} = \dfrac{g}{a}$.
-Substituindo isso, obtemos finalmente
+Substituindo isso, obtemos finalmente</p>
+
 \[
 y = y_{\text{máx.}}(1-\epsilon^{-\frac{a}{b} x}).
 \]
@@ -292,7 +331,8 @@ física.
 
 
 <p>Acharemos isto bem menos tratável do que o
-precedente. Primeiro divida tudo por $b$.
+precedente. Primeiro divida tudo por $b$.</p>
+
 \[
 \frac{dy}{dt} + \frac{a}{b}y = \frac{g}{b} \sin 2\pi nt.
 \]
@@ -303,7 +343,8 @@ aqui
 
 que a habilidade e a prática sugerem um plano - de
 multiplicar todos os termos por $\epsilon^{\frac{a}{b} t}$,
-dando-nos:
+dando-nos:</p>
+
 \[
 \frac{dy}{dt} \epsilon^{\frac{a}{b} t} + \frac{a}{b} y \epsilon^{\frac{a}{b} t} = \frac{g}{b} \epsilon^{\frac{a}{b} t} · \sin 2 \pi nt,
 \]
@@ -348,8 +389,8 @@ v &= - \frac{1}{2\pi n} \cos 2\pi nt.
 \right.
 \end{align*}
 
+<p>Inserindo isso, a integral em questão se torna:</p>
 
-<p>Inserindo isso, a integral em questão se torna:
 \begin{align*}
 \int \epsilon^{\frac{a}{b} t} &{} · \sin 2 \pi n t · dt \\
 &= -\frac{1}{2 \pi n} · \epsilon^{\frac{a}{b} t} · \cos 2 \pi nt
@@ -362,7 +403,8 @@ v &= - \frac{1}{2\pi n} \cos 2\pi nt.
 <p>A última integral ainda é irredutível. Para
 contornar a dificuldade, repita a integração por
 partes do lado esquerdo, mas tratando-o do modo
-inverso ao escrever:
+inverso ao escrever:</p>
+
 \begin{align*}
 &\left\{
 \begin{aligned}
@@ -379,7 +421,8 @@ dv &= \epsilon^{\frac{a}{b} t} · dt;
 \right.
 \end{align*}
 
-<p>Inserindo isso, obtemos
+<p>Inserindo isso, obtemos</p>
+
 \begin{align*}
 \int \epsilon^{\frac{a}{b} t} &{} · \sin 2 \pi n t · dt\\
 &= \frac{b}{a} · \epsilon^{\frac{a}{b} t} · \sin 2 \pi n t -
@@ -392,7 +435,8 @@ mesma que em [B], podemos eliminá-la, multiplicando
 $\dfrac{a}{2 \pi nb}$, e somando-as.
 
 
-<p>O resultado, quando simplificado, é:
+<p>O resultado, quando simplificado, é:</p>
+
 \begin{align*}
 \int \epsilon^{\frac{a}{b} t} · \sin 2 \pi n t · dt
   &= \epsilon^{\frac{a}{b} t} \left\{\frac{ ab · \sin 2 \pi nt - 2 \pi n b^2 · \cos 2 \pi n t}{ a^2 + 4 \pi^2 n^2 b^2 } \right\}
@@ -405,7 +449,8 @@ y &= g \left\{\frac{ a · \sin 2 \pi n t - 2 \pi n b · \cos 2 \pi nt}{ a^2 + 4 
 
 <p>Para simplificar ainda mais, imaginemos um ângulo
 $\phi$ tal que $\tan \phi = \dfrac{2 \pi n b}{ a}$.
-   Então
+   Então</p>
+
 \[
 \sin \phi = \frac{2 \pi nb}{\sqrt{a^2 + 4 \pi^2 n^2 b^2}},
 \]
@@ -448,7 +493,8 @@ tanto de $x$ quanto de $y$, como a integramos? É ela
 mesma uma diferencial exata? Isto é: $M$ e $N$ foram
 cada um formados por diferenciação parcial a partir
 de alguma função comum $U$, ou não? Se o foram,
-então
+então</p>
+
 \[\left\{
   \begin{aligned}
  \frac{\partial U}{\partial x} = M, \\
@@ -464,7 +510,8 @@ E se tal função comum existe, então
 
 <p>
 Ora o teste da questão é este. Se a expressão é
-uma diferencial exata, deve ser verdade que
+uma diferencial exata, deve ser verdade que</p>
+
 \begin{align*}
         \frac{dM}{dy} &= \frac{dN}{dx}; \\
 \text{pois então}\;
@@ -472,13 +519,15 @@ uma diferencial exata, deve ser verdade que
 \end{align*}
  o que é necessariamente verdadeiro.
 
-<p>Tome como ilustração a equação
+<p>Tome como ilustração a equação</p>
+
 \[
 (1 + 3 xy)\, dx + x^2\, dy = 0.
 \]
 
 <p>É esta uma diferencial exata ou não? Aplique o
-teste.
+teste.</p>
+
 \[\left\{
   \begin{aligned}
  \frac{d(1 + 3xy)}{dy}=3x, \\
@@ -504,7 +553,8 @@ por $2x$, obtemos
 (2x + 6x^2y)\, dx + 2x^3\, dy = 0.
 \]
 
-<p>Agora aplique o teste a isto.
+<p>Agora aplique o teste a isto.</p>
+
 \[
 \left\{
   \begin{aligned}
@@ -527,7 +577,6 @@ dw=6x^2y\, dx + 2x^3\, dy.
  U = x^2 + 2x^3y + C.
 \]
 
-
 <p><hr>
 <em>Exemplo (5.)</em> Seja $\dfrac{d^2 y}{dt^2} + n^2 y = 0$.
 
@@ -547,7 +596,8 @@ solução será da forma $y = A \sin (pt + q)$. Contudo,
 vamos ao trabalho.
 
 <p>Multiplique ambos os lados da equação original por
-$2\dfrac{dy}{dt}$ e integre, dando-nos $2\dfrac{d^2 y}{dt^2}\, \dfrac{dy}{dt} + 2x^2 y \dfrac{dy}{dt} = 0$, e, como
+$2\dfrac{dy}{dt}$ e integre, dando-nos $2\dfrac{d^2 y}{dt^2}\, \dfrac{dy}{dt} + 2x^2 y \dfrac{dy}{dt} = 0$, e, como</p>
+
 \[
 2 \frac{d^2y}{dt^2}\, \frac{dy}{dt}
   = \frac{d \left(\dfrac{dy}{dt}\right)^2}{dt},\quad
@@ -560,7 +610,8 @@ quadradas,
 \frac{dy}{\sqrt{C^2 - y^2}} = n · dt.
 \]
 
-<p>Mas pode-se mostrar que (veja <a href="15.html#intex3">aqui</a>)
+<p>Mas pode-se mostrar que (veja <a href="15.html#intex3">aqui</a>)</p>
+
 \[
 \frac{1}{\sqrt{C^2 - y^2}} = \frac{d (\arcsin \dfrac{y}{C})}{dy};
 \]
@@ -572,7 +623,8 @@ donde, passando de ângulos a senos,
 onde $C_1$ é um ângulo constante que entra por
 integração.
 
-<p>Ou, de preferência, isto se pode escrever
+<p>Ou, de preferência, isto se pode escrever</p>
+
 \[
 y = A \sin nt + B \cos nt, \text{ que é a solução.}
 \]
@@ -591,7 +643,8 @@ solução da equação será dessa forma.
 <p>Procedendo como antes, multiplicando por
 $2 \dfrac{dy}{dx}$, e integrando, obtemos $2\dfrac{d^2 y}{dx^2}\, \dfrac{dy}{dx} - 2x^2 y \dfrac{dy}{dx}=0$,
 
- e, como
+ e, como</p>
+
 \[
 2\frac{d^2 y}{dx^2}\, \frac{dy}{dx}
   = \frac{d \left(\dfrac{dy}{dx}\right)^2}{dx},\quad
@@ -600,7 +653,8 @@ $2 \dfrac{dy}{dx}$, e integrando, obtemos $2\dfrac{d^2 y}{dx^2}\, \dfrac{dy}{dx}
 \]
 onde $c$ é uma constante, e $\dfrac{dy}{\sqrt{y^2 + c^2}} = n\, dx$.
 
-<p>Ora, se
+<p>Ora, se</p>
+
 \[
 \quad w = \log_\epsilon ( y+ \sqrt{y^2+ c^2}) = \log_\epsilon u,\\
 
@@ -611,7 +665,8 @@ onde $c$ é uma constante, e $\dfrac{dy}{\sqrt{y^2 + c^2}} = n\, dx$.
  \frac{dw}{dy} = \frac{1}{\sqrt{ y^2 + c^2}}.
 \]
 
-<p>Logo, integrando, isto nos dá
+<p>Logo, integrando, isto nos dá</p>
+
 \[
 \log_\epsilon (y + \sqrt{y^2 + c^2} ) = nx + \log_\epsilon C, \\
 y + \sqrt{y^2 + c^2} = C \epsilon^{nx}.
@@ -624,9 +679,9 @@ y + \sqrt{y^2 + c^2} = C \epsilon^{nx}.
 \tag*{(2)}
 \]
 
-
 <p>Subtraindo (2) de (1) e dividindo por $2$, temos
-então
+então</p>
+
 \[
 y = \frac{1}{2} C \epsilon^{nx} - \frac{1}{2}\, \frac{c^2}{C} \epsilon^{-nx},
 \]
@@ -655,12 +710,13 @@ exponencial negativa. Por outro lado, se $a = 0$,
 sua forma se torna a mesma do Exemplo 6, cuja
 solução é a soma de uma exponencial positiva e uma
 negativa. Não é portanto muito surpreendente achar
-que a solução do presente exemplo é
+que a solução do presente exemplo é</p>
+
 \begin{align*}
 y &= (\epsilon^{-mt})(A \epsilon^{nt} + B \epsilon^{-nt}), \\
  \text{onde}\;
 m &= \frac{a}{2b}\quad \text{e}\quad
-n  = \sqrt{\frac{a^2}{4b^2}} - \frac{g}{b}.
+n  &= \sqrt{\frac{a^2}{4b^2}} - \frac{g}{b}.
 \end{align*}
 
 <p>Os passos pelos quais se chega a essa solução não
@@ -685,7 +741,8 @@ onde $F$ e $f$ eram quaisquer funções arbitrárias de
 $t$.
 
 <p>Outro modo de tratá-la é transformá-la por uma
-mudança de variáveis em
+mudança de variáveis em</p>
+
 \[
 \frac{d^2y}{du · dv} = 0,
 \]
@@ -715,7 +772,8 @@ representa a propagação de uma onda (de qualquer
 forma) a uma velocidade uniforme ao longo da
 direção $x$.
 
-<p>Se a equação diferencial tivesse sido escrita
+<p>Se a equação diferencial tivesse sido escrita</p>
+
 \[
 m \frac{d^2y}{dt^2} = k\, \frac{d^2y}{dx^2},
 \]

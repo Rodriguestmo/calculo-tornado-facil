@@ -34,7 +34,39 @@
 body{counter-reset:h1 14}
 </style>
 <script type="text/x-mathjax-config">
-  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\(','\)']],
+      displayMath: [['$$','$$'], ['\[','\]']],
+      processEscapes: true
+    },
+    TeX: {
+      extensions: ["AMSmath.js","AMSsymbols.js"],
+      equationNumbers: { autoNumber: "none" }
+    },
+    "HTML-CSS": {
+      linebreaks: { automatic: false },
+      styles: {
+        ".MathJax_Display": {
+          "margin": "1.5em 0",
+          "overflow-x": "auto",
+          "overflow-y": "hidden"
+        },
+        ".MathJax .mtable .mtd": {
+          "padding-top": "0.45em",
+          "padding-bottom": "0.45em"
+        },
+        ".MathJax .mtr + .mtr .mtd": {
+          "padding-top": "0.65em"
+        }
+      }
+    },
+    CommonHTML: {
+      styles: {
+        ".MJXc-display": { "margin": "1.5em 0" }
+      }
+    }
+  });
 </script>
 <script type="text/javascript"
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
@@ -130,7 +162,8 @@ como na <a href="#figure42">Figura 42</a>, onde cada ordenada sucessiva
 <a name="figure42">
 <p><img src="33283-t/images/168a.pdf.png-1.png">
 
-<p>A equação ainda é
+<p>A equação ainda é</p>
+
 \[
 y=bp^x;
 \] mas como $p$ é menor que um, $\log_\epsilon p$ será uma quantidade
@@ -159,7 +192,8 @@ da quantidade de superfície exposta pelo corpo, e
 de seus coeficientes de condutividade e emissividade,
 etc.
 
-<p>Uma fórmula semelhante,
+<p>Uma fórmula semelhante,</p>
+
 \[
 Q_t=Q_0 \epsilon^{-at},
 \]
@@ -197,7 +231,8 @@ ou, em palavras, a inclinação da curva é para baixo, e
 proporcional a $y$ e à constante $a$.
 
 <p>Teríamos obtido o mesmo resultado se tivéssemos
-tomado a equação na forma
+tomado a equação na forma</p>
+
 \begin{align*}
 y &= bp^x; \\
  \text{pois então}\;
@@ -287,12 +322,14 @@ $C = \dfrac{E}{R}\left\{1 - \epsilon^{-\frac{Rt}{L}}\right\}$.
 <p>A constante de tempo é $\dfrac{L}{R}$.
 
 <p>Se $E = 10$, $R =1$, $L = 0.01$; então quando $t$ é muito grande
-o termo $\epsilon^{-\frac{Rt}{L}}$ se torna $1$, e $C = \dfrac{E}{R} = 10$; também
+o termo $\epsilon^{-\frac{Rt}{L}}$ se torna $1$, e $C = \dfrac{E}{R} = 10$; também</p>
+
 \[
 \frac{L}{R} = T = 0.01.
 \]
 
-<p>Seu valor em qualquer tempo pode ser escrito:
+<p>Seu valor em qualquer tempo pode ser escrito:</p>
+
 \[
 C = 10 - 10\epsilon^{-\frac{t}{0.01}},
 \]
@@ -308,7 +345,8 @@ digamos, $\dfrac{t}{T} = 0.1$, $\epsilon^{-0.1} = 0.9048$ (da tabela).
 é $0.9048 × 10 = 9.048$, e a corrente real é
 $10 - 9.048 = 0.952$.
 
-<p>De modo semelhante, ao fim de $0.1$ seg.,
+<p>De modo semelhante, ao fim de $0.1$ seg.,</p>
+
 \[
 \frac{t}{T} = 10;\quad \epsilon^{-10} = 0.000045;
 \]
@@ -333,7 +371,8 @@ $K = 0.02$.
 satisfaz a igualdade $50 = 100 × \epsilon^{-0.02l}$, ou $0.5 = \epsilon^{-0.02l}$.
 
 Isto se acha pondo esta equação em sua forma logarítmica,
-a saber,
+a saber,</p>
+
 \[
 \log 0.5 = -0.02 × l × \log \epsilon,
 \]
@@ -356,7 +395,8 @@ a experiência mostra que $\lambda = 3.85 × 10^{-3}$. Encontre o tempo
 requerido para transformar metade da substância. (Este
 tempo é chamado a “vida média” da substância.)
 
-<p>Temos $0.5 = \epsilon^{-0.00385t}$.<a name="erratum0a"/>
+<p>Temos $0.5 = \epsilon^{-0.00385t}$.<a name="erratum0a"/></p>
+
 \begin{align*}
 \log 0.5 &= -0.00385t × \log \epsilon; \\
  \text{e}\;
@@ -378,7 +418,8 @@ original.
 
 <p>(3) Plote a curva $y = 100(1-\epsilon^{-2t})$.
 
-<p>(4) As seguintes equações dão curvas muito semelhantes:
+<p>(4) As seguintes equações dão curvas muito semelhantes:</p>
+
 \begin{align*}
 \text{(i)}\   y &= \frac{ax}{x + b}; \\
 \text{(ii)}\  y &= a(1 - \epsilon^{-\frac{x}{b}}); \\
@@ -389,7 +430,8 @@ original.
 $b = 30$ milímetros.
 
 <p>(5) Encontre o coeficiente diferencial de $y$ em relação
-a $x$, se
+a $x$, se</p>
+
 \[
 (a) y = x^x;\quad
 (b) y = (\epsilon^x)^x;\quad
@@ -399,7 +441,8 @@ a $x$, se
 <p>(6) Para o “Tório $A$,” o valor de $\lambda$ é $5$; ache a
 “vida média,” isto é, o tempo tomado pela transformação
 de uma quantidade $Q$ de “Tório $A$” igual a
-metade da quantidade inicial $Q_0$ na expressão
+metade da quantidade inicial $Q_0$ na expressão</p>
+
 \[
 Q = Q_0 \epsilon^{-\lambda t};
 \]

@@ -7,7 +7,39 @@
 body{counter-reset:h1 12}
 </style>
 <script type="text/x-mathjax-config">
-  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\(','\)']],
+      displayMath: [['$$','$$'], ['\[','\]']],
+      processEscapes: true
+    },
+    TeX: {
+      extensions: ["AMSmath.js","AMSsymbols.js"],
+      equationNumbers: { autoNumber: "none" }
+    },
+    "HTML-CSS": {
+      linebreaks: { automatic: false },
+      styles: {
+        ".MathJax_Display": {
+          "margin": "1.5em 0",
+          "overflow-x": "auto",
+          "overflow-y": "hidden"
+        },
+        ".MathJax .mtable .mtd": {
+          "padding-top": "0.45em",
+          "padding-bottom": "0.45em"
+        },
+        ".MathJax .mtr + .mtr .mtd": {
+          "padding-top": "0.65em"
+        }
+      }
+    },
+    CommonHTML: {
+      styles: {
+        ".MJXc-display": { "margin": "1.5em 0" }
+      }
+    }
+  });
 </script>
 <script type="text/javascript"
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
@@ -122,7 +154,8 @@ resolvidos.
 
 <p><hr>
 
-<p>(1) Encontre o máximo ou mínimo de
+<p>(1) Encontre o máximo ou mínimo de</p>
+
 \begin{align*}
 \text{(a)}\quad y &= 4x^2-9x-6; \qquad \text{(b)}\quad y = 6 + 9x-4x^2; \\
 \end{align*}
@@ -131,33 +164,43 @@ e verifique se é um máximo ou um mínimo em cada caso.
 
 \begin{align*}
 \text{(a)}\quad \dfrac{dy}{dx}
-  &= 8x-9=0;\quad x=1\tfrac{1}{8},\quad \text{e } y = -11.065.\\
+  &= 8x-9=0 \\
+x&=1\tfrac{1}{8},\quad \text{e } y = -11.065.\\
 
 \dfrac{d^2y}{dx^2}
-  &= 8;\quad \text{é $+$; logo é um mínimo.} \\
+  &= 8 \\
+\text{é $+$; logo é um mínimo.} \\
 
 \text{(b)}\quad {\dfrac{dy}{dx}}
-  &= 9-8x=0;\quad x = 1\tfrac{1}{8};\quad \text{e } y = +11.065.\\
+  &= 9-8x=0 \\
+x &= 1\tfrac{1}{8} \\
+\text{e } y &= +11.065.\\
 
 \dfrac{d^2y}{dx^2}
-  &= -8;\quad \text{é $-$; logo é um máximo.}
+  &= -8 \\
+\text{é $-$; logo é um máximo.}
 \end{align*}
 
 <p>(2) Encontre os máximos e mínimos da função
-$y = x^3-3x+16$.
+$y = x^3-3x+16$.</p>
+
 \begin{align*}
 \dfrac{dy}{dx}
-  &= 3x^2 - 3 = 0;\quad x^2 = 1;\quad \text{e } x = ±1.\\
+  &= 3x^2 - 3 = 0 \\
+x^2 &= 1 \\
+\text{e } x &= ±1.\\
 
 \dfrac{d^2y}{dx^2}
-  &= 6x;\quad \text{para $x = 1$; é $+$};
+  &= 6x \\
+\text{para $x &= 1$; é $+$};
 \end{align*}
 logo $x=1$ corresponde a um mínimo $y=14$. Para
 $x=-1$ é $-$; logo $x=-1$ corresponde a um máximo
 $y=+18$.
 
 
-<p>(3) Encontre os máximos e mínimos de $y=\dfrac{x-1}{x^2+2}$.
+<p>(3) Encontre os máximos e mínimos de $y=\dfrac{x-1}{x^2+2}$.</p>
+
 \[
 \frac{dy}{dx} = \frac{(x^2+2) × 1 - (x-1) × 2x}{(x^2+2)^2}
   = \frac{2x - x^2 + 2}{(x^2 + 2)^2} = 0;
@@ -183,13 +226,15 @@ mínimo, $y=-0.683$.
 certa fábrica varia com a produção semanal $P$
 segundo a relação $C = aP + \dfrac{b}{c+P} + d$, onde
 $a$, $b$, $c$, $d$ são constantes positivas. Para que produção
-a despesa será menor?
+a despesa será menor?</p>
+
 \[
 \dfrac{dC}{dP} = a - \frac{b}{(c+P)^2} = 0\quad \text{para máximo ou mínimo;}
 \]
 logo $a = \dfrac{b}{(c+P)^2}$ e $P = ±\sqrt{\dfrac{b}{a}} - c$.
 
 <p>Como a produção não pode ser negativa, $P=+\sqrt{\dfrac{b}{a}} - c$.
+</p>
 
 \begin{align*}
    Agora
@@ -199,7 +244,8 @@ que é positivo para todos os valores de $P$; logo
 $P = +\sqrt{\dfrac{b}{a}} - c$ corresponde a um mínimo.
 
 <p>(5) O custo total por hora $C$ de iluminar um edifício
-com $N$ lâmpadas de certo tipo é
+com $N$ lâmpadas de certo tipo é</p>
+
 \[
 C = N\left(\frac{C_l}{t} + \frac{EPC_e}{1000}\right),
 \]
@@ -217,6 +263,7 @@ constantes que dependem do tipo de lâmpada.
 
 <p>Encontre a eficiência comercial para a qual o custo
 total de iluminação será mínimo.
+</p>
 
 \begin{align*}
 \text{   Temos}\;
@@ -230,8 +277,8 @@ E^{n+1} = \frac{1000 × nC_l}{mPC_e}\quad \text{e}\quad
 E = \sqrt[n+1]{\frac{1000 × nC_l}{mPC_e}}.
 \]
 
+<p>Isto é claramente para mínimo, pois</p>
 
-<p>Isto é claramente para mínimo, pois
 \[
 \frac{d^2C}{dE^2} = (n + 1) \frac{nC_l}{m} E^{-(n+2)},
 \]
@@ -239,7 +286,8 @@ que é positivo para um valor positivo de $E$.
 
 <p>Para um tipo particular de lâmpadas de $16$ velas,
 $C_l= 17$ pence, $C_e=5$ pence; e verificou-se que
-$m=10$ e $n=3.6$.
+$m=10$ e $n=3.6$.</p>
+
 \[
 E = \sqrt[4.6]{\frac{1000 × 3.6 × 17}{10 × 16 × 5}}
   = 2.6\text{ watts por vela}.
@@ -260,7 +308,8 @@ máximo ou um mínimo, e mostre se é
 máximo ou mínimo.
 
 <p>(3) Encontre quantos máximos e quantos mínimos
-há na curva cuja equação é
+há na curva cuja equação é</p>
+
 \[
 y = 1 - \frac{x^2}{2} + \frac{x^4}{24};
 \]
@@ -269,23 +318,26 @@ e quantos naquela cuja equação é
 y = 1 - \frac{x^2}{2} + \frac{x^4}{24} - \frac{x^6}{720}.
 \]
 
+<p>(4) Encontre os máximos e mínimos de</p>
 
-<p>(4) Encontre os máximos e mínimos de
 \[
 y=2x+1+\frac{5}{x^2}.
 \]
 
-<p>(5) Encontre os máximos e mínimos de
+<p>(5) Encontre os máximos e mínimos de</p>
+
 \[
 y=\frac{3}{x^2+x+1}.
 \]
 
-<p>(6) Encontre os máximos e mínimos de
+<p>(6) Encontre os máximos e mínimos de</p>
+
 \[
 y=\frac{5x}{2+x^2}.
 \]
 
-<p>(7) Encontre os máximos e mínimos de
+<p>(7) Encontre os máximos e mínimos de</p>
+
 \[
 y=\frac{3x}{x^2-3} + \frac{x}{2} + 5.
 \]
@@ -297,7 +349,8 @@ mínimo.
 
 <p>(9) A eficiência $u$ de um gerador elétrico em
 diferentes valores de saída $x$ é expressa pela
-equação geral:
+equação geral:</p>
+
 \[
 u=\frac{x}{a+bx+cx^2};
 \]
@@ -320,16 +373,17 @@ de uma viagem de $1000$ milhas náuticas um mínimo?
 E, se o carvão custa $10$ xelins por tonelada, a quanto
 ascenderá esse custo mínimo da viagem?
 
-<p>(11) Encontre os máximos e mínimos de<a name="ex10"/>
+<p>(11) Encontre os máximos e mínimos de<a name="ex10"/></p>
+
 \[
 y = ±\frac{x}{6}\sqrt{x(10-x)}.
 \]
 
-<p>(12) Encontre os máximos e mínimos de
+<p>(12) Encontre os máximos e mínimos de</p>
+
 \[
 y= 4x^3 - x^2 - 2x + 1.
 \]
-
 
 <p><h3 class="answers">Respostas</h3>
 

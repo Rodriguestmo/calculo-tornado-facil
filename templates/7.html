@@ -7,7 +7,39 @@
 body{counter-reset:h1 7}
 </style>
 <script type="text/x-mathjax-config">
-  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\(','\)']],
+      displayMath: [['$$','$$'], ['\[','\]']],
+      processEscapes: true
+    },
+    TeX: {
+      extensions: ["AMSmath.js","AMSsymbols.js"],
+      equationNumbers: { autoNumber: "none" }
+    },
+    "HTML-CSS": {
+      linebreaks: { automatic: false },
+      styles: {
+        ".MathJax_Display": {
+          "margin": "1.5em 0",
+          "overflow-x": "auto",
+          "overflow-y": "hidden"
+        },
+        ".MathJax .mtable .mtd": {
+          "padding-top": "0.45em",
+          "padding-bottom": "0.45em"
+        },
+        ".MathJax .mtr + .mtr .mtd": {
+          "padding-top": "0.65em"
+        }
+      }
+    },
+    CommonHTML: {
+      styles: {
+        ".MJXc-display": { "margin": "1.5em 0" }
+      }
+    }
+  });
 </script>
 <script type="text/javascript"
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
@@ -72,7 +104,8 @@ que se denota por $f''(x)$; e assim por diante.
 
 <p>Agora vamos generalizar.
 
-<p>Seja $y = f(x) = x^n$.
+<p>Seja $y = f(x) = x^n$.</p>
+
 \begin{align*}
    \text{Primeira diferenciação,}\;      f'(x) &= nx^{n-1}. \\
    \text{Segunda diferenciação,}\;    f''(x) &= n(n-1)x^{n-2}. \\
@@ -82,7 +115,8 @@ que se denota por $f''(x)$; e assim por diante.
 \end{align*}
 
 <p>Mas esta não é a única maneira de indicar diferenciações
-sucessivas. Pois,
+sucessivas. Pois,</p>
+
 \begin{align*}
  \text{se a função original for}\;               y &= f(x);  \\
  \text{diferenciar uma vez dá}\;    \frac{dy}{dx} &= f'(x); \\

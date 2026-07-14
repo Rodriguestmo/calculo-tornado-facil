@@ -37,7 +37,39 @@
 body{counter-reset:h1 14}
 </style>
 <script type="text/x-mathjax-config">
-  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\(','\)']],
+      displayMath: [['$$','$$'], ['\[','\]']],
+      processEscapes: true
+    },
+    TeX: {
+      extensions: ["AMSmath.js","AMSsymbols.js"],
+      equationNumbers: { autoNumber: "none" }
+    },
+    "HTML-CSS": {
+      linebreaks: { automatic: false },
+      styles: {
+        ".MathJax_Display": {
+          "margin": "1.5em 0",
+          "overflow-x": "auto",
+          "overflow-y": "hidden"
+        },
+        ".MathJax .mtable .mtd": {
+          "padding-top": "0.45em",
+          "padding-bottom": "0.45em"
+        },
+        ".MathJax .mtr + .mtr .mtd": {
+          "padding-top": "0.65em"
+        }
+      }
+    },
+    CommonHTML: {
+      styles: {
+        ".MJXc-display": { "margin": "1.5em 0" }
+      }
+    }
+  });
 </script>
 <script type="text/javascript"
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
@@ -164,7 +196,8 @@ sua propriedade.
 
 <p>Ou, se $y$ for o capital original, e os juros anuais
 forem $\dfrac{y}{n}$, então, ao fim de $n$ anos, sua propriedade
-será
+será</p>
+
 \[
 y + n\dfrac{y}{n} = 2y.
 \]
@@ -223,7 +256,8 @@ que o capital permanece estacionário por seis meses de
 cada vez. Suponha que dividíssemos o ano em $10$ partes,
 e calculássemos um juro de um por cento para cada décimo do
 ano. Agora temos $100$ operações estendendo-se por
-os dez anos; ou
+os dez anos; ou</p>
+
 \[
 y_n = £100 \left( 1 + \tfrac{1}{100} \right)^{100};
 \]
@@ -232,7 +266,8 @@ que resulta em
 
 <p>Mesmo isto não é final. Que os dez anos sejam divididos
 em $1000$ períodos, cada um de $\frac{1}{100}$ de um ano; os juros
-sendo $\frac{1}{10}$ por cento para cada tal período; então
+sendo $\frac{1}{10}$ por cento para cada tal período; então</p>
+
 \[
 y_n = £100 \left( 1 + \tfrac{1}{1000} \right)^{1000};
 \]
@@ -241,7 +276,8 @@ que resulta em
 
 <p>Vá ainda mais minuciosamente, e divida os dez anos
 em $10{,}000$ partes, cada uma $\frac{1}{1000}$ de um ano, com juros
-a $\frac{1}{100}$ de $1$ por cento. Então
+a $\frac{1}{100}$ de $1$ por cento. Então</p>
+
 \[
 y_n = £100 \left( 1 + \tfrac{1}{10,000} \right)^{10,000}
 \]
@@ -254,7 +290,8 @@ $\left(1 + \dfrac{1}{n}\right)^n$, que, como vemos, é maior que $2$; e
 que, à medida que tomamos $n$ cada vez maior, cresce mais perto
 e mais perto de um valor limite particular. Por maior
 que você faça $n$, o valor desta expressão cresce
-mais perto e mais perto da figura
+mais perto e mais perto da figura</p>
+
 \[
 2.71828\ldots
 \]
@@ -352,10 +389,11 @@ calcular esta figura imensamente importante.
 binomial, e expandiremos a expressão $\left(1 + \dfrac{1}{n}\right)^n$ daquele
 modo bem conhecido.
 
-<p>O teorema binomial<a name="binomtheo"/> dá a regra de que
+<p>O teorema binomial<a name="binomtheo"/> dá a regra de que</p>
+
 \begin{align*}
 (a + b)^n &= a^n + n \dfrac{a^{n-1} b}{1!} + n(n - 1) \dfrac{a^{n-2} b^2}{2!} \\
-  & \phantom{= a^n\ } + n(n -1)(n - 2) \dfrac{a^{n-3} b^3}{3!} + \text{etc}. \\
+  & \phantom{&= a^n\ } + n(n -1)(n - 2) \dfrac{a^{n-3} b^3}{3!} + \text{etc}. \\
 
 \end{align*}
 Pondo $a = 1$ e $b = \dfrac{1}{n}$, obtemos
@@ -363,13 +401,14 @@ Pondo $a = 1$ e $b = \dfrac{1}{n}$, obtemos
 
 \left(1 + \dfrac{1}{n}\right)^n
   &= 1 + 1 + \dfrac{1}{2!} \left(\dfrac{n - 1}{n}\right) + \dfrac{1}{3!} \dfrac{(n - 1)(n - 2)}{n^2} \\
-  &\phantom{= 1 + 1\ } + \dfrac{1}{4!} \dfrac{(n - 1)(n - 2)(n - 3)}{n^3} + \text{etc}.
+  &\phantom{&= 1 + 1\ } + \dfrac{1}{4!} \dfrac{(n - 1)(n - 2)(n - 3)}{n^3} + \text{etc}.
 \end{align*}
 
 <p>Ora, se supusermos $n$ se tornar indefinidamente grande,
 digamos um bilhão, ou um bilhão de bilhões, então $n - 1$, $n - 2$,
 e $n - 3$, etc., serão todos sensivelmente iguais a $n$; e
-então a série se torna
+então a série se torna</p>
+
 \[
 \epsilon = 1 + 1 + \dfrac{1}{2!} + \dfrac{1}{3!} + \dfrac{1}{4!} + \text{etc}.\ldots
 \]
@@ -400,12 +439,13 @@ outra série.
 
 <p>Deixemos, de novo fazendo uso do teorema binomial,
 expandir a expressão $\left(1 + \dfrac{1}{n}\right)^{nx}$, que é a mesma
-que $\epsilon^x$ quando fazemos $n$ indefinidamente grande.
+que $\epsilon^x$ quando fazemos $n$ indefinidamente grande.</p>
+
 \begin{align*}
 \epsilon^x
   &= 1^{nx} + nx \frac{1^{nx-1} \left(\dfrac{1}{n}\right)}{1!}
             + nx(nx - 1) \frac{1^{nx - 2} \left(\dfrac{1}{n}\right)^2}{2!} \\
-  & \phantom{= 1^{nx}\ }
+  & \phantom{&= 1^{nx}\ }
     + nx(nx - 1)(nx - 2) \frac{1^{nx-3} \left(\dfrac{1}{n}\right)^3}{3!}
     + \text{etc}.\\
   &= 1 + x + \frac{1}{2!} · \frac{n^2x^2 - nx}{n^2}
@@ -415,7 +455,8 @@ que $\epsilon^x$ quando fazemos $n$ indefinidamente grande.
     + \frac{x^3 - \dfrac{3x^2}{n} + \dfrac{2x}{n^2}}{3!} + \text{etc}.
 \end{align*}
 
-<p>Mas, quando $n$ é feito indefinidamente grande, isto se simplifica até o seguinte:
+<p>Mas, quando $n$ é feito indefinidamente grande, isto se simplifica até o seguinte:</p>
+
 \[
 \epsilon^x
   = 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \frac{x^4}{4!} + \text{etc.}\dots
@@ -433,7 +474,7 @@ a $x$, assim:
 \begin{align*}
 \frac{d(\epsilon^x)}{dx}
   &= 0 + 1 + \frac{2x}{1 · 2} + \frac{3x^2}{1 · 2 · 3} + \frac{4x^3}{1 · 2 · 3 · 4} \\
-&\phantom{= 0 + 1 + \frac{2x}{1 · 2} + \frac{3x^2}{1 · 2 · 3}\ } + \frac{5x^4}{1 · 2 · 3 · 4 · 5} + \text{etc}.  \\
+&\phantom{&= 0 + 1 + \frac{2x}{1 · 2} + \frac{3x^2}{1 · 2 · 3}\ } + \frac{5x^4}{1 · 2 · 3 · 4 · 5} + \text{etc}.  \\
  ou
   &= 1 + x + \frac{x^2}{1 · 2} + \frac{x^3}{1 · 2 · 3} + \frac{x^4}{1 · 2 · 3 · 4} + \text{etc}.,
 \end{align*}
@@ -462,13 +503,15 @@ da qual foi derivada, é claro que
 $A$ <em>deve</em> $=B$; que $C=\dfrac{B}{2}=\dfrac{A}{1· 2}$; que $D = \dfrac{C}{3} = \dfrac{A}{1 · 2 · 3}$;
 que $E = \dfrac{D}{4} = \dfrac{A}{1 · 2 · 3 · 4}$, etc.
 
-<p>A lei de mudança é portanto que
+<p>A lei de mudança é portanto que</p>
+
 \[
 y = A\left(1 + \dfrac{x}{1} + \dfrac{x^2}{1 · 2} + \dfrac{x^3}{1 · 2 · 3} + \dfrac{x^4}{1 · 2 · 3 · 4} + \text{etc}.\right).
 \]
 
 <p>Se, agora, tomarmos $A = 1$ por simplicidade
-adicional, temos
+adicional, temos</p>
+
 \[
 y = 1 + \dfrac{x}{1} + \dfrac{x^2}{1 · 2} + \dfrac{x^3}{1 · 2 · 3} + \dfrac{x^4}{1 · 2 · 3 · 4} + \text{etc}.
 \]
@@ -477,7 +520,8 @@ y = 1 + \dfrac{x}{1} + \dfrac{x^2}{1 · 2} + \dfrac{x^3}{1 · 2 · 3} + \dfrac{x
 sempre a mesma série de novo.
 
 <p>Se, agora, tomarmos o caso particular de $A=1$, e
-avaliarmos a série, obteremos simplesmente
+avaliarmos a série, obteremos simplesmente</p>
+
 \begin{align*}
 \text{quando } x &= 1,\quad & y &= 2.718281 \text{ etc.};    & \text{isto é, } y &= \epsilon;   \\
 \text{quando } x &= 2,\quad & y &=(2.718281 \text{ etc.})^2; & \text{isto é, } y &= \epsilon^2; \\
@@ -551,7 +595,8 @@ que são calculados na base $10$ em vez da base $\epsilon$, estão
 pouco familiarizadas com os logaritmos “naturais”, pode
 valer a pena dizer uma palavra sobre eles. A regra ordinária
 de que somar logaritmos dá o logaritmo do
-produto ainda vale; ou
+produto ainda vale; ou</p>
+
 \[
 \log_\epsilon a + \log_\epsilon b = \log_\epsilon ab.
 \]
@@ -607,7 +652,8 @@ $0.4343$; ou
 Agora tentemos nossas mãos em diferenciar certas
 expressões que contêm logaritmos ou exponenciais.
 
-<p>Tome a equação:
+<p>Tome a equação:</p>
+
 \[
 y = \log_\epsilon x.
 \]
@@ -646,7 +692,8 @@ $\dfrac{1}{x}$ quando chegarmos ao capítulo sobre integração.
 
 <p><hr>
 
-<p>Agora, tente diferenciar
+<p>Agora, tente diferenciar</p>
+
 \begin{align*}
                               y &= \log_\epsilon(x+a),\\
  \text{isto é}\;  \epsilon^y &= x+a;
@@ -672,7 +719,8 @@ y &= \log_{10} x.
 \end{align*}
 
 <p>Primeiro mude para logaritmos naturais multiplicando
-pelo módulo $0.4343$. Isto nos dá
+pelo módulo $0.4343$. Isto nos dá</p>
+
 \begin{align*}
 y &= 0.4343 \log_\epsilon x; \\
  \text{donde}\;
@@ -681,20 +729,23 @@ y &= 0.4343 \log_\epsilon x; \\
 
 <p><hr>
 
-<p>A próxima coisa não é tão simples. Tente isto:<a name="diffexp"/>
+<p>A próxima coisa não é tão simples. Tente isto:<a name="diffexp"/></p>
+
 \[
 y = a^x.
 \]
 
-<p>Tomando o logaritmo de ambos os lados, obtemos
+<p>Tomando o logaritmo de ambos os lados, obtemos</p>
+
 \begin{align*}
 \log_\epsilon y &= x \log_\epsilon a, \\
 \text{ ou}\;
-x  = \frac{\log_\epsilon y}{\log_\epsilon a}
+x  &= \frac{\log_\epsilon y}{\log_\epsilon a}
   &= \frac{1}{\log_\epsilon a} × \log_\epsilon y.
 \end{align*}
 
-<p>Como $\dfrac{1}{\log_\epsilon a}$ é uma constante, obtemos
+<p>Como $\dfrac{1}{\log_\epsilon a}$ é uma constante, obtemos</p>
+
 \[
 \frac{dx}{dy}
   = \frac{1}{\log_\epsilon a} × \frac{1}{y}
@@ -705,8 +756,8 @@ logo, revertendo à função original.
 \frac{dy}{dx} = \frac{1}{\;\dfrac{dx}{dy}\;} = a^x × \log_\epsilon a.
 \]
 
+<p>Vemos que, como</p>
 
-<p>Vemos que, como
 \[
 \frac{dx}{dy} × \frac{dy}{dx} =1\quad\text{e}\quad
 \frac{dx}{dy} = \frac{1}{y} × \frac{1}{\log_\epsilon a},\quad
@@ -718,7 +769,8 @@ como $\log_\epsilon y =$ uma função de $x$, sempre temos
 $\dfrac{1}{y}\, \dfrac{dy}{dx} =$ o coeficiente diferencial da função de $x$,
 de modo que poderíamos ter escrito de uma vez, a partir de
 
-$\log_\epsilon y = x \log_\epsilon a$,
+$\log_\epsilon y = x \log_\epsilon a$,</p>
+
 \[
 \frac{1}{y}\, \frac{dy}{dx}
   = \log_\epsilon a\quad\text{e}\quad
@@ -738,39 +790,43 @@ $\log_\epsilon y = x \log_\epsilon a$,
 \frac{dy}{dx} = -a\epsilon^{-ax}.
 \]
 
-<p>Ou assim:
+<p>Ou assim:</p>
+
 \[
 \log_\epsilon y = -ax;\quad
 \frac{1}{y}\, \frac{dy}{dx} = -a;\quad
 \frac{dy}{dx} = -ay = -a\epsilon^{-ax}.
 \]
 
-<p>(2) $y=\epsilon^{\frac{x^2}{3}}$. Seja $\dfrac{x^2}{3}=z$; então $y=\epsilon^z$.
+<p>(2) $y=\epsilon^{\frac{x^2}{3}}$. Seja $\dfrac{x^2}{3}=z$; então $y=\epsilon^z$.</p>
+
 \[
 \frac{dy}{dz} = \epsilon^z;\quad
 \frac{dz}{dx} = \frac{2x}{3};\quad
 \frac{dy}{dx} = \frac{2x}{3}\, \epsilon^{\frac{x^2}{3}}.
 \]
 
-<p>Ou assim:
+<p>Ou assim:</p>
+
 \[
 \log_\epsilon y = \frac{x^2}{3};\quad
 \frac{1}{y}\, \frac{dy}{dx} = \frac{2x}{3};\quad
 \frac{dy}{dx} = \frac{2x}{3}\, \epsilon^{\frac{x^2}{3}}.
 \]
 
+<p>(3) $y = \epsilon^{\frac{2x}{x+1}}$.</p>
 
-<p>(3) $y = \epsilon^{\frac{2x}{x+1}}$.
 \begin{align*}
 \log_\epsilon y &= \frac{2x}{x+1},\quad
-\frac{1}{y}\, \frac{dy}{dx} = \frac{2(x+1)-2x}{(x+1)^2}; \\
+\frac{1}{y}\, \frac{dy}{dx} &= \frac{2(x+1)-2x}{(x+1)^2}; \\
  logo
 \frac{dy}{dx} &= \frac{2}{(x+1)^2} \epsilon^{\frac{2x}{x+1}}.
 \end{align*}
 
 <p>Verifique escrevendo $\dfrac{2x}{x+1}=z$.
 
-<p>(4) $y=\epsilon^{\sqrt{x^2+a}}$. $\log_\epsilon y=(x^2+a)^{\frac{1}{2}}$.
+<p>(4) $y=\epsilon^{\sqrt{x^2+a}}$. $\log_\epsilon y=(x^2+a)^{\frac{1}{2}}$.</p>
+
 \[
 \frac{1}{y}\, \frac{dy}{dx} = \frac{x}{(x^2+a)^{\frac{1}{2}}}\quad\text{e}\quad
 \frac{dy}{dx} = \frac{x × \epsilon^{\sqrt{x^2+a}}}{(x^2+a)^{\frac{1}{2}}}.
@@ -784,7 +840,8 @@ Pois se $(x^2+a)^{\frac{1}{2}}=u$ e $x^2+a=v$, $u=v^{\frac{1}{2}}$,
 
 <p>Verifique escrevendo $\sqrt{x^2+a}=z$.
 
-<p>(5) $y=\log(a+x^3)$. Seja $(a+x^3)=z$; então $y=\log_\epsilon z$.
+<p>(5) $y=\log(a+x^3)$. Seja $(a+x^3)=z$; então $y=\log_\epsilon z$.</p>
+
 \[
 \frac{dy}{dz} = \frac{1}{z};\quad
 \frac{dz}{dx} = 3x^2;\quad\text{logo}\quad
@@ -792,17 +849,19 @@ Pois se $(x^2+a)^{\frac{1}{2}}=u$ e $x^2+a=v$, $u=v^{\frac{1}{2}}$,
 \]
 
 <p>(6) $y=\log_\epsilon\{{3x^2+\sqrt{a+x^2}}\}$. Seja $3x^2 + \sqrt{a+x^2}=z$;
-então $y=\log_\epsilon z$.
+então $y=\log_\epsilon z$.</p>
+
 \begin{align*}
 \frac{dy}{dz}
-  &= \frac{1}{z};\quad \frac{dz}{dx} = 6x + \frac{x}{\sqrt{x^2+a}}; \\
+  &= \frac{1}{z} \\
+\frac{dz}{dx} &= 6x + \frac{x}{\sqrt{x^2+a}}; \\
 \frac{dy}{dx}
   &= \frac{6x + \dfrac{x}{\sqrt{x^2+a}}}{3x^2 + \sqrt{a+x^2}}
-   = \frac{x(1 + 6\sqrt{x^2+a})}{(3x^2 + \sqrt{x^2+a}) \sqrt{x^2+a}}.
+   &= \frac{x(1 + 6\sqrt{x^2+a})}{(3x^2 + \sqrt{x^2+a}) \sqrt{x^2+a}}.
 \end{align*}
 
+<p>(7) $y=(x+3)^2 \sqrt{x-2}$.</p>
 
-<p>(7) $y=(x+3)^2 \sqrt{x-2}$.
 \begin{align*}
 \log_\epsilon y
   &= 2 \log_\epsilon(x+3)+ \tfrac{1}{2} \log_\epsilon(x-2). \\
@@ -812,13 +871,14 @@ então $y=\log_\epsilon z$.
   &= (x+3)^2 \sqrt{x-2} \left\{\frac{2}{x+3} + \frac{1}{2(x-2)}\right\}.
 \end{align*}
 
-<p>(8) $y=(x^2+3)^3(x^3-2)^{\frac{2}{3}}$.
+<p>(8) $y=(x^2+3)^3(x^3-2)^{\frac{2}{3}}$.</p>
+
 \begin{align*}
 \log_\epsilon y
   &= 3 \log_\epsilon(x^2+3) + \tfrac{2}{3} \log_\epsilon(x^3-2); \\
 \frac{1}{y}\, \frac{dy}{dx}
   &= 3 \frac{2x}{(x^2+3)} + \frac{2}{3} \frac{3x^2}{x^3-2}
-   = \frac{6x}{x^2+3} + \frac{2x^2}{x^3-2}.
+   &= \frac{6x}{x^2+3} + \frac{2x^2}{x^3-2}.
 \end{align*}
 Pois se $y=\log_\epsilon(x^2+3)$, seja $x^2+3=z$ e $u=\log_\epsilon z$.
 \[
@@ -833,21 +893,22 @@ De modo semelhante, se $v=\log_\epsilon(x^3-2)$, $\dfrac{dv}{dx} = \dfrac{3x^2}{
     \left\{ \frac{6x}{x^2+3} + \frac{2x^2}{x^3-2} \right\}.
 \]
 
-<p>(9) $y=\dfrac{\sqrt[2]{x^2+a}}{\sqrt[3]{x^3-a}}$.
+<p>(9) $y=\dfrac{\sqrt[2]{x^2+a}}{\sqrt[3]{x^3-a}}$.</p>
+
 \begin{align*}
 \log_\epsilon y
   &= \frac{1}{2} \log_\epsilon(x^2+a) - \frac{1}{3} \log_\epsilon(x^3-a). \\
 \frac{1}{y}\, \frac{dy}{dx}
   &= \frac{1}{2}\, \frac{2x}{x^2+a} - \frac{1}{3}\, \frac{3x^2}{x^3-a}
-   = \frac{x}{x^2+a} - \frac{x^2}{x^3-a} \\
+   &= \frac{x}{x^2+a} - \frac{x^2}{x^3-a} \\
  e
 \frac{dy}{dx}
   &= \frac{\sqrt[2]{x^2+a}}{\sqrt[3]{x^3-a}}
      \left\{ \frac{x}{x^2+a} - \frac{x^2}{x^3-a} \right\}.
 \end{align*}
 
+<p>(10) $y=\dfrac{1}{\log_\epsilon x}$</p>
 
-<p>(10) $y=\dfrac{1}{\log_\epsilon x}$
 \[
 \frac{dy}{dx}
   = \frac{\log_\epsilon x × 0 - 1 × \dfrac{1}{x}}
@@ -855,14 +916,16 @@ De modo semelhante, se $v=\log_\epsilon(x^3-2)$, $\dfrac{dv}{dx} = \dfrac{3x^2}{
   = -\frac{1}{x \log_\epsilon^2x}.
 \]
 
-<p>(11) $y=\sqrt[3]{\log_\epsilon x} = (\log_\epsilon x)^{\frac{1}{3}}$. Seja $z=\log_\epsilon x$; $y=z^{\frac{1}{3}}$.
+<p>(11) $y=\sqrt[3]{\log_\epsilon x} = (\log_\epsilon x)^{\frac{1}{3}}$. Seja $z=\log_\epsilon x$; $y=z^{\frac{1}{3}}$.</p>
+
 \[
 \frac{dy}{dz} = \frac{1}{3} z^{-\frac{2}{3}};\quad
 \frac{dz}{dx} = \frac{1}{x};\quad
 \frac{dy}{dx} = \frac{1}{3x \sqrt[3]{\log_\epsilon^2 x}}.
 \]
 
-<p>(12) $y=\left(\dfrac{1}{a^x}\right)^{ax}$.
+<p>(12) $y=\left(\dfrac{1}{a^x}\right)^{ax}$.</p>
+
 \begin{align*}
 \log y &= -ax \log a^{x} = -ax^{2} \cdot \log a.\\
 \frac{1}{y} \frac{dy}{dx} &= -2ax \cdot \log a\\
@@ -905,7 +968,8 @@ sinalização através de um cabo submarino depende do
 valor da razão do diâmetro externo do núcleo
 ao diâmetro do fio de cobre contido. Se esta
 razão for chamada $y$, então o número de sinais $s$ que podem
-ser enviados por minuto pode ser expresso pela fórmula
+ser enviados por minuto pode ser expresso pela fórmula</p>
+
 \[
 s=ay^2 \log_\epsilon \frac{1}{y};
 \]
@@ -913,7 +977,8 @@ onde $a$ é uma constante que depende do comprimento e
 da qualidade dos materiais. Mostre que se estes forem
 dados, $s$ será máximo se $y=1 ÷ \sqrt{\epsilon}$.
 
-<p>(14) Encontre o máximo ou mínimo de
+<p>(14) Encontre o máximo ou mínimo de</p>
+
 \[
 y=x^3-\log_\epsilon x.
 \]
@@ -967,13 +1032,13 @@ representada pela equação $y=bp^x$.
 <p>Podemos ver, pondo $x=0$, que $b$ é a altura inicial
 de $y$.
 
-<p>Então quando
+<p>Então quando</p>
+
 \[
 x=1,\quad y=bp;\qquad
 x=2,\quad y=bp^2;\qquad
 x=3,\quad y=bp^3,\quad \text{etc.}
 \]
-
 
 <p>Também, vemos que $p$ é o valor numérico da
 razão entre a altura de qualquer ordenada e a da
@@ -994,11 +1059,12 @@ De fato, segue da equação que
 \begin{align*}
 \log_\epsilon y &= \log_\epsilon b + x · \log_\epsilon p, \\
  \text{donde }\;
-\log_\epsilon y &- \log_\epsilon b = x · \log_\epsilon p.
+\log_\epsilon y &- \log_\epsilon b &= x · \log_\epsilon p.
 \end{align*}
 
 <p>Ora, como $\log_\epsilon p$ é um mero número, e pode ser
-escrito como $\log_\epsilon p=a$, segue-se que
+escrito como $\log_\epsilon p=a$, segue-se que</p>
+
 \[
 \log_\epsilon \frac{y}{b}=ax,
 \]

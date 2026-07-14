@@ -7,7 +7,39 @@
 body{counter-reset:h1 16}
 </style>
 <script type="text/x-mathjax-config">
-  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\(','\)']],
+      displayMath: [['$$','$$'], ['\[','\]']],
+      processEscapes: true
+    },
+    TeX: {
+      extensions: ["AMSmath.js","AMSsymbols.js"],
+      equationNumbers: { autoNumber: "none" }
+    },
+    "HTML-CSS": {
+      linebreaks: { automatic: false },
+      styles: {
+        ".MathJax_Display": {
+          "margin": "1.5em 0",
+          "overflow-x": "auto",
+          "overflow-y": "hidden"
+        },
+        ".MathJax .mtable .mtd": {
+          "padding-top": "0.45em",
+          "padding-bottom": "0.45em"
+        },
+        ".MathJax .mtr + .mtr .mtd": {
+          "padding-top": "0.65em"
+        }
+      }
+    },
+    CommonHTML: {
+      styles: {
+        ".MJXc-display": { "margin": "1.5em 0" }
+      }
+    }
+  });
 </script>
 <script type="text/javascript"
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
@@ -69,7 +101,6 @@ relação a $v$, teríamos:
 dy_u = u\, dv.
 \]
 
-
 <p>As letrinhas aqui postas como subscritos são para mostrar
 qual quantidade foi tomada como constante na
 operação.
@@ -87,11 +118,13 @@ deltas gregas, como $\partial$, em vez de pequeninos $d$. Deste modo
 
 <p>Se pusermos estes valores para $v$ e $u$ respectivamente,
 teremos
+</p>
 
 \[
 dy_v = \frac{\partial y}{\partial u}\, du, \\
 dy_u = \frac{\partial y}{\partial v}\, dv,
 \]
+
 <p>que são <em>diferenciais parciais</em>.
 <p>Mas, se você pensar bem, observará que a
 variação total de $y$ depende de <em>ambas</em> estas coisas ao
@@ -115,9 +148,9 @@ As respostas são:
 \end{aligned} \right\}
 \]
 
-
 <p>O primeiro é obtido supondo $y$ constante, o
-segundo é obtido supondo $x$ constante; então
+segundo é obtido supondo $x$ constante; então</p>
+
 \[
 dw = (4ax+3by)\, dx + (3bx+12cy^2)\, dy.
 \]
@@ -163,9 +196,12 @@ variáveis independentes, $t$ e $x$. Entendido isto,
 tomemos a expressão
 \begin{align*}
                     y &= F(x+at) + f(x-at), \\
- \text{ou,}\;\quad     y &= F(w) + f(v); \\
- \text{onde}\;\quad   w &= x+at,\quad \text{e}\quad v = x-at. \\
-   \text{Então}\;\quad   \frac{\partial y}{\partial x}
+ \text{ou,}\ \\
+y &= F(w) + f(v); \\
+ \text{onde}\ \\
+w &= x+at,\quad \text{e}\quad v = x-at. \\
+   \text{Então}\ \\
+\frac{\partial y}{\partial x}
                       &= \frac{\partial F(w)}{\partial w} · \frac{\partial w}{\partial x}
                        + \frac{\partial f(v)}{\partial v} · \frac{\partial v}{\partial x} \\
                       &= F'(w) · 1 + f'(v) · 1
@@ -198,13 +234,15 @@ Variáveis Independentes.</h2>
 fio. A terceira é $30-(x+y)$, e a área do
 
 triângulo é $A = \sqrt{s(s-x)(s-y)(s-30+x+y)}$, onde
-$s$ é o semiperímetro, $15$, de modo que $A = \sqrt{15P}$, onde
+$s$ é o semiperímetro, $15$, de modo que $A = \sqrt{15P}$, onde</p>
+
 \begin{align*}
 P &= (15-x)(15-y)(x+y-15) \\
   &= xy^2 + x^2y - 15x^2 - 15y^2 - 45xy + 450x + 450y - 3375.
 \end{align*}
 
-<p>Claramente $A$ é máximo quando $P$ é máximo.
+<p>Claramente $A$ é máximo quando $P$ é máximo.</p>
+
 \[
 dP = \dfrac{\partial P}{\partial x}\, dx + \dfrac{\partial P}{\partial y}\, dy.
 \]
@@ -225,7 +263,8 @@ isto é,
 <p>Uma solução imediata é $x=y$.
 
 <p>Se agora introduzirmos esta condição no valor
-de $P$, achamos
+de $P$, achamos</p>
+
 \[
 P = (15-x)^2 (2x-15) = 2x^3 - 75x^2 + 900x - 3375.
 \]
@@ -245,7 +284,8 @@ juntos seja a menor possível.
 
 <p>O vagão é uma caixa retangular aberta no topo.
 Seja $x$ o comprimento e $y$ a largura; então a
-profundidade é $\dfrac{V}{xy}$. A área de superfície é $S=xy + \dfrac{2V}{x} + \dfrac{2V}{y}$.
+profundidade é $\dfrac{V}{xy}$. A área de superfície é $S=xy + \dfrac{2V}{x} + \dfrac{2V}{y}$.</p>
+
 \[
 dS = \frac{\partial S}{\partial x}\, dx
    + \frac{\partial S}{\partial y}\, dy
@@ -259,7 +299,8 @@ x - \frac{2V}{y^2} = 0.
 \]
 
 <p>Aqui também, uma solução imediata é $x = y$, de modo que
-$S = x^2 + \dfrac{4V}{x}\quad$, $\dfrac{dS}{dx}= 2x - \dfrac{4V}{x^2} =0$ para mínimo, e
+$S = x^2 + \dfrac{4V}{x}\quad$, $\dfrac{dS}{dx}= 2x - \dfrac{4V}{x^2} =0$ para mínimo, e</p>
+
 \[
 x = \sqrt[3]{2V}.
 \]
@@ -271,7 +312,8 @@ x = \sqrt[3]{2V}.
 em relação a $x$ só, e em relação a $y$ só.
 
 <p>(2) Encontre os coeficientes diferenciais parciais em
-relação a $x$, $y$ e $z$, da expressão
+relação a $x$, $y$ e $z$, da expressão</p>
+
 \[
 x^2yz + xy^2z + xyz^2 + x^2y^2z^2.
 \]
@@ -295,7 +337,8 @@ $y = (\sin x)^u$; e de $y = \dfrac{\log_\epsilon u}{v}$.
 cujo produto é uma constante $k$, é máxima quando
 essas três quantidades são iguais.
 
-<p>(7) Encontre o máximo ou mínimo da função
+<p>(7) Encontre o máximo ou mínimo da função</p>
+
 \[
 u = x + 2xy + y.
 \]
@@ -312,7 +355,8 @@ contínuo de seus senos possa ser um máximo ou mínimo.
 
 <p>(10) Encontre o máximo ou mínimo de $u = \dfrac{\epsilon^{x+y}}{xy}$.
 
-<p>(11) Encontre máximo e mínimo de
+<p>(11) Encontre máximo e mínimo de</p>
+
 \[
 u = y + 2x - 2 \log_\epsilon y - \log_\epsilon x.
 \]

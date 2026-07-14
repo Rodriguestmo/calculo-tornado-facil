@@ -34,7 +34,39 @@
 body{counter-reset:h1 5}
 </style>
 <script type="text/x-mathjax-config">
-  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\(','\)']],
+      displayMath: [['$$','$$'], ['\[','\]']],
+      processEscapes: true
+    },
+    TeX: {
+      extensions: ["AMSmath.js","AMSsymbols.js"],
+      equationNumbers: { autoNumber: "none" }
+    },
+    "HTML-CSS": {
+      linebreaks: { automatic: false },
+      styles: {
+        ".MathJax_Display": {
+          "margin": "1.5em 0",
+          "overflow-x": "auto",
+          "overflow-y": "hidden"
+        },
+        ".MathJax .mtable .mtd": {
+          "padding-top": "0.45em",
+          "padding-bottom": "0.45em"
+        },
+        ".MathJax .mtr + .mtr .mtd": {
+          "padding-top": "0.65em"
+        }
+      }
+    },
+    CommonHTML: {
+      styles: {
+        ".MJXc-display": { "margin": "1.5em 0" }
+      }
+    }
+  });
 </script>
 <script type="text/javascript"
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
@@ -145,7 +177,7 @@ Comecemos com algum caso simples de uma constante
 adicionada, assim:
    Seja
 \begin{align*}
-y=x^3+5.
+y&=x^3+5.
 \end{align*}
 Como antes, suponhamos $x$ crescer para $x+dx$ e
 $y$ crescer para $y+dy$.
@@ -182,7 +214,8 @@ como $-5$ ou $-b$, teria igualmente desaparecido.
 Tome como um experimento simples este caso:
 
 <p>Seja $y = 7x^2$.
-Então procedendo como antes obtemos:
+Então procedendo como antes obtemos:</p>
+
 \begin{align*}
 y + dy &= 7(x+dx)^2 \\
        &= 7\{x^2 + 2x·dx + (dx)^2\} \\
@@ -196,7 +229,6 @@ o último termo, temos
 dy &= 14x·dx.\\
 \frac{dy}{dx} &= 14x.
 \end{align*}
-
 
 <p>Ilustremos este exemplo elaborando os
 gráficos das equações $y = 7x^2$ e $\dfrac{dy}{dx} = 14x$, ao
@@ -262,7 +294,8 @@ exemplos dados no fim deste capítulo.
 
 <p>$\dfrac{3}{5}$ é uma constante adicionada e some (veja <a href="5.html#addconst">aqui</a>).
 
-<p>Podemos então escrever de imediato
+<p>Podemos então escrever de imediato</p>
+
 \[
 \frac{dy}{dx} = \frac{1}{7} × 5 × x^{5-1}, \\
  \text{ou}\;
@@ -272,7 +305,8 @@ exemplos dados no fim deste capítulo.
 <p>(2) Diferencie $y = a\sqrt{x} - \dfrac{1}{2}\sqrt{a}$.
 
 <p>O termo $\dfrac{1}{2}\sqrt{a}$ some, sendo uma constante adicionada;
-e como $a\sqrt{x}$, na forma de índice, se escreve $ax^{\frac{1}{2}}$, temos
+e como $a\sqrt{x}$, na forma de índice, se escreve $ax^{\frac{1}{2}}$, temos</p>
+
 \[
 \frac{dy}{dx}
   = a × \frac{1}{2} × x^{\frac{1}{2}-1}
@@ -293,12 +327,14 @@ expressão pode ser posta em forma mais simples.
 <p>Primeiro devemos tentar trazê-la à forma $y =$ alguma
 expressão envolvendo apenas $x$.
 
-<p>A expressão pode ser escrita
+<p>A expressão pode ser escrita</p>
+
 \[
 (a-b)y + (a + b)x = (x+y) \sqrt{a^2 - b^2}.
 \]
 
-<p>Elevando ao quadrado, obtemos
+<p>Elevando ao quadrado, obtemos</p>
+
 \[
 (a-b)^2 y^2 + (a + b)^2 x^2 + 2(a+b)(a-b)xy = (x^2+y^2+2xy)(a^2-b^2),
 \]
@@ -324,7 +360,8 @@ e $h=20$ pol. Se $r = h$, ache as dimensões do
 cilindro de modo que uma mudança de $1$ pol. no raio cause uma
 mudança de $400$ pol. cúb. no volume.
 
-<p>A taxa de variação de $V$ com respeito a $r$ é
+<p>A taxa de variação de $V$ com respeito a $r$ é</p>
+
 \[
 \frac{dV}{dr} = 2 \pi r h.
 \]
@@ -337,14 +374,16 @@ facilmente verificado, pois os volumes com $r = 5$ e $r = 6$
 são $1570$ pol. cúb. e $2260.8$ pol. cúb. respectivamente, e
 $2260.8 - 1570 = 690.8$.
 
-<p>Também, se
+<p>Também, se</p>
+
 \[
 r=h,\quad \dfrac{dV}{dr} = 2\pi r^2 = 400\quad \text{e}\quad r = h = \sqrt{\dfrac{400}{2\pi}} = 7.98 \text{ pol}.
 \]
 
 <p>(5) A leitura $\theta$ de um pirômetro de radiação de Féry
 está relacionada à temperatura Celsius $t$ do
-corpo observado pela relação
+corpo observado pela relação</p>
+
 \[
 \dfrac{\theta}{\theta_1} = \left(\dfrac{t}{t_1}\right)^4,
 \]
@@ -357,7 +396,8 @@ leu $25$ quando a temperatura era $1000°$C.
 
 <p>A sensibilidade é a taxa de variação da
 leitura com a temperatura, isto é $\dfrac{d\theta}{dt}$. A fórmula
-pode ser escrita
+pode ser escrita</p>
+
 \[
 \theta = \dfrac{\theta_1}{t_1^4} t^4 = \dfrac{25t^4}{1000^4},
 \]
@@ -411,7 +451,8 @@ para a qual $a = 0.5×10^{-10}$ e $b=6$.
 
 <p>(9) A frequência $n$ de vibração de uma corda de
 diâmetro $D$, comprimento $L$ e densidade relativa $\sigma$, esticada
-com uma força $T$, é dada por
+com uma força $T$, é dada por</p>
+
 \[
 n = \dfrac{1}{DL} \sqrt{\dfrac{gT}{\pi\sigma}}.
 \]
@@ -422,7 +463,8 @@ $\sigma$ e $T$ são variados isoladamente.
 <p>
 
 <p>(10) A maior pressão externa $P$ que um tubo
-pode suportar sem colapsar é dada por
+pode suportar sem colapsar é dada por</p>
+
 \[
   P = \left(\dfrac{2E}{1-\sigma^2}\right) \dfrac{t^3}{D^3},
 \]
@@ -473,7 +515,6 @@ varia.
   = -\dfrac{1}{2DL} \sqrt{\dfrac{gT}{\pi \sigma^3}},
   \dfrac{dn}{dT} =  \dfrac{1}{2DL} \sqrt{\dfrac{g}{\pi \sigma T}}.
 \]
-
 
 <p> (10) \[
 	\dfrac{\text{Taxa de mudança de $P$ quando $t$ varia}}

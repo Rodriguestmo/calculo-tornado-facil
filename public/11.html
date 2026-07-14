@@ -34,7 +34,39 @@
 body{counter-reset:h1 11}
 </style>
 <script type="text/x-mathjax-config">
-  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\(','\)']],
+      displayMath: [['$$','$$'], ['\[','\]']],
+      processEscapes: true
+    },
+    TeX: {
+      extensions: ["AMSmath.js","AMSsymbols.js"],
+      equationNumbers: { autoNumber: "none" }
+    },
+    "HTML-CSS": {
+      linebreaks: { automatic: false },
+      styles: {
+        ".MathJax_Display": {
+          "margin": "1.5em 0",
+          "overflow-x": "auto",
+          "overflow-y": "hidden"
+        },
+        ".MathJax .mtable .mtd": {
+          "padding-top": "0.45em",
+          "padding-bottom": "0.45em"
+        },
+        ".MathJax .mtr + .mtr .mtd": {
+          "padding-top": "0.65em"
+        }
+      }
+    },
+    CommonHTML: {
+      styles: {
+        ".MJXc-display": { "margin": "1.5em 0" }
+      }
+    }
+  });
 </script>
 <script type="text/javascript"
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
@@ -129,7 +161,8 @@ saber quais condições farão o custo de operação
 um mínimo, ou farão a eficiência um máximo.
 
 <p>Ora, para começar com um caso concreto, tomemos a
-equação
+equação</p>
+
 \[
 y = x^2 - 4x + 7.
 \]
@@ -201,7 +234,8 @@ valor requerido de $y$. Esse processo é comumente chamado
 de “igualar a zero.”
 
 <p>Para ver quão simplesmente funciona, tome o exemplo com
-que este capítulo se abre, a saber
+que este capítulo se abre, a saber</p>
+
 \[
 y = x^2 - 4x + 7.
 \]
@@ -225,7 +259,8 @@ Resolvendo essa equação para $x$, obtemos:
 ocorrerá exatamente quando $x=2$.
 
 <p>Colocando o valor $x=2$ na equação original,
-obtemos
+obtemos</p>
+
 \begin{align*}
 y &= 2^2 - (4×2) + 7 \\
   &= 4 - 8 + 7       \\
@@ -236,7 +271,8 @@ y &= 2^2 - (4×2) + 7 \\
 mínimo ocorre quando $x = 2$, e que esse mínimo
 de $y = 3$.
 
-<p>Tente o segundo exemplo (<a href="#figure24">Figura 24</a>), que é
+<p>Tente o segundo exemplo (<a href="#figure24">Figura 24</a>), que é</p>
+
 \begin{align*}
 y &= 3x - x^2. \\
    \text{Diferenciando,}\;
@@ -265,7 +301,8 @@ juízo próprio) uma espécie de ressentimento, porque sabe
 que $\dfrac{dy}{dx}$ tem todo tipo de valores diferentes em
 diferentes partes da curva, conforme ela esteja
 subindo ou descendo. Assim, quando de repente se
-lhe diz para escrever
+lhe diz para escrever</p>
+
 \[
 \frac{dy}{dx} = 0,
 \]
@@ -299,13 +336,15 @@ por conta própria se o $y$ correspondente é um
 máximo ou um mínimo. Claro, se você
 traçou a curva, já sabe qual será.
 
-<p>Por exemplo, tome a equação:
+<p>Por exemplo, tome a equação:</p>
+
 \[
 y = 4x + \frac{1}{x}.
 \]
 
 <p>Sem parar para pensar a que curva ela corresponde,
-diferencie-a, e iguale a zero:
+diferencie-a, e iguale a zero:</p>
+
 \begin{align*}
 \frac{dy}{dx}  &= 4 - x^{-2} = 4 - \frac{1}{x^2} = 0; \\
 \text{ de onde}\;
@@ -344,10 +383,11 @@ obterá dividindo em duas metades iguais.
 número a ser cortado em duas partes chamado $n$. Então
 se $x$ é uma parte, a outra será $n-x$, e o produto
 será $x(n-x)$ ou $nx-x^2$. Assim escrevemos $y=nx-x^2$.
-Agora diferencie e iguale a zero;
+Agora diferencie e iguale a zero;</p>
+
 \begin{align*}
-\dfrac{dy}{dx} = n - 2x = 0\\
- \text{Resolvendo para $x$, obtemos}\;  \dfrac{n}{2} = x.\\
+\dfrac{dy}{dx} &= n - 2x = 0\\
+ \text{Resolvendo para $x$, obtemos}\;  \dfrac{n}{2} &= x.\\
 \end{align*}
 Assim agora <em>sabemos</em> que qualquer que seja o número $n$,
 devemos dividi-lo em duas partes iguais se o produto
@@ -364,6 +404,7 @@ $m×n×p$ é um máximo quando $m=n=p$.
 <em>Caso de teste.</em><p>
 Apliquemos de uma vez nosso conhecimento a um caso que
 podemos testar.
+</p>
 
 \begin{align*}
   \text{Seja }   y &= x^2 - x;
@@ -372,7 +413,8 @@ e encontremos se essa função tem um máximo
 ou mínimo; e se tem, testemos se é um máximo
 ou um mínimo.
 
-<p>Diferenciando, obtemos
+<p>Diferenciando, obtemos</p>
+
 \begin{align*}
 \frac{dy}{dx} &= 2x - 1. \\
  \text{ Igualando a zero, obtemos }\;
@@ -385,7 +427,8 @@ x &= \tfrac{1}{2}.
 
 <p>Isto é, quando $x$ é feito $=\frac{1}{2}$, o valor correspondente
 de $y$ será ou um máximo ou um mínimo.
-Consequentemente, pondo $x=\frac{1}{2}$ na equação original, obtemos
+Consequentemente, pondo $x=\frac{1}{2}$ na equação original, obtemos</p>
+
 \begin{align*}
 y &= (\tfrac{1}{2})^2 - \tfrac{1}{2}, \\
  ou \;
@@ -394,7 +437,8 @@ y &= -\tfrac{1}{4}.
 
 <p>Isto é um máximo ou um mínimo? Para testar, tente
 pôr $x$ um pouco maior do que $\frac{1}{2}$, digamos faça $x=0.6$.
-Então
+Então</p>
+
 \[
 y = (0.6)^2 - 0.6 = 0.36 - 0.6 = -0.24,
 \]
@@ -417,7 +461,8 @@ y &=\tfrac{1}{3} x^3 - 2x^2 + 3x + 1. \\
 <a name="figure28">
 <p><img src="33283-t/images/113a.pdf.png-1.png">
 
-<p>Igualando a zero, obtemos a quadrática,
+<p>Igualando a zero, obtemos a quadrática,</p>
+
 \[
 x^2 - 4x +3 = 0;
 \]
@@ -457,7 +502,8 @@ $y=b$, como representado na <a href="#figure29">Figura 29</a>, é:
 <a name="figure29">
 <p><img src="33283-t/images/114a.pdf.png-1.png">
 
-<p>Isto pode ser transformado em
+<p>Isto pode ser transformado em</p>
+
 \[
 y = \sqrt{r^2-(x-a)^2} + b.
 \]
@@ -469,7 +515,8 @@ $b-r$. Mas não tiremos proveito desse
 
 conhecimento; ponhamo-nos a encontrar que valor
 de $x$ fará $y$ um máximo ou um mínimo, pelo
-processo de diferenciar e igualar a zero.
+processo de diferenciar e igualar a zero.</p>
+
 \begin{align*}
 \frac{dy}{dx} &= \frac{1}{2} \frac{1}{\sqrt{r^2-(x-a)^2}} × (2a-2x), \\
 \text{que se reduz a}\;
@@ -477,13 +524,15 @@ processo de diferenciar e igualar a zero.
 \end{align*}
 
 <p>Então a condição para $y$ ser máximo ou
-mínimo é:
+mínimo é:</p>
+
 \[
 \frac{a-x}{\sqrt{r^2-(x-a)^2}} = 0.
 \]
 
 <p>Como nenhum valor qualquer de $x$ fará o denominador
-infinito, a única condição para dar zero é
+infinito, a única condição para dar zero é</p>
+
 \begin{align*}
 x &= a.
 \end{align*}
@@ -496,7 +545,7 @@ e como a raiz de $r^2$ é ou $+r$ ou $-r$, temos
 dois valores resultantes de $y$
 \begin{align*}
 \left\{\begin{aligned}y \\ y\end{aligned}\right. &
-\begin{aligned}= b & + r \\ = b & - r.\end{aligned}
+\begin{aligned}&= b & + r \\ = b & - r.\end{aligned}
 \end{align*}
 
 <p>O primeiro desses é o máximo, no topo;
@@ -505,7 +554,8 @@ o segundo o mínimo, no fundo.
 
 <p>Se a curva é tal que não há lugar que seja um
 máximo ou mínimo, o processo de igualar a
-zero renderá um resultado impossível. Por exemplo:
+zero renderá um resultado impossível. Por exemplo:</p>
+
 \begin{align*}
    \text{Seja } \;
 y &= ax^3 + bx + c. \\
@@ -513,7 +563,8 @@ y &= ax^3 + bx + c. \\
 \frac{dy}{dx} &= 3ax^2 + b.
 \end{align*}
 
-<p>Igualando isto a zero, obtemos $3ax^2 + b = 0$,
+<p>Igualando isto a zero, obtemos $3ax^2 + b = 0$,</p>
+
 \[
 x^2 = \frac{-b}{3a}, \quad\text{e}\quad x = \sqrt{\frac{-b}{3a}},\;\text{ que é impossível.}
 \]
@@ -526,14 +577,16 @@ do cálculo.
 <p>(1) Quais são os lados do retângulo de área máxima
 inscrito em um círculo de raio $R$?
 
-<p>Se um lado se chama $x$,
+<p>Se um lado se chama $x$,</p>
+
 \[
 \text{o outro lado} = \sqrt{(\text{diagonal})^2 - x^2};
 \]
 e como a diagonal do retângulo é necessariamente um
 diâmetro, o outro lado $ = \sqrt{4R^2 - x^2}$.
 
-<p>Então, área do retângulo $S = x\sqrt{4R^2 - x^2}$,
+<p>Então, área do retângulo $S = x\sqrt{4R^2 - x^2}$,</p>
+
 \[
 \frac{dS}{dx} = x × \dfrac{d\left(\sqrt{4R^2 - x^2}\,\right)}{dx} + \sqrt{4R^2 - x^2} × \dfrac{d(x)}{dx}.
 \]
@@ -544,14 +597,16 @@ procure $\dfrac{dy}{dw}$ e $\dfrac{dw}{dx}$; lute com isso, e só se não
 conseguir continue, consulte <a href="9.html#dodge">aqui</a>.
 
 
-<p>Você obterá
+<p>Você obterá</p>
+
 \[
 \dfrac{dS}{dx}
   = x × -\dfrac{x}{\sqrt{4R^2 - x^2}} + \sqrt{4R^2 - x^2}
   = \dfrac{4R^2 - 2x^2}{\sqrt{4R^2 - x^2}}.
 \]
 
-<p>Para máximo ou mínimo devemos ter
+<p>Para máximo ou mínimo devemos ter</p>
+
 \[
 \dfrac{4R^2 - 2x^2}{\sqrt{4R^2 - x^2}} = 0;
 \]
@@ -568,12 +623,14 @@ cujo lado inclinado tem comprimento $l$ quando
 a capacidade do vaso é máxima?
 
 <p>Se $R$ for o raio e $H$ a altura correspondente,
-$H = \sqrt{l^2 - R^2}$.
+$H = \sqrt{l^2 - R^2}$.</p>
+
 \[
 \text{Volume } V = \pi R^2 × \dfrac{H}{3} = \pi R^2 × \dfrac{\sqrt{l^2 - R^2}}{3}.
 \]
 
-<p>Procedendo como no problema anterior, obtemos
+<p>Procedendo como no problema anterior, obtemos</p>
+
 \begin{align*}
 \dfrac{dV}{dR}
   &= \pi R^2 × -\dfrac{R}{3\sqrt{l^2 - R^2}} + \dfrac{2\pi R}{3} \sqrt{l^2 - R^2} \\
@@ -585,12 +642,14 @@ para máximo ou mínimo.
 obviamente.
 
 
-<p>(3) Encontre os máximos e mínimos da função
+<p>(3) Encontre os máximos e mínimos da função</p>
+
 \[
 y = \dfrac{x}{4-x} + \dfrac{4-x}{x}.
 \]
 
-<p>Obtemos
+<p>Obtemos</p>
+
 \[
 \dfrac{dy}{dx} = \dfrac{(4-x)-(-x)}{(4-x)^2} + \dfrac{-x - (4-x)}{x^2} = 0
 \]
@@ -600,7 +659,8 @@ para máximo ou mínimo; ou
 \]
 
 <p>Há apenas um valor, logo apenas um máximo
-ou mínimo.
+ou mínimo.</p>
+
 \begin{align*}
 \text{Para}\quad x &= 2,\phantom{.5}\quad y = 2, \\
 \text{para}\quad x &= 1.5,\quad y = 2.27,   \\
@@ -627,12 +687,14 @@ para máximo ou mínimo.
 <p>Para $x=±0.5$, $y= 1.932$, de modo que isto é um máximo.
 
 
-<p>(5) Encontre os máximos e mínimos da função
+<p>(5) Encontre os máximos e mínimos da função</p>
+
 \[
 y = \dfrac{x^2-5}{2x-4}.
 \]
 
-<p>Temos
+<p>Temos</p>
+
 \[
 \dfrac{dy}{dx} = \dfrac{(2x-4) × 2x - (x^2-5)2}{(2x-4)^2} = 0
 \]
@@ -649,12 +711,14 @@ x = \tfrac{5}{2} ± \sqrt{-1}.
 para o qual $\dfrac{dy}{dx} = 0$; logo não há máximo nem
 mínimo.
 
-<p>(6) Encontre os máximos e mínimos da função
+<p>(6) Encontre os máximos e mínimos da função</p>
+
 \[
 (y-x^2)^2 = x^5.
 \]
 
-<p>Isto pode ser escrito $y = x^2 ± x^{\frac{5}{2}}$.
+<p>Isto pode ser escrito $y = x^2 ± x^{\frac{5}{2}}$.</p>
+
 \[
 \dfrac{dy}{dx} = 2x ± \tfrac{5}{2} x^{\frac{3}{2}} = 0 \quad\text{para máximo ou mínimo};
 \]
@@ -735,7 +799,8 @@ extremidades unidas e é esticado por $3$ pinos de modo
 a formar um triângulo. Qual é a maior área triangular
 que pode ser encerrada pelo barbante?
 
-<p>(5) Trace a curva correspondente à equação
+<p>(5) Trace a curva correspondente à equação</p>
+
 \[
 y = \frac{10}{x} + \frac{10}{8-x};
 \]

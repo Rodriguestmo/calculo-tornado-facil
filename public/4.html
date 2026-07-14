@@ -34,7 +34,39 @@
 body{counter-reset:h1 4}
 </style>
 <script type="text/x-mathjax-config">
-  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\(','\)']],
+      displayMath: [['$$','$$'], ['\[','\]']],
+      processEscapes: true
+    },
+    TeX: {
+      extensions: ["AMSmath.js","AMSsymbols.js"],
+      equationNumbers: { autoNumber: "none" }
+    },
+    "HTML-CSS": {
+      linebreaks: { automatic: false },
+      styles: {
+        ".MathJax_Display": {
+          "margin": "1.5em 0",
+          "overflow-x": "auto",
+          "overflow-y": "hidden"
+        },
+        ".MathJax .mtable .mtd": {
+          "padding-top": "0.45em",
+          "padding-bottom": "0.45em"
+        },
+        ".MathJax .mtr + .mtr .mtd": {
+          "padding-top": "0.65em"
+        }
+      }
+    },
+    CommonHTML: {
+      styles: {
+        ".MJXc-display": { "margin": "1.5em 0" }
+      }
+    }
+  });
 </script>
 <script type="text/javascript"
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
@@ -141,13 +173,13 @@ ou, em breve, achar o valor de $\dfrac{dy}{dx}$.
 $x + dx$; similarmente, $y$ crescerá um pedacinho e se
 tornará $y + dy$. Então, claramente, ainda será verdade
 que o $y$ ampliado será igual ao quadrado do
-$x$ ampliado. Escrevendo isso, temos:
+$x$ ampliado. Escrevendo isso, temos:</p>
+
 \begin{align*}
 y + dy &= (x + dx)^2.\\
 \text{Fazendo a elevação ao quadrado obtemos:}\;\\
 y + dy &= x^2 + 2x · dx+(dx)^2.
 \end{align*}
-
 
 <p>O que significa $(dx)^2$? Lembre-se de que $dx$ significava
 um pedaço - um pedacinho - de $x$. Então $(dx)^2$ significará um
@@ -158,7 +190,7 @@ insignificante em comparação com os outros termos.
 Deixando-a de fora, temos então:<a name="diffexample"/>
 \begin{align*}
 y + dy &= x^2 + 2x · dx.  \\
-\text{Ora $y=x^2$; assim subtraiamos isso da equação
+\text{Ora $y&=x^2$; assim subtraiamos isso da equação
 e ficamos com}\;\\
 dy &= 2x · dx.  \\
 \text{  Dividindo por $dx$, achamos}\;\\
@@ -200,7 +232,8 @@ do parágrafo anterior, achamos $\dfrac{dy}{dx} = 2x$. E assim
 
 <p>Bem, tente de novo, fazendo $dx$ um pedacinho ainda menor.
 
-<p>Tente $dx=\frac{1}{10}$. Então $x+dx=100.1$, e
+<p>Tente $dx=\frac{1}{10}$. Então $x+dx=100.1$, e</p>
+
 \[
 (x+dx)^2 = 100.1 × 100.1 = 10.020,01.
 \]
@@ -217,13 +250,14 @@ Tente diferenciar $y = x^3$ do mesmo modo.
 
 <p>Deixamos $y$ crescer para $y+dy$, enquanto $x$ cresce para $x+dx$.
 
-<p>Então temos
+<p>Então temos</p>
+
 \[
 y + dy = (x + dx)^3.
 \]
 
+<p>Fazendo a elevação ao cubo obtemos</p>
 
-<p>Fazendo a elevação ao cubo obtemos
 \[
 y + dy = x^3 + 3x^2 · dx + 3x(dx)^2+(dx)^3.
 \]
@@ -232,12 +266,14 @@ y + dy = x^3 + 3x^2 · dx + 3x(dx)^2+(dx)^3.
 das ordens segunda e terceira; pois, quando $dy$ e $dx$
 são ambos tornados indefinidamente pequenos, $(dx)^2$ e $(dx)^3$
 se tornarão indefinidamente menores por comparação. Assim,
-considerando-os desprezíveis, ficamos com:
+considerando-os desprezíveis, ficamos com:</p>
+
 \[
 y + dy=x^3+3x^2 · dx.
 \]
 
-<p>Mas $y=x^3$; e, subtraindo isto, temos:
+<p>Mas $y=x^3$; e, subtraindo isto, temos:</p>
+
 \begin{align*}
 dy &= 3x^2 · dx, \\
 \text{ e}\;
@@ -296,16 +332,18 @@ daria $5x^4$, ou diferenciar $x^6$ daria $6x^5$.
 Se hesitar, experimente um deles, e veja se
 a conjectura se confirma.
 
-<p>Tente $y = x^5$.
+<p>Tente $y = x^5$.</p>
+
 \begin{align*}
 \text{   Então}\;
 y+dy &= (x+dx)^5     \\
      &= x^5 + 5x^4\, dx + 10x^3(dx)^2  + 10x^2(dx)^3 \\
-     &\phantom{{}= x^5 + 5x^4\, dx} + 5x(dx)^4 + (dx)^5.
+     &\phantom{{}&= x^5 + 5x^4\, dx} + 5x(dx)^4 + (dx)^5.
 \end{align*}
 
 <p>Desprezando todos os termos que contêm quantidades pequenas
-das ordens mais altas, ficamos com
+das ordens mais altas, ficamos com</p>
+
 \begin{align*}
 y + dy &= x^5 + 5x^4\, dx,  \\
 
@@ -338,7 +376,8 @@ consideração adicional.
 
 <p>
 <em>Caso de uma potência negativa.</em><p>
-Seja $y = x^{-2}$. Então proceda como antes:
+Seja $y = x^{-2}$. Então proceda como antes:</p>
+
 \begin{align*}
 y+dy &= (x+dx)^{-2} \\
      &= x^{-2} \left(1 + \frac{dx}{x}\right)^{-2}.
@@ -374,6 +413,7 @@ acima.
 <em>Caso de uma potência fracionária.</em><p>
 Seja $y= x^{\frac{1}{2}}$. Então, como antes,
 
+</p>
 
 \begin{align*}
 y+dy &= (x+dx)^{\frac{1}{2}} = x^{\frac{1}{2}} (1 + \frac{dx}{x} )^{\frac{1}{2}} \\
@@ -385,7 +425,8 @@ y+dy &= (x+dx)^{\frac{1}{2}} = x^{\frac{1}{2}} (1 + \frac{dx}{x} )^{\frac{1}{2}}
 \end{align*}
 
 <p>Subtraindo o $y = x^{\frac{1}{2}}$ original, e desprezando potências
-mais altas, ficamos com:
+mais altas, ficamos com:</p>
+
 \[
 dy = \frac{1}{2} \frac{dx}{\sqrt{x}} = \frac{1}{2} x^{-\frac{1}{2}} · dx,
 \]

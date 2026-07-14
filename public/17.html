@@ -34,7 +34,39 @@
 body{counter-reset:h1 17}
 </style>
 <script type="text/x-mathjax-config">
-  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\(','\)']],
+      displayMath: [['$$','$$'], ['\[','\]']],
+      processEscapes: true
+    },
+    TeX: {
+      extensions: ["AMSmath.js","AMSsymbols.js"],
+      equationNumbers: { autoNumber: "none" }
+    },
+    "HTML-CSS": {
+      linebreaks: { automatic: false },
+      styles: {
+        ".MathJax_Display": {
+          "margin": "1.5em 0",
+          "overflow-x": "auto",
+          "overflow-y": "hidden"
+        },
+        ".MathJax .mtable .mtd": {
+          "padding-top": "0.45em",
+          "padding-bottom": "0.45em"
+        },
+        ".MathJax .mtr + .mtr .mtd": {
+          "padding-top": "0.65em"
+        }
+      }
+    },
+    CommonHTML: {
+      styles: {
+        ".MJXc-display": { "margin": "1.5em 0" }
+      }
+    }
+  });
 </script>
 <script type="text/javascript"
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
@@ -160,7 +192,8 @@ diretamente.
 nos familiarizarmos com essa noção de somar um
 monte de partes separadas.
 
-<p>Considere a série:
+<p>Considere a série:</p>
+
 \[
 1 + \tfrac{1}{2} + \tfrac{1}{4} + \tfrac{1}{8}
   + \tfrac{1}{16} + \tfrac{1}{32} + \tfrac{1}{64} + \text{etc.}
@@ -218,6 +251,7 @@ curvas, uma reta inclinada com a equação
 \[
 y = ax+b.
 \]
+
 <p><a name="figure47">
 <p><img src="33283-t/images/197a.pdf.png-1.png">
 
@@ -273,7 +307,8 @@ quando $x = 0$.
 cuja inclinação não é constante, mas sobe cada vez
 mais. Suponhamos que a inclinação para cima fique
 cada vez maior em proporção ao crescimento de $x$. Em
-símbolos:
+símbolos:</p>
+
 \[
 \frac{dy}{dx} = ax.
 \]
@@ -357,7 +392,8 @@ y = \tfrac{1}{10}x^2 + C.
 <p>(3) Se $\log_\epsilon(1+x) = x - \dfrac{x^2}{2} + \dfrac{x^3}{3} - \dfrac{x^4}{4} + \text{etc}$., ache $\log_\epsilon 1.3$.
 
 <p>(4) Seguindo um raciocínio semelhante ao explicado
-neste capítulo, ache $y$,
+neste capítulo, ache $y$,</p>
+
 \[
 (a) \text{se}\; \frac{dy}{dx} = \tfrac{1}{4} x;&nbsp;&nbsp;
 (b) \text{se}\; \frac{dy}{dx} = \cos x.

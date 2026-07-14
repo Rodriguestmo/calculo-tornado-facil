@@ -7,7 +7,39 @@
 body{counter-reset:h1 15}
 </style>
 <script type="text/x-mathjax-config">
-  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\(','\)']],
+      displayMath: [['$$','$$'], ['\[','\]']],
+      processEscapes: true
+    },
+    TeX: {
+      extensions: ["AMSmath.js","AMSsymbols.js"],
+      equationNumbers: { autoNumber: "none" }
+    },
+    "HTML-CSS": {
+      linebreaks: { automatic: false },
+      styles: {
+        ".MathJax_Display": {
+          "margin": "1.5em 0",
+          "overflow-x": "auto",
+          "overflow-y": "hidden"
+        },
+        ".MathJax .mtable .mtd": {
+          "padding-top": "0.45em",
+          "padding-bottom": "0.45em"
+        },
+        ".MathJax .mtr + .mtr .mtd": {
+          "padding-top": "0.65em"
+        }
+      }
+    },
+    CommonHTML: {
+      styles: {
+        ".MJXc-display": { "margin": "1.5em 0" }
+      }
+    }
+  });
 </script>
 <script type="text/javascript"
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
@@ -42,7 +74,8 @@ body{counter-reset:h1 15}
 como letra usual para qualquer ângulo variável a
 letra $\theta$ (“teta”).
 
-<p>Consideremos a função
+<p>Consideremos a função</p>
+
 \[
 y= \sin \theta.
 \]
@@ -74,13 +107,15 @@ dy = \sin(\theta + d \theta)- \sin \theta.
 <p>A quantidade no lado direito é a diferença
 entre dois senos, e os livros de trigonometria nos dizem
 como calcular isto. Pois eles nos dizem que se
-$M$ e $N$ forem dois ângulos diferentes,
+$M$ e $N$ forem dois ângulos diferentes,</p>
+
 \[
 \sin M - \sin N = 2 \cos\frac{M+N}{2}·\sin\frac{M-N}{2}.
 \]
 
 <p>Se, então, pusermos $M= \theta + d \theta$ para um ângulo, e
-$N= \theta$ para o outro, podemos escrever
+$N= \theta$ para o outro, podemos escrever</p>
+
 \begin{align*}
 dy &= 2 \cos\frac{\theta + d\theta + \theta}{2}
       · \sin\frac{\theta + d\theta - \theta}{2},\\
@@ -102,7 +137,6 @@ dy &= \cos \theta · d \theta, \\
 \dfrac{dy}{d \theta} &= \cos \theta.
 \end{align*}
 
-
 <p>As curvas acompanhantes, <a href="#figure44">Fig. 44</a> e <a href="#figure45">Fig. 45</a> mostram,
 plotadas em escala, os valores de $y=\sin \theta$, e $\dfrac{dy}{d\theta}=\cos\theta$,
 para os valores correspondentes de $\theta$.
@@ -120,24 +154,26 @@ para os valores correspondentes de $\theta$.
 
 <p>Ora $\cos \theta=\sin\left(\dfrac{\pi}{2}-\theta\right)$.
 
-<p>Portanto
+<p>Portanto</p>
+
 \begin{align*}
 &\begin{aligned}
-dy = d\left(\sin\left(\frac{\pi}{2} - \theta\right)\right)
+dy &= d\left(\sin\left(\frac{\pi}{2} - \theta\right)\right)
   &= \cos\left(\frac{\pi}{2} - \theta\right) × d(-\theta), \\
   &= \cos\left(\frac{\pi}{2} - \theta\right) × (-d\theta),
 \end{aligned} \\
-&\frac{dy}{d\theta} = -\cos\left(\frac{\pi}{2} - \theta\right).
+&\frac{dy}{d\theta} &= -\cos\left(\frac{\pi}{2} - \theta\right).
 \end{align*}
 E segue-se que
 \begin{align*}
-&\frac{dy}{d\theta} = -\sin \theta.
+&\frac{dy}{d\theta} &= -\sin \theta.
 \end{align*}
 
 <p><hr>
 
 <p>Por último, tome a tangente.
-   Seja
+   Seja</p>
+
 \begin{align*}
 y  &= \tan \theta, \\
 dy &= \tan(\theta + d\theta) - \tan\theta. \\
@@ -155,11 +191,11 @@ dy &= \frac{\tan\theta + \tan d\theta}
            {1-\tan\theta·\tan d\theta}.
 \end{align*}
 
-
 <p>Ora lembre-se de que se $d\theta$ for indefinidamente diminuído,
 o valor de $\tan d\theta$ se torna idêntico a $d\theta$, e
 $\tan\theta · d\theta$ é negligenciavelmente pequeno comparado com $1$, de modo que
-a expressão se reduz a
+a expressão se reduz a</p>
+
 \begin{align*}
 dy &= \frac{(1+\tan^2 \theta)\, d\theta}{1}, \\
  \text{de modo que}\;
@@ -191,7 +227,6 @@ no tempo $t$, será
 \theta &= 360\frac{t}{T},\quad \text{em graus.}
 \end{align*}
 
-
 <p>Se a <em>frequência</em>, ou número de períodos por segundo,
 for denotada por $n$, então $n = \dfrac{1}{T}$, e podemos então escrever:
 \[
@@ -210,7 +245,8 @@ explicado no <a href="9.html">Capítulo IX</a>., e por
 \frac{dy}{dt} = \frac{dy}{d\theta} · \frac{d\theta}{dt}.
 \]
 
-<p>Ora $\dfrac{d\theta}{dt}$ será obviamente $2\pi n$; de modo que
+<p>Ora $\dfrac{d\theta}{dt}$ será obviamente $2\pi n$; de modo que</p>
+
 \begin{align*}
 \frac{dy}{dt} &= \cos \theta × 2\pi n \\
               &= 2\pi n · \cos 2\pi nt. \\
@@ -226,11 +262,11 @@ explicado no <a href="9.html">Capítulo IX</a>., e por
 <p>Vimos que quando $\sin \theta$ é diferenciado em
 relação a $\theta$ ele se torna $\cos \theta$; e que quando $\cos \theta$ é
 diferenciado em relação a $\theta$ ele se torna $-\sin \theta$;
-ou, em símbolos,
+ou, em símbolos,</p>
+
 \[
 \frac{d^2(\sin \theta)}{d\theta^2} = -\sin \theta.
 \]
-
 
 <p>Assim temos este resultado curioso de que encontramos
 uma função tal que se a diferenciarmos duas vezes,
@@ -239,7 +275,8 @@ com o sinal mudado de $+$ para $-$.
 
 <p>A mesma coisa é verdadeira para o cosseno; pois diferenciar
 $\cos\theta$ nos dá $-\sin\theta$, e diferenciar
-$-\sin\theta$ nos dá $-\cos\theta$; ou assim:
+$-\sin\theta$ nos dá $-\cos\theta$; ou assim:</p>
+
 \[
 \frac{d^2(\cos\theta)}{d\theta^2} = -\cos\theta.
 \]
@@ -256,13 +293,15 @@ diferenciar expressões de natureza mais complexa.
 
 <p>(1) $y=\arcsin x$.
 
-<p>Se $y$ for o arco cujo seno é $x$, então $x = \sin y$.
+<p>Se $y$ for o arco cujo seno é $x$, então $x = \sin y$.</p>
+
 \[
 \frac{dx}{dy}=\cos y.
 \]
 
 <p>Passando agora da função inversa para a original,
-obtemos
+obtemos</p>
+
 \begin{align*}
 \frac{dy}{dx}
   &= \frac{1}{\;\dfrac{dx}{dy}\;} = \frac{1}{\cos y}. \\
@@ -280,16 +319,18 @@ um resultado um tanto inesperado.
 
 <p>Isto é a mesma coisa que $y=(\cos \theta)^3$.
 
-<p>Seja $\cos\theta=v$; então $y=v^3$; $\dfrac{dy}{dv}=3v^2$.
+<p>Seja $\cos\theta=v$; então $y=v^3$; $\dfrac{dy}{dv}=3v^2$.</p>
+
 \begin{align*}
 \frac{dv}{d\theta} &= -\sin\theta.\\
 \frac{dy}{d\theta} &=  \frac{dy}{dv} × \frac{dv}{d\theta}
-                    = -3 \cos^2 \theta \sin\theta.
+                    &= -3 \cos^2 \theta \sin\theta.
 \end{align*}
 
 <p>(3) $y=\sin(x+a)$.
 
-<p>Seja $x+a=v$; então $y=\sin v$.
+<p>Seja $x+a=v$; então $y=\sin v$.</p>
+
 \[
 \frac{dy}{dv}=\cos v;\qquad
 \frac{dv}{dx}=1 \quad\text{e}\quad
@@ -298,13 +339,16 @@ um resultado um tanto inesperado.
 
 <p>(4) $y=\log_\epsilon \sin \theta$.
 
-<p>Seja $\sin\theta=v$; $y=\log_\epsilon v$.
+<p>Seja $\sin\theta=v$; $y=\log_\epsilon v$.</p>
+
 \begin{align*}
-\frac{dy}{dv}      &= \frac{1}{v};\quad \frac{dv}{d\theta}=\cos\theta;\\
+\frac{dy}{dv}      &= \frac{1}{v} \\
+\frac{dv}{d\theta}&=\cos\theta;\\
 \frac{dy}{d\theta} &= \frac{1}{\sin\theta} × \cos\theta = \cot\theta.
 \end{align*}
 
-<p>(5) $y=\cot\theta=\dfrac{\cos\theta}{\sin\theta}$.
+<p>(5) $y=\cot\theta=\dfrac{\cos\theta}{\sin\theta}$.</p>
+
 \begin{align*}
 \frac{dy}{d\theta}
   &= \frac{-\sin^2\theta - \cos^2 \theta}{\sin^2 \theta}\\
@@ -313,19 +357,20 @@ um resultado um tanto inesperado.
 
 <p>(6) $y=\tan 3\theta$.
 
-<p>Seja $3\theta=v$; $y=\tan v$; $\dfrac{dy}{dv}=\sec^2 v$.
+<p>Seja $3\theta=v$; $y=\tan v$; $\dfrac{dy}{dv}=\sec^2 v$.</p>
+
 \[
 \frac{dv}{d\theta}=3;\quad
 \frac{dy}{d\theta}=3 \sec^2 3\theta.
 \]
 
-
 <p>(7) $y = \sqrt{1+3\tan^2\theta}$; $y=(1+3 \tan^2 \theta)^{\frac{1}{2}}$.
 
-<p>Seja $3\tan^2\theta=v$.
+<p>Seja $3\tan^2\theta=v$.</p>
+
 \begin{align*}
-y &= (1+v)^{\frac{1}{2}};\quad
-\frac{dy}{dv} = \frac{1}{2\sqrt{1+v}}
+y &= (1+v)^{\frac{1}{2}} \\
+\frac{dy}{dv} &= \frac{1}{2\sqrt{1+v}}
 \end{align*}
 (ver <a href="9.html#ExNo1">aqui</a>);
 \begin{align*}
@@ -334,7 +379,9 @@ y &= (1+v)^{\frac{1}{2}};\quad
 \end{align*}
 pois, se $\tan \theta = u$,
 \begin{align*}
-v &= 3u^2;\quad \frac{dv}{du} = 6u;\quad \frac{du}{d\theta} = \sec^2 \theta; \\
+v &= 3u^2 \\
+\frac{dv}{du} &= 6u \\
+\frac{du}{d\theta} &= \sec^2 \theta; \\
 
  logo
 \frac{dv}{d\theta}
@@ -345,7 +392,8 @@ v &= 3u^2;\quad \frac{dv}{du} = 6u;\quad \frac{du}{d\theta} = \sec^2 \theta; \\
   &= \frac{6\tan\theta \sec^2\theta}{2\sqrt{1 + 3\tan^2\theta}}.
 \end{align*}
 
-<p>(8) $y=\sin x \cos x$. <a name="example1"/>
+<p>(8) $y=\sin x \cos x$. <a name="example1"/></p>
+
 \begin{align*}
 \frac{dy}{dx}
   &= \sin x(-\sin x) + \cos x × \cos x \\
@@ -358,8 +406,10 @@ v &= 3u^2;\quad \frac{dv}{du} = 6u;\quad \frac{du}{d\theta} = \sec^2 \theta; \\
 (1) Diferencie o seguinte:
 \begin{align*}
 \text{(i)}\quad   y &= A \sin\left(\theta - \frac{\pi}{2}\right).\\
-\text{(ii)}\quad  y &= \sin^2 \theta;\quad \text{e } y = \sin 2\theta.\\
-\text{(iii)}\quad y &= \sin^3 \theta;\quad \text{e } y = \sin 3\theta.
+\text{(ii)}\quad  y &= \sin^2 \theta \\
+\text{e } y &= \sin 2\theta.\\
+\text{(iii)}\quad y &= \sin^3 \theta \\
+\text{e } y &= \sin 3\theta.
 \end{align*}
 
 <p>(2) Encontre o valor de $\theta$ para o qual $\sin\theta × \cos\theta$ é um
@@ -392,7 +442,8 @@ iguais, para valores muito pequenos de $x$, ou para valores muito grandes
 de $x$, ou para valores de $x$ na vizinhança
 de $x=30$.
 
-<p>(12) Diferencie o seguinte:
+<p>(12) Diferencie o seguinte:</p>
+
 \begin{align*}
 \text{(i)}\quad   y &= \sec x.    \\
 \text{(ii)}\quad  y &= \arccos x. \\
