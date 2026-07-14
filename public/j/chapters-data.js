@@ -1,0 +1,28 @@
+/* Ordem e metadados dos capítulos do livro */
+window.CME_CHAPTERS = [
+  { id: "prologue.html", title: "Prólogo", short: "Prólogo" },
+  { id: "1.html", title: "I. Para livrá-lo dos Terrores Preliminares", short: "I. Terrores Preliminares" },
+  { id: "2.html", title: "II. Sobre Diferentes Graus de Pequenez", short: "II. Graus de Pequenez" },
+  { id: "3.html", title: "III. Sobre Crescimentos Relativos", short: "III. Crescimentos Relativos" },
+  { id: "4.html", title: "IV. Casos Mais Simples", short: "IV. Casos Mais Simples" },
+  { id: "5.html", title: "V. Próximo Estágio. O Que Fazer com Constantes", short: "V. Constantes" },
+  { id: "6.html", title: "VI. Somas, Diferenças, Produtos e Quocientes", short: "VI. Somas e Produtos" },
+  { id: "7.html", title: "VII. Diferenciação Sucessiva", short: "VII. Diferenciação Sucessiva" },
+  { id: "8.html", title: "VIII. Quando o Tempo Varia", short: "VIII. Quando o Tempo Varia" },
+  { id: "9.html", title: "IX. Apresentando um Truque Útil", short: "IX. Truque Útil" },
+  { id: "10.html", title: "X. Significado Geométrico da Diferenciação", short: "X. Significado Geométrico" },
+  { id: "11.html", title: "XI. Máximos e Mínimos", short: "XI. Máximos e Mínimos" },
+  { id: "12.html", title: "XII. Curvatura de Curvas", short: "XII. Curvatura" },
+  { id: "13.html", title: "XIII. Outros Truques Úteis", short: "XIII. Outros Truques" },
+  { id: "14.html", title: "XIV. (a) Juros Compostos Verdadeiros e a Lei do Crescimento Orgânico", short: "XIV. (a) Juros Compostos" },
+  { id: "14b.html", title: "XIV. (b) A Curva de Decaimento", short: "XIV. (b) Decaimento" },
+  { id: "15.html", title: "XV. Como Lidar com Senos e Cossenos", short: "XV. Senos e Cossenos" },
+  { id: "16.html", title: "XVI. Diferenciação Parcial", short: "XVI. Diferenciação Parcial" },
+  { id: "17.html", title: "XVII. Integração", short: "XVII. Integração" },
+  { id: "18.html", title: "XVIII. Integrar como o Inverso de Diferenciar", short: "XVIII. Integrar como Inverso" },
+  { id: "19.html", title: "XIX. Sobre Achar Áreas Integrando", short: "XIX. Áreas" },
+  { id: "20.html", title: "XX. Truques, Armadilhas e Triunfos", short: "XX. Truques e Armadilhas" },
+  { id: "21.html", title: "XXI. Encontrando Algumas Soluções", short: "XXI. Soluções" },
+  { id: "epilogue.html", title: "Epílogo e Apólogo", short: "Epílogo" },
+  { id: "table.html", title: "Tabela de Formas-Padrão", short: "Tabela de Formas" }
+];
