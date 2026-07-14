@@ -115,11 +115,13 @@ body{counter-reset:h1 0}
 </table>
 
 
-<br>
-<hr>
-<a href="index.html">Página principal &uarr;</a><br>
-<a href="epilogue.html">← Anterior</a><br>
 
+<hr>
+<nav class="chapter-nav" aria-label="Navegação do capítulo">
+  <a class="nav-prev" href="epilogue.html">← Anterior</a>
+  <a class="nav-home" href="index.html">Página principal</a>
+  <span class="nav-next nav-disabled" aria-hidden="true"></span>
+</nav>
 {% include "footer.html" %}
 
 <script src="j/jquery.js"></script>
