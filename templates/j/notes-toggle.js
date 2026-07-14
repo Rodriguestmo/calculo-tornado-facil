@@ -75,6 +75,10 @@
   var hlColorSwatches = document.getElementById("hl-color-swatches");
   var hlFilterSwatches = document.getElementById("hl-filter-swatches");
   var hlNoteSwatches = document.getElementById("hl-note-swatches");
+  var clearSiteDataBtn = document.getElementById("clear-site-data");
+  var clearDataModal = document.getElementById("clear-data-modal");
+  var clearDataConfirm = document.getElementById("clear-data-confirm");
+  var clearDataCancel = document.getElementById("clear-data-cancel");
 
   var hlPopup = document.getElementById("hl-popup");
   var hlBtnMark = document.getElementById("hl-btn-mark");
@@ -908,6 +912,29 @@
     });
   }
 
+  if (clearSiteDataBtn) {
+    clearSiteDataBtn.addEventListener("click", function (ev) {
+      ev.stopPropagation();
+      openClearDataModal();
+    });
+  }
+  if (clearDataConfirm) {
+    clearDataConfirm.addEventListener("click", function () {
+      clearAllSiteData();
+    });
+  }
+  if (clearDataCancel) {
+    clearDataCancel.addEventListener("click", function () {
+      closeClearDataModal();
+    });
+  }
+  if (clearDataModal) {
+    clearDataModal.addEventListener("click", function (ev) {
+      if (ev.target === clearDataModal) closeClearDataModal();
+    });
+  }
+
+
   if (hlListToggle) {
     hlListToggle.addEventListener("click", function (ev) {
       ev.stopPropagation();
@@ -1038,6 +1065,7 @@
     if (ev.key === "Escape") {
       hidePopup();
       closeNoteModal();
+      closeClearDataModal();
       closeAllMenus();
       hideFloatTip();
     }
@@ -1057,6 +1085,49 @@
       }
     }
   }, 200);
+
+
+  /* ---------- Limpar cache / dados locais do site ---------- */
+  function openClearDataModal() {
+    closeAllMenus();
+    hidePopup();
+    hideFloatTip();
+    if (!clearDataModal) return;
+    clearDataModal.hidden = false;
+    clearDataModal.style.display = "flex";
+  }
+
+  function closeClearDataModal() {
+    if (!clearDataModal) return;
+    clearDataModal.hidden = true;
+    clearDataModal.style.display = "none";
+  }
+
+  function clearAllSiteData() {
+    try {
+      var keys = [];
+      for (var i = 0; i < localStorage.length; i++) {
+        var k = localStorage.key(i);
+        if (k && k.indexOf("cme-") === 0) keys.push(k);
+      }
+      for (var j = 0; j < keys.length; j++) {
+        localStorage.removeItem(keys[j]);
+      }
+    } catch (e) {}
+    // também remove sessionStorage se houver prefixo cme-
+    try {
+      var skeys = [];
+      for (var si = 0; si < sessionStorage.length; si++) {
+        var sk = sessionStorage.key(si);
+        if (sk && sk.indexOf("cme-") === 0) skeys.push(sk);
+      }
+      for (var sj = 0; sj < skeys.length; sj++) {
+        sessionStorage.removeItem(skeys[sj]);
+      }
+    } catch (e2) {}
+    // recarrega limpo
+    location.reload();
+  }
 
   /* ---------- Barra de progresso de leitura ---------- */
   function updateReadProgress() {
