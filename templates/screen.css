@@ -1566,7 +1566,7 @@ body {
   display: none !important;
 }
 
-/* ---------- Reader features (TOC, busca, glossário, FABs) ---------- */
+/* ---------- Reader features (TOC, busca, FABs) ---------- */
 .cme-fab {
   position: fixed;
   z-index: 1050;
@@ -1591,7 +1591,6 @@ body {
 .cme-fab-search { right: 1rem; bottom: 8.3rem; }
 .cme-fab-bm { right: 1rem; bottom: 11.1rem; }
 .cme-fab-focus { right: 1rem; bottom: 13.9rem; }
-.cme-fab-glos { right: 1rem; bottom: 16.7rem; }
 
 html.cme-focus .site-toolbar {
   transform: translateY(-110%);
@@ -1602,8 +1601,7 @@ html.cme-focus.cme-focus-peek .site-toolbar {
 }
 html.cme-focus .cme-fab-toc,
 html.cme-focus .cme-fab-search,
-html.cme-focus .cme-fab-bm,
-html.cme-focus .cme-fab-glos {
+html.cme-focus .cme-fab-bm {
   opacity: 0.35;
 }
 html.cme-focus .cme-fab:hover,
@@ -1678,8 +1676,7 @@ html.cme-focus .cme-fab-focus {
   flex-direction: column;
   overflow: hidden;
 }
-.cme-toc-drawer,
-.cme-glossary-drawer { left: 0; }
+.cme-toc-drawer { left: 0; }
 .cme-search-drawer,
 .cme-bm-drawer { right: 0; }
 .cme-drawer-head {
@@ -1699,7 +1696,6 @@ html.cme-focus .cme-fab-focus {
 }
 .cme-toc-list,
 .cme-search-results,
-.cme-glossary-list,
 .cme-bm-list {
   overflow: auto;
   flex: 1;

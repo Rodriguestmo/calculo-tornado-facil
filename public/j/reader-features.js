@@ -1,4 +1,4 @@
-/* Recursos de ebook: resume, TOC, busca, bookmarks, export, glossário, teclado, foco.
+/* Recursos de ebook: resume, TOC, busca, bookmarks, export, teclado, foco.
    localStorage: cme-resume, cme-bookmarks, cme-focus (opcional) + chaves cme-* existentes
 */
 (function () {
@@ -6,7 +6,6 @@
   var KEY_BOOKMARKS = "cme-bookmarks";
   var KEY_HL = "cme-highlights";
   var CHAPTERS = window.CME_CHAPTERS || [];
-  var GLOSSARY = window.CME_GLOSSARY || [];
 
   function pageKey() {
     var p = location.pathname.split("/").pop() || "index.html";
@@ -76,7 +75,6 @@
       '<button type="button" id="cme-search-open" class="cme-fab cme-fab-search" title="Buscar" aria-label="Buscar no livro">⌕</button>' +
       '<button type="button" id="cme-bookmark-btn" class="cme-fab cme-fab-bm" title="Marcar página" aria-label="Marcar página" aria-pressed="false">☆</button>' +
       '<button type="button" id="cme-focus-btn" class="cme-fab cme-fab-focus" title="Modo foco" aria-label="Modo foco" aria-pressed="false">⛶</button>' +
-      '<button type="button" id="cme-glossary-open" class="cme-fab cme-fab-glos" title="Glossário" aria-label="Glossário">Aa</button>' +
       '<div id="cme-resume-banner" class="cme-resume-banner" hidden></div>' +
       '<div id="cme-drawer-backdrop" class="cme-drawer-backdrop" hidden></div>' +
       '<aside id="cme-toc-drawer" class="cme-drawer cme-toc-drawer" hidden aria-label="Sumário">' +
@@ -88,11 +86,6 @@
       '  <input type="search" id="cme-search-input" class="cme-search-input" placeholder="Digite um termo..." autocomplete="off" />' +
       '  <div id="cme-search-results" class="cme-search-results"></div>' +
       "</aside>" +
-      '<aside id="cme-glossary-drawer" class="cme-drawer cme-glossary-drawer" hidden aria-label="Glossário">' +
-      '  <div class="cme-drawer-head"><strong>Glossário</strong><button type="button" class="cme-drawer-close" data-close="glossary" aria-label="Fechar">×</button></div>' +
-      '  <input type="search" id="cme-glossary-filter" class="cme-search-input" placeholder="Filtrar termo..." autocomplete="off" />' +
-      '  <div id="cme-glossary-list" class="cme-glossary-list"></div>' +
-      "</aside>" +
       '<aside id="cme-bm-drawer" class="cme-drawer cme-bm-drawer" hidden aria-label="Marcadores">' +
       '  <div class="cme-drawer-head"><strong>Marcadores</strong><button type="button" class="cme-drawer-close" data-close="bm" aria-label="Fechar">×</button></div>' +
       '  <div id="cme-bm-list" class="cme-bm-list"></div>' +
@@ -102,7 +95,7 @@
   }
 
   function closeDrawers() {
-    ["cme-toc-drawer", "cme-search-drawer", "cme-glossary-drawer", "cme-bm-drawer"].forEach(function (id) {
+    ["cme-toc-drawer", "cme-search-drawer", "cme-bm-drawer"].forEach(function (id) {
       var el = document.getElementById(id);
       if (el) el.hidden = true;
     });
@@ -515,34 +508,6 @@
     });
   }
 
-  /* ---------- Glossary ---------- */
-  function renderGlossary(filter) {
-    var box = document.getElementById("cme-glossary-list");
-    if (!box) return;
-    filter = (filter || "").trim().toLowerCase();
-    var items = GLOSSARY.filter(function (g) {
-      if (!filter) return true;
-      return (
-        g.term.toLowerCase().indexOf(filter) >= 0 ||
-        g.def.toLowerCase().indexOf(filter) >= 0
-      );
-    });
-    if (!items.length) {
-      box.innerHTML = '<p class="cme-empty">Nenhum termo.</p>';
-      return;
-    }
-    var html = "";
-    items.forEach(function (g) {
-      html +=
-        '<details class="cme-glos-item"><summary>' +
-        escapeHtml(g.term) +
-        "</summary><p>" +
-        escapeHtml(g.def) +
-        "</p></details>";
-    });
-    box.innerHTML = html;
-  }
-
   /* ---------- Focus mode ---------- */
   function setFocusMode(on) {
     document.documentElement.classList.toggle("cme-focus", !!on);
@@ -572,13 +537,11 @@
     renderToc();
     updateBookmarkButton();
     renderBookmarks();
-    renderGlossary("");
     maybeShowResumeBanner();
     restoreBookmarkScroll();
 
     var tocOpen = document.getElementById("cme-toc-open");
     var searchOpen = document.getElementById("cme-search-open");
-    var glosOpen = document.getElementById("cme-glossary-open");
     var bmBtn = document.getElementById("cme-bookmark-btn");
     var focusBtn = document.getElementById("cme-focus-btn");
     var backdrop = document.getElementById("cme-drawer-backdrop");
@@ -596,10 +559,6 @@
           inp.focus();
           loadSearchIndex(function () {});
         }
-      });
-    if (glosOpen)
-      glosOpen.addEventListener("click", function () {
-        openDrawer("cme-glossary-drawer");
       });
     if (bmBtn) {
       bmBtn.addEventListener("click", function (ev) {
@@ -636,13 +595,6 @@
         t = setTimeout(function () {
           runSearch(searchInput.value);
         }, 180);
-      });
-    }
-
-    var glosFilter = document.getElementById("cme-glossary-filter");
-    if (glosFilter) {
-      glosFilter.addEventListener("input", function () {
-        renderGlossary(glosFilter.value);
       });
     }
 
@@ -725,8 +677,6 @@
         if (inp) inp.focus();
       } else if ((ev.key === "b" || ev.key === "B") && !ev.metaKey && !ev.ctrlKey) {
         toggleBookmark();
-      } else if ((ev.key === "g" || ev.key === "G") && !ev.metaKey && !ev.ctrlKey) {
-        openDrawer("cme-glossary-drawer");
       }
     });
 
