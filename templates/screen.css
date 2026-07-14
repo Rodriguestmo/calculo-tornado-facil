@@ -270,24 +270,41 @@ sup {
   vertical-align: text-top;
 }
 
-/* links */
+/* links - sem sublinhado pontilhado (fica feio no sumário e na nav) */
 
 a {
   text-decoration: none;
+  border-bottom: none;
 }
 a:link {
   color: FireBrick;
-  border-bottom: 1px dotted;
+  border-bottom: none;
 }
 a:visited {
   color: RosyBrown;
-  border-bottom: 1px dotted;
+  border-bottom: none;
 }
 a:link:hover, a:visited:hover {
-  border-bottom: 1px solid;
+  border-bottom: none;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
 }
 .c a {
   color: inherit;
+  text-decoration: none;
+  border-bottom: none;
+}
+
+/* sumário da home */
+.toc a,
+.toc a:link,
+.toc a:visited,
+.toc a:hover {
+  border-bottom: none;
+}
+.toc a:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
 }
 
 /* figures and legends */
