@@ -1,7 +1,7 @@
 # HANDOFF — Cálculo Tornado Fácil (PT-BR)
 
 ## O que é
-Tradução para português brasileiro do livro *Calculus Made Easy* (Silvanus P. Thompson, 1910), com base no HTML de https://github.com/nadvornix/calculus-made-easy (domínio público via Project Gutenberg).
+Tradução para português brasileiro do livro *Calculus Made Easy* (Silvanus P. Thompson, 1910), a partir do texto em domínio público (Project Gutenberg #33283).
 
 ## Fluxo de trabalho
 1. Grok traduz um capítulo (templates/*.html)
@@ -45,6 +45,12 @@ python3 compile_templates.py
 - JS: `templates/j/notes-toggle.js`
 - Copyright: texto Thompson PD; notas Gardner © 1998 (uso local de estudo)
 
+## Publicação
+- Repo: https://github.com/Rodriguestmo/calculo-tornado-facil (público)
+- Site: https://rodriguestmo.github.io/calculo-tornado-facil/
+- Deploy: branch `gh-pages` (conteúdo de `public/`)
+- SEO: robots.txt, sitemap.xml, llms.txt, humans.txt, meta OG, JSON-LD
+
 ## Servidor local
 ```bash
 cd ~/Documents/Trabalho/Pessoal/calculus-made-easy-pt
@@ -57,4 +63,4 @@ python3 -m http.server 8765 --directory public
 - Cap. I: http://127.0.0.1:8765/1.html
 
 ## Atualização
-2026-07-14 — piloto PT certificado; notas Gardner com toggle; site no localhost:8765.
+2026-07-14 — SEO + GitHub Pages público; removido “estudo local”; manifesto e links no ar.

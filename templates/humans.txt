@@ -6,8 +6,7 @@ GitHub: https://github.com/Rodriguestmo
 
 /* THANKS */
 Silvanus P. Thompson (texto original, 1910)
-Project Gutenberg
-nadvornix/calculus-made-easy (conversão HTML)
+Project Gutenberg (#33283)
 Martin Gardner (edição anotada 1998, referência)
 
 /* SITE */

@@ -15,8 +15,7 @@ Projeto de Thales Rodrigues. Educação é um direito de todos; o conhecimento d
 - Repositório: https://github.com/Rodriguestmo/calculo-tornado-facil
 
 ## Fontes
-- Texto original: domínio público (Project Gutenberg #33283)
-- HTML de referência: https://github.com/nadvornix/calculus-made-easy
+- Texto original: domínio público (Project Gutenberg #33283) — https://www.gutenberg.org/ebooks/33283
 - Notas de contexto inspiradas na edição anotada de Martin Gardner (1998)
 
 ## Autor da edição PT-BR

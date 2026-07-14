@@ -18,8 +18,7 @@ Projeto sem fins lucrativos. **Não é permitido comercializar.**
 
 ## Fontes
 
-- Domínio público: [Project Gutenberg #33283](http://www.gutenberg.org/ebooks/33283)
-- HTML de referência: [nadvornix/calculus-made-easy](https://github.com/nadvornix/calculus-made-easy)
+- Domínio público: [Project Gutenberg #33283](https://www.gutenberg.org/ebooks/33283)
 - Notas de contexto: inspiradas na edição Thompson & Gardner (1998)
 
 ## Desenvolvimento local
