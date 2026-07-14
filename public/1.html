@@ -91,6 +91,11 @@ body{counter-reset:h1 1}
 </script>
 </head>
 <body>
+<!-- Progresso de leitura do capítulo (scroll) -->
+<div id="read-progress" class="read-progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="Progresso de leitura do capítulo">
+  <div id="read-progress-bar" class="read-progress-bar"></div>
+</div>
+
 <!-- Barra fixa: navegação, leitura, notas, destaques, tema -->
 <div id="site-toolbar" class="site-toolbar" role="region" aria-label="Controles do site">
   <a class="tb-home" href="index.html">Cálculo Tornado Fácil</a>

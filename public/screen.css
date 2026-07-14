@@ -1294,3 +1294,34 @@ body ol, body ul {
 body li {
   margin: 0.45em 0;
 }
+
+/* ---------- Barra de progresso de leitura (rodapé) ---------- */
+.read-progress {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1100;
+  height: 5px;
+  background: rgba(0, 0, 0, 0.08);
+  pointer-events: none;
+}
+html.theme-dark .read-progress {
+  background: rgba(255, 255, 255, 0.1);
+}
+.read-progress-bar {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #c45c26, #e8a54b);
+  box-shadow: 0 0 8px rgba(196, 92, 38, 0.35);
+  transition: width 0.08s linear;
+  border-radius: 0 2px 2px 0;
+}
+html.theme-dark .read-progress-bar {
+  background: linear-gradient(90deg, #e0a060, #f0d090);
+  box-shadow: 0 0 8px rgba(240, 208, 144, 0.25);
+}
+/* espaço extra no fim da página para a barra não cobrir a nav */
+body {
+  padding-bottom: 2.8em !important;
+}

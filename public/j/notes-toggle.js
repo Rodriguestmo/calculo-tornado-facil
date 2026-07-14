@@ -947,4 +947,58 @@
       }
     }
   }, 200);
+
+  /* ---------- Barra de progresso de leitura ---------- */
+  function updateReadProgress() {
+    var bar = document.getElementById("read-progress-bar");
+    var wrap = document.getElementById("read-progress");
+    if (!bar || !wrap) return;
+    var doc = document.documentElement;
+    var body = document.body;
+    var scrollTop = window.pageYOffset || doc.scrollTop || body.scrollTop || 0;
+    var scrollHeight = Math.max(
+      body.scrollHeight,
+      doc.scrollHeight,
+      body.offsetHeight,
+      doc.offsetHeight
+    );
+    var clientHeight = window.innerHeight || doc.clientHeight || 0;
+    var maxScroll = scrollHeight - clientHeight;
+    var pct = 0;
+    if (maxScroll > 0) {
+      pct = (scrollTop / maxScroll) * 100;
+    } else {
+      pct = 100;
+    }
+    if (pct < 0) pct = 0;
+    if (pct > 100) pct = 100;
+    bar.style.width = pct.toFixed(2) + "%";
+    wrap.setAttribute("aria-valuenow", String(Math.round(pct)));
+  }
+
+  var progressTicking = false;
+  function onScrollProgress() {
+    if (progressTicking) return;
+    progressTicking = true;
+    requestAnimationFrame(function () {
+      updateReadProgress();
+      progressTicking = false;
+    });
+  }
+
+  window.addEventListener("scroll", onScrollProgress, { passive: true });
+  window.addEventListener("resize", onScrollProgress, { passive: true });
+  // MathJax / imagens mudam a altura da página
+  window.addEventListener("load", function () {
+    updateReadProgress();
+    setTimeout(updateReadProgress, 400);
+    setTimeout(updateReadProgress, 1200);
+  });
+  if (window.MathJax && MathJax.Hub) {
+    MathJax.Hub.Queue(function () {
+      updateReadProgress();
+    });
+  }
+  updateReadProgress();
+
 })();
