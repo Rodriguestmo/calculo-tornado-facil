@@ -308,15 +308,11 @@ modo bem conhecido.
 
 <p>O teorema binomial<a name="binomtheo"/> dá a regra de que</p>
 
-\begin{align*}
-(a + b)^n &= a^n + n \dfrac{a^{n-1} b}{1!} + n(n - 1) \dfrac{a^{n-2} b^2}{2!} \\
-  & \phantom{&= a^n\ } + n(n -1)(n - 2) \dfrac{a^{n-3} b^3}{3!} + \text{etc}. \\
-
+\begin{align*}(a + b)^n &= a^n + n \dfrac{a^{n-1} b}{1!} + n(n - 1) \dfrac{a^{n-2} b^2}{2!} \\
+  & \phantom{&= a^n\ } + n(n -1)(n - 2) \dfrac{a^{n-3} b^3}{3!} + \text{etc}. 
 \end{align*}
 Pondo $a = 1$ e $b = \dfrac{1}{n}$, obtemos
-\begin{align*}
-
-\left(1 + \dfrac{1}{n}\right)^n
+\begin{align*}\left(1 + \dfrac{1}{n}\right)^n
   &= 1 + 1 + \dfrac{1}{2!} \left(\dfrac{n - 1}{n}\right) + \dfrac{1}{3!} \dfrac{(n - 1)(n - 2)}{n^2} \\
   &\phantom{&= 1 + 1\ } + \dfrac{1}{4!} \dfrac{(n - 1)(n - 2)(n - 3)}{n^3} + \text{etc}.
 \end{align*}
@@ -358,8 +354,7 @@ outra série.
 expandir a expressão $\left(1 + \dfrac{1}{n}\right)^{nx}$, que é a mesma
 que $\epsilon^x$ quando fazemos $n$ indefinidamente grande.</p>
 
-\begin{align*}
-\epsilon^x
+\begin{align*}\epsilon^x
   &= 1^{nx} + nx \frac{1^{nx-1} \left(\dfrac{1}{n}\right)}{1!}
             + nx(nx - 1) \frac{1^{nx - 2} \left(\dfrac{1}{n}\right)^2}{2!} \\
   & \phantom{&= 1^{nx}\ }
@@ -367,7 +362,6 @@ que $\epsilon^x$ quando fazemos $n$ indefinidamente grande.</p>
     + \text{etc}.\\
   &= 1 + x + \frac{1}{2!} · \frac{n^2x^2 - nx}{n^2}
     + \frac{1}{3!} · \frac{n^3x^3 - 3n^2x^2 + 2nx}{n^3} + \text{etc}. \\
-
   &= 1 + x + \frac{x^2 -\dfrac{x}{n}}{2!}
     + \frac{x^3 - \dfrac{3x^2}{n} + \dfrac{2x}{n^2}}{3!} + \text{etc}.
 \end{align*}
@@ -388,11 +382,10 @@ seu valor permanece inalterado</em><a name="unchanged"/>; ou, em outras palavras
 coeficiente diferencial é o mesmo que ela mesma. Isto pode
 ser visto instantaneamente diferenciando-a em relação
 a $x$, assim:
-\begin{align*}
-\frac{d(\epsilon^x)}{dx}
+\begin{align*}\frac{d(\epsilon^x)}{dx}
   &= 0 + 1 + \frac{2x}{1 · 2} + \frac{3x^2}{1 · 2 · 3} + \frac{4x^3}{1 · 2 · 3 · 4} \\
 &\phantom{&= 0 + 1 + \frac{2x}{1 · 2} + \frac{3x^2}{1 · 2 · 3}\ } + \frac{5x^4}{1 · 2 · 3 · 4 · 5} + \text{etc}.  \\
- ou
+ \text{ou} \\
   &= 1 + x + \frac{x^2}{1 · 2} + \frac{x^3}{1 · 2 · 3} + \frac{x^4}{1 · 2 · 3 · 4} + \text{etc}.,
 \end{align*}
 que é exatamente a mesma que a série original.
@@ -404,15 +397,12 @@ Ou, há alguma expressão, envolvendo apenas potências
 
 de $x$, que permanece inalterada pela diferenciação? Consequentemente;
 <em>assumamos</em> como expressão geral que
-\begin{align*}
-y &= A + Bx + Cx^2 + Dx^3 + Ex^4 + \text{etc}.,\\
+\begin{align*}y &= A + Bx + Cx^2 + Dx^3 + Ex^4 + \text{etc}.,
 \end{align*}
 
 (em que os coeficientes $A$, $B$, $C$, etc. terão de ser
 determinados), e diferenciemos-na.
-\begin{align*}
-
-\dfrac{dy}{dx} &= B + 2Cx + 3Dx^2 + 4Ex^3 + \text{etc}.
+\begin{align*}\dfrac{dy}{dx} &= B + 2Cx + 3Dx^2 + 4Ex^3 + \text{etc}.
 \end{align*}
 
 <p>Ora, se esta nova expressão for realmente a mesma
@@ -439,8 +429,7 @@ sempre a mesma série de novo.
 <p>Se, agora, tomarmos o caso particular de $A=1$, e
 avaliarmos a série, obteremos simplesmente</p>
 
-\begin{align*}
-\text{quando } x &= 1,\quad & y &= 2.718281 \text{ etc.};    & \text{isto é, } y &= \epsilon;   \\
+\begin{align*}\text{quando } x &= 1,\quad & y &= 2.718281 \text{ etc.};    & \text{isto é, } y &= \epsilon;   \\
 \text{quando } x &= 2,\quad & y &=(2.718281 \text{ etc.})^2; & \text{isto é, } y &= \epsilon^2; \\
 \text{quando } x &= 3,\quad & y &=(2.718281 \text{ etc.})^3; & \text{isto é, } y &= \epsilon^3;
 \end{align*}
@@ -475,8 +464,7 @@ Outra razão pela qual $\epsilon$ é importante é porque ele
 foi feito por Napier, o inventor dos logaritmos, a
 base de seu sistema. Se $y$ é o valor de $\epsilon^x$, então $x$
 é o <em>logaritmo</em>, na base $\epsilon$, de $y$. Ou, se
-\begin{align*}
-                  y &= \epsilon^x, \\
+\begin{align*}                  y &= \epsilon^x, \\
  \text{então}\;  x &= \log_\epsilon y.
 \end{align*}
 
@@ -527,8 +515,7 @@ por $100$ ou $1000$ meramente acrescentando $2$ ou $3$ ao
 índice. Pode-se mudar o logaritmo natural para
 o logaritmo ordinário simplesmente multiplicando-o por
 $0.4343$; ou
-\begin{align*}
-\log_{10} x &= 0.4343 × \log_{\epsilon} x, \\
+\begin{align*}\log_{10} x &= 0.4343 × \log_{\epsilon} x, \\
 \text{ e inversamente,}\;
 \log_{\epsilon} x &= 2.3026 × \log_{10} x.
 \end{align*}
@@ -611,35 +598,28 @@ $\dfrac{1}{x}$ quando chegarmos ao capítulo sobre integração.
 
 <p>Agora, tente diferenciar</p>
 
-\begin{align*}
-                              y &= \log_\epsilon(x+a),\\
+\begin{align*}                              y &= \log_\epsilon(x+a),\\
  \text{isto é}\;  \epsilon^y &= x+a;
 \end{align*}
 temos $\dfrac{d(x+a)}{dy} = \epsilon^y$, já que o diferencial de $\epsilon^y$
 permanece $\epsilon^y$.
 
    Isto dá
-\begin{align*}
-
-\frac{dx}{dy} &= \epsilon^y = x+a; \\
+\begin{align*}\frac{dx}{dy} &= \epsilon^y = x+a; 
 \end{align*}
 logo, revertendo à função original,
 obtemos
-\begin{align*}
-
-\frac{dy}{dx} &= \frac{1}{\;\dfrac{dx}{dy}\;} = \frac{1}{x+a}.
+\begin{align*}\frac{dy}{dx} &= \frac{1}{\;\dfrac{dx}{dy}\;} = \frac{1}{x+a}.
 \end{align*}<a name="differ2"/>
 <hr>
    Em seguida tente
-\begin{align*}
-y &= \log_{10} x.
+\begin{align*}y &= \log_{10} x.
 \end{align*}
 
 <p>Primeiro mude para logaritmos naturais multiplicando
 pelo módulo $0.4343$. Isto nos dá</p>
 
-\begin{align*}
-y &= 0.4343 \log_\epsilon x; \\
+\begin{align*}y &= 0.4343 \log_\epsilon x; \\
  \text{donde}\;
 \frac{dy}{dx} &= \frac{0.4343}{x}.
 \end{align*}
@@ -654,8 +634,7 @@ y = a^x.
 
 <p>Tomando o logaritmo de ambos os lados, obtemos</p>
 
-\begin{align*}
-\log_\epsilon y &= x \log_\epsilon a, \\
+\begin{align*}\log_\epsilon y &= x \log_\epsilon a, \\
 \text{ ou}\;
 x  &= \frac{\log_\epsilon y}{\log_\epsilon a}
   &= \frac{1}{\log_\epsilon a} × \log_\epsilon y.
@@ -733,10 +712,9 @@ $\log_\epsilon y = x \log_\epsilon a$,</p>
 
 <p>(3) $y = \epsilon^{\frac{2x}{x+1}}$.</p>
 
-\begin{align*}
-\log_\epsilon y &= \frac{2x}{x+1},\quad
+\begin{align*}\log_\epsilon y &= \frac{2x}{x+1},\quad
 \frac{1}{y}\, \frac{dy}{dx} &= \frac{2(x+1)-2x}{(x+1)^2}; \\
- logo
+ \text{logo} \\
 \frac{dy}{dx} &= \frac{2}{(x+1)^2} \epsilon^{\frac{2x}{x+1}}.
 \end{align*}
 
@@ -750,7 +728,7 @@ $\log_\epsilon y = x \log_\epsilon a$,</p>
 \]
 Pois se $(x^2+a)^{\frac{1}{2}}=u$ e $x^2+a=v$, $u=v^{\frac{1}{2}}$,
 \[
-\frac{du}{dv} = \frac{1}{{2v}^{\frac{1}{2}}};\quad
+\frac{du}{dv} = \frac{1}{(2v)^{\frac{1}{2}}};\quad
 \frac{dv}{dx} = 2x;\quad
 \frac{du}{dx} = \frac{x}{(x^2+a)^{\frac{1}{2}}}.
 \]
@@ -765,11 +743,10 @@ Pois se $(x^2+a)^{\frac{1}{2}}=u$ e $x^2+a=v$, $u=v^{\frac{1}{2}}$,
 \frac{dy}{dx} = \frac{3x^2}{a+x^3}.
 \]
 
-<p>(6) $y=\log_\epsilon\{{3x^2+\sqrt{a+x^2}}\}$. Seja $3x^2 + \sqrt{a+x^2}=z$;
+<p>(6) $y=\log_\epsilon\{3x^2+\sqrt{a+x^2}\}$. Seja $3x^2 + \sqrt{a+x^2}=z$;
 então $y=\log_\epsilon z$.</p>
 
-\begin{align*}
-\frac{dy}{dz}
+\begin{align*}\frac{dy}{dz}
   &= \frac{1}{z} \\
 \frac{dz}{dx} &= 6x + \frac{x}{\sqrt{x^2+a}}; \\
 \frac{dy}{dx}
@@ -779,8 +756,7 @@ então $y=\log_\epsilon z$.</p>
 
 <p>(7) $y=(x+3)^2 \sqrt{x-2}$.</p>
 
-\begin{align*}
-\log_\epsilon y
+\begin{align*}\log_\epsilon y
   &= 2 \log_\epsilon(x+3)+ \tfrac{1}{2} \log_\epsilon(x-2). \\
 \frac{1}{y}\, \frac{dy}{dx}
   &= \frac{2}{(x+3)} + \frac{1}{2(x-2)}; \\
@@ -790,8 +766,7 @@ então $y=\log_\epsilon z$.</p>
 
 <p>(8) $y=(x^2+3)^3(x^3-2)^{\frac{2}{3}}$.</p>
 
-\begin{align*}
-\log_\epsilon y
+\begin{align*}\log_\epsilon y
   &= 3 \log_\epsilon(x^2+3) + \tfrac{2}{3} \log_\epsilon(x^3-2); \\
 \frac{1}{y}\, \frac{dy}{dx}
   &= 3 \frac{2x}{(x^2+3)} + \frac{2}{3} \frac{3x^2}{x^3-2}
@@ -812,13 +787,12 @@ De modo semelhante, se $v=\log_\epsilon(x^3-2)$, $\dfrac{dv}{dx} = \dfrac{3x^2}{
 
 <p>(9) $y=\dfrac{\sqrt[2]{x^2+a}}{\sqrt[3]{x^3-a}}$.</p>
 
-\begin{align*}
-\log_\epsilon y
+\begin{align*}\log_\epsilon y
   &= \frac{1}{2} \log_\epsilon(x^2+a) - \frac{1}{3} \log_\epsilon(x^3-a). \\
 \frac{1}{y}\, \frac{dy}{dx}
   &= \frac{1}{2}\, \frac{2x}{x^2+a} - \frac{1}{3}\, \frac{3x^2}{x^3-a}
    &= \frac{x}{x^2+a} - \frac{x^2}{x^3-a} \\
- e
+ \text{e} \\
 \frac{dy}{dx}
   &= \frac{\sqrt[2]{x^2+a}}{\sqrt[3]{x^3-a}}
      \left\{ \frac{x}{x^2+a} - \frac{x^2}{x^3-a} \right\}.
@@ -843,12 +817,9 @@ De modo semelhante, se $v=\log_\epsilon(x^3-2)$, $\dfrac{dv}{dx} = \dfrac{3x^2}{
 
 <p>(12) $y=\left(\dfrac{1}{a^x}\right)^{ax}$.</p>
 
-\begin{align*}
-\log y &= -ax \log a^{x} = -ax^{2} \cdot \log a.\\
+\begin{align*}\log y &= -ax \log a^{x} = -ax^{2} \cdot \log a.\\
 \frac{1}{y} \frac{dy}{dx} &= -2ax \cdot \log a\\
-
 \frac{dy}{dx} &= -2ax\left(\frac{1}{a^{x}}\right)^{ax} \cdot \log a = -2x a^{1-ax^{2}} \cdot \log a. 
-
 \end{align*}
 
 <p>Tente agora os seguintes exercícios.
@@ -973,8 +944,7 @@ diferença constante; de modo que, se plotássemos
 uma nova curva, <a href="#figure41">Figura 41</a>, com valores de $\log_\epsilon y$ como ordenadas,
 seria uma reta inclinando-se para cima por degraus iguais.
 De fato, segue da equação que
-\begin{align*}
-\log_\epsilon y &= \log_\epsilon b + x · \log_\epsilon p, \\
+\begin{align*}\log_\epsilon y &= \log_\epsilon b + x · \log_\epsilon p, \\
  \text{donde }\;
 \log_\epsilon y &- \log_\epsilon b &= x · \log_\epsilon p.
 \end{align*}

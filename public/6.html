@@ -245,8 +245,7 @@ exatamente como antes.
 <p>Se houvesse três funções de $x$, que podemos
 chamar $u$, $v$ e $w$, de modo que</p>
 
-\begin{align*}
-y &= u+v+w; \\
+\begin{align*}y &= u+v+w; \\
  \text{então}\;
 \frac{dy}{dx} &= \frac{du}{dx} + \frac{dv}{dx} + \frac{dw}{dx}.
 \end{align*}
@@ -255,8 +254,7 @@ y &= u+v+w; \\
 função $v$ tivesse ela mesma um sinal negativo, seu
 coeficiente diferencial também seria negativo; de modo
 que ao diferenciar
-\begin{align*}
-y &= u-v, \\
+\begin{align*}y &= u-v, \\
 \text{ obteríamos}\;
 \frac{dy}{dx} &= \frac{du}{dx} - \frac{dv}{dx}.
 \end{align*}
@@ -298,8 +296,7 @@ onde $u$ é uma função de $x$, e $v$ é qualquer outra
 função de $x$. Então, se $x$ cresce para ser $x+dx$; e $y$
 para $y+dy$; e $u$ se torna $u+du$, e $v$ se torna $v+dv$,
 teremos:
-\begin{align*}
- y + dy &= (u + du) × (v + dv) \\
+\begin{align*} y + dy &= (u + du) × (v + dv) \\
         &= u · v + u · dv + v · du + du · dv.
 \end{align*}
 
@@ -392,17 +389,13 @@ seriam de magnitudes ainda menores.
 
 <p>Assim obtivemos:</p>
 
-\begin{align*}
-y + dy &= \dfrac{u}{v} + \dfrac{du}{v} - \dfrac{u· dv}{v^2}; \\
+\begin{align*}y + dy &= \dfrac{u}{v} + \dfrac{du}{v} - \dfrac{u· dv}{v^2}; 
 \end{align*}
 que pode ser escrito
-\begin{align*}
-&= \dfrac{u}{v} + \dfrac{v· du - u· dv}{v^2}. \\
+\begin{align*}&= \dfrac{u}{v} + \dfrac{v· du - u· dv}{v^2}. 
 \end{align*}
 Agora subtraia o $y = \dfrac{u}{v}$ original, e ficamos com:
-\begin{align*}
-dy &= \dfrac{v· du - u· dv}{v^2}; \\
-
+\begin{align*}dy &= \dfrac{v· du - u· dv}{v^2}; \\
  \text{donde}\;
 \dfrac{dy}{dx}
 &= \dfrac{v\, \dfrac{du}{dx} - u\, \dfrac{dv}{dx}}{v^2}.
@@ -419,8 +412,7 @@ da função divisor</em>.
 <p>
 Voltando ao nosso exemplo $y = \dfrac{bx^5 + c}{x^2 + a}$,</p>
 
-\begin{align*}
-\text{ escreva}\;
+\begin{align*}\text{ escreva}\;
 bx^5 + c &= u; \\
  \text{e}\;
 x^2  + a &= v.
@@ -428,8 +420,7 @@ x^2  + a &= v.
 
 <p>Então</p>
 
-\begin{align*}
-\frac{dy}{dx}
+\begin{align*}\frac{dy}{dx}
 &= \frac{(x^2 + a)\, \dfrac{d(bx^5 + c)}{dx} - (bx^5 + c)\, \dfrac{d(x^2 + a)}{dx}}{(x^2 + a)^2} \\
 &= \frac{(x^2 + a)(5bx^4) - (bx^5 + c)(2x)}{(x^2 + a)^2}, \\
 \frac{dy}{dx}
@@ -523,8 +514,7 @@ ou, mais simplesmente, multiplique e então diferencie.
 
 <p>(6) Diferencie $y = 0.5 x^3(x-3)$.</p>
 
-\begin{align*}
-\frac{dy}{dx}
+\begin{align*}\frac{dy}{dx}
   &= 0.5\left[x^3 \frac{d(x-3)}{dx} + (x-3) \frac{d(x^3)}{dx}\right] \\
   &= 0.5\left[x^3 + (x-3) × 3x^2\right] = 2x^3 - 4.5x^2.
 \end{align*}
@@ -536,24 +526,20 @@ ou, mais simplesmente, multiplique e então diferencie.
 
 <p>Isto pode ser escrito</p>
 
-\begin{gather*}
-w = (\theta + \theta^{-1})(\theta^{\frac{1}{2}} + \theta^{-\frac{1}{2}}). \\
+\begin{gather*}w = (\theta + \theta^{-1})(\theta^{\frac{1}{2}} + \theta^{-\frac{1}{2}}). \\
 \begin{aligned}
 \frac{dw}{d\theta}
   &= (\theta + \theta^{-1})
      \frac{d(\theta^{\frac{1}{2}} + \theta^{-\frac{1}{2}})}{d\theta}
    + (\theta^{\frac{1}{2}} + \theta^{-\frac{1}{2}})
      \frac{d(\theta+\theta^{-1})}{d\theta} \\
-
   &= (\theta + \theta^{-1})(\tfrac{1}{2}\theta^{-\frac{1}{2}}
                           - \tfrac{1}{2}\theta^{-\frac{3}{2}})
    + (\theta^{\frac{1}{2}} + \theta^{-\frac{1}{2}})(1 - \theta^{-2}) \\
-
   &= \tfrac{1}{2}(\theta^{ \frac{1}{2}} + \theta^{-\frac{3}{2}}
                 - \theta^{-\frac{1}{2}} - \theta^{-\frac{5}{2}})
    + (\theta^{ \frac{1}{2}} + \theta^{-\frac{1}{2}}
     - \theta^{-\frac{3}{2}} - \theta^{-\frac{5}{2}}) \\
-
   &= \tfrac{3}{2} \left(\sqrt{\theta} - \frac{1}{\sqrt{\theta^5}}\right)
    + \tfrac{1}{2} \left(\frac{1}{\sqrt{\theta}} - \frac{1}{\sqrt{\theta^3}}\right).
 \end{aligned}
@@ -567,8 +553,7 @@ regra para diferenciar um produto <em>deve</em> ser usada.
 
 <p>(8) Diferencie $y =\dfrac{a}{1 + a\sqrt{x} + a^2x}$.</p>
 
-\begin{align*}
-\frac{dy}{dx}
+\begin{align*}\frac{dy}{dx}
   &= \frac{(1 + ax^{\frac{1}{2}} + a^2x) × 0 - a\dfrac{d(1 + ax^{\frac{1}{2}} + a^2x)}{dx}}
           {(1 + a\sqrt{x} + a^2x)^2} \\
   &= - \frac{a(\frac{1}{2}ax^{-\frac{1}{2}} + a^2)}
@@ -599,14 +584,12 @@ regra para diferenciar um produto <em>deve</em> ser usada.
 
 <p>(11) Diferencie
 
-<p>\begin{align*}
-\theta &= \frac{1 - a \sqrt[3]{t^2}}{1 + a \sqrt[2]{t^3}}. \\
+<p>\begin{align*}\theta &= \frac{1 - a \sqrt[3]{t^2}}{1 + a \sqrt[2]{t^3}}. \\
    \text{Ora}\;
 \theta &= \frac{1 - at^{\frac{2}{3}}}{1 + at^{\frac{3}{2}}}.
 \end{align*}</p>
 
-\begin{align*}
-\frac{d\theta}{dt}
+\begin{align*}\frac{d\theta}{dt}
   &= \frac{(1 + at^{\frac{3}{2}}) (-\tfrac{2}{3} at^{-\frac{1}{3}})
          - (1 - at^{\frac{2}{3}}) × \tfrac{3}{2} at^{\frac{1}{2}}}
           {(1 + at^{\frac{3}{2}})^2} \\
@@ -654,8 +637,7 @@ a temperatura a $100°$ C.
 P = \frac{1}{140^5} (40^5 + 5×40^4 t + 10 × 40^3 t^2 + 10 × 40^2 t^3
                             + 5 × 40t^4 + t^5);
 \]
-\begin{align*}
- \text{donde}\;  \dfrac{dP}{dt} &= &\dfrac{1}{537.824 × 10^5}\\
+\begin{align*} \text{donde}\;  \dfrac{dP}{dt} &= &\dfrac{1}{537.824 × 10^5}\\
       &(5 × 40^4 + 20 × 40^3 t + 30 × 40^2 t^2 + 20 × 40t^3 + 5t^4),
 \end{align*}
 quando $t = 100$ isto se torna $0.036$ atmosfera por
@@ -716,8 +698,7 @@ de um fio na temperatura $t°$ C., e a resistência
 $R_0$ daquele mesmo fio a $0°$ Celsius, $a$, $b$, $c$ sendo
 constantes.</p>
 
-\begin{align*}
-R &= R_0(1 + at + bt^2). \\
+\begin{align*}R &= R_0(1 + at + bt^2). \\
 R &= R_0(1 + at + b\sqrt{t}). \\
 R &= R_0(1 + at + bt^2)^{-1}.
 \end{align*}
