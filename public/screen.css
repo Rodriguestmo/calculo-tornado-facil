@@ -1473,3 +1473,30 @@ body {
   border-color: #a44;
   color: #fff;
 }
+
+/* Botão só ícone (engrenagem) */
+.tb-btn-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.2em;
+  padding: 0.3em 0.45em;
+}
+.tb-gear-icon {
+  display: block;
+  vertical-align: middle;
+}
+.tb-btn-icon:hover .tb-gear-icon {
+  transform: rotate(25deg);
+  transition: transform 0.2s ease;
+}
+
+/* Painéis: marca-texto abre para a esquerda do botão; config (direita) para a esquerda também */
+.tb-menu[data-menu="highlight"] .tb-menu-panel {
+  right: auto;
+  left: 0;
+}
+.tb-menu[data-menu="settings"] .tb-menu-panel {
+  right: 0;
+  left: auto;
+}

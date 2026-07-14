@@ -90,15 +90,69 @@ body{counter-reset:h1 15}
   <div id="read-progress-bar" class="read-progress-bar"></div>
 </div>
 
-<!-- Barra fixa: logo + menus -->
+<!-- Barra fixa: logo + menus (marca-texto à esquerda, engrenagem à direita) -->
 <div id="site-toolbar" class="site-toolbar" role="region" aria-label="Controles do site">
   <a class="tb-home" href="index.html">Cálculo Tornado Fácil</a>
 
   <div class="tb-controls">
-    <!-- Menu Configurações -->
+    <!-- Marca-texto (esquerda) -->
+    <div class="tb-menu" data-menu="highlight">
+      <button type="button" class="tb-btn tb-menu-btn" id="hl-list-toggle" aria-expanded="false" aria-controls="hl-list-panel" title="Marca-texto e lista de destaques">
+        Marca-texto
+        <span id="hl-count-badge" class="hl-count-badge" hidden>0</span>
+      </button>
+      <div id="hl-list-panel" class="tb-menu-panel hl-list-panel" hidden role="dialog" aria-label="Marca-texto">
+        <div class="tb-menu-title">Marca-texto</div>
+
+        <div class="hl-color-row">
+          <span class="tb-menu-label">Cor ao destacar</span>
+          <div id="hl-color-swatches" class="hl-color-swatches" role="group" aria-label="Cor do marca-texto">
+            <button type="button" class="hl-swatch-btn cme-hl-pastel-yellow" data-color="pastel-yellow" title="Amarelo pastel" aria-label="Amarelo pastel" aria-pressed="true"></button>
+            <button type="button" class="hl-swatch-btn cme-hl-pastel-green" data-color="pastel-green" title="Verde pastel" aria-label="Verde pastel" aria-pressed="false"></button>
+            <button type="button" class="hl-swatch-btn cme-hl-pastel-blue" data-color="pastel-blue" title="Azul pastel" aria-label="Azul pastel" aria-pressed="false"></button>
+            <button type="button" class="hl-swatch-btn cme-hl-pastel-pink" data-color="pastel-pink" title="Rosa pastel" aria-label="Rosa pastel" aria-pressed="false"></button>
+            <button type="button" class="hl-swatch-btn cme-hl-pastel-orange" data-color="pastel-orange" title="Laranja pastel" aria-label="Laranja pastel" aria-pressed="false"></button>
+            <button type="button" class="hl-swatch-btn cme-hl-pastel-purple" data-color="pastel-purple" title="Roxo pastel" aria-label="Roxo pastel" aria-pressed="false"></button>
+          </div>
+          <select id="hl-color" hidden aria-hidden="true" tabindex="-1">
+            <option value="pastel-yellow">Amarelo pastel</option>
+            <option value="pastel-green">Verde pastel</option>
+            <option value="pastel-blue">Azul pastel</option>
+            <option value="pastel-pink">Rosa pastel</option>
+            <option value="pastel-orange">Laranja pastel</option>
+            <option value="pastel-purple">Roxo pastel</option>
+          </select>
+        </div>
+
+        <div class="hl-filter-row">
+          <span class="tb-menu-label">Filtrar lista</span>
+          <div id="hl-filter-swatches" class="hl-color-swatches" role="group" aria-label="Filtrar destaques por cor">
+            <button type="button" class="hl-filter-btn is-active" data-filter="all" title="Todas as cores" aria-label="Todas as cores" aria-pressed="true">Tudo</button>
+            <button type="button" class="hl-swatch-btn hl-filter-btn cme-hl-pastel-yellow" data-filter="pastel-yellow" title="Filtrar amarelo" aria-label="Filtrar amarelo" aria-pressed="false"></button>
+            <button type="button" class="hl-swatch-btn hl-filter-btn cme-hl-pastel-green" data-filter="pastel-green" title="Filtrar verde" aria-label="Filtrar verde" aria-pressed="false"></button>
+            <button type="button" class="hl-swatch-btn hl-filter-btn cme-hl-pastel-blue" data-filter="pastel-blue" title="Filtrar azul" aria-label="Filtrar azul" aria-pressed="false"></button>
+            <button type="button" class="hl-swatch-btn hl-filter-btn cme-hl-pastel-pink" data-filter="pastel-pink" title="Filtrar rosa" aria-label="Filtrar rosa" aria-pressed="false"></button>
+            <button type="button" class="hl-swatch-btn hl-filter-btn cme-hl-pastel-orange" data-filter="pastel-orange" title="Filtrar laranja" aria-label="Filtrar laranja" aria-pressed="false"></button>
+            <button type="button" class="hl-swatch-btn hl-filter-btn cme-hl-pastel-purple" data-filter="pastel-purple" title="Filtrar roxo" aria-label="Filtrar roxo" aria-pressed="false"></button>
+          </div>
+        </div>
+
+        <div class="hl-list-head">
+          <strong>Seus destaques</strong>
+          <span class="hl-list-hint">salvos neste navegador</span>
+        </div>
+        <div id="hl-list-body" class="hl-list-body">
+          <p class="hl-list-empty">Nenhum destaque ainda. Selecione um trecho no texto para destacar.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Configurações (direita) - só ícone de engrenagem -->
     <div class="tb-menu" data-menu="settings">
-      <button type="button" class="tb-btn tb-menu-btn" id="settings-toggle" aria-expanded="false" aria-controls="settings-panel">
-        Configurações
+      <button type="button" class="tb-btn tb-menu-btn tb-btn-icon" id="settings-toggle" aria-expanded="false" aria-controls="settings-panel" title="Configurações" aria-label="Configurações">
+        <svg class="tb-gear-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false">
+          <path fill="currentColor" d="M19.14 12.94c.04-.31.06-.63.06-.94s-.02-.63-.06-.94l2.03-1.58a.5.5 0 0 0 .12-.64l-1.92-3.32a.5.5 0 0 0-.6-.22l-2.39.96a7.03 7.03 0 0 0-1.63-.94l-.36-2.54A.5.5 0 0 0 14.9 2h-3.8a.5.5 0 0 0-.49.42l-.36 2.54c-.59.24-1.13.55-1.63.94l-2.39-.96a.5.5 0 0 0-.6.22L3.71 8.08a.5.5 0 0 0 .12.64l2.03 1.58c-.04.31-.06.63-.06.94s.02.63.06.94L3.83 14.7a.5.5 0 0 0-.12.64l1.92 3.32c.14.24.43.34.68.22l2.39-.96c.5.39 1.04.7 1.63.94l.36 2.54c.05.24.25.42.49.42h3.8c.24 0 .44-.18.49-.42l.36-2.54c.59-.24 1.13-.55 1.63-.94l2.39.96c.25.1.54 0 .68-.22l1.92-3.32a.5.5 0 0 0-.12-.64l-2.03-1.58zM12 15.5A3.5 3.5 0 1 1 12 8.5a3.5 3.5 0 0 1 0 7z"/>
+        </svg>
       </button>
       <div id="settings-panel" class="tb-menu-panel" hidden role="dialog" aria-label="Configurações de leitura">
         <div class="tb-menu-title">Configurações</div>
@@ -144,59 +198,6 @@ body{counter-reset:h1 15}
             Limpar cache do site
           </button>
           <span class="tb-menu-hint">Remove destaques, notas, progresso e preferências salvos neste navegador.</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Menu Marca-texto -->
-    <div class="tb-menu" data-menu="highlight">
-      <button type="button" class="tb-btn tb-menu-btn" id="hl-list-toggle" aria-expanded="false" aria-controls="hl-list-panel" title="Marca-texto e lista de destaques">
-        Marca-texto
-        <span id="hl-count-badge" class="hl-count-badge" hidden>0</span>
-      </button>
-      <div id="hl-list-panel" class="tb-menu-panel hl-list-panel" hidden role="dialog" aria-label="Marca-texto">
-        <div class="tb-menu-title">Marca-texto</div>
-
-        <div class="hl-color-row">
-          <span class="tb-menu-label">Cor ao destacar</span>
-          <div id="hl-color-swatches" class="hl-color-swatches" role="group" aria-label="Cor do marca-texto">
-            <button type="button" class="hl-swatch-btn cme-hl-pastel-yellow" data-color="pastel-yellow" title="Amarelo pastel" aria-label="Amarelo pastel" aria-pressed="true"></button>
-            <button type="button" class="hl-swatch-btn cme-hl-pastel-green" data-color="pastel-green" title="Verde pastel" aria-label="Verde pastel" aria-pressed="false"></button>
-            <button type="button" class="hl-swatch-btn cme-hl-pastel-blue" data-color="pastel-blue" title="Azul pastel" aria-label="Azul pastel" aria-pressed="false"></button>
-            <button type="button" class="hl-swatch-btn cme-hl-pastel-pink" data-color="pastel-pink" title="Rosa pastel" aria-label="Rosa pastel" aria-pressed="false"></button>
-            <button type="button" class="hl-swatch-btn cme-hl-pastel-orange" data-color="pastel-orange" title="Laranja pastel" aria-label="Laranja pastel" aria-pressed="false"></button>
-            <button type="button" class="hl-swatch-btn cme-hl-pastel-purple" data-color="pastel-purple" title="Roxo pastel" aria-label="Roxo pastel" aria-pressed="false"></button>
-          </div>
-          <!-- select oculto: mantém id para o JS antigo se precisar -->
-          <select id="hl-color" hidden aria-hidden="true" tabindex="-1">
-            <option value="pastel-yellow">Amarelo pastel</option>
-            <option value="pastel-green">Verde pastel</option>
-            <option value="pastel-blue">Azul pastel</option>
-            <option value="pastel-pink">Rosa pastel</option>
-            <option value="pastel-orange">Laranja pastel</option>
-            <option value="pastel-purple">Roxo pastel</option>
-          </select>
-        </div>
-
-        <div class="hl-filter-row">
-          <span class="tb-menu-label">Filtrar lista</span>
-          <div id="hl-filter-swatches" class="hl-color-swatches" role="group" aria-label="Filtrar destaques por cor">
-            <button type="button" class="hl-filter-btn is-active" data-filter="all" title="Todas as cores" aria-label="Todas as cores" aria-pressed="true">Tudo</button>
-            <button type="button" class="hl-swatch-btn hl-filter-btn cme-hl-pastel-yellow" data-filter="pastel-yellow" title="Filtrar amarelo" aria-label="Filtrar amarelo" aria-pressed="false"></button>
-            <button type="button" class="hl-swatch-btn hl-filter-btn cme-hl-pastel-green" data-filter="pastel-green" title="Filtrar verde" aria-label="Filtrar verde" aria-pressed="false"></button>
-            <button type="button" class="hl-swatch-btn hl-filter-btn cme-hl-pastel-blue" data-filter="pastel-blue" title="Filtrar azul" aria-label="Filtrar azul" aria-pressed="false"></button>
-            <button type="button" class="hl-swatch-btn hl-filter-btn cme-hl-pastel-pink" data-filter="pastel-pink" title="Filtrar rosa" aria-label="Filtrar rosa" aria-pressed="false"></button>
-            <button type="button" class="hl-swatch-btn hl-filter-btn cme-hl-pastel-orange" data-filter="pastel-orange" title="Filtrar laranja" aria-label="Filtrar laranja" aria-pressed="false"></button>
-            <button type="button" class="hl-swatch-btn hl-filter-btn cme-hl-pastel-purple" data-filter="pastel-purple" title="Filtrar roxo" aria-label="Filtrar roxo" aria-pressed="false"></button>
-          </div>
-        </div>
-
-        <div class="hl-list-head">
-          <strong>Seus destaques</strong>
-          <span class="hl-list-hint">salvos neste navegador</span>
-        </div>
-        <div id="hl-list-body" class="hl-list-body">
-          <p class="hl-list-empty">Nenhum destaque ainda. Selecione um trecho no texto para destacar.</p>
         </div>
       </div>
     </div>
