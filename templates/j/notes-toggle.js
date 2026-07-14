@@ -19,6 +19,7 @@
   var SIZE_STEP = 5;
   var SIZE_DEFAULT = 100;
   var COLOR_DEFAULT = "pastel-yellow";
+  var hlFilter = "all";
   var COLORS = {
     "pastel-yellow": 1,
     "pastel-green": 1,
@@ -69,6 +70,11 @@
   var hlListBody = document.getElementById("hl-list-body");
   var hlCountBadge = document.getElementById("hl-count-badge");
   var hlFloatTip = document.getElementById("hl-float-tip");
+  var settingsToggle = document.getElementById("settings-toggle");
+  var settingsPanel = document.getElementById("settings-panel");
+  var hlColorSwatches = document.getElementById("hl-color-swatches");
+  var hlFilterSwatches = document.getElementById("hl-filter-swatches");
+  var hlNoteSwatches = document.getElementById("hl-note-swatches");
 
   var hlPopup = document.getElementById("hl-popup");
   var hlBtnMark = document.getElementById("hl-btn-mark");
@@ -169,7 +175,70 @@
   function applyHlColorPref(color) {
     color = normalizeColor(color);
     if (hlColorSelect) hlColorSelect.value = color;
+    if (hlColorSwatches) {
+      var btns = hlColorSwatches.querySelectorAll(".hl-swatch-btn");
+      for (var i = 0; i < btns.length; i++) {
+        var on = btns[i].getAttribute("data-color") === color;
+        btns[i].classList.toggle("is-active", on);
+        btns[i].setAttribute("aria-pressed", on ? "true" : "false");
+      }
+    }
     return color;
+  }
+
+  function setHlFilter(filter) {
+    hlFilter = filter || "all";
+    if (hlFilterSwatches) {
+      var btns = hlFilterSwatches.querySelectorAll(".hl-filter-btn");
+      for (var i = 0; i < btns.length; i++) {
+        var on = btns[i].getAttribute("data-filter") === hlFilter;
+        btns[i].classList.toggle("is-active", on);
+        btns[i].setAttribute("aria-pressed", on ? "true" : "false");
+      }
+    }
+    refreshHlList();
+  }
+
+  function syncNoteSwatches(color) {
+    color = normalizeColor(color);
+    if (hlNoteColor) hlNoteColor.value = color;
+    if (hlNoteSwatches) {
+      var btns = hlNoteSwatches.querySelectorAll(".hl-swatch-btn");
+      for (var i = 0; i < btns.length; i++) {
+        var on = btns[i].getAttribute("data-color") === color;
+        btns[i].classList.toggle("is-active", on);
+        btns[i].setAttribute("aria-pressed", on ? "true" : "false");
+      }
+    }
+  }
+
+  function closeAllMenus() {
+    closeMenu(settingsToggle, settingsPanel);
+    closeMenu(hlListToggle, hlListPanel);
+  }
+
+  function closeMenu(btn, panel) {
+    if (panel) {
+      panel.hidden = true;
+    }
+    if (btn) btn.setAttribute("aria-expanded", "false");
+  }
+
+  function openMenu(btn, panel) {
+    closeAllMenus();
+    if (panel) panel.hidden = false;
+    if (btn) btn.setAttribute("aria-expanded", "true");
+  }
+
+  function toggleMenu(btn, panel, onOpen) {
+    if (!btn || !panel) return;
+    var willOpen = panel.hidden;
+    closeAllMenus();
+    if (willOpen) {
+      if (typeof onOpen === "function") onOpen();
+      panel.hidden = false;
+      btn.setAttribute("aria-expanded", "true");
+    }
   }
 
   /* ---------- Notas Gardner ---------- */
@@ -575,6 +644,7 @@
       hlNoteColor.value = normalizeColor(
         mark.getAttribute("data-color") || COLOR_DEFAULT
       );
+    syncNoteSwatches(hlNoteColor ? hlNoteColor.value : COLOR_DEFAULT);
     hlModal.hidden = false;
     hlModal.style.display = "flex";
     if (hlNoteInput) hlNoteInput.focus();
@@ -595,19 +665,30 @@
 
   /* ---------- Lista de destaques (dropdown) ---------- */
   function refreshHlList() {
-    var items = flattenHighlights();
+    var allItems = flattenHighlights();
     if (hlCountBadge) {
-      if (items.length) {
+      if (allItems.length) {
         hlCountBadge.hidden = false;
-        hlCountBadge.textContent = String(items.length);
+        hlCountBadge.textContent = String(allItems.length);
       } else {
         hlCountBadge.hidden = true;
       }
     }
     if (!hlListBody) return;
-    if (!items.length) {
+    var items = allItems;
+    if (hlFilter && hlFilter !== "all") {
+      items = allItems.filter(function (it) {
+        return normalizeColor(it.color) === hlFilter;
+      });
+    }
+    if (!allItems.length) {
       hlListBody.innerHTML =
         '<p class="hl-list-empty">Nenhum destaque ainda. Selecione um trecho no texto para destacar.</p>';
+      return;
+    }
+    if (!items.length) {
+      hlListBody.innerHTML =
+        '<p class="hl-list-empty">Nenhum destaque com essa cor. Troque o filtro ou destaque com outra cor.</p>';
       return;
     }
     // group by page
@@ -660,16 +741,16 @@
 
   function toggleHlList(force) {
     if (!hlListPanel || !hlListToggle) return;
-    var open =
-      force === true ? true : force === false ? false : hlListPanel.hidden;
-    if (open) {
-      refreshHlList();
-      hlListPanel.hidden = false;
-      hlListToggle.setAttribute("aria-expanded", "true");
-    } else {
-      hlListPanel.hidden = true;
-      hlListToggle.setAttribute("aria-expanded", "false");
+    if (force === false) {
+      closeMenu(hlListToggle, hlListPanel);
+      return;
     }
+    if (force === true) {
+      openMenu(hlListToggle, hlListPanel);
+      refreshHlList();
+      return;
+    }
+    toggleMenu(hlListToggle, hlListPanel, refreshHlList);
   }
 
   /* ---------- Tooltip flutuante ---------- */
@@ -738,6 +819,7 @@
   applyFont(font);
   applyFontSize(size);
   set(KEY_HL_COLOR, hlColor);
+  setHlFilter(hlFilter || "all");
 
   setTimeout(function () {
     restoreHighlights();
@@ -789,6 +871,40 @@
     hlColorSelect.addEventListener("change", function () {
       var c = normalizeColor(hlColorSelect.value);
       set(KEY_HL_COLOR, c);
+      applyHlColorPref(c);
+    });
+  }
+
+  if (hlColorSwatches) {
+    hlColorSwatches.addEventListener("click", function (ev) {
+      var btn = ev.target.closest && ev.target.closest(".hl-swatch-btn");
+      if (!btn) return;
+      var c = normalizeColor(btn.getAttribute("data-color"));
+      set(KEY_HL_COLOR, c);
+      applyHlColorPref(c);
+    });
+  }
+
+  if (hlFilterSwatches) {
+    hlFilterSwatches.addEventListener("click", function (ev) {
+      var btn = ev.target.closest && ev.target.closest(".hl-filter-btn");
+      if (!btn) return;
+      setHlFilter(btn.getAttribute("data-filter") || "all");
+    });
+  }
+
+  if (hlNoteSwatches) {
+    hlNoteSwatches.addEventListener("click", function (ev) {
+      var btn = ev.target.closest && ev.target.closest(".hl-swatch-btn");
+      if (!btn) return;
+      syncNoteSwatches(btn.getAttribute("data-color"));
+    });
+  }
+
+  if (settingsToggle && settingsPanel) {
+    settingsToggle.addEventListener("click", function (ev) {
+      ev.stopPropagation();
+      toggleMenu(settingsToggle, settingsPanel);
     });
   }
 
@@ -822,15 +938,9 @@
   }
 
   document.addEventListener("click", function (ev) {
-    if (
-      hlListPanel &&
-      !hlListPanel.hidden &&
-      hlListToggle &&
-      !hlListPanel.contains(ev.target) &&
-      !hlListToggle.contains(ev.target)
-    ) {
-      toggleHlList(false);
-    }
+    var t = ev.target;
+    if (t && t.closest && t.closest(".tb-menu")) return;
+    closeAllMenus();
   });
 
   document.addEventListener("click", onMarkActivate);
@@ -928,7 +1038,7 @@
     if (ev.key === "Escape") {
       hidePopup();
       closeNoteModal();
-      toggleHlList(false);
+      closeAllMenus();
       hideFloatTip();
     }
   });

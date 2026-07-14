@@ -3,53 +3,99 @@
   <div id="read-progress-bar" class="read-progress-bar"></div>
 </div>
 
-<!-- Barra fixa: navegação, leitura, notas, destaques, tema -->
+<!-- Barra fixa: logo + menus -->
 <div id="site-toolbar" class="site-toolbar" role="region" aria-label="Controles do site">
   <a class="tb-home" href="index.html">Cálculo Tornado Fácil</a>
 
   <div class="tb-controls">
-    <label class="tb-field" title="Como exibir as notas de Martin Gardner (1998)">
-      <span class="tb-label">Notas</span>
-      <select id="notes-mode" aria-label="Modo de exibição das notas">
-        <option value="all">Sempre visíveis</option>
-        <option value="click">Lupa (clique para abrir)</option>
-        <option value="off">Sempre ocultadas</option>
-      </select>
-    </label>
+    <!-- Menu Configurações -->
+    <div class="tb-menu" data-menu="settings">
+      <button type="button" class="tb-btn tb-menu-btn" id="settings-toggle" aria-expanded="false" aria-controls="settings-panel">
+        Configurações
+      </button>
+      <div id="settings-panel" class="tb-menu-panel" hidden role="dialog" aria-label="Configurações de leitura">
+        <div class="tb-menu-title">Configurações</div>
 
-    <label class="tb-field" title="Família tipográfica">
-      <span class="tb-label">Fonte</span>
-      <select id="font-family" aria-label="Fonte do texto">
-        <option value="default">Padrão do site</option>
-        <option value="dyslexia">Dislexia</option>
-        <option value="sans">Sans-serif</option>
-        <option value="mono">Monospace</option>
-      </select>
-    </label>
+        <label class="tb-menu-row">
+          <span class="tb-menu-label">Notas de Gardner</span>
+          <select id="notes-mode" aria-label="Modo de exibição das notas">
+            <option value="all">Sempre visíveis</option>
+            <option value="click">Lupa (clique para abrir)</option>
+            <option value="off">Sempre ocultadas</option>
+          </select>
+        </label>
 
-    <div class="tb-font-size" role="group" aria-label="Tamanho da fonte">
-      <button type="button" id="font-smaller" class="tb-btn tb-btn-sq" title="Diminuir fonte" aria-label="Diminuir fonte">A-</button>
-      <span id="font-size-label" class="tb-size-label" aria-live="polite">100%</span>
-      <button type="button" id="font-larger" class="tb-btn tb-btn-sq" title="Aumentar fonte" aria-label="Aumentar fonte">A+</button>
+        <label class="tb-menu-row">
+          <span class="tb-menu-label">Fonte</span>
+          <select id="font-family" aria-label="Fonte do texto">
+            <option value="default">Padrão do site</option>
+            <option value="dyslexia">Dislexia</option>
+            <option value="sans">Sans-serif</option>
+            <option value="mono">Monospace</option>
+          </select>
+        </label>
+
+        <div class="tb-menu-row">
+          <span class="tb-menu-label">Tamanho</span>
+          <div class="tb-font-size" role="group" aria-label="Tamanho da fonte">
+            <button type="button" id="font-smaller" class="tb-btn tb-btn-sq" title="Diminuir fonte" aria-label="Diminuir fonte">A-</button>
+            <span id="font-size-label" class="tb-size-label" aria-live="polite">100%</span>
+            <button type="button" id="font-larger" class="tb-btn tb-btn-sq" title="Aumentar fonte" aria-label="Aumentar fonte">A+</button>
+          </div>
+        </div>
+
+        <div class="tb-menu-row">
+          <span class="tb-menu-label">Tema</span>
+          <button type="button" id="toggle-theme" class="tb-btn" title="Alternar tema claro/escuro" aria-pressed="false">
+            <span class="theme-label">Tema escuro</span>
+          </button>
+        </div>
+      </div>
     </div>
 
-    <label class="tb-field" title="Cor dos novos destaques">
-      <span class="tb-label">Cor</span>
-      <select id="hl-color" aria-label="Cor do destaque">
-        <option value="pastel-yellow">Amarelo pastel</option>
-        <option value="pastel-green">Verde pastel</option>
-        <option value="pastel-blue">Azul pastel</option>
-        <option value="pastel-pink">Rosa pastel</option>
-        <option value="pastel-orange">Laranja pastel</option>
-        <option value="pastel-purple">Roxo pastel</option>
-      </select>
-    </label>
-
-    <div class="tb-hl-wrap">
-      <button type="button" id="hl-list-toggle" class="tb-btn" aria-expanded="false" aria-controls="hl-list-panel" title="Ver todos os destaques e notas">
-        Destaques <span id="hl-count-badge" class="hl-count-badge" hidden>0</span>
+    <!-- Menu Marca-texto -->
+    <div class="tb-menu" data-menu="highlight">
+      <button type="button" class="tb-btn tb-menu-btn" id="hl-list-toggle" aria-expanded="false" aria-controls="hl-list-panel" title="Marca-texto e lista de destaques">
+        Marca-texto
+        <span id="hl-count-badge" class="hl-count-badge" hidden>0</span>
       </button>
-      <div id="hl-list-panel" class="hl-list-panel" hidden role="menu" aria-label="Lista de destaques">
+      <div id="hl-list-panel" class="tb-menu-panel hl-list-panel" hidden role="dialog" aria-label="Marca-texto">
+        <div class="tb-menu-title">Marca-texto</div>
+
+        <div class="hl-color-row">
+          <span class="tb-menu-label">Cor ao destacar</span>
+          <div id="hl-color-swatches" class="hl-color-swatches" role="group" aria-label="Cor do marca-texto">
+            <button type="button" class="hl-swatch-btn cme-hl-pastel-yellow" data-color="pastel-yellow" title="Amarelo pastel" aria-label="Amarelo pastel" aria-pressed="true"></button>
+            <button type="button" class="hl-swatch-btn cme-hl-pastel-green" data-color="pastel-green" title="Verde pastel" aria-label="Verde pastel" aria-pressed="false"></button>
+            <button type="button" class="hl-swatch-btn cme-hl-pastel-blue" data-color="pastel-blue" title="Azul pastel" aria-label="Azul pastel" aria-pressed="false"></button>
+            <button type="button" class="hl-swatch-btn cme-hl-pastel-pink" data-color="pastel-pink" title="Rosa pastel" aria-label="Rosa pastel" aria-pressed="false"></button>
+            <button type="button" class="hl-swatch-btn cme-hl-pastel-orange" data-color="pastel-orange" title="Laranja pastel" aria-label="Laranja pastel" aria-pressed="false"></button>
+            <button type="button" class="hl-swatch-btn cme-hl-pastel-purple" data-color="pastel-purple" title="Roxo pastel" aria-label="Roxo pastel" aria-pressed="false"></button>
+          </div>
+          <!-- select oculto: mantém id para o JS antigo se precisar -->
+          <select id="hl-color" hidden aria-hidden="true" tabindex="-1">
+            <option value="pastel-yellow">Amarelo pastel</option>
+            <option value="pastel-green">Verde pastel</option>
+            <option value="pastel-blue">Azul pastel</option>
+            <option value="pastel-pink">Rosa pastel</option>
+            <option value="pastel-orange">Laranja pastel</option>
+            <option value="pastel-purple">Roxo pastel</option>
+          </select>
+        </div>
+
+        <div class="hl-filter-row">
+          <span class="tb-menu-label">Filtrar lista</span>
+          <div id="hl-filter-swatches" class="hl-color-swatches" role="group" aria-label="Filtrar destaques por cor">
+            <button type="button" class="hl-filter-btn is-active" data-filter="all" title="Todas as cores" aria-label="Todas as cores" aria-pressed="true">Tudo</button>
+            <button type="button" class="hl-swatch-btn hl-filter-btn cme-hl-pastel-yellow" data-filter="pastel-yellow" title="Filtrar amarelo" aria-label="Filtrar amarelo" aria-pressed="false"></button>
+            <button type="button" class="hl-swatch-btn hl-filter-btn cme-hl-pastel-green" data-filter="pastel-green" title="Filtrar verde" aria-label="Filtrar verde" aria-pressed="false"></button>
+            <button type="button" class="hl-swatch-btn hl-filter-btn cme-hl-pastel-blue" data-filter="pastel-blue" title="Filtrar azul" aria-label="Filtrar azul" aria-pressed="false"></button>
+            <button type="button" class="hl-swatch-btn hl-filter-btn cme-hl-pastel-pink" data-filter="pastel-pink" title="Filtrar rosa" aria-label="Filtrar rosa" aria-pressed="false"></button>
+            <button type="button" class="hl-swatch-btn hl-filter-btn cme-hl-pastel-orange" data-filter="pastel-orange" title="Filtrar laranja" aria-label="Filtrar laranja" aria-pressed="false"></button>
+            <button type="button" class="hl-swatch-btn hl-filter-btn cme-hl-pastel-purple" data-filter="pastel-purple" title="Filtrar roxo" aria-label="Filtrar roxo" aria-pressed="false"></button>
+          </div>
+        </div>
+
         <div class="hl-list-head">
           <strong>Seus destaques</strong>
           <span class="hl-list-hint">salvos neste navegador</span>
@@ -59,10 +105,6 @@
         </div>
       </div>
     </div>
-
-    <button type="button" id="toggle-theme" class="tb-btn" title="Alternar tema claro/escuro" aria-pressed="false">
-      <span class="theme-label">Tema escuro</span>
-    </button>
   </div>
 </div>
 
@@ -81,8 +123,16 @@
   <div class="hl-modal-box">
     <h3 id="hl-note-title">Nota do trecho</h3>
     <p id="hl-note-quote" class="hl-quote"></p>
-    <label class="hl-note-label" for="hl-note-color">Cor deste destaque</label>
-    <select id="hl-note-color" aria-label="Cor deste destaque">
+    <label class="hl-note-label">Cor deste destaque</label>
+    <div id="hl-note-swatches" class="hl-color-swatches" role="group" aria-label="Cor deste destaque">
+      <button type="button" class="hl-swatch-btn cme-hl-pastel-yellow" data-color="pastel-yellow" title="Amarelo pastel" aria-label="Amarelo pastel"></button>
+      <button type="button" class="hl-swatch-btn cme-hl-pastel-green" data-color="pastel-green" title="Verde pastel" aria-label="Verde pastel"></button>
+      <button type="button" class="hl-swatch-btn cme-hl-pastel-blue" data-color="pastel-blue" title="Azul pastel" aria-label="Azul pastel"></button>
+      <button type="button" class="hl-swatch-btn cme-hl-pastel-pink" data-color="pastel-pink" title="Rosa pastel" aria-label="Rosa pastel"></button>
+      <button type="button" class="hl-swatch-btn cme-hl-pastel-orange" data-color="pastel-orange" title="Laranja pastel" aria-label="Laranja pastel"></button>
+      <button type="button" class="hl-swatch-btn cme-hl-pastel-purple" data-color="pastel-purple" title="Roxo pastel" aria-label="Roxo pastel"></button>
+    </div>
+    <select id="hl-note-color" hidden aria-hidden="true" tabindex="-1">
       <option value="pastel-yellow">Amarelo pastel</option>
       <option value="pastel-green">Verde pastel</option>
       <option value="pastel-blue">Azul pastel</option>
