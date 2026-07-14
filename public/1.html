@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Terrores Preliminares | Cálculo Tornado Fácil - Cap. I</title>
+<meta name="description" content="Capítulo I: para livrá-lo dos terrores preliminares. O significado de d e da integral em linguagem simples. Cálculo Tornado Fácil em português.">
+<meta name="author" content="Thales Rodrigues; Silvanus P. Thompson">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="googlebot" content="index, follow">
+<meta name="language" content="Portuguese">
+<meta name="keywords" content="cálculo, calculus made easy, Silvanus Thompson, cálculo diferencial, cálculo integral, matemática, educação livre, português, Martin Gardner, Cálculo Tornado Fácil, Thales Rodrigues">
+<link rel="canonical" href="https://rodriguestmo.github.io/calculo-tornado-facil/1.html">
+<link rel="alternate" hreflang="pt-BR" href="https://rodriguestmo.github.io/calculo-tornado-facil/1.html">
+<link rel="alternate" hreflang="x-default" href="https://rodriguestmo.github.io/calculo-tornado-facil/">
+
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Cálculo Tornado Fácil">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Terrores Preliminares | Cálculo Tornado Fácil - Cap. I">
+<meta property="og:description" content="Capítulo I: para livrá-lo dos terrores preliminares. O significado de d e da integral em linguagem simples. Cálculo Tornado Fácil em português.">
+<meta property="og:url" content="https://rodriguestmo.github.io/calculo-tornado-facil/1.html">
+<meta property="og:image" content="https://rodriguestmo.github.io/calculo-tornado-facil/cover.jpg">
+
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Terrores Preliminares | Cálculo Tornado Fácil - Cap. I">
+<meta name="twitter:description" content="Capítulo I: para livrá-lo dos terrores preliminares. O significado de d e da integral em linguagem simples. Cálculo Tornado Fácil em português.">
+<meta name="twitter:image" content="https://rodriguestmo.github.io/calculo-tornado-facil/cover.jpg">
+
+
+<meta name="ai-content-declaration" content="human-authored translation and educational adaptation">
+<link rel="describedby" href="https://rodriguestmo.github.io/calculo-tornado-facil/llms.txt">
+<link rel="stylesheet" href="screen.css">
+<style>
+body{counter-reset:h1 1}
+</style>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Chapter",
+  "name": "Para livrá-lo dos Terrores Preliminares",
+  "position": 1,
+  "isPartOf": {
+    "@type": "Book",
+    "name": "Cálculo Tornado Fácil",
+    "url": "https://rodriguestmo.github.io/calculo-tornado-facil/"
+  },
+  "author": {"@type": "Person", "name": "Silvanus P. Thompson"},
+  "translator": {"@type": "Person", "name": "Thales Rodrigues"},
+  "url": "https://rodriguestmo.github.io/calculo-tornado-facil/1.html",
+  "inLanguage": "pt-BR",
+  "isAccessibleForFree": true
+}
+</script>
+</head>
+<body>
+<!-- Barra fixa: navegação, modo das notas, tema -->
+<div id="site-toolbar" class="site-toolbar" role="region" aria-label="Controles do site">
+  <a class="tb-home" href="index.html">Cálculo Tornado Fácil</a>
+
+  <div class="tb-controls">
+    <label class="tb-field" title="Como exibir as notas de Martin Gardner (1998)">
+      <span class="tb-label">Notas</span>
+      <select id="notes-mode" aria-label="Modo de exibição das notas">
+        <option value="all">Sempre visíveis</option>
+        <option value="click">Lupa (clique para abrir)</option>
+        <option value="off">Sempre ocultadas</option>
+      </select>
+    </label>
+
+    <button type="button" id="toggle-theme" class="tb-btn" title="Alternar tema claro/escuro" aria-pressed="false">
+      <span class="theme-label">Tema escuro</span>
+    </button>
+  </div>
+</div>
+
+<h1><br>Para livrá-lo dos Terrores Preliminares</h1>
+<p class="a rotatedFloralHeartBullet">
+
+<aside class="gardner-note" id="g-ch1-prelim">
+<header>Nota (Martin Gardner, 1998)</header>
+<p>Antes de entrar no texto de Thompson, Gardner acrescentou três capítulos preliminares na edição de 1998:</p>
+<p>(1) <em>O que é uma função?</em> - como uma grandeza depende de outra.<br>
+(2) <em>O que é um limite?</em> - a ideia de aproximação que sustenta o cálculo moderno.<br>
+(3) <em>O que é uma derivada?</em> - taxa de variação e inclinação da tangente.</p>
+<p>Thompson, de propósito, quase não formaliza limites. Gardner diz que isso não atrapalha o iniciante: dá para traduzir o método de “esgotar” incrementos cada vez menores até “jogá-los fora” na definição atual de derivada como limite.</p>
+<span class="src">Prefácio e Capítulos preliminares, edição Gardner 1998.</span>
+</aside>
+
+<p>O terror preliminar, que afugenta a maioria dos alunos
+do ensino médio de sequer tentar aprender a
+calcular, pode ser abolido de uma vez por todas ao se
+dizer, em termos de bom senso, o significado
+dos dois principais símbolos usados no cálculo.
+<a class="note-mark" href="#g-ch1-highschool" data-note="g-ch1-highschool" title="Abrir/fechar nota de Gardner"></a>
+
+<aside class="gardner-note" id="g-ch1-highschool">
+<header>Nota editorial (Gardner / tradução)</header>
+<p>No original de 1910, Thompson fala em <em>fifth-form boys</em> (meninos de uma série do ensino britânico da época). A edição Gardner (1998) moderniza para <em>high school students</em>. Aqui usamos “alunos do ensino médio”, no mesmo espírito de localização.</p>
+<span class="src">Comparação entre ed. Gutenberg (1910/1946) e ed. Gardner 1998.</span>
+</aside>
+
+<p>Esses terríveis símbolos são:
+
+<p>(1) $d$ que significa apenas “um pedacinho de.”
+
+<p>Assim $dx$ significa um pedacinho de $x$; ou $du$ significa
+um pedacinho de $u$. Os matemáticos comuns acham
+mais polido dizer “um elemento de,” em vez de “um
+pedacinho de.” Como preferir. Mas você verá que
+esses pedacinhos (ou elementos) podem ser considerados
+indefinidamente pequenos.
+<a class="note-mark" href="#g-ch1-infinitesimal" data-note="g-ch1-infinitesimal" title="Abrir/fechar nota de Gardner"></a>
+
+<aside class="gardner-note" id="g-ch1-infinitesimal">
+<header>Nota (contexto Gardner)</header>
+<p>A edição Gardner às vezes prefere “infinitamente pequenos” / linguagem mais próxima do uso atual. Thompson evita o formalismo dos $\varepsilon$ e $\delta$ e trabalha com a intuição de quantidades tão pequenas quanto se queira - o que, em termos modernos, é a porta de entrada para a ideia de limite.</p>
+<p>Gardner também padroniza a terminologia: o antigo “coeficiente diferencial” (<em>differential coefficient</em>) vira simplesmente <strong>derivada</strong> (<em>derivative</em>) no resto do livro anotado.</p>
+<span class="src">Prefácio à Edição de 1998; notas M.G. posteriores sobre “derivative”.</span>
+</aside>
+
+<p>(2) $\int$ que não passa de um $S$ alongado, e pode ser
+chamado (se quiser) de “a soma de.”
+
+<p>Assim $\int dx$ significa a soma de todos os pedacinhos
+de $x$; ou $\int dt$ significa a soma de todos os pedacinhos
+de $t$. Os matemáticos comuns chamam esse símbolo de “a
+
+integral de.” Ora, qualquer tolo percebe que se $x$ for
+considerado como feito de um monte de pedacinhos, cada
+um chamado $dx$, se você somar todos eles
+obtém a soma de todos os $dx$'s, (que é a mesma
+coisa que o $x$ inteiro). A palavra “integral” simplesmente
+significa “o todo.” Se você pensar na duração
+de uma hora, pode (se quiser) imaginá-la
+cortada em $3600$ pedacinhos chamados segundos. O
+todo dos $3600$ pedacinhos somados
+forma uma hora.
+
+<aside class="gardner-note" id="g-ch1-integral">
+<header>Nota (Martin Gardner)</header>
+<p>Mais adiante no livro, Gardner lembra que a integral definida está ligada a somar pedacinhos de área sob uma curva entre dois extremos - a imagem geométrica clássica de “totalizar” o que o $\int$ anuncia. Thompson introduz o símbolo aqui só para matar o medo do desenho; o cálculo de áreas vem nos capítulos de integração.</p>
+<span class="src">Notas M.G. sobre integração (ed. 1998); contextualização do Cap. I.</span>
+</aside>
+
+<p>Quando você vir uma expressão que começa com esse
+símbolo aterrorizante, saberá de agora em diante que ele
+está ali apenas para instruí-lo a
+realizar a operação (se puder) de
+somar todos os pedacinhos indicados
+pelos símbolos que se seguem.
+
+<p>É só isso.
+<br>
+<hr>
+<a href="2.html">Próximo &rarr;</a><br>
+<a href="prologue.html">← Anterior</a><br>
+<a href="index.html">Página principal &uarr;</a><br>
+
+<footer class="site-footer" role="contentinfo">
+  <p class="a rotatedFloralHeartBullet"></p>
+
+  <div class="manifesto">
+    <p class="manifesto-lead">
+      Este é um <strong>projeto público</strong>, sem fins lucrativos.
+      Não é permitido comercializá-lo, vendê-lo nem usá-lo como produto pago.
+    </p>
+    <p class="manifesto-quote">
+      A educação é um direito de todos.
+      O conhecimento deve ser livre sempre que não cause o mal:
+      deve circular, ensinar e libertar, nunca aprisionar quem aprende.
+    </p>
+    <p class="manifesto-sign">
+      - Thales Rodrigues
+    </p>
+  </div>
+
+  <nav class="author-links" aria-label="Redes de Thales Rodrigues">
+    <a href="https://www.linkedin.com/in/thales-oliveira-rodrigues/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    <span class="dot" aria-hidden="true">·</span>
+    <a href="https://github.com/Rodriguestmo" target="_blank" rel="noopener noreferrer">GitHub</a>
+  </nav>
+
+  <p class="footer-meta">
+    <small>
+      Tradução e adaptação PT-BR por Thales Rodrigues.
+      Texto de Silvanus P. Thompson em domínio público (Project Gutenberg).
+      Notas de contexto inspiradas na edição Gardner (1998).
+      Projeto público e gratuito.
+    </small>
+  </p>
+</footer>
+
+<script src="j/jquery.js"></script>
+<script src="j/modernizr.js"></script>
+<script src="j/dih5.js"></script>
+<script src="j/notes-toggle.js"></script>
+<!-- Analytics desativado na edição PT local -->
+</body>
+</html>

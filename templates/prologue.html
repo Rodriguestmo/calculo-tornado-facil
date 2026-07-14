@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+{% include "seo_head.html" %}
+<link rel="stylesheet" href="screen.css">
+<style>
+body{counter-reset:h1 0}
+</style>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Chapter",
+  "name": "Prólogo",
+  "isPartOf": {
+    "@type": "Book",
+    "name": "Cálculo Tornado Fácil",
+    "url": "{{ site_url }}/"
+  },
+  "author": {"@type": "Person", "name": "Silvanus P. Thompson"},
+  "translator": {"@type": "Person", "name": "Thales Rodrigues"},
+  "url": "{{ site_url }}/prologue.html",
+  "inLanguage": "pt-BR",
+  "isAccessibleForFree": true
+}
+</script>
+</head>
+<body>
+{% include "toolbar.html" %}
+
+<h1><br>Prólogo</h1>
+<p class="a rotatedFloralHeartBullet">
+
+<aside class="gardner-note" id="g-prologo-edicao">
+<header>Nota de edição (Martin Gardner, 1998)</header>
+<p>A edição de 1998, anotada e ampliada por Martin Gardner, mantém o plano original de Thompson e acrescenta: três capítulos preliminares (função, limite, derivada), notas de rodapé assinadas M.G., linguagem modernizada e um apêndice recreativo.</p>
+<p>Neste site, o texto principal é de Thompson (domínio público). As caixas como esta trazem material inspirado na edição Gardner. Na barra superior você escolhe: <strong>sempre visíveis</strong> ou <strong>lupa</strong> (clique para abrir/fechar cada nota).</p>
+<span class="src">Fonte de referência: Thompson &amp; Gardner, Calculus Made Easy, St. Martin's Press, 1998.</span>
+</aside>
+
+<p>Considerando quantos tolos sabem calcular, é
+surpreendente que se pense ser tarefa difícil
+ou entediante para qualquer outro tolo aprender a
+dominar os mesmos truques.
+
+<p>Alguns truques de cálculo são bem fáceis. Outros são
+enormemente difíceis. Os tolos que escrevem os livros didáticos
+de matemática avançada - e em geral são
+tolos espertos - raramente se dão ao trabalho de mostrar
+como são fáceis os cálculos fáceis. Pelo contrário,
+parecem querer impressioná-lo com a própria
+esperteza extraordinária, indo pelo caminho mais difícil.
+
+<aside class="gardner-note" id="g-prologo-livros">
+<header>Nota (contexto Gardner)</header>
+<p>Gardner abre a edição de 1998 criticando livros de cálculo “gordos” demais (às vezes com mais de mil páginas e preços altos) e o ensino que afasta alunos. Ele defende Thompson precisamente por ser magro, vivo e centrado nas ideias, em vez de em catálogos de técnicas.</p>
+<span class="src">Adaptado do Prefácio à Edição de 1998.</span>
+</aside>
+
+<p>Sendo eu mesmo um sujeito notavelmente estúpido, tive
+de desaprender as dificuldades, e agora peço
+licença para apresentar aos meus companheiros tolos as
+partes que não são difíceis. Domine-as a fundo, e o resto
+virá. O que um tolo consegue, outro também consegue.
+<a class="note-mark" href="#g-prologo-tolo" data-note="g-prologo-tolo" title="Abrir/fechar nota de Gardner"></a>
+
+<aside class="gardner-note" id="g-prologo-tolo">
+<header>Nota (Martin Gardner)</header>
+<p>Gardner lembra que o cálculo é a matemática da mudança: o universo “lá fora” está em fluxo constante. Mesmo quem não vai se tornar matemático ou cientista se beneficia de enxergar a ideia central - a “filosofia” do cálculo, no sentido de William James - e não só de treinar exercícios manuais.</p>
+<span class="src">Adaptado do Prefácio à Edição de 1998.</span>
+</aside>
+
+
+<br>
+<hr>
+<a href="1.html">Próximo &rarr;</a><br>
+<a href="index.html">Página principal &uarr;</a><br>
+
+{% include "footer.html" %}
+
+<script src="j/jquery.js"></script>
+<script src="j/modernizr.js"></script>
+<script src="j/dih5.js"></script>
+<script src="j/notes-toggle.js"></script>
+{%include "googleanalytics.html" %}
+</body>
+</html>

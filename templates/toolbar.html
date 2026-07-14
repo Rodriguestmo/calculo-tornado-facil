@@ -1,0 +1,19 @@
+<!-- Barra fixa: navegação, modo das notas, tema -->
+<div id="site-toolbar" class="site-toolbar" role="region" aria-label="Controles do site">
+  <a class="tb-home" href="index.html">Cálculo Tornado Fácil</a>
+
+  <div class="tb-controls">
+    <label class="tb-field" title="Como exibir as notas de Martin Gardner (1998)">
+      <span class="tb-label">Notas</span>
+      <select id="notes-mode" aria-label="Modo de exibição das notas">
+        <option value="all">Sempre visíveis</option>
+        <option value="click">Lupa (clique para abrir)</option>
+        <option value="off">Sempre ocultadas</option>
+      </select>
+    </label>
+
+    <button type="button" id="toggle-theme" class="tb-btn" title="Alternar tema claro/escuro" aria-pressed="false">
+      <span class="theme-label">Tema escuro</span>
+    </button>
+  </div>
+</div>

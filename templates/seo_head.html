@@ -1,0 +1,33 @@
+{# SEO e descoberta (Google + IAs). site_url e path_page vêm do compile. #}
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>{{ page_title }}</title>
+<meta name="description" content="{{ page_description }}">
+<meta name="author" content="Thales Rodrigues; Silvanus P. Thompson">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="googlebot" content="index, follow">
+<meta name="language" content="Portuguese">
+<meta name="keywords" content="cálculo, calculus made easy, Silvanus Thompson, cálculo diferencial, cálculo integral, matemática, educação livre, português, Martin Gardner, Cálculo Tornado Fácil, Thales Rodrigues">
+<link rel="canonical" href="{{ site_url }}/{{ page_path }}">
+<link rel="alternate" hreflang="pt-BR" href="{{ site_url }}/{{ page_path }}">
+<link rel="alternate" hreflang="x-default" href="{{ site_url }}/">
+
+{# Open Graph #}
+<meta property="og:type" content="{{ og_type | default('website') }}">
+<meta property="og:site_name" content="Cálculo Tornado Fácil">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="{{ page_title }}">
+<meta property="og:description" content="{{ page_description }}">
+<meta property="og:url" content="{{ site_url }}/{{ page_path }}">
+<meta property="og:image" content="{{ site_url }}/cover.jpg">
+
+{# Twitter / X #}
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="{{ page_title }}">
+<meta name="twitter:description" content="{{ page_description }}">
+<meta name="twitter:image" content="{{ site_url }}/cover.jpg">
+
+{# AI / assistentes #}
+<meta name="ai-content-declaration" content="human-authored translation and educational adaptation">
+<link rel="describedby" href="{{ site_url }}/llms.txt">
