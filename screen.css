@@ -1,0 +1,1804 @@
+/*
+
+"Dive Into HTML 5" stylesheet
+
+Copyright (c) 2009, Mark Pilgrim, All rights reserved.
+
+Redistribution and use in source and binary forms, with or without modification,
+are permitted provided that the following conditions are met:
+
+* Redistributions of source code must retain the above copyright notice,
+  this list of conditions and the following disclaimer.
+* Redistributions in binary form must reproduce the above copyright notice,
+  this list of conditions and the following disclaimer in the documentation
+  and/or other materials provided with the distribution.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS 'AS IS'
+AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
+LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+POSSIBILITY OF SUCH DAMAGE.
+
+
+Classname Legend
+
+.f = "fancy"      = first paragraph of each chapter (gets a fancy drop-cap)
+.c = "centered"   = centered footer text (also clears floats)
+.a = "asterism"   = section break
+.v = "navigation" = prev/next navigation links (not breadcrumbs)
+.u = "Unicode"    = text contains Unicode characters (requires special font declaration to accommodate *cough* a certain browser)
+.p = "prompt"     = command-line or interactive shell prompt within code listings
+
+.dc = "drop cap"       = image simulating first-letter initial
+.pp = "pretty print"   = apply syntax highlighting to this code block
+.pf = "padded frame"   = black border with internal padding
+.fr = "framed"         = black border, no padding
+.ss = "screenshot"     = image, floated right, with margin
+.bc = "browser compat" = browser compatibility table (td cells all contain checks, Xs, and asterisks)
+.st = "simple table"   = table with 1px border in body font
+.ho = "headers only"   = on a table row, denotes that this row contains only table headers
+
+.note = "note/caution/important"   = indented block for tips/gotchas/language comparisons
+.baa  = "best available ampersand" = wrapper block for ampersands
+
+.zebra = "zebra stripes" = off-white background color (used for "zebra stripe" tables)
+
+How the fonts are compressed
+
+Fonts are processed through http://www.fontsquirrel.com/fontface/generator to generate new TrueType, WOFF, and EOT Compressed versions.
+Vertical Metrics are fixed, as is the GASP table, and kerning is removed. No X-height Matching is applied.
+Essays 1742 has an em square value of 1024 and is stripped down to Lowercase, Uppercase, Numbers, and the following unicodes:
+0021-002F,003A-003F,0040,005B-005F,007B-007D,2018-2019,201B-201D,201F,2022-2023,2026,2116,219C-219D,21B6-21B7,21DC-21DD,2212,261E,2767.
+Linux Libertine has an em square value of 2048 and is stripped down to Lowercase, Uppercase, Numbers, and the following unicodes:
+0021-002F,003A-003F,0040,005B-005F,007B-007D,2018-2019,201B-201D,201F,2022-2023,2026,2116,219C-219D,21B6-21B7,21DC-21DD,2212,261E,2767.
+
+Acknowledgements & Inspirations
+
+"The Elements of Typographic Style Applied to the Web" ... http://webtypography.net/toc/
+"Use the Best Available Ampersand" ....................... http://simplebits.com/notebook/2008/08/14/ampersands.html
+"Unicode Support in HTML, Fonts, and Web Browsers" ....... http://alanwood.net/unicode/
+"Punctuation" ............................................ http://en.wikipedia.org/wiki/Punctuation
+"Essays 1743" ............................................ http://www.thibault.org/fonts/essays/
+"Libertine" .............................................. http://linuxlibertine.sourceforge.net/
+"CSS Styled Restaurant Menu" ............................. http://www.web-graphics.com/mtarchive/ItalianMenu.html
+*/
+
+/* typography */
+
+.cover{
+  float:right;
+}
+img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+} 
+
+
+@font-face {
+  font-family: "Essays 1743";
+  src: url("f/Essays1743.eot?") format("eot"), url("f/Essays1743.woff") format("woff"), url("f/Essays1743.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Essays 1743";
+  font-weight: bold;
+  src: url("f/Essays1743-bold.eot?") format("eot"), url("f/Essays1743-bold.woff") format("woff"), url("f/Essays1743-bold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Essays 1743";
+  font-style: italic;
+  src: url("f/Essays1743-italic.eot?") format("eot"), url("f/Essays1743-italic.woff") format("woff"), url("f/Essays1743-italic.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Essays 1743";
+  font-style: italic;
+  font-weight: bold;
+  src: url("f/Essays1743-bold-italic.eot?") format("eot"), url("f/Essays1743-bold-italic.woff") format("woff"), url("f/Essays1743-bold-italic.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Alphabet of Children";
+  src: url("f/Alphabet-of-Children.eot?") format("eot"), url("f/Alphabet-of-Children.woff") format("woff"), url("f/Alphabet-of-Children.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Libertine";
+  src: url("f/Libertine.eot?") format("eot"), url("f/Libertine.woff") format("woff"), url("f/Libertine.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Libertine";
+  font-weight: bold;
+  src: url("f/Libertine-bold.eot?") format("eot"), url("f/Libertine-bold.woff") format("woff"), url("f/Libertine-bold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Libertine";
+  font-style: italic;
+  src: url("f/Libertine-italic.eot?") format("eot"), url("f/Libertine-italic.woff") format("woff"), url("f/Libertine-italic.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Libertine";
+  font-style: italic;
+  font-weight: bold;
+  src: url("f/Libertine-bold-italic.eot?") format("eot"), url("f/Libertine-bold-italic.woff") format("woff"), url("f/Libertine-bold-italic.ttf") format("truetype");
+}
+
+/* base */
+
+table {
+  border-collapse: collapse;
+  width: 100%; /* Adjust the width as necessary */
+}
+
+table, th, td {
+  border: 1px solid black;
+  text-align: center; /* Centers text in cells */
+  padding: 8px; /* Adds space around the content in each cell */
+}
+
+th {
+  background-color: #d0d0d0; /* A light grey background for header cells */
+  font-weight: bold; /* Makes header text bold */
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9; /* Zebra striping for even rows */
+}
+
+tr:hover {
+  background-color: #e8e8e8; /* Hover effect for rows */
+}
+
+html {
+  overflow-y: scroll;
+  -webkit-font-smoothing: antialiased;
+}
+html, body {
+  background: #fff;
+  color: #000;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font: large/1.556 "Libertine", Palatino, "Palatino Linotype", "Book Antiqua", Georgia, "Times New Roman", serif;
+  word-spacing: 0.1em;
+  max-width: 680px;
+  margin: 0 auto;
+  padding-bottom: 2em;
+}
+pre, kbd, samp, code, var {
+  font: medium/1.75 Consolas, "Andale Mono", Monaco, "Liberation Mono", "Bitstream Vera Sans Mono", "DejaVu Sans Mono", monospace;
+  word-spacing: 0;
+  letter-spacing: 0;
+}
+.a, .u, table.bc tbody td {
+  font: 100%/1 "Arial Unicode MS", FreeSerif, OpenSymbol, "DejaVu Sans", sans-serif;
+}
+.baa {
+  font: oblique 105% Constantia, Baskerville, Palatino, "Palatino Linotype", "URW Palladio L", serif;
+}
+.note {
+  margin: 3.112em 4.94em;
+}
+.note span {
+  display: block;
+  float: left;
+  font-size: 266.7%;
+  line-height: 0.8;
+  margin: 0 0.22em 0 -1.22em;
+}
+.ss span {
+  display: block;
+  text-align: center;
+  border-top: 3px double;
+  border-bottom: 3px double;
+}
+.c {
+  font-size: medium;
+  line-height: 1.75;
+  margin: 1.75em 0;
+}
+.f:first-letter {
+  font-family: "Alphabet of Children";
+  font-size: 8.2em;
+  float: left;
+  margin-right: 0.02em;
+  line-height: 0.75;
+}
+p, ul, ol {
+  font-size: large;
+  margin: 1.556em 0;
+}
+
+/* basics */
+
+.clear {
+  clear: both;
+}
+.c, .a, #toc, form div {
+  clear: both;
+  text-align: center;
+}
+
+#toc ol, #toc li {
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0;
+}
+.a {
+  font-size: xx-large;
+  line-height: .875;
+  text-shadow: 0 0 2px #667;
+}
+.pf, .fr {
+  border: 1px solid;
+}
+.pf {
+  margin: 1.75em 0;
+}
+.pf .inner {
+  min-height: 253px;
+  margin: 0 15px 0 0;
+  padding: 0 154px 1.75em 0;
+  background: white url(i/openclipart.org_johnny_automatic_little_professor.png) bottom right no-repeat;
+}
+.pf .moneybags {
+  min-height: 245px;
+  margin: 0 15px 0 0;
+  padding: 0 190px 1.75em 0;
+  background: white url(i/openclipart.org_johnny_automatic_bag_of_money.png) bottom right no-repeat;
+}
+.pf h4 {
+  margin: 0;
+  padding: 4px;
+  background: black;
+  color: white;
+}
+.ss {
+  float: right;
+  margin: 0 0 1.75em 1.75em;
+  font-size: medium;
+}
+address, cite, dfn, var {
+  font-style: normal;
+}
+sup {
+  font-variant: small-caps;
+  vertical-align: text-top;
+}
+
+/* links - sem sublinhado pontilhado; :visited com a MESMA cor
+   (histórico visitado do browser não some com "limpar cache" do site) */
+
+a {
+  text-decoration: none;
+  border-bottom: none;
+  color: FireBrick;
+}
+a:link,
+a:visited {
+  color: FireBrick;
+  border-bottom: none;
+}
+a:link:hover,
+a:visited:hover {
+  border-bottom: none;
+  color: #a33a1a;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+.c a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: none;
+}
+
+/* sumário da home - nunca marcar "lido" só por :visited do browser */
+.toc a,
+.toc a:link,
+.toc a:visited {
+  color: FireBrick;
+  border-bottom: none;
+  text-decoration: none;
+}
+.toc a:hover,
+.toc a:visited:hover {
+  color: #a33a1a;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+html.theme-dark a,
+html.theme-dark a:link,
+html.theme-dark a:visited {
+  color: #8ec7ff;
+}
+html.theme-dark a:hover,
+html.theme-dark a:visited:hover {
+  color: #b8dcff;
+}
+html.theme-dark .toc a,
+html.theme-dark .toc a:link,
+html.theme-dark .toc a:visited {
+  color: #8ec7ff;
+}
+
+/* figures and legends */
+
+.legend {
+  font: italic x-large/1.75 "Essays 1743", "Marker Felt", "Kristen ITC", "Viner Hand ITC", "Lucida Handwriting", Amienne, Boopee, "Segoe Print", "Times New Roman", serif;
+  text-shadow: 0 0 1px #667;
+  margin-left: 0.5em;
+  vertical-align: top;
+}
+.arrow {
+  font-size: 200%;
+  line-height: 0.3;
+  vertical-align: sub;
+}
+.left {
+  float: left;
+}
+.right {
+  float: right;
+}
+.top {
+  margin-bottom: 0.3em;
+  display: block;
+}
+.bottom {
+  display: block;
+  margin-top: 0;
+  margin-left: 2em;
+}
+
+/* code blocks */
+
+pre {
+  padding-left: 3.5em;
+  white-space: pre; /* CSS2 */
+  white-space: pre-wrap; /* CSS 2.1 */
+  word-wrap: break-word; /* IE */
+}
+pre.ib {
+  padding: 0;
+}
+mark {
+  display: inline-block;
+  background: #ff8;
+  border: 1px dotted #888;
+}
+.p {
+  color: #667;
+}
+
+/* overrides */
+
+li ol, .q, .v span {
+  margin: 0;
+}
+code, var, samp {
+  line-height: inherit !important;
+}
+
+/* headers */
+
+h1, h2, h3, h4, caption, thead th {
+  font-family: "Essays 1743", Palatino, "Palatino Linotype", "Book Antiqua", Georgia, "Times New Roman", serif;
+  font-weight: normal;
+  text-transform: uppercase;
+  text-shadow: 0 0 1px #667;
+}
+h1 {
+  font-size: 266.7%;
+  line-height: 1.1;
+  text-align: center;
+  width: 100%;
+  margin: 1.49em 0;
+}
+h2 {
+  font-size: 210%;
+  line-height: 1.3125;
+  margin: 1.167em 0;
+  text-align: center;
+  clear: both;
+}
+h3 {
+  /* Essays 1743 desalinhar dígitos em "Caso 3"; usa fonte estável */
+  font-family: "Libertine", Palatino, "Palatino Linotype", "Book Antiqua", Georgia, "Times New Roman", serif;
+  font-size: x-large;
+  line-height: 1.25;
+  margin: 1.75em 0 1em 0;
+  text-align: center;
+  letter-spacing: 0.04em;
+  word-spacing: normal;
+  clear: both;
+}
+h3:before,
+h3:after {
+  content: none !important;
+}
+h1:before {
+  content: "\2116" counter(h1) ".";
+}
+
+/* video */
+
+video {
+  display: block;
+  margin: 0 auto;
+}
+
+/* browser compatibility and other tables */
+
+.bc, .st {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.bc tbody th, .bc thead th.l, tfoot td {
+  text-align: left;
+}
+
+.bc thead th, .bc td {
+  text-align: center;
+}
+
+tfoot {
+  font-size: small;
+}
+
+.st {
+  border: 1px solid;
+}
+
+.st th {
+  text-align: left;
+  font-weight: normal;
+}
+
+.st tr > th:first-child {
+  padding-left: 5px;
+}
+
+.ho th {
+  border-bottom: 1px solid;
+}
+
+.zebra {
+  background: #eee;
+}
+
+/* asterism styles */
+
+.rotatedFloralHeartBullet:after { content: "\2767" }
+
+.triangularBullet:after { content: "\2023" }
+
+.leftwardsWaveArrow:after  { content: "\219C" }
+.rightwardsWaveArrow:after { content: "\219D" }
+
+.leftwardsSquiggleArrow:after  { content: " \21DC" }
+.rightwardsSquiggleArrow:after { content: "\21DD" }
+
+.whiteRightPointingIndex:after { content: "\261E" }
+
+.anticlockwiseTopSemicircleArrow:after { content: "\21B6" }
+.clockwiseTopSemicircleArrow:after { content: "\21B7" }
+
+/* ========== Notas de Martin Gardner (1998) + toolbar + tema ========== */
+
+html { scroll-padding-top: 3.6em; }
+
+.site-toolbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 0.75em 1em;
+  flex-wrap: wrap;
+  padding: 0.45em 1em;
+  background: #1a1a1a;
+  color: #f5f0e6;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 14px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.35);
+}
+.site-toolbar a,
+.site-toolbar a:link,
+.site-toolbar a:visited,
+.site-toolbar a:hover {
+  color: #f5f0e6;
+  text-decoration: none;
+  border-bottom: none;
+}
+.site-toolbar .tb-home {
+  font-weight: bold;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  border-bottom: none;
+}
+.site-toolbar .tb-home:hover {
+  opacity: 0.9;
+  text-decoration: none;
+  border-bottom: none;
+}
+.site-toolbar .tb-controls {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75em;
+  margin-left: auto;
+  flex-wrap: wrap;
+}
+.site-toolbar .tb-field {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  cursor: pointer;
+  user-select: none;
+}
+.site-toolbar .tb-label {
+  opacity: 0.85;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.site-toolbar select {
+  font: inherit;
+  font-size: 13px;
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  border: 1px solid #555;
+  background: #2a2a2a;
+  color: #f5f0e6;
+  max-width: 14em;
+}
+.site-toolbar .tb-btn {
+  font: inherit;
+  font-size: 13px;
+  padding: 0.25em 0.7em;
+  border-radius: 4px;
+  border: 1px solid #666;
+  background: #2a2a2a;
+  color: #f5f0e6;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35em;
+}
+.site-toolbar .tb-btn:hover { background: #3a3a3a; }
+
+/* Empurra o conteúdo para baixo da barra fixa */
+body { padding-top: 3.6em !important; }
+
+/* Bloco de nota Gardner */
+.gardner-note {
+  margin: 1.25em 0;
+  padding: 0.85em 1em 0.9em 1em;
+  border-left: 4px solid #8b4513;
+  background: #fff8e7;
+  color: #333;
+  border-radius: 0 4px 4px 0;
+  font-size: 0.95em;
+  line-height: 1.45;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.06);
+}
+.gardner-note header {
+  font-weight: bold;
+  font-size: 0.85em;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #8b4513;
+  margin: 0 0 0.45em 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+.gardner-note p { margin: 0.4em 0; }
+.gardner-note p:first-of-type { margin-top: 0; }
+.gardner-note p:last-child { margin-bottom: 0; }
+.gardner-note .src {
+  display: block;
+  margin-top: 0.55em;
+  font-size: 0.82em;
+  font-style: italic;
+  color: #666;
+}
+
+/* Lupa / marcador de nota */
+.note-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  position: relative;
+  top: -0.05em; /* leve ajuste fino ao centro óptico da linha */
+  font-size: 0.85em;
+  line-height: 1;
+  width: 1.45em;
+  height: 1.45em;
+  margin: 0 0.2em;
+  padding: 0;
+  border: 1px solid #c4a574;
+  border-radius: 50%;
+  background: #fff8e7;
+  color: #8b4513;
+  text-decoration: none;
+  cursor: pointer;
+  box-sizing: border-box;
+  font-family: inherit;
+}
+.note-mark .note-mark-icon {
+  display: block;
+  pointer-events: none;
+}
+.note-mark:hover,
+.note-mark.is-active {
+  background: #f0e0c0;
+  border-color: #8b4513;
+}
+.note-mark-block {
+  display: flex;
+  margin: 0.6em 0 0.15em 0;
+  vertical-align: middle;
+}
+
+/* Modo: todas as notas sempre visíveis */
+html.notes-mode-all .gardner-note {
+  display: block;
+}
+/* No modo "todas", a lupa ainda aparece (rola até a nota) */
+html.notes-mode-all .note-mark {
+  display: inline-flex;
+}
+html.notes-mode-all .note-mark-block {
+  display: none; /* notas já estão abertas; lupa de bloco é redundante */
+}
+
+/* Modo: clique na lupa abre/fecha a nota abaixo */
+html.notes-mode-click .gardner-note {
+  display: none;
+}
+html.notes-mode-click .gardner-note.is-open {
+  display: block;
+  animation: note-open 0.18s ease-out;
+}
+html.notes-mode-click .note-mark {
+  display: inline-flex;
+}
+html.notes-mode-click .note-mark-block {
+  display: flex;
+}
+
+/* Modo: sempre ocultadas (sem notas e sem lupas) */
+html.notes-mode-off .gardner-note,
+html.notes-mode-off .note-mark {
+  display: none !important;
+}
+
+@keyframes note-open {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Caixa de aviso na home */
+.edition-box {
+  margin: 1.5em 0;
+  padding: 1em 1.2em;
+  border: 1px solid #ccc;
+  background: #fafafa;
+  font-size: 0.95em;
+}
+.edition-box h4 { margin-top: 0; }
+
+/* ---------- Tema escuro ---------- */
+html.theme-dark,
+html.theme-dark body {
+  background: #161616 !important;
+  color: #e8e4d9 !important;
+}
+html.theme-dark a,
+html.theme-dark a:link,
+html.theme-dark a:visited { color: #8ec7ff; }
+html.theme-dark hr { border-color: #444; }
+html.theme-dark h1,
+html.theme-dark h2,
+html.theme-dark h3,
+html.theme-dark h4,
+html.theme-dark h5 {
+  color: #f0ebe0;
+}
+html.theme-dark .title,
+html.theme-dark .number {
+  background: #161616;
+}
+html.theme-dark .gardner-note {
+  background: #2a2418;
+  border-left-color: #d4a574;
+  color: #e8e4d9;
+  box-shadow: none;
+}
+html.theme-dark .gardner-note header {
+  color: #e0b878;
+  background: transparent;
+}
+html.theme-dark .gardner-note .src {
+  color: #a89b84;
+}
+html.theme-dark .note-mark {
+  background: #2a2418;
+  border-color: #d4a574;
+  color: #e0b878;
+}
+html.theme-dark .note-mark:hover,
+html.theme-dark .note-mark.is-active {
+  background: #3d3424;
+}
+html.theme-dark .edition-box {
+  background: #222;
+  border-color: #444;
+  color: #e8e4d9;
+}
+html.theme-dark blockquote.note {
+  color: #e8e4d9;
+}
+html.theme-dark .badge {
+  /* mantém contraste */
+}
+html.theme-dark .badge.wait {
+  background: #555;
+}
+html.theme-dark table,
+html.theme-dark th,
+html.theme-dark td {
+  border-color: #555;
+}
+html.theme-dark th {
+  background-color: #2a2a2a;
+}
+html.theme-dark tr:nth-child(even) {
+  background-color: #1e1e1e;
+}
+html.theme-dark tr:hover {
+  background-color: #2a2a2a;
+}
+html.theme-dark .site-toolbar {
+  background: #0d0d0d;
+  border-bottom: 1px solid #333;
+}
+
+/* MathJax no escuro: força contraste razoável */
+html.theme-dark .MathJax,
+html.theme-dark .MathJax_Display {
+  color: #e8e4d9 !important;
+}
+
+@media only screen and (max-width: 600px) {
+  .site-toolbar { font-size: 12px; gap: 0.45em; }
+  .site-toolbar select { max-width: 11em; font-size: 12px; }
+  .site-toolbar .tb-label { display: none; }
+}
+
+/* ---------- Rodapé / manifesto ---------- */
+.site-footer {
+  margin-top: 3em;
+  padding-top: 0.5em;
+  clear: both;
+}
+.site-footer .manifesto {
+  margin: 1.5em 0 1.2em 0;
+  padding: 1.25em 1.4em 1.1em 1.4em;
+  border: 1px solid #c4a574;
+  border-left: 4px solid #8b4513;
+  background: #faf6ee;
+  border-radius: 0 6px 6px 0;
+}
+.site-footer .manifesto-lead {
+  margin: 0 0 0.9em 0;
+  font-size: 0.98em;
+  line-height: 1.5;
+}
+.site-footer .manifesto-quote {
+  margin: 0 0 1em 0;
+  font-size: 1.08em;
+  line-height: 1.55;
+  font-style: italic;
+  color: #2a2218;
+}
+.site-footer .manifesto-sign {
+  margin: 0;
+  text-align: right;
+  font-weight: bold;
+  letter-spacing: 0.02em;
+  color: #5c4030;
+}
+.site-footer .author-links {
+  text-align: center;
+  margin: 1.2em 0 0.6em 0;
+  font-size: 1em;
+}
+.site-footer .author-links a {
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+.site-footer .author-links a:hover {
+  border-bottom-color: currentColor;
+}
+.site-footer .author-links .dot {
+  margin: 0 0.55em;
+  opacity: 0.55;
+}
+.site-footer .footer-meta {
+  text-align: center;
+  margin: 0.8em 0 1.5em 0;
+  opacity: 0.85;
+  line-height: 1.45;
+}
+
+html.theme-dark .site-footer .manifesto {
+  background: #2a2418;
+  border-color: #6b5438;
+  border-left-color: #d4a574;
+}
+html.theme-dark .site-footer .manifesto-quote {
+  color: #f0ebe0;
+}
+html.theme-dark .site-footer .manifesto-sign {
+  color: #e0b878;
+}
+html.theme-dark .site-footer .footer-meta {
+  opacity: 0.75;
+}
+
+/* ---------- Tipografia do leitor (localStorage) ---------- */
+@font-face {
+  font-family: "OpenDyslexic";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("https://cdn.jsdelivr.net/npm/@fontsource/opendyslexic@5.2.5/files/opendyslexic-latin-400-normal.woff2") format("woff2");
+}
+@font-face {
+  font-family: "OpenDyslexic";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("https://cdn.jsdelivr.net/npm/@fontsource/opendyslexic@5.2.5/files/opendyslexic-latin-700-normal.woff2") format("woff2");
+}
+
+html {
+  --cme-font-scale: 1;
+}
+
+html.font-default body {
+  font-family: "Libertine", Palatino, "Palatino Linotype", "Book Antiqua", Georgia, "Times New Roman", serif;
+}
+html.font-dyslexia body {
+  font-family: "OpenDyslexic", "Comic Sans MS", Verdana, sans-serif;
+  letter-spacing: 0.04em;
+  word-spacing: 0.12em;
+  line-height: 1.7;
+}
+html.font-sans body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+html.font-mono body {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+  letter-spacing: -0.01em;
+}
+
+/* Escala de fonte com limites (85%–140%) via --cme-font-scale
+   Base ~18px (equivalente ao "large" original do tema) */
+html body {
+  font-size: calc(18px * var(--cme-font-scale, 1)) !important;
+  line-height: 1.556;
+}
+html.font-dyslexia body {
+  line-height: 1.7;
+}
+html body p,
+html body li,
+html body td,
+html body th,
+html body blockquote,
+html body .gardner-note,
+html body .edition-box {
+  font-size: inherit;
+}
+
+/* Toolbar extras */
+.site-toolbar .tb-font-size {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25em;
+}
+.site-toolbar .tb-btn-sq {
+  min-width: 2em;
+  padding-left: 0.4em;
+  padding-right: 0.4em;
+  font-weight: bold;
+}
+.site-toolbar .tb-size-label {
+  min-width: 2.8em;
+  text-align: center;
+  font-size: 12px;
+  opacity: 0.9;
+}
+.site-toolbar .tb-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+.site-toolbar .tb-btn-ghost {
+  background: transparent;
+  border-color: #666;
+}
+.site-toolbar .tb-btn-danger {
+  background: #5c2020;
+  border-color: #a44;
+  color: #fff;
+}
+
+@media only screen and (max-width: 900px) {
+  .site-toolbar .tb-label { display: none; }
+  .site-toolbar select { max-width: 9.5em; }
+}
+
+/* ---------- Destaques do leitor ---------- */
+mark.cme-hl {
+  color: inherit;
+  padding: 0.05em 0.12em;
+  border-radius: 2px;
+  cursor: pointer;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  background: #fff3a8; /* amarelo pastel padrão */
+}
+
+/* cores pastel (mark, lista e botões-círculo) */
+mark.cme-hl-pastel-yellow,
+.hl-list-swatch.cme-hl-pastel-yellow,
+.hl-swatch-btn.cme-hl-pastel-yellow { background: #fff3a8 !important; }
+
+mark.cme-hl-pastel-green,
+.hl-list-swatch.cme-hl-pastel-green,
+.hl-swatch-btn.cme-hl-pastel-green { background: #c8f0c8 !important; }
+
+mark.cme-hl-pastel-blue,
+.hl-list-swatch.cme-hl-pastel-blue,
+.hl-swatch-btn.cme-hl-pastel-blue { background: #cfe4ff !important; }
+
+mark.cme-hl-pastel-pink,
+.hl-list-swatch.cme-hl-pastel-pink,
+.hl-swatch-btn.cme-hl-pastel-pink { background: #ffd6e5 !important; }
+
+mark.cme-hl-pastel-orange,
+.hl-list-swatch.cme-hl-pastel-orange,
+.hl-swatch-btn.cme-hl-pastel-orange { background: #ffe0c2 !important; }
+
+mark.cme-hl-pastel-purple,
+.hl-list-swatch.cme-hl-pastel-purple,
+.hl-swatch-btn.cme-hl-pastel-purple { background: #e6d6ff !important; }
+
+mark.cme-hl.cme-hl-has-note {
+  box-shadow: inset 0 -2px 0 rgba(0,0,0,0.18);
+}
+html.theme-dark mark.cme-hl {
+  color: #f5f0e6;
+  filter: brightness(0.85) saturate(0.9);
+}
+html.theme-dark mark.cme-hl.cme-hl-has-note {
+  box-shadow: inset 0 -2px 0 rgba(255,255,255,0.25);
+}
+
+.hl-popup {
+  position: fixed;
+  z-index: 2000;
+  display: none;
+  flex-wrap: wrap;
+  gap: 0.35em;
+  padding: 0.45em;
+  background: #1a1a1a;
+  color: #f5f0e6;
+  border-radius: 6px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.35);
+  max-width: min(92vw, 320px);
+}
+.hl-popup .tb-btn {
+  font-size: 12px;
+  padding: 0.3em 0.55em;
+}
+
+/* dropdown lista de destaques */
+.tb-hl-wrap {
+  position: relative;
+}
+.hl-count-badge {
+  display: inline-block;
+  min-width: 1.2em;
+  padding: 0 0.35em;
+  margin-left: 0.2em;
+  border-radius: 999px;
+  background: #fff3a8;
+  color: #333;
+  font-size: 11px;
+  font-weight: bold;
+  line-height: 1.4;
+  text-align: center;
+}
+.hl-list-panel {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 6px);
+  z-index: 2200;
+  width: min(92vw, 340px);
+  max-height: min(70vh, 420px);
+  overflow: auto;
+  background: #1f1f1f;
+  color: #f5f0e6;
+  border: 1px solid #444;
+  border-radius: 8px;
+  box-shadow: 0 8px 28px rgba(0,0,0,0.4);
+  padding: 0.55em 0.55em 0.7em;
+}
+.hl-list-head {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1em;
+  padding: 0.25em 0.35em 0.55em;
+  border-bottom: 1px solid #3a3a3a;
+  margin-bottom: 0.45em;
+}
+.hl-list-hint {
+  font-size: 11px;
+  opacity: 0.7;
+}
+.hl-list-empty {
+  margin: 0.6em 0.35em;
+  font-size: 0.9em;
+  opacity: 0.8;
+  line-height: 1.4;
+}
+.hl-list-group {
+  margin-bottom: 0.55em;
+}
+.hl-list-page {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  opacity: 0.7;
+  padding: 0.25em 0.35em;
+}
+.hl-list-item {
+  display: grid;
+  grid-template-columns: 14px 1fr;
+  grid-template-rows: auto auto;
+  column-gap: 0.5em;
+  row-gap: 0.15em;
+  width: 100%;
+  text-align: left;
+  background: transparent;
+  border: 0;
+  border-radius: 5px;
+  color: inherit;
+  font: inherit;
+  font-size: 13px;
+  padding: 0.45em 0.4em;
+  cursor: pointer;
+}
+.hl-list-item:hover {
+  background: #2c2c2c;
+}
+.hl-list-swatch {
+  grid-row: 1 / span 2;
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+  margin-top: 0.25em;
+  border: 1px solid rgba(0,0,0,0.15);
+}
+.hl-list-text {
+  grid-column: 2;
+  line-height: 1.35;
+}
+.hl-list-note {
+  grid-column: 2;
+  font-size: 12px;
+  opacity: 0.8;
+  font-style: italic;
+  line-height: 1.3;
+}
+.hl-list-note-empty {
+  opacity: 0.45;
+  font-style: normal;
+}
+
+/* tooltip flutuante da nota */
+.hl-float-tip {
+  position: fixed;
+  z-index: 2300;
+  display: none;
+  max-width: min(90vw, 280px);
+  padding: 0.55em 0.7em;
+  background: #1a1a1a;
+  color: #f5f0e6;
+  border: 1px solid #555;
+  border-radius: 6px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.35);
+  font-size: 13px;
+  line-height: 1.4;
+  pointer-events: none;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+html.theme-light .hl-float-tip,
+html:not(.theme-dark) .hl-float-tip {
+  background: #2a2a2a;
+  color: #f5f0e6;
+}
+
+#hl-note-color {
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 0.7em;
+  font: inherit;
+  padding: 0.35em 0.4em;
+  border-radius: 4px;
+  border: 1px solid #aaa;
+  background: #fff;
+  color: #222;
+}
+html.theme-dark #hl-note-color {
+  background: #1a1a1a;
+  color: #e8e4d9;
+  border-color: #555;
+}
+
+.hl-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 2100;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.45);
+  padding: 1em;
+}
+.hl-modal-box {
+  width: min(92vw, 420px);
+  background: #fff;
+  color: #222;
+  border-radius: 8px;
+  padding: 1.1em 1.2em 1em;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+}
+html.theme-dark .hl-modal-box {
+  background: #222;
+  color: #e8e4d9;
+}
+.hl-modal-box h3 {
+  margin: 0 0 0.6em 0;
+  font-size: 1.1em;
+  line-height: 1.3;
+  text-align: left;
+  border: 0;
+  padding: 0;
+}
+.hl-quote {
+  font-style: italic;
+  font-size: 0.95em;
+  margin: 0 0 0.8em 0;
+  opacity: 0.9;
+  max-height: 5em;
+  overflow: auto;
+}
+.hl-note-label {
+  display: block;
+  font-size: 0.85em;
+  margin-bottom: 0.35em;
+}
+#hl-note-input {
+  width: 100%;
+  box-sizing: border-box;
+  font: inherit;
+  padding: 0.5em;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  resize: vertical;
+  min-height: 5em;
+  background: #fff;
+  color: #222;
+}
+html.theme-dark #hl-note-input {
+  background: #1a1a1a;
+  color: #e8e4d9;
+  border-color: #555;
+}
+.hl-modal-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4em;
+  margin-top: 0.85em;
+}
+.hl-modal-actions .tb-btn {
+  font-size: 13px;
+  background: #2a2a2a;
+  color: #f5f0e6;
+  border: 1px solid #555;
+}
+
+/* Navegação do capítulo: uma linha */
+.chapter-nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5em 1em;
+  margin: 1.2em 0 0.5em 0;
+  padding: 0.35em 0;
+  font-size: 0.95em;
+  line-height: 1.4;
+  clear: both;
+}
+.chapter-nav a,
+.chapter-nav a:link,
+.chapter-nav a:visited,
+.chapter-nav a:hover {
+  text-decoration: none;
+  border-bottom: none;
+  white-space: nowrap;
+}
+.chapter-nav a:hover {
+  opacity: 0.85;
+}
+.chapter-nav .nav-prev {
+  text-align: left;
+  flex: 1 1 auto;
+}
+.chapter-nav .nav-home {
+  text-align: center;
+  flex: 0 1 auto;
+}
+.chapter-nav .nav-next {
+  text-align: right;
+  flex: 1 1 auto;
+}
+.chapter-nav .nav-disabled {
+  flex: 1 1 auto;
+  visibility: hidden;
+  pointer-events: none;
+  min-width: 4em;
+}
+.chapter-nav .nav-next.nav-disabled {
+  text-align: right;
+}
+@media only screen and (max-width: 480px) {
+  .chapter-nav {
+    font-size: 0.88em;
+    gap: 0.35em 0.5em;
+  }
+}
+
+/* ---------- Equações / MathJax: respiro e legibilidade ---------- */
+.MathJax_Display,
+.MJXc-display {
+  margin: 1.55em 0 !important;
+  padding: 0.15em 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  max-width: 100%;
+}
+
+/* linhas de align/gather mais arejadas */
+.MathJax .mtable .mtd {
+  padding-top: 0.4em !important;
+  padding-bottom: 0.4em !important;
+}
+.MathJax .mtr + .mtr > .mtd {
+  padding-top: 0.7em !important;
+}
+
+/* SVG/HTML-CSS variants */
+.MathJax_SVG_Display {
+  margin: 1.55em 0 !important;
+}
+
+/* parágrafos de exemplos/enunciados um pouco mais soltos perto de math */
+body p {
+  margin-top: 1.15em;
+  margin-bottom: 1.15em;
+}
+body p + .MathJax_Display,
+body p + script + .MathJax_Display {
+  margin-top: 0.85em !important;
+}
+
+/* imagens de fórmulas do livro original */
+body img[src*="33283-t/"] {
+  display: block;
+  margin: 1.4em auto;
+  max-width: 100%;
+  height: auto;
+}
+
+/* listas de exercícios */
+body ol, body ul {
+  margin-top: 1.2em;
+  margin-bottom: 1.2em;
+}
+body li {
+  margin: 0.45em 0;
+}
+
+/* ---------- Barra de progresso de leitura (rodapé) ---------- */
+.read-progress {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1100;
+  height: 5px;
+  background: rgba(0, 0, 0, 0.08);
+  pointer-events: none;
+}
+html.theme-dark .read-progress {
+  background: rgba(255, 255, 255, 0.1);
+}
+.read-progress-bar {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #c45c26, #e8a54b);
+  box-shadow: 0 0 8px rgba(196, 92, 38, 0.35);
+  transition: width 0.08s linear;
+  border-radius: 0 2px 2px 0;
+}
+html.theme-dark .read-progress-bar {
+  background: linear-gradient(90deg, #e0a060, #f0d090);
+  box-shadow: 0 0 8px rgba(240, 208, 144, 0.25);
+}
+/* espaço extra no fim da página para a barra não cobrir a nav */
+body {
+  padding-bottom: 2.8em !important;
+}
+
+/* ---------- Menus da navbar (Configurações / Marca-texto) ---------- */
+.tb-menu {
+  position: relative;
+}
+.tb-menu-btn {
+  white-space: nowrap;
+}
+.tb-menu-panel {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 6px);
+  z-index: 2200;
+  width: min(92vw, 320px);
+  max-height: min(75vh, 480px);
+  overflow: auto;
+  background: #1f1f1f;
+  color: #f5f0e6;
+  border: 1px solid #444;
+  border-radius: 8px;
+  box-shadow: 0 8px 28px rgba(0,0,0,0.4);
+  padding: 0.65em 0.75em 0.85em;
+}
+.tb-menu-title {
+  font-weight: bold;
+  font-size: 0.95em;
+  margin: 0 0 0.65em 0;
+  padding-bottom: 0.45em;
+  border-bottom: 1px solid #3a3a3a;
+}
+.tb-menu-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3em;
+  margin-bottom: 0.75em;
+}
+.tb-menu-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  opacity: 0.75;
+}
+.tb-menu-panel select {
+  width: 100%;
+  box-sizing: border-box;
+  font: inherit;
+  font-size: 13px;
+  padding: 0.35em 0.45em;
+  border-radius: 4px;
+  border: 1px solid #555;
+  background: #2a2a2a;
+  color: #f5f0e6;
+}
+.tb-menu-panel .tb-btn {
+  align-self: flex-start;
+}
+
+/* Círculos de cor (sem texto) */
+.hl-color-row,
+.hl-filter-row {
+  margin-bottom: 0.85em;
+}
+.hl-color-swatches {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4em;
+  margin-top: 0.35em;
+}
+.hl-swatch-btn {
+  width: 1.55em;
+  height: 1.55em;
+  border-radius: 50%;
+  border: 2px solid rgba(255,255,255,0.35);
+  padding: 0;
+  cursor: pointer;
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,0.12);
+  flex: 0 0 auto;
+  appearance: none;
+  -webkit-appearance: none;
+  background-clip: padding-box;
+}
+.hl-swatch-btn:hover {
+  transform: scale(1.08);
+}
+.hl-swatch-btn.is-active {
+  border-color: #fff;
+  box-shadow: 0 0 0 2px rgba(255,255,255,0.35), inset 0 0 0 1px rgba(0,0,0,0.1);
+}
+.hl-filter-btn[data-filter="all"] {
+  width: auto;
+  min-width: 2.4em;
+  height: 1.55em;
+  border-radius: 999px;
+  padding: 0 0.55em;
+  font-size: 11px;
+  background: #333;
+  color: #f5f0e6;
+  border: 2px solid rgba(255,255,255,0.25);
+}
+.hl-filter-btn[data-filter="all"].is-active {
+  border-color: #fff;
+  background: #444;
+}
+
+/* painel marca-texto herda menu; lista scrollável */
+.hl-list-panel {
+  width: min(92vw, 340px);
+}
+.hl-list-body {
+  max-height: 240px;
+  overflow: auto;
+}
+
+@media only screen and (max-width: 600px) {
+  .tb-menu-panel {
+    right: auto;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(94vw, 300px);
+  }
+  .site-toolbar .tb-controls {
+    gap: 0.4em;
+  }
+}
+
+.tb-menu-hint {
+  display: block;
+  font-size: 11px;
+  opacity: 0.65;
+  line-height: 1.35;
+  margin-top: 0.35em;
+}
+.tb-menu-row-danger {
+  margin-top: 0.5em;
+  padding-top: 0.75em;
+  border-top: 1px solid #3a3a3a;
+}
+.hl-modal-box .tb-btn-danger {
+  background: #5c2020;
+  border-color: #a44;
+  color: #fff;
+}
+
+/* Botão só ícone (engrenagem) */
+.tb-btn-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.2em;
+  padding: 0.3em 0.45em;
+}
+.tb-gear-icon {
+  display: block;
+  vertical-align: middle;
+}
+.tb-btn-icon:hover .tb-gear-icon {
+  transform: rotate(25deg);
+  transition: transform 0.2s ease;
+}
+
+/* Painéis: marca-texto abre para a esquerda do botão; config (direita) para a esquerda também */
+.tb-menu[data-menu="highlight"] .tb-menu-panel {
+  right: auto;
+  left: 0;
+}
+.tb-menu[data-menu="settings"] .tb-menu-panel {
+  right: 0;
+  left: auto;
+}
+
+/* Toggle mostrar/ocultar filtro de cores */
+.hl-filter-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 0.5em;
+  background: transparent;
+  border: 0;
+  color: inherit;
+  font: inherit;
+  padding: 0.15em 0;
+  cursor: pointer;
+  text-align: left;
+}
+.hl-filter-toggle .tb-menu-label {
+  margin: 0;
+}
+.hl-filter-toggle-label {
+  font-size: 11px;
+  opacity: 0.7;
+  text-transform: lowercase;
+}
+.hl-filter-body {
+  margin-top: 0.4em;
+}
+.hl-filter-body[hidden] {
+  display: none !important;
+}
+
+/* ---------- Reader features (TOC, busca, glossário, FABs) ---------- */
+.cme-fab {
+  position: fixed;
+  z-index: 1050;
+  width: 2.4em;
+  height: 2.4em;
+  border-radius: 50%;
+  border: 1px solid #555;
+  background: #1a1a1a;
+  color: #f5f0e6;
+  font-size: 16px;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+.cme-fab:hover { background: #2e2e2e; }
+.cme-fab.is-on { border-color: #e8a54b; color: #e8a54b; }
+.cme-fab-toc { right: 1rem; bottom: 5.5rem; }
+.cme-fab-search { right: 1rem; bottom: 8.3rem; }
+.cme-fab-bm { right: 1rem; bottom: 11.1rem; }
+.cme-fab-focus { right: 1rem; bottom: 13.9rem; }
+.cme-fab-glos { right: 1rem; bottom: 16.7rem; }
+
+html.cme-focus .site-toolbar {
+  transform: translateY(-110%);
+  transition: transform 0.25s ease;
+}
+html.cme-focus.cme-focus-peek .site-toolbar {
+  transform: translateY(0);
+}
+html.cme-focus .cme-fab-toc,
+html.cme-focus .cme-fab-search,
+html.cme-focus .cme-fab-bm,
+html.cme-focus .cme-fab-glos {
+  opacity: 0.35;
+}
+html.cme-focus .cme-fab-focus {
+  opacity: 1;
+  border-color: #e8a54b;
+}
+
+.cme-resume-banner {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 1.2rem;
+  z-index: 1060;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75em;
+  max-width: min(92vw, 520px);
+  padding: 0.65em 0.9em;
+  background: #1f1f1f;
+  color: #f5f0e6;
+  border: 1px solid #555;
+  border-radius: 10px;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.35);
+  font-size: 14px;
+}
+.cme-resume-actions { display: inline-flex; gap: 0.4em; align-items: center; }
+.cme-resume-go {
+  color: #1a1a1a !important;
+  background: #e8a54b;
+  padding: 0.25em 0.6em;
+  border-radius: 6px;
+  text-decoration: none !important;
+  border: 0 !important;
+  font-weight: bold;
+}
+.cme-resume-dismiss {
+  background: transparent;
+  border: 1px solid #666;
+  color: #f5f0e6;
+  border-radius: 6px;
+  padding: 0.25em 0.55em;
+  cursor: pointer;
+}
+
+.cme-drawer-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1200;
+  background: rgba(0,0,0,0.4);
+}
+.cme-drawer {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  z-index: 1210;
+  width: min(92vw, 340px);
+  background: #1a1a1a;
+  color: #f5f0e6;
+  box-shadow: 0 0 28px rgba(0,0,0,0.4);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.cme-toc-drawer,
+.cme-glossary-drawer { left: 0; }
+.cme-search-drawer,
+.cme-bm-drawer { right: 0; }
+.cme-drawer-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.85em 1em;
+  border-bottom: 1px solid #333;
+}
+.cme-drawer-close {
+  background: transparent;
+  border: 0;
+  color: #f5f0e6;
+  font-size: 1.4em;
+  cursor: pointer;
+  line-height: 1;
+}
+.cme-toc-list,
+.cme-search-results,
+.cme-glossary-list,
+.cme-bm-list {
+  overflow: auto;
+  flex: 1;
+  padding: 0.5em 0.6em 1em;
+}
+.cme-toc-item {
+  display: flex;
+  gap: 0.55em;
+  align-items: flex-start;
+  padding: 0.5em 0.45em;
+  border-radius: 6px;
+  color: #f5f0e6 !important;
+  text-decoration: none !important;
+  border: 0 !important;
+  font-size: 13px;
+  line-height: 1.35;
+}
+.cme-toc-item:hover { background: #2a2a2a; }
+.cme-toc-item.is-active { background: #333; outline: 1px solid #666; }
+.cme-toc-item.is-bookmarked .cme-toc-title::after { content: " ★"; color: #e8a54b; }
+.cme-toc-item.is-resume .cme-toc-num { color: #e8a54b; }
+.cme-toc-num {
+  flex: 0 0 1.6em;
+  opacity: 0.65;
+  font-size: 12px;
+  text-align: right;
+}
+.cme-toc-title { flex: 1; }
+
+.cme-search-input {
+  margin: 0.6em 0.75em 0.3em;
+  width: calc(100% - 1.5em);
+  box-sizing: border-box;
+  padding: 0.5em 0.6em;
+  border-radius: 6px;
+  border: 1px solid #555;
+  background: #111;
+  color: #f5f0e6;
+  font: inherit;
+}
+.cme-search-hit {
+  display: block;
+  padding: 0.55em 0.45em;
+  border-radius: 6px;
+  color: #f5f0e6 !important;
+  text-decoration: none !important;
+  border: 0 !important;
+  margin-bottom: 0.25em;
+}
+.cme-search-hit:hover { background: #2a2a2a; }
+.cme-search-hit strong { display: block; font-size: 13px; margin-bottom: 0.2em; }
+.cme-search-hit span { display: block; font-size: 12px; opacity: 0.75; line-height: 1.35; }
+
+.cme-glos-item {
+  border-bottom: 1px solid #333;
+  padding: 0.35em 0.2em;
+}
+.cme-glos-item summary {
+  cursor: pointer;
+  font-weight: bold;
+  text-transform: capitalize;
+  padding: 0.35em 0;
+}
+.cme-glos-item p {
+  margin: 0.3em 0 0.6em;
+  font-size: 0.95em;
+  line-height: 1.45;
+  opacity: 0.9;
+}
+
+.cme-bm-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4em;
+  padding: 0.4em 0.2em;
+  border-bottom: 1px solid #333;
+}
+.cme-bm-item a {
+  flex: 1;
+  color: #f5f0e6 !important;
+  text-decoration: none !important;
+  border: 0 !important;
+  font-size: 13px;
+}
+.cme-bm-remove {
+  background: transparent;
+  border: 0;
+  color: #ccc;
+  font-size: 1.2em;
+  cursor: pointer;
+}
+.cme-export-btn {
+  margin: 0.6em 0.75em 1em;
+  padding: 0.55em 0.7em;
+  border-radius: 6px;
+  border: 1px solid #666;
+  background: #2a2a2a;
+  color: #f5f0e6;
+  cursor: pointer;
+  font: inherit;
+}
+.cme-export-btn:hover { background: #3a3a3a; }
+.cme-empty { opacity: 0.7; font-size: 0.95em; padding: 0.5em; }
+
+@media only screen and (max-width: 600px) {
+  .cme-fab { width: 2.2em; height: 2.2em; font-size: 14px; }
+  .cme-fab-toc { bottom: 4.8rem; }
+  .cme-fab-search { bottom: 7.3rem; }
+  .cme-fab-bm { bottom: 9.8rem; }
+  .cme-fab-focus { bottom: 12.3rem; }
+  .cme-fab-glos { bottom: 14.8rem; }
+}

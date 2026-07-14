@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+
+<title>Cálculo Tornado Fácil</title>
+<meta name="description" content="Capítulo VI: somas, diferenças, produtos e quocientes na diferenciação.">
+<meta name="author" content="Thales Rodrigues; Silvanus P. Thompson">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="googlebot" content="index, follow">
+<meta name="language" content="Portuguese">
+<meta name="keywords" content="cálculo, calculus made easy, Silvanus Thompson, cálculo diferencial, cálculo integral, matemática, educação livre, português, Martin Gardner, Cálculo Tornado Fácil, Thales Rodrigues">
+<link rel="canonical" href="https://rodriguestmo.github.io/calculo-tornado-facil/6.html">
+<link rel="alternate" hreflang="pt-BR" href="https://rodriguestmo.github.io/calculo-tornado-facil/6.html">
+<link rel="alternate" hreflang="x-default" href="https://rodriguestmo.github.io/calculo-tornado-facil/">
+
+
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
+<link rel="icon" href="favicon-16.png" type="image/png" sizes="16x16">
+<link rel="shortcut icon" href="favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png" sizes="180x180">
+<meta name="theme-color" content="#c45c26">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Cálculo Tornado Fácil">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Cálculo Tornado Fácil">
+<meta property="og:description" content="Capítulo VI: somas, diferenças, produtos e quocientes na diferenciação.">
+<meta property="og:url" content="https://rodriguestmo.github.io/calculo-tornado-facil/6.html">
+<meta property="og:image" content="https://rodriguestmo.github.io/calculo-tornado-facil/cover.jpg">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Cálculo Tornado Fácil">
+<meta name="twitter:description" content="Capítulo VI: somas, diferenças, produtos e quocientes na diferenciação.">
+<meta name="twitter:image" content="https://rodriguestmo.github.io/calculo-tornado-facil/cover.jpg">
+
+<link rel="describedby" href="https://rodriguestmo.github.io/calculo-tornado-facil/llms.txt">
+<link rel="stylesheet" href="screen.css">
+<style>
+body{counter-reset:h1 6}
+</style>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$'], ['\\[','\\]']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ["script","noscript","style","textarea","pre","code"]
+    },
+    TeX: {
+      extensions: ["AMSmath.js","AMSsymbols.js"],
+      equationNumbers: { autoNumber: "none" }
+    },
+    "HTML-CSS": {
+      availableFonts: ["TeX"],
+      linebreaks: { automatic: false },
+      styles: {
+        ".MathJax_Display": { "margin": "1.5em 0" }
+      }
+    },
+    CommonHTML: {
+      styles: { ".MJXc-display": { "margin": "1.5em 0" } }
+    },
+    showProcessingMessages: false,
+    messageStyle: "none"
+  });
+</script>
+<script type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Chapter",
+  "name": "Somas, Diferenças, Produtos e Quocientes",
+  "position": 6,
+  "isPartOf": {
+    "@type": "Book",
+    "name": "Cálculo Tornado Fácil",
+    "url": "https://rodriguestmo.github.io/calculo-tornado-facil/"
+  },
+  "author": {"@type": "Person", "name": "Silvanus P. Thompson"},
+  "translator": {"@type": "Person", "name": "Thales Rodrigues"},
+  "url": "https://rodriguestmo.github.io/calculo-tornado-facil/6.html",
+  "inLanguage": "pt-BR",
+  "isAccessibleForFree": true
+}
+</script>
+</head>
+<body>
+<!-- Progresso de leitura do capítulo (scroll) -->
+<div id="read-progress" class="read-progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="Progresso de leitura do capítulo">
+  <div id="read-progress-bar" class="read-progress-bar"></div>
+</div>
+
+<!-- Barra fixa: logo + menus (marca-texto à esquerda, engrenagem à direita) -->
+<div id="site-toolbar" class="site-toolbar" role="region" aria-label="Controles do site">
+  <a class="tb-home" href="index.html">Cálculo Tornado Fácil</a>
+
+  <div class="tb-controls">
+    <!-- Marca-texto (esquerda) -->
+    <div class="tb-menu" data-menu="highlight">
+      <button type="button" class="tb-btn tb-menu-btn" id="hl-list-toggle" aria-expanded="false" aria-controls="hl-list-panel" title="Marca-texto e lista de destaques">
+        Marca-texto
+        <span id="hl-count-badge" class="hl-count-badge" hidden>0</span>
+      </button>
+      <div id="hl-list-panel" class="tb-menu-panel hl-list-panel" hidden role="dialog" aria-label="Marca-texto">
+        <div class="tb-menu-title">Marca-texto</div>
+
+        <div class="hl-color-row">
+          <span class="tb-menu-label">Cor ao destacar</span>
+          <div id="hl-color-swatches" class="hl-color-swatches" role="group" aria-label="Cor do marca-texto">
+            <button type="button" class="hl-swatch-btn cme-hl-pastel-yellow" data-color="pastel-yellow" title="Amarelo pastel" aria-label="Amarelo pastel" aria-pressed="true"></button>
+            <button type="button" class="hl-swatch-btn cme-hl-pastel-green" data-color="pastel-green" title="Verde pastel" aria-label="Verde pastel" aria-pressed="false"></button>
+            <button type="button" class="hl-swatch-btn cme-hl-pastel-blue" data-color="pastel-blue" title="Azul pastel" aria-label="Azul pastel" aria-pressed="false"></button>
+            <button type="button" class="hl-swatch-btn cme-hl-pastel-pink" data-color="pastel-pink" title="Rosa pastel" aria-label="Rosa pastel" aria-pressed="false"></button>
+            <button type="button" class="hl-swatch-btn cme-hl-pastel-orange" data-color="pastel-orange" title="Laranja pastel" aria-label="Laranja pastel" aria-pressed="false"></button>
+            <button type="button" class="hl-swatch-btn cme-hl-pastel-purple" data-color="pastel-purple" title="Roxo pastel" aria-label="Roxo pastel" aria-pressed="false"></button>
+          </div>
+          <select id="hl-color" hidden aria-hidden="true" tabindex="-1">
+            <option value="pastel-yellow">Amarelo pastel</option>
+            <option value="pastel-green">Verde pastel</option>
+            <option value="pastel-blue">Azul pastel</option>
+            <option value="pastel-pink">Rosa pastel</option>
+            <option value="pastel-orange">Laranja pastel</option>
+            <option value="pastel-purple">Roxo pastel</option>
+          </select>
+        </div>
+
+        <div class="hl-filter-row">
+          <button type="button" id="hl-filter-toggle" class="hl-filter-toggle" aria-expanded="false" aria-controls="hl-filter-body">
+            <span class="tb-menu-label">Filtrar lista</span>
+            <span id="hl-filter-toggle-label" class="hl-filter-toggle-label">mostrar</span>
+          </button>
+          <div id="hl-filter-body" class="hl-filter-body" hidden>
+            <div id="hl-filter-swatches" class="hl-color-swatches" role="group" aria-label="Filtrar destaques por cor">
+              <button type="button" class="hl-filter-btn is-active" data-filter="all" title="Todas as cores" aria-label="Todas as cores" aria-pressed="true">Tudo</button>
+              <button type="button" class="hl-swatch-btn hl-filter-btn cme-hl-pastel-yellow" data-filter="pastel-yellow" title="Filtrar amarelo" aria-label="Filtrar amarelo" aria-pressed="false"></button>
+              <button type="button" class="hl-swatch-btn hl-filter-btn cme-hl-pastel-green" data-filter="pastel-green" title="Filtrar verde" aria-label="Filtrar verde" aria-pressed="false"></button>
+              <button type="button" class="hl-swatch-btn hl-filter-btn cme-hl-pastel-blue" data-filter="pastel-blue" title="Filtrar azul" aria-label="Filtrar azul" aria-pressed="false"></button>
+              <button type="button" class="hl-swatch-btn hl-filter-btn cme-hl-pastel-pink" data-filter="pastel-pink" title="Filtrar rosa" aria-label="Filtrar rosa" aria-pressed="false"></button>
+              <button type="button" class="hl-swatch-btn hl-filter-btn cme-hl-pastel-orange" data-filter="pastel-orange" title="Filtrar laranja" aria-label="Filtrar laranja" aria-pressed="false"></button>
+              <button type="button" class="hl-swatch-btn hl-filter-btn cme-hl-pastel-purple" data-filter="pastel-purple" title="Filtrar roxo" aria-label="Filtrar roxo" aria-pressed="false"></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="hl-list-head">
+          <strong>Seus destaques</strong>
+          <span class="hl-list-hint">salvos neste navegador</span>
+        </div>
+        <div id="hl-list-body" class="hl-list-body">
+          <p class="hl-list-empty">Nenhum destaque ainda. Selecione um trecho no texto para destacar.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Configurações (direita) - só ícone de engrenagem -->
+    <div class="tb-menu" data-menu="settings">
+      <button type="button" class="tb-btn tb-menu-btn tb-btn-icon" id="settings-toggle" aria-expanded="false" aria-controls="settings-panel" title="Configurações" aria-label="Configurações">
+        <svg class="tb-gear-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false">
+          <path fill="currentColor" d="M19.14 12.94c.04-.31.06-.63.06-.94s-.02-.63-.06-.94l2.03-1.58a.5.5 0 0 0 .12-.64l-1.92-3.32a.5.5 0 0 0-.6-.22l-2.39.96a7.03 7.03 0 0 0-1.63-.94l-.36-2.54A.5.5 0 0 0 14.9 2h-3.8a.5.5 0 0 0-.49.42l-.36 2.54c-.59.24-1.13.55-1.63.94l-2.39-.96a.5.5 0 0 0-.6.22L3.71 8.08a.5.5 0 0 0 .12.64l2.03 1.58c-.04.31-.06.63-.06.94s.02.63.06.94L3.83 14.7a.5.5 0 0 0-.12.64l1.92 3.32c.14.24.43.34.68.22l2.39-.96c.5.39 1.04.7 1.63.94l.36 2.54c.05.24.25.42.49.42h3.8c.24 0 .44-.18.49-.42l.36-2.54c.59-.24 1.13-.55 1.63-.94l2.39.96c.25.1.54 0 .68-.22l1.92-3.32a.5.5 0 0 0-.12-.64l-2.03-1.58zM12 15.5A3.5 3.5 0 1 1 12 8.5a3.5 3.5 0 0 1 0 7z"/>
+        </svg>
+      </button>
+      <div id="settings-panel" class="tb-menu-panel" hidden role="dialog" aria-label="Configurações de leitura">
+        <div class="tb-menu-title">Configurações</div>
+
+        <label class="tb-menu-row">
+          <span class="tb-menu-label">Notas de Gardner</span>
+          <select id="notes-mode" aria-label="Modo de exibição das notas">
+            <option value="all">Sempre visíveis</option>
+            <option value="click">Lupa (clique para abrir)</option>
+            <option value="off">Sempre ocultadas</option>
+          </select>
+        </label>
+
+        <label class="tb-menu-row">
+          <span class="tb-menu-label">Fonte</span>
+          <select id="font-family" aria-label="Fonte do texto">
+            <option value="default">Padrão do site</option>
+            <option value="dyslexia">Dislexia</option>
+            <option value="sans">Sans-serif</option>
+            <option value="mono">Monospace</option>
+          </select>
+        </label>
+
+        <div class="tb-menu-row">
+          <span class="tb-menu-label">Tamanho</span>
+          <div class="tb-font-size" role="group" aria-label="Tamanho da fonte">
+            <button type="button" id="font-smaller" class="tb-btn tb-btn-sq" title="Diminuir fonte" aria-label="Diminuir fonte">A-</button>
+            <span id="font-size-label" class="tb-size-label" aria-live="polite">100%</span>
+            <button type="button" id="font-larger" class="tb-btn tb-btn-sq" title="Aumentar fonte" aria-label="Aumentar fonte">A+</button>
+          </div>
+        </div>
+
+        <div class="tb-menu-row">
+          <span class="tb-menu-label">Tema</span>
+          <button type="button" id="toggle-theme" class="tb-btn" title="Alternar tema claro/escuro" aria-pressed="false">
+            <span class="theme-label">Tema escuro</span>
+          </button>
+        </div>
+
+        <div class="tb-menu-row tb-menu-row-danger">
+          <span class="tb-menu-label">Dados locais</span>
+          <button type="button" id="clear-site-data" class="tb-btn tb-btn-danger" title="Apagar destaques, notas e preferências salvos neste navegador">
+            Limpar cache do site
+          </button>
+          <span class="tb-menu-hint">Remove destaques, notas, progresso e preferências salvos neste navegador.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Popup de seleção: destacar + nota -->
+<div id="hl-popup" class="hl-popup" hidden role="dialog" aria-label="Destacar trecho">
+  <button type="button" id="hl-btn-mark" class="tb-btn">Destacar</button>
+  <button type="button" id="hl-btn-note" class="tb-btn">Destacar + nota</button>
+  <button type="button" id="hl-btn-cancel" class="tb-btn tb-btn-ghost">Cancelar</button>
+</div>
+
+<!-- Tooltip flutuante da nota ao passar o mouse -->
+<div id="hl-float-tip" class="hl-float-tip" hidden role="tooltip"></div>
+
+<!-- Confirmação: limpar cache -->
+<div id="clear-data-modal" class="hl-modal" hidden role="dialog" aria-modal="true" aria-labelledby="clear-data-title">
+  <div class="hl-modal-box">
+    <h3 id="clear-data-title">Limpar cache do site?</h3>
+    <p class="hl-quote" style="font-style:normal;opacity:0.95">
+      Isso apaga <strong>tudo</strong> que foi salvo neste navegador:
+      destaques, notas, preferências (fonte, tema, tamanho), cor do marca-texto
+      e qualquer outro dado local do site.
+    </p>
+    <p class="hl-quote" style="font-style:normal;opacity:0.85">
+      Esta ação não pode ser desfeita.
+    </p>
+    <div class="hl-modal-actions">
+      <button type="button" id="clear-data-confirm" class="tb-btn tb-btn-danger">Sim, limpar tudo</button>
+      <button type="button" id="clear-data-cancel" class="tb-btn tb-btn-ghost">Cancelar</button>
+    </div>
+  </div>
+</div>
+
+<!-- Modal de nota do highlight -->
+<div id="hl-note-modal" class="hl-modal" hidden role="dialog" aria-modal="true" aria-labelledby="hl-note-title">
+  <div class="hl-modal-box">
+    <h3 id="hl-note-title">Nota do trecho</h3>
+    <p id="hl-note-quote" class="hl-quote"></p>
+    <label class="hl-note-label">Cor deste destaque</label>
+    <div id="hl-note-swatches" class="hl-color-swatches" role="group" aria-label="Cor deste destaque">
+      <button type="button" class="hl-swatch-btn cme-hl-pastel-yellow" data-color="pastel-yellow" title="Amarelo pastel" aria-label="Amarelo pastel"></button>
+      <button type="button" class="hl-swatch-btn cme-hl-pastel-green" data-color="pastel-green" title="Verde pastel" aria-label="Verde pastel"></button>
+      <button type="button" class="hl-swatch-btn cme-hl-pastel-blue" data-color="pastel-blue" title="Azul pastel" aria-label="Azul pastel"></button>
+      <button type="button" class="hl-swatch-btn cme-hl-pastel-pink" data-color="pastel-pink" title="Rosa pastel" aria-label="Rosa pastel"></button>
+      <button type="button" class="hl-swatch-btn cme-hl-pastel-orange" data-color="pastel-orange" title="Laranja pastel" aria-label="Laranja pastel"></button>
+      <button type="button" class="hl-swatch-btn cme-hl-pastel-purple" data-color="pastel-purple" title="Roxo pastel" aria-label="Roxo pastel"></button>
+    </div>
+    <select id="hl-note-color" hidden aria-hidden="true" tabindex="-1">
+      <option value="pastel-yellow">Amarelo pastel</option>
+      <option value="pastel-green">Verde pastel</option>
+      <option value="pastel-blue">Azul pastel</option>
+      <option value="pastel-pink">Rosa pastel</option>
+      <option value="pastel-orange">Laranja pastel</option>
+      <option value="pastel-purple">Roxo pastel</option>
+    </select>
+    <label class="hl-note-label" for="hl-note-input">Sua nota (salva só neste navegador)</label>
+    <textarea id="hl-note-input" rows="4" maxlength="2000" placeholder="Escreva uma anotação opcional..."></textarea>
+    <div class="hl-modal-actions">
+      <button type="button" id="hl-note-save" class="tb-btn">Salvar</button>
+      <button type="button" id="hl-note-remove" class="tb-btn tb-btn-danger">Remover destaque</button>
+      <button type="button" id="hl-note-close" class="tb-btn tb-btn-ghost">Fechar</button>
+    </div>
+  </div>
+</div>
+
+<h1><br>Somas, Diferenças, Produtos e Quocientes</h1>
+<p class="a rotatedFloralHeartBullet">
+
+
+<p>Aprendemos como diferenciar funções algébricas
+simples tais como $x^2 + c$ ou $ax^4$, e agora
+temos de considerar como atacar a <em>soma</em><a name="sumdiffer"/> de duas ou
+mais funções.
+
+<p>Por exemplo, seja</p>
+
+\[
+y = (x^2+c) + (ax^4+b);
+\]
+qual será seu $\dfrac{dy}{dx}$? Como devemos proceder
+neste novo trabalho?
+
+<p>A resposta a esta pergunta é bem simples: basta
+diferenciá-las, uma após a outra, assim:</p>
+
+\[
+\dfrac{dy}{dx} = 2x + 4ax^3. \text{(Resp.)}
+\]
+
+<p>Se tiver qualquer dúvida se isto está certo, experimente
+um caso mais geral, trabalhando-o por primeiros princípios.
+E o caminho é este.
+
+<p>Seja $y = u+v$, onde $u$ é qualquer função de $x$, e $v$
+qualquer outra função de $x$. Então, deixando $x$ aumentar
+para $x+dx$, $y$ aumentará para $y+dy$; e $u$
+aumentará para $u+du$; e $v$ para $v+dv$.
+
+<p>E teremos:
+
+<p>$  y+dy = u+du + v+dv.$
+<p>Subtraindo o $y = u+v$ original, obtemos
+<p>$dy = du+dv, $
+<p>e dividindo por $dx$, obtemos:
+<p>$\dfrac{dy}{dx} = \dfrac{du}{dx} + \dfrac{dv}{dx}.$
+
+
+<p>Isso justifica o procedimento. Você diferencia cada
+função separadamente e soma os resultados. Assim se agora
+tomarmos o exemplo do parágrafo precedente, e
+pusermos os valores das duas funções, teremos,
+usando a notação mostrada (<a href="3.html#note">capítulo III</a>),
+\begin{alignat*}{2}
+\frac{dy}{dx}
+  & = \frac{d(x^2+c)}{dx} &&+ \frac{d(ax^4+b)}{dx} \\
+  & = 2x                  &&+ 4ax^3,
+\end{alignat*}
+exatamente como antes.
+
+<p>Se houvesse três funções de $x$, que podemos
+chamar $u$, $v$ e $w$, de modo que</p>
+
+\[
+\begin{aligned}
+y &= u+v+w; \\
+ \text{então}\;
+\frac{dy}{dx} &= \frac{du}{dx} + \frac{dv}{dx} + \frac{dw}{dx}.
+\end{aligned}
+\]
+
+<p>Quanto à <em>subtração</em>, segue de imediato; pois se a
+função $v$ tivesse ela mesma um sinal negativo, seu
+coeficiente diferencial também seria negativo; de modo
+que ao diferenciar
+\[
+\begin{aligned}
+y &= u-v, \\
+\text{ obteríamos}\;
+\frac{dy}{dx} &= \frac{du}{dx} - \frac{dv}{dx}.
+\end{aligned}
+\]
+
+<p>Mas quando chegamos a lidar com <em>Produtos</em>, a coisa
+não é bem tão simples.
+
+<p>Suponha que nos pedissem para diferenciar a expressão</p>
+
+\[
+y = (x^2+c) × (ax^4+b),
+\]
+o que devemos fazer? O resultado certamente <em>não</em>
+será $2x × 4ax^3$; pois é fácil ver que nem $c × ax^4$,
+nem $x^2 × b$, teriam sido incluídos naquele produto.
+
+<p>Ora há dois modos pelos quais podemos
+proceder.
+
+<p><em>Primeiro modo.</em> Faça a multiplicação primeiro, e, tendo
+elaborado, então diferencie.
+
+<p>Consequentemente, multiplicamos juntos $x^2 + c$ e $ax^4 + b$.
+
+<p>Isso dá $ax^6 + acx^4 + bx^2 + bc$.
+
+<p>Agora diferencie, e obtemos:</p>
+
+\[
+\dfrac{dy}{dx} = 6ax^5 + 4acx^3 + 2bx.
+\]
+
+<p><em>Segundo modo.</em> Volte aos primeiros princípios, e
+considere a equação
+\[
+y = u × v;
+\]
+onde $u$ é uma função de $x$, e $v$ é qualquer outra
+função de $x$. Então, se $x$ cresce para ser $x+dx$; e $y$
+para $y+dy$; e $u$ se torna $u+du$, e $v$ se torna $v+dv$,
+teremos:
+\[
+\begin{aligned}
+ y + dy &= (u + du) × (v + dv) \\
+        &= u · v + u · dv + v · du + du · dv.
+\end{aligned}
+\]
+
+<p>Ora $du · dv$ é uma quantidade pequena da segunda ordem
+de pequenez, e portanto no limite pode ser
+descartada, deixando</p>
+
+\[
+y + dy = u · v + u · dv + v · du.
+\]
+
+<p>Então, subtraindo o $y = u· v$ original, ficamos com</p>
+
+\[
+dy = u · dv + v · du;
+\]
+e, dividindo por $dx$, obtemos o resultado:
+\[
+\dfrac{dy}{dx} = u\, \dfrac{dv}{dx} + v\, \dfrac{du}{dx}.
+\]
+
+<p>Isto mostra que nossas instruções serão as seguintes:<a name="differprod"/>
+<em>Para diferenciar o produto de duas funções, multiplique
+cada função pelo coeficiente diferencial da
+outra, e some juntos os dois produtos assim obtidos.</em>
+
+<p>Você deve notar que este processo equivale ao
+seguinte: Trate $u$ como constante enquanto
+diferencia $v$; então trate $v$ como constante enquanto
+diferencia $u$; e o coeficiente diferencial inteiro $\dfrac{dy}{dx}$
+será a soma desses dois tratamentos.
+
+<p>Ora, tendo achado esta regra, aplique-a ao
+exemplo concreto que foi considerado acima.
+
+<p>Queremos diferenciar o produto</p>
+
+\[
+(x^2 + c) × (ax^4 + b).
+\]
+
+<p>Chame $(x^2 + c) = u$; e $(ax^4 + b) = v$.
+
+<p>Então, pela regra geral que acabamos de estabelecer, podemos
+escrever:
+\begin{alignat*}{2}
+\dfrac{dy}{dx}
+&= (x^2 + c)\, \frac{d(ax^4 + b)}{dx} &&+ (ax^4 + b)\, \frac{d(x^2 + c)}{dx} \\
+&= (x^2 + c)\, 4ax^3                  &&+ (ax^4 + b)\, 2x \\
+&= 4ax^5 + 4acx^3                     &&+ 2ax^5 + 2bx,   \\
+
+\dfrac{dy}{dx}
+&= 6ax^5 + 4acx^3                     &&+ 2bx,
+\end{alignat*}
+exatamente como antes.
+
+
+<p>Por fim, temos de diferenciar <em>quocientes</em>.
+
+
+<p>Pense neste exemplo, $y = \dfrac{bx^5 + c}{x^2 + a}$. Em tal caso
+não adianta tentar realizar a divisão de antemão,
+porque $x^2 + a$ não dividirá $bx^5 + c$, nem
+têm fator comum. Assim não resta senão
+voltar aos primeiros princípios, e achar uma
+regra.
+
+
+   Assim poremos</p>
+
+\[
+y = \frac{u}{v};
+\]
+onde $u$ e $v$ são duas funções diferentes da
+variável independente $x$.  Então, quando $x$ se torna
+$x + dx$, $y$ se tornará $y + dy$; e $u$ se tornará
+$u + du$; e $v$ se tornará $v + dv$. Assim então
+\[
+y + dy = \dfrac{u + du}{v + dv}.
+\]
+
+<p>Agora realize a divisão algébrica, assim:
+<a name="figure666a">
+<img src="33283-t/images/666a.pdf.png-1.png">
+
+<p>Como ambos esses restos são quantidades pequenas da
+segunda ordem, podem ser desprezados, e a
+divisão pode parar aqui, pois quaisquer restos ulteriores
+seriam de magnitudes ainda menores.
+
+<p>Assim obtivemos:</p>
+
+\[
+\begin{aligned}
+y + dy &= \dfrac{u}{v} + \dfrac{du}{v} - \dfrac{u· dv}{v^2};
+\end{aligned}
+\]
+que pode ser escrito
+\[
+\begin{aligned}
+&= \dfrac{u}{v} + \dfrac{v· du - u· dv}{v^2}.
+\end{aligned}
+\]
+Agora subtraia o $y = \dfrac{u}{v}$ original, e ficamos com:
+\[
+\begin{aligned}
+dy &= \dfrac{v· du - u· dv}{v^2}; \\
+ \text{donde}\;
+\dfrac{dy}{dx}
+&= \dfrac{v\, \dfrac{du}{dx} - u\, \dfrac{dv}{dx}}{v^2}.
+\end{aligned}
+\]
+
+<p>Isto nos dá nossas instruções quanto a <em>como diferenciar
+um quociente de duas funções. Multiplique a
+função divisor pelo coeficiente diferencial da
+função dividendo; então multiplique a função
+dividendo pelo coeficiente diferencial da função
+divisor; e subtraia. Por fim divida pelo quadrado
+da função divisor</em>.
+
+<p>
+Voltando ao nosso exemplo $y = \dfrac{bx^5 + c}{x^2 + a}$,</p>
+
+\[
+\begin{aligned}
+\text{ escreva}\;
+bx^5 + c &= u; \\
+x^2  + a &= v.
+\end{aligned}
+\]
+
+<p>Então</p>
+
+\[
+\begin{aligned}
+\frac{dy}{dx}
+&= \frac{(x^2 + a)\, \dfrac{d(bx^5 + c)}{dx} - (bx^5 + c)\, \dfrac{d(x^2 + a)}{dx}}{(x^2 + a)^2} \\
+&= \frac{(x^2 + a)(5bx^4) - (bx^5 + c)(2x)}{(x^2 + a)^2}, \\
+\frac{dy}{dx}
+&= \frac{3bx^6 + 5abx^4 - 2cx}{(x^2 + a)^2}.\quad\text{(Resposta.)}
+\end{aligned}
+\]
+
+<p>O desenvolvimento de quocientes é frequentemente tedioso, mas
+não há nada de difícil nisso.
+
+<p>Alguns exemplos adicionais plenamente elaborados são dados
+a seguir.<a name="examples3"/>
+
+<p>(1) Diferencie $y = \dfrac{a}{b^2} x^3 - \dfrac{a^2}{b} x + \dfrac{a^2}{b^2}$.
+
+<p>Sendo uma constante, $\dfrac{a^2}{b^2}$ some,
+e temos</p>
+
+\[
+\frac{dy}{dx} = \frac{a}{b^2} × 3 × x^{3-1} - \frac{a^2}{b} × 1 × x^{1-1}.
+\]
+
+<p>Mas $x^{1-1} = x^0 = 1$; assim obtemos:</p>
+
+\[
+\frac{dy}{dx} = \frac{3a}{b^2} x^2 - \frac{a^2}{b}.
+\]
+
+<p>(2) Diferencie $y = 2a\sqrt{bx^3} - \dfrac{3b \sqrt[3]{a}}{x} - 2\sqrt{ab}$.
+
+<p>Pondo $x$ na forma de índice, obtemos</p>
+
+\[
+y = 2a\sqrt{b} x^{\frac{3}{2}} - 3b \sqrt[3]{a} x^{-1} - 2\sqrt{ab}.
+\]
+
+<p>Agora</p>
+
+\[
+\frac{dy}{dx} = 2a\sqrt{b} × \tfrac{3}{2} × x^{\frac{3}{2}-1} - 3b\sqrt[3]{a} × (-1) × x^{-1-1}; \\
+ \text{ou, }\;
+\frac{dy}{dx} = 3a\sqrt{bx} + \frac{3b\sqrt[3]{a}}{x^2}.
+\]
+
+<p>(3) Diferencie $z = 1.8 \sqrt[3]{\dfrac{1}{\theta^2}} - \dfrac{4.4}{\sqrt[5]{\theta}} - 27°$.
+
+<p>Isto pode ser escrito: $z= 1.8\, \theta^{-\frac{2}{3}} - 4.4\, \theta^{-\frac{1}{5}} - 27°$.
+
+<p>O $27°$ some, e temos</p>
+
+\[
+\frac{dz}{d\theta}
+  = 1.8 × -\tfrac{2}{3} × \theta^{-\frac{2}{3}-1}
+  - 4.4 × \left(-\tfrac{1}{5}\right)\theta^{-\frac{1}{5}-1}; \\
+ \text{ou}\;,
+\frac{dz}{d\theta}
+  = -1.2\, \theta^{-\frac{5}{3}} + 0.88\, \theta^{-\frac{6}{5}}; \\
+\text{ou,}\;
+\frac{dz}{d\theta} = \frac{0.88}{\sqrt[5]{\theta^6}}
+  - \frac{1.2}{\sqrt[3]{\theta^5}}.
+\]
+
+<p>(4) Diferencie $v = (3t^2 - 1.2 t + 1)^3$.
+
+<p>Um modo direto de fazer isto será explicado mais tarde
+(veja <a href="9.html#dodge">aqui</a>); mas podemos não obstante gerenciá-lo agora
+sem qualquer dificuldade.
+
+<p>Desenvolvendo o cubo, obtemos</p>
+
+\[
+v = 27t^6 - 32.4t^5 + 39.96t^4 - 23.328t^3 + 13.32t^2 - 3.6t + 1;
+\]
+donde
+\[
+\frac{dv}{dt} = 162t^5 - 162t^4 + 159.84t^3 - 69.984t^2 + 26.64t - 3.6.
+\]
+
+<p>(5) Diferencie $y = (2x - 3)(x + 1)^2$.
+\begin{alignat*}{2}
+\frac{dy}{dx}
+  &= (2x - 3)\, \frac{d\bigl[(x + 1)(x + 1)\bigr]}{dx}
+     &&+ (x + 1)^2\, \frac{d(2x - 3)}{dx} \\
+  &= (2x - 3) \left[(x + 1)\, \frac{d(x + 1)}{dx}\right.
+     &&+ \left.(x + 1)\, \frac{d(x + 1)}{dx}\right] \\
+  &  &&+ (x + 1)^2\, \frac{d(2x - 3)}{dx} \\
+
+  &= 2(x + 1)\bigl[(2x - 3) + (x + 1)\bigr] &&= 2(x + 1)(3x - 2)
+\end{alignat*}
+ou, mais simplesmente, multiplique e então diferencie.
+
+
+<p>(6) Diferencie $y = 0.5 x^3(x-3)$.</p>
+
+\[
+\begin{aligned}
+\frac{dy}{dx}
+  &= 0.5\left[x^3 \frac{d(x-3)}{dx} + (x-3) \frac{d(x^3)}{dx}\right] \\
+  &= 0.5\left[x^3 + (x-3) × 3x^2\right] = 2x^3 - 4.5x^2.
+\end{aligned}
+\]
+
+<p>Mesmas observações que para o exemplo precedente.
+
+<p>(7) Diferencie $w = \left(\theta + \dfrac{1}{\theta}\right)
+   \left(\sqrt{\theta} + \dfrac{1}{\sqrt{\theta}}\right)$.
+
+<p>Isto pode ser escrito</p>
+
+\[
+\begin{gathered}
+w = (\theta + \theta^{-1})(\theta^{\frac{1}{2}} + \theta^{-\frac{1}{2}}). \\
+\begin{aligned} \\
+\frac{dw}{d\theta} \\
+  &= (\theta + \theta^{-1}) \\
+     \frac{d(\theta^{\frac{1}{2}} + \theta^{-\frac{1}{2}})}{d\theta} \\
+   + (\theta^{\frac{1}{2}} + \theta^{-\frac{1}{2}}) \\
+     \frac{d(\theta+\theta^{-1})}{d\theta} \\
+  &= (\theta + \theta^{-1})(\tfrac{1}{2}\theta^{-\frac{1}{2}} \\
+                          - \tfrac{1}{2}\theta^{-\frac{3}{2}}) \\
+   + (\theta^{\frac{1}{2}} + \theta^{-\frac{1}{2}})(1 - \theta^{-2}) \\
+  &= \tfrac{1}{2}(\theta^{ \frac{1}{2}} + \theta^{-\frac{3}{2}} \\
+                - \theta^{-\frac{1}{2}} - \theta^{-\frac{5}{2}}) \\
+   + (\theta^{ \frac{1}{2}} + \theta^{-\frac{1}{2}} \\
+    - \theta^{-\frac{3}{2}} - \theta^{-\frac{5}{2}}) \\
+  &= \tfrac{3}{2} \left(\sqrt{\theta} - \frac{1}{\sqrt{\theta^5}}\right) \\
+   + \tfrac{1}{2} \left(\frac{1}{\sqrt{\theta}} - \frac{1}{\sqrt{\theta^3}}\right). \\
+\end{aligned}
+\end{gathered}
+\]
+
+<p>Isto, de novo, poderia ser obtido mais simplesmente ao
+multiplicar os dois fatores primeiro, e diferenciar
+depois. Isto não é, contudo, sempre possível;
+veja, por exemplo, <a href="16.html#example1">aqui</a>, exemplo 8, no qual a
+regra para diferenciar um produto <em>deve</em> ser usada.
+
+<p>(8) Diferencie $y =\dfrac{a}{1 + a\sqrt{x} + a^2x}$.</p>
+
+\[
+\begin{aligned}
+\frac{dy}{dx}
+  &= \frac{(1 + ax^{\frac{1}{2}} + a^2x) × 0 - a\dfrac{d(1 + ax^{\frac{1}{2}} + a^2x)}{dx}} \\
+          {(1 + a\sqrt{x} + a^2x)^2} \\
+  &= - \frac{a(\frac{1}{2}ax^{-\frac{1}{2}} + a^2)} \\
+            {(1 + ax^{\frac{1}{2}} + a^2x)^2}.
+\end{aligned}
+\]
+
+<p>(9) Diferencie $y = \dfrac{x^2}{x^2 + 1}$.</p>
+
+\[
+\dfrac{dy}{dx} = \dfrac{(x^2 + 1)\, 2x - x^2 × 2x}{(x^2 + 1)^2} = \dfrac{2x}{(x^2 + 1)^2}.
+\]
+
+<p>(10) Diferencie $y = \dfrac{a + \sqrt{x}}{a - \sqrt{x}}$.
+
+<p>Na forma de índice, $y = \dfrac{a + x^{\frac{1}{2}}}{a - x^{\frac{1}{2}}}$.</p>
+
+\[
+\frac{dy}{dx}
+  = \frac{(a - x^{\frac{1}{2}})( \tfrac{1}{2} x^{-\frac{1}{2}})
+        - (a + x^{\frac{1}{2}})(-\tfrac{1}{2} x^{-\frac{1}{2}})}
+         {(a - x^{\frac{1}{2}})^2}
+  = \frac{ a - x^{\frac{1}{2}}
+         + a + x^{\frac{1}{2}}}
+        {2(a - x^{\frac{1}{2}})^2\, x^{\frac{1}{2}}}; \\
+ \text{donde}\;
+\frac{dy}{dx} = \frac{a}{(a - \sqrt{x})^2\, \sqrt{x}}.
+\]
+
+<p>(11) Diferencie
+
+<p>\[
+\begin{aligned}
+\theta &= \frac{1 - a \sqrt[3]{t^2}}{1 + a \sqrt[2]{t^3}}. \\
+   \text{Ora}\;
+\theta &= \frac{1 - at^{\frac{2}{3}}}{1 + at^{\frac{3}{2}}}.
+\end{aligned}
+\]</p>
+
+\[
+\begin{aligned}
+\frac{d\theta}{dt}
+  &= \frac{(1 + at^{\frac{3}{2}}) (-\tfrac{2}{3} at^{-\frac{1}{3}}) \\
+         - (1 - at^{\frac{2}{3}}) × \tfrac{3}{2} at^{\frac{1}{2}}}
+          {(1 + at^{\frac{3}{2}})^2} \\
+  &= \frac{5a^2 \sqrt[6]{t^7} - \dfrac{4a}{\sqrt[3]{t}} - 9a \sqrt[2]{t}} \\
+          {6(1 + a \sqrt[2]{t^3})^2}.
+\end{aligned}
+\]
+
+<p>(12) Um reservatório de seção transversal quadrada tem lados
+inclinados a um ângulo de $45°$ com a vertical. O lado
+
+do fundo é $200$ pés. Ache uma expressão para a
+quantidade entrando ou saindo quando a profundidade da água
+varia em $1$ pé; daí ache, em galões, a quantidade
+retirada por hora quando a profundidade é reduzida de
+$14$ para $10$ pés em $24$ horas.
+
+<p>O volume de um tronco de pirâmide de altura $H$,
+e de bases $A$ e $a$, é $V = \dfrac{H}{3} (A + a + \sqrt{Aa} )$. Vê-se
+facilmente que, sendo a inclinação $45°$, se a profundidade for
+$h$, o comprimento do lado da superfície quadrada da
+água é $200 + 2h$ pés, de modo que o volume de água é</p>
+
+\[
+\dfrac{h}{3} [200^2 + (200 + 2h)^2 + 200(200 + 2h)]
+= 40.000h + 400h^2 + \dfrac{4h^3}{3}.
+\]
+
+<p>$\dfrac{dV}{dh} = 40.000 + 800h + 4h^2 = {}$ pés cúbicos por pé de variação
+de profundidade. O nível médio de $14$ a $10$ pés é
+$12$ pés, quando $h = 12$, $\dfrac{dV}{dh} = 50.176$ pés cúbicos.
+
+<p>Galões por hora correspondentes a uma mudança de profundidade
+de $4$ pés em $24$ horas ${} = \dfrac{4 × 50.176 × 6.25}{24} = 52.267$ galões.
+
+<p>(13) A pressão absoluta, em atmosferas, $P$, de
+vapor saturado na temperatura $t°$ C. é dada por
+Dulong como sendo $P = \left( \dfrac{40 + t}{140} \right)^5$  enquanto $t$ estiver acima de
+$80°$. Ache a taxa de variação da pressão com
+a temperatura a $100°$ C.
+
+
+<p>Expanda o numerador pelo teorema binomial
+(veja <a href="14.html#binomtheo">aqui</a>).
+\[
+P = \frac{1}{140^5} (40^5 + 5×40^4 t + 10 × 40^3 t^2 + 10 × 40^2 t^3
+                            + 5 × 40t^4 + t^5);
+\]
+\[
+\begin{aligned}
+ \text{donde}\;  \dfrac{dP}{dt} &= &\dfrac{1}{537.824 × 10^5}\\
+      &(5 × 40^4 + 20 × 40^3 t + 30 × 40^2 t^2 + 20 × 40t^3 + 5t^4),
+\end{aligned}
+\]
+quando $t = 100$ isto se torna $0.036$ atmosfera por
+grau Celsius de mudança de temperatura.
+
+<p>
+<hr><h3>Exercícios III</h3>
+
+<p>
+(1) Diferencie<a name="examples2"/>
+
+<p>(<em>a</em>)  $u = 1 + x + \dfrac{x^2}{1 × 2} + \dfrac{x^3}{1 × 2 × 3} + \dotsb$.
+<p>(<em>b</em>)  $y = ax^2 + bx + c$. (<em>c</em> ) $y = (x + a)^2$.
+<p>(<em>d</em>)  $y = (x + a)^3$.
+
+<p>(2) Se $w = at - \frac{1}{2}bt^2$, ache $\dfrac{dw}{dt}$.
+
+<p>(3) Ache o coeficiente diferencial de</p>
+
+\[
+y = (x + \sqrt{-1}) × (x - \sqrt{-1}).
+\]
+
+<p>(4) Diferencie</p>
+
+\[
+y = (197x - 34x^2) × (7 + 22x - 83x^3).
+\]
+
+<p>(5) Se $x = (y + 3) × (y + 5)$, ache $\dfrac{dx}{dy}$.
+
+<p>(6) Diferencie $y = 1.3709x × (112.6 + 45.202x^2)$.
+
+
+
+<p>Ache os coeficientes diferenciais de
+
+<p>(7) $y = \dfrac{2x + 3}{3x + 2}$.
+<p>(8) $y = \dfrac{1 + x + 2x^2 + 3x^3}{1 + x + 2x^2}$.
+<p>(9) $y = \dfrac{ax + b}{cx + d}$.
+<p>(10) $y = \dfrac{x^n + a}{x^{-n} + b}$.
+
+
+<p>(11) A temperatura $t$ do filamento de uma lâmpada
+elétrica incandescente está ligada à corrente
+que passa pela lâmpada pela relação</p>
+
+\[
+C = a + bt + ct^2.
+\]
+
+<p>Ache uma expressão dando a variação da
+corrente correspondente a uma variação de temperatura.
+
+<p>(12) As seguintes fórmulas foram propostas para
+expressar a relação entre a resistência elétrica $R$
+de um fio na temperatura $t°$ C., e a resistência
+$R_0$ daquele mesmo fio a $0°$ Celsius, $a$, $b$, $c$ sendo
+constantes.</p>
+
+\[
+\begin{aligned}
+R &= R_0(1 + at + bt^2). \\
+R &= R_0(1 + at + b\sqrt{t}). \\
+R &= R_0(1 + at + bt^2)^{-1}.
+\end{aligned}
+\]
+
+<p>Ache a taxa de variação da resistência com
+respeito à temperatura como dada por cada uma dessas
+fórmulas.
+
+<p>(13) A força eletromotriz $E$ de certo tipo de
+célula padrão achou-se variar com a temperatura $t$
+segundo a relação</p>
+
+\[
+E = 1.4340 \bigl[1 - 0.000814(t-15)
+                 + 0.000007(t-15)^2\bigr] \text{ volts}.
+\]
+
+<p>Ache a mudança de força eletromotriz por grau,
+a $15°$, $20°$ e $25°$.
+
+
+<p>(14) A força eletromotriz necessária para manter
+um arco elétrico de comprimento $l$ com uma corrente de intensidade $i$
+foi achada pela Sra. Ayrton ser</p>
+
+\[
+E = a + bl + \frac{c + kl}{i},
+\]
+onde $a$, $b$, $c$, $k$ são constantes.
+
+<p>Ache uma expressão para a variação da força eletromotriz
+(<em>a</em>) com respeito ao comprimento do arco;
+(<em>b</em>) com respeito à intensidade da corrente.
+
+
+<p><h3 class="answers">Respostas</h3>
+
+
+
+<p>(1)  (<em>a</em>) $1 + x + \dfrac{x^2}{2} + \dfrac{x^3}{6} + \dfrac{x^4}{24} + \ldots$
+	<p>(<em>b</em>) $2ax + b$.
+	<p>(<em>c</em> ) $2x + 2a$.
+    <p>(<em>d</em>) $3x^2 + 6ax + 3a^2$.
+
+<p>(2)  $\dfrac{dw}{dt} = a - bt$.
+<p>(3)  $\dfrac{dy}{dx} = 2x$.
+<p>(4)  $14110x^4 - 65404x^3 - 2244x^2 + 8192x + 1379$.
+<p>(5)  $\dfrac{dx}{dy} = 2y + 8$.
+<p>(6)  $185.9022654x^2 + 154.36334$.
+<p>(7)  $\dfrac{-5}{(3x + 2)^2}$.
+<p>(8)  $\dfrac{6x^4 + 6x^3 + 9x^2}{(1 + x + 2x^2)^2}$.
+<p>(9)  $\dfrac{ad - bc}{(cx + d)^2}$.
+<p>(10)  $\dfrac{anx^{-n-1} + bnx^{n-1} + 2nx^{-1}}{(x^{-n} + b)^2}$.
+<p>(11)  $b + 2ct$.
+<p>(12)  $R_0(a + 2bt)$,&nbsp;&nbsp; $R_0 \left(a + \dfrac{b}{2\sqrt{t}}\right)$,&nbsp;&nbsp;
+  $-\dfrac{R_0(a + 2bt)}{(1 + at + bt^2)^2}$&nbsp;&nbsp; ou&nbsp;&nbsp; $\dfrac{R^2 (a + 2bt)}{R_0}$.
+
+<p>(13)  $1.4340(0.000014t - 0.001024)$,&nbsp;&nbsp; $-0.00117$,&nbsp;&nbsp; $-0.00107$,&nbsp;&nbsp; $-0.00097$.
+
+<p>(14)  $\dfrac{dE}{dl} = b + \dfrac{k}{i}$,&nbsp;&nbsp; $\dfrac{dE}{di} = -\dfrac{c + kl}{i^2}$.
+
+<p>
+
+
+<br>
+<!-- Soluções comerciais removidas: projeto público e sem fins lucrativos -->
+
+
+<hr>
+<nav class="chapter-nav" aria-label="Navegação do capítulo">
+  <a class="nav-prev" href="5.html">← Anterior</a>
+  <a class="nav-home" href="index.html">Página principal</a>
+  <a class="nav-next" href="7.html">Próximo →</a>
+</nav>
+<footer class="site-footer" role="contentinfo">
+  <p class="a rotatedFloralHeartBullet"></p>
+
+  <div class="manifesto">
+    <p class="manifesto-lead">
+      Este é um <strong>projeto público</strong>, sem fins lucrativos.
+      Não é permitido comercializá-lo, vendê-lo nem usá-lo como produto pago.
+    </p>
+    <p class="manifesto-quote">
+      A educação é um direito de todos.
+      O conhecimento deve ser livre sempre que não cause o mal:
+      deve circular, ensinar e libertar, nunca aprisionar quem aprende.
+    </p>
+    <p class="manifesto-sign">
+      - Thales Rodrigues
+    </p>
+  </div>
+
+  <nav class="author-links" aria-label="Redes de Thales Rodrigues">
+    <a href="https://www.linkedin.com/in/thales-oliveira-rodrigues/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    <span class="dot" aria-hidden="true">·</span>
+    <a href="https://github.com/Rodriguestmo" target="_blank" rel="noopener noreferrer">GitHub</a>
+  </nav>
+
+  <p class="footer-meta">
+    <small>
+      Tradução e adaptação PT-BR por Thales Rodrigues.
+      Texto de Silvanus P. Thompson em domínio público (Project Gutenberg).
+      Notas de contexto inspiradas na edição Gardner (1998).
+      Projeto público e gratuito.
+    </small>
+  </p>
+</footer>
+
+<script src="j/jquery.js"></script>
+<script src="j/modernizr.js"></script>
+<script src="j/dih5.js"></script>
+<script src="j/chapters-data.js"></script>
+<script src="j/glossary-data.js"></script>
+<script src="j/reader-features.js"></script>
+<script src="j/notes-toggle.js"></script>
+<!-- Analytics desativado na edição PT local -->
+</body>
+</html>

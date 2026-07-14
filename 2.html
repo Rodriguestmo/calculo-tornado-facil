@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+
+<title>Cálculo Tornado Fácil</title>
+<meta name="description" content="Capítulo II: sobre diferentes graus de pequenez e quantidades infinitesimais.">
+<meta name="author" content="Thales Rodrigues; Silvanus P. Thompson">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="googlebot" content="index, follow">
+<meta name="language" content="Portuguese">
+<meta name="keywords" content="cálculo, calculus made easy, Silvanus Thompson, cálculo diferencial, cálculo integral, matemática, educação livre, português, Martin Gardner, Cálculo Tornado Fácil, Thales Rodrigues">
+<link rel="canonical" href="https://rodriguestmo.github.io/calculo-tornado-facil/2.html">
+<link rel="alternate" hreflang="pt-BR" href="https://rodriguestmo.github.io/calculo-tornado-facil/2.html">
+<link rel="alternate" hreflang="x-default" href="https://rodriguestmo.github.io/calculo-tornado-facil/">
+
+
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
+<link rel="icon" href="favicon-16.png" type="image/png" sizes="16x16">
+<link rel="shortcut icon" href="favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png" sizes="180x180">
+<meta name="theme-color" content="#c45c26">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Cálculo Tornado Fácil">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Cálculo Tornado Fácil">
+<meta property="og:description" content="Capítulo II: sobre diferentes graus de pequenez e quantidades infinitesimais.">
+<meta property="og:url" content="https://rodriguestmo.github.io/calculo-tornado-facil/2.html">
+<meta property="og:image" content="https://rodriguestmo.github.io/calculo-tornado-facil/cover.jpg">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Cálculo Tornado Fácil">
+<meta name="twitter:description" content="Capítulo II: sobre diferentes graus de pequenez e quantidades infinitesimais.">
+<meta name="twitter:image" content="https://rodriguestmo.github.io/calculo-tornado-facil/cover.jpg">
+
+<link rel="describedby" href="https://rodriguestmo.github.io/calculo-tornado-facil/llms.txt">
+<link rel="stylesheet" href="screen.css">
+<style>
+body{counter-reset:h1 2}
+</style>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$'], ['\\[','\\]']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ["script","noscript","style","textarea","pre","code"]
+    },
+    TeX: {
+      extensions: ["AMSmath.js","AMSsymbols.js"],
+      equationNumbers: { autoNumber: "none" }
+    },
+    "HTML-CSS": {
+      availableFonts: ["TeX"],
+      linebreaks: { automatic: false },
+      styles: {
+        ".MathJax_Display": { "margin": "1.5em 0" }
+      }
+    },
+    CommonHTML: {
+      styles: { ".MJXc-display": { "margin": "1.5em 0" } }
+    },
+    showProcessingMessages: false,
+    messageStyle: "none"
+  });
+</script>
+<script type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Chapter",
+  "name": "Sobre Diferentes Graus de Pequenez",
+  "position": 2,
+  "isPartOf": {
+    "@type": "Book",
+    "name": "Cálculo Tornado Fácil",
+    "url": "https://rodriguestmo.github.io/calculo-tornado-facil/"
+  },
+  "author": {"@type": "Person", "name": "Silvanus P. Thompson"},
+  "translator": {"@type": "Person", "name": "Thales Rodrigues"},
+  "url": "https://rodriguestmo.github.io/calculo-tornado-facil/2.html",
+  "inLanguage": "pt-BR",
+  "isAccessibleForFree": true
+}
+</script>
+</head>
+<body>
+<!-- Progresso de leitura do capítulo (scroll) -->
+<div id="read-progress" class="read-progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="Progresso de leitura do capítulo">
+  <div id="read-progress-bar" class="read-progress-bar"></div>
+</div>
+
+<!-- Barra fixa: logo + menus (marca-texto à esquerda, engrenagem à direita) -->
+<div id="site-toolbar" class="site-toolbar" role="region" aria-label="Controles do site">
+  <a class="tb-home" href="index.html">Cálculo Tornado Fácil</a>
+
+  <div class="tb-controls">
+    <!-- Marca-texto (esquerda) -->
+    <div class="tb-menu" data-menu="highlight">
+      <button type="button" class="tb-btn tb-menu-btn" id="hl-list-toggle" aria-expanded="false" aria-controls="hl-list-panel" title="Marca-texto e lista de destaques">
+        Marca-texto
+        <span id="hl-count-badge" class="hl-count-badge" hidden>0</span>
+      </button>
+      <div id="hl-list-panel" class="tb-menu-panel hl-list-panel" hidden role="dialog" aria-label="Marca-texto">
+        <div class="tb-menu-title">Marca-texto</div>
+
+        <div class="hl-color-row">
+          <span class="tb-menu-label">Cor ao destacar</span>
+          <div id="hl-color-swatches" class="hl-color-swatches" role="group" aria-label="Cor do marca-texto">
+            <button type="button" class="hl-swatch-btn cme-hl-pastel-yellow" data-color="pastel-yellow" title="Amarelo pastel" aria-label="Amarelo pastel" aria-pressed="true"></button>
+            <button type="button" class="hl-swatch-btn cme-hl-pastel-green" data-color="pastel-green" title="Verde pastel" aria-label="Verde pastel" aria-pressed="false"></button>
+            <button type="button" class="hl-swatch-btn cme-hl-pastel-blue" data-color="pastel-blue" title="Azul pastel" aria-label="Azul pastel" aria-pressed="false"></button>
+            <button type="button" class="hl-swatch-btn cme-hl-pastel-pink" data-color="pastel-pink" title="Rosa pastel" aria-label="Rosa pastel" aria-pressed="false"></button>
+            <button type="button" class="hl-swatch-btn cme-hl-pastel-orange" data-color="pastel-orange" title="Laranja pastel" aria-label="Laranja pastel" aria-pressed="false"></button>
+            <button type="button" class="hl-swatch-btn cme-hl-pastel-purple" data-color="pastel-purple" title="Roxo pastel" aria-label="Roxo pastel" aria-pressed="false"></button>
+          </div>
+          <select id="hl-color" hidden aria-hidden="true" tabindex="-1">
+            <option value="pastel-yellow">Amarelo pastel</option>
+            <option value="pastel-green">Verde pastel</option>
+            <option value="pastel-blue">Azul pastel</option>
+            <option value="pastel-pink">Rosa pastel</option>
+            <option value="pastel-orange">Laranja pastel</option>
+            <option value="pastel-purple">Roxo pastel</option>
+          </select>
+        </div>
+
+        <div class="hl-filter-row">
+          <button type="button" id="hl-filter-toggle" class="hl-filter-toggle" aria-expanded="false" aria-controls="hl-filter-body">
+            <span class="tb-menu-label">Filtrar lista</span>
+            <span id="hl-filter-toggle-label" class="hl-filter-toggle-label">mostrar</span>
+          </button>
+          <div id="hl-filter-body" class="hl-filter-body" hidden>
+            <div id="hl-filter-swatches" class="hl-color-swatches" role="group" aria-label="Filtrar destaques por cor">
+              <button type="button" class="hl-filter-btn is-active" data-filter="all" title="Todas as cores" aria-label="Todas as cores" aria-pressed="true">Tudo</button>
+              <button type="button" class="hl-swatch-btn hl-filter-btn cme-hl-pastel-yellow" data-filter="pastel-yellow" title="Filtrar amarelo" aria-label="Filtrar amarelo" aria-pressed="false"></button>
+              <button type="button" class="hl-swatch-btn hl-filter-btn cme-hl-pastel-green" data-filter="pastel-green" title="Filtrar verde" aria-label="Filtrar verde" aria-pressed="false"></button>
+              <button type="button" class="hl-swatch-btn hl-filter-btn cme-hl-pastel-blue" data-filter="pastel-blue" title="Filtrar azul" aria-label="Filtrar azul" aria-pressed="false"></button>
+              <button type="button" class="hl-swatch-btn hl-filter-btn cme-hl-pastel-pink" data-filter="pastel-pink" title="Filtrar rosa" aria-label="Filtrar rosa" aria-pressed="false"></button>
+              <button type="button" class="hl-swatch-btn hl-filter-btn cme-hl-pastel-orange" data-filter="pastel-orange" title="Filtrar laranja" aria-label="Filtrar laranja" aria-pressed="false"></button>
+              <button type="button" class="hl-swatch-btn hl-filter-btn cme-hl-pastel-purple" data-filter="pastel-purple" title="Filtrar roxo" aria-label="Filtrar roxo" aria-pressed="false"></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="hl-list-head">
+          <strong>Seus destaques</strong>
+          <span class="hl-list-hint">salvos neste navegador</span>
+        </div>
+        <div id="hl-list-body" class="hl-list-body">
+          <p class="hl-list-empty">Nenhum destaque ainda. Selecione um trecho no texto para destacar.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Configurações (direita) - só ícone de engrenagem -->
+    <div class="tb-menu" data-menu="settings">
+      <button type="button" class="tb-btn tb-menu-btn tb-btn-icon" id="settings-toggle" aria-expanded="false" aria-controls="settings-panel" title="Configurações" aria-label="Configurações">
+        <svg class="tb-gear-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false">
+          <path fill="currentColor" d="M19.14 12.94c.04-.31.06-.63.06-.94s-.02-.63-.06-.94l2.03-1.58a.5.5 0 0 0 .12-.64l-1.92-3.32a.5.5 0 0 0-.6-.22l-2.39.96a7.03 7.03 0 0 0-1.63-.94l-.36-2.54A.5.5 0 0 0 14.9 2h-3.8a.5.5 0 0 0-.49.42l-.36 2.54c-.59.24-1.13.55-1.63.94l-2.39-.96a.5.5 0 0 0-.6.22L3.71 8.08a.5.5 0 0 0 .12.64l2.03 1.58c-.04.31-.06.63-.06.94s.02.63.06.94L3.83 14.7a.5.5 0 0 0-.12.64l1.92 3.32c.14.24.43.34.68.22l2.39-.96c.5.39 1.04.7 1.63.94l.36 2.54c.05.24.25.42.49.42h3.8c.24 0 .44-.18.49-.42l.36-2.54c.59-.24 1.13-.55 1.63-.94l2.39.96c.25.1.54 0 .68-.22l1.92-3.32a.5.5 0 0 0-.12-.64l-2.03-1.58zM12 15.5A3.5 3.5 0 1 1 12 8.5a3.5 3.5 0 0 1 0 7z"/>
+        </svg>
+      </button>
+      <div id="settings-panel" class="tb-menu-panel" hidden role="dialog" aria-label="Configurações de leitura">
+        <div class="tb-menu-title">Configurações</div>
+
+        <label class="tb-menu-row">
+          <span class="tb-menu-label">Notas de Gardner</span>
+          <select id="notes-mode" aria-label="Modo de exibição das notas">
+            <option value="all">Sempre visíveis</option>
+            <option value="click">Lupa (clique para abrir)</option>
+            <option value="off">Sempre ocultadas</option>
+          </select>
+        </label>
+
+        <label class="tb-menu-row">
+          <span class="tb-menu-label">Fonte</span>
+          <select id="font-family" aria-label="Fonte do texto">
+            <option value="default">Padrão do site</option>
+            <option value="dyslexia">Dislexia</option>
+            <option value="sans">Sans-serif</option>
+            <option value="mono">Monospace</option>
+          </select>
+        </label>
+
+        <div class="tb-menu-row">
+          <span class="tb-menu-label">Tamanho</span>
+          <div class="tb-font-size" role="group" aria-label="Tamanho da fonte">
+            <button type="button" id="font-smaller" class="tb-btn tb-btn-sq" title="Diminuir fonte" aria-label="Diminuir fonte">A-</button>
+            <span id="font-size-label" class="tb-size-label" aria-live="polite">100%</span>
+            <button type="button" id="font-larger" class="tb-btn tb-btn-sq" title="Aumentar fonte" aria-label="Aumentar fonte">A+</button>
+          </div>
+        </div>
+
+        <div class="tb-menu-row">
+          <span class="tb-menu-label">Tema</span>
+          <button type="button" id="toggle-theme" class="tb-btn" title="Alternar tema claro/escuro" aria-pressed="false">
+            <span class="theme-label">Tema escuro</span>
+          </button>
+        </div>
+
+        <div class="tb-menu-row tb-menu-row-danger">
+          <span class="tb-menu-label">Dados locais</span>
+          <button type="button" id="clear-site-data" class="tb-btn tb-btn-danger" title="Apagar destaques, notas e preferências salvos neste navegador">
+            Limpar cache do site
+          </button>
+          <span class="tb-menu-hint">Remove destaques, notas, progresso e preferências salvos neste navegador.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Popup de seleção: destacar + nota -->
+<div id="hl-popup" class="hl-popup" hidden role="dialog" aria-label="Destacar trecho">
+  <button type="button" id="hl-btn-mark" class="tb-btn">Destacar</button>
+  <button type="button" id="hl-btn-note" class="tb-btn">Destacar + nota</button>
+  <button type="button" id="hl-btn-cancel" class="tb-btn tb-btn-ghost">Cancelar</button>
+</div>
+
+<!-- Tooltip flutuante da nota ao passar o mouse -->
+<div id="hl-float-tip" class="hl-float-tip" hidden role="tooltip"></div>
+
+<!-- Confirmação: limpar cache -->
+<div id="clear-data-modal" class="hl-modal" hidden role="dialog" aria-modal="true" aria-labelledby="clear-data-title">
+  <div class="hl-modal-box">
+    <h3 id="clear-data-title">Limpar cache do site?</h3>
+    <p class="hl-quote" style="font-style:normal;opacity:0.95">
+      Isso apaga <strong>tudo</strong> que foi salvo neste navegador:
+      destaques, notas, preferências (fonte, tema, tamanho), cor do marca-texto
+      e qualquer outro dado local do site.
+    </p>
+    <p class="hl-quote" style="font-style:normal;opacity:0.85">
+      Esta ação não pode ser desfeita.
+    </p>
+    <div class="hl-modal-actions">
+      <button type="button" id="clear-data-confirm" class="tb-btn tb-btn-danger">Sim, limpar tudo</button>
+      <button type="button" id="clear-data-cancel" class="tb-btn tb-btn-ghost">Cancelar</button>
+    </div>
+  </div>
+</div>
+
+<!-- Modal de nota do highlight -->
+<div id="hl-note-modal" class="hl-modal" hidden role="dialog" aria-modal="true" aria-labelledby="hl-note-title">
+  <div class="hl-modal-box">
+    <h3 id="hl-note-title">Nota do trecho</h3>
+    <p id="hl-note-quote" class="hl-quote"></p>
+    <label class="hl-note-label">Cor deste destaque</label>
+    <div id="hl-note-swatches" class="hl-color-swatches" role="group" aria-label="Cor deste destaque">
+      <button type="button" class="hl-swatch-btn cme-hl-pastel-yellow" data-color="pastel-yellow" title="Amarelo pastel" aria-label="Amarelo pastel"></button>
+      <button type="button" class="hl-swatch-btn cme-hl-pastel-green" data-color="pastel-green" title="Verde pastel" aria-label="Verde pastel"></button>
+      <button type="button" class="hl-swatch-btn cme-hl-pastel-blue" data-color="pastel-blue" title="Azul pastel" aria-label="Azul pastel"></button>
+      <button type="button" class="hl-swatch-btn cme-hl-pastel-pink" data-color="pastel-pink" title="Rosa pastel" aria-label="Rosa pastel"></button>
+      <button type="button" class="hl-swatch-btn cme-hl-pastel-orange" data-color="pastel-orange" title="Laranja pastel" aria-label="Laranja pastel"></button>
+      <button type="button" class="hl-swatch-btn cme-hl-pastel-purple" data-color="pastel-purple" title="Roxo pastel" aria-label="Roxo pastel"></button>
+    </div>
+    <select id="hl-note-color" hidden aria-hidden="true" tabindex="-1">
+      <option value="pastel-yellow">Amarelo pastel</option>
+      <option value="pastel-green">Verde pastel</option>
+      <option value="pastel-blue">Azul pastel</option>
+      <option value="pastel-pink">Rosa pastel</option>
+      <option value="pastel-orange">Laranja pastel</option>
+      <option value="pastel-purple">Roxo pastel</option>
+    </select>
+    <label class="hl-note-label" for="hl-note-input">Sua nota (salva só neste navegador)</label>
+    <textarea id="hl-note-input" rows="4" maxlength="2000" placeholder="Escreva uma anotação opcional..."></textarea>
+    <div class="hl-modal-actions">
+      <button type="button" id="hl-note-save" class="tb-btn">Salvar</button>
+      <button type="button" id="hl-note-remove" class="tb-btn tb-btn-danger">Remover destaque</button>
+      <button type="button" id="hl-note-close" class="tb-btn tb-btn-ghost">Fechar</button>
+    </div>
+  </div>
+</div>
+
+<h1><br>Sobre Diferentes Graus de Pequenez</h1>
+<p class="a rotatedFloralHeartBullet">
+
+<p>Veremos que, em nossos processos de cálculo, temos
+de lidar com quantidades pequenas de vários graus
+de pequenez.
+
+<p>Teremos também de aprender em quais circunstâncias
+podemos considerar quantidades pequenas tão miúdas
+que as omitimos da consideração. Tudo
+depende da miudeza relativa.
+
+<p>Antes de fixar quaisquer regras, pensemos em alguns
+casos familiares. Há $60$ minutos na hora,
+$24$ horas no dia, $7$ dias na semana. Há
+portanto $1440$ minutos no dia e $10080$ minutos
+na semana.
+
+<p>Obviamente $1$ minuto é uma quantidade muito pequena de
+tempo comparada com uma semana inteira. De fato, nossos
+antepassados o consideravam pequeno comparado com uma
+
+hora, e o chamaram de “um minuto” (do latim <em>minutus</em>),
+significando uma fração miúda - a saber, um sessenta avos - de
+uma hora. Quando precisaram de subdivisões de tempo
+ainda menores, dividiram cada minuto em $60$ partes
+ainda menores, que, nos dias da rainha Elizabeth,
+chamaram de “minutos segundos” (<em>i.e.:</em> quantidades
+pequenas da segunda ordem de miudeza). Hoje
+chamamos essas quantidades pequenas
+
+da segunda ordem de pequenez de “segundos.” Mas poucas
+pessoas sabem <em>por que</em> se chamam assim.
+
+<p>Ora, se um minuto é tão pequeno comparado com um
+dia inteiro, quanto menor por comparação é um
+segundo!
+
+<p>Outra vez: pense num centavo comparado com cem
+reais: mal vale mais do que $\frac{1}{1000}$ parte.
+Um centavo a mais ou a menos tem bem pouca importância
+comparado com cem reais: pode certamente ser considerado
+uma quantidade <em>pequena</em>. Mas compare um centavo
+com R\$\,100.000: relativamente a essa soma maior, o
+centavo não tem mais importância do que $\frac{1}{1000}$ de um
+centavo teria perante cem reais. Até um real
+em ouro (ou uma nota de cem) é relativamente uma quantidade
+desprezível na fortuna de um milionário.
+
+<p>Agora, se fixarmos qualquer fração numérica como
+constituindo a proporção que, para qualquer fim,
+chamamos relativamente pequena, podemos facilmente enunciar
+outras frações de um grau mais alto de pequenez. Assim, se,
+para o fim do tempo, $\frac{1}{60}$ for chamado uma fração <em>pequena</em>,
+então $\frac{1}{60}$ de $\frac{1}{60}$ (sendo uma fração <em>pequena</em> de uma fração
+<em>pequena</em>) pode ser considerado uma <em>quantidade pequena da
+segunda ordem</em><a name="smallness"/> de pequenez.*
+<p><note>*Os matemáticos falam da segunda ordem de “magnitude”
+  (<em>i.e.:</em> grandeza) quando na verdade querem dizer segunda ordem de <em>pequenez</em>.
+  Isso confunde bastante os principiantes.</note>
+
+<p>Ou, se para qualquer fim tomássemos $1$ por cento (<em>i.e.:</em> $\frac{1}{100}$)
+como uma fração <em>pequena</em>, então $1$ por cento de
+$1$ por cento (<em>i.e.:</em> $\frac{1}{10.000}$) seria uma fração pequena
+da segunda ordem de pequenez; e $\frac{1}{1.000.000}$ seria
+
+uma fração pequena da terceira ordem de pequenez,
+sendo $1$ por cento de $1$ por cento de $1$ por cento.
+<p>Por fim, suponha que para algum fim muito preciso
+consideremos $\frac{1}{1.000.000}$ como “pequeno.” Assim, se um
+cronômetro de primeira linha não deve adiantar nem atrasar
+mais do que meio minuto num ano, precisa manter o tempo com
+uma precisão de $1$ parte em $1.051.200$. Ora, se, para tal
+fim, considerarmos $\frac{1}{1.000.000}$ (ou um milionésimo) como uma
+quantidade pequena, então $\frac{1}{1.000.000}$ de $\frac{1}{1.000.000}$, isto é
+$\frac{1}{1.000.000.000.000}$ (ou um trilionésimo) será uma quantidade
+pequena da segunda ordem de pequenez, e pode
+ser completamente desconsiderada, por comparação.
+
+
+<p>Vemos então que quanto menor for a própria quantidade
+pequena, mais desprezível se torna a correspondente
+quantidade pequena da segunda ordem. Donde
+sabemos que <em>em todos os casos temos justificação para
+desprezar as quantidades pequenas das ordens segunda - ou
+terceira (ou superior)</em>, se apenas tomarmos a quantidade
+pequena da primeira ordem suficientemente pequena em si.
+
+<p>Mas deve-se lembrar que quantidades pequenas,
+se ocorrerem em nossas expressões como fatores multiplicados
+por algum outro fator, podem se tornar importantes se o
+outro fator for ele mesmo grande. Até um centavo se
+torna importante se for multiplicado por algumas centenas.
+
+<p>Agora, no cálculo escrevemos $dx$ para um pedacinho
+de $x$. Essas coisas como $dx$, e $du$, e $dy$, são
+chamadas “diferenciais,” o diferencial de $x$, ou de $u$,
+ou de $y$, conforme o caso. [Você as <em>lê</em> como
+<em>dê-équis</em>, ou <em>dê-u</em>, ou <em>dê-ípsilon</em>.] Se $dx$ for um pedacinho
+de $x$, e relativamente pequeno por si, não se segue
+que quantidades como $x · dx$, ou $x^2\, dx$, ou $a^x\, dx$ sejam
+desprezíveis. Mas $dx × dx$ seria desprezível, por ser uma
+quantidade pequena da segunda ordem.
+
+<p>Um exemplo bem simples servirá de ilustração.
+
+<p>Pensemos em $x$ como uma quantidade que pode crescer por
+uma quantia pequena de modo a se tornar $x + dx$, onde $dx$ é
+o pequeno incremento acrescentado pelo crescimento. O quadrado
+disso é $x^2 + 2x · dx + (dx)^2$. O segundo termo não
+é desprezível porque é uma quantidade de primeira ordem;
+enquanto o terceiro termo é da segunda ordem de pequenez,
+sendo um pedacinho de
+um pedacinho de $x^2$. Assim, se tomássemos
+$dx$ para significar numericamente, digamos, $\frac{1}{60}$ de $x$, então o segundo
+termo seria $\frac{2}{60}$ de $x^2$, ao passo que o terceiro termo seria
+$\frac{1}{3600}$ de $x^2$. Este último termo é claramente menos importante
+que o segundo. Mas se formos além e tomarmos
+$dx$ para significar apenas $\frac{1}{1000}$ de $x$, então o segundo termo
+será $\frac{2}{1000}$ de $x^2$, enquanto o terceiro termo será
+apenas $\frac{1}{1.000.000}$ de $x^2$.
+
+<p><a name="figure1">
+<img src="33283-t/images/018a.pdf.png-1.png">
+
+<p><a name="figure2">
+<img src="33283-t/images/019a.pdf.png-1.png">
+
+
+<p>Geometricamente isso pode ser representado assim:
+Desenhe um quadrado (<a href="#figure1">Figura 1</a>) cujo lado tomaremos
+para representar $x$. Agora suponha que o quadrado
+cresça ao ter um pedacinho $dx$ acrescentado ao seu tamanho
+em cada direção. O quadrado ampliado é feito do quadrado
+original $x^2$, dos dois retângulos no topo e à
+direita, cada um com área $x · dx$ (ou juntos
+$2x · dx$), e do quadradinho no canto superior direito
+que é $(dx)^2$. Na <a href="#figure2">Figura 2</a> tomamos $dx$ como
+uma fração bem grande de $x$ - cerca de $\frac{1}{5}$. Mas suponha que
+o tivéssemos tomado apenas $\frac{1}{100}$ - aproximadamente a espessura de uma
+linha de tinta traçada com uma caneta fina. Então o
+quadradinho do canto terá uma área de apenas $\frac{1}{10.000}$ de $x^2$,
+e será praticamente invisível. Claramente $(dx)^2$ é desprezível
+se apenas considerarmos o incremento $dx$ como sendo ele mesmo
+suficientemente pequeno.
+<p><a name="figure3">
+<img src="33283-t/images/019b.pdf.png-1.png">
+
+<p>Consideremos uma comparação.
+
+<p>Suponha que um milionário diga ao seu secretário:
+na próxima semana darei a você uma pequena fração de qualquer
+dinheiro que me entrar. Suponha que o
+secretário diga ao seu menino: darei a você uma
+pequena fração do que eu receber. Suponha que a fração
+em cada caso seja a parte de $\frac{1}{100}$. Ora, se o Sr. Milionário
+recebeu durante a próxima semana R\$\,1000, o secretário
+
+receberia R\$\,10 e o menino R\$\,0,10. Dez
+reais seriam uma quantidade pequena comparada com
+R\$\,1000; mas dez centavos é uma quantidade pequenininha
+mesmo, de uma ordem bem secundária. Mas qual seria
+a desproporção se a fração, em vez de ser $\frac{1}{100}$,
+tivesse sido fixada em $\frac{1}{1000}$? Então, enquanto
+o Sr. Milionário obtivesse seus R\$\,1000, o Sr. Secretário
+obteria apenas R\$\,1, e o menino menos de um centavo!
+
+<p>O espirituoso Decão Swift*
+uma vez escreveu:
+<blockquote><pre>
+Assim, notam os naturalistas, uma pulga
+Tem pulgas menores que nela se alimentam.
+E estas têm pulgas menores que as mordem,
+E assim prosseguem ad infinitum." </pre>
+</blockquote>
+  <p><note><em>*On Poetry: a Rhapsody</em> (p. 20), impresso em 1733 - usualmente
+  citado de forma errada.</note>
+
+<p>Um boi poderia se preocupar com uma pulga de tamanho
+comum - uma criatura pequena da primeira ordem de pequenez.
+Mas provavelmente não se incomodaria com uma
+pulga da pulga; sendo da segunda ordem de pequenez, ela
+seria desprezível. Até uma dúzia de dúzias de pulgas de pulgas
+não importaria muito ao boi.
+<br>
+<hr>
+<nav class="chapter-nav" aria-label="Navegação do capítulo">
+  <a class="nav-prev" href="1.html">← Anterior</a>
+  <a class="nav-home" href="index.html">Página principal</a>
+  <a class="nav-next" href="3.html">Próximo →</a>
+</nav>
+<footer class="site-footer" role="contentinfo">
+  <p class="a rotatedFloralHeartBullet"></p>
+
+  <div class="manifesto">
+    <p class="manifesto-lead">
+      Este é um <strong>projeto público</strong>, sem fins lucrativos.
+      Não é permitido comercializá-lo, vendê-lo nem usá-lo como produto pago.
+    </p>
+    <p class="manifesto-quote">
+      A educação é um direito de todos.
+      O conhecimento deve ser livre sempre que não cause o mal:
+      deve circular, ensinar e libertar, nunca aprisionar quem aprende.
+    </p>
+    <p class="manifesto-sign">
+      - Thales Rodrigues
+    </p>
+  </div>
+
+  <nav class="author-links" aria-label="Redes de Thales Rodrigues">
+    <a href="https://www.linkedin.com/in/thales-oliveira-rodrigues/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    <span class="dot" aria-hidden="true">·</span>
+    <a href="https://github.com/Rodriguestmo" target="_blank" rel="noopener noreferrer">GitHub</a>
+  </nav>
+
+  <p class="footer-meta">
+    <small>
+      Tradução e adaptação PT-BR por Thales Rodrigues.
+      Texto de Silvanus P. Thompson em domínio público (Project Gutenberg).
+      Notas de contexto inspiradas na edição Gardner (1998).
+      Projeto público e gratuito.
+    </small>
+  </p>
+</footer>
+
+<script src="j/jquery.js"></script>
+<script src="j/modernizr.js"></script>
+<script src="j/dih5.js"></script>
+<script src="j/chapters-data.js"></script>
+<script src="j/glossary-data.js"></script>
+<script src="j/reader-features.js"></script>
+<script src="j/notes-toggle.js"></script>
+<!-- Analytics desativado na edição PT local -->
+</body>
+</html>

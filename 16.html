@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+
+<title>Cálculo Tornado Fácil</title>
+<meta name="description" content="Capítulo XVI: diferenciação parcial.">
+<meta name="author" content="Thales Rodrigues; Silvanus P. Thompson">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="googlebot" content="index, follow">
+<meta name="language" content="Portuguese">
+<meta name="keywords" content="cálculo, calculus made easy, Silvanus Thompson, cálculo diferencial, cálculo integral, matemática, educação livre, português, Martin Gardner, Cálculo Tornado Fácil, Thales Rodrigues">
+<link rel="canonical" href="https://rodriguestmo.github.io/calculo-tornado-facil/16.html">
+<link rel="alternate" hreflang="pt-BR" href="https://rodriguestmo.github.io/calculo-tornado-facil/16.html">
+<link rel="alternate" hreflang="x-default" href="https://rodriguestmo.github.io/calculo-tornado-facil/">
+
+
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
+<link rel="icon" href="favicon-16.png" type="image/png" sizes="16x16">
+<link rel="shortcut icon" href="favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png" sizes="180x180">
+<meta name="theme-color" content="#c45c26">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Cálculo Tornado Fácil">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Cálculo Tornado Fácil">
+<meta property="og:description" content="Capítulo XVI: diferenciação parcial.">
+<meta property="og:url" content="https://rodriguestmo.github.io/calculo-tornado-facil/16.html">
+<meta property="og:image" content="https://rodriguestmo.github.io/calculo-tornado-facil/cover.jpg">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Cálculo Tornado Fácil">
+<meta name="twitter:description" content="Capítulo XVI: diferenciação parcial.">
+<meta name="twitter:image" content="https://rodriguestmo.github.io/calculo-tornado-facil/cover.jpg">
+
+<link rel="describedby" href="https://rodriguestmo.github.io/calculo-tornado-facil/llms.txt">
+<link rel="stylesheet" href="screen.css">
+<style>
+body{counter-reset:h1 16}
+</style>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$'], ['\\[','\\]']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ["script","noscript","style","textarea","pre","code"]
+    },
+    TeX: {
+      extensions: ["AMSmath.js","AMSsymbols.js"],
+      equationNumbers: { autoNumber: "none" }
+    },
+    "HTML-CSS": {
+      availableFonts: ["TeX"],
+      linebreaks: { automatic: false },
+      styles: {
+        ".MathJax_Display": { "margin": "1.5em 0" }
+      }
+    },
+    CommonHTML: {
+      styles: { ".MJXc-display": { "margin": "1.5em 0" } }
+    },
+    showProcessingMessages: false,
+    messageStyle: "none"
+  });
+</script>
+<script type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Chapter",
+  "name": "Diferenciação Parcial",
+  "position": 16,
+  "isPartOf": {
+    "@type": "Book",
+    "name": "Cálculo Tornado Fácil",
+    "url": "https://rodriguestmo.github.io/calculo-tornado-facil/"
+  },
+  "author": {"@type": "Person", "name": "Silvanus P. Thompson"},
+  "translator": {"@type": "Person", "name": "Thales Rodrigues"},
+  "url": "https://rodriguestmo.github.io/calculo-tornado-facil/16.html",
+  "inLanguage": "pt-BR",
+  "isAccessibleForFree": true
+}
+</script>
+</head>
+<body>
+<!-- Progresso de leitura do capítulo (scroll) -->
+<div id="read-progress" class="read-progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="Progresso de leitura do capítulo">
+  <div id="read-progress-bar" class="read-progress-bar"></div>
+</div>
+
+<!-- Barra fixa: logo + menus (marca-texto à esquerda, engrenagem à direita) -->
+<div id="site-toolbar" class="site-toolbar" role="region" aria-label="Controles do site">
+  <a class="tb-home" href="index.html">Cálculo Tornado Fácil</a>
+
+  <div class="tb-controls">
+    <!-- Marca-texto (esquerda) -->
+    <div class="tb-menu" data-menu="highlight">
+      <button type="button" class="tb-btn tb-menu-btn" id="hl-list-toggle" aria-expanded="false" aria-controls="hl-list-panel" title="Marca-texto e lista de destaques">
+        Marca-texto
+        <span id="hl-count-badge" class="hl-count-badge" hidden>0</span>
+      </button>
+      <div id="hl-list-panel" class="tb-menu-panel hl-list-panel" hidden role="dialog" aria-label="Marca-texto">
+        <div class="tb-menu-title">Marca-texto</div>
+
+        <div class="hl-color-row">
+          <span class="tb-menu-label">Cor ao destacar</span>
+          <div id="hl-color-swatches" class="hl-color-swatches" role="group" aria-label="Cor do marca-texto">
+            <button type="button" class="hl-swatch-btn cme-hl-pastel-yellow" data-color="pastel-yellow" title="Amarelo pastel" aria-label="Amarelo pastel" aria-pressed="true"></button>
+            <button type="button" class="hl-swatch-btn cme-hl-pastel-green" data-color="pastel-green" title="Verde pastel" aria-label="Verde pastel" aria-pressed="false"></button>
+            <button type="button" class="hl-swatch-btn cme-hl-pastel-blue" data-color="pastel-blue" title="Azul pastel" aria-label="Azul pastel" aria-pressed="false"></button>
+            <button type="button" class="hl-swatch-btn cme-hl-pastel-pink" data-color="pastel-pink" title="Rosa pastel" aria-label="Rosa pastel" aria-pressed="false"></button>
+            <button type="button" class="hl-swatch-btn cme-hl-pastel-orange" data-color="pastel-orange" title="Laranja pastel" aria-label="Laranja pastel" aria-pressed="false"></button>
+            <button type="button" class="hl-swatch-btn cme-hl-pastel-purple" data-color="pastel-purple" title="Roxo pastel" aria-label="Roxo pastel" aria-pressed="false"></button>
+          </div>
+          <select id="hl-color" hidden aria-hidden="true" tabindex="-1">
+            <option value="pastel-yellow">Amarelo pastel</option>
+            <option value="pastel-green">Verde pastel</option>
+            <option value="pastel-blue">Azul pastel</option>
+            <option value="pastel-pink">Rosa pastel</option>
+            <option value="pastel-orange">Laranja pastel</option>
+            <option value="pastel-purple">Roxo pastel</option>
+          </select>
+        </div>
+
+        <div class="hl-filter-row">
+          <button type="button" id="hl-filter-toggle" class="hl-filter-toggle" aria-expanded="false" aria-controls="hl-filter-body">
+            <span class="tb-menu-label">Filtrar lista</span>
+            <span id="hl-filter-toggle-label" class="hl-filter-toggle-label">mostrar</span>
+          </button>
+          <div id="hl-filter-body" class="hl-filter-body" hidden>
+            <div id="hl-filter-swatches" class="hl-color-swatches" role="group" aria-label="Filtrar destaques por cor">
+              <button type="button" class="hl-filter-btn is-active" data-filter="all" title="Todas as cores" aria-label="Todas as cores" aria-pressed="true">Tudo</button>
+              <button type="button" class="hl-swatch-btn hl-filter-btn cme-hl-pastel-yellow" data-filter="pastel-yellow" title="Filtrar amarelo" aria-label="Filtrar amarelo" aria-pressed="false"></button>
+              <button type="button" class="hl-swatch-btn hl-filter-btn cme-hl-pastel-green" data-filter="pastel-green" title="Filtrar verde" aria-label="Filtrar verde" aria-pressed="false"></button>
+              <button type="button" class="hl-swatch-btn hl-filter-btn cme-hl-pastel-blue" data-filter="pastel-blue" title="Filtrar azul" aria-label="Filtrar azul" aria-pressed="false"></button>
+              <button type="button" class="hl-swatch-btn hl-filter-btn cme-hl-pastel-pink" data-filter="pastel-pink" title="Filtrar rosa" aria-label="Filtrar rosa" aria-pressed="false"></button>
+              <button type="button" class="hl-swatch-btn hl-filter-btn cme-hl-pastel-orange" data-filter="pastel-orange" title="Filtrar laranja" aria-label="Filtrar laranja" aria-pressed="false"></button>
+              <button type="button" class="hl-swatch-btn hl-filter-btn cme-hl-pastel-purple" data-filter="pastel-purple" title="Filtrar roxo" aria-label="Filtrar roxo" aria-pressed="false"></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="hl-list-head">
+          <strong>Seus destaques</strong>
+          <span class="hl-list-hint">salvos neste navegador</span>
+        </div>
+        <div id="hl-list-body" class="hl-list-body">
+          <p class="hl-list-empty">Nenhum destaque ainda. Selecione um trecho no texto para destacar.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Configurações (direita) - só ícone de engrenagem -->
+    <div class="tb-menu" data-menu="settings">
+      <button type="button" class="tb-btn tb-menu-btn tb-btn-icon" id="settings-toggle" aria-expanded="false" aria-controls="settings-panel" title="Configurações" aria-label="Configurações">
+        <svg class="tb-gear-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false">
+          <path fill="currentColor" d="M19.14 12.94c.04-.31.06-.63.06-.94s-.02-.63-.06-.94l2.03-1.58a.5.5 0 0 0 .12-.64l-1.92-3.32a.5.5 0 0 0-.6-.22l-2.39.96a7.03 7.03 0 0 0-1.63-.94l-.36-2.54A.5.5 0 0 0 14.9 2h-3.8a.5.5 0 0 0-.49.42l-.36 2.54c-.59.24-1.13.55-1.63.94l-2.39-.96a.5.5 0 0 0-.6.22L3.71 8.08a.5.5 0 0 0 .12.64l2.03 1.58c-.04.31-.06.63-.06.94s.02.63.06.94L3.83 14.7a.5.5 0 0 0-.12.64l1.92 3.32c.14.24.43.34.68.22l2.39-.96c.5.39 1.04.7 1.63.94l.36 2.54c.05.24.25.42.49.42h3.8c.24 0 .44-.18.49-.42l.36-2.54c.59-.24 1.13-.55 1.63-.94l2.39.96c.25.1.54 0 .68-.22l1.92-3.32a.5.5 0 0 0-.12-.64l-2.03-1.58zM12 15.5A3.5 3.5 0 1 1 12 8.5a3.5 3.5 0 0 1 0 7z"/>
+        </svg>
+      </button>
+      <div id="settings-panel" class="tb-menu-panel" hidden role="dialog" aria-label="Configurações de leitura">
+        <div class="tb-menu-title">Configurações</div>
+
+        <label class="tb-menu-row">
+          <span class="tb-menu-label">Notas de Gardner</span>
+          <select id="notes-mode" aria-label="Modo de exibição das notas">
+            <option value="all">Sempre visíveis</option>
+            <option value="click">Lupa (clique para abrir)</option>
+            <option value="off">Sempre ocultadas</option>
+          </select>
+        </label>
+
+        <label class="tb-menu-row">
+          <span class="tb-menu-label">Fonte</span>
+          <select id="font-family" aria-label="Fonte do texto">
+            <option value="default">Padrão do site</option>
+            <option value="dyslexia">Dislexia</option>
+            <option value="sans">Sans-serif</option>
+            <option value="mono">Monospace</option>
+          </select>
+        </label>
+
+        <div class="tb-menu-row">
+          <span class="tb-menu-label">Tamanho</span>
+          <div class="tb-font-size" role="group" aria-label="Tamanho da fonte">
+            <button type="button" id="font-smaller" class="tb-btn tb-btn-sq" title="Diminuir fonte" aria-label="Diminuir fonte">A-</button>
+            <span id="font-size-label" class="tb-size-label" aria-live="polite">100%</span>
+            <button type="button" id="font-larger" class="tb-btn tb-btn-sq" title="Aumentar fonte" aria-label="Aumentar fonte">A+</button>
+          </div>
+        </div>
+
+        <div class="tb-menu-row">
+          <span class="tb-menu-label">Tema</span>
+          <button type="button" id="toggle-theme" class="tb-btn" title="Alternar tema claro/escuro" aria-pressed="false">
+            <span class="theme-label">Tema escuro</span>
+          </button>
+        </div>
+
+        <div class="tb-menu-row tb-menu-row-danger">
+          <span class="tb-menu-label">Dados locais</span>
+          <button type="button" id="clear-site-data" class="tb-btn tb-btn-danger" title="Apagar destaques, notas e preferências salvos neste navegador">
+            Limpar cache do site
+          </button>
+          <span class="tb-menu-hint">Remove destaques, notas, progresso e preferências salvos neste navegador.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Popup de seleção: destacar + nota -->
+<div id="hl-popup" class="hl-popup" hidden role="dialog" aria-label="Destacar trecho">
+  <button type="button" id="hl-btn-mark" class="tb-btn">Destacar</button>
+  <button type="button" id="hl-btn-note" class="tb-btn">Destacar + nota</button>
+  <button type="button" id="hl-btn-cancel" class="tb-btn tb-btn-ghost">Cancelar</button>
+</div>
+
+<!-- Tooltip flutuante da nota ao passar o mouse -->
+<div id="hl-float-tip" class="hl-float-tip" hidden role="tooltip"></div>
+
+<!-- Confirmação: limpar cache -->
+<div id="clear-data-modal" class="hl-modal" hidden role="dialog" aria-modal="true" aria-labelledby="clear-data-title">
+  <div class="hl-modal-box">
+    <h3 id="clear-data-title">Limpar cache do site?</h3>
+    <p class="hl-quote" style="font-style:normal;opacity:0.95">
+      Isso apaga <strong>tudo</strong> que foi salvo neste navegador:
+      destaques, notas, preferências (fonte, tema, tamanho), cor do marca-texto
+      e qualquer outro dado local do site.
+    </p>
+    <p class="hl-quote" style="font-style:normal;opacity:0.85">
+      Esta ação não pode ser desfeita.
+    </p>
+    <div class="hl-modal-actions">
+      <button type="button" id="clear-data-confirm" class="tb-btn tb-btn-danger">Sim, limpar tudo</button>
+      <button type="button" id="clear-data-cancel" class="tb-btn tb-btn-ghost">Cancelar</button>
+    </div>
+  </div>
+</div>
+
+<!-- Modal de nota do highlight -->
+<div id="hl-note-modal" class="hl-modal" hidden role="dialog" aria-modal="true" aria-labelledby="hl-note-title">
+  <div class="hl-modal-box">
+    <h3 id="hl-note-title">Nota do trecho</h3>
+    <p id="hl-note-quote" class="hl-quote"></p>
+    <label class="hl-note-label">Cor deste destaque</label>
+    <div id="hl-note-swatches" class="hl-color-swatches" role="group" aria-label="Cor deste destaque">
+      <button type="button" class="hl-swatch-btn cme-hl-pastel-yellow" data-color="pastel-yellow" title="Amarelo pastel" aria-label="Amarelo pastel"></button>
+      <button type="button" class="hl-swatch-btn cme-hl-pastel-green" data-color="pastel-green" title="Verde pastel" aria-label="Verde pastel"></button>
+      <button type="button" class="hl-swatch-btn cme-hl-pastel-blue" data-color="pastel-blue" title="Azul pastel" aria-label="Azul pastel"></button>
+      <button type="button" class="hl-swatch-btn cme-hl-pastel-pink" data-color="pastel-pink" title="Rosa pastel" aria-label="Rosa pastel"></button>
+      <button type="button" class="hl-swatch-btn cme-hl-pastel-orange" data-color="pastel-orange" title="Laranja pastel" aria-label="Laranja pastel"></button>
+      <button type="button" class="hl-swatch-btn cme-hl-pastel-purple" data-color="pastel-purple" title="Roxo pastel" aria-label="Roxo pastel"></button>
+    </div>
+    <select id="hl-note-color" hidden aria-hidden="true" tabindex="-1">
+      <option value="pastel-yellow">Amarelo pastel</option>
+      <option value="pastel-green">Verde pastel</option>
+      <option value="pastel-blue">Azul pastel</option>
+      <option value="pastel-pink">Rosa pastel</option>
+      <option value="pastel-orange">Laranja pastel</option>
+      <option value="pastel-purple">Roxo pastel</option>
+    </select>
+    <label class="hl-note-label" for="hl-note-input">Sua nota (salva só neste navegador)</label>
+    <textarea id="hl-note-input" rows="4" maxlength="2000" placeholder="Escreva uma anotação opcional..."></textarea>
+    <div class="hl-modal-actions">
+      <button type="button" id="hl-note-save" class="tb-btn">Salvar</button>
+      <button type="button" id="hl-note-remove" class="tb-btn tb-btn-danger">Remover destaque</button>
+      <button type="button" id="hl-note-close" class="tb-btn tb-btn-ghost">Fechar</button>
+    </div>
+  </div>
+</div>
+
+<h1><br>Diferenciação Parcial</h1>
+<p class="a rotatedFloralHeartBullet">
+
+<p>Às vezes nos deparamos com quantidades que são funções
+de mais de uma variável independente. Assim,
+podemos achar um caso em que $y$ depende de duas outras
+quantidades variáveis, uma das quais chamaremos $u$ e
+a outra $v$. Em símbolos<a name="partialdiff"/>
+
+\[
+dy = \frac{\partial y}{\partial u}\, du + \dfrac{\partial y}{\partial v}\, dv;
+\]
+
+\[
+y = f(u, v).
+\]
+
+Tome o caso concreto mais simples. Seja
+
+\[    y = u×v.
+\]
+
+O que devemos fazer? Se tratássemos $v$ como uma
+constante, e diferenciássemos em relação a $u$,
+obteríamos
+
+\[
+dy_v = v\, du;
+\]
+ou se tratarmos $u$ como uma constante, e diferenciarmos em
+relação a $v$, teríamos:
+\[
+dy_u = u\, dv.
+\]
+
+<p>As letrinhas aqui postas como subscritos são para mostrar
+qual quantidade foi tomada como constante na
+operação.
+
+<p>Outro modo de indicar que a diferenciação
+foi realizada apenas <em>parcialmente</em>, isto é, foi
+realizada apenas em relação a <em>uma</em> das variáveis independentes,
+
+é escrever os coeficientes diferenciais com
+deltas gregas, como $\partial$, em vez de pequeninos $d$. Deste modo
+\[
+\begin{aligned}
+\frac{\partial y}{\partial u} &= v, \\
+\frac{\partial y}{\partial v} &= u.
+\end{aligned}
+\]
+
+<p>Se pusermos estes valores para $v$ e $u$ respectivamente,
+teremos
+</p>
+
+\[
+dy_v = \frac{\partial y}{\partial u}\, du, \\
+dy_u = \frac{\partial y}{\partial v}\, dv,
+\]
+
+<p>que são <em>diferenciais parciais</em>.
+<p>Mas, se você pensar bem, observará que a
+variação total de $y$ depende de <em>ambas</em> estas coisas ao
+mesmo tempo. Isto é, se ambas estiverem variando,
+o verdadeiro $dy$ deve ser escrito
+\[
+dy = \frac{\partial y}{\partial u}\, du + \dfrac{\partial y}{\partial v}\, dv;
+\]
+e isto é chamado um <em>diferencial total</em>. Em alguns livros
+é escrito $dy = \left(\dfrac{dy}{du}\right)\, du + \left(\dfrac{dy}{dv}\right)\, dv$.
+
+<p>
+<a name="example1"/><em> Exemplo (1)</em> Encontre os coeficientes diferenciais parciais
+da expressão $w = 2ax^2 + 3bxy + 4cy^3$.
+As respostas são:
+\[
+\left.
+\begin{aligned}
+\frac{\partial w}{\partial x} &= 4ax + 3by. \\
+\frac{\partial w}{\partial y} &= 3bx + 12cy^2.
+\end{aligned} \right\}
+\]
+
+<p>O primeiro é obtido supondo $y$ constante, o
+segundo é obtido supondo $x$ constante; então</p>
+
+\[
+dw = (4ax+3by)\, dx + (3bx+12cy^2)\, dy.
+\]
+
+<p>
+<a name="example2"/><em> Exemplo (2)</em> Seja $z = x^y$. Então, tratando primeiro $y$
+e depois $x$ como constantes, obtemos do modo usual
+\[
+\left.
+\begin{aligned}
+\dfrac{\partial z}{\partial x} &= yx^{y-1}, \\
+\dfrac{\partial z}{\partial y} &= x^y × \log_\epsilon x,
+\end{aligned}\right\}
+\]
+de modo que $dz = yx^{y-1}\, dx + x^y \log_\epsilon x \, dy$.
+
+<p>
+<a name="example3"/><em> Exemplo (3)</em> Um cone de altura $h$ e raio
+da base $r$ tem volume $V=\frac{1}{3} \pi r^2 h$. Se sua altura permanecer
+constante, enquanto $r$ muda, a razão de mudança do
+volume, em relação ao raio, é diferente da razão
+de mudança do volume em relação à altura que
+ocorreria se a altura fosse variada e o raio
+mantido constante, pois
+\[
+\left.
+\begin{aligned}
+\frac{\partial V}{\partial r} &= \dfrac{2\pi}{3} rh, \\
+\frac{\partial V}{\partial h} &= \dfrac{\pi}{3} r^2.
+\end{aligned}\right\}
+\]
+
+<p>A variação quando tanto o raio quanto a altura
+mudam é dada por $dV = \dfrac{2\pi}{3} rh\, dr + \dfrac{\pi}{3} r^2\, dh$.
+
+<p>
+<a name="example4"/><em> Exemplo (4)</em> <a name="Example4"/> No exemplo seguinte $F$ e $f$
+denotam duas funções arbitrárias de qualquer forma que seja.
+Por exemplo, podem ser funções seno, ou
+exponenciais, ou meras funções algébricas das duas
+
+variáveis independentes, $t$ e $x$. Entendido isto,
+tomemos a expressão
+\[
+\begin{aligned}
+                    y &= F(x+at) + f(x-at), \\
+ \text{ou,}\ \\
+y &= F(w) + f(v); \\
+ \text{onde}\ \\
+w &= x+at,\quad \text{e}\quad v = x-at. \\
+   \text{Então}\ \\
+\frac{\partial y}{\partial x}
+                      &= \frac{\partial F(w)}{\partial w} · \frac{\partial w}{\partial x} \\
+                       + \frac{\partial f(v)}{\partial v} · \frac{\partial v}{\partial x} \\
+                      &= F'(w) · 1 + f'(v) · 1
+\end{aligned}
+\]
+(onde a figura $1$ é simplesmente o coeficiente de $x$ em
+$w$ e $v$)
+\[
+\begin{aligned}
+  \      \frac{\partial^2 y}{\partial x^2}
+                      &= F''(w) + f''(v). && \\
+   \text{Também}\; \  \frac{\partial y}{\partial t}
+                      &= \frac{\partial F(w)}{\partial w} · \frac{\partial w}{\partial t} \\
+                      + \frac{\partial f(v)}{\partial v} · \frac{\partial v}{\partial t} \\
+                      &= F'(w) · a - f'(v) a; \\
+     \   \frac{\partial^2 y}{\partial t^2}
+                      &= F''(w)a^2 + f''(v)a^2; \\
+ \text{donde}\;  \  \frac{\partial^2 y}{\partial t^2}
+                      &= a^2\, \frac{\partial^2 y}{\partial x^2}.
+\end{aligned}
+\]
+
+<p>Esta equação diferencial é de imensa importância
+na física matemática.
+
+<p><h2>Máximos e Mínimos de Funções de duas
+Variáveis Independentes.</h2>
+
+<p>
+<a name="example5"/><em> Exemplo (5)</em> Retomemos o Exercício IX. nº 4.
+
+<p>Sejam $x$ e $y$ o comprimento de duas das porções do
+fio. A terceira é $30-(x+y)$, e a área do
+
+triângulo é $A = \sqrt{s(s-x)(s-y)(s-30+x+y)}$, onde
+$s$ é o semiperímetro, $15$, de modo que $A = \sqrt{15P}$, onde</p>
+
+\[
+\begin{aligned}
+P &= (15-x)(15-y)(x+y-15) \\
+  &= xy^2 + x^2y - 15x^2 - 15y^2 - 45xy + 450x + 450y - 3375.
+\end{aligned}
+\]
+
+<p>Claramente $A$ é máximo quando $P$ é máximo.</p>
+
+\[
+dP = \dfrac{\partial P}{\partial x}\, dx + \dfrac{\partial P}{\partial y}\, dy.
+\]
+Para um máximo (claramente não será um mínimo neste
+caso), deve-se ter simultaneamente
+
+\[
+\dfrac{\partial P}{\partial x} = 0 \quad\text{e}\quad
+\dfrac{\partial P}{\partial y} = 0;
+\]
+isto é,
+
+\begin{aligned}
+2xy - 30x + y^2 - 45y + 450 &= 0, \\
+2xy - 30y + x^2 - 45x + 450 &= 0.
+\end{aligned}
+
+<p>Uma solução imediata é $x=y$.
+
+<p>Se agora introduzirmos esta condição no valor
+de $P$, achamos</p>
+
+\[
+P = (15-x)^2 (2x-15) = 2x^3 - 75x^2 + 900x - 3375.
+\]
+Para máximo ou mínimo, $\dfrac{dP}{dx} = 6x^2 - 150x + 900 = 0$,
+o que dá $x=15$ ou $x=10$.
+
+<p>Claramente $x=15$ dá área mínima; $x=10$ dá
+o máximo, pois $\dfrac{d^2 P}{dx^2} = 12x - 150$, que é $+30$ para
+$x=15$ e $-30$ para $x=10$.
+
+<p>
+<a name="example6"/><em> Exemplo (6)</em> Encontre as dimensões de um vagão de
+carvão ferroviário ordinário com extremidades retangulares, de modo que,
+para um volume dado $V$ a área das laterais e do piso
+juntos seja a menor possível.
+
+
+<p>O vagão é uma caixa retangular aberta no topo.
+Seja $x$ o comprimento e $y$ a largura; então a
+profundidade é $\dfrac{V}{xy}$. A área de superfície é $S=xy + \dfrac{2V}{x} + \dfrac{2V}{y}$.</p>
+
+\[
+dS = \frac{\partial S}{\partial x}\, dx
+   + \frac{\partial S}{\partial y}\, dy
+   = \left(y - \frac{2V}{x^2}\right) dx
+   + \left(x - \frac{2V}{y^2}\right) dy.
+\]
+Para mínimo (claramente não será um máximo aqui),
+\[
+y - \frac{2V}{x^2} = 0,\quad
+x - \frac{2V}{y^2} = 0.
+\]
+
+<p>Aqui também, uma solução imediata é $x = y$, de modo que
+$S = x^2 + \dfrac{4V}{x}\quad$, $\dfrac{dS}{dx}= 2x - \dfrac{4V}{x^2} =0$ para mínimo, e</p>
+
+\[
+x = \sqrt[3]{2V}.
+\]
+
+<p>
+<hr><h3>Exercícios XV</h3>
+
+(1) Diferencie a expressão $\dfrac{x^3}{3} - 2x^3y - 2y^2x + \dfrac{y}{3}$
+em relação a $x$ só, e em relação a $y$ só.
+
+<p>(2) Encontre os coeficientes diferenciais parciais em
+relação a $x$, $y$ e $z$, da expressão</p>
+
+\[
+x^2yz + xy^2z + xyz^2 + x^2y^2z^2.
+\]
+
+<p>(3) Seja $r^2 = (x-a)^2 + (y-b)^2 + (z-c)^2$.
+
+<p>Encontre o valor de $\dfrac{\partial r}{\partial x} +
+                   \dfrac{\partial r}{\partial y} +
+                   \dfrac{\partial r}{\partial z}$. Encontre também o valor
+de $\dfrac{\partial^2r}{\partial x^2} +
+    \dfrac{\partial^2r}{\partial y^2} +
+    \dfrac{\partial^2r}{\partial z^2}$.
+
+<p>(4) Encontre o diferencial total de $y=u^v$.
+
+
+<p>(5) Encontre o diferencial total de $y=u^3 \sin v$; de
+$y = (\sin x)^u$; e de $y = \dfrac{\log_\epsilon u}{v}$.
+
+<p>(6) Verifique que a soma de três quantidades $x$, $y$, $z$,
+cujo produto é uma constante $k$, é máxima quando
+essas três quantidades são iguais.
+
+<p>(7) Encontre o máximo ou mínimo da função</p>
+
+\[
+u = x + 2xy + y.
+\]
+
+<p>(8) Os regulamentos dos correios declaram que nenhum pacote
+deve ser de tamanho tal que seu comprimento mais sua circunferência
+exceda $6$ pés. Qual é o maior volume que
+pode ser enviado pelo correio (<em>a</em> ) no caso de um pacote de
+seção transversal retangular; (<em>b</em> ) no caso de um pacote
+de seção transversal circular.
+
+<p>(9) Divida $\pi$ em $3$ partes tais que o produto
+contínuo de seus senos possa ser um máximo ou mínimo.
+
+<p>(10) Encontre o máximo ou mínimo de $u = \dfrac{\epsilon^{x+y}}{xy}$.
+
+<p>(11) Encontre máximo e mínimo de</p>
+
+\[
+u = y + 2x - 2 \log_\epsilon y - \log_\epsilon x.
+\]
+
+<p>(12) Um balde de teleférico de capacidade dada tem
+a forma de um prisma triangular isósceles horizontal
+com o vértice embaixo, e a face oposta aberta.
+Encontre suas dimensões de modo que a menor quantidade
+de chapa de ferro possa ser usada em sua construção.
+
+
+<p><h3 class="answers">Respostas</h3>
+
+<p>(1)   $x^3 - 6x^2 y - 2y^2;\quad \frac{1}{3} - 2x^3 - 4xy$.
+
+<p>(2)   $2xyz + y^2 z + z^2 y + 2xy^2 z^2$;<br>
+     $2xyz + x^2 z + xz^2 + 2x^2 yz^2$;<br>
+     $2xyz + x^2 y + xy^2 + 2x^2 y^2 z$.
+
+<p>(3)   $\dfrac{1}{r} \{ \left(x - a\right) + \left( y - b \right) + \left( z - c \right) \} = \dfrac{ \left( x + y + z \right) - \left( a + b + c \right) }{r}$; $\dfrac{3}{r}$.
+
+<p>(4)   $dy = vu^{v-1}\, du + u^v \log_\epsilon u\, dv$.
+
+<p>(5)   $dy = 3\sin v u^2\, du + u^3 \cos v\, dv$,<br>
+     $dy = u \sin x^{u-1} \cos x\, dx + (\sin x)^u \log_\epsilon \sin x du$,<br>
+     $dy = \dfrac{1}{v}\, \dfrac{1}{u}\, du - \log_\epsilon u \dfrac{1}{v^2}\, dv$.
+
+<p>(7)   Mínimo para $x = y = -\frac{1}{2}$.
+
+<p>(8)   (<em>a</em> ) Comprimento $2$ pés, largura = profundidade = $1$ pé, vol. = $2$ pés
+ cúbicos.
+
+ (<em>b</em> ) Raio = $\dfrac{2}{\pi}$ pés = $7.46$ pol., comprimento = $2$ pés, vol. = $2.54$.
+
+<p>(9)    Todas as três partes iguais; o produto é máximo.
+
+<p>(10)   Mínimo para $x = y = 1$.
+
+<p>(11)   Mín.: $x = \frac{1}{2}$ e $y = 2$.
+
+<p>(12)   Ângulo no vértice $= 90°$; lados iguais = comprimento = $\sqrt[3]{2V}$.
+<br>
+<!-- Soluções comerciais removidas: projeto público e sem fins lucrativos -->
+
+
+<hr>
+<nav class="chapter-nav" aria-label="Navegação do capítulo">
+  <a class="nav-prev" href="15.html">← Anterior</a>
+  <a class="nav-home" href="index.html">Página principal</a>
+  <a class="nav-next" href="17.html">Próximo →</a>
+</nav>
+<footer class="site-footer" role="contentinfo">
+  <p class="a rotatedFloralHeartBullet"></p>
+
+  <div class="manifesto">
+    <p class="manifesto-lead">
+      Este é um <strong>projeto público</strong>, sem fins lucrativos.
+      Não é permitido comercializá-lo, vendê-lo nem usá-lo como produto pago.
+    </p>
+    <p class="manifesto-quote">
+      A educação é um direito de todos.
+      O conhecimento deve ser livre sempre que não cause o mal:
+      deve circular, ensinar e libertar, nunca aprisionar quem aprende.
+    </p>
+    <p class="manifesto-sign">
+      - Thales Rodrigues
+    </p>
+  </div>
+
+  <nav class="author-links" aria-label="Redes de Thales Rodrigues">
+    <a href="https://www.linkedin.com/in/thales-oliveira-rodrigues/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    <span class="dot" aria-hidden="true">·</span>
+    <a href="https://github.com/Rodriguestmo" target="_blank" rel="noopener noreferrer">GitHub</a>
+  </nav>
+
+  <p class="footer-meta">
+    <small>
+      Tradução e adaptação PT-BR por Thales Rodrigues.
+      Texto de Silvanus P. Thompson em domínio público (Project Gutenberg).
+      Notas de contexto inspiradas na edição Gardner (1998).
+      Projeto público e gratuito.
+    </small>
+  </p>
+</footer>
+
+<script src="j/jquery.js"></script>
+<script src="j/modernizr.js"></script>
+<script src="j/dih5.js"></script>
+<script src="j/chapters-data.js"></script>
+<script src="j/glossary-data.js"></script>
+<script src="j/reader-features.js"></script>
+<script src="j/notes-toggle.js"></script>
+<!-- Analytics desativado na edição PT local -->
+</body>
+</html>

@@ -1,0 +1,1114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+
+<title>Cálculo Tornado Fácil</title>
+<meta name="description" content="Capítulo XIX: sobre achar áreas integrando.">
+<meta name="author" content="Thales Rodrigues; Silvanus P. Thompson">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="googlebot" content="index, follow">
+<meta name="language" content="Portuguese">
+<meta name="keywords" content="cálculo, calculus made easy, Silvanus Thompson, cálculo diferencial, cálculo integral, matemática, educação livre, português, Martin Gardner, Cálculo Tornado Fácil, Thales Rodrigues">
+<link rel="canonical" href="https://rodriguestmo.github.io/calculo-tornado-facil/19.html">
+<link rel="alternate" hreflang="pt-BR" href="https://rodriguestmo.github.io/calculo-tornado-facil/19.html">
+<link rel="alternate" hreflang="x-default" href="https://rodriguestmo.github.io/calculo-tornado-facil/">
+
+
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
+<link rel="icon" href="favicon-16.png" type="image/png" sizes="16x16">
+<link rel="shortcut icon" href="favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png" sizes="180x180">
+<meta name="theme-color" content="#c45c26">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Cálculo Tornado Fácil">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Cálculo Tornado Fácil">
+<meta property="og:description" content="Capítulo XIX: sobre achar áreas integrando.">
+<meta property="og:url" content="https://rodriguestmo.github.io/calculo-tornado-facil/19.html">
+<meta property="og:image" content="https://rodriguestmo.github.io/calculo-tornado-facil/cover.jpg">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Cálculo Tornado Fácil">
+<meta name="twitter:description" content="Capítulo XIX: sobre achar áreas integrando.">
+<meta name="twitter:image" content="https://rodriguestmo.github.io/calculo-tornado-facil/cover.jpg">
+
+<link rel="describedby" href="https://rodriguestmo.github.io/calculo-tornado-facil/llms.txt">
+<link rel="stylesheet" href="screen.css">
+<style>
+body{counter-reset:h1 19}
+</style>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$'], ['\\[','\\]']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ["script","noscript","style","textarea","pre","code"]
+    },
+    TeX: {
+      extensions: ["AMSmath.js","AMSsymbols.js"],
+      equationNumbers: { autoNumber: "none" }
+    },
+    "HTML-CSS": {
+      availableFonts: ["TeX"],
+      linebreaks: { automatic: false },
+      styles: {
+        ".MathJax_Display": { "margin": "1.5em 0" }
+      }
+    },
+    CommonHTML: {
+      styles: { ".MJXc-display": { "margin": "1.5em 0" } }
+    },
+    showProcessingMessages: false,
+    messageStyle: "none"
+  });
+</script>
+<script type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Chapter",
+  "name": "Sobre Encontrar Áreas Integrando",
+  "position": 19,
+  "isPartOf": {
+    "@type": "Book",
+    "name": "Cálculo Tornado Fácil",
+    "url": "https://rodriguestmo.github.io/calculo-tornado-facil/"
+  },
+  "author": {"@type": "Person", "name": "Silvanus P. Thompson"},
+  "translator": {"@type": "Person", "name": "Thales Rodrigues"},
+  "url": "https://rodriguestmo.github.io/calculo-tornado-facil/19.html",
+  "inLanguage": "pt-BR",
+  "isAccessibleForFree": true
+}
+</script>
+</head>
+<body>
+<!-- Progresso de leitura do capítulo (scroll) -->
+<div id="read-progress" class="read-progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="Progresso de leitura do capítulo">
+  <div id="read-progress-bar" class="read-progress-bar"></div>
+</div>
+
+<!-- Barra fixa: logo + menus (marca-texto à esquerda, engrenagem à direita) -->
+<div id="site-toolbar" class="site-toolbar" role="region" aria-label="Controles do site">
+  <a class="tb-home" href="index.html">Cálculo Tornado Fácil</a>
+
+  <div class="tb-controls">
+    <!-- Marca-texto (esquerda) -->
+    <div class="tb-menu" data-menu="highlight">
+      <button type="button" class="tb-btn tb-menu-btn" id="hl-list-toggle" aria-expanded="false" aria-controls="hl-list-panel" title="Marca-texto e lista de destaques">
+        Marca-texto
+        <span id="hl-count-badge" class="hl-count-badge" hidden>0</span>
+      </button>
+      <div id="hl-list-panel" class="tb-menu-panel hl-list-panel" hidden role="dialog" aria-label="Marca-texto">
+        <div class="tb-menu-title">Marca-texto</div>
+
+        <div class="hl-color-row">
+          <span class="tb-menu-label">Cor ao destacar</span>
+          <div id="hl-color-swatches" class="hl-color-swatches" role="group" aria-label="Cor do marca-texto">
+            <button type="button" class="hl-swatch-btn cme-hl-pastel-yellow" data-color="pastel-yellow" title="Amarelo pastel" aria-label="Amarelo pastel" aria-pressed="true"></button>
+            <button type="button" class="hl-swatch-btn cme-hl-pastel-green" data-color="pastel-green" title="Verde pastel" aria-label="Verde pastel" aria-pressed="false"></button>
+            <button type="button" class="hl-swatch-btn cme-hl-pastel-blue" data-color="pastel-blue" title="Azul pastel" aria-label="Azul pastel" aria-pressed="false"></button>
+            <button type="button" class="hl-swatch-btn cme-hl-pastel-pink" data-color="pastel-pink" title="Rosa pastel" aria-label="Rosa pastel" aria-pressed="false"></button>
+            <button type="button" class="hl-swatch-btn cme-hl-pastel-orange" data-color="pastel-orange" title="Laranja pastel" aria-label="Laranja pastel" aria-pressed="false"></button>
+            <button type="button" class="hl-swatch-btn cme-hl-pastel-purple" data-color="pastel-purple" title="Roxo pastel" aria-label="Roxo pastel" aria-pressed="false"></button>
+          </div>
+          <select id="hl-color" hidden aria-hidden="true" tabindex="-1">
+            <option value="pastel-yellow">Amarelo pastel</option>
+            <option value="pastel-green">Verde pastel</option>
+            <option value="pastel-blue">Azul pastel</option>
+            <option value="pastel-pink">Rosa pastel</option>
+            <option value="pastel-orange">Laranja pastel</option>
+            <option value="pastel-purple">Roxo pastel</option>
+          </select>
+        </div>
+
+        <div class="hl-filter-row">
+          <button type="button" id="hl-filter-toggle" class="hl-filter-toggle" aria-expanded="false" aria-controls="hl-filter-body">
+            <span class="tb-menu-label">Filtrar lista</span>
+            <span id="hl-filter-toggle-label" class="hl-filter-toggle-label">mostrar</span>
+          </button>
+          <div id="hl-filter-body" class="hl-filter-body" hidden>
+            <div id="hl-filter-swatches" class="hl-color-swatches" role="group" aria-label="Filtrar destaques por cor">
+              <button type="button" class="hl-filter-btn is-active" data-filter="all" title="Todas as cores" aria-label="Todas as cores" aria-pressed="true">Tudo</button>
+              <button type="button" class="hl-swatch-btn hl-filter-btn cme-hl-pastel-yellow" data-filter="pastel-yellow" title="Filtrar amarelo" aria-label="Filtrar amarelo" aria-pressed="false"></button>
+              <button type="button" class="hl-swatch-btn hl-filter-btn cme-hl-pastel-green" data-filter="pastel-green" title="Filtrar verde" aria-label="Filtrar verde" aria-pressed="false"></button>
+              <button type="button" class="hl-swatch-btn hl-filter-btn cme-hl-pastel-blue" data-filter="pastel-blue" title="Filtrar azul" aria-label="Filtrar azul" aria-pressed="false"></button>
+              <button type="button" class="hl-swatch-btn hl-filter-btn cme-hl-pastel-pink" data-filter="pastel-pink" title="Filtrar rosa" aria-label="Filtrar rosa" aria-pressed="false"></button>
+              <button type="button" class="hl-swatch-btn hl-filter-btn cme-hl-pastel-orange" data-filter="pastel-orange" title="Filtrar laranja" aria-label="Filtrar laranja" aria-pressed="false"></button>
+              <button type="button" class="hl-swatch-btn hl-filter-btn cme-hl-pastel-purple" data-filter="pastel-purple" title="Filtrar roxo" aria-label="Filtrar roxo" aria-pressed="false"></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="hl-list-head">
+          <strong>Seus destaques</strong>
+          <span class="hl-list-hint">salvos neste navegador</span>
+        </div>
+        <div id="hl-list-body" class="hl-list-body">
+          <p class="hl-list-empty">Nenhum destaque ainda. Selecione um trecho no texto para destacar.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Configurações (direita) - só ícone de engrenagem -->
+    <div class="tb-menu" data-menu="settings">
+      <button type="button" class="tb-btn tb-menu-btn tb-btn-icon" id="settings-toggle" aria-expanded="false" aria-controls="settings-panel" title="Configurações" aria-label="Configurações">
+        <svg class="tb-gear-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false">
+          <path fill="currentColor" d="M19.14 12.94c.04-.31.06-.63.06-.94s-.02-.63-.06-.94l2.03-1.58a.5.5 0 0 0 .12-.64l-1.92-3.32a.5.5 0 0 0-.6-.22l-2.39.96a7.03 7.03 0 0 0-1.63-.94l-.36-2.54A.5.5 0 0 0 14.9 2h-3.8a.5.5 0 0 0-.49.42l-.36 2.54c-.59.24-1.13.55-1.63.94l-2.39-.96a.5.5 0 0 0-.6.22L3.71 8.08a.5.5 0 0 0 .12.64l2.03 1.58c-.04.31-.06.63-.06.94s.02.63.06.94L3.83 14.7a.5.5 0 0 0-.12.64l1.92 3.32c.14.24.43.34.68.22l2.39-.96c.5.39 1.04.7 1.63.94l.36 2.54c.05.24.25.42.49.42h3.8c.24 0 .44-.18.49-.42l.36-2.54c.59-.24 1.13-.55 1.63-.94l2.39.96c.25.1.54 0 .68-.22l1.92-3.32a.5.5 0 0 0-.12-.64l-2.03-1.58zM12 15.5A3.5 3.5 0 1 1 12 8.5a3.5 3.5 0 0 1 0 7z"/>
+        </svg>
+      </button>
+      <div id="settings-panel" class="tb-menu-panel" hidden role="dialog" aria-label="Configurações de leitura">
+        <div class="tb-menu-title">Configurações</div>
+
+        <label class="tb-menu-row">
+          <span class="tb-menu-label">Notas de Gardner</span>
+          <select id="notes-mode" aria-label="Modo de exibição das notas">
+            <option value="all">Sempre visíveis</option>
+            <option value="click">Lupa (clique para abrir)</option>
+            <option value="off">Sempre ocultadas</option>
+          </select>
+        </label>
+
+        <label class="tb-menu-row">
+          <span class="tb-menu-label">Fonte</span>
+          <select id="font-family" aria-label="Fonte do texto">
+            <option value="default">Padrão do site</option>
+            <option value="dyslexia">Dislexia</option>
+            <option value="sans">Sans-serif</option>
+            <option value="mono">Monospace</option>
+          </select>
+        </label>
+
+        <div class="tb-menu-row">
+          <span class="tb-menu-label">Tamanho</span>
+          <div class="tb-font-size" role="group" aria-label="Tamanho da fonte">
+            <button type="button" id="font-smaller" class="tb-btn tb-btn-sq" title="Diminuir fonte" aria-label="Diminuir fonte">A-</button>
+            <span id="font-size-label" class="tb-size-label" aria-live="polite">100%</span>
+            <button type="button" id="font-larger" class="tb-btn tb-btn-sq" title="Aumentar fonte" aria-label="Aumentar fonte">A+</button>
+          </div>
+        </div>
+
+        <div class="tb-menu-row">
+          <span class="tb-menu-label">Tema</span>
+          <button type="button" id="toggle-theme" class="tb-btn" title="Alternar tema claro/escuro" aria-pressed="false">
+            <span class="theme-label">Tema escuro</span>
+          </button>
+        </div>
+
+        <div class="tb-menu-row tb-menu-row-danger">
+          <span class="tb-menu-label">Dados locais</span>
+          <button type="button" id="clear-site-data" class="tb-btn tb-btn-danger" title="Apagar destaques, notas e preferências salvos neste navegador">
+            Limpar cache do site
+          </button>
+          <span class="tb-menu-hint">Remove destaques, notas, progresso e preferências salvos neste navegador.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Popup de seleção: destacar + nota -->
+<div id="hl-popup" class="hl-popup" hidden role="dialog" aria-label="Destacar trecho">
+  <button type="button" id="hl-btn-mark" class="tb-btn">Destacar</button>
+  <button type="button" id="hl-btn-note" class="tb-btn">Destacar + nota</button>
+  <button type="button" id="hl-btn-cancel" class="tb-btn tb-btn-ghost">Cancelar</button>
+</div>
+
+<!-- Tooltip flutuante da nota ao passar o mouse -->
+<div id="hl-float-tip" class="hl-float-tip" hidden role="tooltip"></div>
+
+<!-- Confirmação: limpar cache -->
+<div id="clear-data-modal" class="hl-modal" hidden role="dialog" aria-modal="true" aria-labelledby="clear-data-title">
+  <div class="hl-modal-box">
+    <h3 id="clear-data-title">Limpar cache do site?</h3>
+    <p class="hl-quote" style="font-style:normal;opacity:0.95">
+      Isso apaga <strong>tudo</strong> que foi salvo neste navegador:
+      destaques, notas, preferências (fonte, tema, tamanho), cor do marca-texto
+      e qualquer outro dado local do site.
+    </p>
+    <p class="hl-quote" style="font-style:normal;opacity:0.85">
+      Esta ação não pode ser desfeita.
+    </p>
+    <div class="hl-modal-actions">
+      <button type="button" id="clear-data-confirm" class="tb-btn tb-btn-danger">Sim, limpar tudo</button>
+      <button type="button" id="clear-data-cancel" class="tb-btn tb-btn-ghost">Cancelar</button>
+    </div>
+  </div>
+</div>
+
+<!-- Modal de nota do highlight -->
+<div id="hl-note-modal" class="hl-modal" hidden role="dialog" aria-modal="true" aria-labelledby="hl-note-title">
+  <div class="hl-modal-box">
+    <h3 id="hl-note-title">Nota do trecho</h3>
+    <p id="hl-note-quote" class="hl-quote"></p>
+    <label class="hl-note-label">Cor deste destaque</label>
+    <div id="hl-note-swatches" class="hl-color-swatches" role="group" aria-label="Cor deste destaque">
+      <button type="button" class="hl-swatch-btn cme-hl-pastel-yellow" data-color="pastel-yellow" title="Amarelo pastel" aria-label="Amarelo pastel"></button>
+      <button type="button" class="hl-swatch-btn cme-hl-pastel-green" data-color="pastel-green" title="Verde pastel" aria-label="Verde pastel"></button>
+      <button type="button" class="hl-swatch-btn cme-hl-pastel-blue" data-color="pastel-blue" title="Azul pastel" aria-label="Azul pastel"></button>
+      <button type="button" class="hl-swatch-btn cme-hl-pastel-pink" data-color="pastel-pink" title="Rosa pastel" aria-label="Rosa pastel"></button>
+      <button type="button" class="hl-swatch-btn cme-hl-pastel-orange" data-color="pastel-orange" title="Laranja pastel" aria-label="Laranja pastel"></button>
+      <button type="button" class="hl-swatch-btn cme-hl-pastel-purple" data-color="pastel-purple" title="Roxo pastel" aria-label="Roxo pastel"></button>
+    </div>
+    <select id="hl-note-color" hidden aria-hidden="true" tabindex="-1">
+      <option value="pastel-yellow">Amarelo pastel</option>
+      <option value="pastel-green">Verde pastel</option>
+      <option value="pastel-blue">Azul pastel</option>
+      <option value="pastel-pink">Rosa pastel</option>
+      <option value="pastel-orange">Laranja pastel</option>
+      <option value="pastel-purple">Roxo pastel</option>
+    </select>
+    <label class="hl-note-label" for="hl-note-input">Sua nota (salva só neste navegador)</label>
+    <textarea id="hl-note-input" rows="4" maxlength="2000" placeholder="Escreva uma anotação opcional..."></textarea>
+    <div class="hl-modal-actions">
+      <button type="button" id="hl-note-save" class="tb-btn">Salvar</button>
+      <button type="button" id="hl-note-remove" class="tb-btn tb-btn-danger">Remover destaque</button>
+      <button type="button" id="hl-note-close" class="tb-btn tb-btn-ghost">Fechar</button>
+    </div>
+  </div>
+</div>
+
+<h1><br>Sobre Encontrar Áreas Integrando</h1>
+<p class="a rotatedFloralHeartBullet">
+
+<p>Um uso do cálculo integral é permitir-nos
+averiguar os valores de áreas limitadas por curvas.
+
+<p>Tentemos chegar ao assunto pedaço por pedaço.
+
+<a name="figure52">
+<p><img src="33283-t/images/218a.pdf.png-1.png">
+
+<p>Seja $AB$ (<a href="#figure52">Figura 52</a>) uma curva, cuja equação é
+conhecida. Isto é, $y$ nessa curva é alguma função
+conhecida de $x$. Pense em um trecho da curva do
+ponto $P$ ao ponto $Q$.
+
+<p>Deixe cair uma perpendicular $PM$ a partir de $P$, e
+outra $QN$ a partir do ponto $Q$. Então chame $OM = x_1$
+e $ON = x_2$, e as ordenadas $PM = y_1$ e $QN = y_2$.
+Assim demarcamos a área $PQNM$ que fica
+
+por baixo do trecho $PQ$. O problema é: <em>como podemos
+calcular o valor dessa área</em>?
+
+<p>O segredo de resolver esse problema é conceber a
+área como dividida em um monte de faixas estreitas,
+cada uma com largura $dx$. Quanto menor tomarmos $dx$,
+maior será o número delas entre $x_1$ e $x_2$. Ora, a
+área total é claramente igual à soma das áreas de
+todas essas faixas. Nosso negócio será então
+descobrir uma expressão para a área de qualquer
+faixa estreita, e integrá-la de modo a somar todas
+as faixas. Agora pense em qualquer uma das faixas.
+Será assim:
+limitada entre dois lados verticais, com fundo
+plano $dx$, e com um topo ligeiramente curvo e
+inclinado.
+<a name="figure219a">
+<p><img src="33283-t/images/219a.pdf.png-1.png">
+<p>Suponha que tomemos sua altura <em>média</em>
+como sendo $y$; então, como sua largura é $dx$, sua
+área será $y\, dx$. E vendo que podemos tomar a
+largura tão estreita quanto quisermos, se a
+tomarmos estreita o bastante sua altura média será
+a mesma que a altura no meio dela. Agora chamemos o
+valor desconhecido da área total de $S$,
+significando superfície. A área de uma faixa será
+simplesmente um pedaço da área total, e pode
+portanto ser chamada $dS$. Assim podemos escrever
+\[
+\text{área de $1$ faixa} = dS = y · dx.
+\]
+Se então somarmos todas as faixas, obtemos
+\[
+\text{área total $S$} = \int dS = \int y\, dx.
+\]
+
+<p>Assim, achar $S$ depende de podermos
+
+integrar $y · dx$ no caso particular, quando sabemos
+qual é o valor de $y$ como função de $x$.
+
+<p>Por exemplo, se lhe disserem que para a curva em
+questão $y = b + ax^2$, sem dúvida você poderia pôr
+esse valor na expressão e dizer: então devo achar
+$\int (b + ax^2)\, dx$.
+
+<p>Tudo muito bem; mas um pouco de reflexão mostrará
+que algo mais precisa ser feito. Porque a área que
+estamos tentando achar não é a área sob o
+comprimento inteiro da curva, e sim apenas a área
+limitada à esquerda por $PM$ e à direita por $QN$,
+segue que devemos fazer algo para definir nossa
+área entre esses “<em>limites</em>”. <a name="limits"/>
+
+<p>Isso nos introduz a uma noção nova, a saber a de
+<em>integrar entre limites</em>. Supomos que $x$ varie, e
+para o propósito presente não precisamos de nenhum
+valor de $x$ abaixo de $x_1$ (isto é $OM$), nem de
+nenhum valor de $x$ acima de $x_2$ (isto é $ON$). Quando
+uma integral deve ser assim definida entre dois
+limites, chamamos o menor dos dois valores de
+<em>limite inferior</em>, e o valor superior de <em>limite
+superior</em>. Qualquer integral assim limitada
+designamos como uma <em>integral definida</em>, a fim de
+distinguí-la de uma <em>integral geral</em> à qual não se
+atribuem limites.
+
+<p>Nos símbolos que dão instruções para integrar, os
+limites se marcam colocando-os no alto e embaixo,
+respectivamente, do sinal de integração. Assim a
+instrução</p>
+
+\[
+\int_{x=x_1}^{x=x_2} y · dx
+\]
+
+se lerá: ache a integral de $y · dx$ entre o limite
+inferior $x_1$ e o limite superior $x_2$.
+
+<p>Às vezes a coisa se escreve de modo mais simples</p>
+
+\[
+\int^{x_2}_{x_1} y · dx.
+\]
+Bem, mas <em>como</em> se acha uma integral entre limites,
+quando se têm essas instruções?
+
+<p>Olhe de novo a <a href="#figure52">Figura 52</a>. Suponha que pudéssemos
+achar a área sob o trecho maior da curva de $A$ a
+$Q$, isto é de $x = 0$ a $x = x_2$, chamando a área de
+$AQNO$. Depois, suponha que pudéssemos achar a área
+sob o trecho menor de $A$ a $P$, isto é de $x = 0$ a
+$x = x_1$, a saber a área $APMO$. Se então
+subtraíssemos a área menor da maior, sobraria como
+resto a área $PQNM$, que é o que queremos. Aqui
+temos a pista do que fazer; a integral definida
+entre os dois limites é a <em>diferença</em> entre a
+integral calculada para o limite superior e a
+integral calculada para o limite inferior.
+
+<p>Vamos então em frente. Primeiro, ache a integral
+geral assim:</p>
+
+\[
+\int y\, dx,
+\]
+e, como $y = b + ax^2$ é a equação da curva (<a href="#figure52">Figura 52</a>),
+\[
+\int (b + ax^2)\, dx
+\]
+é a integral geral que devemos achar.
+
+<p>Fazendo a integração em questão pela regra,
+obtemos</p>
+
+\[
+bx + \frac{a}{3} x^3 + C;
+\]
+
+e esta será a área inteira de $0$ até qualquer valor
+de $x$ que atribuirmos.
+
+<p>Portanto, a área maior até o limite superior $x_2$
+será</p>
+
+\[
+bx_2 + \frac{a}{3} x_2^3 + C;
+\]
+e a área menor até o limite inferior $x_1$ será
+\[
+bx_1 + \frac{a}{3} x_1^3 + C.
+\]
+
+<p>Agora, subtraia a menor da maior, e obtemos para a
+área $S$ o valor</p>
+
+\[
+\text{área $S$} = b(x_2 - x_1) + \frac{a}{3}(x_2^3 - x_1^3).
+\]
+
+<p>Esta é a resposta que queríamos. Demos alguns
+valores numéricos. Suponha $b = 10$, $a = 0.06$, e
+$x_2 = 8$ e $x_1 = 6$. Então a área $S$ é igual a</p>
+
+\[
+\begin{gathered}
+10(8 - 6) + \frac{0.06}{3} (8^3 - 6^3) \\
+\begin{aligned} \\
+&= 20 + 0.02(512 - 216)    \\
+&= 20 + 0.02 × 296    \\
+&= 20 + 5.92     \\
+&= 25.92. \\
+\end{aligned}
+\end{gathered}
+\]
+
+<p>Ponhamos aqui um modo simbólico de enunciar o que
+averiguamos sobre limites:</p>
+
+\[
+\int^{x=x_2}_{x=x_1} y\, dx = y_2 - y_1,
+\]
+onde $y_2$ é o valor integrado de $y\, dx$ correspondente
+a $x_2$, e $y_1$ o correspondente a $x_1$.
+
+
+<p>Toda integração entre limites exige que se ache
+assim a diferença entre dois valores. Note também
+que, ao fazer a subtração, a constante acrescentada
+$C$ desapareceu.
+
+<p>
+<p><em>Exemplos</em>
+(1) Para nos familiarizarmos com o processo,
+tomemos um caso cuja resposta já conhecemos de
+antemão. Achemos a área do triângulo (<a href="#figure53">Figura 53</a>),
+que tem base $x = 12$ e altura $y = 4$. Já sabemos de
+antemão, por mensuração óbvia, que a resposta virá
+$24$.
+
+<a name="figure3">
+<p><img src="33283-t/images/223a.pdf.png-1.png">
+
+<p>Agora, aqui temos como “curva” uma reta inclinada
+para a qual a equação é</p>
+
+\[
+y = \frac{x}{3}.
+\]
+
+<p>A área em questão será</p>
+
+\[
+\int^{x=12}_{x=0} y · dx = \int^{x=12}_{x=0} \frac{x}{3} · dx.
+\]
+
+<p>Integrando $\dfrac{x}{3}\, dx$ (<a href="18.html#diffrule">aqui</a>), e pondo o valor da
+integral geral entre colchetes com os limites
+marcados em cima e embaixo, obtemos
+
+\[
+\begin{aligned}
+\text{área}\;
+  &= \left[ \frac{1}{3} · \frac{1}{2} x^2 \right]^{x=12}_{x=0} + C \\
+  &= \left[ \frac{x^2}{6} \right]^{x=12}_{x=0} + C  \\
+  &= \left[ \frac{12^2}{6} \right] - \left[ \frac{0^2}{6} \right] \\
+  &= \frac{144}{6} = 24.\quad \text{Resp.}
+\end{aligned}
+\]
+
+<p>Satisfaçamo-nos quanto a este truque de cálculo
+um tanto surpreendente, testando-o em um exemplo
+simples. Pegue um papel quadriculado, de preferência
+um que seja regido em quadradinhos de um oitavo de
+polegada ou um décimo de polegada em cada direção.
+Nesse papel quadriculado plote o gráfico da
+equação</p>
+
+\[
+y = \frac{x}{3}.
+\]
+
+<p>Os valores a plotar serão:
+<table>
+<tr><td>$x$</td><td>$0$</td><td>$3$</td><td>$6$</td><td>$9$</td><td>$12$</td>
+<tr><td>$y$</td><td>$0$</td><td>$1$</td><td>$2$</td><td>$3$</td><td>$4$</td>
+</table>
+
+<p>A plotagem está na <a href="#figure54">Figura 54</a>.
+<a name="figure54">
+<p><img src="33283-t/images/224a.pdf.png-1.png">
+
+<p>Agora calcule a área sob a curva <em>contando os
+quadradinhos</em> abaixo da reta, de $x = 0$ até $x = 12$
+à direita. Há $18$ quadrados inteiros e quatro
+triângulos, cada um com área igual a $1\frac{1}{2}$
+quadrados; ou, no total, $24$ quadrados. Logo $24$ é
+o valor numérico da integral de $\dfrac{x}{3}\, dx$ entre o
+limite inferior $x = 0$ e o limite superior $x = 12$.
+
+<p>Como exercício adicional, mostre que o valor da
+mesma integral entre os limites $x = 3$ e $x = 15$
+é $36$.
+
+<a name="figure55">
+<p><img src="33283-t/images/225a.pdf.png-1.png">
+<p>(2) Ache a área, entre os limites $x = x_1$ e $x = 0$,
+da curva $y = \dfrac{b}{x + a}$.</p>
+
+\[
+\begin{aligned}
+\text{Área}
+  &= \int^{x=x_1}_{x=0} y · dx \\
+   &= \int^{x=x_1}_{x=0} \frac{b}{x+a}\, dx  \\
+  &= b \bigl[\log_\epsilon(x + a) \bigr]^{x_1} _{0} + C  \\
+  &= b \bigl[\log_\epsilon(x_1 + a) - \log_\epsilon(0 + a)\bigr]  \\
+  &= b \log_\epsilon \frac{x_1 + a}{a}.\quad \text{Resp.}
+\end{aligned}
+\]
+
+<p><em>Nota</em> - Observe que ao lidar com integrais
+definidas a constante $C$ sempre desaparece por
+subtração.
+
+<p>Note-se que esse processo de subtrair uma parte de
+uma maior para achar a diferença é de fato uma
+prática comum. Como se acha a área de um anel plano
+(<a href="#figure56">Figura 56</a>), cujo raio exterior é $r_2$ e o raio
+interior é $r_1$? Você sabe por mensuração que a área
+do círculo exterior é $\pi r_2^2$; depois acha a área do
+círculo interior, $\pi r_1^2$; depois subtrai a última
+da primeira, e acha a área do anel $= \pi(r_2^2 - r_1^2)$;
+que se pode escrever
+\[
+\pi(r_2 + r_1)(r_2 - r_1)
+\]
+$= \text{circunferência média do anel} × \text{largura do anel}$.
+<a name="figure56">
+<p><img src="33283-t/images/226a.pdf.png-1.png">
+
+
+<p>(3) Eis outro caso - o da <em>curva de decaimento</em>.
+Ache a área entre $x = 0$ e $x = a$, da curva
+(<a href="#figure57">Figura 57</a>) cuja equação é
+\[
+\begin{aligned}
+y &= b\epsilon^{-x}. \\
+\text{Área}
+  &= b\int^{x=a} _{x=0} \epsilon^{-x} · dx.
+\end{aligned}
+\]
+  A integração (<a href="18.html#differ3">aqui</a>) dá
+\[
+\begin{aligned}
+  &= b\left[-\epsilon^{-x}\right]^a _0 \\
+  &= b\bigl[-\epsilon^{-a} - (-\epsilon^{-0})\bigr] \\
+  &= b(1-\epsilon^{-a}).
+\end{aligned}
+\]
+
+<a name="figure57">
+<p><img src="33283-t/images/227a.pdf.png-1.png">
+
+<p>(4) Outro exemplo é dado pela curva adiabática de
+um gás perfeito, cuja equação é $pv^n = c$, onde $p$
+representa pressão, $v$ volume, e $n$ tem o valor
+$1.42$ (<a href="#figure58">Figura 58</a>).
+<a name="figure58">
+<p><img src="33283-t/images/227b.pdf.png-1.png">
+
+<p>Ache a área sob a curva (que é proporcional
+
+ao trabalho feito ao comprimir subitamente o gás)
+do volume $v_2$ ao volume $v_1$.
+
+<p>Aqui temos</p>
+
+\[
+\begin{aligned}
+\text{área}
+  &= \int^{v=v_2}_{v=v_1} cv^{-n} · dv \\
+  &= c\left[\frac{1}{1-n} v^{1-n} \right]^{v_2} _{v_1} \\
+  &= c \frac{1}{1-n} (v_2^{1-n} - v_1^{1-n}) \\
+  &= \frac{-c}{0.42}\left(\frac{1}{v_2^{0.42}} - \frac{1}{v_1^{0.42}}\right).
+\end{aligned}
+\]
+
+<p>
+<em>Um exercício.</em><p>
+Prove a fórmula ordinária de mensuração de que a
+área $A$ de um círculo cujo raio é $R$ é igual a
+$\pi R^2$.
+
+<a name="figure59">
+<p><img src="33283-t/images/228a.pdf.png-1.png">
+
+<p>Considere uma zona ou anel elementar da superfície
+(<a href="#figure59">Figura 59</a>), de largura $dr$, situado a uma distância
+$r$ do centro. Podemos considerar a superfície
+inteira como consistindo de tais zonas estreitas, e
+a área total $A$ será simplesmente a integral de
+
+todas essas zonas elementares do centro até a
+margem, isto é, integrada de $r = 0$ a $r = R$.
+
+<p>Temos portanto de achar uma expressão para a área
+elementar $dA$ da zona estreita. Pense nela como uma
+faixa de largura $dr$, e de um comprimento que é o
+perímetro do círculo de raio $r$, isto é, um
+comprimento de $2 \pi r$. Então temos, como área da
+zona estreita,</p>
+
+\[
+dA = 2 \pi r\, dr.
+\]
+
+<p>Logo a área do círculo inteiro será:</p>
+
+\[
+A = \int dA
+  = \int^{r=R}_{r=0} 2 \pi r · dr
+  = 2 \pi \int^{r=R}_{r=0} r · dr.
+\]
+
+<p>Ora, a integral geral de $r · dr$ é $\frac{1}{2} r^2$. Portanto,</p>
+
+\[
+\begin{aligned}
+A &= 2 \pi \bigl[\tfrac{1}{2} r^2 \bigr]^{r=R}_{r=0}; \\
+ \text{ou} \\
+A &= 2 \pi \bigl[\tfrac{1}{2} R^2 - \tfrac{1}{2}(0)^2\bigr]; \\
+ donde \;
+A &= \pi R^2.
+\end{aligned}
+\]
+
+<p>
+<em>Outro exercício.</em><p>
+Achemos a ordenada média da parte positiva da
+curva $y = x - x^2$, mostrada na <a href="#figure60">Figura 60</a>.
+Para achar a ordenada média, teremos de achar a
+área da peça $OMN$, e depois dividi-la pelo
+comprimento da base $ON$. Mas antes de achar a área
+devemos averiguar o comprimento da base, de modo a
+saber até que limite integrar. Em $N$ a ordenada $y$
+tem valor zero; portanto, devemos olhar a equação e
+ver que valor de $x$ fará $y = 0$. Ora, claramente, se
+$x$ é $0$, $y$ também será $0$, a curva passando pela
+origem $O$; mas também, se $x=1$, $y=0$; de modo que
+$x=1$ nos dá a posição do ponto $N$.
+<a name="figure60">
+<p><img src="33283-t/images/229a.pdf.png-1.png">
+<p>Então a área desejada é</p>
+
+\[
+\begin{aligned}
+  &= \int^{x=1}_{x=0} (x-x^2)\, dx \\
+  &= \left[\tfrac{1}{2} x^2 - \tfrac{1}{3} x^3 \right]^{1}_{0} \\
+  &= \left[\tfrac{1}{2} - \tfrac{1}{3} \right] - [0-0] \\
+  &= \tfrac{1}{6}.
+\end{aligned}
+\]
+
+<p>Mas o comprimento da base é $1$.
+
+<p>Portanto, a ordenada média da curva $= \frac{1}{6}$.
+
+<p>[<em>Nota</em> - Será um exercício bonito e simples de
+máximos e mínimos achar por diferenciação qual é a
+altura da ordenada máxima. Ela <em>deve</em> ser maior que
+a média.]
+
+<p>A ordenada média de qualquer curva, sobre um
+intervalo de $x= 0$ a $x = x_1$, é dada pela expressão</p>
+
+\[
+\text{$y$ médio} = \frac{1}{x_1} \int^{x=x_1}_{x=0} y · dx.
+\]
+
+<p>Pode-se também achar do mesmo modo a área de
+superfície de um sólido de revolução.
+
+
+<p>
+<em>Exemplo</em>. A curva $y=x^2-5$ gira em torno do eixo
+dos $x$. Ache a área da superfície gerada pela curva
+entre $x=0$ e $x=6$.
+
+<p>Um ponto da curva, cuja ordenada é $y$, descreve
+uma circunferência de comprimento $2\pi y$, e uma
+cinta estreita da superfície, de largura $dx$,
+correspondente a esse ponto, tem por área $2\pi y\, dx$.
+A área total é</p>
+
+\[
+\begin{aligned}
+2\pi \int^{x&=6}_{x=0} y\, dx \\
+  &= 2\pi \int^{x=6}_{x=0} (x^2-5)\, dx \\
+   &= 2\pi \left[\frac{x^3}{3} - 5x\right]^6_0 \\
+  &= 6.28 × 42=263.76.
+\end{aligned}
+\]
+
+<p>
+<h2>Áreas em coordenadas polares.</h2>
+
+<p>Quando a equação da fronteira de uma área é dada
+como função da distância $r$ de um ponto dela a um
+ponto fixo $O$ (veja a <a href="#figure61">Figura 61</a>) chamado o <em>polo</em>, e
+do ângulo que $r$ faz com a direção horizontal
+positiva $OX$, o processo que acabamos de explicar
+pode ser aplicado com a mesma facilidade, com uma
+pequena modificação. Em vez de uma faixa de área,
+consideramos um triângulo pequenino $OAB$, o ângulo
+em $O$ sendo $d\theta$, e achamos a soma de todos os
+triângulos pequeninos que compõem a área desejada.
+<a name="figure61">
+<p><img src="33283-t/images/231a.pdf.png-1.png">
+<p>
+A área de tal triângulo pequenino é
+aproximadamente $\dfrac{AB}{2}×r$ ou $\dfrac{r\, d\theta}{2}×r$; logo a
+porção da área incluída entre a curva e duas
+posições de $r$ correspondentes aos ângulos $\theta_1$ e
+$\theta_2$ é dada por</p>
+
+\[
+\tfrac{1}{2} \int^{\theta=\theta_2}_{\theta=\theta_1} r^2\, d\theta.
+\]
+
+<p><hr>
+
+<p>
+<p><em>Exemplos</em>
+(1) Ache a área do setor de $1$ radiano em uma
+circunferência de raio $a$ polegadas.
+
+<p>A equação polar da circunferência é evidentemente
+$r=a$. A área é</p>
+
+\[
+\tfrac{1}{2} \int^{\theta=\theta_2}_{\theta=\theta_1} a^2\, d\theta
+  = \frac{a^2}{2} \int^{\theta=1}_{\theta=0} d\theta
+  = \frac{a^2}{2}.
+\]
+
+<p>(2) Ache a área do primeiro quadrante da curva
+(conhecida como “Caracol de Pascal”), cuja equação
+polar é $r=a(1+\cos \theta)$.</p>
+
+\[
+\begin{aligned}
+\text{Área}
+  &= \tfrac{1}{2}  \int^{\theta=\frac{\pi}{2}}_{\theta=0} a^2(1+\cos \theta)^2\, d\theta  \\
+  &= \frac{a^2}{2} \int^{\theta=\frac{\pi}{2}}_{\theta=0} (1+2 \cos \theta + \cos^2 \theta)\, d\theta  \\
+  &= \frac{a^2}{2} \left[\theta + 2 \sin \theta + \frac{\theta}{2} + \frac{\sin 2 \theta}{4} \right]^{\frac{\pi}{2}}_{0} \\
+  &= \frac{a^2(3\pi+8)}{8}.
+\end{aligned}
+\]
+
+<p><h2>Volumes por integração.</h2>
+
+<p>O que fizemos com a área de uma pequenina faixa de
+uma superfície, podemos, claro, fazer com a mesma
+facilidade com o volume de uma pequenina faixa de um
+sólido. Podemos somar todas as pequeninas faixas
+que compõem o sólido total, e achar seu volume, assim
+como somamos todos os pequeninos pedaços que faziam
+uma área para achar a área final da figura
+operada.
+
+<p><hr>
+
+<p>
+<p><em>Exemplos</em>
+(1) Ache o volume de uma esfera de raio $r$.
+
+<p>Uma casca esférica fina tem por volume $4\pi x^2\, dx$
+(veja a <a href="#figure59">Figura 59</a>); somando todas as cascas
+concêntricas que compõem a esfera, temos
+\[
+\text{volume da esfera}
+  = \int^{x=r}_{x=0} 4\pi x^2\, dx
+  = 4\pi \left[\frac{x^3}{3} \right]^r_0
+  = \tfrac{4}{3} \pi r^3.
+\]
+
+<a name="figure62">
+<p><img src="33283-t/images/233a.pdf.png-1.png">
+
+<p>Podemos também proceder assim: uma fatia da
+esfera, de espessura $dx$, tem por volume $\pi y^2\, dx$
+(veja a <a href="#figure62">Figura 62</a>). Também $x$ e $y$ se relacionam pela
+expressão
+\[
+y^2 = r^2 - x^2.
+\]
+
+\[
+\begin{aligned}
+   \text{Logo } \;
+\text{volume da esfera}
+  &= 2 \int^{x=r}_{x=0} \pi(r^2-x^2)\, dx \\
+  &= 2 \pi \left[ \int^{x=r}_{x=0} r^2\, dx - \int^{x=r}_{x=0} x^2\, dx \right] \\
+  &= 2 \pi \left[r^2x - \frac{x^3}{3} \right]^r_0 = \frac{4\pi}{3} r^3.
+\end{aligned}
+\]
+
+<p>(2) Ache o volume do sólido gerado pela revolução
+da curva $y^2=6x$ em torno do eixo dos $x$, entre
+$x=0$ e $x=4$.
+
+<p>O volume de uma faixa do sólido é $\pi y^2\, dx$.</p>
+
+\[
+\begin{aligned}
+   \text{Logo } \;
+\text{volume}
+  &= \int^{x=4}_{x=0} \pi y^2\, dx = 6\pi \int^{x=4}_{x=0} x\, dx  \\
+  &= 6\pi \left[ \frac{x^2}{2} \right]^4_0 = 48\pi = 150.8.
+\end{aligned}
+\]
+
+<p><h2>Sobre médias quadráticas.</h2>
+
+<p>Em certos ramos da física, particularmente no
+estudo de correntes elétricas alternadas, é
+necessário ser capaz de calcular a <em>média
+quadrática</em> de uma quantidade variável. Por “média
+quadrática” se denota a raiz quadrada da média dos
+quadrados de todos os valores entre os limites
+considerados. Outros nomes para a média quadrática
+de qualquer quantidade são seu valor “virtual”, ou
+seu valor “r.m.s.” (do inglês
+<em>root-mean-square</em>, raiz da média dos quadrados). O
+termo francês é <em>valeur efficace</em>. Se $y$ é a função
+sob consideração, e a média quadrática deve ser
+tomada entre os limites $x=0$ e $x=l$; então a média
+quadrática se expressa como
+\[
+\sqrt[2] {\frac{1}{l} \int^l_0 y^2\, dx}.
+\]
+
+<p>
+<p><em>Exemplos</em>
+(1) Achar a média quadrática da função
+$y=ax$ (<a href="#figure63">Figura 63</a>).
+
+<p>Aqui a integral é $\int^l_0 a^2 x^2\, dx$,
+que é $\frac{1}{3} a^2 l^3$.
+
+<a name="figure63">
+<p><img src="33283-t/images/235a.pdf.png-1.png">
+
+<p>Dividindo por $l$ e tomando a raiz quadrada, temos</p>
+
+\[
+\text{média quadrática} = \frac{1}{\sqrt 3}\, al.
+\]
+
+<p>Aqui a média aritmética é $\frac{1}{2}al$; e a razão da
+média quadrática para a média aritmética (essa
+razão se chama o <em>fator de forma</em>) é
+$\dfrac{2}{\sqrt 3}=1.155$.
+
+<p>(2) Achar a média quadrática da função $y=x^a$.
+
+<p>A integral é $\int^{x=l}_{x=0} x^{2a}\, dx$, isto é $\dfrac{l^{2a+1}}{2a+1}$.
+
+ Logo
+média quadrática = $\sqrt[2]{\dfrac{l^{2a}}{2a+1}}$.
+
+
+<p>(3) Achar a média quadrática da função $y=a^{\frac{x}{2}}$.
+
+<p>A integral é $\int^{x=l}_{x=0} (a^{\frac{x}{2}})^2\, dx$, isto é $\int^{x=l}_{x=0} a^x\, dx$,
+
+ ou
+$\left[ \frac{a^x}{\log_\epsilon a} \right]^{x=l}_{x=0}$,
+
+que é $\dfrac{a^l-1}{\log_\epsilon a}$.
+
+<p>Logo a média quadrática é $\sqrt[2] {\dfrac{a^l - 1}{l \log_\epsilon a}}$.
+
+<p>
+<hr><h3>Exercícios XVIII</h3>
+
+(1) Ache a área da curva $y=x^2+x-5$ entre
+$x=0$ e $x=6$, e as ordenadas médias entre esses
+limites.
+
+<p>(2) Ache a área da parábola $y=2a\sqrt x$ entre
+$x=0$ e $x=a$. Mostre que é dois terços do retângulo
+da ordenada limitante e de sua abscissa.
+
+<p>(3) Ache a área da porção positiva de uma curva
+senoidal e a ordenada média.
+
+<p>(4) Ache a área da porção positiva da curva
+$y=\sin^2 x$, e ache a ordenada média.
+
+<p>(5) Ache a área incluída entre os dois ramos da
+curva $y=x^2 ± x^{\frac{5}{2}}$ de $x=0$ a $x=1$, também a área
+da porção positiva do ramo inferior da curva (veja a
+<a href="11.html#figure30">Figura 30</a>).
+
+<p>(6) Ache o volume de um cone de raio da base $r$,
+e de altura $h$.
+
+<p>(7) Ache a área da curva $y=x^3-\log_\epsilon x$ entre
+$x=0$ e $x=1$.
+
+<p>(8) Ache o volume gerado pela curva
+$y=\sqrt{1+x^2}$, ao girar em torno do eixo dos $x$,
+entre $x=0$ e $x=4$.
+
+
+<p>(9) Ache o volume gerado por uma curva senoidal
+girando em torno do eixo dos $x$. Ache também a área
+de sua superfície.
+
+<p>(10) Ache a área da porção da curva $xy=a$
+incluída entre $x=1$ e $x = a$. Ache a ordenada média
+entre esses limites.
+
+<p>(11) Mostre que a média quadrática da função
+$y=\sin x$, entre os limites de $0$ e $\pi$ radianos, é
+$\dfrac{\sqrt2}{2}$. Ache também a média aritmética da mesma
+função entre os mesmos limites; e mostre que o fator
+de forma é $=1.11$.
+
+<p>(12) Ache as médias aritmética e quadrática da
+função $x^2+3x+2$, de $x=0$ a $x=3$.
+
+<p>(13) Ache a média quadrática e a média aritmética
+da função $y=A_1 \sin x + A_1 \sin 3x$.
+
+<p>(14) Certa curva tem a equação $y=3.42\epsilon^{0.21x}$.
+Ache a área incluída entre a curva e o eixo dos $x$,
+da ordenada em $x=2$ à ordenada em $x = 8$. Ache
+também a altura da ordenada média da curva entre
+esses pontos.
+
+<p>(15) Mostre que o raio de um círculo, cuja área é
+o dobro da área de um diagrama polar, é igual à
+média quadrática de todos os valores de $r$ para
+esse diagrama polar.
+
+<p>(16) Ache o volume gerado pela curva
+$y=±\dfrac{x}{6}\sqrt{x(10-x)}$ rotacionando em torno do eixo
+dos $x$.
+
+<p><h3 class="answers">Respostas</h3>
+
+<p>(1)  $\text{Área} = 60$; $\text{ordenada média} = 10$.
+
+<p>(2)  $\text{Área} = \frac{2}{3}$ de $a × 2a \sqrt{a}$.
+
+<p>(3)  $\text{Área} = 2$; $\text{ordenada média} = \dfrac{2}{\pi} = 0.637$.
+
+<p>(4)  $\text{Área} = 1.57$; $\text{ordenada média} = 0.5$.
+
+
+<p>(5)  $0.572$, $0.0476$.
+
+<p>(6)  $\text{Volume} = \pi r^2 \dfrac{h}{3}$.
+
+<p>(7)  $1.25$.
+
+<p>(8)  $79.4$.
+
+<p>(9)  $\text{Volume} = 4.9348$; $\text{área da superfície} = 12.57$ (de $0$ a $\pi$).
+
+<p>(10)  $a\log_\epsilon a$,&nbsp;&nbsp; $\dfrac{a}{a - 1} \log_\epsilon a$.
+
+<p>(12)  $\text{Média aritmética} = 9.5$; $\text{média quadrática} = 10.85$.
+
+
+<p>(13)  $\text{Média quadrática} = \dfrac{1}{\sqrt{2}} \sqrt{A_1^2 + A_3^2}$; $\text{média aritmética} = 0$.
+
+A primeira envolve uma integral um tanto difícil, e
+pode ser enunciada assim: Por definição a média
+quadrática será</p>
+
+\[
+\sqrt{\dfrac{1}{2\pi} \int_0^{2\pi} (A_1 \sin x + A_3 \sin 3x)^2\, dx}.
+\]
+Agora a integração indicada por
+\[
+\int (A_1^2 \sin^2 x + 2A_1 A_3 \sin x \sin 3x + A_3^2 \sin^2 3x)\, dx
+\]
+se obtém mais prontamente se, para $\sin^2 x$,
+escrevermos
+\[
+\dfrac{1 - \cos 2x}{2}.
+\]
+Para $2\sin x \sin 3x$ escrevemos $\cos 2x - \cos 4x$; e, para $\sin^2 3x$,
+\[
+\dfrac{1 - \cos 6x}{2}.
+\]
+
+Fazendo essas substituições, e integrando, obtemos
+(veja <a href="18.html#cosax">aqui</a>)
+\[
+\dfrac{A_1^2}{2} \left( x - \dfrac{\sin 2x}{2} \right)
+ + A_1 A_3 \left( \dfrac{\sin 2x}{2} - \dfrac{\sin 4x}{4} \right)
+ + \dfrac{A_3^2}{2} \left( x - \dfrac{\sin 6x}{6} \right).
+\]
+
+No limite inferior a substituição de $0$ por $x$ faz
+tudo isso desaparecer, enquanto no limite superior a
+substituição de $2\pi$ por $x$ dá $A_1^2 \pi + A_3^2 \pi$. E
+daí segue a resposta.
+
+<p>(14)  A área é $62.6$ unidades quadradas. A ordenada
+média é $10.42$.
+
+<p>(16)  $436.3$. (Este sólido tem forma de pera.)
+
+<br>
+<!-- Soluções comerciais removidas: projeto público e sem fins lucrativos -->
+
+
+<hr>
+<nav class="chapter-nav" aria-label="Navegação do capítulo">
+  <a class="nav-prev" href="18.html">← Anterior</a>
+  <a class="nav-home" href="index.html">Página principal</a>
+  <a class="nav-next" href="20.html">Próximo →</a>
+</nav>
+<footer class="site-footer" role="contentinfo">
+  <p class="a rotatedFloralHeartBullet"></p>
+
+  <div class="manifesto">
+    <p class="manifesto-lead">
+      Este é um <strong>projeto público</strong>, sem fins lucrativos.
+      Não é permitido comercializá-lo, vendê-lo nem usá-lo como produto pago.
+    </p>
+    <p class="manifesto-quote">
+      A educação é um direito de todos.
+      O conhecimento deve ser livre sempre que não cause o mal:
+      deve circular, ensinar e libertar, nunca aprisionar quem aprende.
+    </p>
+    <p class="manifesto-sign">
+      - Thales Rodrigues
+    </p>
+  </div>
+
+  <nav class="author-links" aria-label="Redes de Thales Rodrigues">
+    <a href="https://www.linkedin.com/in/thales-oliveira-rodrigues/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    <span class="dot" aria-hidden="true">·</span>
+    <a href="https://github.com/Rodriguestmo" target="_blank" rel="noopener noreferrer">GitHub</a>
+  </nav>
+
+  <p class="footer-meta">
+    <small>
+      Tradução e adaptação PT-BR por Thales Rodrigues.
+      Texto de Silvanus P. Thompson em domínio público (Project Gutenberg).
+      Notas de contexto inspiradas na edição Gardner (1998).
+      Projeto público e gratuito.
+    </small>
+  </p>
+</footer>
+
+<script src="j/jquery.js"></script>
+<script src="j/modernizr.js"></script>
+<script src="j/dih5.js"></script>
+<script src="j/chapters-data.js"></script>
+<script src="j/glossary-data.js"></script>
+<script src="j/reader-features.js"></script>
+<script src="j/notes-toggle.js"></script>
+<!-- Analytics desativado na edição PT local -->
+</body>
+</html>

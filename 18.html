@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+
+<title>Cálculo Tornado Fácil</title>
+<meta name="description" content="Capítulo XVIII: integrar como o inverso de diferenciar.">
+<meta name="author" content="Thales Rodrigues; Silvanus P. Thompson">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="googlebot" content="index, follow">
+<meta name="language" content="Portuguese">
+<meta name="keywords" content="cálculo, calculus made easy, Silvanus Thompson, cálculo diferencial, cálculo integral, matemática, educação livre, português, Martin Gardner, Cálculo Tornado Fácil, Thales Rodrigues">
+<link rel="canonical" href="https://rodriguestmo.github.io/calculo-tornado-facil/18.html">
+<link rel="alternate" hreflang="pt-BR" href="https://rodriguestmo.github.io/calculo-tornado-facil/18.html">
+<link rel="alternate" hreflang="x-default" href="https://rodriguestmo.github.io/calculo-tornado-facil/">
+
+
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
+<link rel="icon" href="favicon-16.png" type="image/png" sizes="16x16">
+<link rel="shortcut icon" href="favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png" sizes="180x180">
+<meta name="theme-color" content="#c45c26">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Cálculo Tornado Fácil">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Cálculo Tornado Fácil">
+<meta property="og:description" content="Capítulo XVIII: integrar como o inverso de diferenciar.">
+<meta property="og:url" content="https://rodriguestmo.github.io/calculo-tornado-facil/18.html">
+<meta property="og:image" content="https://rodriguestmo.github.io/calculo-tornado-facil/cover.jpg">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Cálculo Tornado Fácil">
+<meta name="twitter:description" content="Capítulo XVIII: integrar como o inverso de diferenciar.">
+<meta name="twitter:image" content="https://rodriguestmo.github.io/calculo-tornado-facil/cover.jpg">
+
+<link rel="describedby" href="https://rodriguestmo.github.io/calculo-tornado-facil/llms.txt">
+<link rel="stylesheet" href="screen.css">
+<style>
+body{counter-reset:h1 18}
+</style>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$'], ['\\[','\\]']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ["script","noscript","style","textarea","pre","code"]
+    },
+    TeX: {
+      extensions: ["AMSmath.js","AMSsymbols.js"],
+      equationNumbers: { autoNumber: "none" }
+    },
+    "HTML-CSS": {
+      availableFonts: ["TeX"],
+      linebreaks: { automatic: false },
+      styles: {
+        ".MathJax_Display": { "margin": "1.5em 0" }
+      }
+    },
+    CommonHTML: {
+      styles: { ".MJXc-display": { "margin": "1.5em 0" } }
+    },
+    showProcessingMessages: false,
+    messageStyle: "none"
+  });
+</script>
+<script type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Chapter",
+  "name": "Integrar como o Inverso de Diferenciar",
+  "position": 18,
+  "isPartOf": {
+    "@type": "Book",
+    "name": "Cálculo Tornado Fácil",
+    "url": "https://rodriguestmo.github.io/calculo-tornado-facil/"
+  },
+  "author": {"@type": "Person", "name": "Silvanus P. Thompson"},
+  "translator": {"@type": "Person", "name": "Thales Rodrigues"},
+  "url": "https://rodriguestmo.github.io/calculo-tornado-facil/18.html",
+  "inLanguage": "pt-BR",
+  "isAccessibleForFree": true
+}
+</script>
+</head>
+<body>
+<!-- Progresso de leitura do capítulo (scroll) -->
+<div id="read-progress" class="read-progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="Progresso de leitura do capítulo">
+  <div id="read-progress-bar" class="read-progress-bar"></div>
+</div>
+
+<!-- Barra fixa: logo + menus (marca-texto à esquerda, engrenagem à direita) -->
+<div id="site-toolbar" class="site-toolbar" role="region" aria-label="Controles do site">
+  <a class="tb-home" href="index.html">Cálculo Tornado Fácil</a>
+
+  <div class="tb-controls">
+    <!-- Marca-texto (esquerda) -->
+    <div class="tb-menu" data-menu="highlight">
+      <button type="button" class="tb-btn tb-menu-btn" id="hl-list-toggle" aria-expanded="false" aria-controls="hl-list-panel" title="Marca-texto e lista de destaques">
+        Marca-texto
+        <span id="hl-count-badge" class="hl-count-badge" hidden>0</span>
+      </button>
+      <div id="hl-list-panel" class="tb-menu-panel hl-list-panel" hidden role="dialog" aria-label="Marca-texto">
+        <div class="tb-menu-title">Marca-texto</div>
+
+        <div class="hl-color-row">
+          <span class="tb-menu-label">Cor ao destacar</span>
+          <div id="hl-color-swatches" class="hl-color-swatches" role="group" aria-label="Cor do marca-texto">
+            <button type="button" class="hl-swatch-btn cme-hl-pastel-yellow" data-color="pastel-yellow" title="Amarelo pastel" aria-label="Amarelo pastel" aria-pressed="true"></button>
+            <button type="button" class="hl-swatch-btn cme-hl-pastel-green" data-color="pastel-green" title="Verde pastel" aria-label="Verde pastel" aria-pressed="false"></button>
+            <button type="button" class="hl-swatch-btn cme-hl-pastel-blue" data-color="pastel-blue" title="Azul pastel" aria-label="Azul pastel" aria-pressed="false"></button>
+            <button type="button" class="hl-swatch-btn cme-hl-pastel-pink" data-color="pastel-pink" title="Rosa pastel" aria-label="Rosa pastel" aria-pressed="false"></button>
+            <button type="button" class="hl-swatch-btn cme-hl-pastel-orange" data-color="pastel-orange" title="Laranja pastel" aria-label="Laranja pastel" aria-pressed="false"></button>
+            <button type="button" class="hl-swatch-btn cme-hl-pastel-purple" data-color="pastel-purple" title="Roxo pastel" aria-label="Roxo pastel" aria-pressed="false"></button>
+          </div>
+          <select id="hl-color" hidden aria-hidden="true" tabindex="-1">
+            <option value="pastel-yellow">Amarelo pastel</option>
+            <option value="pastel-green">Verde pastel</option>
+            <option value="pastel-blue">Azul pastel</option>
+            <option value="pastel-pink">Rosa pastel</option>
+            <option value="pastel-orange">Laranja pastel</option>
+            <option value="pastel-purple">Roxo pastel</option>
+          </select>
+        </div>
+
+        <div class="hl-filter-row">
+          <button type="button" id="hl-filter-toggle" class="hl-filter-toggle" aria-expanded="false" aria-controls="hl-filter-body">
+            <span class="tb-menu-label">Filtrar lista</span>
+            <span id="hl-filter-toggle-label" class="hl-filter-toggle-label">mostrar</span>
+          </button>
+          <div id="hl-filter-body" class="hl-filter-body" hidden>
+            <div id="hl-filter-swatches" class="hl-color-swatches" role="group" aria-label="Filtrar destaques por cor">
+              <button type="button" class="hl-filter-btn is-active" data-filter="all" title="Todas as cores" aria-label="Todas as cores" aria-pressed="true">Tudo</button>
+              <button type="button" class="hl-swatch-btn hl-filter-btn cme-hl-pastel-yellow" data-filter="pastel-yellow" title="Filtrar amarelo" aria-label="Filtrar amarelo" aria-pressed="false"></button>
+              <button type="button" class="hl-swatch-btn hl-filter-btn cme-hl-pastel-green" data-filter="pastel-green" title="Filtrar verde" aria-label="Filtrar verde" aria-pressed="false"></button>
+              <button type="button" class="hl-swatch-btn hl-filter-btn cme-hl-pastel-blue" data-filter="pastel-blue" title="Filtrar azul" aria-label="Filtrar azul" aria-pressed="false"></button>
+              <button type="button" class="hl-swatch-btn hl-filter-btn cme-hl-pastel-pink" data-filter="pastel-pink" title="Filtrar rosa" aria-label="Filtrar rosa" aria-pressed="false"></button>
+              <button type="button" class="hl-swatch-btn hl-filter-btn cme-hl-pastel-orange" data-filter="pastel-orange" title="Filtrar laranja" aria-label="Filtrar laranja" aria-pressed="false"></button>
+              <button type="button" class="hl-swatch-btn hl-filter-btn cme-hl-pastel-purple" data-filter="pastel-purple" title="Filtrar roxo" aria-label="Filtrar roxo" aria-pressed="false"></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="hl-list-head">
+          <strong>Seus destaques</strong>
+          <span class="hl-list-hint">salvos neste navegador</span>
+        </div>
+        <div id="hl-list-body" class="hl-list-body">
+          <p class="hl-list-empty">Nenhum destaque ainda. Selecione um trecho no texto para destacar.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Configurações (direita) - só ícone de engrenagem -->
+    <div class="tb-menu" data-menu="settings">
+      <button type="button" class="tb-btn tb-menu-btn tb-btn-icon" id="settings-toggle" aria-expanded="false" aria-controls="settings-panel" title="Configurações" aria-label="Configurações">
+        <svg class="tb-gear-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false">
+          <path fill="currentColor" d="M19.14 12.94c.04-.31.06-.63.06-.94s-.02-.63-.06-.94l2.03-1.58a.5.5 0 0 0 .12-.64l-1.92-3.32a.5.5 0 0 0-.6-.22l-2.39.96a7.03 7.03 0 0 0-1.63-.94l-.36-2.54A.5.5 0 0 0 14.9 2h-3.8a.5.5 0 0 0-.49.42l-.36 2.54c-.59.24-1.13.55-1.63.94l-2.39-.96a.5.5 0 0 0-.6.22L3.71 8.08a.5.5 0 0 0 .12.64l2.03 1.58c-.04.31-.06.63-.06.94s.02.63.06.94L3.83 14.7a.5.5 0 0 0-.12.64l1.92 3.32c.14.24.43.34.68.22l2.39-.96c.5.39 1.04.7 1.63.94l.36 2.54c.05.24.25.42.49.42h3.8c.24 0 .44-.18.49-.42l.36-2.54c.59-.24 1.13-.55 1.63-.94l2.39.96c.25.1.54 0 .68-.22l1.92-3.32a.5.5 0 0 0-.12-.64l-2.03-1.58zM12 15.5A3.5 3.5 0 1 1 12 8.5a3.5 3.5 0 0 1 0 7z"/>
+        </svg>
+      </button>
+      <div id="settings-panel" class="tb-menu-panel" hidden role="dialog" aria-label="Configurações de leitura">
+        <div class="tb-menu-title">Configurações</div>
+
+        <label class="tb-menu-row">
+          <span class="tb-menu-label">Notas de Gardner</span>
+          <select id="notes-mode" aria-label="Modo de exibição das notas">
+            <option value="all">Sempre visíveis</option>
+            <option value="click">Lupa (clique para abrir)</option>
+            <option value="off">Sempre ocultadas</option>
+          </select>
+        </label>
+
+        <label class="tb-menu-row">
+          <span class="tb-menu-label">Fonte</span>
+          <select id="font-family" aria-label="Fonte do texto">
+            <option value="default">Padrão do site</option>
+            <option value="dyslexia">Dislexia</option>
+            <option value="sans">Sans-serif</option>
+            <option value="mono">Monospace</option>
+          </select>
+        </label>
+
+        <div class="tb-menu-row">
+          <span class="tb-menu-label">Tamanho</span>
+          <div class="tb-font-size" role="group" aria-label="Tamanho da fonte">
+            <button type="button" id="font-smaller" class="tb-btn tb-btn-sq" title="Diminuir fonte" aria-label="Diminuir fonte">A-</button>
+            <span id="font-size-label" class="tb-size-label" aria-live="polite">100%</span>
+            <button type="button" id="font-larger" class="tb-btn tb-btn-sq" title="Aumentar fonte" aria-label="Aumentar fonte">A+</button>
+          </div>
+        </div>
+
+        <div class="tb-menu-row">
+          <span class="tb-menu-label">Tema</span>
+          <button type="button" id="toggle-theme" class="tb-btn" title="Alternar tema claro/escuro" aria-pressed="false">
+            <span class="theme-label">Tema escuro</span>
+          </button>
+        </div>
+
+        <div class="tb-menu-row tb-menu-row-danger">
+          <span class="tb-menu-label">Dados locais</span>
+          <button type="button" id="clear-site-data" class="tb-btn tb-btn-danger" title="Apagar destaques, notas e preferências salvos neste navegador">
+            Limpar cache do site
+          </button>
+          <span class="tb-menu-hint">Remove destaques, notas, progresso e preferências salvos neste navegador.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Popup de seleção: destacar + nota -->
+<div id="hl-popup" class="hl-popup" hidden role="dialog" aria-label="Destacar trecho">
+  <button type="button" id="hl-btn-mark" class="tb-btn">Destacar</button>
+  <button type="button" id="hl-btn-note" class="tb-btn">Destacar + nota</button>
+  <button type="button" id="hl-btn-cancel" class="tb-btn tb-btn-ghost">Cancelar</button>
+</div>
+
+<!-- Tooltip flutuante da nota ao passar o mouse -->
+<div id="hl-float-tip" class="hl-float-tip" hidden role="tooltip"></div>
+
+<!-- Confirmação: limpar cache -->
+<div id="clear-data-modal" class="hl-modal" hidden role="dialog" aria-modal="true" aria-labelledby="clear-data-title">
+  <div class="hl-modal-box">
+    <h3 id="clear-data-title">Limpar cache do site?</h3>
+    <p class="hl-quote" style="font-style:normal;opacity:0.95">
+      Isso apaga <strong>tudo</strong> que foi salvo neste navegador:
+      destaques, notas, preferências (fonte, tema, tamanho), cor do marca-texto
+      e qualquer outro dado local do site.
+    </p>
+    <p class="hl-quote" style="font-style:normal;opacity:0.85">
+      Esta ação não pode ser desfeita.
+    </p>
+    <div class="hl-modal-actions">
+      <button type="button" id="clear-data-confirm" class="tb-btn tb-btn-danger">Sim, limpar tudo</button>
+      <button type="button" id="clear-data-cancel" class="tb-btn tb-btn-ghost">Cancelar</button>
+    </div>
+  </div>
+</div>
+
+<!-- Modal de nota do highlight -->
+<div id="hl-note-modal" class="hl-modal" hidden role="dialog" aria-modal="true" aria-labelledby="hl-note-title">
+  <div class="hl-modal-box">
+    <h3 id="hl-note-title">Nota do trecho</h3>
+    <p id="hl-note-quote" class="hl-quote"></p>
+    <label class="hl-note-label">Cor deste destaque</label>
+    <div id="hl-note-swatches" class="hl-color-swatches" role="group" aria-label="Cor deste destaque">
+      <button type="button" class="hl-swatch-btn cme-hl-pastel-yellow" data-color="pastel-yellow" title="Amarelo pastel" aria-label="Amarelo pastel"></button>
+      <button type="button" class="hl-swatch-btn cme-hl-pastel-green" data-color="pastel-green" title="Verde pastel" aria-label="Verde pastel"></button>
+      <button type="button" class="hl-swatch-btn cme-hl-pastel-blue" data-color="pastel-blue" title="Azul pastel" aria-label="Azul pastel"></button>
+      <button type="button" class="hl-swatch-btn cme-hl-pastel-pink" data-color="pastel-pink" title="Rosa pastel" aria-label="Rosa pastel"></button>
+      <button type="button" class="hl-swatch-btn cme-hl-pastel-orange" data-color="pastel-orange" title="Laranja pastel" aria-label="Laranja pastel"></button>
+      <button type="button" class="hl-swatch-btn cme-hl-pastel-purple" data-color="pastel-purple" title="Roxo pastel" aria-label="Roxo pastel"></button>
+    </div>
+    <select id="hl-note-color" hidden aria-hidden="true" tabindex="-1">
+      <option value="pastel-yellow">Amarelo pastel</option>
+      <option value="pastel-green">Verde pastel</option>
+      <option value="pastel-blue">Azul pastel</option>
+      <option value="pastel-pink">Rosa pastel</option>
+      <option value="pastel-orange">Laranja pastel</option>
+      <option value="pastel-purple">Roxo pastel</option>
+    </select>
+    <label class="hl-note-label" for="hl-note-input">Sua nota (salva só neste navegador)</label>
+    <textarea id="hl-note-input" rows="4" maxlength="2000" placeholder="Escreva uma anotação opcional..."></textarea>
+    <div class="hl-modal-actions">
+      <button type="button" id="hl-note-save" class="tb-btn">Salvar</button>
+      <button type="button" id="hl-note-remove" class="tb-btn tb-btn-danger">Remover destaque</button>
+      <button type="button" id="hl-note-close" class="tb-btn tb-btn-ghost">Fechar</button>
+    </div>
+  </div>
+</div>
+
+<h1><br>Integrar como o Inverso de Diferenciar</h1>
+<p class="a rotatedFloralHeartBullet">
+<p>Diferenciar é o processo pelo qual, quando $y$ nos é
+dado (como função de $x$), podemos achar $\dfrac{dy}{dx}$.
+
+<p><a name="revdif"/>
+Como toda outra operação matemática, o processo de
+diferenciação pode ser invertido; assim, se
+diferenciar $y = x^4$ nos dá $\dfrac{dy}{dx} = 4x^3$; se alguém
+começar com $\dfrac{dy}{dx} = 4x^3$ diria que inverter o processo
+produz $y = x^4$. Mas aqui surge um ponto curioso. Também
+obteríamos $\dfrac{dy}{dx} = 4x^3$ se tivéssemos começado com
+<em>qualquer</em> das seguintes: $x^4$, ou $x^4 + a$, ou $x^4 + c$, ou
+$x^4$ com <em>qualquer</em> constante acrescentada. Fica claro,
+pois, que ao trabalhar de trás para a frente de
+$\dfrac{dy}{dx}$ até $y$, é preciso prever a possibilidade de
+haver uma constante acrescentada, cujo valor ficará
+indeterminado até ser apurado de outro modo. Assim,
+se diferenciar $x^n$ produz $nx^{n-1}$, voltando de
+$\dfrac{dy}{dx} = nx^{n-1}$ obteremos $y = x^n + C$; onde $C$
+representa a possível constante ainda indeterminada.
+
+<p>Claramente, ao lidar com potências de $x$, a regra
+para trabalhar de trás para a frente será: Aumente
+a potência em $1$, depois divida por essa potência
+aumentada, e acrescente a constante indeterminada.
+
+<p>Assim, no caso em que</p>
+
+\[
+\frac{dy}{dx} = x^n,
+\]
+trabalhando de trás para a frente, obtemos
+\[
+y = \frac{1}{n + 1} x^{n+1} + C.
+\]
+
+<p>Se diferenciar a equação $y = ax^n$ nos dá</p>
+
+\[
+\frac{dy}{dx} = anx^{n-1},
+\]
+é questão de bom senso que, começando com
+\[
+\frac{dy}{dx} = anx^{n-1},
+\]
+e invertendo o processo, obteremos
+\[
+y = ax^n.
+\]
+Assim, quando lidamos com uma constante
+multiplicadora, basta colocar a constante como
+multiplicador do resultado da integração.
+
+
+<p>Assim, se $\dfrac{dy}{dx} = 4x^2$, o processo inverso nos dá
+$y = \frac{4}{3}x^3$.
+
+<p>Mas isso está incompleto. Pois devemos lembrar que
+se tivéssemos começado com</p>
+
+\[
+y = ax^n + C,
+\]
+onde $C$ é qualquer quantidade constante, teríamos
+igualmente encontrado
+\[
+\frac{dy}{dx} = anx^{n-1}.
+\]
+
+<p>Portanto, ao inverter o processo, devemos sempre
+lembrar de acrescentar essa constante indeterminada,
+mesmo que ainda não saibamos qual será seu valor.
+
+<p>Esse processo, o inverso de diferenciar, chama-se
+<em>integrar</em>; pois consiste em achar o valor da
+quantidade total $y$ quando se tem apenas uma
+expressão para $dy$ ou para $\dfrac{dy}{dx}$. Até aqui, tanto
+quanto possível, mantivemos $dy$ e $dx$ juntos como
+uma derivada: de agora em diante teremos com mais
+frequência de separá-los.
+
+<p>Se começarmos com um caso simples,</p>
+
+\[
+\frac{dy}{dx} = x^2.
+\]
+
+<p>Podemos escrever isso, se quisermos, como</p>
+
+\[
+dy = x^2\, dx.
+\]
+
+<p>Agora isto é uma “equação diferencial” que nos
+informa que um elemento de $y$ é igual ao
+correspondente elemento de $x$ multiplicado por $x^2$.
+O que queremos
+
+é a integral; portanto, escreva com o símbolo
+próprio as instruções para integrar ambos os lados,
+assim:</p>
+
+\[
+\int dy = \int x^2\, dx.
+\]
+
+<p>[Nota sobre a leitura de integrais: o acima se
+leria assim:
+“<em>Integral de dê-ipsilon</em> é igual a <em>integral de
+xis ao quadrado dê-xis</em>.”]
+
+
+<p>Ainda não integramos: só escrevemos as instruções
+para integrar - se pudermos. Vamos tentar. Um bocado
+de outros tolos consegue - por que nós também não?
+O lado esquerdo é simplicidade em si. A soma de
+todos os pedacinhos de $y$ é a mesma coisa que o
+próprio $y$. Assim podemos de uma vez pôr:</p>
+
+\[
+y = \int x^2\, dx.
+\]
+
+<p>Mas quando chegamos ao lado direito da equação
+devemos lembrar que o que temos de somar juntos não
+são todos os $dx$, e sim todos os termos como
+$x^2\, dx$; e isso <em>não</em> será o mesmo que $x^2 \int dx$,
+porque $x^2$ não é uma constante. Pois alguns dos $dx$
+serão multiplicados por valores grandes de $x^2$, e
+outros por valores pequenos de $x^2$, conforme o valor
+de $x$. Assim devemos refletir sobre o que sabemos
+desse processo de integração ser o inverso da
+diferenciação. Ora, nossa regra para esse processo
+invertido - veja <a href="18.html#revdif">aqui</a> <em>acima</em> - ao lidar com $x^n$
+é “aumente a potência em um, e<a name="diffrule"/> divida pelo mesmo
+número que essa potência aumentada.”
+
+Isto é, $x^2\, dx$ será mudado *
+para $\frac{1}{3} x^3$. Ponha isso
+na equação; mas não esqueça de acrescentar a
+“constante de integração” $C$ no fim. Assim obtemos:
+\[
+y = \tfrac{1}{3} x^3 + C.
+\]
+
+<p>Você de fato realizou a integração. Que fácil!
+<p><note>*Você pode perguntar: o que aconteceu com o pequenino $dx$ no fim?
+  Bem, lembre-se de que ele era de fato parte da derivada,
+  e, quando passado para o lado direito, como em $x^2\, dx$,
+  serve de lembrete de que $x$ é a variável independente em relação
+  à qual a operação deve ser efetuada; e, como resultado do
+  produto ser totalizado, a potência de $x$ aumentou em <em>um</em>.
+  Você logo se familiarizará com tudo isso.</note>
+<p>Tentemos outro caso simples.
+
+<p>Seja</p>
+\[
+\begin{aligned}
+\dfrac{dy}{dx} &= ax^{12},
+\end{aligned}
+\]
+onde $a$ é qualquer multiplicador constante. Bem, vimos
+ao diferenciar (veja <a href="5.html#differ">aqui</a>) que qualquer fator
+constante no valor de $y$ reaparecia inalterado no
+valor de $\dfrac{dy}{dx}$. No processo invertido de integrar,
+portanto, ele também reaparecerá no valor de $y$.
+Assim podemos trabalhar como antes:
+\[
+\begin{aligned}
+dy &= ax^{12} · dx,\\
+\int dy &= \int ax^{12} · dx,\\
+\int dy &= a \int x^{12}\, dx,\\
+y &= a × \tfrac{1}{13} x^{13} + C.
+\end{aligned}
+\]
+
+<p>Pronto. Que fácil!
+
+
+<p>Começamos a perceber agora que integrar é um
+processo de <em>achar o caminho de volta</em>, em comparação
+com diferenciar. Se alguma vez, ao diferenciar,
+encontramos alguma expressão particular - neste
+exemplo $ax^{12}$ - podemos achar o caminho de volta até
+o $y$ de onde ela veio. O contraste entre os dois
+processos pode ser ilustrado pela seguinte observação
+de um professor bem conhecido. Se um estranho fosse
+deixado na Trafalgar Square e mandado achar o caminho
+até a estação de Euston, poderia achar a tarefa
+desesperadora. Mas se antes tivesse sido conduzido
+pessoalmente da estação de Euston até a Trafalgar
+Square, seria comparativamente fácil achar o caminho
+de volta até Euston.
+
+<p><h2>Integração da soma ou diferença de duas
+funções.</h2>
+
+<p>\[
+\begin{aligned}
+   \mbox{Seja }
+\frac{dy}{dx} &= x^2 + x^3, \\
+ \mbox{então }
+dy &= x^2\, dx + x^3\, dx.
+\end{aligned}
+\]
+
+<p>Não há razão para não integrarmos cada termo em
+separado: pois, como se vê <a href="6.html#sumdiffer">aqui</a>, vimos que quando
+diferenciamos a soma de duas funções separadas, a
+derivada era simplesmente a soma das duas
+diferenciações separadas. Assim, quando trabalhamos
+de trás para a frente, integrando, a integração será
+simplesmente a soma das duas integrações separadas.
+
+
+<p>Nossas instruções serão então:</p>
+
+\[
+\begin{aligned}
+\int dy
+  &= \int (x^2 + x^3)\, dx \\
+  &= \int x^2\, dx + \int x^3\, dx   \\
+y &= \tfrac{1}{3} x^3 + \tfrac{1}{4} x^4 + C.
+\end{aligned}
+\]
+
+<p>Se qualquer dos termos tivesse sido uma quantidade
+negativa, o termo correspondente na integral também
+teria sido negativo. Assim as diferenças se tratam
+tão prontamente quanto as somas.
+
+<p><h2>Como lidar com termos constantes.</h2>
+
+<p>Suponha que na expressão a integrar haja um termo
+constante - como este:</p>
+
+\[
+\frac{dy}{dx} = x^n + b.
+\]
+
+<p>Isso é ridiculamente fácil. Pois basta lembrar que
+quando você diferenciou a expressão $y = ax$, o
+resultado foi $\dfrac{dy}{dx} = a$. Logo, quando trabalha no
+outro sentido e integra, a constante reaparece
+multiplicada por $x$. Assim obtemos</p>
+
+\[
+\begin{aligned}
+dy &= x^n\, dx + b · dx,  \\
+\int dy &= \int x^n\, dx + \int b\, dx, \\
+y &= \frac{1}{n+1} x^{n+1} + bx + C.
+\end{aligned}
+\]
+
+<p>Aqui vai um monte de exemplos para experimentar
+seus poderes recém-adquiridos.
+
+<p><hr>
+
+
+<p>
+<p><em>Exemplos</em>
+<p>(1) Dado $\dfrac{dy}{dx} = 24x^{11}$. Ache $y$.<p> <em>Resp</em> . $y = 2x^{12} + C$.
+
+<p>(2) Ache $\int (a + b)(x + 1)\, dx$.<p> É $(a + b) \int (x + 1)\, dx$
+ou  $(a + b) \left[\int x\, dx + \int dx\right]$ ou $(a + b) \left(\dfrac{x^2}{2} + x\right) + C$.
+
+<p>(3) Dado $\dfrac{du}{dt} = gt^{\frac{1}{2}}$. Ache $u$.<p> <em>Resp</em> . $u = \frac{2}{3} gt^{\frac{3}{2}} + C$.
+
+<p>(4) $\dfrac{dy}{dx} = x^3 - x^2 + x$. Ache $y$.</p>
+
+\[
+\begin{aligned}
+dy &= (x^3 - x^2 + x)\, dx\quad\text{ou} \\
+dy &= x^3\, dx - x^2\, dx + x\, dx \\
+y &= \int x^3\, dx - \int x^2\, dx + \int x\, dx;
+\end{aligned}
+\]
+ e
+\[
+\begin{aligned}
+y &= \tfrac{1}{4} x^4 - \tfrac{1}{3} x^3 + \tfrac{1}{2} x^2 + C.
+\end{aligned}
+\]
+
+<p>(5) Integre $9.75x^{2.25}\, dx$.<p> <em>Resp</em> . $y = 3x^{3.25} + C$.
+
+<p><hr>
+
+<p>Tudo isso é fácil o bastante. Tentemos outro caso.
+
+
+<p>Seja</p>
+\[
+\begin{aligned}
+\dfrac{dy}{dx} &= ax^{-1}.
+\end{aligned}
+\]
+
+<p>Procedendo como antes, escreveremos</p>
+
+\[
+dy = a x^{-1} · dx,\quad \int dy = a \int x^{-1}\, dx.
+\]
+
+<p>Bem, mas o que é a integral de $x^{-1}\, dx$?
+
+<p>Se você olhar de volta entre os resultados de
+diferenciar $x^2$ e $x^3$ e $x^n$, etc., verá que nunca
+obtivemos $x^{-1}$ de nenhum deles como valor de
+$\dfrac{dy}{dx}$. Obtivemos $3x^2$ de $x^3$; obtivemos $2x$ de
+$x^2$; obtivemos $1$ de $x^1$ (isto é, do próprio $x$);
+mas não obtivemos $x^{-1}$ de $x^0$, por duas ótimas
+razões. <em>Primeiro</em>, $x^0$ é simplesmente $= 1$, e é uma
+constante, e não poderia ter
+
+uma derivada. <em>Segundo</em>, mesmo que pudesse ser
+diferenciado, sua derivada (obtida seguindo
+escravosamente a regra usual) seria $0 × x^{-1}$, e essa
+multiplicação por zero dá valor zero! Portanto,
+quando agora tentamos integrar $x^{-1}\, dx$, vemos que
+ele não entra em lugar algum nas potências de $x$
+dadas pela regra:
+\[
+\int x^n\, dx = \dfrac{1}{n+1} x^{n+1}.
+\]
+É um caso excepcional.
+
+<p>Bem; mas tente de novo. Examine todas as várias
+diferenciais obtidas de várias funções de $x$, e
+tente achar entre elas $x^{-1}$. Uma busca suficiente
+mostrará que de fato obtivemos $\dfrac{dy}{dx} = x^{-1}$ como
+resultado de diferenciar<a name="intex1"/> a função $y = \log_\epsilon x$ (veja
+<a href="14.html#differlog">aqui</a>).
+
+<p>Então, claro, como sabemos que diferenciar
+$\log_\epsilon x$ nos dá $x^{-1}$, sabemos que, invertendo o
+processo, integrar $dy = x^{-1}\, dx$ nos dará $y = \log_\epsilon x$.
+Mas não devemos esquecer o fator constante $a$ que foi
+dado, nem omitir a constante indeterminada de
+integração. Isso então nos dá como solução do
+problema presente</p>
+
+\[
+y = a \log_\epsilon x + C.
+\]
+
+<p><em>Nota</em> - Observe este fato muito notável: não
+poderíamos ter integrado no caso acima se por acaso
+não conhecêssemos a diferenciação correspondente.
+Se ninguém tivesse descoberto que diferenciar
+$\log_\epsilon x$ dava $x^{-1}$, teríamos ficado completamente
+travados pelo
+
+problema de como integrar $x^{-1}\, dx$. De fato deve-se
+admitir francamente que esta é uma das curiosas
+características do cálculo integral: você não
+consegue integrar coisa alguma antes que o processo
+inverso de diferenciar alguma outra coisa tenha
+produzido a expressão que você quer integrar. Ninguém,
+mesmo hoje, é capaz de achar a integral geral da
+expressão
+\[
+\frac{dy}{dx} = a^{-x^2},
+\]
+porque $a^{-x^2}$ nunca foi encontrado como resultado de
+diferenciar coisa alguma.
+
+<p>
+<em>Outro caso simples.</em><p>
+Ache $\int (x + 1)(x + 2)\, dx$.
+
+<p>Olhando a função a integrar, você observa que é o
+produto de duas funções diferentes de $x$. Você
+poderia, pensa, integrar $(x + 1)\, dx$ sozinho, ou
+$(x + 2)\, dx$ sozinho. Claro que poderia. Mas o que
+fazer com um produto? Nenhuma das diferenciações que
+você aprendeu lhe deu, como derivada, um produto
+como este. Falhando isso, o mais simples é multiplicar
+as duas funções e depois integrar. Isso nos dá</p>
+
+\[
+\int (x^2 + 3x + 2)\, dx.
+\]
+E isto é o mesmo que
+\[
+\int x^2\, dx + \int 3x\, dx + \int 2\, dx.
+\]
+E realizando as integrações, obtemos
+\[
+\tfrac{1}{3} x^3 + \tfrac{3}{2} x^2 + 2x + C.
+\]
+
+<p>
+  <h2>Algumas outras integrais</h2>
+
+
+<p>Agora que sabemos que a integração é o inverso da
+diferenciação, podemos de uma vez consultar as
+derivadas que já conhecemos e ver de que funções
+elas foram derivadas. Isso nos dá as seguintes
+integrais prontas:<a name="intex2"/><a name="differ3"/><a name="cosax"/>
+
+\begin{alignat*}{4}
+&x^{-1} &&\qquad &&
+  \int x^{-1}\, dx      &&= \log_\epsilon x + C. \\
+
+%\label{intex2}
+&\frac{1}{x+a} &&  &&
+  \int \frac{1}{x+a}\, dx &&= \log_\epsilon (x+a) + C. \\
+
+&\epsilon^x &&  &&
+  \int \epsilon^x\, dx    &&= \epsilon ^x + C. \\
+
+&\epsilon^{-x} &&&&
+  \int \epsilon^{-x}\, dx &&= -\epsilon^{-x} + C \\
+
+\end{alignat*}
+(pois se $y = - \dfrac{1}{\epsilon^x}$, $\dfrac{dy}{dx} = -\dfrac{\epsilon^x × 0 - 1 × \epsilon^x}{\epsilon^{2x}} = \epsilon^{-x}$).
+\begin{alignat*}{4}
+
+
+&\sin x &&  &&
+  \int \sin x\, dx        &&= -\cos x + C. \\
+
+&\cos x && &&
+  \int \cos x\, dx        &&= \sin x + C. \\
+
+\end{alignat*}
+ Também podemos deduzir o seguinte:
+\begin{alignat*}{4}
+
+&\log_\epsilon x; &&&&
+  \int\log_\epsilon x\, dx &&= x(\log_\epsilon x - 1) + C \\
+
+\end{alignat*}
+(pois se $y = x \log_\epsilon x - x$, $\dfrac{dy}{dx} = \dfrac{x}{x} + \log_\epsilon x - 1 = \log_\epsilon x$).
+\begin{alignat*}{4}
+
+
+&\log_{10} x;   &&&&
+  \int\log_{10} x\, dx &&= 0.4343x (\log_\epsilon x - 1) + C. \\
+
+&a^x &&  &&
+  \int a^x\, dx        &&= \dfrac{a^x}{\log_\epsilon a} + C. \\
+
+% \label{cosax}
+&\cos ax; &&&& \int\cos ax\, dx     &&= \frac{1}{a} \sin ax + C \\
+\end{alignat*}
+(pois se $y = \sin ax$, $\dfrac{dy}{dx} = a \cos ax$; logo para obter $\cos ax$
+é preciso diferenciar $y = \dfrac{1}{a} \sin ax$).
+\begin{alignat*}{4}
+
+
+
+&\sin ax; &&&& \int\sin ax\, dx     &&= -\frac{1}{a} \cos ax + C. \\
+\end{alignat*}
+
+<p>Tente também $\cos^2\theta$; um pequeno truque simplificará
+as coisas:</p>
+
+\[
+\cos 2\theta = \cos^2\theta - \sin^2\theta
+             = 2\cos^2 \theta - 1; \\
+\]
+ logo
+\[
+\cos^2\theta = \tfrac{1}{2}(\cos 2\theta + 1),
+\]
+ e
+\[
+\begin{aligned}
+\int\cos^2 \theta\, d\theta
+  &= \tfrac{1}{2} \int (\cos 2\theta + 1)\, d\theta \\
+  &= \tfrac{1}{2} \int \cos 2 \theta\, d\theta + \tfrac{1}{2} \int d\theta. \\
+  &= \frac{\sin 2\theta}{4} + \frac{\theta}{2} + C.
+\end{aligned}
+\]
+
+<p>(Veja também <a href="20.html#moreexamples">aqui</a>)
+<p>
+Veja também a <a href="table.html">Tabela de Formas-Padrão</a>.
+Você deve fazer tal tabela para si mesmo, colocando
+nela apenas as funções gerais que tiver diferenciado
+e integrado com sucesso. Cuide para que ela cresça
+com constância!
+
+
+<p>
+  <h2>Sobre integrais duplas e triplas.</h2>
+
+
+<p>Em muitos casos é necessário integrar alguma
+expressão para duas ou mais variáveis nela
+contidas; e nesse caso o sinal de integração aparece
+mais de uma vez. Assim,</p>
+
+\[
+\iint f(x,y,)\, dx\, dy
+\]
+significa que alguma função das variáveis $x$ e $y$
+tem de ser integrada para cada uma. Não importa a
+ordem em que se faça. Assim, tome a função
+$x^2 + y^2$. Integrando-a em relação a $x$ obtemos:
+\[
+\int (x^2+y^2)\, dx = \tfrac{1}{3} x^3 + xy^2.
+\]
+
+<p>Agora, integre isso em relação a $y$:</p>
+
+\[
+\int (\tfrac{1}{3} x^3 + xy^2)\, dy = \tfrac{1}{3} x^3y + \tfrac{1}{3} xy^3,
+\]
+ao que, claro, se acrescenta uma constante. Se
+tivéssemos invertido a ordem das operações, o
+resultado teria sido o mesmo.
+
+<p>Ao lidar com áreas de superfícies e de sólidos,
+muitas vezes temos de integrar tanto em comprimento
+quanto em largura, e assim temos integrais da forma</p>
+
+\[
+\iint u · dx\, dy,
+\]
+onde $u$ é alguma propriedade que depende, em cada
+ponto, de $x$ e de $y$. Isso se chamaria então uma
+<em>integral de superfície</em>.
+Indica que o valor de todos os
+
+elementos como $u · dx · dy$ (isto é, do valor de $u$
+sobre um retângulo pequenino de comprimento $dx$ e
+largura $dy$) tem de ser somado ao longo de todo o
+comprimento e de toda a largura.
+
+<p>De modo semelhante no caso de sólidos, em que
+lidamos com três dimensões. Considere qualquer
+elemento de volume, o cubinho cujas dimensões são
+$dx$ $dy$ $dz$. Se a figura do sólido for expressa pela
+função $f(x, y, z)$, então o sólido inteiro terá a
+<em>integral de volume</em>
+\[
+\text{volume} = \iiint f(x,y,z) · dx · dy · dz.
+\]
+Naturalmente, tais integrações têm de ser tomadas
+entre limites apropriados (Veja <a href="19.html#limits">aqui</a> sobre
+integração entre limites.) em cada dimensão; e a
+integração não pode ser realizada a menos que se
+saiba de que modo as fronteiras da superfície
+dependem de $x$, $y$ e $z$. Se os limites para $x$ vão
+de $x_1$ a $x_2$, os de $y$ de $y_1$ a $y_2$, e os de $z$ de
+$z_1$ a $z_2$, então claramente temos
+\[
+\text{volume} = \int_{z1}^{z2} \int_{y1}^{y2} \int_{x1}^{x2} f(x,y,z) · dx · dy · dz.
+\]
+
+<p>Há, claro, um bocado de casos complicados e
+difíceis; mas, em geral, é bastante fácil ver o
+significado dos símbolos quando se pretende indicar
+que certa integração deve ser realizada sobre uma
+superfície dada, ou ao longo de um espaço sólido
+dado.
+
+
+<p>
+<hr><h3>Exercícios XVII</h3>
+
+
+(1) Ache  $\int y\, dx$ quando  $y^2 = 4 ax$.
+
+<p>
+(2) Ache  $\int \frac{3}{x^4}\, dx$.
+<p>(3) Ache  $\int \frac{1}{a} x^3\, dx$.
+
+<p>
+(4) Ache  $\int (x^2 + a)\, dx$.
+<p>(5) Integre $5x^{-\frac{7}{2}}$.
+
+<p>
+(6) Ache  $\int (4x^3 + 3x^2 + 2x + 1)\, dx$.
+
+<p>(7) Se $\dfrac{dy}{dx} = \dfrac{ax}{2} + \dfrac{bx^2}{3} + \dfrac{cx^3}{4}$; ache $y$.
+
+<p>
+(8) Ache $\int \left(\frac{x^2 + a}{x + a}\right) dx$.
+<p>(9)  Ache $\int (x + 3)^3\, dx$.
+
+<p>
+(10) Ache $\int (x + 2)(x - a)\, dx$.
+
+<p>(11) Ache $\int (\sqrt x + \sqrt[3] x) 3a^2\, dx$.
+
+<p>(12) Ache $\int (\sin \theta - \tfrac{1}{2})\, \frac{d\theta}{3}$.
+
+<p>
+(13) Ache  $\int \cos^2 a \theta\, d\theta$.
+<p>(14) Ache  $\int \sin^2 \theta\, d\theta$.
+
+<p>
+(15) Ache  $\int \sin^2 a \theta\, d\theta$.
+<p>(16) Ache  $\int \epsilon^{3x}\, dx$.
+
+<p>
+(17) Ache  $\int \dfrac{dx}{1 + x}$.
+<p>(18) Ache  $\int \dfrac{dx}{1 - x}$.
+
+
+<p><h3 class="answers">Respostas</h3>
+
+<p>(1)  $\dfrac{4\sqrt{a} x^{\frac{3}{2}}}{3} + C$.
+
+<p>(2)  $-\dfrac{1}{x^3} + C$.
+
+<p>(3)  $\dfrac{x^4}{4a} + C$.
+
+
+<p>(4)  $\tfrac{1}{3} x^3 + ax + C$.
+
+<p>(5)  $-2x^{-\frac{5}{2}} + C$.
+
+
+<p>(6)  $x^4 + x^3 + x^2 + x + C$.
+
+<p>(7)  $\dfrac{ax^2}{4} + \dfrac{bx^3}{9} + \dfrac{cx^4}{16} + C$.
+
+
+<p>(8)   $\dfrac{x^2 + a}{x + a} = x - a + \dfrac{a^2 + a}{x + a}$ por divisão. Portanto a resposta
+é $\dfrac{x^2}{2} - ax + (a^2 + a)\log_\epsilon (x + a) + C$.
+  (Veja as páginas <a href="18.html#intex1">aqui</a> e <a href="18.html#intex2">aqui</a>.)
+
+
+<p>(9)  $\dfrac{x^4}{4} + 3x^3 + \dfrac{27}{2} x^2 + 27x + C$.
+
+<p>(10)  $\dfrac{x^3}{3} + \dfrac{2 - a}{2} x^2 - 2ax + C$.
+
+
+<p>(11)  $a^2(2x^{\frac{3}{2}} + \tfrac{9}{4} x^{\frac{4}{3}}) + C$.
+
+<p>(12)  $-\tfrac{1}{3} \cos\theta - \tfrac{1}{6} \theta + C$.
+
+
+<p>(13)  $\dfrac{\theta}{2} + \dfrac{\sin 2a\theta}{4a} + C$.
+
+<p>(14)  $\dfrac{\theta}{2} - \dfrac{\sin 2\theta}{4} + C$.
+
+
+<p>(15)  $\dfrac{\theta}{2} - \dfrac{\sin 2a\theta}{4a} + C$.
+
+<p>(16)  $\tfrac{1}{3} \epsilon^{3x}$. % [F1: +C?]
+
+
+<p>(17)  $\log(1 + x) + C$.
+
+<p>(18)  $-\log_\epsilon (1 - x) + C$.
+<br>
+<!-- Soluções comerciais removidas: projeto público e sem fins lucrativos -->
+
+
+<hr>
+<nav class="chapter-nav" aria-label="Navegação do capítulo">
+  <a class="nav-prev" href="17.html">← Anterior</a>
+  <a class="nav-home" href="index.html">Página principal</a>
+  <a class="nav-next" href="19.html">Próximo →</a>
+</nav>
+<footer class="site-footer" role="contentinfo">
+  <p class="a rotatedFloralHeartBullet"></p>
+
+  <div class="manifesto">
+    <p class="manifesto-lead">
+      Este é um <strong>projeto público</strong>, sem fins lucrativos.
+      Não é permitido comercializá-lo, vendê-lo nem usá-lo como produto pago.
+    </p>
+    <p class="manifesto-quote">
+      A educação é um direito de todos.
+      O conhecimento deve ser livre sempre que não cause o mal:
+      deve circular, ensinar e libertar, nunca aprisionar quem aprende.
+    </p>
+    <p class="manifesto-sign">
+      - Thales Rodrigues
+    </p>
+  </div>
+
+  <nav class="author-links" aria-label="Redes de Thales Rodrigues">
+    <a href="https://www.linkedin.com/in/thales-oliveira-rodrigues/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    <span class="dot" aria-hidden="true">·</span>
+    <a href="https://github.com/Rodriguestmo" target="_blank" rel="noopener noreferrer">GitHub</a>
+  </nav>
+
+  <p class="footer-meta">
+    <small>
+      Tradução e adaptação PT-BR por Thales Rodrigues.
+      Texto de Silvanus P. Thompson em domínio público (Project Gutenberg).
+      Notas de contexto inspiradas na edição Gardner (1998).
+      Projeto público e gratuito.
+    </small>
+  </p>
+</footer>
+
+<script src="j/jquery.js"></script>
+<script src="j/modernizr.js"></script>
+<script src="j/dih5.js"></script>
+<script src="j/chapters-data.js"></script>
+<script src="j/glossary-data.js"></script>
+<script src="j/reader-features.js"></script>
+<script src="j/notes-toggle.js"></script>
+<!-- Analytics desativado na edição PT local -->
+</body>
+</html>

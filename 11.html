@@ -1,0 +1,1078 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+
+<title>Cálculo Tornado Fácil</title>
+<meta name="description" content="Capítulo XI: máximos e mínimos com cálculo diferencial.">
+<meta name="author" content="Thales Rodrigues; Silvanus P. Thompson">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="googlebot" content="index, follow">
+<meta name="language" content="Portuguese">
+<meta name="keywords" content="cálculo, calculus made easy, Silvanus Thompson, cálculo diferencial, cálculo integral, matemática, educação livre, português, Martin Gardner, Cálculo Tornado Fácil, Thales Rodrigues">
+<link rel="canonical" href="https://rodriguestmo.github.io/calculo-tornado-facil/11.html">
+<link rel="alternate" hreflang="pt-BR" href="https://rodriguestmo.github.io/calculo-tornado-facil/11.html">
+<link rel="alternate" hreflang="x-default" href="https://rodriguestmo.github.io/calculo-tornado-facil/">
+
+
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
+<link rel="icon" href="favicon-16.png" type="image/png" sizes="16x16">
+<link rel="shortcut icon" href="favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png" sizes="180x180">
+<meta name="theme-color" content="#c45c26">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Cálculo Tornado Fácil">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Cálculo Tornado Fácil">
+<meta property="og:description" content="Capítulo XI: máximos e mínimos com cálculo diferencial.">
+<meta property="og:url" content="https://rodriguestmo.github.io/calculo-tornado-facil/11.html">
+<meta property="og:image" content="https://rodriguestmo.github.io/calculo-tornado-facil/cover.jpg">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Cálculo Tornado Fácil">
+<meta name="twitter:description" content="Capítulo XI: máximos e mínimos com cálculo diferencial.">
+<meta name="twitter:image" content="https://rodriguestmo.github.io/calculo-tornado-facil/cover.jpg">
+
+<link rel="describedby" href="https://rodriguestmo.github.io/calculo-tornado-facil/llms.txt">
+<link rel="stylesheet" href="screen.css">
+<style>
+body{counter-reset:h1 11}
+</style>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$'], ['\\[','\\]']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ["script","noscript","style","textarea","pre","code"]
+    },
+    TeX: {
+      extensions: ["AMSmath.js","AMSsymbols.js"],
+      equationNumbers: { autoNumber: "none" }
+    },
+    "HTML-CSS": {
+      availableFonts: ["TeX"],
+      linebreaks: { automatic: false },
+      styles: {
+        ".MathJax_Display": { "margin": "1.5em 0" }
+      }
+    },
+    CommonHTML: {
+      styles: { ".MJXc-display": { "margin": "1.5em 0" } }
+    },
+    showProcessingMessages: false,
+    messageStyle: "none"
+  });
+</script>
+<script type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Chapter",
+  "name": "Máximos e Mínimos",
+  "position": 11,
+  "isPartOf": {
+    "@type": "Book",
+    "name": "Cálculo Tornado Fácil",
+    "url": "https://rodriguestmo.github.io/calculo-tornado-facil/"
+  },
+  "author": {"@type": "Person", "name": "Silvanus P. Thompson"},
+  "translator": {"@type": "Person", "name": "Thales Rodrigues"},
+  "url": "https://rodriguestmo.github.io/calculo-tornado-facil/11.html",
+  "inLanguage": "pt-BR",
+  "isAccessibleForFree": true
+}
+</script>
+</head>
+<body>
+<!-- Progresso de leitura do capítulo (scroll) -->
+<div id="read-progress" class="read-progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="Progresso de leitura do capítulo">
+  <div id="read-progress-bar" class="read-progress-bar"></div>
+</div>
+
+<!-- Barra fixa: logo + menus (marca-texto à esquerda, engrenagem à direita) -->
+<div id="site-toolbar" class="site-toolbar" role="region" aria-label="Controles do site">
+  <a class="tb-home" href="index.html">Cálculo Tornado Fácil</a>
+
+  <div class="tb-controls">
+    <!-- Marca-texto (esquerda) -->
+    <div class="tb-menu" data-menu="highlight">
+      <button type="button" class="tb-btn tb-menu-btn" id="hl-list-toggle" aria-expanded="false" aria-controls="hl-list-panel" title="Marca-texto e lista de destaques">
+        Marca-texto
+        <span id="hl-count-badge" class="hl-count-badge" hidden>0</span>
+      </button>
+      <div id="hl-list-panel" class="tb-menu-panel hl-list-panel" hidden role="dialog" aria-label="Marca-texto">
+        <div class="tb-menu-title">Marca-texto</div>
+
+        <div class="hl-color-row">
+          <span class="tb-menu-label">Cor ao destacar</span>
+          <div id="hl-color-swatches" class="hl-color-swatches" role="group" aria-label="Cor do marca-texto">
+            <button type="button" class="hl-swatch-btn cme-hl-pastel-yellow" data-color="pastel-yellow" title="Amarelo pastel" aria-label="Amarelo pastel" aria-pressed="true"></button>
+            <button type="button" class="hl-swatch-btn cme-hl-pastel-green" data-color="pastel-green" title="Verde pastel" aria-label="Verde pastel" aria-pressed="false"></button>
+            <button type="button" class="hl-swatch-btn cme-hl-pastel-blue" data-color="pastel-blue" title="Azul pastel" aria-label="Azul pastel" aria-pressed="false"></button>
+            <button type="button" class="hl-swatch-btn cme-hl-pastel-pink" data-color="pastel-pink" title="Rosa pastel" aria-label="Rosa pastel" aria-pressed="false"></button>
+            <button type="button" class="hl-swatch-btn cme-hl-pastel-orange" data-color="pastel-orange" title="Laranja pastel" aria-label="Laranja pastel" aria-pressed="false"></button>
+            <button type="button" class="hl-swatch-btn cme-hl-pastel-purple" data-color="pastel-purple" title="Roxo pastel" aria-label="Roxo pastel" aria-pressed="false"></button>
+          </div>
+          <select id="hl-color" hidden aria-hidden="true" tabindex="-1">
+            <option value="pastel-yellow">Amarelo pastel</option>
+            <option value="pastel-green">Verde pastel</option>
+            <option value="pastel-blue">Azul pastel</option>
+            <option value="pastel-pink">Rosa pastel</option>
+            <option value="pastel-orange">Laranja pastel</option>
+            <option value="pastel-purple">Roxo pastel</option>
+          </select>
+        </div>
+
+        <div class="hl-filter-row">
+          <button type="button" id="hl-filter-toggle" class="hl-filter-toggle" aria-expanded="false" aria-controls="hl-filter-body">
+            <span class="tb-menu-label">Filtrar lista</span>
+            <span id="hl-filter-toggle-label" class="hl-filter-toggle-label">mostrar</span>
+          </button>
+          <div id="hl-filter-body" class="hl-filter-body" hidden>
+            <div id="hl-filter-swatches" class="hl-color-swatches" role="group" aria-label="Filtrar destaques por cor">
+              <button type="button" class="hl-filter-btn is-active" data-filter="all" title="Todas as cores" aria-label="Todas as cores" aria-pressed="true">Tudo</button>
+              <button type="button" class="hl-swatch-btn hl-filter-btn cme-hl-pastel-yellow" data-filter="pastel-yellow" title="Filtrar amarelo" aria-label="Filtrar amarelo" aria-pressed="false"></button>
+              <button type="button" class="hl-swatch-btn hl-filter-btn cme-hl-pastel-green" data-filter="pastel-green" title="Filtrar verde" aria-label="Filtrar verde" aria-pressed="false"></button>
+              <button type="button" class="hl-swatch-btn hl-filter-btn cme-hl-pastel-blue" data-filter="pastel-blue" title="Filtrar azul" aria-label="Filtrar azul" aria-pressed="false"></button>
+              <button type="button" class="hl-swatch-btn hl-filter-btn cme-hl-pastel-pink" data-filter="pastel-pink" title="Filtrar rosa" aria-label="Filtrar rosa" aria-pressed="false"></button>
+              <button type="button" class="hl-swatch-btn hl-filter-btn cme-hl-pastel-orange" data-filter="pastel-orange" title="Filtrar laranja" aria-label="Filtrar laranja" aria-pressed="false"></button>
+              <button type="button" class="hl-swatch-btn hl-filter-btn cme-hl-pastel-purple" data-filter="pastel-purple" title="Filtrar roxo" aria-label="Filtrar roxo" aria-pressed="false"></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="hl-list-head">
+          <strong>Seus destaques</strong>
+          <span class="hl-list-hint">salvos neste navegador</span>
+        </div>
+        <div id="hl-list-body" class="hl-list-body">
+          <p class="hl-list-empty">Nenhum destaque ainda. Selecione um trecho no texto para destacar.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Configurações (direita) - só ícone de engrenagem -->
+    <div class="tb-menu" data-menu="settings">
+      <button type="button" class="tb-btn tb-menu-btn tb-btn-icon" id="settings-toggle" aria-expanded="false" aria-controls="settings-panel" title="Configurações" aria-label="Configurações">
+        <svg class="tb-gear-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false">
+          <path fill="currentColor" d="M19.14 12.94c.04-.31.06-.63.06-.94s-.02-.63-.06-.94l2.03-1.58a.5.5 0 0 0 .12-.64l-1.92-3.32a.5.5 0 0 0-.6-.22l-2.39.96a7.03 7.03 0 0 0-1.63-.94l-.36-2.54A.5.5 0 0 0 14.9 2h-3.8a.5.5 0 0 0-.49.42l-.36 2.54c-.59.24-1.13.55-1.63.94l-2.39-.96a.5.5 0 0 0-.6.22L3.71 8.08a.5.5 0 0 0 .12.64l2.03 1.58c-.04.31-.06.63-.06.94s.02.63.06.94L3.83 14.7a.5.5 0 0 0-.12.64l1.92 3.32c.14.24.43.34.68.22l2.39-.96c.5.39 1.04.7 1.63.94l.36 2.54c.05.24.25.42.49.42h3.8c.24 0 .44-.18.49-.42l.36-2.54c.59-.24 1.13-.55 1.63-.94l2.39.96c.25.1.54 0 .68-.22l1.92-3.32a.5.5 0 0 0-.12-.64l-2.03-1.58zM12 15.5A3.5 3.5 0 1 1 12 8.5a3.5 3.5 0 0 1 0 7z"/>
+        </svg>
+      </button>
+      <div id="settings-panel" class="tb-menu-panel" hidden role="dialog" aria-label="Configurações de leitura">
+        <div class="tb-menu-title">Configurações</div>
+
+        <label class="tb-menu-row">
+          <span class="tb-menu-label">Notas de Gardner</span>
+          <select id="notes-mode" aria-label="Modo de exibição das notas">
+            <option value="all">Sempre visíveis</option>
+            <option value="click">Lupa (clique para abrir)</option>
+            <option value="off">Sempre ocultadas</option>
+          </select>
+        </label>
+
+        <label class="tb-menu-row">
+          <span class="tb-menu-label">Fonte</span>
+          <select id="font-family" aria-label="Fonte do texto">
+            <option value="default">Padrão do site</option>
+            <option value="dyslexia">Dislexia</option>
+            <option value="sans">Sans-serif</option>
+            <option value="mono">Monospace</option>
+          </select>
+        </label>
+
+        <div class="tb-menu-row">
+          <span class="tb-menu-label">Tamanho</span>
+          <div class="tb-font-size" role="group" aria-label="Tamanho da fonte">
+            <button type="button" id="font-smaller" class="tb-btn tb-btn-sq" title="Diminuir fonte" aria-label="Diminuir fonte">A-</button>
+            <span id="font-size-label" class="tb-size-label" aria-live="polite">100%</span>
+            <button type="button" id="font-larger" class="tb-btn tb-btn-sq" title="Aumentar fonte" aria-label="Aumentar fonte">A+</button>
+          </div>
+        </div>
+
+        <div class="tb-menu-row">
+          <span class="tb-menu-label">Tema</span>
+          <button type="button" id="toggle-theme" class="tb-btn" title="Alternar tema claro/escuro" aria-pressed="false">
+            <span class="theme-label">Tema escuro</span>
+          </button>
+        </div>
+
+        <div class="tb-menu-row tb-menu-row-danger">
+          <span class="tb-menu-label">Dados locais</span>
+          <button type="button" id="clear-site-data" class="tb-btn tb-btn-danger" title="Apagar destaques, notas e preferências salvos neste navegador">
+            Limpar cache do site
+          </button>
+          <span class="tb-menu-hint">Remove destaques, notas, progresso e preferências salvos neste navegador.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Popup de seleção: destacar + nota -->
+<div id="hl-popup" class="hl-popup" hidden role="dialog" aria-label="Destacar trecho">
+  <button type="button" id="hl-btn-mark" class="tb-btn">Destacar</button>
+  <button type="button" id="hl-btn-note" class="tb-btn">Destacar + nota</button>
+  <button type="button" id="hl-btn-cancel" class="tb-btn tb-btn-ghost">Cancelar</button>
+</div>
+
+<!-- Tooltip flutuante da nota ao passar o mouse -->
+<div id="hl-float-tip" class="hl-float-tip" hidden role="tooltip"></div>
+
+<!-- Confirmação: limpar cache -->
+<div id="clear-data-modal" class="hl-modal" hidden role="dialog" aria-modal="true" aria-labelledby="clear-data-title">
+  <div class="hl-modal-box">
+    <h3 id="clear-data-title">Limpar cache do site?</h3>
+    <p class="hl-quote" style="font-style:normal;opacity:0.95">
+      Isso apaga <strong>tudo</strong> que foi salvo neste navegador:
+      destaques, notas, preferências (fonte, tema, tamanho), cor do marca-texto
+      e qualquer outro dado local do site.
+    </p>
+    <p class="hl-quote" style="font-style:normal;opacity:0.85">
+      Esta ação não pode ser desfeita.
+    </p>
+    <div class="hl-modal-actions">
+      <button type="button" id="clear-data-confirm" class="tb-btn tb-btn-danger">Sim, limpar tudo</button>
+      <button type="button" id="clear-data-cancel" class="tb-btn tb-btn-ghost">Cancelar</button>
+    </div>
+  </div>
+</div>
+
+<!-- Modal de nota do highlight -->
+<div id="hl-note-modal" class="hl-modal" hidden role="dialog" aria-modal="true" aria-labelledby="hl-note-title">
+  <div class="hl-modal-box">
+    <h3 id="hl-note-title">Nota do trecho</h3>
+    <p id="hl-note-quote" class="hl-quote"></p>
+    <label class="hl-note-label">Cor deste destaque</label>
+    <div id="hl-note-swatches" class="hl-color-swatches" role="group" aria-label="Cor deste destaque">
+      <button type="button" class="hl-swatch-btn cme-hl-pastel-yellow" data-color="pastel-yellow" title="Amarelo pastel" aria-label="Amarelo pastel"></button>
+      <button type="button" class="hl-swatch-btn cme-hl-pastel-green" data-color="pastel-green" title="Verde pastel" aria-label="Verde pastel"></button>
+      <button type="button" class="hl-swatch-btn cme-hl-pastel-blue" data-color="pastel-blue" title="Azul pastel" aria-label="Azul pastel"></button>
+      <button type="button" class="hl-swatch-btn cme-hl-pastel-pink" data-color="pastel-pink" title="Rosa pastel" aria-label="Rosa pastel"></button>
+      <button type="button" class="hl-swatch-btn cme-hl-pastel-orange" data-color="pastel-orange" title="Laranja pastel" aria-label="Laranja pastel"></button>
+      <button type="button" class="hl-swatch-btn cme-hl-pastel-purple" data-color="pastel-purple" title="Roxo pastel" aria-label="Roxo pastel"></button>
+    </div>
+    <select id="hl-note-color" hidden aria-hidden="true" tabindex="-1">
+      <option value="pastel-yellow">Amarelo pastel</option>
+      <option value="pastel-green">Verde pastel</option>
+      <option value="pastel-blue">Azul pastel</option>
+      <option value="pastel-pink">Rosa pastel</option>
+      <option value="pastel-orange">Laranja pastel</option>
+      <option value="pastel-purple">Roxo pastel</option>
+    </select>
+    <label class="hl-note-label" for="hl-note-input">Sua nota (salva só neste navegador)</label>
+    <textarea id="hl-note-input" rows="4" maxlength="2000" placeholder="Escreva uma anotação opcional..."></textarea>
+    <div class="hl-modal-actions">
+      <button type="button" id="hl-note-save" class="tb-btn">Salvar</button>
+      <button type="button" id="hl-note-remove" class="tb-btn tb-btn-danger">Remover destaque</button>
+      <button type="button" id="hl-note-close" class="tb-btn tb-btn-ghost">Fechar</button>
+    </div>
+  </div>
+</div>
+
+<h1><br>Máximos e Mínimos</h1>
+<p class="a rotatedFloralHeartBullet">
+
+<p>Um dos principais usos do processo de diferenciar
+é descobrir sob que condições o valor
+da coisa diferenciada se torna um máximo, ou um
+mínimo. Isto é frequentemente extremamente importante em
+questões de engenharia, onde é muito desejável
+saber quais condições farão o custo de operação
+um mínimo, ou farão a eficiência um máximo.
+
+<p>Ora, para começar com um caso concreto, tomemos a
+equação</p>
+
+\[
+y = x^2 - 4x + 7.
+\]
+<a name="figure26">
+<p><img src="33283-t/images/105a.pdf.png-1.png">
+
+<p>Atribuindo um número de valores sucessivos a $x$,
+e encontrando os valores correspondentes de $y$, podemos
+
+prontamente ver que a equação representa uma curva com
+um mínimo.
+<table>
+<tr><td>$x$</td><td>$ 0$</td><td>$ 1 $</td><td>$2 $</td><td>$3 $</td><td>$4$</td><td>$ 5$</td></tr>
+<tr><td>$y$</td><td>$ 7$</td><td>$ 4 $</td><td>$3 $</td><td>$4 $</td><td>$7$</td><td>$ 12$</td></tr>
+</table>
+
+
+<p>Esses valores estão traçados na <a href="#figure26">Figura 26</a>, que mostra
+que $y$ tem aparentemente um valor mínimo de $3$, quando $x$
+é feito igual a $2$. Mas você tem certeza de que o
+mínimo ocorre em $2$, e não em $2 \tfrac{1}{4}$ ou em $1 \tfrac{3}{4}$?
+
+<p>Claro que seria possível com qualquer expressão algébrica
+calcular um monte de valores, e desse
+modo chegar gradualmente ao valor particular que
+pode ser um máximo ou um mínimo.
+
+
+<a name="figure27">
+<p><img src="33283-t/images/106a.pdf.png-1.png">
+
+<p>Aqui está outro exemplo:
+
+<p>Seja $y = 3x - x^2$.
+
+<p>Calcule alguns valores assim:
+
+<table>
+<tr><td>$x$</td><td>$-1$</td><td>$0$</td><td>$1$</td><td>$2$</td><td>$3$</td><td>$4$</td><td>$5$</td></tr>
+<tr><td>$y$</td><td>$-4$</td><td>$0$</td><td>$2$</td><td>$2$</td><td>$0$</td><td>$-4$</td><td>$-10$</td></tr>
+</table>
+
+<p>Trace esses valores como na <a href="#figure27">Figura 27</a>.
+
+<p>Ficará evidente que haverá um máximo
+em algum lugar entre $x = 1$ e $x = 2$; e a coisa
+<em>parece</em> como se o valor máximo de $y$ devesse ser
+cerca de $2 \tfrac{1}{4}$. Tente alguns valores intermediários. Se $x = 1 \tfrac{1}{4}$,
+$y = 2.187$; se $x = 1 \tfrac{1}{2}$, $y = 2.25$; se $x = 1.6$, $y = 2.24$.
+Como podemos ter certeza de que $2.25$ é o máximo real,
+ou de que ocorre exatamente quando $x = 1 \tfrac{1}{2}$?
+
+<p>Ora, pode parecer prestidigitação ser assegurado de que
+há um jeito pelo qual se chega direto a um
+valor máximo (ou mínimo) sem fazer um monte de
+ensaios preliminares ou palpites. E esse jeito depende
+de diferenciar. Volte a uma página anterior (<a href="10.html#curve">aqui</a>) para
+as observações sobre as <a href="10.html#figure14">Fig. 14</a> e <a href="10.html#figure15">Fig. 15</a>, e verá
+que sempre que uma curva chega ou à sua altura máxima
+ou à sua altura mínima, naquele ponto seu $\dfrac{dy}{dx} = 0$.
+Ora, isto nos dá a pista para o truque que é
+desejado. Quando se coloca diante de você uma equação,
+e você quer encontrar aquele valor de $x$ que fará
+seu $y$ um mínimo (ou um máximo), <em>primeiro diferencie-a</em>,
+e tendo feito isso, escreva seu $\dfrac{dy}{dx}$ como <em>igual a zero</em>,
+e então resolva para $x$. Coloque esse valor particular de $x$
+na equação original, e você obterá então o
+valor requerido de $y$. Esse processo é comumente chamado
+de “igualar a zero.”
+
+<p>Para ver quão simplesmente funciona, tome o exemplo com
+que este capítulo se abre, a saber</p>
+
+\[
+y = x^2 - 4x + 7.
+\]
+
+
+Diferenciando, obtemos:
+\[
+\dfrac{dy}{dx} = 2x - 4.
+\]
+Agora iguale isto a zero, assim:
+\[
+2x - 4 = 0.
+\]
+Resolvendo essa equação para $x$, obtemos:
+\[
+\begin{aligned}
+2x &= 4, \\
+ x &= 2.
+\end{aligned}
+\]
+
+<p>Ora, sabemos que o máximo (ou mínimo)
+ocorrerá exatamente quando $x=2$.
+
+<p>Colocando o valor $x=2$ na equação original,
+obtemos</p>
+
+\[
+\begin{aligned}
+y &= 2^2 - (4×2) + 7 \\
+  &= 4 - 8 + 7       \\
+  &= 3.
+\end{aligned}
+\]
+
+<p>Agora olhe de volta para a <a href="#figure26">Figura 26</a>, e verá que o
+mínimo ocorre quando $x = 2$, e que esse mínimo
+de $y = 3$.
+
+<p>Tente o segundo exemplo (<a href="#figure24">Figura 24</a>), que é</p>
+
+\[
+\begin{aligned}
+y &= 3x - x^2. \\
+   \text{Diferenciando,}\;
+\frac{dy}{dx} &= 3 - 2x.
+\end{aligned}
+\]
+Igualando a zero,
+\[
+\begin{aligned}
+3 - 2x &= 0, \\
+ \text{de onde}\;
+x &= 1 \tfrac{1}{2};
+\end{aligned}
+\]
+e colocando esse valor de $x$ na equação original, encontramos:
+\[
+\begin{aligned}
+y &= 4 \tfrac{1}{2} - (1 \tfrac{1}{2} × 1 \tfrac{1}{2}), \\
+y &= 2 \tfrac{1}{4}.
+\end{aligned}
+\]
+Isto nos dá exatamente a informação a respeito da qual
+o método de tentar um monte de valores nos deixava incertos.
+
+
+<p>Ora, antes de passarmos a quaisquer casos ulteriores, temos
+duas observações a fazer. Quando se lhe diz para igualar
+$\dfrac{dy}{dx}$ a zero, você sente a princípio (isto é, se tem algum
+juízo próprio) uma espécie de ressentimento, porque sabe
+que $\dfrac{dy}{dx}$ tem todo tipo de valores diferentes em
+diferentes partes da curva, conforme ela esteja
+subindo ou descendo. Assim, quando de repente se
+lhe diz para escrever</p>
+
+\[
+\frac{dy}{dx} = 0,
+\]
+você se ressente, e sente vontade de dizer que isso não pode ser
+verdade. Ora, você terá de entender a diferença essencial
+entre “uma equação” e “uma equação
+de condição.” Ordinariamente você lida com equações
+que são verdadeiras em si mesmas, mas, em ocasiões
+das quais as presentes são exemplos, você tem de escrever
+equações que não são necessariamente verdadeiras, mas são
+apenas verdadeiras se certas condições devem ser cumpridas; e
+você as escreve a fim de, resolvendo-as,
+encontrar as condições que as tornam verdadeiras. Ora queremos
+encontrar o valor particular que $x$ tem quando
+a curva não está nem subindo nem descendo, isto
+é, no lugar particular em que $\dfrac{dy}{dx} = 0$. Assim, escrever
+$\dfrac{dy}{dx} = 0$ <em>não</em> significa que ele sempre é $=0$; mas você
+o escreve <em>como uma condição</em> a fim de ver quanto
+$x$ resultará se $\dfrac{dy}{dx}$ deve ser zero.
+
+
+<p>A segunda observação é uma que (se você tem algum
+juízo próprio) provavelmente já
+terá feito: a saber, que esse processo tão elogiado de
+igualar a zero falha inteiramente em dizer-lhe se
+o $x$ que você encontra com ele vai lhe dar
+um valor <em>máximo</em> de $y$ ou um valor <em>mínimo</em> de $y$.
+Exatamente. Ele não discrimina por si; encontra
+para você o valor certo de $x$ mas deixa a você descobrir
+por conta própria se o $y$ correspondente é um
+máximo ou um mínimo. Claro, se você
+traçou a curva, já sabe qual será.
+
+<p>Por exemplo, tome a equação:</p>
+
+\[
+y = 4x + \frac{1}{x}.
+\]
+
+<p>Sem parar para pensar a que curva ela corresponde,
+diferencie-a, e iguale a zero:</p>
+
+\[
+\begin{aligned}
+\frac{dy}{dx}  &= 4 - x^{-2} = 4 - \frac{1}{x^2} = 0; \\
+\text{ de onde}\;
+x &= \tfrac{1}{2};
+\end{aligned}
+\]
+e, inserindo esse valor,
+\[
+\begin{aligned}
+y &= 4
+\end{aligned}
+\]
+será ou um máximo ou então um mínimo. Mas
+qual? Mais adiante se lhe dirá um jeito, dependendo
+de uma segunda diferenciação, (veja <a href="12.html">Cap. XII.</a>).
+Mas por ora basta que você simplesmente tente
+qualquer outro valor de $x$ que difira um pouco daquele
+encontrado, e veja se com esse valor alterado o
+valor correspondente de $y$ é menor ou maior do que o
+já encontrado.
+
+
+<p>Tente outro problema simples de máximos e mínimos.
+Suponha que se lhe peça dividir um número qualquer em
+duas partes, de tal modo que o produto seja um máximo?
+Como você se poria a isso se não conhecesse
+o truque de igualar a zero? Suponho que poderia
+resolver à força pela regra de tente, tente, tente de novo. Seja
+$60$ o número. Você pode tentar cortá-lo em duas
+partes, e multiplicá-las. Assim, $50$ vezes
+$10$ é $500$; $52$ vezes $8$ é $416$; $40$ vezes $20$ é $800$; $45$
+vezes $15$ é $675$; $30$ vezes $30$ é $900$. Isto parece um
+máximo: tente variá-lo. $31$ vezes $29$ é $899$,
+que não é tão bom; e $32$ vezes $28$ é $896$, que
+é pior. Assim parece que o maior produto se
+obterá dividindo em duas metades iguais.
+
+<p>Agora veja o que o cálculo lhe diz. Seja o
+número a ser cortado em duas partes chamado $n$. Então
+se $x$ é uma parte, a outra será $n-x$, e o produto
+será $x(n-x)$ ou $nx-x^2$. Assim escrevemos $y=nx-x^2$.
+Agora diferencie e iguale a zero;</p>
+
+\[
+\begin{aligned}
+\dfrac{dy}{dx} &= n - 2x = 0\\
+ \text{Resolvendo para $x$, obtemos}\;  \dfrac{n}{2} &= x.
+\end{aligned}
+\]
+Assim agora <em>sabemos</em> que qualquer que seja o número $n$,
+devemos dividi-lo em duas partes iguais se o produto
+das partes deve ser um máximo; e o valor desse
+produto máximo será sempre $ = \tfrac{1}{4} n^2$.
+
+<p>Esta é uma regra muito útil, e se aplica a qualquer número
+de fatores, de modo que se $m+n+p=$ um número constante,
+$m×n×p$ é um máximo quando $m=n=p$.
+
+
+<p>
+
+<em>Caso de teste.</em><p>
+Apliquemos de uma vez nosso conhecimento a um caso que
+podemos testar.
+</p>
+
+\[
+\begin{aligned}
+  \text{Seja }   y &= x^2 - x;
+\end{aligned}
+\]
+e encontremos se essa função tem um máximo
+ou mínimo; e se tem, testemos se é um máximo
+ou um mínimo.
+
+<p>Diferenciando, obtemos</p>
+
+\[
+\begin{aligned}
+\frac{dy}{dx} &= 2x - 1. \\
+ \text{ Igualando a zero, obtemos }\;
+2x - 1 &= 0, \\
+ \text{de onde }\;
+2x &= 1, \\
+ \text{ou } \;
+x &= \tfrac{1}{2}.
+\end{aligned}
+\]
+
+<p>Isto é, quando $x$ é feito $=\frac{1}{2}$, o valor correspondente
+de $y$ será ou um máximo ou um mínimo.
+Consequentemente, pondo $x=\frac{1}{2}$ na equação original, obtemos</p>
+
+\[
+\begin{aligned}
+y &= (\tfrac{1}{2})^2 - \tfrac{1}{2}, \\
+ \text{ou } \;
+y &= -\tfrac{1}{4}.
+\end{aligned}
+\]
+
+<p>Isto é um máximo ou um mínimo? Para testar, tente
+pôr $x$ um pouco maior do que $\frac{1}{2}$, digamos faça $x=0.6$.
+Então</p>
+
+\[
+y = (0.6)^2 - 0.6 = 0.36 - 0.6 = -0.24,
+\]
+que está mais alto do que $-0.25$; mostrando que
+$y = -0.25$ é um <em>mínimo</em>.
+
+<p>Trace a curva por conta própria, e verifique o cálculo.
+
+
+<p>
+<p><em>Outros exemplos</em>.
+Um exemplo muito interessante é oferecido por uma curva
+que tem tanto um máximo quanto um mínimo. Sua
+equação é:
+\[
+\begin{aligned}
+y &=\tfrac{1}{3} x^3 - 2x^2 + 3x + 1. \\
+   \text{Agora } \; \dfrac{dy}{dx} &= x^2 - 4x +3.
+\end{aligned}
+\]
+
+<a name="figure28">
+<p><img src="33283-t/images/113a.pdf.png-1.png">
+
+<p>Igualando a zero, obtemos a quadrática,</p>
+
+\[
+x^2 - 4x +3 = 0;
+\]
+e resolvendo a quadrática nos dá <em>duas</em> raízes, a saber
+\[
+\left\{
+\begin{aligned}
+x &= 3 \\
+x &= 1.
+\end{aligned}
+\right.
+\]
+
+<p>Ora, quando $x=3$, $y=1$; e quando $x=1$, $y=2\frac{1}{3}$.
+O primeiro desses é um mínimo, o segundo um
+máximo.
+
+<p>A própria curva pode ser traçada (como na <a href="#figure28">Figura 28</a>)
+
+a partir dos valores calculados, como abaixo, a partir da
+equação original.
+<table>
+  <tr><td>$x$</td><td>$-1$</td><td>$0$</td><td>$1$</td><td>$2$</td><td>$3$</td><td>$4$</td><td>$5$</td><td>$6$</td></tr>
+<tr><td>$y$</td><td>$-4\frac{1}{3}$</td><td>$1$</td><td>$2\frac{1}{3}$</td><td>$1\frac{2}{3}$</td><td>$1$</td><td>$2\frac{1}{3}$</td><td>$7\frac{2}{3}$</td><td>$19$</td></tr>
+</table>
+
+<p>Um exercício ulterior de máximos e mínimos é
+oferecido pelo seguinte exemplo:
+
+<p>A equação de um círculo de raio $r$, tendo seu
+centro $C$ no ponto cujas coordenadas são $x=a$,
+$y=b$, como representado na <a href="#figure29">Figura 29</a>, é:
+\[
+(y-b)^2 + (x-a)^2 = r^2.
+\]
+
+<a name="figure29">
+<p><img src="33283-t/images/114a.pdf.png-1.png">
+
+<p>Isto pode ser transformado em</p>
+
+\[
+y = \sqrt{r^2-(x-a)^2} + b.
+\]
+
+<p>Ora, sabemos de antemão, por mera inspeção da
+figura, que quando $x=a$, $y$ estará ou em seu
+valor máximo, $b+r$, ou então em seu valor mínimo,
+$b-r$. Mas não tiremos proveito desse
+
+conhecimento; ponhamo-nos a encontrar que valor
+de $x$ fará $y$ um máximo ou um mínimo, pelo
+processo de diferenciar e igualar a zero.</p>
+
+\[
+\begin{aligned}
+\frac{dy}{dx} &= \frac{1}{2} \frac{1}{\sqrt{r^2-(x-a)^2}} × (2a-2x), \\
+\text{que se reduz a}\;
+\frac{dy}{dx} &= \frac{a-x}{\sqrt{r^2-(x-a)^2}}.
+\end{aligned}
+\]
+
+<p>Então a condição para $y$ ser máximo ou
+mínimo é:</p>
+
+\[
+\frac{a-x}{\sqrt{r^2-(x-a)^2}} = 0.
+\]
+
+<p>Como nenhum valor qualquer de $x$ fará o denominador
+infinito, a única condição para dar zero é</p>
+
+\[
+\begin{aligned}
+x &= a.
+\end{aligned}
+\]
+Inserindo esse valor na equação original do
+círculo, encontramos
+\[
+\begin{aligned}
+y &= \sqrt{r^2}+b;
+\end{aligned}
+\]
+e como a raiz de $r^2$ é ou $+r$ ou $-r$, temos
+dois valores resultantes de $y$
+\[
+\begin{aligned}
+y &= b + r, \\
+y &= b - r.
+\end{aligned}
+\]
+
+<p>O primeiro desses é o máximo, no topo;
+o segundo o mínimo, no fundo.
+
+
+<p>Se a curva é tal que não há lugar que seja um
+máximo ou mínimo, o processo de igualar a
+zero renderá um resultado impossível. Por exemplo:</p>
+
+\[
+\begin{aligned}
+   \text{Seja } \;
+y &= ax^3 + bx + c. \\
+   \text{Então } \;
+\frac{dy}{dx} &= 3ax^2 + b.
+\end{aligned}
+\]
+
+<p>Igualando isto a zero, obtemos $3ax^2 + b = 0$,</p>
+
+\[
+x^2 = \frac{-b}{3a}, \quad\text{e}\quad x = \sqrt{\frac{-b}{3a}},\;\text{ que é impossível.}
+\]
+Portanto $y$ não tem máximo nem mínimo.
+
+<p>Mais alguns exemplos trabalhados permitirão a você
+dominar de todo esta aplicação tão interessante e útil
+do cálculo.
+
+<p>(1) Quais são os lados do retângulo de área máxima
+inscrito em um círculo de raio $R$?
+
+<p>Se um lado se chama $x$,</p>
+
+\[
+\text{o outro lado} = \sqrt{(\text{diagonal})^2 - x^2};
+\]
+e como a diagonal do retângulo é necessariamente um
+diâmetro, o outro lado $ = \sqrt{4R^2 - x^2}$.
+
+<p>Então, área do retângulo $S = x\sqrt{4R^2 - x^2}$,</p>
+
+\[
+\frac{dS}{dx} = x × \dfrac{d\left(\sqrt{4R^2 - x^2}\,\right)}{dx} + \sqrt{4R^2 - x^2} × \dfrac{d(x)}{dx}.
+\]
+
+<p>Se você esqueceu como diferenciar $\sqrt{4R^2-x^2}$,
+aqui vai uma dica: escreva $4R^2-x^2=w$ e $y=\sqrt{w}$, e
+procure $\dfrac{dy}{dw}$ e $\dfrac{dw}{dx}$; lute com isso, e só se não
+conseguir continue, consulte <a href="9.html#dodge">aqui</a>.
+
+
+<p>Você obterá</p>
+
+\[
+\dfrac{dS}{dx}
+  = x × -\dfrac{x}{\sqrt{4R^2 - x^2}} + \sqrt{4R^2 - x^2}
+  = \dfrac{4R^2 - 2x^2}{\sqrt{4R^2 - x^2}}.
+\]
+
+<p>Para máximo ou mínimo devemos ter</p>
+
+\[
+\dfrac{4R^2 - 2x^2}{\sqrt{4R^2 - x^2}} = 0;
+\]
+isto é, $4R^2 - 2x^2 = 0$ e $x = R\sqrt{2}$.
+
+<p>O outro lado ${} = \sqrt{4R^2 - 2R^2} = R\sqrt{2}$; os dois lados
+são iguais; a figura é um quadrado cujo lado é
+igual à diagonal do quadrado construído sobre o
+raio. Neste caso é, claro, um máximo com
+que estamos lidando.
+
+<p>(2) Qual é o raio da abertura de um vaso cônico
+cujo lado inclinado tem comprimento $l$ quando
+a capacidade do vaso é máxima?
+
+<p>Se $R$ for o raio e $H$ a altura correspondente,
+$H = \sqrt{l^2 - R^2}$.</p>
+
+\[
+\text{Volume } V = \pi R^2 × \dfrac{H}{3} = \pi R^2 × \dfrac{\sqrt{l^2 - R^2}}{3}.
+\]
+
+<p>Procedendo como no problema anterior, obtemos</p>
+
+\[
+\begin{aligned}
+\dfrac{dV}{dR}
+  &= \pi R^2 × -\dfrac{R}{3\sqrt{l^2 - R^2}} + \dfrac{2\pi R}{3} \sqrt{l^2 - R^2} \\
+  &= \dfrac{2\pi R(l^2 - R^2) - \pi R^3}{3\sqrt{l^2 - R^2}} = 0
+\end{aligned}
+\]
+para máximo ou mínimo.
+
+<p>Ou, $2\pi R(l^2 - R^2) - \pi R^2 = 0$, e $R = l\sqrt{\tfrac{2}{3}}$, para um máximo,
+obviamente.
+
+
+<p>(3) Encontre os máximos e mínimos da função</p>
+
+\[
+y = \dfrac{x}{4-x} + \dfrac{4-x}{x}.
+\]
+
+<p>Obtemos</p>
+
+\[
+\dfrac{dy}{dx} = \dfrac{(4-x)-(-x)}{(4-x)^2} + \dfrac{-x - (4-x)}{x^2} = 0
+\]
+para máximo ou mínimo; ou
+\[
+\dfrac{4}{(4-x)^2} - \dfrac{4}{x^2} = 0 \quad\text{e}\quad x = 2.
+\]
+
+<p>Há apenas um valor, logo apenas um máximo
+ou mínimo.</p>
+
+\[
+\begin{aligned}
+\text{Para}\quad x &= 2,\phantom{.5}\quad y = 2, \\
+\text{para}\quad x &= 1.5,\quad y = 2.27,   \\
+\text{para}\quad x &= 2.5,\quad y = 2.27;
+\end{aligned}
+\]
+é portanto um mínimo. (É instrutivo traçar
+o gráfico da função.)
+
+<p>(4) Encontre os máximos e mínimos da função
+$y = \sqrt{1+x} + \sqrt{1-x}$. (Será instrutivo
+traçar o gráfico.)
+
+<p>Diferenciar dá de uma vez (veja o exemplo nº 1,
+<a href="9.html#ExNo1">aqui</a>)
+\[
+\dfrac{dy}{dx} = \dfrac{1}{2\sqrt{1+x}} - \dfrac{1}{2\sqrt{1-x}} = 0
+\]
+para máximo ou mínimo.
+
+<p>Logo $\sqrt{1+x} = \sqrt{1-x}$ e $x = 0$, a única solução
+
+<p>Para $x=0$, $y=2$.
+
+<p>Para $x=±0.5$, $y= 1.932$, de modo que isto é um máximo.
+
+
+<p>(5) Encontre os máximos e mínimos da função</p>
+
+\[
+y = \dfrac{x^2-5}{2x-4}.
+\]
+
+<p>Temos</p>
+
+\[
+\dfrac{dy}{dx} = \dfrac{(2x-4) × 2x - (x^2-5)2}{(2x-4)^2} = 0
+\]
+para máximo ou mínimo; ou
+\[
+\dfrac{2x^2 - 8x + 10}{(2x - 4)^2} = 0;
+\]
+ou $x^2 - 4x + 5 = 0$; que tem por soluções
+\[
+x = \tfrac{5}{2} ± \sqrt{-1}.
+\]
+
+<p>Sendo estas imaginárias, não há valor real de $x$
+para o qual $\dfrac{dy}{dx} = 0$; logo não há máximo nem
+mínimo.
+
+<p>(6) Encontre os máximos e mínimos da função</p>
+
+\[
+(y-x^2)^2 = x^5.
+\]
+
+<p>Isto pode ser escrito $y = x^2 ± x^{\frac{5}{2}}$.</p>
+
+\[
+\dfrac{dy}{dx} = 2x ± \tfrac{5}{2} x^{\frac{3}{2}} = 0 \quad\text{para máximo ou mínimo};
+\]
+isto é, $x(2 ± \tfrac{5}{2} x^{\frac{1}{2}}) = 0$, que é satisfeito para $x = 0$,
+e para $2 ± \tfrac{5}{2} x^{\frac{1}{2}} = 0$, isto é para $x=\tfrac{16}{25}$. Assim há
+duas soluções.
+
+<p>Tomando primeiro $x = 0$. Se $x = -0.5$, $y = 0.25 ± \sqrt[2]{-(.5)^5}$,
+e se $x = +0.5$, $y = 0.25 ± \sqrt[2]{(.5)^5}$. De um lado $y$ é
+imaginário; isto é, não há valor de $y$ que possa ser
+representado por um gráfico; este está portanto inteiramente
+do lado direito do eixo de $y$ (veja a <a href="#figure30">Figura 30</a>).
+
+<p>Ao traçar o gráfico se achará que a
+
+curva vai até a origem, como se houvesse um mínimo
+ali; mas em vez de continuar além, como deveria
+fazer para um mínimo, ela refaz seus passos (formando o que
+se chama uma “cúspide”). Não há mínimo, portanto,
+embora a condição para um mínimo esteja satisfeita,
+a saber $\dfrac{dy}{dx} = 0$. É necessário portanto sempre
+verificar tomando um valor de cada lado.
+
+<a name="figure30">
+<p><img src="33283-t/images/120a.pdf.png-1.png">
+
+<p>Agora, se tomamos $x = \tfrac{16}{25} = 0.64$. Se $x = 0.64$, $y = 0.7373$
+e $y = 0.0819$; se $x = 0.6$, $y$ se torna $0.6389$ e $0.0811$;
+e se $x = 0.7$, $y$ se torna $0.8996$ e $0.0804$.
+
+<p>Isto mostra que há dois ramos da curva;
+o superior não passa por um máximo, mas
+o inferior passa.
+
+<p>(7) Um cilindro cuja altura é o dobro do raio da
+base está aumentando de volume, de modo que todas as suas partes
+
+guardam sempre a mesma proporção umas com as outras;
+isto é, a qualquer instante, o cilindro é <em>semelhante</em> ao
+cilindro original. Quando o raio da base é
+$r$ pés, a área da superfície está aumentando à taxa de
+$20$ polegadas quadradas por segundo; a que taxa seu
+volume está então aumentando?
+\[
+\begin{aligned}
+\text{Área}   &= S = 2(\pi r^2)+ 2 \pi r × 2r = 6 \pi r^2.\\
+\text{Volume} &= V = \pi r^2 × 2r=2 \pi r^3.\\
+\frac{dS}{dr} &= 12\pi r,\quad \frac{dV}{dr}=6 \pi r^2,\\
+dS            &= 12\pi r\, dr=20,\quad dr=\frac{20}{12 \pi r},\\
+dV            &=  6\pi r^2\, dr = 6 \pi r^2 × \frac{20}{12 \pi r} = 10r.
+\end{aligned}
+\]
+
+<p>O volume muda à taxa de $10r$ polegadas cúbicas.
+
+<p><hr>
+
+<p>Faça outros exemplos por conta própria. Há poucos
+assuntos que ofereçam tal riqueza de exemplos
+interessantes.
+
+<p>
+<hr><h3>Exercícios IX</h3>
+
+<p>
+(1) Que valores de $x$ farão $y$ um máximo
+e um mínimo, se $y=\dfrac{x^2}{x+1}$?
+
+<p>(2) Que valor de $x$ fará $y$ um máximo na
+equação $y=\dfrac{x}{a^2+x^2}$?
+
+
+<p>(3) Uma linha de comprimento $p$ deve ser cortada em $4$ partes
+e montada como um retângulo. Mostre que a área
+do retângulo será um máximo se cada um de seus
+lados for igual a $\frac{1}{4}p$.
+
+<p>(4) Um pedaço de barbante de $30$ polegadas de comprimento tem suas duas
+extremidades unidas e é esticado por $3$ pinos de modo
+a formar um triângulo. Qual é a maior área triangular
+que pode ser encerrada pelo barbante?
+
+<p>(5) Trace a curva correspondente à equação</p>
+
+\[
+y = \frac{10}{x} + \frac{10}{8-x};
+\]
+encontre também $\dfrac{dy}{dx}$, e deduza o valor de $x$ que fará
+$y$ um mínimo; e encontre esse valor mínimo
+de $y$.
+
+<p>(6) Se $y = x^5-5x$, encontre que valores de $x$ farão
+$y$ um máximo ou um mínimo.
+
+<p>(7) Qual é o menor quadrado que pode ser inscrito
+em um quadrado dado?
+
+<p>(8) Inscreva em um cone dado, cuja altura
+é igual ao raio da base, um cilindro
+(<em>a</em>) cujo volume é um máximo; (<em>b</em>) cuja área lateral
+é um máximo; (<em>c</em> ) cuja área total é um
+máximo.
+
+<p>(9) Inscreva em uma esfera um cilindro (<em>a</em>) cujo
+volume é um máximo; (<em>b</em>) cuja área lateral é um
+máximo; (<em>c</em>) cuja área total é um máximo.
+
+
+<p>(10) Um balão esférico está aumentando de volume.
+Se, quando seu raio é $r$ pés, seu volume está aumentando
+à taxa de $4$ pés cúbicos por segundo, a que taxa sua
+superfície está então aumentando?
+
+<p>(11) Inscreva em uma esfera dada um cone cujo volume
+é um máximo.
+
+<p>(12) A corrente $C$ dada por uma bateria de $N$ células
+voltaicas semelhantes é $C=\dfrac{n×E}{R+\dfrac{rn^2}{N}}$, onde $E$, $R$, $r$, são constantes
+e $n$ é o número de células acopladas em série. Encontre
+a proporção de $n$ para $N$ para a qual a corrente é
+máxima.
+
+
+<p><h3 class="answers">Respostas</h3>
+
+<p>(1)   Mín.: $x = 0$, $y = 0$; máx.: $x = -2$, $y = -4$.
+<p>(2)   $x = a$.
+<p>(4)   $25 \sqrt{3}$ polegadas quadradas.
+<p>(5)   $\dfrac{dy}{dx} = - \dfrac{10}{x^2} + \dfrac{10}{(8 - x)^2}$; $x = 4$; $y = 5$.
+<p>(6)   Máx. para $x = -1$; mín. para $x = 1$.
+<p>(7)   Una os pontos médios dos quatro lados.
+<p>(8)   $r = \frac{2}{3} R$, $r = \dfrac{R}{2}$, sem máx.
+<p>(9)   $r = R \sqrt{\dfrac{2}{3}}$, $r = \dfrac{R}{\sqrt{2}}$, $r = 0.8506R$.
+<p>(10)   À taxa de $\dfrac{8}{r}$ pés quadrados por segundo.
+<p>(11)   $r = \dfrac{R \sqrt{8}}{3}$.
+<p>(12)   $n = \sqrt{\dfrac{NR}{r}}$.
+<br>
+<!-- Soluções comerciais removidas: projeto público e sem fins lucrativos -->
+
+
+<hr>
+<nav class="chapter-nav" aria-label="Navegação do capítulo">
+  <a class="nav-prev" href="10.html">← Anterior</a>
+  <a class="nav-home" href="index.html">Página principal</a>
+  <a class="nav-next" href="12.html">Próximo →</a>
+</nav>
+<footer class="site-footer" role="contentinfo">
+  <p class="a rotatedFloralHeartBullet"></p>
+
+  <div class="manifesto">
+    <p class="manifesto-lead">
+      Este é um <strong>projeto público</strong>, sem fins lucrativos.
+      Não é permitido comercializá-lo, vendê-lo nem usá-lo como produto pago.
+    </p>
+    <p class="manifesto-quote">
+      A educação é um direito de todos.
+      O conhecimento deve ser livre sempre que não cause o mal:
+      deve circular, ensinar e libertar, nunca aprisionar quem aprende.
+    </p>
+    <p class="manifesto-sign">
+      - Thales Rodrigues
+    </p>
+  </div>
+
+  <nav class="author-links" aria-label="Redes de Thales Rodrigues">
+    <a href="https://www.linkedin.com/in/thales-oliveira-rodrigues/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    <span class="dot" aria-hidden="true">·</span>
+    <a href="https://github.com/Rodriguestmo" target="_blank" rel="noopener noreferrer">GitHub</a>
+  </nav>
+
+  <p class="footer-meta">
+    <small>
+      Tradução e adaptação PT-BR por Thales Rodrigues.
+      Texto de Silvanus P. Thompson em domínio público (Project Gutenberg).
+      Notas de contexto inspiradas na edição Gardner (1998).
+      Projeto público e gratuito.
+    </small>
+  </p>
+</footer>
+
+<script src="j/jquery.js"></script>
+<script src="j/modernizr.js"></script>
+<script src="j/dih5.js"></script>
+<script src="j/chapters-data.js"></script>
+<script src="j/glossary-data.js"></script>
+<script src="j/reader-features.js"></script>
+<script src="j/notes-toggle.js"></script>
+<!-- Analytics desativado na edição PT local -->
+</body>
+</html>

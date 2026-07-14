@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+
+<title>Cálculo Tornado Fácil</title>
+<meta name="description" content="Capítulo V: o que fazer com constantes na diferenciação.">
+<meta name="author" content="Thales Rodrigues; Silvanus P. Thompson">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="googlebot" content="index, follow">
+<meta name="language" content="Portuguese">
+<meta name="keywords" content="cálculo, calculus made easy, Silvanus Thompson, cálculo diferencial, cálculo integral, matemática, educação livre, português, Martin Gardner, Cálculo Tornado Fácil, Thales Rodrigues">
+<link rel="canonical" href="https://rodriguestmo.github.io/calculo-tornado-facil/5.html">
+<link rel="alternate" hreflang="pt-BR" href="https://rodriguestmo.github.io/calculo-tornado-facil/5.html">
+<link rel="alternate" hreflang="x-default" href="https://rodriguestmo.github.io/calculo-tornado-facil/">
+
+
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
+<link rel="icon" href="favicon-16.png" type="image/png" sizes="16x16">
+<link rel="shortcut icon" href="favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png" sizes="180x180">
+<meta name="theme-color" content="#c45c26">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Cálculo Tornado Fácil">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Cálculo Tornado Fácil">
+<meta property="og:description" content="Capítulo V: o que fazer com constantes na diferenciação.">
+<meta property="og:url" content="https://rodriguestmo.github.io/calculo-tornado-facil/5.html">
+<meta property="og:image" content="https://rodriguestmo.github.io/calculo-tornado-facil/cover.jpg">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Cálculo Tornado Fácil">
+<meta name="twitter:description" content="Capítulo V: o que fazer com constantes na diferenciação.">
+<meta name="twitter:image" content="https://rodriguestmo.github.io/calculo-tornado-facil/cover.jpg">
+
+<link rel="describedby" href="https://rodriguestmo.github.io/calculo-tornado-facil/llms.txt">
+<link rel="stylesheet" href="screen.css">
+<style>
+body{counter-reset:h1 5}
+</style>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$'], ['\\[','\\]']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ["script","noscript","style","textarea","pre","code"]
+    },
+    TeX: {
+      extensions: ["AMSmath.js","AMSsymbols.js"],
+      equationNumbers: { autoNumber: "none" }
+    },
+    "HTML-CSS": {
+      availableFonts: ["TeX"],
+      linebreaks: { automatic: false },
+      styles: {
+        ".MathJax_Display": { "margin": "1.5em 0" }
+      }
+    },
+    CommonHTML: {
+      styles: { ".MJXc-display": { "margin": "1.5em 0" } }
+    },
+    showProcessingMessages: false,
+    messageStyle: "none"
+  });
+</script>
+<script type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Chapter",
+  "name": "Próximo Estágio. O que Fazer com Constantes",
+  "position": 5,
+  "isPartOf": {
+    "@type": "Book",
+    "name": "Cálculo Tornado Fácil",
+    "url": "https://rodriguestmo.github.io/calculo-tornado-facil/"
+  },
+  "author": {"@type": "Person", "name": "Silvanus P. Thompson"},
+  "translator": {"@type": "Person", "name": "Thales Rodrigues"},
+  "url": "https://rodriguestmo.github.io/calculo-tornado-facil/5.html",
+  "inLanguage": "pt-BR",
+  "isAccessibleForFree": true
+}
+</script>
+</head>
+<body>
+<!-- Progresso de leitura do capítulo (scroll) -->
+<div id="read-progress" class="read-progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="Progresso de leitura do capítulo">
+  <div id="read-progress-bar" class="read-progress-bar"></div>
+</div>
+
+<!-- Barra fixa: logo + menus (marca-texto à esquerda, engrenagem à direita) -->
+<div id="site-toolbar" class="site-toolbar" role="region" aria-label="Controles do site">
+  <a class="tb-home" href="index.html">Cálculo Tornado Fácil</a>
+
+  <div class="tb-controls">
+    <!-- Marca-texto (esquerda) -->
+    <div class="tb-menu" data-menu="highlight">
+      <button type="button" class="tb-btn tb-menu-btn" id="hl-list-toggle" aria-expanded="false" aria-controls="hl-list-panel" title="Marca-texto e lista de destaques">
+        Marca-texto
+        <span id="hl-count-badge" class="hl-count-badge" hidden>0</span>
+      </button>
+      <div id="hl-list-panel" class="tb-menu-panel hl-list-panel" hidden role="dialog" aria-label="Marca-texto">
+        <div class="tb-menu-title">Marca-texto</div>
+
+        <div class="hl-color-row">
+          <span class="tb-menu-label">Cor ao destacar</span>
+          <div id="hl-color-swatches" class="hl-color-swatches" role="group" aria-label="Cor do marca-texto">
+            <button type="button" class="hl-swatch-btn cme-hl-pastel-yellow" data-color="pastel-yellow" title="Amarelo pastel" aria-label="Amarelo pastel" aria-pressed="true"></button>
+            <button type="button" class="hl-swatch-btn cme-hl-pastel-green" data-color="pastel-green" title="Verde pastel" aria-label="Verde pastel" aria-pressed="false"></button>
+            <button type="button" class="hl-swatch-btn cme-hl-pastel-blue" data-color="pastel-blue" title="Azul pastel" aria-label="Azul pastel" aria-pressed="false"></button>
+            <button type="button" class="hl-swatch-btn cme-hl-pastel-pink" data-color="pastel-pink" title="Rosa pastel" aria-label="Rosa pastel" aria-pressed="false"></button>
+            <button type="button" class="hl-swatch-btn cme-hl-pastel-orange" data-color="pastel-orange" title="Laranja pastel" aria-label="Laranja pastel" aria-pressed="false"></button>
+            <button type="button" class="hl-swatch-btn cme-hl-pastel-purple" data-color="pastel-purple" title="Roxo pastel" aria-label="Roxo pastel" aria-pressed="false"></button>
+          </div>
+          <select id="hl-color" hidden aria-hidden="true" tabindex="-1">
+            <option value="pastel-yellow">Amarelo pastel</option>
+            <option value="pastel-green">Verde pastel</option>
+            <option value="pastel-blue">Azul pastel</option>
+            <option value="pastel-pink">Rosa pastel</option>
+            <option value="pastel-orange">Laranja pastel</option>
+            <option value="pastel-purple">Roxo pastel</option>
+          </select>
+        </div>
+
+        <div class="hl-filter-row">
+          <button type="button" id="hl-filter-toggle" class="hl-filter-toggle" aria-expanded="false" aria-controls="hl-filter-body">
+            <span class="tb-menu-label">Filtrar lista</span>
+            <span id="hl-filter-toggle-label" class="hl-filter-toggle-label">mostrar</span>
+          </button>
+          <div id="hl-filter-body" class="hl-filter-body" hidden>
+            <div id="hl-filter-swatches" class="hl-color-swatches" role="group" aria-label="Filtrar destaques por cor">
+              <button type="button" class="hl-filter-btn is-active" data-filter="all" title="Todas as cores" aria-label="Todas as cores" aria-pressed="true">Tudo</button>
+              <button type="button" class="hl-swatch-btn hl-filter-btn cme-hl-pastel-yellow" data-filter="pastel-yellow" title="Filtrar amarelo" aria-label="Filtrar amarelo" aria-pressed="false"></button>
+              <button type="button" class="hl-swatch-btn hl-filter-btn cme-hl-pastel-green" data-filter="pastel-green" title="Filtrar verde" aria-label="Filtrar verde" aria-pressed="false"></button>
+              <button type="button" class="hl-swatch-btn hl-filter-btn cme-hl-pastel-blue" data-filter="pastel-blue" title="Filtrar azul" aria-label="Filtrar azul" aria-pressed="false"></button>
+              <button type="button" class="hl-swatch-btn hl-filter-btn cme-hl-pastel-pink" data-filter="pastel-pink" title="Filtrar rosa" aria-label="Filtrar rosa" aria-pressed="false"></button>
+              <button type="button" class="hl-swatch-btn hl-filter-btn cme-hl-pastel-orange" data-filter="pastel-orange" title="Filtrar laranja" aria-label="Filtrar laranja" aria-pressed="false"></button>
+              <button type="button" class="hl-swatch-btn hl-filter-btn cme-hl-pastel-purple" data-filter="pastel-purple" title="Filtrar roxo" aria-label="Filtrar roxo" aria-pressed="false"></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="hl-list-head">
+          <strong>Seus destaques</strong>
+          <span class="hl-list-hint">salvos neste navegador</span>
+        </div>
+        <div id="hl-list-body" class="hl-list-body">
+          <p class="hl-list-empty">Nenhum destaque ainda. Selecione um trecho no texto para destacar.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Configurações (direita) - só ícone de engrenagem -->
+    <div class="tb-menu" data-menu="settings">
+      <button type="button" class="tb-btn tb-menu-btn tb-btn-icon" id="settings-toggle" aria-expanded="false" aria-controls="settings-panel" title="Configurações" aria-label="Configurações">
+        <svg class="tb-gear-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false">
+          <path fill="currentColor" d="M19.14 12.94c.04-.31.06-.63.06-.94s-.02-.63-.06-.94l2.03-1.58a.5.5 0 0 0 .12-.64l-1.92-3.32a.5.5 0 0 0-.6-.22l-2.39.96a7.03 7.03 0 0 0-1.63-.94l-.36-2.54A.5.5 0 0 0 14.9 2h-3.8a.5.5 0 0 0-.49.42l-.36 2.54c-.59.24-1.13.55-1.63.94l-2.39-.96a.5.5 0 0 0-.6.22L3.71 8.08a.5.5 0 0 0 .12.64l2.03 1.58c-.04.31-.06.63-.06.94s.02.63.06.94L3.83 14.7a.5.5 0 0 0-.12.64l1.92 3.32c.14.24.43.34.68.22l2.39-.96c.5.39 1.04.7 1.63.94l.36 2.54c.05.24.25.42.49.42h3.8c.24 0 .44-.18.49-.42l.36-2.54c.59-.24 1.13-.55 1.63-.94l2.39.96c.25.1.54 0 .68-.22l1.92-3.32a.5.5 0 0 0-.12-.64l-2.03-1.58zM12 15.5A3.5 3.5 0 1 1 12 8.5a3.5 3.5 0 0 1 0 7z"/>
+        </svg>
+      </button>
+      <div id="settings-panel" class="tb-menu-panel" hidden role="dialog" aria-label="Configurações de leitura">
+        <div class="tb-menu-title">Configurações</div>
+
+        <label class="tb-menu-row">
+          <span class="tb-menu-label">Notas de Gardner</span>
+          <select id="notes-mode" aria-label="Modo de exibição das notas">
+            <option value="all">Sempre visíveis</option>
+            <option value="click">Lupa (clique para abrir)</option>
+            <option value="off">Sempre ocultadas</option>
+          </select>
+        </label>
+
+        <label class="tb-menu-row">
+          <span class="tb-menu-label">Fonte</span>
+          <select id="font-family" aria-label="Fonte do texto">
+            <option value="default">Padrão do site</option>
+            <option value="dyslexia">Dislexia</option>
+            <option value="sans">Sans-serif</option>
+            <option value="mono">Monospace</option>
+          </select>
+        </label>
+
+        <div class="tb-menu-row">
+          <span class="tb-menu-label">Tamanho</span>
+          <div class="tb-font-size" role="group" aria-label="Tamanho da fonte">
+            <button type="button" id="font-smaller" class="tb-btn tb-btn-sq" title="Diminuir fonte" aria-label="Diminuir fonte">A-</button>
+            <span id="font-size-label" class="tb-size-label" aria-live="polite">100%</span>
+            <button type="button" id="font-larger" class="tb-btn tb-btn-sq" title="Aumentar fonte" aria-label="Aumentar fonte">A+</button>
+          </div>
+        </div>
+
+        <div class="tb-menu-row">
+          <span class="tb-menu-label">Tema</span>
+          <button type="button" id="toggle-theme" class="tb-btn" title="Alternar tema claro/escuro" aria-pressed="false">
+            <span class="theme-label">Tema escuro</span>
+          </button>
+        </div>
+
+        <div class="tb-menu-row tb-menu-row-danger">
+          <span class="tb-menu-label">Dados locais</span>
+          <button type="button" id="clear-site-data" class="tb-btn tb-btn-danger" title="Apagar destaques, notas e preferências salvos neste navegador">
+            Limpar cache do site
+          </button>
+          <span class="tb-menu-hint">Remove destaques, notas, progresso e preferências salvos neste navegador.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Popup de seleção: destacar + nota -->
+<div id="hl-popup" class="hl-popup" hidden role="dialog" aria-label="Destacar trecho">
+  <button type="button" id="hl-btn-mark" class="tb-btn">Destacar</button>
+  <button type="button" id="hl-btn-note" class="tb-btn">Destacar + nota</button>
+  <button type="button" id="hl-btn-cancel" class="tb-btn tb-btn-ghost">Cancelar</button>
+</div>
+
+<!-- Tooltip flutuante da nota ao passar o mouse -->
+<div id="hl-float-tip" class="hl-float-tip" hidden role="tooltip"></div>
+
+<!-- Confirmação: limpar cache -->
+<div id="clear-data-modal" class="hl-modal" hidden role="dialog" aria-modal="true" aria-labelledby="clear-data-title">
+  <div class="hl-modal-box">
+    <h3 id="clear-data-title">Limpar cache do site?</h3>
+    <p class="hl-quote" style="font-style:normal;opacity:0.95">
+      Isso apaga <strong>tudo</strong> que foi salvo neste navegador:
+      destaques, notas, preferências (fonte, tema, tamanho), cor do marca-texto
+      e qualquer outro dado local do site.
+    </p>
+    <p class="hl-quote" style="font-style:normal;opacity:0.85">
+      Esta ação não pode ser desfeita.
+    </p>
+    <div class="hl-modal-actions">
+      <button type="button" id="clear-data-confirm" class="tb-btn tb-btn-danger">Sim, limpar tudo</button>
+      <button type="button" id="clear-data-cancel" class="tb-btn tb-btn-ghost">Cancelar</button>
+    </div>
+  </div>
+</div>
+
+<!-- Modal de nota do highlight -->
+<div id="hl-note-modal" class="hl-modal" hidden role="dialog" aria-modal="true" aria-labelledby="hl-note-title">
+  <div class="hl-modal-box">
+    <h3 id="hl-note-title">Nota do trecho</h3>
+    <p id="hl-note-quote" class="hl-quote"></p>
+    <label class="hl-note-label">Cor deste destaque</label>
+    <div id="hl-note-swatches" class="hl-color-swatches" role="group" aria-label="Cor deste destaque">
+      <button type="button" class="hl-swatch-btn cme-hl-pastel-yellow" data-color="pastel-yellow" title="Amarelo pastel" aria-label="Amarelo pastel"></button>
+      <button type="button" class="hl-swatch-btn cme-hl-pastel-green" data-color="pastel-green" title="Verde pastel" aria-label="Verde pastel"></button>
+      <button type="button" class="hl-swatch-btn cme-hl-pastel-blue" data-color="pastel-blue" title="Azul pastel" aria-label="Azul pastel"></button>
+      <button type="button" class="hl-swatch-btn cme-hl-pastel-pink" data-color="pastel-pink" title="Rosa pastel" aria-label="Rosa pastel"></button>
+      <button type="button" class="hl-swatch-btn cme-hl-pastel-orange" data-color="pastel-orange" title="Laranja pastel" aria-label="Laranja pastel"></button>
+      <button type="button" class="hl-swatch-btn cme-hl-pastel-purple" data-color="pastel-purple" title="Roxo pastel" aria-label="Roxo pastel"></button>
+    </div>
+    <select id="hl-note-color" hidden aria-hidden="true" tabindex="-1">
+      <option value="pastel-yellow">Amarelo pastel</option>
+      <option value="pastel-green">Verde pastel</option>
+      <option value="pastel-blue">Azul pastel</option>
+      <option value="pastel-pink">Rosa pastel</option>
+      <option value="pastel-orange">Laranja pastel</option>
+      <option value="pastel-purple">Roxo pastel</option>
+    </select>
+    <label class="hl-note-label" for="hl-note-input">Sua nota (salva só neste navegador)</label>
+    <textarea id="hl-note-input" rows="4" maxlength="2000" placeholder="Escreva uma anotação opcional..."></textarea>
+    <div class="hl-modal-actions">
+      <button type="button" id="hl-note-save" class="tb-btn">Salvar</button>
+      <button type="button" id="hl-note-remove" class="tb-btn tb-btn-danger">Remover destaque</button>
+      <button type="button" id="hl-note-close" class="tb-btn tb-btn-ghost">Fechar</button>
+    </div>
+  </div>
+</div>
+
+<h1><br>Próximo Estágio. O que Fazer com Constantes</h1>
+<p class="a rotatedFloralHeartBullet">
+
+<p>Em nossas equações consideramos $x$ como crescendo,
+e como resultado de $x$ ser feito crescer $y$ também
+mudou seu valor e cresceu. Usualmente pensamos em $x$
+como uma quantidade que podemos variar; e, considerando a
+variação de $x$ como uma espécie de <em>causa</em>, consideramos a
+variação resultante de $y$ como um <em>efeito</em>. Em outras palavras,
+consideramos o valor de $y$ como dependendo daquele de $x$. Tanto
+$x$ quanto $y$ são variáveis, mas $x$ é aquela sobre a qual
+operamos, e $y$ é a “variável dependente.” Em todo o
+capítulo precedente estivemos tentando achar
+regras para a proporção que a variação dependente
+em $y$ guarda com a variação independentemente feita em $x$.
+
+<p><a name="diffrule2"/>
+Nosso próximo passo é descobrir que efeito sobre o
+processo de diferenciar é causado pela presença de
+<em>constantes</em>, isto é, de números que não mudam
+quando $x$ ou $y$ mudam seus valores.
+
+<p>
+<em>Constantes adicionadas.</em><p><a name="addconst"/>
+Comecemos com algum caso simples de uma constante
+adicionada, assim:
+   Seja
+\[
+\begin{aligned}
+y&=x^3+5.
+\end{aligned}
+\]
+Como antes, suponhamos $x$ crescer para $x+dx$ e
+$y$ crescer para $y+dy$.
+
+\[
+\begin{aligned}
+   \text{Então:}\;
+y + dy &= (x + dx)^3 + 5 \\
+       &= x^3 + 3x^2\, dx + 3x(dx)^2 + (dx)^3 + 5.
+\end{aligned}
+\]
+Desprezando as quantidades pequenas de ordens mais altas, isto
+se torna
+\[
+\begin{aligned}
+y + dy &= x^3 + 3x^2·dx + 5.
+\end{aligned}
+\]
+Subtraia o $y = x^3 + 5$ original, e ficamos com:
+\[
+\begin{aligned}
+dy &= 3x^2\, dx. \\
+\frac{dy}{dx} &= 3x^2.
+\end{aligned}
+\]
+
+<p>Assim o $5$ desapareceu completamente. Não acrescentou nada
+ao crescimento de $x$, e não entra no
+coeficiente diferencial. Se tivéssemos posto $7$, ou $700$, ou
+qualquer outro número, em vez de $5$, ele teria desaparecido.
+Assim se tomarmos a letra $a$, ou $b$, ou $c$ para
+representar qualquer constante, ela simplesmente desaparecerá quando
+diferenciarmos.
+
+<p>Se a constante adicional tivesse sido de valor negativo,
+como $-5$ ou $-b$, teria igualmente desaparecido.
+
+<p>
+<em>Constantes multiplicadas.</em><p>
+Tome como um experimento simples este caso:
+
+<p>Seja $y = 7x^2$.
+Então procedendo como antes obtemos:</p>
+
+\[
+\begin{aligned}
+y + dy &= 7(x+dx)^2 \\
+       &= 7\{x^2 + 2x·dx + (dx)^2\} \\
+       &= 7x^2 + 14x·dx + 7(dx)^2.
+\end{aligned}
+\]
+
+Então, subtraindo o $y = 7x^2$ original, e desprezando
+o último termo, temos
+\[
+\begin{aligned}
+dy &= 14x·dx.\\
+\frac{dy}{dx} &= 14x.
+\end{aligned}
+\]
+
+<p>Ilustremos este exemplo elaborando os
+gráficos das equações $y = 7x^2$ e $\dfrac{dy}{dx} = 14x$, ao
+atribuir a $x$ um conjunto de valores sucessivos, $0$, $1$, $2$, $3$, etc.,
+e achar os valores correspondentes de $y$ e de $\dfrac{dy}{dx}$.
+
+<p>Tabulamos esses valores como segue:
+  <table>
+<tr><td>$x$</td><td>$0$</td><td>$1$</td><td>$2$</td><td>$3$</td><td>$4$</td><td>$5$</td><td>$-1$</td><td>$-2$</td><td>$-3$</td></tr>
+<tr><td>$y$</td><td>$0$</td><td>$7$</td><td>$28$</td><td>$63$</td><td>$112$</td><td>$175$</td><td>$7$</td><td>$28$</td><td>$63$</td></tr>
+<tr><td>$\dfrac{dy}{dx}$</td><td>$0$</td><td>$14$</td><td>$28$</td><td>$42$</td><td>$56$</td><td>$70$</td><td>$-14$</td><td>$-28$</td><td>$-42$</td></tr>
+</table>
+<p>
+
+<p><a name="figure6">
+<img src="33283-t/images/040a.pdf.png-1.png">
+
+
+<p>Agora plote esses valores em alguma escala conveniente,
+e obtemos as duas curvas, <a href="#figure6">Fig. 6</a> e <a href="#figure6a">Fig. 6a</a>.
+<p><a name="figure6a">
+<img src="33283-t/images/040b.pdf.png-1.png">
+<p>Compare cuidadosamente as duas figuras, e verifique por
+inspeção que a altura da ordenada da
+curva derivada, <a href="#figure6a">Fig. 6a</a>, é proporcional à <em>inclinação</em> da
+curva original, (Veja <a href="10.html#slope">aqui</a> sobre <em>inclinações</em> de curvas.)
+<a href="#figure6">Figura 6</a>, no valor correspondente
+de $x$. À esquerda da origem, onde a curva original
+se inclina negativamente (isto é, para baixo da esquerda
+para a direita) as ordenadas correspondentes da curva
+derivada são negativas.
+
+<p><a name="differ"/>
+Ora se olharmos de volta para <a href="4.html#diffexample">aqui</a>, veremos que
+simplesmente diferenciar $x^2$ nos dá $2x$. De modo que o
+coeficiente diferencial de $7x^2$ é exatamente $7$ vezes tão grande quanto
+o de $x^2$. Se tivéssemos tomado $8x^2$, o coeficiente
+diferencial teria saído oito vezes tão grande
+quanto o de $x^2$. Se pusermos $y = ax^2$, obteremos
+\[
+\frac{dy}{dx} = a × 2x.
+\]
+
+<p>Se tivéssemos começado com $y = ax^n$, teríamos tido
+$\dfrac{dy}{dx} = a×nx^{n-1}$. De modo que qualquer mera multiplicação por
+uma constante reaparece como uma mera multiplicação quando
+a coisa é diferenciada. E o que é verdade sobre
+multiplicação é igualmente verdade sobre <em>divisão</em>: pois se,
+no exemplo acima, tivéssemos tomado como constante $\frac{1}{7}$
+em vez de $7$, teríamos tido o mesmo $\frac{1}{7}$ saindo
+no resultado após a diferenciação.
+
+
+<p>
+<p><em>Alguns exemplos adicionais</em>.
+Os seguintes exemplos adicionais, plenamente elaborados,
+permitirão a você dominar completamente o processo de
+diferenciação aplicado a expressões algébricas ordinárias,
+e permitirão a você resolver sozinho os
+exemplos dados no fim deste capítulo.
+
+<p>(1) Diferencie $y = \dfrac{x^5}{7} - \dfrac{3}{5}$.
+
+<p>$\dfrac{3}{5}$ é uma constante adicionada e some (veja <a href="5.html#addconst">aqui</a>).
+
+<p>Podemos então escrever de imediato</p>
+
+\[
+\frac{dy}{dx} = \frac{1}{7} × 5 × x^{5-1}, \\
+ \text{ou}\;
+\frac{dy}{dx} = \frac{5}{7} x^4.
+\]
+
+<p>(2) Diferencie $y = a\sqrt{x} - \dfrac{1}{2}\sqrt{a}$.
+
+<p>O termo $\dfrac{1}{2}\sqrt{a}$ some, sendo uma constante adicionada;
+e como $a\sqrt{x}$, na forma de índice, se escreve $ax^{\frac{1}{2}}$, temos</p>
+
+\[
+\frac{dy}{dx}
+  = a × \frac{1}{2} × x^{\frac{1}{2}-1}
+  =     \frac{a}{2} × x^{-\frac{1}{2}}, \\
+ \text{ou}\;
+\frac{dy}{dx} = \frac{a}{2\sqrt{x}}.
+\]
+
+<p>(3) Se $ay + bx = by - ax + (x+y)\sqrt{a^2 - b^2}$,
+ache o coeficiente diferencial de $y$ com respeito a $x$.
+
+<p>Como regra uma expressão deste tipo precisará de um
+pouco mais de conhecimento do que adquirimos até agora;
+
+vale, contudo, sempre a pena tentar se a
+expressão pode ser posta em forma mais simples.
+
+<p>Primeiro devemos tentar trazê-la à forma $y =$ alguma
+expressão envolvendo apenas $x$.
+
+<p>A expressão pode ser escrita</p>
+
+\[
+(a-b)y + (a + b)x = (x+y) \sqrt{a^2 - b^2}.
+\]
+
+<p>Elevando ao quadrado, obtemos</p>
+
+\[
+(a-b)^2 y^2 + (a + b)^2 x^2 + 2(a+b)(a-b)xy = (x^2+y^2+2xy)(a^2-b^2),
+\]
+que se simplifica para
+
+\[
+\begin{aligned}
+(a-b)^2y^2 + (a+b)^2 x^2 &= x^2(a^2 - b^2) + y^2(a^2 - b^2); \\
+\text{ ou}\;
+[(a-b)^2 - (a^2 - b^2)]y^2 &= [(a^2 - b^2) - (a+b)^2]x^2, \\
+\text{ isto é}\;
+2b(b-a)y^2 &= -2b(b+a)x^2;
+\end{aligned}
+\]
+
+ donde
+ \[
+y = \sqrt{\frac{a+b}{a-b}} x \quad\text{e}\quad \frac{dy}{dx} = \sqrt{\frac{a+b}{a-b}}.
+\]
+
+<p>(4) O volume de um cilindro de raio $r$ e altura $h$
+é dado pela fórmula $V = \pi r^2 h$. Ache a taxa de
+variação do volume com o raio quando $r = 5.5$ pol.
+e $h=20$ pol. Se $r = h$, ache as dimensões do
+cilindro de modo que uma mudança de $1$ pol. no raio cause uma
+mudança de $400$ pol. cúb. no volume.
+
+<p>A taxa de variação de $V$ com respeito a $r$ é</p>
+
+\[
+\frac{dV}{dr} = 2 \pi r h.
+\]
+
+<p>Se $r = 5.5$ pol. e $h=20$ pol. isto se torna $690.8$. Significa
+que uma mudança de raio de $1$ polegada causará uma
+mudança de volume de $690.8$ pol. cúb. Isso pode ser
+facilmente verificado, pois os volumes com $r = 5$ e $r = 6$
+
+são $1570$ pol. cúb. e $2260.8$ pol. cúb. respectivamente, e
+$2260.8 - 1570 = 690.8$.
+
+<p>Também, se</p>
+
+\[
+r=h,\quad \dfrac{dV}{dr} = 2\pi r^2 = 400\quad \text{e}\quad r = h = \sqrt{\dfrac{400}{2\pi}} = 7.98 \text{ pol}.
+\]
+
+<p>(5) A leitura $\theta$ de um pirômetro de radiação de Féry
+está relacionada à temperatura Celsius $t$ do
+corpo observado pela relação</p>
+
+\[
+\dfrac{\theta}{\theta_1} = \left(\dfrac{t}{t_1}\right)^4,
+\]
+onde $\theta_1$ é a leitura correspondente a uma temperatura conhecida $t_1$
+do corpo observado.
+
+<p>Compare a sensibilidade do pirômetro nas
+temperaturas $800°$C., $1000°$C., $1200°$C., dado que
+leu $25$ quando a temperatura era $1000°$C.
+
+<p>A sensibilidade é a taxa de variação da
+leitura com a temperatura, isto é $\dfrac{d\theta}{dt}$. A fórmula
+pode ser escrita</p>
+
+\[
+\theta = \dfrac{\theta_1}{t_1^4} t^4 = \dfrac{25t^4}{1000^4},
+\]
+e temos
+\[
+\dfrac{d\theta}{dt} = \dfrac{100t^3}{1000^4} = \dfrac{t^3}{10.000.000.000}.
+\]
+
+<p>Quando $t=800$, $1000$ e $1200$, obtemos $\dfrac{d\theta}{dt} = 0.0512$, $0.1$ e
+$0.1728$ respectivamente.
+
+<p>A sensibilidade é aproximadamente dobrada de
+$800°$ a $1000°$, e se torna três quartos maior
+de novo até $1200°$.
+
+
+<p>
+<hr><h3>Exercícios II</h3>
+
+<p>Diferencie o seguinte:
+ [2]
+(1) $y = ax^3 + 6$.
+(2) $y = 13x^{\frac{3}{2}} - c$.
+
+
+<p>(3) $y = 12x^{\frac{1}{2}} + c^{\frac{1}{2}}$.
+(4) $y = c^{\frac{1}{2}} x^{\frac{1}{2}}$.
+
+
+<p>(5) $u = \dfrac{az^n - 1}{c}$.
+<p>(6) $y = 1.18t^2 + 22.4$.
+
+
+<p>Invente alguns outros exemplos para você mesmo, e experimente
+a mão em diferenciá-los.
+
+<p>
+(7) Se $l_t$ e $l_0$ forem os comprimentos de uma barra de ferro nas
+temperaturas $t°$ C. e $0°$ C. respectivamente, então
+$l_t = l_0(1 + 0.000012t)$. Ache a mudança de comprimento da
+barra por grau Celsius.
+
+<p>(8) Achou-se que se $c$ for a potência em velas
+de uma lâmpada elétrica incandescente, e $V$ for a tensão,
+$c = aV^b$, onde $a$ e $b$ são constantes.
+
+<p>Ache a taxa de mudança da potência em velas com
+a tensão, e calcule a mudança de potência em velas
+por volt a $80$, $100$ e $120$ volts no caso de uma lâmpada
+para a qual $a = 0.5×10^{-10}$ e $b=6$.
+
+<p>(9) A frequência $n$ de vibração de uma corda de
+diâmetro $D$, comprimento $L$ e densidade relativa $\sigma$, esticada
+com uma força $T$, é dada por</p>
+
+\[
+n = \dfrac{1}{DL} \sqrt{\dfrac{gT}{\pi\sigma}}.
+\]
+
+<p>Ache a taxa de mudança da frequência quando $D$, $L$,
+$\sigma$ e $T$ são variados isoladamente.
+
+<p>
+
+<p>(10) A maior pressão externa $P$ que um tubo
+pode suportar sem colapsar é dada por</p>
+
+\[
+  P = \left(\dfrac{2E}{1-\sigma^2}\right) \dfrac{t^3}{D^3},
+\]
+onde $E$ e $\sigma$ são constantes, $t$ é a espessura do
+tubo e $D$ é seu diâmetro. (Esta fórmula assume
+que $4t$ é pequeno comparado a $D$.)
+
+<p>Compare a taxa com que $P$ varia para uma pequena
+mudança de espessura e para uma pequena mudança de diâmetro
+ocorrendo separadamente.
+
+<p>(11) Ache, a partir de primeiros princípios, a taxa com que
+o seguinte varia com respeito a uma mudança no
+raio:
+
+(<em>a</em> ) -  a circunferência de um círculo de raio $r$;
+<p>(<em>b</em> ) -  a área de um círculo de raio $r$;
+<p>(<em>c</em> ) -  a área lateral de um cone de dimensão geratriz $l$;
+<p>(<em>d</em> ) -  o volume de um cone de raio $r$ e altura $h$;
+<p>(<em>e</em> ) -  a área de uma esfera de raio $r$;
+<p>(<em>f</em> ) -  o volume de uma esfera de raio $r$.
+
+
+<p>(12) O comprimento $L$ de uma barra de ferro na temperatura $T$
+sendo dado por $L = l_t\bigl[1 + 0.000012(T-t)\bigr]$, onde $l_t$
+é o comprimento na temperatura $t$, ache a taxa de
+variação do diâmetro $D$ de um aro de ferro adequado
+para ser encolhido sobre uma roda, quando a temperatura $T$
+varia.
+
+
+
+<p><h3 class="answers">Respostas</h3>
+
+<p>(1)  $\dfrac{dy}{dx} = 3ax^2$.
+<p>(2)  $\dfrac{dy}{dx} = 13 × \frac{3}{2}x^{\frac{1}{2}}$.
+<p>(3)  $\dfrac{dy}{dx} = 6x^{-\frac{1}{2}}$.
+<p>(4)  $\dfrac{dy}{dx} = \dfrac{1}{2}c^{\frac{1}{2}} x^{-\frac{1}{2}}$.
+<p>(5)  $\dfrac{du}{dz} = \dfrac{an}{c} z^{n-1}$.
+<p>(6)  $\dfrac{dy}{dt} = 2.36t$.
+<p>(7)  $\dfrac{dl_t}{dt} = 0.000012×l_0$.
+<p>(8)  $\dfrac{dC}{dV} = abV^{b-1}$, $0.98$, $3.00$ e $7.47$ potências em velas por volt respectivamente.
+<p> (9) \[
+  \dfrac{dn}{dD} = -\dfrac{1}{LD^2} \sqrt{\dfrac{gT}{\pi \sigma}},
+  \dfrac{dn}{dL} = -\dfrac{1}{DL^2} \sqrt{\dfrac{gT}{\pi \sigma}}, \\
+  \dfrac{dn}{d \sigma}
+  = -\dfrac{1}{2DL} \sqrt{\dfrac{gT}{\pi \sigma^3}},
+  \dfrac{dn}{dT} =  \dfrac{1}{2DL} \sqrt{\dfrac{g}{\pi \sigma T}}.
+\]
+
+<p> (10) \[
+	\dfrac{\text{Taxa de mudança de $P$ quando $t$ varia}}
+            {\text{Taxa de mudança de $P$ quando $D$ varia}}
+  = - \dfrac{D}{t}
+  \]
+
+<p> (11) $2\pi$, $2\pi r$, $\pi l$, $\frac{2}{3}\pi rh$, $8\pi r$, $4\pi r^2$.
+<p> (12) $\dfrac{dD}{dT} = \dfrac{0.000012l_t}{\pi}$.
+
+<br>
+<!-- Soluções comerciais removidas: projeto público e sem fins lucrativos -->
+
+
+<hr>
+<nav class="chapter-nav" aria-label="Navegação do capítulo">
+  <a class="nav-prev" href="4.html">← Anterior</a>
+  <a class="nav-home" href="index.html">Página principal</a>
+  <a class="nav-next" href="6.html">Próximo →</a>
+</nav>
+<footer class="site-footer" role="contentinfo">
+  <p class="a rotatedFloralHeartBullet"></p>
+
+  <div class="manifesto">
+    <p class="manifesto-lead">
+      Este é um <strong>projeto público</strong>, sem fins lucrativos.
+      Não é permitido comercializá-lo, vendê-lo nem usá-lo como produto pago.
+    </p>
+    <p class="manifesto-quote">
+      A educação é um direito de todos.
+      O conhecimento deve ser livre sempre que não cause o mal:
+      deve circular, ensinar e libertar, nunca aprisionar quem aprende.
+    </p>
+    <p class="manifesto-sign">
+      - Thales Rodrigues
+    </p>
+  </div>
+
+  <nav class="author-links" aria-label="Redes de Thales Rodrigues">
+    <a href="https://www.linkedin.com/in/thales-oliveira-rodrigues/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    <span class="dot" aria-hidden="true">·</span>
+    <a href="https://github.com/Rodriguestmo" target="_blank" rel="noopener noreferrer">GitHub</a>
+  </nav>
+
+  <p class="footer-meta">
+    <small>
+      Tradução e adaptação PT-BR por Thales Rodrigues.
+      Texto de Silvanus P. Thompson em domínio público (Project Gutenberg).
+      Notas de contexto inspiradas na edição Gardner (1998).
+      Projeto público e gratuito.
+    </small>
+  </p>
+</footer>
+
+<script src="j/jquery.js"></script>
+<script src="j/modernizr.js"></script>
+<script src="j/dih5.js"></script>
+<script src="j/chapters-data.js"></script>
+<script src="j/glossary-data.js"></script>
+<script src="j/reader-features.js"></script>
+<script src="j/notes-toggle.js"></script>
+<!-- Analytics desativado na edição PT local -->
+</body>
+</html>

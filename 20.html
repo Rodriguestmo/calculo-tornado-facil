@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+
+<title>Cálculo Tornado Fácil</title>
+<meta name="description" content="Capítulo XX: truques, armadilhas e triunfos na integração.">
+<meta name="author" content="Thales Rodrigues; Silvanus P. Thompson">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="googlebot" content="index, follow">
+<meta name="language" content="Portuguese">
+<meta name="keywords" content="cálculo, calculus made easy, Silvanus Thompson, cálculo diferencial, cálculo integral, matemática, educação livre, português, Martin Gardner, Cálculo Tornado Fácil, Thales Rodrigues">
+<link rel="canonical" href="https://rodriguestmo.github.io/calculo-tornado-facil/20.html">
+<link rel="alternate" hreflang="pt-BR" href="https://rodriguestmo.github.io/calculo-tornado-facil/20.html">
+<link rel="alternate" hreflang="x-default" href="https://rodriguestmo.github.io/calculo-tornado-facil/">
+
+
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
+<link rel="icon" href="favicon-16.png" type="image/png" sizes="16x16">
+<link rel="shortcut icon" href="favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png" sizes="180x180">
+<meta name="theme-color" content="#c45c26">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Cálculo Tornado Fácil">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Cálculo Tornado Fácil">
+<meta property="og:description" content="Capítulo XX: truques, armadilhas e triunfos na integração.">
+<meta property="og:url" content="https://rodriguestmo.github.io/calculo-tornado-facil/20.html">
+<meta property="og:image" content="https://rodriguestmo.github.io/calculo-tornado-facil/cover.jpg">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Cálculo Tornado Fácil">
+<meta name="twitter:description" content="Capítulo XX: truques, armadilhas e triunfos na integração.">
+<meta name="twitter:image" content="https://rodriguestmo.github.io/calculo-tornado-facil/cover.jpg">
+
+<link rel="describedby" href="https://rodriguestmo.github.io/calculo-tornado-facil/llms.txt">
+<link rel="stylesheet" href="screen.css">
+<style>
+body{counter-reset:h1 20}
+</style>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$'], ['\\[','\\]']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ["script","noscript","style","textarea","pre","code"]
+    },
+    TeX: {
+      extensions: ["AMSmath.js","AMSsymbols.js"],
+      equationNumbers: { autoNumber: "none" }
+    },
+    "HTML-CSS": {
+      availableFonts: ["TeX"],
+      linebreaks: { automatic: false },
+      styles: {
+        ".MathJax_Display": { "margin": "1.5em 0" }
+      }
+    },
+    CommonHTML: {
+      styles: { ".MJXc-display": { "margin": "1.5em 0" } }
+    },
+    showProcessingMessages: false,
+    messageStyle: "none"
+  });
+</script>
+<script type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Chapter",
+  "name": "Truques, Armadilhas e Triunfos",
+  "position": 20,
+  "isPartOf": {
+    "@type": "Book",
+    "name": "Cálculo Tornado Fácil",
+    "url": "https://rodriguestmo.github.io/calculo-tornado-facil/"
+  },
+  "author": {"@type": "Person", "name": "Silvanus P. Thompson"},
+  "translator": {"@type": "Person", "name": "Thales Rodrigues"},
+  "url": "https://rodriguestmo.github.io/calculo-tornado-facil/20.html",
+  "inLanguage": "pt-BR",
+  "isAccessibleForFree": true
+}
+</script>
+</head>
+<body>
+<!-- Progresso de leitura do capítulo (scroll) -->
+<div id="read-progress" class="read-progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="Progresso de leitura do capítulo">
+  <div id="read-progress-bar" class="read-progress-bar"></div>
+</div>
+
+<!-- Barra fixa: logo + menus (marca-texto à esquerda, engrenagem à direita) -->
+<div id="site-toolbar" class="site-toolbar" role="region" aria-label="Controles do site">
+  <a class="tb-home" href="index.html">Cálculo Tornado Fácil</a>
+
+  <div class="tb-controls">
+    <!-- Marca-texto (esquerda) -->
+    <div class="tb-menu" data-menu="highlight">
+      <button type="button" class="tb-btn tb-menu-btn" id="hl-list-toggle" aria-expanded="false" aria-controls="hl-list-panel" title="Marca-texto e lista de destaques">
+        Marca-texto
+        <span id="hl-count-badge" class="hl-count-badge" hidden>0</span>
+      </button>
+      <div id="hl-list-panel" class="tb-menu-panel hl-list-panel" hidden role="dialog" aria-label="Marca-texto">
+        <div class="tb-menu-title">Marca-texto</div>
+
+        <div class="hl-color-row">
+          <span class="tb-menu-label">Cor ao destacar</span>
+          <div id="hl-color-swatches" class="hl-color-swatches" role="group" aria-label="Cor do marca-texto">
+            <button type="button" class="hl-swatch-btn cme-hl-pastel-yellow" data-color="pastel-yellow" title="Amarelo pastel" aria-label="Amarelo pastel" aria-pressed="true"></button>
+            <button type="button" class="hl-swatch-btn cme-hl-pastel-green" data-color="pastel-green" title="Verde pastel" aria-label="Verde pastel" aria-pressed="false"></button>
+            <button type="button" class="hl-swatch-btn cme-hl-pastel-blue" data-color="pastel-blue" title="Azul pastel" aria-label="Azul pastel" aria-pressed="false"></button>
+            <button type="button" class="hl-swatch-btn cme-hl-pastel-pink" data-color="pastel-pink" title="Rosa pastel" aria-label="Rosa pastel" aria-pressed="false"></button>
+            <button type="button" class="hl-swatch-btn cme-hl-pastel-orange" data-color="pastel-orange" title="Laranja pastel" aria-label="Laranja pastel" aria-pressed="false"></button>
+            <button type="button" class="hl-swatch-btn cme-hl-pastel-purple" data-color="pastel-purple" title="Roxo pastel" aria-label="Roxo pastel" aria-pressed="false"></button>
+          </div>
+          <select id="hl-color" hidden aria-hidden="true" tabindex="-1">
+            <option value="pastel-yellow">Amarelo pastel</option>
+            <option value="pastel-green">Verde pastel</option>
+            <option value="pastel-blue">Azul pastel</option>
+            <option value="pastel-pink">Rosa pastel</option>
+            <option value="pastel-orange">Laranja pastel</option>
+            <option value="pastel-purple">Roxo pastel</option>
+          </select>
+        </div>
+
+        <div class="hl-filter-row">
+          <button type="button" id="hl-filter-toggle" class="hl-filter-toggle" aria-expanded="false" aria-controls="hl-filter-body">
+            <span class="tb-menu-label">Filtrar lista</span>
+            <span id="hl-filter-toggle-label" class="hl-filter-toggle-label">mostrar</span>
+          </button>
+          <div id="hl-filter-body" class="hl-filter-body" hidden>
+            <div id="hl-filter-swatches" class="hl-color-swatches" role="group" aria-label="Filtrar destaques por cor">
+              <button type="button" class="hl-filter-btn is-active" data-filter="all" title="Todas as cores" aria-label="Todas as cores" aria-pressed="true">Tudo</button>
+              <button type="button" class="hl-swatch-btn hl-filter-btn cme-hl-pastel-yellow" data-filter="pastel-yellow" title="Filtrar amarelo" aria-label="Filtrar amarelo" aria-pressed="false"></button>
+              <button type="button" class="hl-swatch-btn hl-filter-btn cme-hl-pastel-green" data-filter="pastel-green" title="Filtrar verde" aria-label="Filtrar verde" aria-pressed="false"></button>
+              <button type="button" class="hl-swatch-btn hl-filter-btn cme-hl-pastel-blue" data-filter="pastel-blue" title="Filtrar azul" aria-label="Filtrar azul" aria-pressed="false"></button>
+              <button type="button" class="hl-swatch-btn hl-filter-btn cme-hl-pastel-pink" data-filter="pastel-pink" title="Filtrar rosa" aria-label="Filtrar rosa" aria-pressed="false"></button>
+              <button type="button" class="hl-swatch-btn hl-filter-btn cme-hl-pastel-orange" data-filter="pastel-orange" title="Filtrar laranja" aria-label="Filtrar laranja" aria-pressed="false"></button>
+              <button type="button" class="hl-swatch-btn hl-filter-btn cme-hl-pastel-purple" data-filter="pastel-purple" title="Filtrar roxo" aria-label="Filtrar roxo" aria-pressed="false"></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="hl-list-head">
+          <strong>Seus destaques</strong>
+          <span class="hl-list-hint">salvos neste navegador</span>
+        </div>
+        <div id="hl-list-body" class="hl-list-body">
+          <p class="hl-list-empty">Nenhum destaque ainda. Selecione um trecho no texto para destacar.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Configurações (direita) - só ícone de engrenagem -->
+    <div class="tb-menu" data-menu="settings">
+      <button type="button" class="tb-btn tb-menu-btn tb-btn-icon" id="settings-toggle" aria-expanded="false" aria-controls="settings-panel" title="Configurações" aria-label="Configurações">
+        <svg class="tb-gear-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false">
+          <path fill="currentColor" d="M19.14 12.94c.04-.31.06-.63.06-.94s-.02-.63-.06-.94l2.03-1.58a.5.5 0 0 0 .12-.64l-1.92-3.32a.5.5 0 0 0-.6-.22l-2.39.96a7.03 7.03 0 0 0-1.63-.94l-.36-2.54A.5.5 0 0 0 14.9 2h-3.8a.5.5 0 0 0-.49.42l-.36 2.54c-.59.24-1.13.55-1.63.94l-2.39-.96a.5.5 0 0 0-.6.22L3.71 8.08a.5.5 0 0 0 .12.64l2.03 1.58c-.04.31-.06.63-.06.94s.02.63.06.94L3.83 14.7a.5.5 0 0 0-.12.64l1.92 3.32c.14.24.43.34.68.22l2.39-.96c.5.39 1.04.7 1.63.94l.36 2.54c.05.24.25.42.49.42h3.8c.24 0 .44-.18.49-.42l.36-2.54c.59-.24 1.13-.55 1.63-.94l2.39.96c.25.1.54 0 .68-.22l1.92-3.32a.5.5 0 0 0-.12-.64l-2.03-1.58zM12 15.5A3.5 3.5 0 1 1 12 8.5a3.5 3.5 0 0 1 0 7z"/>
+        </svg>
+      </button>
+      <div id="settings-panel" class="tb-menu-panel" hidden role="dialog" aria-label="Configurações de leitura">
+        <div class="tb-menu-title">Configurações</div>
+
+        <label class="tb-menu-row">
+          <span class="tb-menu-label">Notas de Gardner</span>
+          <select id="notes-mode" aria-label="Modo de exibição das notas">
+            <option value="all">Sempre visíveis</option>
+            <option value="click">Lupa (clique para abrir)</option>
+            <option value="off">Sempre ocultadas</option>
+          </select>
+        </label>
+
+        <label class="tb-menu-row">
+          <span class="tb-menu-label">Fonte</span>
+          <select id="font-family" aria-label="Fonte do texto">
+            <option value="default">Padrão do site</option>
+            <option value="dyslexia">Dislexia</option>
+            <option value="sans">Sans-serif</option>
+            <option value="mono">Monospace</option>
+          </select>
+        </label>
+
+        <div class="tb-menu-row">
+          <span class="tb-menu-label">Tamanho</span>
+          <div class="tb-font-size" role="group" aria-label="Tamanho da fonte">
+            <button type="button" id="font-smaller" class="tb-btn tb-btn-sq" title="Diminuir fonte" aria-label="Diminuir fonte">A-</button>
+            <span id="font-size-label" class="tb-size-label" aria-live="polite">100%</span>
+            <button type="button" id="font-larger" class="tb-btn tb-btn-sq" title="Aumentar fonte" aria-label="Aumentar fonte">A+</button>
+          </div>
+        </div>
+
+        <div class="tb-menu-row">
+          <span class="tb-menu-label">Tema</span>
+          <button type="button" id="toggle-theme" class="tb-btn" title="Alternar tema claro/escuro" aria-pressed="false">
+            <span class="theme-label">Tema escuro</span>
+          </button>
+        </div>
+
+        <div class="tb-menu-row tb-menu-row-danger">
+          <span class="tb-menu-label">Dados locais</span>
+          <button type="button" id="clear-site-data" class="tb-btn tb-btn-danger" title="Apagar destaques, notas e preferências salvos neste navegador">
+            Limpar cache do site
+          </button>
+          <span class="tb-menu-hint">Remove destaques, notas, progresso e preferências salvos neste navegador.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Popup de seleção: destacar + nota -->
+<div id="hl-popup" class="hl-popup" hidden role="dialog" aria-label="Destacar trecho">
+  <button type="button" id="hl-btn-mark" class="tb-btn">Destacar</button>
+  <button type="button" id="hl-btn-note" class="tb-btn">Destacar + nota</button>
+  <button type="button" id="hl-btn-cancel" class="tb-btn tb-btn-ghost">Cancelar</button>
+</div>
+
+<!-- Tooltip flutuante da nota ao passar o mouse -->
+<div id="hl-float-tip" class="hl-float-tip" hidden role="tooltip"></div>
+
+<!-- Confirmação: limpar cache -->
+<div id="clear-data-modal" class="hl-modal" hidden role="dialog" aria-modal="true" aria-labelledby="clear-data-title">
+  <div class="hl-modal-box">
+    <h3 id="clear-data-title">Limpar cache do site?</h3>
+    <p class="hl-quote" style="font-style:normal;opacity:0.95">
+      Isso apaga <strong>tudo</strong> que foi salvo neste navegador:
+      destaques, notas, preferências (fonte, tema, tamanho), cor do marca-texto
+      e qualquer outro dado local do site.
+    </p>
+    <p class="hl-quote" style="font-style:normal;opacity:0.85">
+      Esta ação não pode ser desfeita.
+    </p>
+    <div class="hl-modal-actions">
+      <button type="button" id="clear-data-confirm" class="tb-btn tb-btn-danger">Sim, limpar tudo</button>
+      <button type="button" id="clear-data-cancel" class="tb-btn tb-btn-ghost">Cancelar</button>
+    </div>
+  </div>
+</div>
+
+<!-- Modal de nota do highlight -->
+<div id="hl-note-modal" class="hl-modal" hidden role="dialog" aria-modal="true" aria-labelledby="hl-note-title">
+  <div class="hl-modal-box">
+    <h3 id="hl-note-title">Nota do trecho</h3>
+    <p id="hl-note-quote" class="hl-quote"></p>
+    <label class="hl-note-label">Cor deste destaque</label>
+    <div id="hl-note-swatches" class="hl-color-swatches" role="group" aria-label="Cor deste destaque">
+      <button type="button" class="hl-swatch-btn cme-hl-pastel-yellow" data-color="pastel-yellow" title="Amarelo pastel" aria-label="Amarelo pastel"></button>
+      <button type="button" class="hl-swatch-btn cme-hl-pastel-green" data-color="pastel-green" title="Verde pastel" aria-label="Verde pastel"></button>
+      <button type="button" class="hl-swatch-btn cme-hl-pastel-blue" data-color="pastel-blue" title="Azul pastel" aria-label="Azul pastel"></button>
+      <button type="button" class="hl-swatch-btn cme-hl-pastel-pink" data-color="pastel-pink" title="Rosa pastel" aria-label="Rosa pastel"></button>
+      <button type="button" class="hl-swatch-btn cme-hl-pastel-orange" data-color="pastel-orange" title="Laranja pastel" aria-label="Laranja pastel"></button>
+      <button type="button" class="hl-swatch-btn cme-hl-pastel-purple" data-color="pastel-purple" title="Roxo pastel" aria-label="Roxo pastel"></button>
+    </div>
+    <select id="hl-note-color" hidden aria-hidden="true" tabindex="-1">
+      <option value="pastel-yellow">Amarelo pastel</option>
+      <option value="pastel-green">Verde pastel</option>
+      <option value="pastel-blue">Azul pastel</option>
+      <option value="pastel-pink">Rosa pastel</option>
+      <option value="pastel-orange">Laranja pastel</option>
+      <option value="pastel-purple">Roxo pastel</option>
+    </select>
+    <label class="hl-note-label" for="hl-note-input">Sua nota (salva só neste navegador)</label>
+    <textarea id="hl-note-input" rows="4" maxlength="2000" placeholder="Escreva uma anotação opcional..."></textarea>
+    <div class="hl-modal-actions">
+      <button type="button" id="hl-note-save" class="tb-btn">Salvar</button>
+      <button type="button" id="hl-note-remove" class="tb-btn tb-btn-danger">Remover destaque</button>
+      <button type="button" id="hl-note-close" class="tb-btn tb-btn-ghost">Fechar</button>
+    </div>
+  </div>
+</div>
+
+<h1><br>Truques, Armadilhas e Triunfos</h1>
+<p class="a rotatedFloralHeartBullet">
+
+<p><em>Truques.</em> Grande parte do trabalho de integrar
+coisas consiste em amoldá-las a alguma forma que se
+possa integrar. Os livros - e por isso se entendem
+os livros sérios - sobre o Cálculo Integral estão
+cheios de planos e métodos e truques e artifícios
+para esse tipo de trabalho. Os seguintes são
+alguns deles.
+
+<p><em>Integração por partes.</em><a name="intparts"/> Dá-se esse nome a um
+truque, cuja fórmula é
+\[
+\int u\, dx = ux - \int x\, du + C.
+\]
+É útil em alguns casos que você não consegue atacar
+diretamente, pois mostra que se em qualquer caso
+$\int x\, du$ puder ser encontrado, então $\int u\, dx$ também
+poderá. A fórmula se deduz assim. De <a href="6.html#differprod">aqui</a>, temos
+\[
+d(ux) = u\, dx + x\, du,
+\]
+que se pode escrever
+\[
+u(dx) = d(ux) - x\, du,
+\]
+que por integração direta dá a expressão acima.
+
+
+<p>
+<p><em>Exemplos</em>
+(1) Ache $\int w · \sin w\, dw$.
+
+<p>Escreva $u = w$, e para $\sin w · dw$ escreva $dx$.
+Teremos então $du = dw$, enquanto $\int \sin w · dw = -\cos w = x$.
+
+<p>Pondo isso na fórmula, obtemos</p>
+
+\[
+\begin{aligned}
+\int w · \sin w\, dw &= w(-\cos w) - \int -\cos w\, dw  \\
+                     &=-w \cos w + \sin w + C.
+\end{aligned}
+\]
+
+<p>(2) Ache $\int x \epsilon^x\, dx$.</p>
+
+\[
+\begin{aligned}
+   \text{Escreva}\;
+ u &=  x, & \epsilon^x\, dx&=dv; \\
+ \text{então }\;
+du &= dx, & v &=\epsilon^x,
+\end{aligned}
+\]
+
+ e
+\[
+\int x\epsilon^x\, dx
+   = x\epsilon^x - \int \epsilon^x\, dx
+      \quad \text{(pela fórmula)} \\
+   = x \epsilon^x - \epsilon^x = \epsilon^x(x-1) + C.
+\]
+
+<p>(3) Tente $\int \cos^2 \theta\, d\theta$.<a name="moreexamples"/></p>
+
+\[
+\begin{aligned}
+u &= \cos \theta, &\cos \theta\, d\theta &= dv. \\
+   \text{Logo }\;
+du&= -\sin \theta\, d\theta, & v &=\sin \theta,
+\end{aligned}
+\]
+\[
+\begin{aligned}
+\int \cos^2 \theta\, d\theta
+  &= \cos \theta \sin \theta+ \int \sin^2 \theta\, d\theta       \\
+  &= \frac{2 \cos\theta \sin\theta}{2} +\int(1-\cos^2 \theta)\, d\theta  \\
+  &= \frac{\sin 2\theta}{2} + \int d\theta - \int \cos^2 \theta\, d\theta.
+\end{aligned}
+\]
+\[
+\begin{aligned}
+   \text{Logo}\;
+2 \int \cos^2 \theta\, d\theta
+  &= \frac{\sin 2\theta}{2} + \theta \\
+ \text{e} \\
+\int \cos^2 \theta\, d\theta
+  &= \frac{\sin 2\theta}{4} + \frac{\theta}{2} + C.
+\end{aligned}
+\]
+
+<p>(4) Ache $\int x^2 \sin x\, dx$.
+</p>
+
+\[
+\begin{aligned}
+   \text{Escreva }\;
+x^2  &= u, & \sin x\, dx &= dv; \\
+ \text{então }\;
+du &= 2x\, dx, & v &= -\cos x,
+\end{aligned}
+\]
+\[
+\int x^2 \sin x\, dx = -x^2 \cos x + 2 \int x \cos x\, dx.
+\]
+
+<p>Agora ache $\int x \cos x\, dx$, integrando por partes
+(como no Exemplo 1 acima):</p>
+
+\[
+\int x \cos x\, dx = x \sin x + \cos x+C.
+\]
+
+<p>Logo</p>
+
+\[
+\begin{aligned}
+\int x^2 \sin x\, dx
+  &= -x^2 \cos x + 2x \sin x + 2 \cos x + C' \\
+  &= 2 \left[ x \sin x + \cos x \left(1 - \frac{x^2}{2}\right) \right] +C'.
+\end{aligned}
+\]
+
+<p>(5) Ache $\int \sqrt{1-x^2}\, dx$.</p>
+
+\[
+\begin{aligned}
+ \text{Escreva}\;
+u &= \sqrt{1-x^2},\quad dx=dv;  \\
+ \text{então }\;
+du &= -\frac{x\, dx}{\sqrt{1-x^2}}\quad \text{(veja } \\
+\style{
+  border-bottom-width: 1px;
+  border-bottom-style: dotted;
+}{\href{9.html}{\text{Cap. IX}}})
+\end{aligned}
+\] 
+e $x=v$; de modo que
+\[
+\int \sqrt{1-x^2}\, dx=x \sqrt{1-x^2} + \int \frac{x^2\, dx}{\sqrt{1-x^2}}.
+\]
+
+<p>Aqui podemos usar um pequeno truque, pois podemos
+escrever</p>
+
+\[
+\int \sqrt{1-x^2}\, dx
+  = \int \frac{(1-x^2)\, dx}{\sqrt{1-x^2}}
+  = \int \frac{dx}{\sqrt{1-x^2}} - \int \frac{x^2\, dx}{\sqrt{1-x^2}}.
+\]
+
+<p>Somando essas duas últimas equações, nos livramos
+de $\int \dfrac{x^2\, dx}{\sqrt{1-x^2}}$, e temos</p>
+
+\[
+2 \int \sqrt{1-x^2}\, dx = x\sqrt{1-x^2} + \int \frac{dx}{\sqrt{1-x^2}}.
+\]
+
+<p>Você se lembra de ter encontrado $\dfrac {dx}{\sqrt{1-x^2}}$? Ele se
+obtém diferenciando $y=\arcsin x$ (veja <a href="15.html#intex3">aqui</a>); logo
+sua integral é $\arcsin x$, e assim
+\[
+\int \sqrt{1-x^2}\, dx = \frac{x \sqrt{1-x^2}}{2} + \tfrac{1}{2} \arcsin x +C.
+\]
+
+<p>Você pode agora tentar alguns exercícios sozinho;
+encontrará alguns no fim deste capítulo.
+
+<p><em>Substituição.</em> Este é o mesmo truque explicado no
+<a href="9.html">Cap. IX</a>. Ilustremos sua aplicação à integração com
+alguns exemplos.
+
+<p>(1)
+
+$\int \sqrt{3+x}\, dx$.</p>
+
+\[
+\begin{aligned}
+3+x &= u,\quad dx = du; \\
+ substitua
+\int u^{\frac{1}{2}}\, du
+  &= \tfrac{2}{3} u^{\frac{3}{2}} = \tfrac{2}{3}(3+x)^{\frac{3}{2}}.
+\end{aligned}
+\]
+
+<p>(2) $\int \dfrac{dx}{\epsilon^x+\epsilon^{-x}}$.
+
+   Seja
+ \[
+\epsilon^x = u,\quad \frac{du}{dx} = \epsilon^x,\quad\text{e}\quad
+dx = \frac{du}{\epsilon^x}; \\
+\]
+ de modo que
+ \[
+\int \frac{dx}{\epsilon^x+\epsilon^{-x}}
+  = \int \frac{du}{\epsilon^x(\epsilon^x+\epsilon^{-x})}
+  = \int \frac{du}{u\left(u + \dfrac{1}{u}\right)}
+  = \int \frac{du}{u^2+1}.
+\]
+
+<p>$\dfrac{du}{1+u^2}$ é o resultado de diferenciar $\arctan x$.
+
+<p>Logo a integral é $\arctan \epsilon^x$.
+
+<p>(3) $\int \dfrac{dx}{x^2+2x+3} = \int \dfrac{dx}{x^2+2x+1+2} = \int \dfrac{dx}{(x+1)^2+(\sqrt 2)^2}$.
+
+
+<p>   Seja $x+1=u,\quad dx=du$; então a integral se torna $\int \dfrac{du}{u^2+(\sqrt2)^2}$; mas $\dfrac{du}{u^2+a^2}$ é
+o resultado de diferenciar $u=\dfrac{1}{a} \arctan \dfrac{u}{a}$.
+
+<p>Logo tem-se finalmente $\dfrac{1}{\sqrt2} \arctan \dfrac{x+1}{\sqrt 2}$ como valor
+da integral dada.
+
+<p><em>Fórmulas de redução</em> são formas especiais
+aplicáveis principalmente a expressões binomiais e
+trigonométricas que devem ser integradas, e que
+precisam ser reduzidas a alguma forma cuja integral
+seja conhecida.
+
+<p><em>Racionalização</em>, e <em>Fatoração do denominador</em> são
+truques aplicáveis em casos especiais, mas não
+admitem nenhuma explicação curta ou geral. É
+preciso muita prática para se familiarizar com esses
+processos preparatórios.
+
+<p>O exemplo seguinte mostra como o processo de
+dividir<a name="partfracs"/> em frações parciais, que aprendemos no
+Cap. XIII, <a href="13.html#partfracs2">aqui</a>, pode ser usado na integração.
+
+<p>Tome de novo $\int \dfrac{dx}{x^2+2x+3}$; se dividirmos
+$\dfrac{1}{x^2+2x+3}$ em frações parciais, isso se torna (veja
+<a href="20.html#partfracs3">aqui</a>):
+\[
+\dfrac{1}{2\sqrt{-2}} \left[\int \dfrac{dx}{x+1-\sqrt{-2}} - \int \dfrac{dx}{x+1+\sqrt{-2}} \right]
+\]
+\[
+=\dfrac{1}{2\sqrt{-2}} \log_\epsilon \dfrac{x+1-\sqrt{-2}}{x+1+\sqrt{-2}}.
+\]
+Observe que a mesma integral pode ser expressa
+
+às vezes de mais de um modo (equivalentes entre si).
+
+<p><em>Armadilhas.</em> Um principiante está sujeito a
+deixar passar certos pontos que uma mão experiente
+evitaria; tais como o uso de fatores equivalentes a
+zero ou a infinito, e a ocorrência de quantidades
+indeterminadas como $\tfrac{0}{0}$. Não há regra de ouro que
+cubra todo caso possível. Nada senão a prática e o
+cuidado inteligente valerão. Um exemplo de armadilha
+que teve de ser contornada surgiu no <a href="18.html">Cap. XVIII</a>,
+quando chegamos ao problema de integrar $x^{-1}\, dx$.
+
+<p><em>Triunfos.</em> Por triunfos se deve entender os
+sucessos com que o cálculo tem sido aplicado à
+solução de problemas de outro modo intratáveis.
+Muitas vezes, na consideração de relações físicas,
+consegue-se construir uma expressão para a lei que
+governa a interação das partes ou das forças que as
+governam, tal expressão sendo naturalmente na forma
+de uma <em>equação diferencial</em>, isto é uma equação
+contendo derivadas com ou sem outras quantidades
+algébricas. E quando tal equação diferencial foi
+encontrada, não se avança mais até que ela tenha
+sido integrada. Em geral é muito mais fácil
+enunciar a equação diferencial apropriada do que
+resolvê-la: o verdadeiro trabalho começa só quando
+se quer integrar, a menos, de fato, que a equação
+se veja possuir alguma forma-padrão cuja integral
+seja conhecida, e então o triunfo é fácil. A
+equação que resulta de integrar uma equação
+diferencial se
+
+chama* sua “solução”; e é bastante assombroso como,
+em muitos casos, a solução parece não ter relação
+com a equação diferencial da qual é a forma
+integrada. A solução muitas vezes parece tão
+diferente da expressão original quanto uma borboleta
+da lagarta que ela foi. Quem teria suposto que
+coisa tão inocente quanto
+\[
+\dfrac{dy}{dx} = \dfrac{1}{a^2-x^2}
+\]
+pudesse desabrochar em
+\[
+y = \dfrac{1}{2a} \log_\epsilon \dfrac{a+x}{a-x} + C?
+\]
+e no entanto a última é a <em>solução</em> da primeira.
+
+<p><note>*Isso significa que o resultado real de resolvê-la se chama sua
+“solução.” Mas muitos matemáticos diriam, com o Professor
+Forsyth, “toda equação diferencial <em>se considera resolvida</em> quando
+o valor da variável dependente se expressa como função da
+variável independente por meio ou de funções conhecidas, ou de
+integrais, quer as integrações nestas últimas possam ou não ser
+expressas em termos de funções já conhecidas.”</note>
+
+<p>Como último exemplo, resolvamos o acima juntos.
+
+<p>Por frações parciais,<a name="partfracs3"/></p>
+
+\[
+\begin{aligned}
+\frac{1}{a^2-x^2} &= \frac{1}{2a(a+x)} + \frac{1}{2a(a-x)},  \\
+dy &= \frac {dx}{2a(a+x)}+ \frac{dx}{2a(a-x)},  \\
+y  &= \frac{1}{2a} \\
+       \left( \int \frac{dx}{a+x}
+            + \int \frac{dx}{a-x} \right)  \\
+   &= \frac{1}{2a} \left(\log_\epsilon (a+x) - \log_\epsilon (a-x) \right)  \\
+   &= \frac{1}{2a} \log_\epsilon \frac{a+x}{a-x} + C.
+\end{aligned}
+\]
+
+
+  Não é uma metamorfose muito difícil!
+
+<p>Há tratados inteiros, como as <em>Equações
+Diferenciais</em> de Boole, dedicados ao assunto de
+assim achar as “soluções” para diferentes formas
+originais.
+
+<p>
+<hr><h3>Exercícios XIX</h3>
+
+<p>
+<p>(1) Ache $\int \sqrt {a^2 - x^2}\, dx$.
+<p>(2) Ache $\int x \log_\epsilon x\, dx$.
+<p>(3) Ache $\int x^a \log_\epsilon x\, dx$.
+<p>(4) Ache $\int \epsilon^x \cos \epsilon^x\, dx$.
+<p>(5) Ache $\int \dfrac{1}{x} \cos (\log_\epsilon x)\, dx$.
+<p>(6) Ache $\int x^2 \epsilon^x\, dx$.
+<p>(7) Ache $\int \dfrac{(\log_\epsilon x)^a}{x}\, dx$.
+<p>(8) Ache $\int \dfrac{dx}{x \log_\epsilon x}$.
+<p>(9) Ache $\int \dfrac{5x+1}{x^2 +x-2}\, dx$.
+<p>(10) Ache $\int \dfrac{(x^2 -3)\, dx}{x^3 - 7x+6}$.
+<p>(11) Ache $\int \dfrac{b\, dx}{x^2 -a^2}$.
+<p>(12) Ache $\int \dfrac{4x\, dx}{x^4 -1}$.
+<p>(13) Ache $\int \dfrac{dx}{1-x^4}$.
+<p>(14) Ache $\int \dfrac{dx}{x \sqrt {a-bx^2}}$.
+
+
+<p><h3 class="answers">Respostas</h3>
+
+<p>(1)  $\dfrac{x\sqrt{a^2 - x^2}}{2} + \dfrac{a^2}{2} \sin^{-1} \dfrac{x}{a} + C$.
+
+<p>(2)  $\dfrac{x^2}{2}(\log_\epsilon x - \tfrac{1}{2}) + C$.
+
+
+<p>(3)  $\dfrac{x^{a+1}}{a + 1} \left(\log_\epsilon x - \dfrac{1}{a + 1}\right) + C$.
+
+<p>(4)  $\sin \epsilon^x + C$.
+
+
+<p>(5)  $\sin(\log_\epsilon x) + C$.
+
+<p>(6)  $\epsilon^x (x^2 - 2x + 2) + C$.
+
+
+<p>(7)  $\dfrac{1}{a + 1} (\log_\epsilon x)^{a+1} + C$.
+
+
+<p>(8)  $\log_\epsilon(\log_\epsilon x) + C$.
+
+
+<p>(9)  $2\log_\epsilon(x - 1) + 3\log_\epsilon(x + 2) + C$.
+
+<p>(10)  $\frac{1}{2} \log_\epsilon(x - 1) + \frac{1}{5} \log_\epsilon(x - 2) + \frac{3}{10} \log_\epsilon(x + 3) + C$.
+
+
+<p>(11)  $\dfrac{b}{2a} \log_\epsilon \dfrac{x - a}{x + a} + C$.
+
+<p>(12)  $\log_\epsilon \dfrac{x^2 - 1}{x^2 + 1} + C$.
+
+
+<p>(13)  $\frac{1}{4} \log_\epsilon \dfrac{1 + x}{1 - x} + \frac{1}{2} \arctan x + C$.
+
+<p>(14)  $\dfrac{1}{\sqrt{a}} \log_\epsilon \dfrac{\sqrt{a} - \sqrt{a - bx^2}}{x\sqrt{a}}$. (Seja $\dfrac{1}{x} = v$; então, no resultado,
+seja $\sqrt{v^2 - \dfrac{b}{a}} = v - u$.)
+<br>
+<!-- Soluções comerciais removidas: projeto público e sem fins lucrativos -->
+
+
+<hr>
+<nav class="chapter-nav" aria-label="Navegação do capítulo">
+  <a class="nav-prev" href="19.html">← Anterior</a>
+  <a class="nav-home" href="index.html">Página principal</a>
+  <a class="nav-next" href="21.html">Próximo →</a>
+</nav>
+<footer class="site-footer" role="contentinfo">
+  <p class="a rotatedFloralHeartBullet"></p>
+
+  <div class="manifesto">
+    <p class="manifesto-lead">
+      Este é um <strong>projeto público</strong>, sem fins lucrativos.
+      Não é permitido comercializá-lo, vendê-lo nem usá-lo como produto pago.
+    </p>
+    <p class="manifesto-quote">
+      A educação é um direito de todos.
+      O conhecimento deve ser livre sempre que não cause o mal:
+      deve circular, ensinar e libertar, nunca aprisionar quem aprende.
+    </p>
+    <p class="manifesto-sign">
+      - Thales Rodrigues
+    </p>
+  </div>
+
+  <nav class="author-links" aria-label="Redes de Thales Rodrigues">
+    <a href="https://www.linkedin.com/in/thales-oliveira-rodrigues/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    <span class="dot" aria-hidden="true">·</span>
+    <a href="https://github.com/Rodriguestmo" target="_blank" rel="noopener noreferrer">GitHub</a>
+  </nav>
+
+  <p class="footer-meta">
+    <small>
+      Tradução e adaptação PT-BR por Thales Rodrigues.
+      Texto de Silvanus P. Thompson em domínio público (Project Gutenberg).
+      Notas de contexto inspiradas na edição Gardner (1998).
+      Projeto público e gratuito.
+    </small>
+  </p>
+</footer>
+
+<script src="j/jquery.js"></script>
+<script src="j/modernizr.js"></script>
+<script src="j/dih5.js"></script>
+<script src="j/chapters-data.js"></script>
+<script src="j/glossary-data.js"></script>
+<script src="j/reader-features.js"></script>
+<script src="j/notes-toggle.js"></script>
+<!-- Analytics desativado na edição PT local -->
+</body>
+</html>

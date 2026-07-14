@@ -1,0 +1,16 @@
+/* TEAM */
+Tradução e edição PT-BR: Thales Rodrigues
+Site: https://rodriguestmo.github.io/calculo-tornado-facil/
+LinkedIn: https://www.linkedin.com/in/thales-oliveira-rodrigues/
+GitHub: https://github.com/Rodriguestmo
+
+/* THANKS */
+Silvanus P. Thompson (texto original, 1910)
+Project Gutenberg (#33283)
+Martin Gardner (edição anotada 1998, referência)
+
+/* SITE */
+Idioma: Português (Brasil)
+Padrões: HTML, CSS, MathJax
+Licença do projeto: público, sem fins lucrativos; comercialização não permitida
+Texto de Thompson: domínio público

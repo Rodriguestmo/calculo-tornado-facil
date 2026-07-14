@@ -1,0 +1,1295 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+
+<title>Cálculo Tornado Fácil</title>
+<meta name="description" content="Capítulo XIV(a): juros compostos verdadeiros e a lei do crescimento orgânico.">
+<meta name="author" content="Thales Rodrigues; Silvanus P. Thompson">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="googlebot" content="index, follow">
+<meta name="language" content="Portuguese">
+<meta name="keywords" content="cálculo, calculus made easy, Silvanus Thompson, cálculo diferencial, cálculo integral, matemática, educação livre, português, Martin Gardner, Cálculo Tornado Fácil, Thales Rodrigues">
+<link rel="canonical" href="https://rodriguestmo.github.io/calculo-tornado-facil/14.html">
+<link rel="alternate" hreflang="pt-BR" href="https://rodriguestmo.github.io/calculo-tornado-facil/14.html">
+<link rel="alternate" hreflang="x-default" href="https://rodriguestmo.github.io/calculo-tornado-facil/">
+
+
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
+<link rel="icon" href="favicon-16.png" type="image/png" sizes="16x16">
+<link rel="shortcut icon" href="favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png" sizes="180x180">
+<meta name="theme-color" content="#c45c26">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Cálculo Tornado Fácil">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Cálculo Tornado Fácil">
+<meta property="og:description" content="Capítulo XIV(a): juros compostos verdadeiros e a lei do crescimento orgânico.">
+<meta property="og:url" content="https://rodriguestmo.github.io/calculo-tornado-facil/14.html">
+<meta property="og:image" content="https://rodriguestmo.github.io/calculo-tornado-facil/cover.jpg">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Cálculo Tornado Fácil">
+<meta name="twitter:description" content="Capítulo XIV(a): juros compostos verdadeiros e a lei do crescimento orgânico.">
+<meta name="twitter:image" content="https://rodriguestmo.github.io/calculo-tornado-facil/cover.jpg">
+
+<link rel="describedby" href="https://rodriguestmo.github.io/calculo-tornado-facil/llms.txt">
+
+<link rel="stylesheet" href="screen.css">
+<style>
+body{counter-reset:h1 14}
+</style>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$'], ['\\[','\\]']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ["script","noscript","style","textarea","pre","code"]
+    },
+    TeX: {
+      extensions: ["AMSmath.js","AMSsymbols.js"],
+      equationNumbers: { autoNumber: "none" }
+    },
+    "HTML-CSS": {
+      availableFonts: ["TeX"],
+      linebreaks: { automatic: false },
+      styles: {
+        ".MathJax_Display": { "margin": "1.5em 0" }
+      }
+    },
+    CommonHTML: {
+      styles: { ".MJXc-display": { "margin": "1.5em 0" } }
+    },
+    showProcessingMessages: false,
+    messageStyle: "none"
+  });
+</script>
+<script type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Chapter",
+  "name": "Sobre os Verdadeiros Juros Compostos e a Lei do Crescimento Orgânico",
+  "position": 14,
+  "isPartOf": {
+    "@type": "Book",
+    "name": "Cálculo Tornado Fácil",
+    "url": "https://rodriguestmo.github.io/calculo-tornado-facil/"
+  },
+  "author": {"@type": "Person", "name": "Silvanus P. Thompson"},
+  "translator": {"@type": "Person", "name": "Thales Rodrigues"},
+  "url": "https://rodriguestmo.github.io/calculo-tornado-facil/14.html",
+  "inLanguage": "pt-BR",
+  "isAccessibleForFree": true
+}
+</script>
+</head>
+<body>
+<!-- Progresso de leitura do capítulo (scroll) -->
+<div id="read-progress" class="read-progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="Progresso de leitura do capítulo">
+  <div id="read-progress-bar" class="read-progress-bar"></div>
+</div>
+
+<!-- Barra fixa: logo + menus (marca-texto à esquerda, engrenagem à direita) -->
+<div id="site-toolbar" class="site-toolbar" role="region" aria-label="Controles do site">
+  <a class="tb-home" href="index.html">Cálculo Tornado Fácil</a>
+
+  <div class="tb-controls">
+    <!-- Marca-texto (esquerda) -->
+    <div class="tb-menu" data-menu="highlight">
+      <button type="button" class="tb-btn tb-menu-btn" id="hl-list-toggle" aria-expanded="false" aria-controls="hl-list-panel" title="Marca-texto e lista de destaques">
+        Marca-texto
+        <span id="hl-count-badge" class="hl-count-badge" hidden>0</span>
+      </button>
+      <div id="hl-list-panel" class="tb-menu-panel hl-list-panel" hidden role="dialog" aria-label="Marca-texto">
+        <div class="tb-menu-title">Marca-texto</div>
+
+        <div class="hl-color-row">
+          <span class="tb-menu-label">Cor ao destacar</span>
+          <div id="hl-color-swatches" class="hl-color-swatches" role="group" aria-label="Cor do marca-texto">
+            <button type="button" class="hl-swatch-btn cme-hl-pastel-yellow" data-color="pastel-yellow" title="Amarelo pastel" aria-label="Amarelo pastel" aria-pressed="true"></button>
+            <button type="button" class="hl-swatch-btn cme-hl-pastel-green" data-color="pastel-green" title="Verde pastel" aria-label="Verde pastel" aria-pressed="false"></button>
+            <button type="button" class="hl-swatch-btn cme-hl-pastel-blue" data-color="pastel-blue" title="Azul pastel" aria-label="Azul pastel" aria-pressed="false"></button>
+            <button type="button" class="hl-swatch-btn cme-hl-pastel-pink" data-color="pastel-pink" title="Rosa pastel" aria-label="Rosa pastel" aria-pressed="false"></button>
+            <button type="button" class="hl-swatch-btn cme-hl-pastel-orange" data-color="pastel-orange" title="Laranja pastel" aria-label="Laranja pastel" aria-pressed="false"></button>
+            <button type="button" class="hl-swatch-btn cme-hl-pastel-purple" data-color="pastel-purple" title="Roxo pastel" aria-label="Roxo pastel" aria-pressed="false"></button>
+          </div>
+          <select id="hl-color" hidden aria-hidden="true" tabindex="-1">
+            <option value="pastel-yellow">Amarelo pastel</option>
+            <option value="pastel-green">Verde pastel</option>
+            <option value="pastel-blue">Azul pastel</option>
+            <option value="pastel-pink">Rosa pastel</option>
+            <option value="pastel-orange">Laranja pastel</option>
+            <option value="pastel-purple">Roxo pastel</option>
+          </select>
+        </div>
+
+        <div class="hl-filter-row">
+          <button type="button" id="hl-filter-toggle" class="hl-filter-toggle" aria-expanded="false" aria-controls="hl-filter-body">
+            <span class="tb-menu-label">Filtrar lista</span>
+            <span id="hl-filter-toggle-label" class="hl-filter-toggle-label">mostrar</span>
+          </button>
+          <div id="hl-filter-body" class="hl-filter-body" hidden>
+            <div id="hl-filter-swatches" class="hl-color-swatches" role="group" aria-label="Filtrar destaques por cor">
+              <button type="button" class="hl-filter-btn is-active" data-filter="all" title="Todas as cores" aria-label="Todas as cores" aria-pressed="true">Tudo</button>
+              <button type="button" class="hl-swatch-btn hl-filter-btn cme-hl-pastel-yellow" data-filter="pastel-yellow" title="Filtrar amarelo" aria-label="Filtrar amarelo" aria-pressed="false"></button>
+              <button type="button" class="hl-swatch-btn hl-filter-btn cme-hl-pastel-green" data-filter="pastel-green" title="Filtrar verde" aria-label="Filtrar verde" aria-pressed="false"></button>
+              <button type="button" class="hl-swatch-btn hl-filter-btn cme-hl-pastel-blue" data-filter="pastel-blue" title="Filtrar azul" aria-label="Filtrar azul" aria-pressed="false"></button>
+              <button type="button" class="hl-swatch-btn hl-filter-btn cme-hl-pastel-pink" data-filter="pastel-pink" title="Filtrar rosa" aria-label="Filtrar rosa" aria-pressed="false"></button>
+              <button type="button" class="hl-swatch-btn hl-filter-btn cme-hl-pastel-orange" data-filter="pastel-orange" title="Filtrar laranja" aria-label="Filtrar laranja" aria-pressed="false"></button>
+              <button type="button" class="hl-swatch-btn hl-filter-btn cme-hl-pastel-purple" data-filter="pastel-purple" title="Filtrar roxo" aria-label="Filtrar roxo" aria-pressed="false"></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="hl-list-head">
+          <strong>Seus destaques</strong>
+          <span class="hl-list-hint">salvos neste navegador</span>
+        </div>
+        <div id="hl-list-body" class="hl-list-body">
+          <p class="hl-list-empty">Nenhum destaque ainda. Selecione um trecho no texto para destacar.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Configurações (direita) - só ícone de engrenagem -->
+    <div class="tb-menu" data-menu="settings">
+      <button type="button" class="tb-btn tb-menu-btn tb-btn-icon" id="settings-toggle" aria-expanded="false" aria-controls="settings-panel" title="Configurações" aria-label="Configurações">
+        <svg class="tb-gear-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false">
+          <path fill="currentColor" d="M19.14 12.94c.04-.31.06-.63.06-.94s-.02-.63-.06-.94l2.03-1.58a.5.5 0 0 0 .12-.64l-1.92-3.32a.5.5 0 0 0-.6-.22l-2.39.96a7.03 7.03 0 0 0-1.63-.94l-.36-2.54A.5.5 0 0 0 14.9 2h-3.8a.5.5 0 0 0-.49.42l-.36 2.54c-.59.24-1.13.55-1.63.94l-2.39-.96a.5.5 0 0 0-.6.22L3.71 8.08a.5.5 0 0 0 .12.64l2.03 1.58c-.04.31-.06.63-.06.94s.02.63.06.94L3.83 14.7a.5.5 0 0 0-.12.64l1.92 3.32c.14.24.43.34.68.22l2.39-.96c.5.39 1.04.7 1.63.94l.36 2.54c.05.24.25.42.49.42h3.8c.24 0 .44-.18.49-.42l.36-2.54c.59-.24 1.13-.55 1.63-.94l2.39.96c.25.1.54 0 .68-.22l1.92-3.32a.5.5 0 0 0-.12-.64l-2.03-1.58zM12 15.5A3.5 3.5 0 1 1 12 8.5a3.5 3.5 0 0 1 0 7z"/>
+        </svg>
+      </button>
+      <div id="settings-panel" class="tb-menu-panel" hidden role="dialog" aria-label="Configurações de leitura">
+        <div class="tb-menu-title">Configurações</div>
+
+        <label class="tb-menu-row">
+          <span class="tb-menu-label">Notas de Gardner</span>
+          <select id="notes-mode" aria-label="Modo de exibição das notas">
+            <option value="all">Sempre visíveis</option>
+            <option value="click">Lupa (clique para abrir)</option>
+            <option value="off">Sempre ocultadas</option>
+          </select>
+        </label>
+
+        <label class="tb-menu-row">
+          <span class="tb-menu-label">Fonte</span>
+          <select id="font-family" aria-label="Fonte do texto">
+            <option value="default">Padrão do site</option>
+            <option value="dyslexia">Dislexia</option>
+            <option value="sans">Sans-serif</option>
+            <option value="mono">Monospace</option>
+          </select>
+        </label>
+
+        <div class="tb-menu-row">
+          <span class="tb-menu-label">Tamanho</span>
+          <div class="tb-font-size" role="group" aria-label="Tamanho da fonte">
+            <button type="button" id="font-smaller" class="tb-btn tb-btn-sq" title="Diminuir fonte" aria-label="Diminuir fonte">A-</button>
+            <span id="font-size-label" class="tb-size-label" aria-live="polite">100%</span>
+            <button type="button" id="font-larger" class="tb-btn tb-btn-sq" title="Aumentar fonte" aria-label="Aumentar fonte">A+</button>
+          </div>
+        </div>
+
+        <div class="tb-menu-row">
+          <span class="tb-menu-label">Tema</span>
+          <button type="button" id="toggle-theme" class="tb-btn" title="Alternar tema claro/escuro" aria-pressed="false">
+            <span class="theme-label">Tema escuro</span>
+          </button>
+        </div>
+
+        <div class="tb-menu-row tb-menu-row-danger">
+          <span class="tb-menu-label">Dados locais</span>
+          <button type="button" id="clear-site-data" class="tb-btn tb-btn-danger" title="Apagar destaques, notas e preferências salvos neste navegador">
+            Limpar cache do site
+          </button>
+          <span class="tb-menu-hint">Remove destaques, notas, progresso e preferências salvos neste navegador.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Popup de seleção: destacar + nota -->
+<div id="hl-popup" class="hl-popup" hidden role="dialog" aria-label="Destacar trecho">
+  <button type="button" id="hl-btn-mark" class="tb-btn">Destacar</button>
+  <button type="button" id="hl-btn-note" class="tb-btn">Destacar + nota</button>
+  <button type="button" id="hl-btn-cancel" class="tb-btn tb-btn-ghost">Cancelar</button>
+</div>
+
+<!-- Tooltip flutuante da nota ao passar o mouse -->
+<div id="hl-float-tip" class="hl-float-tip" hidden role="tooltip"></div>
+
+<!-- Confirmação: limpar cache -->
+<div id="clear-data-modal" class="hl-modal" hidden role="dialog" aria-modal="true" aria-labelledby="clear-data-title">
+  <div class="hl-modal-box">
+    <h3 id="clear-data-title">Limpar cache do site?</h3>
+    <p class="hl-quote" style="font-style:normal;opacity:0.95">
+      Isso apaga <strong>tudo</strong> que foi salvo neste navegador:
+      destaques, notas, preferências (fonte, tema, tamanho), cor do marca-texto
+      e qualquer outro dado local do site.
+    </p>
+    <p class="hl-quote" style="font-style:normal;opacity:0.85">
+      Esta ação não pode ser desfeita.
+    </p>
+    <div class="hl-modal-actions">
+      <button type="button" id="clear-data-confirm" class="tb-btn tb-btn-danger">Sim, limpar tudo</button>
+      <button type="button" id="clear-data-cancel" class="tb-btn tb-btn-ghost">Cancelar</button>
+    </div>
+  </div>
+</div>
+
+<!-- Modal de nota do highlight -->
+<div id="hl-note-modal" class="hl-modal" hidden role="dialog" aria-modal="true" aria-labelledby="hl-note-title">
+  <div class="hl-modal-box">
+    <h3 id="hl-note-title">Nota do trecho</h3>
+    <p id="hl-note-quote" class="hl-quote"></p>
+    <label class="hl-note-label">Cor deste destaque</label>
+    <div id="hl-note-swatches" class="hl-color-swatches" role="group" aria-label="Cor deste destaque">
+      <button type="button" class="hl-swatch-btn cme-hl-pastel-yellow" data-color="pastel-yellow" title="Amarelo pastel" aria-label="Amarelo pastel"></button>
+      <button type="button" class="hl-swatch-btn cme-hl-pastel-green" data-color="pastel-green" title="Verde pastel" aria-label="Verde pastel"></button>
+      <button type="button" class="hl-swatch-btn cme-hl-pastel-blue" data-color="pastel-blue" title="Azul pastel" aria-label="Azul pastel"></button>
+      <button type="button" class="hl-swatch-btn cme-hl-pastel-pink" data-color="pastel-pink" title="Rosa pastel" aria-label="Rosa pastel"></button>
+      <button type="button" class="hl-swatch-btn cme-hl-pastel-orange" data-color="pastel-orange" title="Laranja pastel" aria-label="Laranja pastel"></button>
+      <button type="button" class="hl-swatch-btn cme-hl-pastel-purple" data-color="pastel-purple" title="Roxo pastel" aria-label="Roxo pastel"></button>
+    </div>
+    <select id="hl-note-color" hidden aria-hidden="true" tabindex="-1">
+      <option value="pastel-yellow">Amarelo pastel</option>
+      <option value="pastel-green">Verde pastel</option>
+      <option value="pastel-blue">Azul pastel</option>
+      <option value="pastel-pink">Rosa pastel</option>
+      <option value="pastel-orange">Laranja pastel</option>
+      <option value="pastel-purple">Roxo pastel</option>
+    </select>
+    <label class="hl-note-label" for="hl-note-input">Sua nota (salva só neste navegador)</label>
+    <textarea id="hl-note-input" rows="4" maxlength="2000" placeholder="Escreva uma anotação opcional..."></textarea>
+    <div class="hl-modal-actions">
+      <button type="button" id="hl-note-save" class="tb-btn">Salvar</button>
+      <button type="button" id="hl-note-remove" class="tb-btn tb-btn-danger">Remover destaque</button>
+      <button type="button" id="hl-note-close" class="tb-btn tb-btn-ghost">Fechar</button>
+    </div>
+  </div>
+</div>
+
+
+<h1><br>Sobre os Verdadeiros Juros Compostos e a Lei do Crescimento Orgânico</h1>
+<p class="a rotatedFloralHeartBullet">
+
+
+<p>Seja uma quantidade que cresce de tal modo que
+o incremento de seu crescimento, durante um tempo dado,
+seja sempre proporcional à sua própria magnitude.
+Isso se assemelha ao processo de calcular juros sobre
+dinheiro a alguma taxa fixa; pois quanto maior o capital,
+maior a quantia de juros sobre ele em um tempo
+dado.
+
+<p>Ora, devemos distinguir claramente entre dois
+casos, em nosso cálculo, conforme o cálculo
+seja feito pelo que os livros de aritmética chamam “juros
+simples,” ou pelo que chamam “juros compostos.”
+Pois no primeiro caso o capital permanece fixo,
+enquanto no segundo os juros são acrescentados ao capital,
+que portanto aumenta por acréscimos sucessivos.
+
+<p><em> A juros simples</em>. Considere um caso concreto.
+Seja o capital no início £$100$, e seja a taxa
+de juros $10$ por cento ao ano. Então o
+incremento para o dono do capital será £$10$
+a cada ano. Que ele continue sacando seus juros
+todo ano, e os entesoure pondo-os de lado em uma
+
+meia, ou trancando-os em seu cofre. Então, se ele
+continuar por $10$ anos, ao fim desse tempo terá
+recebido $10$ incrementos de £$10$ cada, ou £$100$,
+fazendo, com as £$100$ originais, um total de £$200$ no todo.
+Sua propriedade terá se dobrado em $10$ anos.
+Se a taxa de juros tivesse sido $5$ por cento, ele teria
+tido de entesourar por $20$ anos para dobrar sua propriedade.
+Se tivesse sido apenas $2$ por cento, teria
+tido de entesourar por $50$ anos. É fácil ver que se o
+valor dos juros anuais for $\dfrac{1}{n}$ do capital, ele
+deve continuar entesourando por $n$ anos para dobrar
+sua propriedade.
+
+<p>Ou, se $y$ for o capital original, e os juros anuais
+forem $\dfrac{y}{n}$, então, ao fim de $n$ anos, sua propriedade
+será</p>
+
+\[
+y + n\dfrac{y}{n} = 2y.
+\]
+
+<p>
+<em>(2) A juros compostos.</em> Como antes, que o dono
+<a name="erratum0"/>
+comece com um capital de £$100$, rendendo juros à
+taxa de $10$ por cento ao ano; mas, em vez de
+entesourar os juros, que eles sejam acrescentados ao capital
+a cada ano, de modo que o capital cresça ano a ano.
+Então, ao fim de um ano, o capital terá
+crescido a £$110$; e no segundo ano (ainda a $10$%)
+isto renderá £$11$ de juros. Ele começará o terceiro
+ano com £$121$, e os juros sobre isso serão
+£$12$. $2$<em>s</em> .; de modo que ele começa o quarto ano com
+£$133$. $2$<em>s</em> ., e assim por diante. É fácil calcular, e
+achar que ao fim dos dez anos o capital total
+
+terá crescido a £$259$. $7$<em>s</em> . $6$<em>d</em> . De fato, vemos que
+ao fim de cada ano, cada libra terá rendido
+$\tfrac{1}{10}$ de uma libra, e portanto, se isto for sempre acrescentado,
+cada ano multiplica o capital por $\tfrac{11}{10}$; e se
+continuar por dez anos (o que multiplicará por este
+fator dez vezes seguidas) multiplicará o capital original
+por $2.59374$. Ponhamos isto em símbolos.
+Ponha $y_0$ para o capital original; $\dfrac{1}{n}$ para a fração
+acrescentada em cada uma das $n$ operações; e $y_n$ para o
+valor do capital ao fim da $n$-ésima operação.
+Então
+\[
+y_n = y_0\left(1 + \frac{1}{n}\right)^n.
+\]
+
+<p>Mas este modo de calcular juros compostos uma vez
+por ano não é realmente de todo justo; pois mesmo durante o
+primeiro ano as £$100$ deveriam ter estado crescendo. Ao
+fim de meio ano deveria ter sido ao menos £$105$,
+e certamente teria sido mais justo se
+os juros da segunda metade do ano tivessem sido
+calculados sobre £$105$. Isto seria equivalente a
+chamar de $5$% por semestre; com $20$ operações, portanto,
+em cada uma das quais o capital é multiplicado por $\tfrac{21}{20}$.
+Se calculado deste modo, ao fim de dez anos o
+capital teria crescido a
+£$265$. $6$<em>s</em> . $7$<em>d</em>.; pois
+\[
+(1 + \tfrac{1}{20})^{20} = 2.653.
+\]
+
+<p>Mas, mesmo assim, o processo ainda não é de todo justo; pois,
+ao fim do primeiro mês, haverá algum
+juros ganho; e um cálculo semestral supõe
+que o capital permanece estacionário por seis meses de
+
+cada vez. Suponha que dividíssemos o ano em $10$ partes,
+e calculássemos um juro de um por cento para cada décimo do
+ano. Agora temos $100$ operações estendendo-se por
+os dez anos; ou</p>
+
+\[
+y_n = £100 \left( 1 + \tfrac{1}{100} \right)^{100};
+\]
+que resulta em
+£$270$. $9$<em>s</em> . $7\frac{1}{2}$<em>d</em>.
+
+<p>Mesmo isto não é final. Que os dez anos sejam divididos
+em $1000$ períodos, cada um de $\frac{1}{100}$ de um ano; os juros
+sendo $\frac{1}{10}$ por cento para cada tal período; então</p>
+
+\[
+y_n = £100 \left( 1 + \tfrac{1}{1000} \right)^{1000};
+\]
+que resulta em
+£$271$. $13$<em>s</em> . $10$<em>d</em> .
+
+<p>Vá ainda mais minuciosamente, e divida os dez anos
+em $10{,}000$ partes, cada uma $\frac{1}{1000}$ de um ano, com juros
+a $\frac{1}{100}$ de $1$ por cento. Então</p>
+
+\[
+y_n = £100 \left( 1 + \tfrac{1}{10,000} \right)^{10,000}
+\]
+que monta a
+£$271$. $16$<em>s</em> . $3\frac{1}{2}$<em>d</em>.
+
+<p>Finalmente, ver-se-á que o que estamos tentando
+achar é na realidade o valor último da expressão
+$\left(1 + \dfrac{1}{n}\right)^n$, que, como vemos, é maior que $2$; e
+que, à medida que tomamos $n$ cada vez maior, cresce mais perto
+e mais perto de um valor limite particular. Por maior
+que você faça $n$, o valor desta expressão cresce
+mais perto e mais perto da figura</p>
+
+\[
+2.71828\ldots
+\]
+um número <em>nunca a ser esquecido</em>.
+
+<p>Tomemos ilustrações geométricas destas coisas.
+Na <a href="#figure36">Figura 36</a>, $OP$ representa o valor original. $OT$ é
+o tempo todo durante o qual o valor está crescendo.
+É dividido em $10$ períodos, em cada um dos quais há
+um degrau igual para cima. Aqui $\dfrac{dy}{dx}$ é uma constante; e se cada
+degrau para cima for $\frac{1}{10}$ do $OP$ original, então, por $10$ tais
+degraus, a altura é dobrada. Se tivéssemos tomado $20$ degraus,
+cada um da metade da altura mostrada, no fim a altura
+ainda seria exatamente dobrada. Ou $n$ tais degraus, cada
+um de $\dfrac{1}{n}$ da altura original $OP$, bastariam para
+dobrar a altura. Este é o caso de juros simples.
+Aqui está $1$ crescendo até se tornar $2$.
+<a name="figure36">
+<p><img src="33283-t/images/150a.pdf.png-1.png">
+<p>Na <a href="#figure37">Figura 37</a>, temos a ilustração correspondente da
+progressão geométrica. Cada uma das ordenadas sucessivas
+deve ser $1 + \dfrac{1}{n}$, isto é, $\dfrac{n+1}{n}$ vezes tão alta quanto
+sua predecessora. Os degraus para cima não são iguais, porque
+cada degrau para cima é agora $\dfrac{1}{n}$ da ordenada <em>naquela parte</em> da
+curva. Se tivéssemos literalmente $10$ degraus, com $\left(1 + \frac{1}{10} \right)$
+como fator multiplicador, o total final seria
+
+$(1 + \tfrac{1}{10})^{10}$ ou $2.594$ vezes o $1$ original. Mas se apenas
+tomarmos $n$ suficientemente grande (e o correspondente
+$\dfrac{1}{n}$ suficientemente pequeno), então o valor final $\left(1 + \dfrac{1}{n}\right)^n$ a
+
+que a unidade crescerá será $2.71828$.
+
+<a name="figure37">
+<p><img src="33283-t/images/151a.pdf.png-1.png">
+
+<p><em>Épsilon.</em> A este número misterioso $2.7182818$
+etc., os matemáticos atribuíram como símbolo
+a letra grega $\epsilon$ (pronunciada <em>épsilon</em>). Todos os escolares
+sabem que a letra grega $\pi$ (chamada <em>pi</em>) representa
+$3.141592$ etc.; mas quantos deles sabem que
+<em>épsilon</em> significa $2.71828$? E no entanto é um número ainda mais
+importante que $\pi$!
+
+<p>O que é, então, <em>épsilon</em>?
+
+<p>Suponha que deixássemos $1$ crescer a juros simples
+até se tornar $2$; então, se à mesma taxa nominal de
+juros, e pelo mesmo tempo, deixássemos $1$ crescer
+a verdadeiros juros compostos, em vez de simples, ele
+cresceria ao valor <em>épsilon</em>.
+
+<p>Este processo de crescer proporcionalmente, a cada
+instante, à magnitude naquele instante, algumas pessoas
+
+chamam de <em>uma taxa logarítmica</em> de crescimento. Taxa logarítmica
+unitária de crescimento é aquela taxa que em tempo unitário fará
+$1$ crescer a $2.718281$. Também poderia ser
+chamada a <em>taxa orgânica</em> de crescimento: porque é
+característica do crescimento orgânico (em certas circunstâncias)
+que o incremento do organismo em um
+tempo dado seja proporcional à magnitude do
+próprio organismo.
+
+<p>Se tomarmos $100$ por cento como a unidade de taxa,
+e qualquer período fixo como a unidade de tempo, então o
+resultado de deixar $1$ crescer <em>aritmeticamente</em> à taxa unitária,
+por tempo unitário, será $2$, enquanto o resultado de deixar $1$
+crescer <em>logaritmicamente</em> à taxa unitária, pelo mesmo tempo,
+será $2.71828\ldots$,.
+
+<p><em>Um pouco mais sobre Épsilon.</em> Vimos que
+
+precisamos saber que valor é atingido pela
+expressão $\left(1 + \dfrac{1}{n}\right)^n$, quando $n$ se torna indefinidamente
+grande. Aritmeticamente, aqui estão tabulados muitos
+valores (que qualquer um pode calcular com a ajuda
+de uma tabela ordinária de logaritmos) obtidos ao assumir
+$n = 2$; $n = 5$; $n = 10$; e assim por diante, até $n = 10{,}000$.
+\[
+\begin{aligned}
+(1 + \tfrac{1}{2})^2             &= 2.25.    \\
+(1 + \tfrac{1}{5})^5             &= 2.488.   \\
+(1 + \tfrac{1}{10})^{10}         &= 2.594.   \\
+(1 + \tfrac{1}{20})^{20}         &= 2.653.   \\
+(1 + \tfrac{1}{100})^{100}       &= 2.705.   \\
+(1 + \tfrac{1}{1000})^{1000}     &= 2.7169.  \\
+(1 + \tfrac{1}{10,000})^{10,000} &= 2.7181.
+\end{aligned}
+\]
+
+
+<p>Vale a pena, contudo, achar outro modo de
+calcular esta figura imensamente importante.
+
+<p>Consequentemente, lançaremos mão do teorema
+binomial, e expandiremos a expressão $\left(1 + \dfrac{1}{n}\right)^n$ daquele
+modo bem conhecido.
+
+<p>O teorema binomial<a name="binomtheo"/> dá a regra de que</p>
+
+\[
+\begin{aligned}
+(a + b)^n &= a^n + n \dfrac{a^{n-1} b}{1!} + n(n - 1) \dfrac{a^{n-2} b^2}{2!} \\
+  & \phantom{= a^n\ } + n(n -1)(n - 2) \dfrac{a^{n-3} b^3}{3!} + \text{etc.}
+\end{aligned}
+\]
+Pondo $a = 1$ e $b = \dfrac{1}{n}$, obtemos
+\[
+\begin{aligned}
+\left(1 + \dfrac{1}{n}\right)^n
+  &= 1 + 1 + \dfrac{1}{2!} \left(\dfrac{n - 1}{n}\right) + \dfrac{1}{3!} \dfrac{(n - 1)(n - 2)}{n^2} \\
+  &\phantom{= 1 + 1\ } + \dfrac{1}{4!} \dfrac{(n - 1)(n - 2)(n - 3)}{n^3} + \text{etc.}
+\end{aligned}
+\]
+
+<p>Ora, se supusermos $n$ se tornar indefinidamente grande,
+digamos um bilhão, ou um bilhão de bilhões, então $n - 1$, $n - 2$,
+e $n - 3$, etc., serão todos sensivelmente iguais a $n$; e
+então a série se torna</p>
+
+\[
+\epsilon = 1 + 1 + \dfrac{1}{2!} + \dfrac{1}{3!} + \dfrac{1}{4!} + \text{etc.}\ldots
+\]
+
+<p>Tomando esta série rapidamente convergente até quantos
+termos quisermos, podemos calcular a soma até
+qualquer ponto desejado de precisão. Aqui está o cálculo
+para dez termos:
+<table>
+<tr><td>        </td><td>$1.000000$</td></tr>
+<tr><td>dividindo por 1 </td><td>$1.000000$</td></tr>
+<tr><td>dividindo por 2 </td><td>$0.500000$</td></tr>
+<tr><td>dividindo por 3 </td><td>$0.166667$</td></tr>
+<tr><td>dividindo por 4 </td><td>$0.041667$</td></tr>
+<tr><td>dividindo por 5 </td><td>$0.008333$</td></tr>
+<tr><td>dividindo por 6 </td><td>$0.001389$</td></tr>
+<tr><td>dividindo por 7 </td><td>$0.000198$</td></tr>
+<tr><td>dividindo por 8 </td><td>$0.000025$</td></tr>
+<tr><td>dividindo por 9 </td><td><u>$0.000002$</u></td></tr>
+<tr><td>Total       </td><td><u>$2.718281$</u></td></tr>
+</table>
+
+<p>$\epsilon$ é incomensurável com $1$, e se assemelha a $\pi$ por
+ser um decimal interminável não-recorrente.
+
+<p><em>A Série Exponencial.</em> Precisaremos de ainda
+outra série.
+
+<p>Deixemos, de novo fazendo uso do teorema binomial,
+expandir a expressão $\left(1 + \dfrac{1}{n}\right)^{nx}$, que é a mesma
+que $\epsilon^x$ quando fazemos $n$ indefinidamente grande.</p>
+
+\[
+\begin{aligned}
+\epsilon^x
+  &= 1^{nx} + nx \frac{1^{nx-1} \left(\dfrac{1}{n}\right)}{1!} \\
+  &\phantom{= 1^{nx}\ } + nx(nx - 1) \frac{1^{nx - 2} \left(\dfrac{1}{n}\right)^2}{2!} \\
+  &\phantom{= 1^{nx}\ } + nx(nx - 1)(nx - 2) \frac{1^{nx-3} \left(\dfrac{1}{n}\right)^3}{3!} + \text{etc.}\\
+  &= 1 + x + \frac{1}{2!} · \frac{n^2x^2 - nx}{n^2} \\
+  &\phantom{= 1 + x\ } + \frac{1}{3!} · \frac{n^3x^3 - 3n^2x^2 + 2nx}{n^3} + \text{etc.} \\
+  &= 1 + x + \frac{x^2 -\dfrac{x}{n}}{2!} \\
+  &\phantom{= 1 + x\ } + \frac{x^3 - \dfrac{3x^2}{n} + \dfrac{2x}{n^2}}{3!} + \text{etc.}
+\end{aligned}
+\]
+
+<p>Mas, quando $n$ é feito indefinidamente grande, isto se simplifica até o seguinte:</p>
+
+\[
+\epsilon^x
+  = 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \frac{x^4}{4!} + \text{etc.}\dots
+\]
+
+<p>Esta série é chamada <em>a série exponencial</em>.
+
+<p>A grande razão pela qual $\epsilon$ é considerado de importância
+é que $\epsilon^x$ possui uma propriedade, não possuída por qualquer
+outra função de $x$, de que <em>quando você a diferencia
+seu valor permanece inalterado</em><a name="unchanged"/>; ou, em outras palavras, seu
+coeficiente diferencial é o mesmo que ela mesma. Isto pode
+ser visto instantaneamente diferenciando-a em relação
+a $x$, assim:
+\[
+\begin{aligned}
+\frac{d(\epsilon^x)}{dx}
+  &= 0 + 1 + \frac{2x}{1 · 2} + \frac{3x^2}{1 · 2 · 3} + \frac{4x^3}{1 · 2 · 3 · 4} \\
+&\phantom{= 0 + 1 + \frac{2x}{1 · 2} + \frac{3x^2}{1 · 2 · 3}\ } + \frac{5x^4}{1 · 2 · 3 · 4 · 5} + \text{etc.}  \\
+ \text{ou} \\
+  &= 1 + x + \frac{x^2}{1 · 2} + \frac{x^3}{1 · 2 · 3} + \frac{x^4}{1 · 2 · 3 · 4} + \text{etc.},
+\end{aligned}
+\]
+que é exatamente a mesma que a série original.
+
+<p>Ora, poderíamos ter trabalhado do outro modo,
+e dito: Vamos lá; encontremos uma função de $x$, tal
+que seu coeficiente diferencial seja o mesmo que ela mesma.
+Ou, há alguma expressão, envolvendo apenas potências
+
+de $x$, que permanece inalterada pela diferenciação? Consequentemente;
+<em>assumamos</em> como expressão geral que
+\[
+\begin{aligned}
+y &= A + Bx + Cx^2 + Dx^3 + Ex^4 + \text{etc.},
+\end{aligned}
+\]
+
+(em que os coeficientes $A$, $B$, $C$, etc. terão de ser
+determinados), e diferenciemos-na.
+\[
+\begin{aligned}
+\dfrac{dy}{dx} &= B + 2Cx + 3Dx^2 + 4Ex^3 + \text{etc.}
+\end{aligned}
+\]
+
+<p>Ora, se esta nova expressão for realmente a mesma
+da qual foi derivada, é claro que
+$A$ <em>deve</em> $=B$; que $C=\dfrac{B}{2}=\dfrac{A}{1· 2}$; que $D = \dfrac{C}{3} = \dfrac{A}{1 · 2 · 3}$;
+que $E = \dfrac{D}{4} = \dfrac{A}{1 · 2 · 3 · 4}$, etc.
+
+<p>A lei de mudança é portanto que</p>
+
+\[
+y = A\left(1 + \dfrac{x}{1} + \dfrac{x^2}{1 · 2} + \dfrac{x^3}{1 · 2 · 3} + \dfrac{x^4}{1 · 2 · 3 · 4} + \text{etc.}\right).
+\]
+
+<p>Se, agora, tomarmos $A = 1$ por simplicidade
+adicional, temos</p>
+
+\[
+y = 1 + \dfrac{x}{1} + \dfrac{x^2}{1 · 2} + \dfrac{x^3}{1 · 2 · 3} + \dfrac{x^4}{1 · 2 · 3 · 4} + \text{etc.}
+\]
+
+<p>Diferenciá-la qualquer número de vezes dará
+sempre a mesma série de novo.
+
+<p>Se, agora, tomarmos o caso particular de $A=1$, e
+avaliarmos a série, obteremos simplesmente</p>
+
+\[
+\begin{aligned}
+\text{quando } x &= 1,\quad & y &= 2.718281 \text{ etc.};    & \text{isto é, } y &= \epsilon;   \\
+\text{quando } x &= 2,\quad & y &=(2.718281 \text{ etc.})^2; & \text{isto é, } y &= \epsilon^2; \\
+\text{quando } x &= 3,\quad & y &=(2.718281 \text{ etc.})^3; & \text{isto é, } y &= \epsilon^3;
+\end{aligned}
+\]
+
+e portanto
+\[
+\text{quando } x=x,\quad y=(2.718281 \text{ etc}.)^x;\quad\text{isto é, } y=\epsilon^x,
+\]
+demonstrando finalmente que
+\[
+\epsilon^x = 1 + \dfrac{x}{1} + \dfrac{x^2}{1·2} + \dfrac{x^3}{1· 2· 3} + \dfrac{x^4}{1· 2· 3· 4} + \text{etc.}
+\]
+
+<p>[Nota. - <em>Como ler exponenciais</em> . Para benefício
+daqueles que não têm tutor à mão pode ser útil
+declarar que $\epsilon^x$ se lê como “<em>épsilon à potência ics</em>;”
+ou algumas pessoas leem “<em>exponencial ics</em>.” Assim $\epsilon^{pt}$ se
+lê “<em>épsilon à potência pê-tê</em>” ou “<em>exponencial
+pê tê</em>.” Tome algumas expressões semelhantes: - Assim, $\epsilon^{-2}$ se
+lê “<em>épsilon à potência menos dois</em>” ou “<em>exponencial
+menos dois</em>.” $\epsilon^{-ax}$ se lê “<em>épsilon à menos
+á-ics</em>” ou “<em>exponencial menos á-ics</em>.”]
+
+<p>É claro que se segue que $\epsilon^y$ permanece inalterado se
+diferenciado em relação a $y$. Também $\epsilon^{ax}$, que é
+igual a $(\epsilon^a)^x$, será, quando diferenciado em relação
+a $x$, $a\epsilon^{ax}$, porque $a$ é uma constante.
+
+<p>
+<em>Logaritmos Naturais ou Naperianos.</em><p>
+Outra razão pela qual $\epsilon$ é importante é porque ele
+foi feito por Napier, o inventor dos logaritmos, a
+base de seu sistema. Se $y$ é o valor de $\epsilon^x$, então $x$
+é o <em>logaritmo</em>, na base $\epsilon$, de $y$. Ou, se
+\[
+\begin{aligned}
+                  y &= \epsilon^x, \\
+ \text{então}\;  x &= \log_\epsilon y.
+\end{aligned}
+\]
+
+<p>As duas curvas plotadas na <a href="#figure38">Fig. 38</a> e <a href="#figure39">Fig. 39</a> representam
+estas equações.
+
+
+<p>Os pontos calculados são:
+<p>Para a Fig. 38:
+<table>
+<tr><td>$x$</td><td>$0$</td><td>$0.5$</td><td>$1$</td><td>$1.5$</td><td>$2$</td></tr>
+<tr><td>$y$</td><td>$1$</td><td>$1.65$</td><td>$2.71$</td><td>$4.50$</td><td>$7.39$</td></tr>
+</table>
+
+<a name="figure38">
+<p><img src="33283-t/images/158b.pdf.png-1.png">
+
+<p>Para a Fig. 39:
+<table>
+<tr><td>$y$</td><td>$1$</td><td>$2$</td><td>$3$</td><td>$4$</td><td>$8$</td></tr>
+<tr><td>$x$</td><td>$0$</td><td>$0.69$</td><td>$1.10$</td><td>$1.39$</td><td>$2.08$</td></tr>
+</table>
+
+<a name="figure39">
+<p><img src="33283-t/images/158a.pdf.png-1.png">
+
+<p>Ver-se-á que, embora os cálculos deem
+pontos diferentes para plotar, o resultado é idêntico.
+As duas equações realmente significam a mesma coisa.
+
+<p>Como muitas pessoas que usam logaritmos ordinários,
+que são calculados na base $10$ em vez da base $\epsilon$, estão
+pouco familiarizadas com os logaritmos “naturais”, pode
+valer a pena dizer uma palavra sobre eles. A regra ordinária
+de que somar logaritmos dá o logaritmo do
+produto ainda vale; ou</p>
+
+\[
+\log_\epsilon a + \log_\epsilon b = \log_\epsilon ab.
+\]
+Também a regra das potências vale;
+\[
+n × \log_\epsilon a = \log_\epsilon a^n.
+\]
+
+Mas como $10$ não é mais a base, não se pode multiplicar
+por $100$ ou $1000$ meramente acrescentando $2$ ou $3$ ao
+índice. Pode-se mudar o logaritmo natural para
+o logaritmo ordinário simplesmente multiplicando-o por
+$0.4343$; ou
+\[
+\begin{aligned}
+\log_{10} x &= 0.4343 × \log_{\epsilon} x, \\
+\text{ e inversamente,}\;
+\log_{\epsilon} x &= 2.3026 × \log_{10} x.
+\end{aligned}
+\]
+
+<p>
+
+<h2>Uma Tabela Útil de “Logaritmos Naperianos”</h3>
+<p><em>(Também chamados Logaritmos Naturais ou Logaritmos Hiperbólicos)</em>
+
+<table>
+<tr>
+<th>Número</th>
+<th>$\log_{\epsilon}$</th>
+<th></th>
+<th>Número</th>
+<th>$\log_{\epsilon}$</th>
+</tr>
+
+<tr><td>$1  $</td><td> $0.0000$ </td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td>$6$</td><td>$1.7918$</td></tr>
+<tr><td>$1.1$</td><td> $0.0953$ </td><td></td><td>$7$</td><td>$1.9459$</td></tr>
+<tr><td>$1.2$</td><td> $0.1823$ </td><td></td><td>$8$</td><td>$2.0794$</td></tr>
+<tr><td>$1.5$</td><td> $0.4055$ </td><td></td><td>$9$</td><td>$2.1972$</td></tr>
+<tr><td>$1.7$</td><td> $0.5306$ </td><td></td><td>$10$</td><td>$2.3026$</td></tr>
+<tr><td>$2.0$</td><td> $0.6931$ </td><td></td><td>$20$</td><td>$2.9957$</td></tr>
+<tr><td>$2.2$</td><td> $0.7885$ </td><td></td><td>$50$</td><td>$3.9120$</td></tr>
+<tr><td>$2.5$</td><td> $0.9163$ </td><td></td><td>$100$</td><td>$4.6052$</td></tr>
+<tr><td>$2.7$</td><td> $0.9933$ </td><td></td><td>$200$</td><td>$5.2983$</td></tr>
+<tr><td>$2.8$</td><td> $1.0296$ </td><td></td><td>$500$</td><td>$6.2146$</td></tr>
+<tr><td>$3.0$</td><td> $1.0986$ </td><td></td><td>$1000$</td><td>$6.9078$</td></tr>
+<tr><td>$3.5$</td><td> $1.2528$ </td><td></td><td>$2000$</td><td>$7.6009$</td></tr>
+<tr><td>$4.0$</td><td> $1.3863$ </td><td></td><td>$5000$</td><td>$8.5172$</td></tr>
+<tr><td>$4.5$</td><td> $1.5041$ </td><td></td><td>$10 000$</td><td>$9.2103$</td></tr>
+<tr><td>$5.0$</td><td> $1.6094$ </td><td></td><td>$20 000$</td><td>$9.9035$</td></tr>
+</table>
+
+<p>
+<em>Equações Exponenciais e Logarítmicas.</em><p><a name="expolo"/>
+Agora tentemos nossas mãos em diferenciar certas
+expressões que contêm logaritmos ou exponenciais.
+
+<p>Tome a equação:</p>
+
+\[
+y = \log_\epsilon x.
+\]
+Primeiro transforme isto em
+\[
+\epsilon^y = x,
+\]
+
+donde, como o diferencial de $\epsilon^y$ em relação a $y$ é
+a função original inalterada (ver <a href="14.html#unchanged">aqui</a>),
+\[
+\frac{dx}{dy} = \epsilon^y,
+\]
+e, revertendo da inversa para a função original,
+\[
+\frac{dy}{dx}
+  = \frac{1}{\ \dfrac{dx}{dy}\ }
+  = \frac{1}{\epsilon^y}
+  = \frac{1}{x}.
+\]
+
+<p>Ora, este é um resultado muito curioso.  Pode ser
+escrito<a name="differlog"/>
+\[
+\frac{d(\log_\epsilon x)}{dx} = x^{-1}.
+\]
+
+<p>Note que $x^{-1}$ é um resultado que nunca poderíamos ter
+obtido pela regra para diferenciar potências. <a href="4.html#multipow">Aquela regra</a> é multiplicar pela potência, e reduzir a
+potência em $1$. Assim, diferenciar $x^3$ nos deu $3x^2$;
+e diferenciar $x^2$ deu $2x^1$. Mas diferenciar
+$x^0$ não nos dá $x^{-1}$ nem $0 × x^{-1}$, porque $x^0$ é ele mesmo
+$= 1$, e é uma constante. Teremos de voltar
+a este fato curioso de que diferenciar $\log_\epsilon x$ nos dá
+$\dfrac{1}{x}$ quando chegarmos ao capítulo sobre integração.
+
+<p><hr>
+
+<p>Agora, tente diferenciar</p>
+
+\[
+\begin{aligned}
+                              y &= \log_\epsilon(x+a),\\
+ \text{isto é}\;  \epsilon^y &= x+a;
+\end{aligned}
+\]
+temos $\dfrac{d(x+a)}{dy} = \epsilon^y$, já que o diferencial de $\epsilon^y$
+permanece $\epsilon^y$.
+
+   Isto dá
+\[
+\begin{aligned}
+\frac{dx}{dy} &= \epsilon^y = x+a;
+\end{aligned}
+\]
+logo, revertendo à função original,
+obtemos
+\[
+\begin{aligned}
+\frac{dy}{dx} &= \frac{1}{\;\dfrac{dx}{dy}\;} = \frac{1}{x+a}.
+\end{aligned}
+\]<a name="differ2"/>
+<hr>
+   Em seguida tente
+\[
+\begin{aligned}
+y &= \log_{10} x.
+\end{aligned}
+\]
+
+<p>Primeiro mude para logaritmos naturais multiplicando
+pelo módulo $0.4343$. Isto nos dá</p>
+
+\[
+\begin{aligned}
+y &= 0.4343 \log_\epsilon x; \\
+ \text{donde}\;
+\frac{dy}{dx} &= \frac{0.4343}{x}.
+\end{aligned}
+\]
+
+<p><hr>
+
+<p>A próxima coisa não é tão simples. Tente isto:<a name="diffexp"/></p>
+
+\[
+y = a^x.
+\]
+
+<p>Tomando o logaritmo de ambos os lados, obtemos</p>
+
+\[
+\begin{aligned}
+\log_\epsilon y &= x \log_\epsilon a, \\
+\text{ ou}\;
+x  &= \frac{\log_\epsilon y}{\log_\epsilon a} \\
+  &= \frac{1}{\log_\epsilon a} × \log_\epsilon y.
+\end{aligned}
+\]
+
+<p>Como $\dfrac{1}{\log_\epsilon a}$ é uma constante, obtemos</p>
+
+\[
+\frac{dx}{dy}
+  = \frac{1}{\log_\epsilon a} × \frac{1}{y}
+  = \frac{1}{a^x × \log_\epsilon a};
+\]
+logo, revertendo à função original.
+\[
+\frac{dy}{dx} = \frac{1}{\;\dfrac{dx}{dy}\;} = a^x × \log_\epsilon a.
+\]
+
+<p>Vemos que, como</p>
+
+\[
+\frac{dx}{dy} × \frac{dy}{dx} =1\quad\text{e}\quad
+\frac{dx}{dy} = \frac{1}{y} × \frac{1}{\log_\epsilon a},\quad
+\frac{1}{y} × \frac{dy}{dx} = \log_\epsilon a.
+\]
+
+<p>Acharemos que sempre que temos uma expressão
+como $\log_\epsilon y =$ uma função de $x$, sempre temos
+$\dfrac{1}{y}\, \dfrac{dy}{dx} =$ o coeficiente diferencial da função de $x$,
+de modo que poderíamos ter escrito de uma vez, a partir de
+
+$\log_\epsilon y = x \log_\epsilon a$,</p>
+
+\[
+\frac{1}{y}\, \frac{dy}{dx}
+  = \log_\epsilon a\quad\text{e}\quad
+\frac{dy}{dx} = a^x \log_\epsilon a.
+\]
+
+<p><hr>
+
+<p>Tentemos agora outros exemplos.
+
+<p>
+<p><em>Exemplos</em>
+(1) $y=\epsilon^{-ax}$. Seja $-ax=z$; então $y=\epsilon^z$.
+\[
+\frac{dy}{dz} = \epsilon^z;\quad
+\frac{dz}{dx} = -a;\quad\text{logo}\quad
+\frac{dy}{dx} = -a\epsilon^{-ax}.
+\]
+
+<p>Ou assim:</p>
+
+\[
+\log_\epsilon y = -ax;\quad
+\frac{1}{y}\, \frac{dy}{dx} = -a;\quad
+\frac{dy}{dx} = -ay = -a\epsilon^{-ax}.
+\]
+
+<p>(2) $y=\epsilon^{\frac{x^2}{3}}$. Seja $\dfrac{x^2}{3}=z$; então $y=\epsilon^z$.</p>
+
+\[
+\frac{dy}{dz} = \epsilon^z;\quad
+\frac{dz}{dx} = \frac{2x}{3};\quad
+\frac{dy}{dx} = \frac{2x}{3}\, \epsilon^{\frac{x^2}{3}}.
+\]
+
+<p>Ou assim:</p>
+
+\[
+\log_\epsilon y = \frac{x^2}{3};\quad
+\frac{1}{y}\, \frac{dy}{dx} = \frac{2x}{3};\quad
+\frac{dy}{dx} = \frac{2x}{3}\, \epsilon^{\frac{x^2}{3}}.
+\]
+
+<p>(3) $y = \epsilon^{\frac{2x}{x+1}}$.</p>
+
+\[
+\begin{aligned}
+\log_\epsilon y &= \frac{2x}{x+1},\quad \\
+\frac{1}{y}\, \frac{dy}{dx} &= \frac{2(x+1)-2x}{(x+1)^2}; \\
+ \text{logo} \\
+\frac{dy}{dx} &= \frac{2}{(x+1)^2} \epsilon^{\frac{2x}{x+1}}.
+\end{aligned}
+\]
+
+<p>Verifique escrevendo $\dfrac{2x}{x+1}=z$.
+
+<p>(4) $y=\epsilon^{\sqrt{x^2+a}}$. $\log_\epsilon y=(x^2+a)^{\frac{1}{2}}$.</p>
+
+\[
+\frac{1}{y}\, \frac{dy}{dx} = \frac{x}{(x^2+a)^{\frac{1}{2}}}\quad\text{e}\quad
+\frac{dy}{dx} = \frac{x × \epsilon^{\sqrt{x^2+a}}}{(x^2+a)^{\frac{1}{2}}}.
+\]
+Pois se $(x^2+a)^{\frac{1}{2}}=u$ e $x^2+a=v$, $u=v^{\frac{1}{2}}$,
+\[
+\frac{du}{dv} = \frac{1}{(2v)^{\frac{1}{2}}};\quad
+\frac{dv}{dx} = 2x;\quad
+\frac{du}{dx} = \frac{x}{(x^2+a)^{\frac{1}{2}}}.
+\]
+
+<p>Verifique escrevendo $\sqrt{x^2+a}=z$.
+
+<p>(5) $y=\log(a+x^3)$. Seja $(a+x^3)=z$; então $y=\log_\epsilon z$.</p>
+
+\[
+\frac{dy}{dz} = \frac{1}{z};\quad
+\frac{dz}{dx} = 3x^2;\quad\text{logo}\quad
+\frac{dy}{dx} = \frac{3x^2}{a+x^3}.
+\]
+
+<p>(6) $y=\log_\epsilon\{3x^2+\sqrt{a+x^2}\}$. Seja $3x^2 + \sqrt{a+x^2}=z$;
+então $y=\log_\epsilon z$.</p>
+
+\[
+\begin{aligned}
+\frac{dy}{dz}
+  &= \frac{1}{z} \\
+\frac{dz}{dx} &= 6x + \frac{x}{\sqrt{x^2+a}}; \\
+\frac{dy}{dx}
+  &= \frac{6x + \dfrac{x}{\sqrt{x^2+a}}}{3x^2 + \sqrt{a+x^2}} \\
+   &= \frac{x(1 + 6\sqrt{x^2+a})}{(3x^2 + \sqrt{x^2+a}) \sqrt{x^2+a}}.
+\end{aligned}
+\]
+
+<p>(7) $y=(x+3)^2 \sqrt{x-2}$.</p>
+
+\[
+\begin{aligned}
+\log_\epsilon y
+  &= 2 \log_\epsilon(x+3)+ \tfrac{1}{2} \log_\epsilon(x-2). \\
+\frac{1}{y}\, \frac{dy}{dx}
+  &= \frac{2}{(x+3)} + \frac{1}{2(x-2)}; \\
+\frac{dy}{dx}
+  &= (x+3)^2 \sqrt{x-2} \left\{\frac{2}{x+3} + \frac{1}{2(x-2)}\right\}.
+\end{aligned}
+\]
+
+<p>(8) $y=(x^2+3)^3(x^3-2)^{\frac{2}{3}}$.</p>
+
+\[
+\begin{aligned}
+\log_\epsilon y
+  &= 3 \log_\epsilon(x^2+3) + \tfrac{2}{3} \log_\epsilon(x^3-2); \\
+\frac{1}{y}\, \frac{dy}{dx}
+  &= 3 \frac{2x}{(x^2+3)} + \frac{2}{3} \frac{3x^2}{x^3-2} \\
+   &= \frac{6x}{x^2+3} + \frac{2x^2}{x^3-2}.
+\end{aligned}
+\]
+Pois se $y=\log_\epsilon(x^2+3)$, seja $x^2+3=z$ e $u=\log_\epsilon z$.
+\[
+\frac{du}{dz} = \frac{1}{z};\quad
+\frac{dz}{dx} = 2x;\quad
+\frac{du}{dx} = \frac{2x}{x^2+3}.
+\]
+De modo semelhante, se $v=\log_\epsilon(x^3-2)$, $\dfrac{dv}{dx} = \dfrac{3x^2}{x^3-2}$ e
+\[
+\frac{dy}{dx}
+  = (x^2+3)^3(x^3-2)^{\frac{2}{3}}
+    \left\{ \frac{6x}{x^2+3} + \frac{2x^2}{x^3-2} \right\}.
+\]
+
+<p>(9) $y=\dfrac{\sqrt[2]{x^2+a}}{\sqrt[3]{x^3-a}}$.</p>
+
+\[
+\begin{aligned}
+\log_\epsilon y
+  &= \frac{1}{2} \log_\epsilon(x^2+a) - \frac{1}{3} \log_\epsilon(x^3-a). \\
+\frac{1}{y}\, \frac{dy}{dx}
+  &= \frac{1}{2}\, \frac{2x}{x^2+a} - \frac{1}{3}\, \frac{3x^2}{x^3-a} \\
+   &= \frac{x}{x^2+a} - \frac{x^2}{x^3-a} \\
+ \text{e} \\
+\frac{dy}{dx}
+  &= \frac{\sqrt[2]{x^2+a}}{\sqrt[3]{x^3-a}} \\
+     \left\{ \frac{x}{x^2+a} - \frac{x^2}{x^3-a} \right\}.
+\end{aligned}
+\]
+
+<p>(10) $y=\dfrac{1}{\log_\epsilon x}$</p>
+
+\[
+\frac{dy}{dx}
+  = \frac{\log_\epsilon x × 0 - 1 × \dfrac{1}{x}}
+         {\log_\epsilon^2 x}
+  = -\frac{1}{x \log_\epsilon^2x}.
+\]
+
+<p>(11) $y=\sqrt[3]{\log_\epsilon x} = (\log_\epsilon x)^{\frac{1}{3}}$. Seja $z=\log_\epsilon x$; $y=z^{\frac{1}{3}}$.</p>
+
+\[
+\frac{dy}{dz} = \frac{1}{3} z^{-\frac{2}{3}};\quad
+\frac{dz}{dx} = \frac{1}{x};\quad
+\frac{dy}{dx} = \frac{1}{3x \sqrt[3]{\log_\epsilon^2 x}}.
+\]
+
+<p>(12) $y=\left(\dfrac{1}{a^x}\right)^{ax}$.</p>
+
+\[
+\begin{aligned}
+\log y &= -ax \log a^{x} = -ax^{2} \cdot \log a.\\
+\frac{1}{y} \frac{dy}{dx} &= -2ax \cdot \log a\\
+\frac{dy}{dx} &= -2ax\left(\frac{1}{a^{x}}\right)^{ax} \cdot \log a = -2x a^{1-ax^{2}} \cdot \log a.
+\end{aligned}
+\]
+
+<p>Tente agora os seguintes exercícios.
+
+<p>
+<hr><h3>Exercícios XII</h3>
+
+<p>(1) Diferencie $y=b(\epsilon^{ax} -\epsilon^{-ax})$.
+
+<p>(2) Encontre o coeficiente diferencial em relação a $t$
+da expressão $u=at^2+2\log_\epsilon t$.
+
+<p>(3) Se $y=n^t$, encontre $\dfrac{d(\log_\epsilon y)}{dt}$.
+
+<p>(4) Mostre que se $y=\dfrac{1}{b}·\dfrac{a^{bx}}{\log_\epsilon a}$,&nbsp;&nbsp; $\dfrac{dy}{dx}=a^{bx}$.
+
+<p>(5) Se $w=pv^n$, encontre $\dfrac{dw}{dv}$.
+
+
+<p>Diferencie
+
+<p>(6) $y=\log_\epsilon x^n$.
+<p>(7) $y=3\epsilon^{-\frac{x}{x-1}}$.
+<p>(8) $y=(3x^2+1)\epsilon^{-5x}$.
+<p>(9) $y=\log_\epsilon(x^a+a)$.
+
+<p>(10) $y=(3x^2-1)(\sqrt{x}+1)$.
+
+<p>(11) $y=\dfrac{\log_\epsilon(x+3)}{x+3}$.
+<p>(12) $y=a^x × x^a$.
+
+<p>(13) Foi mostrado por Lord Kelvin que a velocidade de
+sinalização através de um cabo submarino depende do
+valor da razão do diâmetro externo do núcleo
+ao diâmetro do fio de cobre contido. Se esta
+razão for chamada $y$, então o número de sinais $s$ que podem
+ser enviados por minuto pode ser expresso pela fórmula</p>
+
+\[
+s=ay^2 \log_\epsilon \frac{1}{y};
+\]
+onde $a$ é uma constante que depende do comprimento e
+da qualidade dos materiais. Mostre que se estes forem
+dados, $s$ será máximo se $y=1 ÷ \sqrt{\epsilon}$.
+
+<p>(14) Encontre o máximo ou mínimo de</p>
+
+\[
+y=x^3-\log_\epsilon x.
+\]
+
+<p>(15) Diferencie $y=\log_\epsilon(ax\epsilon^x)$.
+
+<p>(16) Diferencie $y=(\log_\epsilon ax)^3$.
+
+<hr>
+<p><h3 class="answers">Respostas</h3>
+
+<p>(1)   $ab(\epsilon^{ax} + \epsilon^{-ax})$.
+
+<p>(2)   $2at + \dfrac{2}{t}$.
+
+<p>(3)   $\log_\epsilon n$.
+
+
+<p>(5)   $npv^{n-1}$.
+
+<p>(6)   $\dfrac{n}{x}$.
+
+<p>(7)   $\dfrac{3\epsilon^{- \frac{x}{x-1}}}{(x - 1)^2}$.
+
+
+<p>(8)   $6x \epsilon^{-5x} - 5(3x^2 + 1)\epsilon^{-5x}$.
+
+<p>(9)   $\dfrac{ax^{a-1}}{x^a + a}$.
+
+
+<p>(10)   $\left(\dfrac{6x}{3x^2-1} + \dfrac{1}{2\left(\sqrt x + x\right)}\right) \left(3x^2-1\right)\left(\sqrt x + 1\right)$.
+
+<p>(11)   $\dfrac{1 - \log_\epsilon \left(x + 3\right)}{\left(x + 3\right)^2}$.
+
+
+<p>(12)   $a^x\left(ax^{a-1} + x^a \log_\epsilon a\right)$.
+
+<p>(14)   Mín.: $y = 0.7$ para $x = 0.694$.
+
+
+<p>(15)   $\dfrac{1 + x}{x}$.
+
+<p>(16)   $\dfrac{3}{x} (\log_\epsilon ax)^2$.
+<p>
+<h2>A Curva Logarítmica.</h2>
+
+<p>Voltemos à curva que tem suas ordenadas sucessivas
+em progressão geométrica, tal como a
+representada pela equação $y=bp^x$.
+
+<p>Podemos ver, pondo $x=0$, que $b$ é a altura inicial
+de $y$.
+
+<p>Então quando</p>
+
+\[
+x=1,\quad y=bp;\qquad
+x=2,\quad y=bp^2;\qquad
+x=3,\quad y=bp^3,\quad \text{etc.}
+\]
+
+<p>Também, vemos que $p$ é o valor numérico da
+razão entre a altura de qualquer ordenada e a da
+próxima que a precede. Na <a href="#figure40">Figura 40</a>, tomamos $p$
+como $\frac{6}{5}$; cada ordenada sendo $\frac{6}{5}$ tão alta quanto a precedente.
+
+<a name="figure40">
+<p><img src="33283-t/images/167a.pdf.png-1.png">
+<a name="figure41">
+<p><img src="33283-t/images/167b.pdf.png-1.png">
+
+<p>Se duas ordenadas sucessivas estão relacionadas
+assim em uma razão constante, seus logaritmos terão uma
+diferença constante; de modo que, se plotássemos
+uma nova curva, <a href="#figure41">Figura 41</a>, com valores de $\log_\epsilon y$ como ordenadas,
+seria uma reta inclinando-se para cima por degraus iguais.
+De fato, segue da equação que
+\[
+\begin{aligned}
+\log_\epsilon y &= \log_\epsilon b + x · \log_\epsilon p, \\
+ \text{donde }\;
+\log_\epsilon y &- \log_\epsilon b &= x · \log_\epsilon p.
+\end{aligned}
+\]
+
+<p>Ora, como $\log_\epsilon p$ é um mero número, e pode ser
+escrito como $\log_\epsilon p=a$, segue-se que</p>
+
+\[
+\log_\epsilon \frac{y}{b}=ax,
+\]
+e a equação toma a nova forma
+\[
+y = b\epsilon^{ax}.
+\]
+<br>
+
+<!-- Soluções comerciais removidas: projeto público e sem fins lucrativos -->
+
+
+<hr>
+<nav class="chapter-nav" aria-label="Navegação do capítulo">
+  <a class="nav-prev" href="13.html">← Anterior</a>
+  <a class="nav-home" href="index.html">Página principal</a>
+  <a class="nav-next" href="14b.html">Próximo →</a>
+</nav>
+<footer class="site-footer" role="contentinfo">
+  <p class="a rotatedFloralHeartBullet"></p>
+
+  <div class="manifesto">
+    <p class="manifesto-lead">
+      Este é um <strong>projeto público</strong>, sem fins lucrativos.
+      Não é permitido comercializá-lo, vendê-lo nem usá-lo como produto pago.
+    </p>
+    <p class="manifesto-quote">
+      A educação é um direito de todos.
+      O conhecimento deve ser livre sempre que não cause o mal:
+      deve circular, ensinar e libertar, nunca aprisionar quem aprende.
+    </p>
+    <p class="manifesto-sign">
+      - Thales Rodrigues
+    </p>
+  </div>
+
+  <nav class="author-links" aria-label="Redes de Thales Rodrigues">
+    <a href="https://www.linkedin.com/in/thales-oliveira-rodrigues/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    <span class="dot" aria-hidden="true">·</span>
+    <a href="https://github.com/Rodriguestmo" target="_blank" rel="noopener noreferrer">GitHub</a>
+  </nav>
+
+  <p class="footer-meta">
+    <small>
+      Tradução e adaptação PT-BR por Thales Rodrigues.
+      Texto de Silvanus P. Thompson em domínio público (Project Gutenberg).
+      Notas de contexto inspiradas na edição Gardner (1998).
+      Projeto público e gratuito.
+    </small>
+  </p>
+</footer>
+
+<script src="j/jquery.js"></script>
+<script src="j/modernizr.js"></script>
+<script src="j/dih5.js"></script>
+<script src="j/chapters-data.js"></script>
+<script src="j/glossary-data.js"></script>
+<script src="j/reader-features.js"></script>
+<script src="j/notes-toggle.js"></script>
+<!-- Analytics desativado na edição PT local -->
+</body>
+</html>

@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+
+<title>Cálculo Tornado Fácil</title>
+<meta name="description" content="Capítulo XII: curvatura de curvas.">
+<meta name="author" content="Thales Rodrigues; Silvanus P. Thompson">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="googlebot" content="index, follow">
+<meta name="language" content="Portuguese">
+<meta name="keywords" content="cálculo, calculus made easy, Silvanus Thompson, cálculo diferencial, cálculo integral, matemática, educação livre, português, Martin Gardner, Cálculo Tornado Fácil, Thales Rodrigues">
+<link rel="canonical" href="https://rodriguestmo.github.io/calculo-tornado-facil/12.html">
+<link rel="alternate" hreflang="pt-BR" href="https://rodriguestmo.github.io/calculo-tornado-facil/12.html">
+<link rel="alternate" hreflang="x-default" href="https://rodriguestmo.github.io/calculo-tornado-facil/">
+
+
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
+<link rel="icon" href="favicon-16.png" type="image/png" sizes="16x16">
+<link rel="shortcut icon" href="favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png" sizes="180x180">
+<meta name="theme-color" content="#c45c26">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Cálculo Tornado Fácil">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Cálculo Tornado Fácil">
+<meta property="og:description" content="Capítulo XII: curvatura de curvas.">
+<meta property="og:url" content="https://rodriguestmo.github.io/calculo-tornado-facil/12.html">
+<meta property="og:image" content="https://rodriguestmo.github.io/calculo-tornado-facil/cover.jpg">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Cálculo Tornado Fácil">
+<meta name="twitter:description" content="Capítulo XII: curvatura de curvas.">
+<meta name="twitter:image" content="https://rodriguestmo.github.io/calculo-tornado-facil/cover.jpg">
+
+<link rel="describedby" href="https://rodriguestmo.github.io/calculo-tornado-facil/llms.txt">
+<link rel="stylesheet" href="screen.css">
+<style>
+body{counter-reset:h1 12}
+</style>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$'], ['\\[','\\]']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ["script","noscript","style","textarea","pre","code"]
+    },
+    TeX: {
+      extensions: ["AMSmath.js","AMSsymbols.js"],
+      equationNumbers: { autoNumber: "none" }
+    },
+    "HTML-CSS": {
+      availableFonts: ["TeX"],
+      linebreaks: { automatic: false },
+      styles: {
+        ".MathJax_Display": { "margin": "1.5em 0" }
+      }
+    },
+    CommonHTML: {
+      styles: { ".MJXc-display": { "margin": "1.5em 0" } }
+    },
+    showProcessingMessages: false,
+    messageStyle: "none"
+  });
+</script>
+<script type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Chapter",
+  "name": "Curvatura das Curvas",
+  "position": 12,
+  "isPartOf": {
+    "@type": "Book",
+    "name": "Cálculo Tornado Fácil",
+    "url": "https://rodriguestmo.github.io/calculo-tornado-facil/"
+  },
+  "author": {"@type": "Person", "name": "Silvanus P. Thompson"},
+  "translator": {"@type": "Person", "name": "Thales Rodrigues"},
+  "url": "https://rodriguestmo.github.io/calculo-tornado-facil/12.html",
+  "inLanguage": "pt-BR",
+  "isAccessibleForFree": true
+}
+</script>
+</head>
+<body>
+<!-- Progresso de leitura do capítulo (scroll) -->
+<div id="read-progress" class="read-progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="Progresso de leitura do capítulo">
+  <div id="read-progress-bar" class="read-progress-bar"></div>
+</div>
+
+<!-- Barra fixa: logo + menus (marca-texto à esquerda, engrenagem à direita) -->
+<div id="site-toolbar" class="site-toolbar" role="region" aria-label="Controles do site">
+  <a class="tb-home" href="index.html">Cálculo Tornado Fácil</a>
+
+  <div class="tb-controls">
+    <!-- Marca-texto (esquerda) -->
+    <div class="tb-menu" data-menu="highlight">
+      <button type="button" class="tb-btn tb-menu-btn" id="hl-list-toggle" aria-expanded="false" aria-controls="hl-list-panel" title="Marca-texto e lista de destaques">
+        Marca-texto
+        <span id="hl-count-badge" class="hl-count-badge" hidden>0</span>
+      </button>
+      <div id="hl-list-panel" class="tb-menu-panel hl-list-panel" hidden role="dialog" aria-label="Marca-texto">
+        <div class="tb-menu-title">Marca-texto</div>
+
+        <div class="hl-color-row">
+          <span class="tb-menu-label">Cor ao destacar</span>
+          <div id="hl-color-swatches" class="hl-color-swatches" role="group" aria-label="Cor do marca-texto">
+            <button type="button" class="hl-swatch-btn cme-hl-pastel-yellow" data-color="pastel-yellow" title="Amarelo pastel" aria-label="Amarelo pastel" aria-pressed="true"></button>
+            <button type="button" class="hl-swatch-btn cme-hl-pastel-green" data-color="pastel-green" title="Verde pastel" aria-label="Verde pastel" aria-pressed="false"></button>
+            <button type="button" class="hl-swatch-btn cme-hl-pastel-blue" data-color="pastel-blue" title="Azul pastel" aria-label="Azul pastel" aria-pressed="false"></button>
+            <button type="button" class="hl-swatch-btn cme-hl-pastel-pink" data-color="pastel-pink" title="Rosa pastel" aria-label="Rosa pastel" aria-pressed="false"></button>
+            <button type="button" class="hl-swatch-btn cme-hl-pastel-orange" data-color="pastel-orange" title="Laranja pastel" aria-label="Laranja pastel" aria-pressed="false"></button>
+            <button type="button" class="hl-swatch-btn cme-hl-pastel-purple" data-color="pastel-purple" title="Roxo pastel" aria-label="Roxo pastel" aria-pressed="false"></button>
+          </div>
+          <select id="hl-color" hidden aria-hidden="true" tabindex="-1">
+            <option value="pastel-yellow">Amarelo pastel</option>
+            <option value="pastel-green">Verde pastel</option>
+            <option value="pastel-blue">Azul pastel</option>
+            <option value="pastel-pink">Rosa pastel</option>
+            <option value="pastel-orange">Laranja pastel</option>
+            <option value="pastel-purple">Roxo pastel</option>
+          </select>
+        </div>
+
+        <div class="hl-filter-row">
+          <button type="button" id="hl-filter-toggle" class="hl-filter-toggle" aria-expanded="false" aria-controls="hl-filter-body">
+            <span class="tb-menu-label">Filtrar lista</span>
+            <span id="hl-filter-toggle-label" class="hl-filter-toggle-label">mostrar</span>
+          </button>
+          <div id="hl-filter-body" class="hl-filter-body" hidden>
+            <div id="hl-filter-swatches" class="hl-color-swatches" role="group" aria-label="Filtrar destaques por cor">
+              <button type="button" class="hl-filter-btn is-active" data-filter="all" title="Todas as cores" aria-label="Todas as cores" aria-pressed="true">Tudo</button>
+              <button type="button" class="hl-swatch-btn hl-filter-btn cme-hl-pastel-yellow" data-filter="pastel-yellow" title="Filtrar amarelo" aria-label="Filtrar amarelo" aria-pressed="false"></button>
+              <button type="button" class="hl-swatch-btn hl-filter-btn cme-hl-pastel-green" data-filter="pastel-green" title="Filtrar verde" aria-label="Filtrar verde" aria-pressed="false"></button>
+              <button type="button" class="hl-swatch-btn hl-filter-btn cme-hl-pastel-blue" data-filter="pastel-blue" title="Filtrar azul" aria-label="Filtrar azul" aria-pressed="false"></button>
+              <button type="button" class="hl-swatch-btn hl-filter-btn cme-hl-pastel-pink" data-filter="pastel-pink" title="Filtrar rosa" aria-label="Filtrar rosa" aria-pressed="false"></button>
+              <button type="button" class="hl-swatch-btn hl-filter-btn cme-hl-pastel-orange" data-filter="pastel-orange" title="Filtrar laranja" aria-label="Filtrar laranja" aria-pressed="false"></button>
+              <button type="button" class="hl-swatch-btn hl-filter-btn cme-hl-pastel-purple" data-filter="pastel-purple" title="Filtrar roxo" aria-label="Filtrar roxo" aria-pressed="false"></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="hl-list-head">
+          <strong>Seus destaques</strong>
+          <span class="hl-list-hint">salvos neste navegador</span>
+        </div>
+        <div id="hl-list-body" class="hl-list-body">
+          <p class="hl-list-empty">Nenhum destaque ainda. Selecione um trecho no texto para destacar.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Configurações (direita) - só ícone de engrenagem -->
+    <div class="tb-menu" data-menu="settings">
+      <button type="button" class="tb-btn tb-menu-btn tb-btn-icon" id="settings-toggle" aria-expanded="false" aria-controls="settings-panel" title="Configurações" aria-label="Configurações">
+        <svg class="tb-gear-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false">
+          <path fill="currentColor" d="M19.14 12.94c.04-.31.06-.63.06-.94s-.02-.63-.06-.94l2.03-1.58a.5.5 0 0 0 .12-.64l-1.92-3.32a.5.5 0 0 0-.6-.22l-2.39.96a7.03 7.03 0 0 0-1.63-.94l-.36-2.54A.5.5 0 0 0 14.9 2h-3.8a.5.5 0 0 0-.49.42l-.36 2.54c-.59.24-1.13.55-1.63.94l-2.39-.96a.5.5 0 0 0-.6.22L3.71 8.08a.5.5 0 0 0 .12.64l2.03 1.58c-.04.31-.06.63-.06.94s.02.63.06.94L3.83 14.7a.5.5 0 0 0-.12.64l1.92 3.32c.14.24.43.34.68.22l2.39-.96c.5.39 1.04.7 1.63.94l.36 2.54c.05.24.25.42.49.42h3.8c.24 0 .44-.18.49-.42l.36-2.54c.59-.24 1.13-.55 1.63-.94l2.39.96c.25.1.54 0 .68-.22l1.92-3.32a.5.5 0 0 0-.12-.64l-2.03-1.58zM12 15.5A3.5 3.5 0 1 1 12 8.5a3.5 3.5 0 0 1 0 7z"/>
+        </svg>
+      </button>
+      <div id="settings-panel" class="tb-menu-panel" hidden role="dialog" aria-label="Configurações de leitura">
+        <div class="tb-menu-title">Configurações</div>
+
+        <label class="tb-menu-row">
+          <span class="tb-menu-label">Notas de Gardner</span>
+          <select id="notes-mode" aria-label="Modo de exibição das notas">
+            <option value="all">Sempre visíveis</option>
+            <option value="click">Lupa (clique para abrir)</option>
+            <option value="off">Sempre ocultadas</option>
+          </select>
+        </label>
+
+        <label class="tb-menu-row">
+          <span class="tb-menu-label">Fonte</span>
+          <select id="font-family" aria-label="Fonte do texto">
+            <option value="default">Padrão do site</option>
+            <option value="dyslexia">Dislexia</option>
+            <option value="sans">Sans-serif</option>
+            <option value="mono">Monospace</option>
+          </select>
+        </label>
+
+        <div class="tb-menu-row">
+          <span class="tb-menu-label">Tamanho</span>
+          <div class="tb-font-size" role="group" aria-label="Tamanho da fonte">
+            <button type="button" id="font-smaller" class="tb-btn tb-btn-sq" title="Diminuir fonte" aria-label="Diminuir fonte">A-</button>
+            <span id="font-size-label" class="tb-size-label" aria-live="polite">100%</span>
+            <button type="button" id="font-larger" class="tb-btn tb-btn-sq" title="Aumentar fonte" aria-label="Aumentar fonte">A+</button>
+          </div>
+        </div>
+
+        <div class="tb-menu-row">
+          <span class="tb-menu-label">Tema</span>
+          <button type="button" id="toggle-theme" class="tb-btn" title="Alternar tema claro/escuro" aria-pressed="false">
+            <span class="theme-label">Tema escuro</span>
+          </button>
+        </div>
+
+        <div class="tb-menu-row tb-menu-row-danger">
+          <span class="tb-menu-label">Dados locais</span>
+          <button type="button" id="clear-site-data" class="tb-btn tb-btn-danger" title="Apagar destaques, notas e preferências salvos neste navegador">
+            Limpar cache do site
+          </button>
+          <span class="tb-menu-hint">Remove destaques, notas, progresso e preferências salvos neste navegador.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Popup de seleção: destacar + nota -->
+<div id="hl-popup" class="hl-popup" hidden role="dialog" aria-label="Destacar trecho">
+  <button type="button" id="hl-btn-mark" class="tb-btn">Destacar</button>
+  <button type="button" id="hl-btn-note" class="tb-btn">Destacar + nota</button>
+  <button type="button" id="hl-btn-cancel" class="tb-btn tb-btn-ghost">Cancelar</button>
+</div>
+
+<!-- Tooltip flutuante da nota ao passar o mouse -->
+<div id="hl-float-tip" class="hl-float-tip" hidden role="tooltip"></div>
+
+<!-- Confirmação: limpar cache -->
+<div id="clear-data-modal" class="hl-modal" hidden role="dialog" aria-modal="true" aria-labelledby="clear-data-title">
+  <div class="hl-modal-box">
+    <h3 id="clear-data-title">Limpar cache do site?</h3>
+    <p class="hl-quote" style="font-style:normal;opacity:0.95">
+      Isso apaga <strong>tudo</strong> que foi salvo neste navegador:
+      destaques, notas, preferências (fonte, tema, tamanho), cor do marca-texto
+      e qualquer outro dado local do site.
+    </p>
+    <p class="hl-quote" style="font-style:normal;opacity:0.85">
+      Esta ação não pode ser desfeita.
+    </p>
+    <div class="hl-modal-actions">
+      <button type="button" id="clear-data-confirm" class="tb-btn tb-btn-danger">Sim, limpar tudo</button>
+      <button type="button" id="clear-data-cancel" class="tb-btn tb-btn-ghost">Cancelar</button>
+    </div>
+  </div>
+</div>
+
+<!-- Modal de nota do highlight -->
+<div id="hl-note-modal" class="hl-modal" hidden role="dialog" aria-modal="true" aria-labelledby="hl-note-title">
+  <div class="hl-modal-box">
+    <h3 id="hl-note-title">Nota do trecho</h3>
+    <p id="hl-note-quote" class="hl-quote"></p>
+    <label class="hl-note-label">Cor deste destaque</label>
+    <div id="hl-note-swatches" class="hl-color-swatches" role="group" aria-label="Cor deste destaque">
+      <button type="button" class="hl-swatch-btn cme-hl-pastel-yellow" data-color="pastel-yellow" title="Amarelo pastel" aria-label="Amarelo pastel"></button>
+      <button type="button" class="hl-swatch-btn cme-hl-pastel-green" data-color="pastel-green" title="Verde pastel" aria-label="Verde pastel"></button>
+      <button type="button" class="hl-swatch-btn cme-hl-pastel-blue" data-color="pastel-blue" title="Azul pastel" aria-label="Azul pastel"></button>
+      <button type="button" class="hl-swatch-btn cme-hl-pastel-pink" data-color="pastel-pink" title="Rosa pastel" aria-label="Rosa pastel"></button>
+      <button type="button" class="hl-swatch-btn cme-hl-pastel-orange" data-color="pastel-orange" title="Laranja pastel" aria-label="Laranja pastel"></button>
+      <button type="button" class="hl-swatch-btn cme-hl-pastel-purple" data-color="pastel-purple" title="Roxo pastel" aria-label="Roxo pastel"></button>
+    </div>
+    <select id="hl-note-color" hidden aria-hidden="true" tabindex="-1">
+      <option value="pastel-yellow">Amarelo pastel</option>
+      <option value="pastel-green">Verde pastel</option>
+      <option value="pastel-blue">Azul pastel</option>
+      <option value="pastel-pink">Rosa pastel</option>
+      <option value="pastel-orange">Laranja pastel</option>
+      <option value="pastel-purple">Roxo pastel</option>
+    </select>
+    <label class="hl-note-label" for="hl-note-input">Sua nota (salva só neste navegador)</label>
+    <textarea id="hl-note-input" rows="4" maxlength="2000" placeholder="Escreva uma anotação opcional..."></textarea>
+    <div class="hl-modal-actions">
+      <button type="button" id="hl-note-save" class="tb-btn">Salvar</button>
+      <button type="button" id="hl-note-remove" class="tb-btn tb-btn-danger">Remover destaque</button>
+      <button type="button" id="hl-note-close" class="tb-btn tb-btn-ghost">Fechar</button>
+    </div>
+  </div>
+</div>
+
+<h1><br>Curvatura das Curvas</h1>
+<p class="a rotatedFloralHeartBullet">
+
+
+<p>Voltando ao processo de diferenciação sucessiva,
+pode-se perguntar: por que alguém quer
+diferenciar duas vezes? Sabemos que, quando as
+grandezas variáveis são espaço e tempo, ao diferenciar
+duas vezes obtemos a aceleração de um
+corpo em movimento, e que, na interpretação geométrica
+aplicada a curvas, $\dfrac{dy}{dx}$ significa a <em>inclinação</em> da
+curva. Mas o que pode $\dfrac{d^2 y}{dx^2}$ significar neste caso? Claramente
+significa a taxa (por unidade de comprimento $x$) com que a
+inclinação está mudando - em resumo, é <em>uma medida da
+curvatura da inclinação</em>.
+
+<a name="figure31">
+<p><img src="33283-t/images/124a.pdf.png-1.png">
+<a name="figure32">
+<p><img src="33283-t/images/124b.pdf.png-1.png">
+
+<p>Suponha uma inclinação constante, como na <a href="#figure31">Figura 31</a>.
+
+<p>Aqui, $\dfrac{dy}{dx}$ tem valor constante.
+
+
+<p>Suponha, porém, um caso em que, como na <a href="#figure32">Figura 32</a>,
+a própria inclinação está se tornando maior para cima; então
+$\dfrac{d\left(\dfrac{dy}{dx}\right)}{dx}$, isto é, $\dfrac{d^2y}{dx^2}$, será <em>positiva</em>.
+
+<p>Se a inclinação está se tornando menor conforme você avança para a direita
+(como na <a href="10.html#figure14">Figura 14</a>), ou como na <a href="#figure33">Figura 33</a>, então, mesmo
+que a curva possa estar subindo, como a
+mudança é de tal modo a diminuir sua inclinação, seu $\dfrac{d^2y}{dx^2}$ será
+<em>negativo</em>.
+
+<a name="figure3">
+<p><img src="33283-t/images/125a.pdf.png-1.png">
+
+<p>É chegada a hora de iniciá-lo em outro segredo: como
+saber se o resultado que você obtém ao
+“igualar a zero” é um máximo ou um mínimo.
+O truque é este: depois de ter diferenciado
+(de modo a obter a expressão que você iguala a
+zero), você então diferencia uma segunda vez, e observa
+se o resultado da segunda diferenciação é
+<em>positivo</em> ou <em>negativo</em>. Se $\dfrac{d^2y}{dx^2}$ resulta <em>positivo</em>, então
+você sabe que o valor de $y$ que obteve era
+um <em>mínimo</em>; mas se $\dfrac{d^2y}{dx^2}$ resulta <em>negativo</em>, então
+
+o valor de $y$ que você obteve deve ser um <em>máximo</em>.
+Essa é a regra.
+
+<a name="figure34">
+<p><img src="33283-t/images/126a.pdf.png-1.png">
+<a name="figure35">
+<p><img src="33283-t/images/126b.pdf.png-1.png">
+
+<p>A razão disso deveria ser bem evidente. Pense
+em qualquer curva que tenha um ponto de mínimo nela (como a
+<a href="10.html#figure15">Figura 15</a>), ou como a <a href="#figure34">Figura 34</a>, onde o ponto de
+mínimo $y$ está marcado $M$, e a curva é <em>côncava</em>
+para cima. À esquerda de $M$ a inclinação é para baixo,
+isto é, negativa, e está se tornando menos negativa. À
+direita de $M$ a inclinação se tornou para cima, e está
+se tornando cada vez mais para cima. Claramente a mudança
+de inclinação conforme a curva passa por $M$ é tal que
+$\dfrac{d^2y}{dx^2}$ é <em>positivo</em>, pois sua operação, à medida que $x$ aumenta para
+a direita, é converter uma inclinação para baixo em uma
+para cima.
+
+<p>De modo semelhante, considere qualquer curva que tenha um ponto de máximo
+nela (como a <a href="10.html#figure16">Figura 16</a>), ou como a <a href="#figure35">Figura 35</a>, onde
+a curva é <em>convexa</em>, e o ponto de máximo está
+marcado $M$. Neste caso, conforme a curva passa por $M$
+da esquerda para a direita, sua inclinação para cima é convertida
+
+em uma inclinação para baixo ou negativa, de modo que neste
+caso a “inclinação da inclinação” $\dfrac{d^2y}{dx^2}$ é <em>negativa</em>.
+
+<p>Volte agora aos exemplos do capítulo anterior
+e verifique deste modo as conclusões a que se chegou quanto a
+haver, em qualquer caso particular, um máximo
+ou um mínimo. Você encontrará abaixo alguns exemplos
+resolvidos.
+
+<p><hr>
+
+<p>(1) Encontre o máximo ou mínimo de</p>
+
+\[
+\begin{aligned}
+\text{(a)}\quad y &= 4x^2-9x-6; \qquad \text{(b)}\quad y = 6 + 9x-4x^2;
+\end{aligned}
+\]
+
+e verifique se é um máximo ou um mínimo em cada caso.
+
+\[
+\begin{aligned}
+\text{(a)}\quad \dfrac{dy}{dx}
+  &= 8x-9=0 \\
+x&=1\tfrac{1}{8},\quad \text{e } y = -11.065.\\
+\dfrac{d^2y}{dx^2}
+  &= 8 \\
+\text{é $+$; logo é um mínimo.} \\
+\text{(b)}\quad {\dfrac{dy}{dx}}
+  &= 9-8x=0 \\
+x &= 1\tfrac{1}{8} \\
+\text{e } y &= +11.065.\\
+\dfrac{d^2y}{dx^2}
+  &= -8 \\
+\text{é $-$; logo é um máximo.}
+\end{aligned}
+\]
+
+<p>(2) Encontre os máximos e mínimos da função
+$y = x^3-3x+16$.</p>
+
+\[
+\begin{aligned}
+\dfrac{dy}{dx}
+  &= 3x^2 - 3 = 0 \\
+x^2 &= 1 \\
+\text{e } x &= ±1.\\
+\dfrac{d^2y}{dx^2}
+  &= 6x \\
+\text{para $x &= 1$; é $+$};
+\end{aligned}
+\]
+logo $x=1$ corresponde a um mínimo $y=14$. Para
+$x=-1$ é $-$; logo $x=-1$ corresponde a um máximo
+$y=+18$.
+
+
+<p>(3) Encontre os máximos e mínimos de $y=\dfrac{x-1}{x^2+2}$.</p>
+
+\[
+\frac{dy}{dx} = \frac{(x^2+2) × 1 - (x-1) × 2x}{(x^2+2)^2}
+  = \frac{2x - x^2 + 2}{(x^2 + 2)^2} = 0;
+\]
+ou $x^2 - 2x - 2 = 0$, cujas soluções são $x =+2.73$ e
+$x=-0.73$.
+\[
+\begin{aligned}
+\dfrac{d^2y}{dx^2}
+  &= - \frac{(x^2 + 2)^2 × (2x-2) - (x^2 - 2x - 2)(4x^3 + 8x)}{(x^2 + 2)^4} \\
+  &= - \frac{2x^5 - 6x^4 - 8x^3 - 8x^2 - 24x + 8}{(x^2 + 2)^4}.
+\end{aligned}
+\]
+
+<p>O denominador é sempre positivo, de modo que basta
+averiguar o sinal do numerador.
+
+<p>Se pusermos $x = 2.73$, o numerador é negativo; o
+máximo, $y = 0.183$.
+
+<p>Se pusermos $x=-0.73$, o numerador é positivo; o
+mínimo, $y=-0.683$.
+
+<p>(4) A despesa $C$ de manusear os produtos de uma
+certa fábrica varia com a produção semanal $P$
+segundo a relação $C = aP + \dfrac{b}{c+P} + d$, onde
+$a$, $b$, $c$, $d$ são constantes positivas. Para que produção
+a despesa será menor?</p>
+
+\[
+\dfrac{dC}{dP} = a - \frac{b}{(c+P)^2} = 0\quad \text{para máximo ou mínimo;}
+\]
+logo $a = \dfrac{b}{(c+P)^2}$ e $P = ±\sqrt{\dfrac{b}{a}} - c$.
+
+<p>Como a produção não pode ser negativa, $P=+\sqrt{\dfrac{b}{a}} - c$.
+</p>
+
+\[
+\begin{aligned}
+   \text{Agora} \\
+\frac{d^2C}{dP^2} &= + \frac{b(2c + 2P)}{(c + P)^4},
+\end{aligned}
+\]
+que é positivo para todos os valores de $P$; logo
+$P = +\sqrt{\dfrac{b}{a}} - c$ corresponde a um mínimo.
+
+<p>(5) O custo total por hora $C$ de iluminar um edifício
+com $N$ lâmpadas de certo tipo é</p>
+
+\[
+C = N\left(\frac{C_l}{t} + \frac{EPC_e}{1000}\right),
+\]
+onde $E$ é a eficiência comercial (watts por vela),
+
+$P$ é a potência em velas de cada lâmpada,<br>
+$t$ é a vida média de cada lâmpada em horas,<br>
+$C_l =$ custo de reposição em pence por hora de uso,<br>
+$C_e =$ custo da energia por $1000$ watts por hora.<br>
+
+<p>Além disso, a relação que liga a vida média
+de uma lâmpada à eficiência comercial com que ela
+é operada é aproximadamente $t = mE^n$, onde $m$ e $n$ são
+constantes que dependem do tipo de lâmpada.
+
+<p>Encontre a eficiência comercial para a qual o custo
+total de iluminação será mínimo.
+</p>
+
+\[
+\begin{aligned}
+\text{   Temos}\;
+C &= N\left(\frac{C_l}{m} E^{-n} + \frac{PC_e}{1000} E\right), \\
+\dfrac{dC}{dE}
+  &= \frac{PC_e}{1000} - \frac{nC_l}{m} E^{-(n+1)} = 0
+\end{aligned}
+\]
+para máximo ou mínimo.
+\[
+E^{n+1} = \frac{1000 × nC_l}{mPC_e}\quad \text{e}\quad
+E = \sqrt[n+1]{\frac{1000 × nC_l}{mPC_e}}.
+\]
+
+<p>Isto é claramente para mínimo, pois</p>
+
+\[
+\frac{d^2C}{dE^2} = (n + 1) \frac{nC_l}{m} E^{-(n+2)},
+\]
+que é positivo para um valor positivo de $E$.
+
+<p>Para um tipo particular de lâmpadas de $16$ velas,
+$C_l= 17$ pence, $C_e=5$ pence; e verificou-se que
+$m=10$ e $n=3.6$.</p>
+
+\[
+E = \sqrt[4.6]{\frac{1000 × 3.6 × 17}{10 × 16 × 5}}
+  = 2.6\text{ watts por vela}.
+\]
+
+<p>
+<hr><h3>Exercícios X</h3> (Recomenda-se plotar o gráfico
+de qualquer exemplo numérico.)
+
+(1) Encontre os máximos e mínimos de
+\[
+y = x^3 + x^2 - 10x + 8.
+\]
+
+<p>(2) Dado $y = \dfrac{b}{a}x - cx^2$, encontre expressões para $\dfrac{dy}{dx}$, e
+para $\dfrac{d^2y}{dx^2}$, encontre também o valor de $x$ que torna $y$ um
+máximo ou um mínimo, e mostre se é
+máximo ou mínimo.
+
+<p>(3) Encontre quantos máximos e quantos mínimos
+há na curva cuja equação é</p>
+
+\[
+y = 1 - \frac{x^2}{2} + \frac{x^4}{24};
+\]
+e quantos naquela cuja equação é
+\[
+y = 1 - \frac{x^2}{2} + \frac{x^4}{24} - \frac{x^6}{720}.
+\]
+
+<p>(4) Encontre os máximos e mínimos de</p>
+
+\[
+y=2x+1+\frac{5}{x^2}.
+\]
+
+<p>(5) Encontre os máximos e mínimos de</p>
+
+\[
+y=\frac{3}{x^2+x+1}.
+\]
+
+<p>(6) Encontre os máximos e mínimos de</p>
+
+\[
+y=\frac{5x}{2+x^2}.
+\]
+
+<p>(7) Encontre os máximos e mínimos de</p>
+
+\[
+y=\frac{3x}{x^2-3} + \frac{x}{2} + 5.
+\]
+
+<p>(8) Divida um número $N$ em duas partes de tal
+modo que três vezes o quadrado de uma parte mais
+duas vezes o quadrado da outra parte seja um
+mínimo.
+
+<p>(9) A eficiência $u$ de um gerador elétrico em
+diferentes valores de saída $x$ é expressa pela
+equação geral:</p>
+
+\[
+u=\frac{x}{a+bx+cx^2};
+\]
+onde $a$ é uma constante que depende principalmente das perdas
+de energia no ferro e $c$ uma constante que depende principalmente
+da resistência das partes de cobre. Encontre uma expressão
+para aquele valor da saída em que a
+eficiência será máxima.
+
+
+<p>(10) Suponha-se que o consumo de
+carvão de certo vapor possa ser representado pela
+fórmula $y = 0.3 + 0.001v^3$; onde $y$ é o número de
+toneladas de carvão queimadas por hora e $v$ é a velocidade
+expressa em milhas náuticas por hora. O custo de
+salários, juros sobre o capital e depreciação desse
+navio são, juntos, por hora, iguais ao custo de
+$1$ tonelada de carvão. Que velocidade tornará o custo total
+de uma viagem de $1000$ milhas náuticas um mínimo?
+E, se o carvão custa $10$ xelins por tonelada, a quanto
+ascenderá esse custo mínimo da viagem?
+
+<p>(11) Encontre os máximos e mínimos de<a name="ex10"/></p>
+
+\[
+y = ±\frac{x}{6}\sqrt{x(10-x)}.
+\]
+
+<p>(12) Encontre os máximos e mínimos de</p>
+
+\[
+y= 4x^3 - x^2 - 2x + 1.
+\]
+
+<p><h3 class="answers">Respostas</h3>
+
+<p>(1)   Máx.: $x = -2.19$, $y = 24.19$; mín.:, $x = 1.52$, $y = -1.38$.
+
+<p>(2)   $\dfrac{dy}{dx} = \dfrac{b}{a} - 2cx$; $\dfrac{d^2 y}{dx^2} = -2c$; $x = \dfrac{b}{2ac}$ (<em>um máximo</em>).
+
+<p>(3)   (<em>a</em> ) Um máximo e dois mínimos.
+(<em>b</em> ) Um máximo. ($x = 0$; outros pontos irreais.)
+
+<p>(4)   Mín.: $x = 1.71$, $y = 6.14$.
+
+<p>(5)   Máx: $x = -.5$, $y = 4$.
+
+<p>(6)   Máx.: $x = 1.414$, $y = 1.7675$.
+Mín.: $x = -1.414$, $y = 1.7675$.
+
+<p>(7)   Máx.: $x = -3.565$, $y = 2.12$.
+Mín.: $x = +3.565$, $y = 7.88$.
+
+<p>(8)   $0.4N$, $0.6N$.
+
+<p>(9)   $x = \sqrt{\dfrac{a}{c}}$.
+
+<p>(10)   Velocidade $8.66$ milhas náuticas por hora. Tempo gasto $115.47$ horas.
+Custo mínimo £$112$. $12$<em>s</em> .
+
+<p>(11)   Máx. e mín. para $x = 7.5$, $y = ±5.414$. (Ver exemplo
+nº 10, <a href="9.html#Example10">aqui</a>.)
+
+<p>(12)   Mín.: $x = \frac{1}{2}$, $y= 0.25$; máx.: $x = - \frac{1}{3}$, $y= 1.408$.
+
+<br>
+<!-- Soluções comerciais removidas: projeto público e sem fins lucrativos -->
+
+
+<hr>
+<nav class="chapter-nav" aria-label="Navegação do capítulo">
+  <a class="nav-prev" href="11.html">← Anterior</a>
+  <a class="nav-home" href="index.html">Página principal</a>
+  <a class="nav-next" href="13.html">Próximo →</a>
+</nav>
+<footer class="site-footer" role="contentinfo">
+  <p class="a rotatedFloralHeartBullet"></p>
+
+  <div class="manifesto">
+    <p class="manifesto-lead">
+      Este é um <strong>projeto público</strong>, sem fins lucrativos.
+      Não é permitido comercializá-lo, vendê-lo nem usá-lo como produto pago.
+    </p>
+    <p class="manifesto-quote">
+      A educação é um direito de todos.
+      O conhecimento deve ser livre sempre que não cause o mal:
+      deve circular, ensinar e libertar, nunca aprisionar quem aprende.
+    </p>
+    <p class="manifesto-sign">
+      - Thales Rodrigues
+    </p>
+  </div>
+
+  <nav class="author-links" aria-label="Redes de Thales Rodrigues">
+    <a href="https://www.linkedin.com/in/thales-oliveira-rodrigues/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    <span class="dot" aria-hidden="true">·</span>
+    <a href="https://github.com/Rodriguestmo" target="_blank" rel="noopener noreferrer">GitHub</a>
+  </nav>
+
+  <p class="footer-meta">
+    <small>
+      Tradução e adaptação PT-BR por Thales Rodrigues.
+      Texto de Silvanus P. Thompson em domínio público (Project Gutenberg).
+      Notas de contexto inspiradas na edição Gardner (1998).
+      Projeto público e gratuito.
+    </small>
+  </p>
+</footer>
+
+<script src="j/jquery.js"></script>
+<script src="j/modernizr.js"></script>
+<script src="j/dih5.js"></script>
+<script src="j/chapters-data.js"></script>
+<script src="j/glossary-data.js"></script>
+<script src="j/reader-features.js"></script>
+<script src="j/notes-toggle.js"></script>
+<!-- Analytics desativado na edição PT local -->
+</body>
+</html>

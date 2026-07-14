@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+
+<title>Cálculo Tornado Fácil</title>
+<meta name="description" content="Capítulo III: sobre crescimentos relativos e a ideia de derivada.">
+<meta name="author" content="Thales Rodrigues; Silvanus P. Thompson">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="googlebot" content="index, follow">
+<meta name="language" content="Portuguese">
+<meta name="keywords" content="cálculo, calculus made easy, Silvanus Thompson, cálculo diferencial, cálculo integral, matemática, educação livre, português, Martin Gardner, Cálculo Tornado Fácil, Thales Rodrigues">
+<link rel="canonical" href="https://rodriguestmo.github.io/calculo-tornado-facil/3.html">
+<link rel="alternate" hreflang="pt-BR" href="https://rodriguestmo.github.io/calculo-tornado-facil/3.html">
+<link rel="alternate" hreflang="x-default" href="https://rodriguestmo.github.io/calculo-tornado-facil/">
+
+
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
+<link rel="icon" href="favicon-16.png" type="image/png" sizes="16x16">
+<link rel="shortcut icon" href="favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png" sizes="180x180">
+<meta name="theme-color" content="#c45c26">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Cálculo Tornado Fácil">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Cálculo Tornado Fácil">
+<meta property="og:description" content="Capítulo III: sobre crescimentos relativos e a ideia de derivada.">
+<meta property="og:url" content="https://rodriguestmo.github.io/calculo-tornado-facil/3.html">
+<meta property="og:image" content="https://rodriguestmo.github.io/calculo-tornado-facil/cover.jpg">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Cálculo Tornado Fácil">
+<meta name="twitter:description" content="Capítulo III: sobre crescimentos relativos e a ideia de derivada.">
+<meta name="twitter:image" content="https://rodriguestmo.github.io/calculo-tornado-facil/cover.jpg">
+
+<link rel="describedby" href="https://rodriguestmo.github.io/calculo-tornado-facil/llms.txt">
+<link rel="stylesheet" href="screen.css">
+<style>
+body{counter-reset:h1 3}
+</style>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$'], ['\\[','\\]']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ["script","noscript","style","textarea","pre","code"]
+    },
+    TeX: {
+      extensions: ["AMSmath.js","AMSsymbols.js"],
+      equationNumbers: { autoNumber: "none" }
+    },
+    "HTML-CSS": {
+      availableFonts: ["TeX"],
+      linebreaks: { automatic: false },
+      styles: {
+        ".MathJax_Display": { "margin": "1.5em 0" }
+      }
+    },
+    CommonHTML: {
+      styles: { ".MJXc-display": { "margin": "1.5em 0" } }
+    },
+    showProcessingMessages: false,
+    messageStyle: "none"
+  });
+</script>
+<script type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Chapter",
+  "name": "Sobre Crescimentos Relativos",
+  "position": 3,
+  "isPartOf": {
+    "@type": "Book",
+    "name": "Cálculo Tornado Fácil",
+    "url": "https://rodriguestmo.github.io/calculo-tornado-facil/"
+  },
+  "author": {"@type": "Person", "name": "Silvanus P. Thompson"},
+  "translator": {"@type": "Person", "name": "Thales Rodrigues"},
+  "url": "https://rodriguestmo.github.io/calculo-tornado-facil/3.html",
+  "inLanguage": "pt-BR",
+  "isAccessibleForFree": true
+}
+</script>
+</head>
+<body>
+<!-- Progresso de leitura do capítulo (scroll) -->
+<div id="read-progress" class="read-progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="Progresso de leitura do capítulo">
+  <div id="read-progress-bar" class="read-progress-bar"></div>
+</div>
+
+<!-- Barra fixa: logo + menus (marca-texto à esquerda, engrenagem à direita) -->
+<div id="site-toolbar" class="site-toolbar" role="region" aria-label="Controles do site">
+  <a class="tb-home" href="index.html">Cálculo Tornado Fácil</a>
+
+  <div class="tb-controls">
+    <!-- Marca-texto (esquerda) -->
+    <div class="tb-menu" data-menu="highlight">
+      <button type="button" class="tb-btn tb-menu-btn" id="hl-list-toggle" aria-expanded="false" aria-controls="hl-list-panel" title="Marca-texto e lista de destaques">
+        Marca-texto
+        <span id="hl-count-badge" class="hl-count-badge" hidden>0</span>
+      </button>
+      <div id="hl-list-panel" class="tb-menu-panel hl-list-panel" hidden role="dialog" aria-label="Marca-texto">
+        <div class="tb-menu-title">Marca-texto</div>
+
+        <div class="hl-color-row">
+          <span class="tb-menu-label">Cor ao destacar</span>
+          <div id="hl-color-swatches" class="hl-color-swatches" role="group" aria-label="Cor do marca-texto">
+            <button type="button" class="hl-swatch-btn cme-hl-pastel-yellow" data-color="pastel-yellow" title="Amarelo pastel" aria-label="Amarelo pastel" aria-pressed="true"></button>
+            <button type="button" class="hl-swatch-btn cme-hl-pastel-green" data-color="pastel-green" title="Verde pastel" aria-label="Verde pastel" aria-pressed="false"></button>
+            <button type="button" class="hl-swatch-btn cme-hl-pastel-blue" data-color="pastel-blue" title="Azul pastel" aria-label="Azul pastel" aria-pressed="false"></button>
+            <button type="button" class="hl-swatch-btn cme-hl-pastel-pink" data-color="pastel-pink" title="Rosa pastel" aria-label="Rosa pastel" aria-pressed="false"></button>
+            <button type="button" class="hl-swatch-btn cme-hl-pastel-orange" data-color="pastel-orange" title="Laranja pastel" aria-label="Laranja pastel" aria-pressed="false"></button>
+            <button type="button" class="hl-swatch-btn cme-hl-pastel-purple" data-color="pastel-purple" title="Roxo pastel" aria-label="Roxo pastel" aria-pressed="false"></button>
+          </div>
+          <select id="hl-color" hidden aria-hidden="true" tabindex="-1">
+            <option value="pastel-yellow">Amarelo pastel</option>
+            <option value="pastel-green">Verde pastel</option>
+            <option value="pastel-blue">Azul pastel</option>
+            <option value="pastel-pink">Rosa pastel</option>
+            <option value="pastel-orange">Laranja pastel</option>
+            <option value="pastel-purple">Roxo pastel</option>
+          </select>
+        </div>
+
+        <div class="hl-filter-row">
+          <button type="button" id="hl-filter-toggle" class="hl-filter-toggle" aria-expanded="false" aria-controls="hl-filter-body">
+            <span class="tb-menu-label">Filtrar lista</span>
+            <span id="hl-filter-toggle-label" class="hl-filter-toggle-label">mostrar</span>
+          </button>
+          <div id="hl-filter-body" class="hl-filter-body" hidden>
+            <div id="hl-filter-swatches" class="hl-color-swatches" role="group" aria-label="Filtrar destaques por cor">
+              <button type="button" class="hl-filter-btn is-active" data-filter="all" title="Todas as cores" aria-label="Todas as cores" aria-pressed="true">Tudo</button>
+              <button type="button" class="hl-swatch-btn hl-filter-btn cme-hl-pastel-yellow" data-filter="pastel-yellow" title="Filtrar amarelo" aria-label="Filtrar amarelo" aria-pressed="false"></button>
+              <button type="button" class="hl-swatch-btn hl-filter-btn cme-hl-pastel-green" data-filter="pastel-green" title="Filtrar verde" aria-label="Filtrar verde" aria-pressed="false"></button>
+              <button type="button" class="hl-swatch-btn hl-filter-btn cme-hl-pastel-blue" data-filter="pastel-blue" title="Filtrar azul" aria-label="Filtrar azul" aria-pressed="false"></button>
+              <button type="button" class="hl-swatch-btn hl-filter-btn cme-hl-pastel-pink" data-filter="pastel-pink" title="Filtrar rosa" aria-label="Filtrar rosa" aria-pressed="false"></button>
+              <button type="button" class="hl-swatch-btn hl-filter-btn cme-hl-pastel-orange" data-filter="pastel-orange" title="Filtrar laranja" aria-label="Filtrar laranja" aria-pressed="false"></button>
+              <button type="button" class="hl-swatch-btn hl-filter-btn cme-hl-pastel-purple" data-filter="pastel-purple" title="Filtrar roxo" aria-label="Filtrar roxo" aria-pressed="false"></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="hl-list-head">
+          <strong>Seus destaques</strong>
+          <span class="hl-list-hint">salvos neste navegador</span>
+        </div>
+        <div id="hl-list-body" class="hl-list-body">
+          <p class="hl-list-empty">Nenhum destaque ainda. Selecione um trecho no texto para destacar.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Configurações (direita) - só ícone de engrenagem -->
+    <div class="tb-menu" data-menu="settings">
+      <button type="button" class="tb-btn tb-menu-btn tb-btn-icon" id="settings-toggle" aria-expanded="false" aria-controls="settings-panel" title="Configurações" aria-label="Configurações">
+        <svg class="tb-gear-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false">
+          <path fill="currentColor" d="M19.14 12.94c.04-.31.06-.63.06-.94s-.02-.63-.06-.94l2.03-1.58a.5.5 0 0 0 .12-.64l-1.92-3.32a.5.5 0 0 0-.6-.22l-2.39.96a7.03 7.03 0 0 0-1.63-.94l-.36-2.54A.5.5 0 0 0 14.9 2h-3.8a.5.5 0 0 0-.49.42l-.36 2.54c-.59.24-1.13.55-1.63.94l-2.39-.96a.5.5 0 0 0-.6.22L3.71 8.08a.5.5 0 0 0 .12.64l2.03 1.58c-.04.31-.06.63-.06.94s.02.63.06.94L3.83 14.7a.5.5 0 0 0-.12.64l1.92 3.32c.14.24.43.34.68.22l2.39-.96c.5.39 1.04.7 1.63.94l.36 2.54c.05.24.25.42.49.42h3.8c.24 0 .44-.18.49-.42l.36-2.54c.59-.24 1.13-.55 1.63-.94l2.39.96c.25.1.54 0 .68-.22l1.92-3.32a.5.5 0 0 0-.12-.64l-2.03-1.58zM12 15.5A3.5 3.5 0 1 1 12 8.5a3.5 3.5 0 0 1 0 7z"/>
+        </svg>
+      </button>
+      <div id="settings-panel" class="tb-menu-panel" hidden role="dialog" aria-label="Configurações de leitura">
+        <div class="tb-menu-title">Configurações</div>
+
+        <label class="tb-menu-row">
+          <span class="tb-menu-label">Notas de Gardner</span>
+          <select id="notes-mode" aria-label="Modo de exibição das notas">
+            <option value="all">Sempre visíveis</option>
+            <option value="click">Lupa (clique para abrir)</option>
+            <option value="off">Sempre ocultadas</option>
+          </select>
+        </label>
+
+        <label class="tb-menu-row">
+          <span class="tb-menu-label">Fonte</span>
+          <select id="font-family" aria-label="Fonte do texto">
+            <option value="default">Padrão do site</option>
+            <option value="dyslexia">Dislexia</option>
+            <option value="sans">Sans-serif</option>
+            <option value="mono">Monospace</option>
+          </select>
+        </label>
+
+        <div class="tb-menu-row">
+          <span class="tb-menu-label">Tamanho</span>
+          <div class="tb-font-size" role="group" aria-label="Tamanho da fonte">
+            <button type="button" id="font-smaller" class="tb-btn tb-btn-sq" title="Diminuir fonte" aria-label="Diminuir fonte">A-</button>
+            <span id="font-size-label" class="tb-size-label" aria-live="polite">100%</span>
+            <button type="button" id="font-larger" class="tb-btn tb-btn-sq" title="Aumentar fonte" aria-label="Aumentar fonte">A+</button>
+          </div>
+        </div>
+
+        <div class="tb-menu-row">
+          <span class="tb-menu-label">Tema</span>
+          <button type="button" id="toggle-theme" class="tb-btn" title="Alternar tema claro/escuro" aria-pressed="false">
+            <span class="theme-label">Tema escuro</span>
+          </button>
+        </div>
+
+        <div class="tb-menu-row tb-menu-row-danger">
+          <span class="tb-menu-label">Dados locais</span>
+          <button type="button" id="clear-site-data" class="tb-btn tb-btn-danger" title="Apagar destaques, notas e preferências salvos neste navegador">
+            Limpar cache do site
+          </button>
+          <span class="tb-menu-hint">Remove destaques, notas, progresso e preferências salvos neste navegador.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Popup de seleção: destacar + nota -->
+<div id="hl-popup" class="hl-popup" hidden role="dialog" aria-label="Destacar trecho">
+  <button type="button" id="hl-btn-mark" class="tb-btn">Destacar</button>
+  <button type="button" id="hl-btn-note" class="tb-btn">Destacar + nota</button>
+  <button type="button" id="hl-btn-cancel" class="tb-btn tb-btn-ghost">Cancelar</button>
+</div>
+
+<!-- Tooltip flutuante da nota ao passar o mouse -->
+<div id="hl-float-tip" class="hl-float-tip" hidden role="tooltip"></div>
+
+<!-- Confirmação: limpar cache -->
+<div id="clear-data-modal" class="hl-modal" hidden role="dialog" aria-modal="true" aria-labelledby="clear-data-title">
+  <div class="hl-modal-box">
+    <h3 id="clear-data-title">Limpar cache do site?</h3>
+    <p class="hl-quote" style="font-style:normal;opacity:0.95">
+      Isso apaga <strong>tudo</strong> que foi salvo neste navegador:
+      destaques, notas, preferências (fonte, tema, tamanho), cor do marca-texto
+      e qualquer outro dado local do site.
+    </p>
+    <p class="hl-quote" style="font-style:normal;opacity:0.85">
+      Esta ação não pode ser desfeita.
+    </p>
+    <div class="hl-modal-actions">
+      <button type="button" id="clear-data-confirm" class="tb-btn tb-btn-danger">Sim, limpar tudo</button>
+      <button type="button" id="clear-data-cancel" class="tb-btn tb-btn-ghost">Cancelar</button>
+    </div>
+  </div>
+</div>
+
+<!-- Modal de nota do highlight -->
+<div id="hl-note-modal" class="hl-modal" hidden role="dialog" aria-modal="true" aria-labelledby="hl-note-title">
+  <div class="hl-modal-box">
+    <h3 id="hl-note-title">Nota do trecho</h3>
+    <p id="hl-note-quote" class="hl-quote"></p>
+    <label class="hl-note-label">Cor deste destaque</label>
+    <div id="hl-note-swatches" class="hl-color-swatches" role="group" aria-label="Cor deste destaque">
+      <button type="button" class="hl-swatch-btn cme-hl-pastel-yellow" data-color="pastel-yellow" title="Amarelo pastel" aria-label="Amarelo pastel"></button>
+      <button type="button" class="hl-swatch-btn cme-hl-pastel-green" data-color="pastel-green" title="Verde pastel" aria-label="Verde pastel"></button>
+      <button type="button" class="hl-swatch-btn cme-hl-pastel-blue" data-color="pastel-blue" title="Azul pastel" aria-label="Azul pastel"></button>
+      <button type="button" class="hl-swatch-btn cme-hl-pastel-pink" data-color="pastel-pink" title="Rosa pastel" aria-label="Rosa pastel"></button>
+      <button type="button" class="hl-swatch-btn cme-hl-pastel-orange" data-color="pastel-orange" title="Laranja pastel" aria-label="Laranja pastel"></button>
+      <button type="button" class="hl-swatch-btn cme-hl-pastel-purple" data-color="pastel-purple" title="Roxo pastel" aria-label="Roxo pastel"></button>
+    </div>
+    <select id="hl-note-color" hidden aria-hidden="true" tabindex="-1">
+      <option value="pastel-yellow">Amarelo pastel</option>
+      <option value="pastel-green">Verde pastel</option>
+      <option value="pastel-blue">Azul pastel</option>
+      <option value="pastel-pink">Rosa pastel</option>
+      <option value="pastel-orange">Laranja pastel</option>
+      <option value="pastel-purple">Roxo pastel</option>
+    </select>
+    <label class="hl-note-label" for="hl-note-input">Sua nota (salva só neste navegador)</label>
+    <textarea id="hl-note-input" rows="4" maxlength="2000" placeholder="Escreva uma anotação opcional..."></textarea>
+    <div class="hl-modal-actions">
+      <button type="button" id="hl-note-save" class="tb-btn">Salvar</button>
+      <button type="button" id="hl-note-remove" class="tb-btn tb-btn-danger">Remover destaque</button>
+      <button type="button" id="hl-note-close" class="tb-btn tb-btn-ghost">Fechar</button>
+    </div>
+  </div>
+</div>
+
+<h1><br>Sobre Crescimentos Relativos</h1>
+<p class="a rotatedFloralHeartBullet">
+
+
+
+<p>Em todo o cálculo lidamos com quantidades
+que estão crescendo, e com taxas de crescimento.
+Classificamos todas as quantidades em duas classes: <em>constantes</em>
+e <em>variáveis</em>. Aquelas que consideramos de valor
+fixo, e chamamos <em>constantes</em>, denotamos em geral
+algebricamente por letras do começo do
+alfabeto, tais como $a$, $b$, ou $c$; enquanto aquelas que
+consideramos capazes de crescer, ou (como os matemáticos
+dizem) de “variar,” denotamos por letras do fim
+do alfabeto, tais como $x$, $y$, $z$, $u$, $v$, $w$, ou às vezes $t$.
+
+<p>Além disso, usualmente lidamos com mais de
+uma variável ao mesmo tempo, e pensamos no modo em
+que uma variável depende da outra: por exemplo,
+pensamos no modo em que a altura alcançada
+por um projétil depende do tempo para atingir essa
+altura. Ou nos pedem para considerar um retângulo de
+área dada, e indagar como qualquer aumento no
+comprimento obrigará uma diminuição correspondente na
+largura. Ou pensamos no modo em que
+qualquer variação na inclinação de uma escada fará variar
+a altura que ela alcança.
+
+<p>Suponha que tenhamos duas variáveis tais que
+
+dependem uma da outra. Uma alteração em uma
+trará uma alteração na outra, <em>por causa</em> dessa
+dependência. Chamemos uma das variáveis de $x$, e
+a outra que depende dela de $y$.
+
+<p>Suponha que façamos $x$ variar, isto é, a
+alteramos ou imaginamos que seja alterada, acrescentando
+a ela um pedacinho que chamamos $dx$. Estamos assim fazendo $x$
+tornar-se $x + dx$. Então, porque $x$ foi alterado,
+$y$ também se terá alterado, e se tornará $y + dy$.
+Aqui o pedacinho $dy$ pode em alguns casos ser positivo, em
+outros negativo; e não será (exceto por milagre)
+do mesmo tamanho que $dx$.
+
+<p><a name="figure4">
+<img src="33283-t/images/022a.pdf.png-1.png">
+<p>
+<em>Tome dois exemplos.</em><p>
+(1) Sejam $x$ e $y$ respectivamente a base e a
+altura de um triângulo retângulo (<a href="#figure4">Figura 4</a>), do qual
+a inclinação do outro lado está fixada em $30°$. Se
+supusermos que este triângulo se expanda e ainda assim mantenha
+seus ângulos iguais aos de início, então, quando a base cresce
+de modo a se tornar $x + dx$, a altura se torna $y + dy$.
+Aqui, aumentar $x$ resulta em um aumento de $y$. O
+triangulozinho, cuja altura é $dy$, e cuja base
+é $dx$, é semelhante ao triângulo original; e
+é óbvio que o valor da razão $\dfrac{dy}{dx}$ é o
+mesmo que o da razão $\dfrac{y}{x}$. Como o ângulo é $30°$
+ver-se-á que aqui
+\[
+\frac{dy}{dx} = \frac{1}{1.73}.
+\]
+
+<p>(2) Seja $x$ representar, na <a href="#figure5">Figura 5</a>, a distância horizontal,
+a partir de uma parede, da extremidade inferior de uma escada, $AB$,
+de comprimento fixo; e seja $y$ a altura que ela
+alcança na parede. Ora, $y$ claramente depende de $x$.
+É fácil ver que, se puxarmos a extremidade inferior $A$ um
+pouco mais longe da parede, a extremidade superior $B$ descerá
+um pouco. Enunciemos isso em linguagem
+científica. Se aumentarmos $x$ para $x + dx$, então $y$
+se tornará $y - dy$; isto é, quando $x$ recebe um incremento
+positivo, o incremento que resulta em $y$ é
+negativo.
+<p><a name="figure5">
+<img src="33283-t/images/023a.pdf.png-1.png">
+
+<p>Sim, mas quanto? Suponha que a escada fosse tão
+longa que, quando a extremidade inferior $A$ estava a $19$ polegadas da
+parede, a extremidade superior $B$ alcançava justamente $15$ pés do
+chão. Agora, se você puxasse a extremidade inferior
+mais $1$ polegada para fora, quanto desceria a extremidade superior?
+Ponha tudo em polegadas: $x = 19$ polegadas, $y = 180$
+polegadas. Ora o incremento de $x$ que chamamos $dx$,
+é $1$ polegada: ou $x + dx = 20$ polegadas.
+
+<p>Quanto será $y$ diminuído? A nova altura
+será $y - dy$. Se calculamos a altura pelo teorema de Pitágoras
+(Euclides I. 47), então seremos capazes de achar quanto $dy$
+será. O comprimento da escada é</p>
+
+\[
+\sqrt{ (180)^2 + (19)^2 } = 181 \text{ polegadas}.
+\]
+Claramente então, a nova altura, que é $y - dy$, será
+tal que
+\[
+\begin{aligned}
+(y - dy)^2 &= (181)^2 - (20)^2 = 32761 - 400 = 32361,   \\
+y - dy     &= \sqrt{32361} = 179.89 \text{ polegadas}.
+\end{aligned}
+\]
+Ora $y$ é $180$, de modo que $dy$ é $180 - 179.89 = 0.11$ polegada.
+
+<p>Assim vemos que fazer $dx$ um aumento de $1$ polegada
+resultou em fazer $dy$ uma diminuição de $0.11$ polegada.
+
+<p>E a razão de $dy$ para $dx$ pode ser enunciada assim:</p>
+
+\[
+\frac{dy}{dx} = - \frac{0.11}{1}.
+\]
+
+<p>É também fácil ver que (exceto em uma posição
+particular) $dy$ será de tamanho diferente de $dx$.
+
+<p>Ora, de ponta a ponta do cálculo diferencial estamos
+caçando, caçando, caçando uma coisa curiosa,
+
+uma mera razão, a saber, a proporção que $dy$ guarda
+com $dx$ quando ambos são indefinidamente
+pequenos.
+
+<p>Deve-se notar aqui que só podemos achar
+essa razão $\dfrac{dy}{dx}$ quando $y$ e $x$ estão relacionados um
+ao outro de algum modo, de forma que sempre que $x$ varia $y$
+também varia. Por exemplo, no primeiro exemplo
+acima, se a base $x$ do triângulo for alongada,
+a altura $y$ do triângulo também se torna maior,
+e no segundo exemplo, se a distância $x$ do
+pé da escada à parede for aumentada,
+a altura $y$ alcançada pela escada diminui de
+modo correspondente, lentamente no início, mas cada
+vez mais depressa à medida que $x$ se torna maior. Nesses casos
+a relação entre $x$ e $y$ é perfeitamente definida,
+pode ser expressa matematicamente, sendo $\dfrac{y}{x} = \tan 30°$
+e $x^2 + y^2 = l^2$ (onde $l$ é o comprimento da escada)
+respectivamente, e $\dfrac{dy}{dx}$ tem o significado que achamos em
+cada caso.
+
+<p>Se, enquanto $x$ for, como antes, a distância do pé
+da escada à parede, $y$ for, em vez da
+altura alcançada, o comprimento horizontal da parede, ou
+o número de tijolos nela, ou o número de anos
+desde que foi construída, qualquer mudança em $x$ naturalmente
+não causaria mudança alguma em $y$; neste caso $\dfrac{dy}{dx}$ não tem
+significado algum, e não é possível achar
+
+uma expressão para ela. Sempre que usamos diferenciais
+$dx$, $dy$, $dz$, etc., a existência de algum tipo de
+relação entre $x$, $y$, $z$, etc., está implícita, e essa
+relação é chamada uma “função”<a name="function"/> em $x$, $y$, $z$, etc.; as
+duas expressões dadas acima, por exemplo, a saber
+$\dfrac{y}{x} = \tan 30°$ e $x^2 + y^2 = l^2$, são funções de $x$ e $y$.
+Tais expressões contêm implicitamente (isto é, contêm
+sem mostrar distintamente) os meios de expressar
+seja $x$ em termos de $y$ ou $y$ em termos de $x$, e por
+essa razão são chamadas <em>funções implícitas</em> em
+$x$ e $y$; podem ser respectivamente postas nas formas
+\[
+\begin{aligned}
+y &= x \tan 30° \quad\text{ou}\quad x = \frac{y}{\tan 30°} \\
+y &= \sqrt{ l^2 - x^2} \quad\text{ou}\quad x = \sqrt{ l^2 - y^2}.
+\end{aligned}
+\]
+
+<p>Estas últimas expressões enunciam explicitamente (isto é, distintamente)
+o valor de $x$ em termos de $y$, ou de $y$ em termos
+de $x$, e por essa razão são chamadas <em>funções
+explícitas</em> de $x$ ou $y$. Por exemplo $x^2 + 3 = 2y - 7$ é
+uma função implícita em $x$ e $y$; pode ser escrita
+$y = \dfrac{x^2 + 10}{2}$ (função explícita de $x$) ou $x = \sqrt{2y - 10}$
+(função explícita de $y$). Vemos que uma função
+explícita em $x$, $y$, $z$, etc., é simplesmente algo cujo
+valor muda quando $x$, $y$, $z$, etc., estão
+mudando, seja um de cada vez ou vários juntos.
+Por causa disso, o valor da função explícita é
+chamado a <em>variável dependente</em>, pois depende do
+valor das outras quantidades variáveis na função;
+
+essas outras variáveis são chamadas as <em>variáveis
+independentes</em><a name="indvar"/> porque o valor delas não é determinado a partir
+do valor assumido pela função. Por exemplo,
+se $u = x^2 \sin \theta$, $x$ e $\theta$ são as variáveis independentes,
+e $u$ é a variável dependente.
+
+<p>Às vezes a relação exata entre várias
+quantidades $x$, $y$, $z$ ou não é conhecida ou não é
+conveniente enunciá-la; sabe-se apenas, ou é conveniente
+enunciar, que há algum tipo de relação
+entre essas variáveis, de modo que não se pode alterar
+seja $x$ ou $y$ ou $z$ isoladamente sem afetar as outras
+quantidades; a existência de uma função em $x$, $y$, $z$ é
+então indicada pela notação<a name="notation"/> $F(x, y, z)$ (função
+implícita) ou por $x = F(y, z)$, $y = F(x, z)$ ou $z = F(x, y)$
+(função explícita). Às vezes a letra $f$ ou $\phi$ é usada
+em vez de $F$, de modo que $y = F(x)$, $y = f(x)$ e $y = \phi(x)$
+todas significam a mesma coisa, a saber, que o valor de $y$
+depende do valor de $x$ de algum modo que
+não está enunciado.
+
+<p>Chamamos a razão $\dfrac{dy}{dx}$ de “o <em>coeficiente diferencial</em> de $y$
+com respeito a $x$.” É um nome científico solene
+para esta coisa bem simples. Mas não vamos
+nos assustar com nomes solenes, quando as coisas
+em si são tão fáceis. Em vez de nos assustarmos
+simplesmente proferiremos uma breve maldição sobre a
+estupidez de dar nomes longos e engasgantes; e, tendo
+aliviado a mente, seguiremos para a coisa simples
+em si, a saber a razão $\dfrac{dy}{dx}$.
+
+
+<p>Na álgebra ordinária que você aprendeu na escola,
+você estava sempre caçando alguma quantidade
+desconhecida que chamava de $x$ ou $y$; ou às vezes
+havia duas quantidades desconhecidas a serem caçadas
+simultaneamente. Agora você tem de aprender a ir
+caçar de um modo novo; a raposa agora não é
+$x$ nem $y$. Em vez disso você tem de caçar este
+filhote curioso chamado $\dfrac{dy}{dx}$. O processo de achar o
+valor de $\dfrac{dy}{dx}$ chama-se “diferenciar.” Mas, lembre-se,
+o que se quer é o valor dessa razão quando tanto
+$dy$ quanto $dx$ são eles mesmos indefinidamente pequenos. O
+verdadeiro valor da derivada (do coeficiente diferencial) é aquele a que
+ela se aproxima no caso limite quando cada um
+deles é considerado infinitesimalmente miúdo.
+
+<p>Aprendamos agora como ir em busca de $\dfrac{dy}{dx}$.
+
+
+<p>
+<a name="note"/>
+<h2>NOTA AO CAPÍTULO III.</h2>
+
+<p><h2>Como ler diferenciais.</h2>
+
+<p>Nunca servirá cair no erro de escolar de
+pensar que $dx$ significa $d$ vezes $x$, pois $d$ não é um
+fator - significa “um elemento de” ou “um pedacinho de”
+o que vier a seguir. Lê-se $dx$ assim: “dê-équis.”
+
+<p>Caso o leitor não tenha ninguém para guiá-lo em tais
+assuntos, pode-se simplesmente dizer aqui que se lê
+coeficientes diferenciais do seguinte modo. O
+coeficiente diferencial
+
+$\dfrac{dy}{dx}$
+lê-se “<em>dê-ípsilon por dê-équis,</em>” ou “<em>dê-ípsilon sobre dê-équis.</em>”<br>
+ Assim também
+$\dfrac{du}{dt}$ se lê “<em>dê-u por dê-tê.</em>”
+
+
+<p>Coeficientes diferenciais de segunda ordem serão encontrados
+mais adiante. São assim: $\dfrac{d^2 y}{dx^2};$
+<em>que se lê “dê-dois-ípsilon sobre dê-équis-ao-quadrado,”</em>
+e significa que a operação de diferenciar $y$
+com respeito a $x$ foi (ou tem de ser) realizada
+duas vezes.
+
+<p>Outro modo de indicar que uma função foi
+diferenciada é pondo um acento no símbolo da
+função. Assim se $y=F(x)$, o que significa que $y$
+é alguma função não especificada de $x$ (veja <a href="3.html#function">aqui</a>), podemos
+escrever $F'(x)$ em vez de $\dfrac{d\bigl(F(x)\bigr)}{dx}$. Similarmente, $F''(x)$
+significará que a função original $F(x)$ foi
+diferenciada duas vezes com respeito a $x$.
+
+
+<hr>
+<nav class="chapter-nav" aria-label="Navegação do capítulo">
+  <a class="nav-prev" href="2.html">← Anterior</a>
+  <a class="nav-home" href="index.html">Página principal</a>
+  <a class="nav-next" href="4.html">Próximo →</a>
+</nav>
+<footer class="site-footer" role="contentinfo">
+  <p class="a rotatedFloralHeartBullet"></p>
+
+  <div class="manifesto">
+    <p class="manifesto-lead">
+      Este é um <strong>projeto público</strong>, sem fins lucrativos.
+      Não é permitido comercializá-lo, vendê-lo nem usá-lo como produto pago.
+    </p>
+    <p class="manifesto-quote">
+      A educação é um direito de todos.
+      O conhecimento deve ser livre sempre que não cause o mal:
+      deve circular, ensinar e libertar, nunca aprisionar quem aprende.
+    </p>
+    <p class="manifesto-sign">
+      - Thales Rodrigues
+    </p>
+  </div>
+
+  <nav class="author-links" aria-label="Redes de Thales Rodrigues">
+    <a href="https://www.linkedin.com/in/thales-oliveira-rodrigues/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    <span class="dot" aria-hidden="true">·</span>
+    <a href="https://github.com/Rodriguestmo" target="_blank" rel="noopener noreferrer">GitHub</a>
+  </nav>
+
+  <p class="footer-meta">
+    <small>
+      Tradução e adaptação PT-BR por Thales Rodrigues.
+      Texto de Silvanus P. Thompson em domínio público (Project Gutenberg).
+      Notas de contexto inspiradas na edição Gardner (1998).
+      Projeto público e gratuito.
+    </small>
+  </p>
+</footer>
+
+<script src="j/jquery.js"></script>
+<script src="j/modernizr.js"></script>
+<script src="j/dih5.js"></script>
+<script src="j/chapters-data.js"></script>
+<script src="j/glossary-data.js"></script>
+<script src="j/reader-features.js"></script>
+<script src="j/notes-toggle.js"></script>
+<!-- Analytics desativado na edição PT local -->
+</body>
+</html>

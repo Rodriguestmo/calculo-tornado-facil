@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+
+<title>Cálculo Tornado Fácil</title>
+<meta name="description" content="Capítulo XVII: integração, o processo inverso da diferenciação.">
+<meta name="author" content="Thales Rodrigues; Silvanus P. Thompson">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="googlebot" content="index, follow">
+<meta name="language" content="Portuguese">
+<meta name="keywords" content="cálculo, calculus made easy, Silvanus Thompson, cálculo diferencial, cálculo integral, matemática, educação livre, português, Martin Gardner, Cálculo Tornado Fácil, Thales Rodrigues">
+<link rel="canonical" href="https://rodriguestmo.github.io/calculo-tornado-facil/17.html">
+<link rel="alternate" hreflang="pt-BR" href="https://rodriguestmo.github.io/calculo-tornado-facil/17.html">
+<link rel="alternate" hreflang="x-default" href="https://rodriguestmo.github.io/calculo-tornado-facil/">
+
+
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
+<link rel="icon" href="favicon-16.png" type="image/png" sizes="16x16">
+<link rel="shortcut icon" href="favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png" sizes="180x180">
+<meta name="theme-color" content="#c45c26">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Cálculo Tornado Fácil">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Cálculo Tornado Fácil">
+<meta property="og:description" content="Capítulo XVII: integração, o processo inverso da diferenciação.">
+<meta property="og:url" content="https://rodriguestmo.github.io/calculo-tornado-facil/17.html">
+<meta property="og:image" content="https://rodriguestmo.github.io/calculo-tornado-facil/cover.jpg">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Cálculo Tornado Fácil">
+<meta name="twitter:description" content="Capítulo XVII: integração, o processo inverso da diferenciação.">
+<meta name="twitter:image" content="https://rodriguestmo.github.io/calculo-tornado-facil/cover.jpg">
+
+<link rel="describedby" href="https://rodriguestmo.github.io/calculo-tornado-facil/llms.txt">
+<link rel="stylesheet" href="screen.css">
+<style>
+body{counter-reset:h1 17}
+</style>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$'], ['\\[','\\]']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ["script","noscript","style","textarea","pre","code"]
+    },
+    TeX: {
+      extensions: ["AMSmath.js","AMSsymbols.js"],
+      equationNumbers: { autoNumber: "none" }
+    },
+    "HTML-CSS": {
+      availableFonts: ["TeX"],
+      linebreaks: { automatic: false },
+      styles: {
+        ".MathJax_Display": { "margin": "1.5em 0" }
+      }
+    },
+    CommonHTML: {
+      styles: { ".MJXc-display": { "margin": "1.5em 0" } }
+    },
+    showProcessingMessages: false,
+    messageStyle: "none"
+  });
+</script>
+<script type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Chapter",
+  "name": "Integração",
+  "position": 17,
+  "isPartOf": {
+    "@type": "Book",
+    "name": "Cálculo Tornado Fácil",
+    "url": "https://rodriguestmo.github.io/calculo-tornado-facil/"
+  },
+  "author": {"@type": "Person", "name": "Silvanus P. Thompson"},
+  "translator": {"@type": "Person", "name": "Thales Rodrigues"},
+  "url": "https://rodriguestmo.github.io/calculo-tornado-facil/17.html",
+  "inLanguage": "pt-BR",
+  "isAccessibleForFree": true
+}
+</script>
+</head>
+<body>
+<!-- Progresso de leitura do capítulo (scroll) -->
+<div id="read-progress" class="read-progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="Progresso de leitura do capítulo">
+  <div id="read-progress-bar" class="read-progress-bar"></div>
+</div>
+
+<!-- Barra fixa: logo + menus (marca-texto à esquerda, engrenagem à direita) -->
+<div id="site-toolbar" class="site-toolbar" role="region" aria-label="Controles do site">
+  <a class="tb-home" href="index.html">Cálculo Tornado Fácil</a>
+
+  <div class="tb-controls">
+    <!-- Marca-texto (esquerda) -->
+    <div class="tb-menu" data-menu="highlight">
+      <button type="button" class="tb-btn tb-menu-btn" id="hl-list-toggle" aria-expanded="false" aria-controls="hl-list-panel" title="Marca-texto e lista de destaques">
+        Marca-texto
+        <span id="hl-count-badge" class="hl-count-badge" hidden>0</span>
+      </button>
+      <div id="hl-list-panel" class="tb-menu-panel hl-list-panel" hidden role="dialog" aria-label="Marca-texto">
+        <div class="tb-menu-title">Marca-texto</div>
+
+        <div class="hl-color-row">
+          <span class="tb-menu-label">Cor ao destacar</span>
+          <div id="hl-color-swatches" class="hl-color-swatches" role="group" aria-label="Cor do marca-texto">
+            <button type="button" class="hl-swatch-btn cme-hl-pastel-yellow" data-color="pastel-yellow" title="Amarelo pastel" aria-label="Amarelo pastel" aria-pressed="true"></button>
+            <button type="button" class="hl-swatch-btn cme-hl-pastel-green" data-color="pastel-green" title="Verde pastel" aria-label="Verde pastel" aria-pressed="false"></button>
+            <button type="button" class="hl-swatch-btn cme-hl-pastel-blue" data-color="pastel-blue" title="Azul pastel" aria-label="Azul pastel" aria-pressed="false"></button>
+            <button type="button" class="hl-swatch-btn cme-hl-pastel-pink" data-color="pastel-pink" title="Rosa pastel" aria-label="Rosa pastel" aria-pressed="false"></button>
+            <button type="button" class="hl-swatch-btn cme-hl-pastel-orange" data-color="pastel-orange" title="Laranja pastel" aria-label="Laranja pastel" aria-pressed="false"></button>
+            <button type="button" class="hl-swatch-btn cme-hl-pastel-purple" data-color="pastel-purple" title="Roxo pastel" aria-label="Roxo pastel" aria-pressed="false"></button>
+          </div>
+          <select id="hl-color" hidden aria-hidden="true" tabindex="-1">
+            <option value="pastel-yellow">Amarelo pastel</option>
+            <option value="pastel-green">Verde pastel</option>
+            <option value="pastel-blue">Azul pastel</option>
+            <option value="pastel-pink">Rosa pastel</option>
+            <option value="pastel-orange">Laranja pastel</option>
+            <option value="pastel-purple">Roxo pastel</option>
+          </select>
+        </div>
+
+        <div class="hl-filter-row">
+          <button type="button" id="hl-filter-toggle" class="hl-filter-toggle" aria-expanded="false" aria-controls="hl-filter-body">
+            <span class="tb-menu-label">Filtrar lista</span>
+            <span id="hl-filter-toggle-label" class="hl-filter-toggle-label">mostrar</span>
+          </button>
+          <div id="hl-filter-body" class="hl-filter-body" hidden>
+            <div id="hl-filter-swatches" class="hl-color-swatches" role="group" aria-label="Filtrar destaques por cor">
+              <button type="button" class="hl-filter-btn is-active" data-filter="all" title="Todas as cores" aria-label="Todas as cores" aria-pressed="true">Tudo</button>
+              <button type="button" class="hl-swatch-btn hl-filter-btn cme-hl-pastel-yellow" data-filter="pastel-yellow" title="Filtrar amarelo" aria-label="Filtrar amarelo" aria-pressed="false"></button>
+              <button type="button" class="hl-swatch-btn hl-filter-btn cme-hl-pastel-green" data-filter="pastel-green" title="Filtrar verde" aria-label="Filtrar verde" aria-pressed="false"></button>
+              <button type="button" class="hl-swatch-btn hl-filter-btn cme-hl-pastel-blue" data-filter="pastel-blue" title="Filtrar azul" aria-label="Filtrar azul" aria-pressed="false"></button>
+              <button type="button" class="hl-swatch-btn hl-filter-btn cme-hl-pastel-pink" data-filter="pastel-pink" title="Filtrar rosa" aria-label="Filtrar rosa" aria-pressed="false"></button>
+              <button type="button" class="hl-swatch-btn hl-filter-btn cme-hl-pastel-orange" data-filter="pastel-orange" title="Filtrar laranja" aria-label="Filtrar laranja" aria-pressed="false"></button>
+              <button type="button" class="hl-swatch-btn hl-filter-btn cme-hl-pastel-purple" data-filter="pastel-purple" title="Filtrar roxo" aria-label="Filtrar roxo" aria-pressed="false"></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="hl-list-head">
+          <strong>Seus destaques</strong>
+          <span class="hl-list-hint">salvos neste navegador</span>
+        </div>
+        <div id="hl-list-body" class="hl-list-body">
+          <p class="hl-list-empty">Nenhum destaque ainda. Selecione um trecho no texto para destacar.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Configurações (direita) - só ícone de engrenagem -->
+    <div class="tb-menu" data-menu="settings">
+      <button type="button" class="tb-btn tb-menu-btn tb-btn-icon" id="settings-toggle" aria-expanded="false" aria-controls="settings-panel" title="Configurações" aria-label="Configurações">
+        <svg class="tb-gear-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false">
+          <path fill="currentColor" d="M19.14 12.94c.04-.31.06-.63.06-.94s-.02-.63-.06-.94l2.03-1.58a.5.5 0 0 0 .12-.64l-1.92-3.32a.5.5 0 0 0-.6-.22l-2.39.96a7.03 7.03 0 0 0-1.63-.94l-.36-2.54A.5.5 0 0 0 14.9 2h-3.8a.5.5 0 0 0-.49.42l-.36 2.54c-.59.24-1.13.55-1.63.94l-2.39-.96a.5.5 0 0 0-.6.22L3.71 8.08a.5.5 0 0 0 .12.64l2.03 1.58c-.04.31-.06.63-.06.94s.02.63.06.94L3.83 14.7a.5.5 0 0 0-.12.64l1.92 3.32c.14.24.43.34.68.22l2.39-.96c.5.39 1.04.7 1.63.94l.36 2.54c.05.24.25.42.49.42h3.8c.24 0 .44-.18.49-.42l.36-2.54c.59-.24 1.13-.55 1.63-.94l2.39.96c.25.1.54 0 .68-.22l1.92-3.32a.5.5 0 0 0-.12-.64l-2.03-1.58zM12 15.5A3.5 3.5 0 1 1 12 8.5a3.5 3.5 0 0 1 0 7z"/>
+        </svg>
+      </button>
+      <div id="settings-panel" class="tb-menu-panel" hidden role="dialog" aria-label="Configurações de leitura">
+        <div class="tb-menu-title">Configurações</div>
+
+        <label class="tb-menu-row">
+          <span class="tb-menu-label">Notas de Gardner</span>
+          <select id="notes-mode" aria-label="Modo de exibição das notas">
+            <option value="all">Sempre visíveis</option>
+            <option value="click">Lupa (clique para abrir)</option>
+            <option value="off">Sempre ocultadas</option>
+          </select>
+        </label>
+
+        <label class="tb-menu-row">
+          <span class="tb-menu-label">Fonte</span>
+          <select id="font-family" aria-label="Fonte do texto">
+            <option value="default">Padrão do site</option>
+            <option value="dyslexia">Dislexia</option>
+            <option value="sans">Sans-serif</option>
+            <option value="mono">Monospace</option>
+          </select>
+        </label>
+
+        <div class="tb-menu-row">
+          <span class="tb-menu-label">Tamanho</span>
+          <div class="tb-font-size" role="group" aria-label="Tamanho da fonte">
+            <button type="button" id="font-smaller" class="tb-btn tb-btn-sq" title="Diminuir fonte" aria-label="Diminuir fonte">A-</button>
+            <span id="font-size-label" class="tb-size-label" aria-live="polite">100%</span>
+            <button type="button" id="font-larger" class="tb-btn tb-btn-sq" title="Aumentar fonte" aria-label="Aumentar fonte">A+</button>
+          </div>
+        </div>
+
+        <div class="tb-menu-row">
+          <span class="tb-menu-label">Tema</span>
+          <button type="button" id="toggle-theme" class="tb-btn" title="Alternar tema claro/escuro" aria-pressed="false">
+            <span class="theme-label">Tema escuro</span>
+          </button>
+        </div>
+
+        <div class="tb-menu-row tb-menu-row-danger">
+          <span class="tb-menu-label">Dados locais</span>
+          <button type="button" id="clear-site-data" class="tb-btn tb-btn-danger" title="Apagar destaques, notas e preferências salvos neste navegador">
+            Limpar cache do site
+          </button>
+          <span class="tb-menu-hint">Remove destaques, notas, progresso e preferências salvos neste navegador.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Popup de seleção: destacar + nota -->
+<div id="hl-popup" class="hl-popup" hidden role="dialog" aria-label="Destacar trecho">
+  <button type="button" id="hl-btn-mark" class="tb-btn">Destacar</button>
+  <button type="button" id="hl-btn-note" class="tb-btn">Destacar + nota</button>
+  <button type="button" id="hl-btn-cancel" class="tb-btn tb-btn-ghost">Cancelar</button>
+</div>
+
+<!-- Tooltip flutuante da nota ao passar o mouse -->
+<div id="hl-float-tip" class="hl-float-tip" hidden role="tooltip"></div>
+
+<!-- Confirmação: limpar cache -->
+<div id="clear-data-modal" class="hl-modal" hidden role="dialog" aria-modal="true" aria-labelledby="clear-data-title">
+  <div class="hl-modal-box">
+    <h3 id="clear-data-title">Limpar cache do site?</h3>
+    <p class="hl-quote" style="font-style:normal;opacity:0.95">
+      Isso apaga <strong>tudo</strong> que foi salvo neste navegador:
+      destaques, notas, preferências (fonte, tema, tamanho), cor do marca-texto
+      e qualquer outro dado local do site.
+    </p>
+    <p class="hl-quote" style="font-style:normal;opacity:0.85">
+      Esta ação não pode ser desfeita.
+    </p>
+    <div class="hl-modal-actions">
+      <button type="button" id="clear-data-confirm" class="tb-btn tb-btn-danger">Sim, limpar tudo</button>
+      <button type="button" id="clear-data-cancel" class="tb-btn tb-btn-ghost">Cancelar</button>
+    </div>
+  </div>
+</div>
+
+<!-- Modal de nota do highlight -->
+<div id="hl-note-modal" class="hl-modal" hidden role="dialog" aria-modal="true" aria-labelledby="hl-note-title">
+  <div class="hl-modal-box">
+    <h3 id="hl-note-title">Nota do trecho</h3>
+    <p id="hl-note-quote" class="hl-quote"></p>
+    <label class="hl-note-label">Cor deste destaque</label>
+    <div id="hl-note-swatches" class="hl-color-swatches" role="group" aria-label="Cor deste destaque">
+      <button type="button" class="hl-swatch-btn cme-hl-pastel-yellow" data-color="pastel-yellow" title="Amarelo pastel" aria-label="Amarelo pastel"></button>
+      <button type="button" class="hl-swatch-btn cme-hl-pastel-green" data-color="pastel-green" title="Verde pastel" aria-label="Verde pastel"></button>
+      <button type="button" class="hl-swatch-btn cme-hl-pastel-blue" data-color="pastel-blue" title="Azul pastel" aria-label="Azul pastel"></button>
+      <button type="button" class="hl-swatch-btn cme-hl-pastel-pink" data-color="pastel-pink" title="Rosa pastel" aria-label="Rosa pastel"></button>
+      <button type="button" class="hl-swatch-btn cme-hl-pastel-orange" data-color="pastel-orange" title="Laranja pastel" aria-label="Laranja pastel"></button>
+      <button type="button" class="hl-swatch-btn cme-hl-pastel-purple" data-color="pastel-purple" title="Roxo pastel" aria-label="Roxo pastel"></button>
+    </div>
+    <select id="hl-note-color" hidden aria-hidden="true" tabindex="-1">
+      <option value="pastel-yellow">Amarelo pastel</option>
+      <option value="pastel-green">Verde pastel</option>
+      <option value="pastel-blue">Azul pastel</option>
+      <option value="pastel-pink">Rosa pastel</option>
+      <option value="pastel-orange">Laranja pastel</option>
+      <option value="pastel-purple">Roxo pastel</option>
+    </select>
+    <label class="hl-note-label" for="hl-note-input">Sua nota (salva só neste navegador)</label>
+    <textarea id="hl-note-input" rows="4" maxlength="2000" placeholder="Escreva uma anotação opcional..."></textarea>
+    <div class="hl-modal-actions">
+      <button type="button" id="hl-note-save" class="tb-btn">Salvar</button>
+      <button type="button" id="hl-note-remove" class="tb-btn tb-btn-danger">Remover destaque</button>
+      <button type="button" id="hl-note-close" class="tb-btn tb-btn-ghost">Fechar</button>
+    </div>
+  </div>
+</div>
+
+<h1><br>Integração</h1>
+<p class="a rotatedFloralHeartBullet">
+
+<p>O grande segredo já foi revelado: esse misterioso
+símbolo $\int$, que no fundo não passa de um $S$ alongado,
+significa apenas “a soma de,” ou “a soma de todas as
+quantidades tais como.” Portanto se parece com aquele
+outro símbolo $\sum$ (o <em>Sigma</em> grego), que também é um
+sinal de soma. Há, contudo, esta diferença na prática
+dos matemáticos quanto ao uso desses sinais: enquanto
+$\sum$ em geral indica a soma de um número de quantidades
+finitas, o sinal de integral $\int$ em geral indica a
+soma de um vasto número de pequenas quantidades de
+magnitude indefinidamente miúda, meros elementos, de
+fato, que compõem o total desejado. Assim $\int dy = y$,
+e $\int dx = x$.
+
+<p>Qualquer um entende como o todo de qualquer coisa
+pode ser concebido como feito de um monte de pedacinhos;
+e quanto menores os pedaços, maior o número deles.
+Assim, uma linha de uma polegada pode ser concebida
+como feita de $10$ pedaços, cada um com $\frac{1}{10}$ de polegada;
+ou de $100$ partes, cada uma com $\frac{1}{100}$ de polegada;
+
+ou de $1.000.000$ de partes, cada uma com $\frac{1}{1.000.000}$ de
+polegada; ou, empurrando o pensamento até os limites
+do concebível, pode ser vista como feita de um número
+infinito de elementos, cada um infinitesimalmente pequeno.
+
+<p>Sim, você dirá, mas qual a utilidade de pensar
+em qualquer coisa desse jeito? Por que não pensá-la
+de uma vez como um todo? A razão simples é que há
+um vasto número de casos em que não se consegue
+calcular o tamanho da coisa como um todo sem somar
+um monte de partes pequenas. O processo de
+“<em>integrar</em>” serve para nos permitir calcular totais
+que de outro modo não conseguiríamos estimar
+diretamente.
+
+<p>Tomemos primeiro um ou dois casos simples para
+nos familiarizarmos com essa noção de somar um
+monte de partes separadas.
+
+<p>Considere a série:</p>
+
+\[
+1 + \tfrac{1}{2} + \tfrac{1}{4} + \tfrac{1}{8}
+  + \tfrac{1}{16} + \tfrac{1}{32} + \tfrac{1}{64} + \text{etc.}
+\]
+
+<p>Aqui cada membro da série se forma tomando a
+metade do valor do anterior. Qual o valor do total
+se pudéssemos seguir até um número infinito de
+termos? Todo estudante sabe que a resposta é $2$.
+Pense nisso, se quiser, como uma linha. Comece com
+uma polegada; some meia polegada; some um quarto;
+some um oitavo; e assim por diante. Se em qualquer
+ponto da operação pararmos, ainda faltará um pedaço
+para completar as $2$ polegadas inteiras; e o pedaço
+faltante será sempre do mesmo tamanho do último
+pedaço acrescentado. Assim, se depois de juntar $1$,
+$\frac{1}{2}$ e $\frac{1}{4}$ pararmos, faltará $\frac{1}{4}$. Se formos até
+acrescentar $\frac{1}{64}$, ainda faltará $\frac{1}{64}$. O resto
+necessário será sempre igual ao último termo
+acrescentado. Só com um número infinito de operações
+chegaríamos às $2$ polegadas de fato. Na prática
+chegaríamos quando os pedaços ficassem tão pequenos
+que não pudessem mais ser desenhados - isso seria
+depois de cerca de $10$ termos, pois o décimo primeiro
+é $\frac{1}{1024}$. Se quisermos ir tão longe que nem uma
+máquina de medir de Whitworth detectasse, bastaria
+ir até cerca de $20$ termos. Um microscópio não
+mostraria sequer o $18^{\text{o}}$ termo! Portanto o número
+infinito de operações não é coisa tão pavorosa assim.
+A <em>integral</em> é simplesmente o lote inteiro. Mas, como
+veremos, há casos em que o cálculo integral nos
+permite obter o total <em>exato</em> que resultaria de um
+número infinito de operações. Em tais casos o
+cálculo integral nos dá um modo <em>rápido</em> e fácil de
+chegar a um resultado que de outro modo exigiria um
+trabalho interminável e elaborado. Por isso é melhor
+não perdermos tempo e aprendermos <em>como integrar</em>.
+
+<a name="figure46">
+<p><img src="33283-t/images/195a.pdf.png-1.png">
+
+
+<p><h2>Inclinações de curvas, e as próprias curvas.</h2>
+
+<p>Façamos uma pequena investigação preliminar sobre
+as inclinações das curvas. Pois vimos que diferenciar
+uma curva significa achar uma expressão para sua
+inclinação (ou para suas inclinações em pontos
+diferentes). Podemos realizar o processo inverso de
+reconstruir a curva inteira se a inclinação (ou as
+inclinações) nos for prescrita?
+
+<p>Volte ao caso (2) <a href="10.html#Case2">aqui</a>. Temos a mais simples das
+curvas, uma reta inclinada com a equação
+\[
+y = ax+b.
+\]
+
+<p><a name="figure47">
+<p><img src="33283-t/images/197a.pdf.png-1.png">
+
+<p>Sabemos que aqui $b$ representa a altura inicial de
+$y$ quando $x= 0$, e que $a$, que é o mesmo que $\dfrac{dy}{dx}$,
+é a “inclinação” da reta. A reta tem inclinação
+constante. Ao longo dela os triângulos elementares
+<p><a name="figure197b">
+<p><img src="33283-t/images/197b.pdf.png-1.png">
+<p>têm a mesma proporção entre altura e base.
+Suponha que tomássemos os $dx$ e $dy$ de magnitude
+finita, de modo que $10$ $dx$ formassem uma polegada;
+então haveria dez triângulos pequeninos como
+
+<p>
+<a name="figure198a">
+<p><img src="33283-t/images/198a.pdf.png-1.png">
+
+<p>Agora, suponha que nos ordenassem reconstruir a
+“curva,” partindo apenas da informação de que
+$\dfrac{dy}{dx} = a$. O que poderíamos fazer? Ainda tomando
+os pequenos $d$ de tamanho finito, poderíamos desenhar
+$10$ deles, todos com a mesma inclinação, e depois
+juntá-los, ponta com ponta, assim:
+<p><a name="figure48">
+<p><img src="33283-t/images/198b.pdf.png-1.png">
+<p>
+E, como a inclinação é a mesma para todos, eles se
+juntariam para formar, como na <a href="#figure48">Figura 48</a>, uma reta
+inclinada com a inclinação correta $\dfrac{dy}{dx} = a$. E quer
+tomemos os $dy$ e $dx$ finitos ou infinitamente
+pequenos, como são todos iguais, claramente
+$\dfrac{y}{x} = a$, se contarmos $y$ como o total de todos os
+$dy$, e $x$ como o total de todos os $dx$. Mas onde
+devemos colocar essa reta inclinada? Devemos partir
+da origem $O$, ou mais acima? Como a única informação
+que temos é a da inclinação, não temos instrução
+sobre a altura particular acima de $O$; de fato a
+altura inicial fica indeterminada. A inclinação será
+a mesma, qualquer que seja a altura inicial. Portanto
+arriscamos um chute do que possa ser pedido e
+começamos a reta inclinada a uma altura $C$ acima de
+$O$. Isto é, temos a equação
+\[
+y = ax + C.
+\]
+
+<p>Fica evidente agora<a name="constant"/> que, neste caso, a constante
+acrescentada significa o valor particular que $y$ tem
+quando $x = 0$.
+
+<p>Tomemos agora um caso mais difícil, o de uma linha
+cuja inclinação não é constante, mas sobe cada vez
+mais. Suponhamos que a inclinação para cima fique
+cada vez maior em proporção ao crescimento de $x$. Em
+símbolos:</p>
+
+\[
+\frac{dy}{dx} = ax.
+\]
+Ou, para um caso concreto, tome $a = \frac{1}{5}$, de modo que
+\[
+\frac{dy}{dx} = \tfrac{1}{5} x.
+\]
+
+<p>Então o melhor é começar calculando alguns valores
+da inclinação em diferentes valores de $x$, e também
+desenhar pequeninos diagramas deles.
+
+   Quando
+<table>
+  <tr><td>$x =0$</td><td>$ \frac{dy}{dx} = 0,   $</td><td><a name="figure200a1">
+<p><img src="33283-t/images/200a1.pdf.png-1.png"></td></tr>
+<tr><td>$x =1$</td><td>$ \frac{dy}{dx} = 0.2, $</td><td><a name="figure200a2">
+<p><img src="33283-t/images/200a2.pdf.png-1.png"></td></tr>
+<tr><td>$x =2$</td><td>$ \frac{dy}{dx} = 0.4, $</td><td><a name="figure200a3">
+<p><img src="33283-t/images/200a3.pdf.png-1.png"></td></tr>
+<tr><td>$x =3$</td><td>$ \frac{dy}{dx} = 0.6, $</td><td><a name="figure200a4">
+<p><img src="33283-t/images/200a4.pdf.png-1.png"></td></tr>
+<tr><td>$x =4$</td><td>$ \frac{dy}{dx} = 0.8, $</td><td><a name="figure200a5">
+<p><img src="33283-t/images/200a5.pdf.png-1.png"></td></tr>
+<tr><td>$x =5$</td><td>$ \frac{dy}{dx} = 1.0. $</td><td><a name="figure200a6">
+<p><img src="33283-t/images/200a6.pdf.png-1.png"></td></tr>
+</table>
+
+<p>Agora tente juntar as peças, colocando cada uma de
+modo que o meio de sua base fique na distância
+correta à direita, e de modo que se encaixem nos
+cantos; assim (<a href="#figure49">Figura 49</a>). O resultado, claro, não é
+uma curva suave: mas é uma aproximação de uma. Se
+tivéssemos tomado pedaços com metade do comprimento
+e em número duplo, como na <a href="#figure50">Figura 50</a>, teríamos uma
+melhor aproximação. Mas
+
+para uma curva perfeita deveríamos tomar cada $dx$ e
+seu $dy$ correspondente infinitesimalmente pequenos, e
+infinitamente numerosos.
+
+<a name="figure49">
+<p><img src="33283-t/images/200b.pdf.png-1.png">
+
+<a name="figure50">
+<p><img src="33283-t/images/201a.pdf.png-1.png">
+<p>Então, quanto deveria valer qualquer $y$? Claramente,
+em qualquer ponto $P$ da curva, o valor de $y$ será a
+soma de todos os pequeninos $dy$ desde $0$ até aquele
+nível, isto é, $\int dy = y$. E como cada $dy$ é igual a
+$\frac{1}{5}x · dx$, segue que o $y$ inteiro será igual à soma de
+todos os pedacinhos como $\frac{1}{5}x · dx$, ou, como
+escreveríamos, $\int \tfrac{1}{5}x · dx$.
+
+<p>Agora, se $x$ tivesse sido constante, $\int \tfrac{1}{5}x · dx$
+teria sido o mesmo que $\frac{1}{5} x \int dx$, ou $\frac{1}{5}x^2$. Mas $x$
+começou sendo $0$, e aumenta até o valor particular de
+$x$ no ponto $P$, de modo que seu valor médio de $0$ até
+aquele ponto é $\frac{1}{2}x$. Logo $\int \tfrac{1}{5} x\, dx = \tfrac{1}{10} x^2$; ou
+$y=\frac{1}{10}x^2$.
+
+<p>Mas, como no caso anterior, isso exige o
+acréscimo de uma constante indeterminada $C$, porque
+não nos disseram a que altura acima da origem a
+curva começará quando $x = 0$. Assim escrevemos, como
+equação da curva desenhada na <a href="#figure51">Figura 51</a>,
+\[
+y = \tfrac{1}{10}x^2 + C.
+\]
+<a name="figure51">
+<p><img src="33283-t/images/202a.pdf.png-1.png">
+
+<p>
+<hr><h3>Exercícios XVI</h3>
+
+(1) Ache a soma última de $\frac{2}{3} + \frac{1}{3} + \frac{1}{6} + \frac{1}{12} + \frac{1}{24} + \text{etc}$.
+
+<p>(2) Mostre que a série $1 - \frac{1}{2} + \frac{1}{3} - \frac{1}{4} + \frac{1}{5} - \frac{1}{6} + \frac{1}{7}$ etc.
+é convergente, e ache sua soma até $8$ termos.
+
+<p>(3) Se $\log_\epsilon(1+x) = x - \dfrac{x^2}{2} + \dfrac{x^3}{3} - \dfrac{x^4}{4} + \text{etc}$., ache $\log_\epsilon 1.3$.
+
+<p>(4) Seguindo um raciocínio semelhante ao explicado
+neste capítulo, ache $y$,</p>
+
+\[
+(a) \text{se}\; \frac{dy}{dx} = \tfrac{1}{4} x;&nbsp;&nbsp;
+(b) \text{se}\; \frac{dy}{dx} = \cos x.
+\]
+
+<p>(5) Se $\dfrac{dy}{dx} = 2x + 3$, ache $y$.
+
+
+<p><h3 class="answers">Respostas</h3>
+<p>(1)   $1\frac{1}{3}$.
+
+<p>(2)   $0.6344$.
+
+<p>(3)   $0.2624$.
+
+
+<p>(4)   (<em>a</em> ) $y = \frac{1}{8} x^2 + C$;&nbsp;&nbsp;
+     (<em>b</em> ) $y = \sin x + C$.
+
+<p>(5)   $y = x^2 + 3x + C$.
+<br>
+<!-- Soluções comerciais removidas: projeto público e sem fins lucrativos -->
+
+
+<hr>
+<nav class="chapter-nav" aria-label="Navegação do capítulo">
+  <a class="nav-prev" href="16.html">← Anterior</a>
+  <a class="nav-home" href="index.html">Página principal</a>
+  <a class="nav-next" href="18.html">Próximo →</a>
+</nav>
+<footer class="site-footer" role="contentinfo">
+  <p class="a rotatedFloralHeartBullet"></p>
+
+  <div class="manifesto">
+    <p class="manifesto-lead">
+      Este é um <strong>projeto público</strong>, sem fins lucrativos.
+      Não é permitido comercializá-lo, vendê-lo nem usá-lo como produto pago.
+    </p>
+    <p class="manifesto-quote">
+      A educação é um direito de todos.
+      O conhecimento deve ser livre sempre que não cause o mal:
+      deve circular, ensinar e libertar, nunca aprisionar quem aprende.
+    </p>
+    <p class="manifesto-sign">
+      - Thales Rodrigues
+    </p>
+  </div>
+
+  <nav class="author-links" aria-label="Redes de Thales Rodrigues">
+    <a href="https://www.linkedin.com/in/thales-oliveira-rodrigues/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    <span class="dot" aria-hidden="true">·</span>
+    <a href="https://github.com/Rodriguestmo" target="_blank" rel="noopener noreferrer">GitHub</a>
+  </nav>
+
+  <p class="footer-meta">
+    <small>
+      Tradução e adaptação PT-BR por Thales Rodrigues.
+      Texto de Silvanus P. Thompson em domínio público (Project Gutenberg).
+      Notas de contexto inspiradas na edição Gardner (1998).
+      Projeto público e gratuito.
+    </small>
+  </p>
+</footer>
+
+<script src="j/jquery.js"></script>
+<script src="j/modernizr.js"></script>
+<script src="j/dih5.js"></script>
+<script src="j/chapters-data.js"></script>
+<script src="j/glossary-data.js"></script>
+<script src="j/reader-features.js"></script>
+<script src="j/notes-toggle.js"></script>
+<!-- Analytics desativado na edição PT local -->
+</body>
+</html>

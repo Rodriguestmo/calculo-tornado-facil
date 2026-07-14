@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+
+<title>Cálculo Tornado Fácil</title>
+<meta name="description" content="Capítulo VIII: diferenciação quando o tempo varia; velocidade e aceleração.">
+<meta name="author" content="Thales Rodrigues; Silvanus P. Thompson">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="googlebot" content="index, follow">
+<meta name="language" content="Portuguese">
+<meta name="keywords" content="cálculo, calculus made easy, Silvanus Thompson, cálculo diferencial, cálculo integral, matemática, educação livre, português, Martin Gardner, Cálculo Tornado Fácil, Thales Rodrigues">
+<link rel="canonical" href="https://rodriguestmo.github.io/calculo-tornado-facil/8.html">
+<link rel="alternate" hreflang="pt-BR" href="https://rodriguestmo.github.io/calculo-tornado-facil/8.html">
+<link rel="alternate" hreflang="x-default" href="https://rodriguestmo.github.io/calculo-tornado-facil/">
+
+
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
+<link rel="icon" href="favicon-16.png" type="image/png" sizes="16x16">
+<link rel="shortcut icon" href="favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png" sizes="180x180">
+<meta name="theme-color" content="#c45c26">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Cálculo Tornado Fácil">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Cálculo Tornado Fácil">
+<meta property="og:description" content="Capítulo VIII: diferenciação quando o tempo varia; velocidade e aceleração.">
+<meta property="og:url" content="https://rodriguestmo.github.io/calculo-tornado-facil/8.html">
+<meta property="og:image" content="https://rodriguestmo.github.io/calculo-tornado-facil/cover.jpg">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Cálculo Tornado Fácil">
+<meta name="twitter:description" content="Capítulo VIII: diferenciação quando o tempo varia; velocidade e aceleração.">
+<meta name="twitter:image" content="https://rodriguestmo.github.io/calculo-tornado-facil/cover.jpg">
+
+<link rel="describedby" href="https://rodriguestmo.github.io/calculo-tornado-facil/llms.txt">
+<link rel="stylesheet" href="screen.css">
+<style>
+body{counter-reset:h1 8}
+</style>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$'], ['\\[','\\]']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ["script","noscript","style","textarea","pre","code"]
+    },
+    TeX: {
+      extensions: ["AMSmath.js","AMSsymbols.js"],
+      equationNumbers: { autoNumber: "none" }
+    },
+    "HTML-CSS": {
+      availableFonts: ["TeX"],
+      linebreaks: { automatic: false },
+      styles: {
+        ".MathJax_Display": { "margin": "1.5em 0" }
+      }
+    },
+    CommonHTML: {
+      styles: { ".MJXc-display": { "margin": "1.5em 0" } }
+    },
+    showProcessingMessages: false,
+    messageStyle: "none"
+  });
+</script>
+<script type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Chapter",
+  "name": "Quando o Tempo Varia",
+  "position": 8,
+  "isPartOf": {
+    "@type": "Book",
+    "name": "Cálculo Tornado Fácil",
+    "url": "https://rodriguestmo.github.io/calculo-tornado-facil/"
+  },
+  "author": {"@type": "Person", "name": "Silvanus P. Thompson"},
+  "translator": {"@type": "Person", "name": "Thales Rodrigues"},
+  "url": "https://rodriguestmo.github.io/calculo-tornado-facil/8.html",
+  "inLanguage": "pt-BR",
+  "isAccessibleForFree": true
+}
+</script>
+</head>
+<body>
+<!-- Progresso de leitura do capítulo (scroll) -->
+<div id="read-progress" class="read-progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="Progresso de leitura do capítulo">
+  <div id="read-progress-bar" class="read-progress-bar"></div>
+</div>
+
+<!-- Barra fixa: logo + menus (marca-texto à esquerda, engrenagem à direita) -->
+<div id="site-toolbar" class="site-toolbar" role="region" aria-label="Controles do site">
+  <a class="tb-home" href="index.html">Cálculo Tornado Fácil</a>
+
+  <div class="tb-controls">
+    <!-- Marca-texto (esquerda) -->
+    <div class="tb-menu" data-menu="highlight">
+      <button type="button" class="tb-btn tb-menu-btn" id="hl-list-toggle" aria-expanded="false" aria-controls="hl-list-panel" title="Marca-texto e lista de destaques">
+        Marca-texto
+        <span id="hl-count-badge" class="hl-count-badge" hidden>0</span>
+      </button>
+      <div id="hl-list-panel" class="tb-menu-panel hl-list-panel" hidden role="dialog" aria-label="Marca-texto">
+        <div class="tb-menu-title">Marca-texto</div>
+
+        <div class="hl-color-row">
+          <span class="tb-menu-label">Cor ao destacar</span>
+          <div id="hl-color-swatches" class="hl-color-swatches" role="group" aria-label="Cor do marca-texto">
+            <button type="button" class="hl-swatch-btn cme-hl-pastel-yellow" data-color="pastel-yellow" title="Amarelo pastel" aria-label="Amarelo pastel" aria-pressed="true"></button>
+            <button type="button" class="hl-swatch-btn cme-hl-pastel-green" data-color="pastel-green" title="Verde pastel" aria-label="Verde pastel" aria-pressed="false"></button>
+            <button type="button" class="hl-swatch-btn cme-hl-pastel-blue" data-color="pastel-blue" title="Azul pastel" aria-label="Azul pastel" aria-pressed="false"></button>
+            <button type="button" class="hl-swatch-btn cme-hl-pastel-pink" data-color="pastel-pink" title="Rosa pastel" aria-label="Rosa pastel" aria-pressed="false"></button>
+            <button type="button" class="hl-swatch-btn cme-hl-pastel-orange" data-color="pastel-orange" title="Laranja pastel" aria-label="Laranja pastel" aria-pressed="false"></button>
+            <button type="button" class="hl-swatch-btn cme-hl-pastel-purple" data-color="pastel-purple" title="Roxo pastel" aria-label="Roxo pastel" aria-pressed="false"></button>
+          </div>
+          <select id="hl-color" hidden aria-hidden="true" tabindex="-1">
+            <option value="pastel-yellow">Amarelo pastel</option>
+            <option value="pastel-green">Verde pastel</option>
+            <option value="pastel-blue">Azul pastel</option>
+            <option value="pastel-pink">Rosa pastel</option>
+            <option value="pastel-orange">Laranja pastel</option>
+            <option value="pastel-purple">Roxo pastel</option>
+          </select>
+        </div>
+
+        <div class="hl-filter-row">
+          <button type="button" id="hl-filter-toggle" class="hl-filter-toggle" aria-expanded="false" aria-controls="hl-filter-body">
+            <span class="tb-menu-label">Filtrar lista</span>
+            <span id="hl-filter-toggle-label" class="hl-filter-toggle-label">mostrar</span>
+          </button>
+          <div id="hl-filter-body" class="hl-filter-body" hidden>
+            <div id="hl-filter-swatches" class="hl-color-swatches" role="group" aria-label="Filtrar destaques por cor">
+              <button type="button" class="hl-filter-btn is-active" data-filter="all" title="Todas as cores" aria-label="Todas as cores" aria-pressed="true">Tudo</button>
+              <button type="button" class="hl-swatch-btn hl-filter-btn cme-hl-pastel-yellow" data-filter="pastel-yellow" title="Filtrar amarelo" aria-label="Filtrar amarelo" aria-pressed="false"></button>
+              <button type="button" class="hl-swatch-btn hl-filter-btn cme-hl-pastel-green" data-filter="pastel-green" title="Filtrar verde" aria-label="Filtrar verde" aria-pressed="false"></button>
+              <button type="button" class="hl-swatch-btn hl-filter-btn cme-hl-pastel-blue" data-filter="pastel-blue" title="Filtrar azul" aria-label="Filtrar azul" aria-pressed="false"></button>
+              <button type="button" class="hl-swatch-btn hl-filter-btn cme-hl-pastel-pink" data-filter="pastel-pink" title="Filtrar rosa" aria-label="Filtrar rosa" aria-pressed="false"></button>
+              <button type="button" class="hl-swatch-btn hl-filter-btn cme-hl-pastel-orange" data-filter="pastel-orange" title="Filtrar laranja" aria-label="Filtrar laranja" aria-pressed="false"></button>
+              <button type="button" class="hl-swatch-btn hl-filter-btn cme-hl-pastel-purple" data-filter="pastel-purple" title="Filtrar roxo" aria-label="Filtrar roxo" aria-pressed="false"></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="hl-list-head">
+          <strong>Seus destaques</strong>
+          <span class="hl-list-hint">salvos neste navegador</span>
+        </div>
+        <div id="hl-list-body" class="hl-list-body">
+          <p class="hl-list-empty">Nenhum destaque ainda. Selecione um trecho no texto para destacar.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Configurações (direita) - só ícone de engrenagem -->
+    <div class="tb-menu" data-menu="settings">
+      <button type="button" class="tb-btn tb-menu-btn tb-btn-icon" id="settings-toggle" aria-expanded="false" aria-controls="settings-panel" title="Configurações" aria-label="Configurações">
+        <svg class="tb-gear-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false">
+          <path fill="currentColor" d="M19.14 12.94c.04-.31.06-.63.06-.94s-.02-.63-.06-.94l2.03-1.58a.5.5 0 0 0 .12-.64l-1.92-3.32a.5.5 0 0 0-.6-.22l-2.39.96a7.03 7.03 0 0 0-1.63-.94l-.36-2.54A.5.5 0 0 0 14.9 2h-3.8a.5.5 0 0 0-.49.42l-.36 2.54c-.59.24-1.13.55-1.63.94l-2.39-.96a.5.5 0 0 0-.6.22L3.71 8.08a.5.5 0 0 0 .12.64l2.03 1.58c-.04.31-.06.63-.06.94s.02.63.06.94L3.83 14.7a.5.5 0 0 0-.12.64l1.92 3.32c.14.24.43.34.68.22l2.39-.96c.5.39 1.04.7 1.63.94l.36 2.54c.05.24.25.42.49.42h3.8c.24 0 .44-.18.49-.42l.36-2.54c.59-.24 1.13-.55 1.63-.94l2.39.96c.25.1.54 0 .68-.22l1.92-3.32a.5.5 0 0 0-.12-.64l-2.03-1.58zM12 15.5A3.5 3.5 0 1 1 12 8.5a3.5 3.5 0 0 1 0 7z"/>
+        </svg>
+      </button>
+      <div id="settings-panel" class="tb-menu-panel" hidden role="dialog" aria-label="Configurações de leitura">
+        <div class="tb-menu-title">Configurações</div>
+
+        <label class="tb-menu-row">
+          <span class="tb-menu-label">Notas de Gardner</span>
+          <select id="notes-mode" aria-label="Modo de exibição das notas">
+            <option value="all">Sempre visíveis</option>
+            <option value="click">Lupa (clique para abrir)</option>
+            <option value="off">Sempre ocultadas</option>
+          </select>
+        </label>
+
+        <label class="tb-menu-row">
+          <span class="tb-menu-label">Fonte</span>
+          <select id="font-family" aria-label="Fonte do texto">
+            <option value="default">Padrão do site</option>
+            <option value="dyslexia">Dislexia</option>
+            <option value="sans">Sans-serif</option>
+            <option value="mono">Monospace</option>
+          </select>
+        </label>
+
+        <div class="tb-menu-row">
+          <span class="tb-menu-label">Tamanho</span>
+          <div class="tb-font-size" role="group" aria-label="Tamanho da fonte">
+            <button type="button" id="font-smaller" class="tb-btn tb-btn-sq" title="Diminuir fonte" aria-label="Diminuir fonte">A-</button>
+            <span id="font-size-label" class="tb-size-label" aria-live="polite">100%</span>
+            <button type="button" id="font-larger" class="tb-btn tb-btn-sq" title="Aumentar fonte" aria-label="Aumentar fonte">A+</button>
+          </div>
+        </div>
+
+        <div class="tb-menu-row">
+          <span class="tb-menu-label">Tema</span>
+          <button type="button" id="toggle-theme" class="tb-btn" title="Alternar tema claro/escuro" aria-pressed="false">
+            <span class="theme-label">Tema escuro</span>
+          </button>
+        </div>
+
+        <div class="tb-menu-row tb-menu-row-danger">
+          <span class="tb-menu-label">Dados locais</span>
+          <button type="button" id="clear-site-data" class="tb-btn tb-btn-danger" title="Apagar destaques, notas e preferências salvos neste navegador">
+            Limpar cache do site
+          </button>
+          <span class="tb-menu-hint">Remove destaques, notas, progresso e preferências salvos neste navegador.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Popup de seleção: destacar + nota -->
+<div id="hl-popup" class="hl-popup" hidden role="dialog" aria-label="Destacar trecho">
+  <button type="button" id="hl-btn-mark" class="tb-btn">Destacar</button>
+  <button type="button" id="hl-btn-note" class="tb-btn">Destacar + nota</button>
+  <button type="button" id="hl-btn-cancel" class="tb-btn tb-btn-ghost">Cancelar</button>
+</div>
+
+<!-- Tooltip flutuante da nota ao passar o mouse -->
+<div id="hl-float-tip" class="hl-float-tip" hidden role="tooltip"></div>
+
+<!-- Confirmação: limpar cache -->
+<div id="clear-data-modal" class="hl-modal" hidden role="dialog" aria-modal="true" aria-labelledby="clear-data-title">
+  <div class="hl-modal-box">
+    <h3 id="clear-data-title">Limpar cache do site?</h3>
+    <p class="hl-quote" style="font-style:normal;opacity:0.95">
+      Isso apaga <strong>tudo</strong> que foi salvo neste navegador:
+      destaques, notas, preferências (fonte, tema, tamanho), cor do marca-texto
+      e qualquer outro dado local do site.
+    </p>
+    <p class="hl-quote" style="font-style:normal;opacity:0.85">
+      Esta ação não pode ser desfeita.
+    </p>
+    <div class="hl-modal-actions">
+      <button type="button" id="clear-data-confirm" class="tb-btn tb-btn-danger">Sim, limpar tudo</button>
+      <button type="button" id="clear-data-cancel" class="tb-btn tb-btn-ghost">Cancelar</button>
+    </div>
+  </div>
+</div>
+
+<!-- Modal de nota do highlight -->
+<div id="hl-note-modal" class="hl-modal" hidden role="dialog" aria-modal="true" aria-labelledby="hl-note-title">
+  <div class="hl-modal-box">
+    <h3 id="hl-note-title">Nota do trecho</h3>
+    <p id="hl-note-quote" class="hl-quote"></p>
+    <label class="hl-note-label">Cor deste destaque</label>
+    <div id="hl-note-swatches" class="hl-color-swatches" role="group" aria-label="Cor deste destaque">
+      <button type="button" class="hl-swatch-btn cme-hl-pastel-yellow" data-color="pastel-yellow" title="Amarelo pastel" aria-label="Amarelo pastel"></button>
+      <button type="button" class="hl-swatch-btn cme-hl-pastel-green" data-color="pastel-green" title="Verde pastel" aria-label="Verde pastel"></button>
+      <button type="button" class="hl-swatch-btn cme-hl-pastel-blue" data-color="pastel-blue" title="Azul pastel" aria-label="Azul pastel"></button>
+      <button type="button" class="hl-swatch-btn cme-hl-pastel-pink" data-color="pastel-pink" title="Rosa pastel" aria-label="Rosa pastel"></button>
+      <button type="button" class="hl-swatch-btn cme-hl-pastel-orange" data-color="pastel-orange" title="Laranja pastel" aria-label="Laranja pastel"></button>
+      <button type="button" class="hl-swatch-btn cme-hl-pastel-purple" data-color="pastel-purple" title="Roxo pastel" aria-label="Roxo pastel"></button>
+    </div>
+    <select id="hl-note-color" hidden aria-hidden="true" tabindex="-1">
+      <option value="pastel-yellow">Amarelo pastel</option>
+      <option value="pastel-green">Verde pastel</option>
+      <option value="pastel-blue">Azul pastel</option>
+      <option value="pastel-pink">Rosa pastel</option>
+      <option value="pastel-orange">Laranja pastel</option>
+      <option value="pastel-purple">Roxo pastel</option>
+    </select>
+    <label class="hl-note-label" for="hl-note-input">Sua nota (salva só neste navegador)</label>
+    <textarea id="hl-note-input" rows="4" maxlength="2000" placeholder="Escreva uma anotação opcional..."></textarea>
+    <div class="hl-modal-actions">
+      <button type="button" id="hl-note-save" class="tb-btn">Salvar</button>
+      <button type="button" id="hl-note-remove" class="tb-btn tb-btn-danger">Remover destaque</button>
+      <button type="button" id="hl-note-close" class="tb-btn tb-btn-ghost">Fechar</button>
+    </div>
+  </div>
+</div>
+
+<h1><br>Quando o Tempo Varia</h1>
+<p class="a rotatedFloralHeartBullet">
+
+<p>Alguns dos problemas mais importantes do cálculo
+são aqueles em que o tempo é a variável independente, e
+precisamos pensar nos valores de alguma outra
+quantidade que varia quando o tempo varia. Algumas
+coisas ficam maiores conforme o tempo passa; outras
+ficam menores. A distância que um trem já percorreu
+desde o ponto de partida vai sempre aumentando conforme o tempo
+avança. Árvores ficam mais altas à medida que os anos passam. Qual
+está crescendo com maior taxa: uma planta de $12$ polegadas de altura
+que em um mês chega a $14$ polegadas, ou uma
+árvore de $12$ pés de altura que em um ano chega a $14$ pés?
+
+<p>Neste capítulo vamos fazer muito uso
+da palavra <em>taxa</em> (ou <em>razão</em>). Nada a ver com taxa de pobreza, ou
+taxa de água (exceto que mesmo aí a palavra sugere
+uma proporção - uma razão - tantos pence na libra).
+Nada a ver sequer com taxa de natalidade ou taxa de mortalidade,
+embora essas palavras sugiram tantos nascimentos ou mortes
+por mil habitantes. Quando um automóvel
+passa zunindo por nós, dizemos: Que taxa terrível! Quando
+um gastador esbanja o dinheiro, comentamos
+que aquele rapaz vive a uma taxa prodigiosa.
+
+O que queremos dizer com <em>taxa</em>? Em ambos os casos estamos
+fazendo uma comparação mental entre algo que está
+acontecendo e o intervalo de tempo que leva para
+acontecer. Se o automóvel voa por nós a $10$ jardas
+por segundo, um simples pedacinho de aritmética mental
+mostra que isso equivale - enquanto dura - a uma
+taxa de $600$ jardas por minuto, ou mais de $20$ milhas por
+hora.
+
+<p>Em que sentido é verdade que uma velocidade de
+$10$ jardas por segundo é a mesma que $600$ jardas
+por minuto? Dez jardas não são o mesmo que $600$ jardas,
+nem um segundo é a mesma coisa que um minuto.
+O que queremos dizer ao afirmar que a <em>taxa</em> é a mesma
+é o seguinte: que a proporção entre a distância
+percorrida e o tempo gasto para percorrê-la é a
+mesma nos dois casos.
+
+<p>Tome outro exemplo. Um homem pode ter apenas
+algumas libras em seu poder e ainda assim ser capaz de
+gastar dinheiro à taxa de milhões por ano - desde que
+continue a gastar nessa taxa por apenas alguns
+minutos. Suponha que você entregue um xelim sobre
+o balcão para pagar alguma mercadoria; e suponha que a
+operação dure exatamente um segundo. Então, durante
+essa breve operação, você está se desfazendo do seu dinheiro
+à taxa de $1$ xelim por segundo, que é a
+mesma taxa que £$3$ por minuto, ou £$180$ por hora, ou
+£$4320$ por dia, ou £$1.576.800$ por ano! Se você tiver
+£$10$ no bolso, pode continuar gastando dinheiro
+à taxa de um milhão por ano por apenas $5\frac{1}{4}$ minutos.
+
+<p>Dizem que o Sandy não estava em Londres
+
+há mais de cinco minutos quando “bang went saxpence.” Se
+ele gastasse dinheiro a essa taxa o dia inteiro,
+digamos por $12$ horas, estaria gastando $6$ xelins
+
+por hora, ou £$3$. $12$<em>s</em> . por dia, ou £$21$. $12$<em>s</em> . por semana,
+sem contar o Sábado (Sawbbath).
+
+<p>Agora tente colocar algumas dessas ideias em notação
+diferencial.
+
+<p>Seja $y$ neste caso o dinheiro, e seja $t$ o
+tempo.
+
+<p>Se você está gastando dinheiro, e a quantia que
+gasta em um curto intervalo $dt$ se chama $dy$, a <em>taxa</em> de
+gasto será $\dfrac{dy}{dt}$, ou melhor, deveria ser escrita
+com um sinal de menos, como $-\dfrac{dy}{dt}$, porque $dy$ é um <em>decremento</em>,
+não um incremento. Mas o dinheiro não é um bom exemplo
+para o cálculo, porque em geral chega e sai
+aos saltos, não por um fluxo contínuo - você pode ganhar
+£$200$ por ano, mas isso não fica entrando o dia
+todo num fiozinho fino; chega só semanalmente,
+ou mensalmente, ou trimestralmente, em pedaços; e sua despesa
+também sai em pagamentos súbitos.
+
+<p>Uma ilustração mais adequada da ideia de taxa é
+fornecida pela velocidade de um corpo em movimento. De
+Londres (estação de Euston) a Liverpool são $200$ milhas.
+Se um trem deixa Londres às $7$ horas e chega
+a Liverpool às $11$ horas, você sabe que, como
+viajou $200$ milhas em $4$ horas, sua taxa média deve
+ter sido $50$ milhas por hora; porque $\frac{200}{4} = \frac{50}{1}$. Aqui
+você está realmente fazendo uma comparação mental entre
+
+a distância percorrida e o tempo gasto para
+percorrê-la. Você está dividindo uma pela outra. Se $y$ é
+a distância total, e $t$ o tempo total, claramente a
+taxa média é $\dfrac{y}{t}$. Agora, a velocidade não foi de fato
+constante o caminho todo: na partida, e durante a
+desaceleração no fim da viagem, a velocidade era
+menor. Provavelmente em alguma parte, correndo ladeira abaixo,
+a velocidade passou de $60$ milhas por hora. Se, durante
+qualquer elemento particular de tempo $dt$, o correspondente
+elemento de distância percorrida foi $dy$, então naquela
+parte da viagem a velocidade era $\dfrac{dy}{dt}$. A <em>taxa</em> com
+que uma quantidade (no presente caso, a <em>distância</em>)
+está mudando em relação à outra quantidade (neste
+caso, o <em>tempo</em>) se expressa corretamente, então, enunciando o
+coeficiente diferencial de uma em relação à outra.
+Uma <em>velocidade</em>, cientificamente expressa, é a taxa com que
+uma distância muito pequena em qualquer direção dada está sendo
+percorrida; e pode, portanto, ser escrita
+\[
+v = \dfrac{dy}{dt}.
+\]
+
+<p>Mas se a velocidade $v$ não é uniforme, então deve
+estar aumentando ou diminuindo. A taxa com
+que uma velocidade está aumentando se chama <em>aceleração</em>.
+Se um corpo em movimento está, em qualquer instante particular, ganhando
+uma velocidade adicional $dv$ em um elemento de tempo $dt$,
+então a aceleração $a$ naquele instante pode ser escrita
+\[
+a = \dfrac{dv}{dt};
+\]
+
+mas $dv$ é ele próprio $d\left( \dfrac{dy}{dt} \right)$. Logo podemos pôr
+\[
+a = \frac{d\left( \dfrac{dy}{dt} \right)}{dt};
+\]
+e isso se escreve usualmente $a = \dfrac{d^2y}{dt^2}$;
+ou a aceleração é a segunda derivada
+da distância, em relação ao tempo. A aceleração se
+exprime como uma mudança de velocidade por unidade de tempo, por
+exemplo, como tantos pés por segundo por segundo;
+a notação usada sendo $\text{pés} ÷ \text{segundo}^2$.
+
+<p>Quando um trem de ferrovia acaba de começar a se mover, sua
+velocidade $v$ é pequena; mas está ganhando velocidade rapidamente - está
+sendo apressado, ou acelerado, pelo esforço da
+locomotiva. Assim seu $\dfrac{d^2y}{dt^2}$ é grande. Quando já atingiu a
+velocidade máxima, não está mais sendo acelerado, de modo que
+então $\dfrac{d^2y}{dt^2}$ caiu a zero. Mas quando se aproxima do
+ponto de parada sua velocidade começa a diminuir; pode,
+de fato, diminuir muito rápido se os freios forem
+acionados, e durante esse período de <em>desaceleração</em> ou afrouxamento
+do ritmo, o valor de $\dfrac{dv}{dt}$, isto é, de $\dfrac{d^2y}{dt^2}$ será negativo.
+
+<p>Acelerar uma massa $m$ exige a aplicação
+contínua de força. A força necessária para acelerar
+uma massa é proporcional à massa, e também é
+proporcional à aceleração que está sendo comunicada.
+Logo podemos escrever para a força $f$ a
+expressão</p>
+
+\[
+\begin{aligned}
+f &= ma;\\
+ \text{ou}\;\;  f &= m \frac{dv}{dt}; \\
+ \text{ou}\;\;  f &= m \frac{d^2y}{dt^2}.
+\end{aligned}
+\]
+
+<p>O produto de uma massa pela velocidade com que ela
+vai se chama sua <em>quantidade de movimento</em> (ou <em>momento linear</em>), e em símbolos é $mv$.
+Se diferenciarmos a quantidade de movimento em relação ao tempo
+obteremos $\dfrac{d(mv)}{dt}$ para a taxa de mudança da quantidade de movimento.
+Mas, como $m$ é uma quantidade constante, isso
+pode ser escrito $m \dfrac{dv}{dt}$, que vemos acima ser o mesmo
+que $f$. Quer dizer, a força pode ser expressa ou
+como massa vezes aceleração, ou como taxa de mudança da
+quantidade de movimento.
+
+<p>De novo, se uma força é empregada para mover algo
+(contra uma contrforça igual e oposta), ela realiza
+<em>trabalho</em>; e a quantidade de trabalho realizado se mede pelo
+produto da força pela distância (em sua
+própria direção) através da qual seu ponto de aplicação
+avança. Assim, se uma força $f$ avança
+por um comprimento $y$, o trabalho realizado (que podemos
+chamar $w$) será
+\[
+w = f × y;
+\]
+onde tomamos $f$ como uma força constante. Se a força
+varia em diferentes partes do intervalo $y$, então precisamos
+encontrar uma expressão para seu valor de ponto a ponto.
+Se $f$ for a força ao longo do pequeno elemento de comprimento $dy$,
+a quantidade de trabalho realizado será $f × dy$. Mas como
+$dy$ é apenas um elemento de comprimento, apenas um elemento de
+trabalho será realizado. Se escrevemos $w$ para o trabalho, então um
+elemento de trabalho será $dw$; e temos
+\[
+\begin{aligned}
+dw &= f × dy;
+\end{aligned}
+\]
+
+que pode ser escrito
+\[
+\begin{aligned}
+dw &= ma·dy; \\
+\text{ ou}\;
+dw &= m \frac{d^2y}{dt^2}· dy; \\
+ \text{ou}\;
+dw &= m \frac{dv}{dt}· dy.
+\end{aligned}
+\]
+Além disso, podemos transpor a expressão e escrever
+\[
+\begin{aligned}
+\frac{dw}{dy} &= f.
+\end{aligned}
+\]
+
+<p>Isso nos dá ainda uma terceira definição de <em>força</em>; que
+se ela está sendo usada para produzir um deslocamento em qualquer
+direção, a força (nessa direção) é igual à
+taxa com que o trabalho está sendo realizado por unidade de comprimento
+nessa direção. Nesta última frase a palavra
+<em>taxa</em> claramente não é usada no sentido de tempo, mas no seu
+significado de razão ou proporção.
+
+<p>Sir Isaac Newton, que foi (junto com Leibniz)
+um inventor dos métodos do cálculo, considerava
+todas as quantidades que estavam variando como <em>fluindo</em>; e a
+razão que hoje em dia chamamos de coeficiente diferencial
+ele considerava a taxa de fluir, ou a
+<em>fluxão</em> da quantidade em questão. Ele não usava
+a notação do $dy$ e $dx$, e $dt$ (esta foi devida
+a Leibniz), mas tinha em vez disso uma notação própria.
+Se $y$ era uma quantidade que variava, ou “fluía,” então seu
+símbolo para a taxa de variação (ou “fluxão”) era
+
+$\dot{y}$. Se $x$ era a variável, então sua fluxão se chamava $\dot{x}$.
+O ponto sobre a letra indicava que ela tinha sido
+diferenciada. Mas essa notação não nos diz
+qual é a variável independente em relação à
+qual a diferenciação foi efetuada. Quando
+vemos $\dfrac{dy}{dt}$ sabemos que $y$ deve ser diferenciado em
+relação a $t$. Se vemos $\dfrac{dy}{dx}$ sabemos que $y$ deve ser
+diferenciado em relação a $x$. Mas se vemos apenas $\dot{y}$,
+não podemos dizer sem olhar o contexto
+se isso deve significar $\dfrac{dy}{dx}$ ou $\dfrac{dy}{dt}$ ou $\dfrac{dy}{dz}$, ou qual é
+a outra variável. Assim, portanto, essa notação fluxional
+informa menos do que a notação diferencial,
+e em consequência caiu em grande parte em desuso.
+Mas sua simplicidade lhe dá uma vantagem se apenas
+concordarmos em usá-la exclusivamente para aqueles casos em que
+o <em>tempo</em> é a variável independente. Nesse caso $\dot{y}$
+significará $\dfrac{dy}{dt}$ e $\dot{u}$ significará $\dfrac{du}{dt}$;
+e $\ddot{x}$ significará $\dfrac{d^2x}{dt^2}$.
+
+<p>Adotando essa notação fluxional podemos escrever as
+equações mecânicas consideradas nos parágrafos
+acima, como segue:
+
+<table>
+<tr><td>distância</td><td>$x$</td></tr>
+<tr><td>velocidade</td><td>$v = \dot{x}$</td></tr>
+<tr><td>aceleração</td><td>$a = \dot{v} = \ddot{x}$</td></tr>
+<tr><td>força</td><td>$f = m\dot{v} = m\ddot{x}$</td></tr>
+<tr><td>trabalho</td><td>$w = x × m \ddot{x}$</td></tr>
+</table>
+
+<p><hr>
+
+
+<p>
+<p><em>Exemplos</em>
+(1) Um corpo se move de modo que a distância $x$ (em pés),
+que ele percorre a partir de um certo ponto $O$, é dada pela
+relação $x = 0.2t^2 + 10.4$, onde $t$ é o tempo em
+segundos decorridos desde um certo instante. Encontre a
+velocidade e a aceleração $5$ segundos depois que o corpo
+começou a se mover, e encontre também os valores correspondentes
+quando a distância coberta é $100$ pés. Encontre também
+a velocidade média durante os primeiros $10$ segundos de
+seu movimento. (Suponha distâncias e movimento para a
+direita como positivos.)
+
+   Agora
+   \[
+x = 0.2t^2 + 10.4 \\
+v = \dot{x}  = \frac{dx}{dt} = 0.4t;\quad\text{e}\quad
+a = \ddot{x} = \frac{d^2x}{dt^2} = 0.4 = \text{constante.}
+\]
+
+<p>Quando $t = 0$, $x = 10.4$ e $v = 0$. O corpo partiu
+de um ponto $10.4$ pés à direita do ponto $O$;
+e o tempo foi contado a partir do instante em que o
+corpo partiu.
+
+<p>Quando $t = 5$, $v = 0.4 × 5 = 2 \text{ pés/s}$; $a = 0.4 \text{ pés/s}^2$.
+
+<p>
+Quando $x = 100$, $100 = 0.2t^2 + 10.4$, ou $t^2 = 448$,
+e $t = 21.17 \text{ s}$; $v = 0.4 × 21.17 = 8.468 \text{ pés/s}$.
+
+<p>Quando $t = 10$,</p>
+
+\[
+\begin{gathered}
+\text{distância percorrida} = 0.2 × 10^2 + 10.4 - 10.4 = 20 \text{ pés} \\
+\text{Velocidade média} = \tfrac{20}{10} = 2 \text{ pés/s}
+\end{gathered}
+\]
+
+<p>(É a mesma velocidade que a velocidade no meio
+do intervalo, $t = 5$; pois, sendo a aceleração constante,
+a velocidade variou uniformemente de zero
+quando $t = 0$ até $4 \text{ pés/s}$ quando $t = 10$.)
+
+
+<p>(2) No problema acima suponhamos</p>
+
+\[
+\begin{gathered}
+x = 0.2t^2 + 3t + 10.4.\\
+v = \dot{x} = \dfrac{dx}{dt} = 0.4t + 3 \\
+a = \ddot{x} = \frac{d^2x}{dt^2} = 0.4 = \text{constante}.
+\end{gathered}
+\]
+
+<p>Quando $t = 0$, $x = 10.4$ e $v = 3$ pés/s; o tempo é
+contado a partir do instante em que o corpo passou por um
+ponto $10.4$ pés do ponto $O$, sua velocidade sendo então
+já $3$ pés/s. Para encontrar o tempo decorrido desde que começou
+a se mover, faça $v = 0$; então $0.4t + 3 = 0$, $t= -\frac{3}{.4}
+= -7.5$ s.
+O corpo começou a se mover $7.5$ s antes de se começar
+a observar o tempo; $5$ segundos depois disso dão
+$t = -2.5$ e $v = 0.4 × -2.5 + 3 = 2$ pés/s.
+
+<p>Quando $x = 100$ pés,</p>
+
+\[
+100 = 0.2t^2 + 3t + 10.4;\quad \text{ou } t^2 + 15t - 448 = 0;
+\]
+logo $t = 14.95$ s, $v = 0.4 × 14.95 + 3 = 8.98$ pés/s.
+
+<p>Para encontrar a distância percorrida durante os $10$ primeiros
+segundos do movimento é preciso saber quão longe o
+corpo estava do ponto $O$ quando partiu.
+
+<p>Quando $t = -7.5$,</p>
+
+\[
+x = 0.2 × (-7.5)^2 - 3 × 7.5 + 10.4 = -0.85 \text{ pés},
+\]
+isto é, $0.85$ pés à esquerda do ponto $O$.
+
+<p>Agora, quando $t = 2.5$,</p>
+
+\[
+x = 0.2 × 2.5^2 + 3 × 2.5 + 10.4 = 19.15.
+\]
+
+<p>Assim, em $10$ segundos, a distância percorrida foi
+$19.15 + 0.85 = 20$ pés, e</p>
+
+\[
+\text{a velocidade média } = \tfrac{20}{10} = 2 \text{ pés/s}.
+\]
+
+<p>(3) Considere um problema semelhante quando a distância
+é dada por $x = 0.2t^2 - 3t + 10.4$. Então $v = 0.4t - 3$,
+$a = 0.4 = \text{constante}$. Quando $t = 0$, $x = 10.4$ como antes, e
+
+$v = -3$; de modo que o corpo se movia na direção
+oposta ao seu movimento nos casos anteriores. Como a
+aceleração é positiva, porém, vemos que essa
+velocidade diminuirá conforme o tempo passa, até se tornar
+zero, quando $v = 0$ ou $0.4t - 3 = 0$; ou $t = 7.5$ s. Depois
+disso, a velocidade se torna positiva; e $5$ segundos
+depois que o corpo partiu, $t = 12.5$, e</p>
+
+\[
+v = 0.4 × 12.5 - 3 = 2 \text{ pés/s}.
+\]
+
+<p>Quando $x = 100$,</p>
+
+\[
+100 = 0.2t^2 - 3t + 10.4,\quad \text{ou } t^2 - 15t - 448 = 0, \\
+ 
+t = 29.95;\ v = 0.4 × 29.95 - 3 = 8.98 \text{ pés/s}.
+\]
+
+<p>Quando $v$ é zero, $x = 0.2 × 7.5^2 - 3 × 7.5 + 10.4 = -0.85$,
+informando-nos que o corpo se move de volta até $0.85$ pés
+além do ponto $O$ antes de parar. Dez segundos depois</p>
+
+\[
+t = 17.5 \text{ e } x = 0.2 × 17.5^2 - 3 × 17.5 + 10.4 = 19.15.
+\]
+$\text{A distância percorrida} = .85 + 19.15 = 20.0$, e a
+velocidade média é de novo $2$ pés/s.
+
+<p>(4) Considere ainda outro problema do mesmo tipo
+com $x = 0.2t^3 - 3t^2 + 10.4$; $v = 0.6t^2 - 6t$; $a = 1.2t - 6$.
+A aceleração não é mais constante.
+
+<p>Quando $t = 0$, $x = 10.4$, $v = 0$, $a = -6$. O corpo está
+em repouso, mas pronto a se mover com uma aceleração
+negativa, isto é, a ganhar uma velocidade em direção ao
+ponto $O$.
+
+<p>(5) Se tivermos $x = 0.2t^3 - 3t + 10.4$, então $v = 0.6t^2 - 3$,
+e $a = 1.2t$.
+
+<p>Quando $t = 0$, $x = 10.4$; $v = -3$; $a = 0$.
+
+<p>O corpo se move em direção ao ponto $O$ com
+
+uma velocidade de $3$ pés/s, e exatamente naquele instante a
+velocidade é uniforme.
+
+<p>Vemos que as condições do movimento podem sempre
+ser imediatamente averiguadas a partir da equação distância-tempo
+e de sua primeira e segunda funções derivadas. Nos
+dois últimos casos a velocidade média durante os primeiros
+$10$ segundos e a velocidade $5$ segundos depois da partida
+não serão mais as mesmas, porque a velocidade não está
+aumentando uniformemente, a aceleração não sendo mais
+constante.
+
+<p>(6) O ângulo $\theta$ (em radianos) girado por uma
+roda é dado por $\theta = 3 + 2t - 0.1t^3$, onde $t$ é o
+tempo em segundos a partir de um certo instante; encontre a
+velocidade angular $\omega$ e a aceleração angular $\alpha$,
+(<em>a</em> ) depois de $1$ segundo; (<em>b</em> ) depois de ter realizado uma
+revolução. Em que instante ela está em repouso, e quantas
+revoluções realizou até esse instante?
+
+<p>Escrevendo para a aceleração</p>
+
+\[
+\omega =  \dot{\theta} = \dfrac{d\theta}{dt} = 2 - 0.3t^2,\quad
+\alpha = \ddot{\theta} = \dfrac{d^2\theta}{dt^2} = -0.6t.
+\]
+
+<p>Quando $t = 0$, $\theta = 3$; $\omega = 2$ rad/s; $\alpha = 0$.
+
+<p>Quando $t = 1$,</p>
+
+\[
+\omega = 2 - 0.3 = 1.7 \text{ rad/s};\quad \alpha = -0.6 \text{ rad/s}^2.
+\]
+
+<p>Isto é uma retardação; a roda está diminuindo a velocidade.
+
+<p>Depois de $1$ revolução</p>
+
+\[
+\theta = 2\pi = 6.28;\quad 6.28 = 3 + 2t - 0.1t^3.
+\]
+
+<p>Traçando o gráfico $\theta = 3 + 2t - 0.1t^3$, podemos obter
+o valor ou valores de $t$ para os quais $\theta = 6.28$; estes
+são $2.11$ e $3.03$ (há um terceiro valor negativo).
+
+
+<p>Quando $t = 2.11$,</p>
+
+\[
+\begin{gathered}
+\theta = 6.28 \\
+\omega = 2 - 1.34 = 0.66 \text{ rad/s}; \\
+\alpha = -1.27 \text{ rad/s}^2.
+\end{gathered}
+\]
+Quando $t = 3.03$,
+\[
+\begin{gathered}
+\theta = 6.28 \\
+\omega = 2 - 2.754 = -0.754 \text{ rad/s}; \\
+\alpha = -1.82 \text{ rad/s}^2.
+\end{gathered}
+\]
+
+<p>A velocidade está invertida. A roda está evidentemente
+em repouso entre esses dois instantes; está em repouso quando
+$\omega = 0$, isto é, quando $0 = 2 - 0.3t^3$, ou quando $t = 2.58 \text{ s}$,
+ela realizou</p>
+
+\[
+\frac{\theta}{2\pi}
+  = \frac{3 + 2 × 2.58 - 0.1 × 2.58^3}{6.28} = 1.025 \text{ revoluções}.
+\]
+
+<p>
+<hr><h3>Exercícios V</h3>
+
+<p>
+
+(1) Se $y = a + bt^2 + ct^4$; encontre $\dfrac{dy}{dt}$ e $\dfrac{d^2y}{dt^2}$.
+<p>&nbsp;&nbsp;<em>Resp.</em> $\dfrac{dy}{dt} = 2bt + 4ct^3$;&nbsp;&nbsp; $\dfrac{d^2y}{dt^2} = 2b + 12ct^2$.
+
+<p>(2) Um corpo caindo livremente no espaço descreve em $t$ segundos
+um espaço $s$, em pés, expresso pela equação
+$s = 16t^2$. Trace uma curva mostrando a relação entre
+$s$ e $t$. Determine também a velocidade do corpo nos
+seguintes tempos a partir de sua soltura: $t = 2$
+segundos; $t = 4.6$ segundos; $t = 0.01$ segundo.
+
+<p>(3) Se $x = at - \frac{1}{2}gt^2$; encontre $\dot{x}$ e $\ddot{x}$.
+
+<p>(4) Se um corpo se move segundo a lei</p>
+
+\[
+s = 12 - 4.5t + 6.2t^2,
+\]
+encontre sua velocidade quando $t = 4$ segundos; $s$ estando em pés.
+
+
+<p>(5) Encontre a aceleração do corpo mencionado no
+exemplo precedente. A aceleração é a mesma
+para todos os valores de $t$?
+
+<p>(6) O ângulo $\theta$ (em radianos) girado por
+uma roda em revolução está ligado ao tempo $t$ (em
+segundos) decorrido desde o início; pela lei</p>
+
+\[
+\theta = 2.1 - 3.2t + 4.8t^2.
+\]
+
+<p>Encontre a velocidade angular (em radianos por segundo) dessa
+roda quando $1\frac{1}{2}$ segundos tiverem decorrido. Encontre também
+sua aceleração angular.
+
+<p>(7) Um cursor se move de modo que, durante a primeira parte de
+seu movimento, sua distância $s$ em polegadas a partir do ponto de
+partida é dada pela expressão</p>
+
+\[
+s = 6.8t^3 - 10.8t;\quad\text{$t$ estando em segundos}.
+\]
+
+<p>Encontre a expressão para a velocidade e a aceleração
+em qualquer instante; e daí encontre a velocidade e a
+aceleração depois de $3$ segundos.
+
+<p>(8) O movimento de um balão em ascensão é tal que sua
+altura $h$, em milhas, é dada a qualquer instante pela
+expressão $h = 0.5 + \frac{1}{10}\sqrt[3]{t-125}$; $t$ estando em segundos.
+
+<p>Encontre uma expressão para a velocidade e a aceleração
+em qualquer instante. Trace curvas para mostrar a variação
+de altura, velocidade e aceleração durante os primeiros
+dez minutos da subida.
+
+<p>(9) Uma pedra é lançada para baixo na água e
+sua profundidade $p$ em metros a qualquer instante $t$ segundos após
+atingir a superfície da água é dada pela
+expressão</p>
+
+\[
+p = \frac{4}{4+t^2} + 0.8t - 1.
+\]
+
+<p>Encontre uma expressão para a velocidade e a aceleração
+em qualquer instante. Encontre a velocidade e a aceleração
+depois de $10$ segundos.
+
+<p>(10) Um corpo se move de tal modo que os espaços
+descritos no tempo $t$ a partir da partida são dados por
+$s = t^n$, onde $n$ é uma constante. Encontre o valor de $n$
+quando a velocidade é dobrada do 5º para o 10º
+segundo; encontre-o também quando a velocidade é numericamente
+igual à aceleração ao fim do 10º segundo.
+
+
+<p><h3 class="answers">Respostas</h3>
+
+<p>(2)   64; 147,2; e 0,32 pés por segundo.
+
+
+<p>(3)   $x = a - gt$; $\ddot{x} = -g$.
+
+<p>(4)   $45,1$ pés por segundo.
+
+<p>(5)   $12,4$ pés por segundo por segundo.&nbsp;&nbsp; Sim.
+
+<p>(6)  Velocidade angular ${} = 11,2$ radianos por segundo; aceleração
+  angular ${}= 9,6$ radianos por segundo por segundo.
+
+<p>(7)   $v = 20.4t^2 - 10.8$.&nbsp;&nbsp; $a = 40.8t$.&nbsp;&nbsp; $172,8$ pol./s, $122,4 \text{ pol./s}^2$.
+
+<p>(8)   $v = \dfrac{1}{30 \sqrt[3]{(t - 125)^2}}$,&nbsp;&nbsp; $a = - \dfrac{1}{45 \sqrt[3]{(t - 125)^5}}$.
+
+<p>(9)   $v = 0.8 - \dfrac{8t}{(4 + t^2)^2}$,&nbsp;&nbsp; $a = \dfrac{24t^2 - 32}{(4 + t^2)^3}$,&nbsp;&nbsp; $0,7926$ e $0,00211$.
+
+<p>(10)   $n = 2$, $n = 11$.
+<p>
+<br>
+<!-- Soluções comerciais removidas: projeto público e sem fins lucrativos -->
+
+
+<hr>
+<nav class="chapter-nav" aria-label="Navegação do capítulo">
+  <a class="nav-prev" href="7.html">← Anterior</a>
+  <a class="nav-home" href="index.html">Página principal</a>
+  <a class="nav-next" href="9.html">Próximo →</a>
+</nav>
+<footer class="site-footer" role="contentinfo">
+  <p class="a rotatedFloralHeartBullet"></p>
+
+  <div class="manifesto">
+    <p class="manifesto-lead">
+      Este é um <strong>projeto público</strong>, sem fins lucrativos.
+      Não é permitido comercializá-lo, vendê-lo nem usá-lo como produto pago.
+    </p>
+    <p class="manifesto-quote">
+      A educação é um direito de todos.
+      O conhecimento deve ser livre sempre que não cause o mal:
+      deve circular, ensinar e libertar, nunca aprisionar quem aprende.
+    </p>
+    <p class="manifesto-sign">
+      - Thales Rodrigues
+    </p>
+  </div>
+
+  <nav class="author-links" aria-label="Redes de Thales Rodrigues">
+    <a href="https://www.linkedin.com/in/thales-oliveira-rodrigues/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    <span class="dot" aria-hidden="true">·</span>
+    <a href="https://github.com/Rodriguestmo" target="_blank" rel="noopener noreferrer">GitHub</a>
+  </nav>
+
+  <p class="footer-meta">
+    <small>
+      Tradução e adaptação PT-BR por Thales Rodrigues.
+      Texto de Silvanus P. Thompson em domínio público (Project Gutenberg).
+      Notas de contexto inspiradas na edição Gardner (1998).
+      Projeto público e gratuito.
+    </small>
+  </p>
+</footer>
+
+<script src="j/jquery.js"></script>
+<script src="j/modernizr.js"></script>
+<script src="j/dih5.js"></script>
+<script src="j/chapters-data.js"></script>
+<script src="j/glossary-data.js"></script>
+<script src="j/reader-features.js"></script>
+<script src="j/notes-toggle.js"></script>
+<!-- Analytics desativado na edição PT local -->
+</body>
+</html>

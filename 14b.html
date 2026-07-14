@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+
+<title>Cálculo Tornado Fácil</title>
+<meta name="description" content="Capítulo XIV(b): a curva de decaimento.">
+<meta name="author" content="Thales Rodrigues; Silvanus P. Thompson">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="googlebot" content="index, follow">
+<meta name="language" content="Portuguese">
+<meta name="keywords" content="cálculo, calculus made easy, Silvanus Thompson, cálculo diferencial, cálculo integral, matemática, educação livre, português, Martin Gardner, Cálculo Tornado Fácil, Thales Rodrigues">
+<link rel="canonical" href="https://rodriguestmo.github.io/calculo-tornado-facil/14b.html">
+<link rel="alternate" hreflang="pt-BR" href="https://rodriguestmo.github.io/calculo-tornado-facil/14b.html">
+<link rel="alternate" hreflang="x-default" href="https://rodriguestmo.github.io/calculo-tornado-facil/">
+
+
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
+<link rel="icon" href="favicon-16.png" type="image/png" sizes="16x16">
+<link rel="shortcut icon" href="favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png" sizes="180x180">
+<meta name="theme-color" content="#c45c26">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Cálculo Tornado Fácil">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Cálculo Tornado Fácil">
+<meta property="og:description" content="Capítulo XIV(b): a curva de decaimento.">
+<meta property="og:url" content="https://rodriguestmo.github.io/calculo-tornado-facil/14b.html">
+<meta property="og:image" content="https://rodriguestmo.github.io/calculo-tornado-facil/cover.jpg">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Cálculo Tornado Fácil">
+<meta name="twitter:description" content="Capítulo XIV(b): a curva de decaimento.">
+<meta name="twitter:image" content="https://rodriguestmo.github.io/calculo-tornado-facil/cover.jpg">
+
+<link rel="describedby" href="https://rodriguestmo.github.io/calculo-tornado-facil/llms.txt">
+<link rel="stylesheet" href="screen.css">
+<style>
+body{counter-reset:h1 14}
+</style>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$'], ['\\[','\\]']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ["script","noscript","style","textarea","pre","code"]
+    },
+    TeX: {
+      extensions: ["AMSmath.js","AMSsymbols.js"],
+      equationNumbers: { autoNumber: "none" }
+    },
+    "HTML-CSS": {
+      availableFonts: ["TeX"],
+      linebreaks: { automatic: false },
+      styles: {
+        ".MathJax_Display": { "margin": "1.5em 0" }
+      }
+    },
+    CommonHTML: {
+      styles: { ".MJXc-display": { "margin": "1.5em 0" } }
+    },
+    showProcessingMessages: false,
+    messageStyle: "none"
+  });
+</script>
+<script type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Chapter",
+  "name": "(b) A Curva de Decaimento",
+  "position": 14,
+  "isPartOf": {
+    "@type": "Book",
+    "name": "Cálculo Tornado Fácil",
+    "url": "https://rodriguestmo.github.io/calculo-tornado-facil/"
+  },
+  "author": {"@type": "Person", "name": "Silvanus P. Thompson"},
+  "translator": {"@type": "Person", "name": "Thales Rodrigues"},
+  "url": "https://rodriguestmo.github.io/calculo-tornado-facil/14b.html",
+  "inLanguage": "pt-BR",
+  "isAccessibleForFree": true
+}
+</script>
+</head>
+<body>
+<!-- Progresso de leitura do capítulo (scroll) -->
+<div id="read-progress" class="read-progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="Progresso de leitura do capítulo">
+  <div id="read-progress-bar" class="read-progress-bar"></div>
+</div>
+
+<!-- Barra fixa: logo + menus (marca-texto à esquerda, engrenagem à direita) -->
+<div id="site-toolbar" class="site-toolbar" role="region" aria-label="Controles do site">
+  <a class="tb-home" href="index.html">Cálculo Tornado Fácil</a>
+
+  <div class="tb-controls">
+    <!-- Marca-texto (esquerda) -->
+    <div class="tb-menu" data-menu="highlight">
+      <button type="button" class="tb-btn tb-menu-btn" id="hl-list-toggle" aria-expanded="false" aria-controls="hl-list-panel" title="Marca-texto e lista de destaques">
+        Marca-texto
+        <span id="hl-count-badge" class="hl-count-badge" hidden>0</span>
+      </button>
+      <div id="hl-list-panel" class="tb-menu-panel hl-list-panel" hidden role="dialog" aria-label="Marca-texto">
+        <div class="tb-menu-title">Marca-texto</div>
+
+        <div class="hl-color-row">
+          <span class="tb-menu-label">Cor ao destacar</span>
+          <div id="hl-color-swatches" class="hl-color-swatches" role="group" aria-label="Cor do marca-texto">
+            <button type="button" class="hl-swatch-btn cme-hl-pastel-yellow" data-color="pastel-yellow" title="Amarelo pastel" aria-label="Amarelo pastel" aria-pressed="true"></button>
+            <button type="button" class="hl-swatch-btn cme-hl-pastel-green" data-color="pastel-green" title="Verde pastel" aria-label="Verde pastel" aria-pressed="false"></button>
+            <button type="button" class="hl-swatch-btn cme-hl-pastel-blue" data-color="pastel-blue" title="Azul pastel" aria-label="Azul pastel" aria-pressed="false"></button>
+            <button type="button" class="hl-swatch-btn cme-hl-pastel-pink" data-color="pastel-pink" title="Rosa pastel" aria-label="Rosa pastel" aria-pressed="false"></button>
+            <button type="button" class="hl-swatch-btn cme-hl-pastel-orange" data-color="pastel-orange" title="Laranja pastel" aria-label="Laranja pastel" aria-pressed="false"></button>
+            <button type="button" class="hl-swatch-btn cme-hl-pastel-purple" data-color="pastel-purple" title="Roxo pastel" aria-label="Roxo pastel" aria-pressed="false"></button>
+          </div>
+          <select id="hl-color" hidden aria-hidden="true" tabindex="-1">
+            <option value="pastel-yellow">Amarelo pastel</option>
+            <option value="pastel-green">Verde pastel</option>
+            <option value="pastel-blue">Azul pastel</option>
+            <option value="pastel-pink">Rosa pastel</option>
+            <option value="pastel-orange">Laranja pastel</option>
+            <option value="pastel-purple">Roxo pastel</option>
+          </select>
+        </div>
+
+        <div class="hl-filter-row">
+          <button type="button" id="hl-filter-toggle" class="hl-filter-toggle" aria-expanded="false" aria-controls="hl-filter-body">
+            <span class="tb-menu-label">Filtrar lista</span>
+            <span id="hl-filter-toggle-label" class="hl-filter-toggle-label">mostrar</span>
+          </button>
+          <div id="hl-filter-body" class="hl-filter-body" hidden>
+            <div id="hl-filter-swatches" class="hl-color-swatches" role="group" aria-label="Filtrar destaques por cor">
+              <button type="button" class="hl-filter-btn is-active" data-filter="all" title="Todas as cores" aria-label="Todas as cores" aria-pressed="true">Tudo</button>
+              <button type="button" class="hl-swatch-btn hl-filter-btn cme-hl-pastel-yellow" data-filter="pastel-yellow" title="Filtrar amarelo" aria-label="Filtrar amarelo" aria-pressed="false"></button>
+              <button type="button" class="hl-swatch-btn hl-filter-btn cme-hl-pastel-green" data-filter="pastel-green" title="Filtrar verde" aria-label="Filtrar verde" aria-pressed="false"></button>
+              <button type="button" class="hl-swatch-btn hl-filter-btn cme-hl-pastel-blue" data-filter="pastel-blue" title="Filtrar azul" aria-label="Filtrar azul" aria-pressed="false"></button>
+              <button type="button" class="hl-swatch-btn hl-filter-btn cme-hl-pastel-pink" data-filter="pastel-pink" title="Filtrar rosa" aria-label="Filtrar rosa" aria-pressed="false"></button>
+              <button type="button" class="hl-swatch-btn hl-filter-btn cme-hl-pastel-orange" data-filter="pastel-orange" title="Filtrar laranja" aria-label="Filtrar laranja" aria-pressed="false"></button>
+              <button type="button" class="hl-swatch-btn hl-filter-btn cme-hl-pastel-purple" data-filter="pastel-purple" title="Filtrar roxo" aria-label="Filtrar roxo" aria-pressed="false"></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="hl-list-head">
+          <strong>Seus destaques</strong>
+          <span class="hl-list-hint">salvos neste navegador</span>
+        </div>
+        <div id="hl-list-body" class="hl-list-body">
+          <p class="hl-list-empty">Nenhum destaque ainda. Selecione um trecho no texto para destacar.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Configurações (direita) - só ícone de engrenagem -->
+    <div class="tb-menu" data-menu="settings">
+      <button type="button" class="tb-btn tb-menu-btn tb-btn-icon" id="settings-toggle" aria-expanded="false" aria-controls="settings-panel" title="Configurações" aria-label="Configurações">
+        <svg class="tb-gear-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false">
+          <path fill="currentColor" d="M19.14 12.94c.04-.31.06-.63.06-.94s-.02-.63-.06-.94l2.03-1.58a.5.5 0 0 0 .12-.64l-1.92-3.32a.5.5 0 0 0-.6-.22l-2.39.96a7.03 7.03 0 0 0-1.63-.94l-.36-2.54A.5.5 0 0 0 14.9 2h-3.8a.5.5 0 0 0-.49.42l-.36 2.54c-.59.24-1.13.55-1.63.94l-2.39-.96a.5.5 0 0 0-.6.22L3.71 8.08a.5.5 0 0 0 .12.64l2.03 1.58c-.04.31-.06.63-.06.94s.02.63.06.94L3.83 14.7a.5.5 0 0 0-.12.64l1.92 3.32c.14.24.43.34.68.22l2.39-.96c.5.39 1.04.7 1.63.94l.36 2.54c.05.24.25.42.49.42h3.8c.24 0 .44-.18.49-.42l.36-2.54c.59-.24 1.13-.55 1.63-.94l2.39.96c.25.1.54 0 .68-.22l1.92-3.32a.5.5 0 0 0-.12-.64l-2.03-1.58zM12 15.5A3.5 3.5 0 1 1 12 8.5a3.5 3.5 0 0 1 0 7z"/>
+        </svg>
+      </button>
+      <div id="settings-panel" class="tb-menu-panel" hidden role="dialog" aria-label="Configurações de leitura">
+        <div class="tb-menu-title">Configurações</div>
+
+        <label class="tb-menu-row">
+          <span class="tb-menu-label">Notas de Gardner</span>
+          <select id="notes-mode" aria-label="Modo de exibição das notas">
+            <option value="all">Sempre visíveis</option>
+            <option value="click">Lupa (clique para abrir)</option>
+            <option value="off">Sempre ocultadas</option>
+          </select>
+        </label>
+
+        <label class="tb-menu-row">
+          <span class="tb-menu-label">Fonte</span>
+          <select id="font-family" aria-label="Fonte do texto">
+            <option value="default">Padrão do site</option>
+            <option value="dyslexia">Dislexia</option>
+            <option value="sans">Sans-serif</option>
+            <option value="mono">Monospace</option>
+          </select>
+        </label>
+
+        <div class="tb-menu-row">
+          <span class="tb-menu-label">Tamanho</span>
+          <div class="tb-font-size" role="group" aria-label="Tamanho da fonte">
+            <button type="button" id="font-smaller" class="tb-btn tb-btn-sq" title="Diminuir fonte" aria-label="Diminuir fonte">A-</button>
+            <span id="font-size-label" class="tb-size-label" aria-live="polite">100%</span>
+            <button type="button" id="font-larger" class="tb-btn tb-btn-sq" title="Aumentar fonte" aria-label="Aumentar fonte">A+</button>
+          </div>
+        </div>
+
+        <div class="tb-menu-row">
+          <span class="tb-menu-label">Tema</span>
+          <button type="button" id="toggle-theme" class="tb-btn" title="Alternar tema claro/escuro" aria-pressed="false">
+            <span class="theme-label">Tema escuro</span>
+          </button>
+        </div>
+
+        <div class="tb-menu-row tb-menu-row-danger">
+          <span class="tb-menu-label">Dados locais</span>
+          <button type="button" id="clear-site-data" class="tb-btn tb-btn-danger" title="Apagar destaques, notas e preferências salvos neste navegador">
+            Limpar cache do site
+          </button>
+          <span class="tb-menu-hint">Remove destaques, notas, progresso e preferências salvos neste navegador.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Popup de seleção: destacar + nota -->
+<div id="hl-popup" class="hl-popup" hidden role="dialog" aria-label="Destacar trecho">
+  <button type="button" id="hl-btn-mark" class="tb-btn">Destacar</button>
+  <button type="button" id="hl-btn-note" class="tb-btn">Destacar + nota</button>
+  <button type="button" id="hl-btn-cancel" class="tb-btn tb-btn-ghost">Cancelar</button>
+</div>
+
+<!-- Tooltip flutuante da nota ao passar o mouse -->
+<div id="hl-float-tip" class="hl-float-tip" hidden role="tooltip"></div>
+
+<!-- Confirmação: limpar cache -->
+<div id="clear-data-modal" class="hl-modal" hidden role="dialog" aria-modal="true" aria-labelledby="clear-data-title">
+  <div class="hl-modal-box">
+    <h3 id="clear-data-title">Limpar cache do site?</h3>
+    <p class="hl-quote" style="font-style:normal;opacity:0.95">
+      Isso apaga <strong>tudo</strong> que foi salvo neste navegador:
+      destaques, notas, preferências (fonte, tema, tamanho), cor do marca-texto
+      e qualquer outro dado local do site.
+    </p>
+    <p class="hl-quote" style="font-style:normal;opacity:0.85">
+      Esta ação não pode ser desfeita.
+    </p>
+    <div class="hl-modal-actions">
+      <button type="button" id="clear-data-confirm" class="tb-btn tb-btn-danger">Sim, limpar tudo</button>
+      <button type="button" id="clear-data-cancel" class="tb-btn tb-btn-ghost">Cancelar</button>
+    </div>
+  </div>
+</div>
+
+<!-- Modal de nota do highlight -->
+<div id="hl-note-modal" class="hl-modal" hidden role="dialog" aria-modal="true" aria-labelledby="hl-note-title">
+  <div class="hl-modal-box">
+    <h3 id="hl-note-title">Nota do trecho</h3>
+    <p id="hl-note-quote" class="hl-quote"></p>
+    <label class="hl-note-label">Cor deste destaque</label>
+    <div id="hl-note-swatches" class="hl-color-swatches" role="group" aria-label="Cor deste destaque">
+      <button type="button" class="hl-swatch-btn cme-hl-pastel-yellow" data-color="pastel-yellow" title="Amarelo pastel" aria-label="Amarelo pastel"></button>
+      <button type="button" class="hl-swatch-btn cme-hl-pastel-green" data-color="pastel-green" title="Verde pastel" aria-label="Verde pastel"></button>
+      <button type="button" class="hl-swatch-btn cme-hl-pastel-blue" data-color="pastel-blue" title="Azul pastel" aria-label="Azul pastel"></button>
+      <button type="button" class="hl-swatch-btn cme-hl-pastel-pink" data-color="pastel-pink" title="Rosa pastel" aria-label="Rosa pastel"></button>
+      <button type="button" class="hl-swatch-btn cme-hl-pastel-orange" data-color="pastel-orange" title="Laranja pastel" aria-label="Laranja pastel"></button>
+      <button type="button" class="hl-swatch-btn cme-hl-pastel-purple" data-color="pastel-purple" title="Roxo pastel" aria-label="Roxo pastel"></button>
+    </div>
+    <select id="hl-note-color" hidden aria-hidden="true" tabindex="-1">
+      <option value="pastel-yellow">Amarelo pastel</option>
+      <option value="pastel-green">Verde pastel</option>
+      <option value="pastel-blue">Azul pastel</option>
+      <option value="pastel-pink">Rosa pastel</option>
+      <option value="pastel-orange">Laranja pastel</option>
+      <option value="pastel-purple">Roxo pastel</option>
+    </select>
+    <label class="hl-note-label" for="hl-note-input">Sua nota (salva só neste navegador)</label>
+    <textarea id="hl-note-input" rows="4" maxlength="2000" placeholder="Escreva uma anotação opcional..."></textarea>
+    <div class="hl-modal-actions">
+      <button type="button" id="hl-note-save" class="tb-btn">Salvar</button>
+      <button type="button" id="hl-note-remove" class="tb-btn tb-btn-danger">Remover destaque</button>
+      <button type="button" id="hl-note-close" class="tb-btn tb-btn-ghost">Fechar</button>
+    </div>
+  </div>
+</div>
+
+<h1><br>(b) A Curva de Decaimento</h1>
+<p class="a rotatedFloralHeartBullet">
+
+
+<p>Se tomássemos $p$ como uma fração própria (menor que
+a unidade), a curva tenderia obviamente a afundar para baixo,
+como na <a href="#figure42">Figura 42</a>, onde cada ordenada sucessiva
+é $\frac{3}{4}$ da altura da precedente.
+
+
+<a name="figure42">
+<p><img src="33283-t/images/168a.pdf.png-1.png">
+
+<p>A equação ainda é</p>
+
+\[
+y=bp^x;
+\] mas como $p$ é menor que um, $\log_\epsilon p$ será uma quantidade
+negativa, e pode ser escrito $-a$; de modo que $p=\epsilon^{-a}$,
+e agora nossa equação para a curva toma a forma
+\[
+y=b\epsilon^{-ax}.
+\]
+
+<p>A importância desta expressão é que, no
+caso em que a variável independente é o <em>tempo</em>, a
+equação representa o curso de um grande número de
+processos físicos em que algo está <em>gradualmente
+morrendo</em> (decaindo). Assim, o resfriamento de um corpo quente é
+representado (na célebre “lei do resfriamento” de Newton)
+pela equação
+\[
+\theta_t=\theta_0 \epsilon^{-at};
+\]
+
+onde $\theta_0$ é o excesso original de temperatura de um
+corpo quente sobre a de suas vizinhanças, $\theta_t$ o excesso
+de temperatura ao fim do tempo $t$, e $a$ é uma constante - a saber,
+a constante de decréscimo, dependendo
+da quantidade de superfície exposta pelo corpo, e
+de seus coeficientes de condutividade e emissividade,
+etc.
+
+<p>Uma fórmula semelhante,</p>
+
+\[
+Q_t=Q_0 \epsilon^{-at},
+\]
+é usada para expressar a carga de um corpo eletrizado,
+tendo originalmente uma carga $Q_0$, que está vazando
+com uma constante de decréscimo $a$; a qual constante
+depende neste caso da capacidade do corpo e
+da resistência do caminho de fuga.
+
+<p>Oscilações dadas a uma mola flexível morrem após
+um tempo; e o decaimento da amplitude do
+movimento pode ser expresso de modo semelhante.
+
+<p>De fato $\epsilon^{-at}$ serve como um <em>fator de decaimento</em> para todos
+aqueles fenômenos em que a taxa de diminuição
+é proporcional à magnitude daquilo que está
+diminuindo; ou onde, em nossos símbolos usuais, $\dfrac{dy}{dt}$ é
+proporcional a cada instante ao valor que $y$ tem
+naquele instante. Pois só precisamos inspecionar a
+curva, <a href="#figure42">Figura 42</a> acima, para ver que, em cada parte dela,
+a inclinação $\dfrac{dy}{dx}$ é proporcional à altura $y$; a
+curva tornando-se mais plana à medida que $y$ fica menor. Em símbolos,
+assim
+
+$y=b\epsilon^{-ax}$ ou
+\[
+\log_\epsilon y
+  = \log_\epsilon b - ax \log_\epsilon \epsilon
+  = \log_\epsilon b - ax,\\
+ \text{e, diferenciando,}\;
+\frac{1}{y}\, \frac{dy}{dx} = -a;\\
+ \text{logo}\;  \frac{dy}{dx} = b\epsilon^{-ax} × (-a) = -ay;
+\]
+ou, em palavras, a inclinação da curva é para baixo, e
+proporcional a $y$ e à constante $a$.
+
+<p>Teríamos obtido o mesmo resultado se tivéssemos
+tomado a equação na forma</p>
+
+\[
+\begin{aligned}
+y &= bp^x; \\
+ \text{pois então}\;
+\frac{dy}{dx}
+  &= bp^x × \log_\epsilon p. \\
+   \text{Mas}\;
+\log_\epsilon p &= -a; \\
+ \text{dando-nos}\;
+\frac{dy}{dx} &= y × (-a) = -ay,
+\end{aligned}
+\]
+como antes.
+
+<p><em>A Constante de Tempo.</em> Na expressão para o “fator de
+decaimento” $\epsilon^{-at}$, a quantidade $a$ é o recíproco de
+outra quantidade conhecida como “<em>a constante de tempo</em>,” que
+podemos denotar pelo símbolo $T$. Então o fator de decaimento
+será escrito $\epsilon^{-\frac{t}{T}}$; e ver-se-á, ao
+fazer $t = T$, que o significado de $T$ $\left(\text{ou de} \dfrac{1}{a}\right)$ é que
+este é o comprimento de tempo que leva para a quantidade original
+(chamada $\theta_0$ ou $Q_0$ nos exemplos precedentes)
+decair até $\dfrac{1}{\epsilon}$ da parte - isto é, até $0.3678$ - de seu
+valor original.
+
+
+<p>Os valores de $\epsilon^x$ e $\epsilon^{-x}$ são continuamente requeridos
+em diferentes ramos da física, e como eles são dados
+em bem poucos conjuntos de tabelas matemáticas, alguns dos
+valores são tabulados aqui por conveniência.
+
+<p>
+
+<table>
+<tr>
+  <th>$x$</th>
+  <th>$\epsilon^x$</th>
+  <th>$\epsilon^{-x}$</th>
+  <th>$1-\epsilon^{-x}$</th>
+</tr>
+
+<tr><td>$0$</td><td>$1.0000$</td><td>$1.0000$</td><td>$0.0000$</td></tr>
+<tr><td>$0.10$</td><td>$1.1052$</td><td>$0.9048$</td><td>$0.0952$</td></tr>
+<tr><td>$0.20$</td><td>$1.2214$</td><td>$0.8187$</td><td>$0.1813$</td></tr>
+<tr><td>$0.50$</td><td>$1.6487$</td><td>$0.6065$</td><td>$0.3935$</td></tr>
+<tr><td>$0.75$</td><td>$2.1170$</td><td>$0.4724$</td><td>$0.5276$</td></tr>
+<tr><td>$0.90$</td><td>$2.4596$</td><td>$0.4066$</td><td>$0.5934$</td></tr>
+<tr><td>$1.00$</td><td>$2.7183$</td><td>$0.3679$</td><td>$0.6321$</td></tr>
+<tr><td>$1.10$</td><td>$3.0042$</td><td>$0.3329$</td><td>$0.6671$</td></tr>
+<tr><td>$1.20$</td><td>$3.3201$</td><td>$0.3012$</td><td>$0.6988$</td></tr>
+<tr><td>$1.25$</td><td>$3.4903$</td><td>$0.2865$</td><td>$0.7135$</td></tr>
+<tr><td>$1.50$</td><td>$4.4817$</td><td>$0.2231$</td><td>$0.7769$</td></tr>
+<tr><td>$1.75$</td><td>$5.755$</td><td>$0.1738$</td><td>$0.8262$</td></tr>
+<tr><td>$2.00$</td><td>$7.389$</td><td>$0.1353$</td><td>$0.8647$</td></tr>
+<tr><td>$2.50$</td><td>$12.182$</td><td>$0.0821$</td><td>$0.9179$</td></tr>
+<tr><td>$3.00$</td><td>$20.086$</td><td>$0.0498$</td><td>$0.9502$</td></tr>
+<tr><td>$3.50$</td><td>$33.115$</td><td>$0.0302$</td><td>$0.9698$</td></tr>
+<tr><td>$4.00$</td><td>$54.598$</td><td>$0.0183$</td><td>$0.9817$</td></tr>
+<tr><td>$4.50$</td><td>$90.017$</td><td>$0.0111$</td><td>$0.9889$</td></tr>
+<tr><td>$5.00$</td><td>$148.41$</td><td>$0.0067$</td><td>$0.9933$</td></tr>
+<tr><td>$5.50$</td><td>$244.69$</td><td>$0.0041$</td><td>$0.9959$</td></tr>
+<tr><td>$6.00$</td><td>$403.43$</td><td>$0.00248$</td><td>$0.99752$</td></tr>
+<tr><td>$7.50$</td><td>$1808.04$</td><td>$0.00055$</td><td>$0.99947$</td></tr>
+<tr><td>$10.00$</td><td>$22026.5$</td><td>$0.000045$</td><td>$0.999955$</td></tr>
+</table>
+
+<p>Como exemplo do uso desta tabela, suponha
+que há um corpo quente resfriando, e que no começo
+do experimento (<em>i.e.:</em> quando $t = 0$) ele está $72°$ mais quente que
+os objetos circundantes, e se a constante de tempo de seu
+resfriamento for $20$ minutos (isto é, se leva $20$ minutos
+para seu excesso de temperatura cair a $\dfrac{1}{\epsilon}$ parte de $72°$),
+então podemos calcular a que terá caído em
+qualquer tempo dado $t$. Por exemplo, seja $t$ $60$ minutos.
+Então $\dfrac{t}{T} = 60 ÷ 20 = 3$, e teremos de achar o
+valor de $\epsilon^{-3}$, e então multiplicar os $72°$ originais por
+isto. A tabela mostra que $\epsilon^{-3}$ é $0.0498$. De modo que
+ao fim de $60$ minutos o excesso de temperatura
+terá caído a $72° × 0.0498 = 3.586°$.
+
+<p><hr>
+
+<p><em>Mais Exemplos.</em>
+<p>(1) A intensidade de uma corrente elétrica em um condutor
+em um tempo $t$ segs. após a aplicação da
+força eletromotriz que a produz é dada pela expressão
+$C = \dfrac{E}{R}\left\{1 - \epsilon^{-\frac{Rt}{L}}\right\}$.
+
+<p>A constante de tempo é $\dfrac{L}{R}$.
+
+<p>Se $E = 10$, $R =1$, $L = 0.01$; então quando $t$ é muito grande
+o termo $\epsilon^{-\frac{Rt}{L}}$ se torna $1$, e $C = \dfrac{E}{R} = 10$; também</p>
+
+\[
+\frac{L}{R} = T = 0.01.
+\]
+
+<p>Seu valor em qualquer tempo pode ser escrito:</p>
+
+\[
+C = 10 - 10\epsilon^{-\frac{t}{0.01}},
+\]
+
+a constante de tempo sendo $0.01$. Isto significa que leva
+$0.01$ seg. para o termo variável cair em
+$\dfrac{1}{\epsilon} = 0.3678$ de seu valor inicial $10\epsilon^{-\frac{0}{0.01}} = 10$.
+
+<p>Para achar o valor da corrente quando $t = 0.001 \text{seg.}$,
+digamos, $\dfrac{t}{T} = 0.1$, $\epsilon^{-0.1} = 0.9048$ (da tabela).
+
+<p>Segue-se que, após $0.001$ seg., o termo variável
+é $0.9048 × 10 = 9.048$, e a corrente real é
+$10 - 9.048 = 0.952$.
+
+<p>De modo semelhante, ao fim de $0.1$ seg.,</p>
+
+\[
+\frac{t}{T} = 10;\quad \epsilon^{-10} = 0.000045;
+\]
+o termo variável é $10 × 0.000045 = 0.00045$, a corrente
+sendo $9.9995$.
+
+<p>(2) A intensidade $I$ de um feixe de luz que
+passou através de uma espessura $l$ cm. de algum meio
+transparente é $I = I_0\epsilon^{-Kl}$, onde $I_0$ é a intensidade inicial
+do feixe e $K$ é uma “constante de absorção.”
+
+<p>Esta constante é usualmente achada por experimentos. Se
+for achado, por exemplo, que um feixe de luz tem
+sua intensidade diminuída em 18% ao passar através de
+$10$ cms. de certo meio transparente, isto significa
+que $82 = 100 × \epsilon^{-K×10}$ ou $\epsilon^{-10K} = 0.82$, e da
+tabela se vê que $10K = 0.20$ muito aproximadamente; logo
+$K = 0.02$.
+
+<p>Para achar a espessura que reduzirá a intensidade
+à metade de seu valor, deve-se achar o valor de $l$ que
+satisfaz a igualdade $50 = 100 × \epsilon^{-0.02l}$, ou $0.5 = \epsilon^{-0.02l}$.
+
+Isto se acha pondo esta equação em sua forma logarítmica,
+a saber,</p>
+
+\[
+\log 0.5 = -0.02 × l × \log \epsilon,
+\]
+que dá
+\[
+l = \frac{-0.3010}{-0.02 × 0.4343}
+ = 34.7 \text{centímetros aproximadamente}.
+\]
+
+<p>(3) A quantidade $Q$ de uma substância radioativa
+que ainda não sofreu transformação é conhecida
+por estar relacionada à quantidade inicial $Q_0$ da substância
+pela relação $Q = Q_0 \epsilon^{-\lambda t}$, onde $\lambda$ é uma constante
+e $t$ o tempo em segundos decorrido desde que a transformação
+começou.
+
+<p>Para o “Rádio $A$,” se o tempo for expresso em segundos,
+a experiência mostra que $\lambda = 3.85 × 10^{-3}$. Encontre o tempo
+requerido para transformar metade da substância. (Este
+tempo é chamado a “vida média” da substância.)
+
+<p>Temos $0.5 = \epsilon^{-0.00385t}$.<a name="erratum0a"/></p>
+
+\[
+\begin{aligned}
+\log 0.5 &= -0.00385t × \log \epsilon; \\
+t &= 3\text{ minutos aproximadamente}.
+\end{aligned}
+\]
+
+<p>
+<hr><h3>Exercícios XIII</h3>
+
+(1) Desenhe a curva $y = b \epsilon^{-\frac{t}{T}}$; onde $b = 12$, $T = 8$,
+e $t$ recebe vários valores de $0$ a $20$.
+
+<p>(2) Se um corpo quente resfria de tal modo que em $24$ minutos seu
+excesso de temperatura caiu à metade da quantidade inicial,
+deduza a constante de tempo, e ache quanto tempo
+levará para resfriar até $1$ por cento do excesso
+original.
+
+
+<p>(3) Plote a curva $y = 100(1-\epsilon^{-2t})$.
+
+<p>(4) As seguintes equações dão curvas muito semelhantes:</p>
+
+\[
+\begin{aligned}
+\text{(i)}\   y &= \frac{ax}{x + b}; \\
+\text{(ii)}\  y &= a(1 - \epsilon^{-\frac{x}{b}}); \\
+\text{(iii)}\ y &= \frac{a}{90°} \arctan \left(\frac{x}{b}\right).
+\end{aligned}
+\]
+
+<p>Desenhe as três curvas, tomando $a= 100$ milímetros;
+$b = 30$ milímetros.
+
+<p>(5) Encontre o coeficiente diferencial de $y$ em relação
+a $x$, se</p>
+
+\[
+(a) y = x^x;\quad
+(b) y = (\epsilon^x)^x;\quad
+(c) y = \epsilon^{x^x}.
+\]
+
+<p>(6) Para o “Tório $A$,” o valor de $\lambda$ é $5$; ache a
+“vida média,” isto é, o tempo tomado pela transformação
+de uma quantidade $Q$ de “Tório $A$” igual a
+metade da quantidade inicial $Q_0$ na expressão</p>
+
+\[
+Q = Q_0 \epsilon^{-\lambda t};
+\]
+$t$ sendo em segundos.
+
+<p>(7) Um condensador de capacidade $K = 4 × 10^{-6}$, carregado
+a um potencial $V_0 = 20$, está descarregando através de uma resistência
+de $10{,}000$ ohms. Encontre o potencial $V$ após (<em>a</em> ) $0.1$
+segundo; (<em>b</em> ) $0.01$ segundo; assumindo que a queda de
+potencial segue a regra $V = V_0 \epsilon^{-\frac{t}{KR}}$.
+
+<p>(8) A carga $Q$ de uma esfera metálica isolada eletrizada
+é reduzida de $20$ a $16$ unidades em $10$ minutos.
+Encontre o coeficiente $\mu$ de fuga, se $Q = Q_0 × \epsilon^{-\mu t}$; $Q_0$
+sendo a carga inicial e $t$ sendo em segundos. Daí
+ache o tempo tomado por metade da carga para vazar.
+
+
+<p>(9) O amortecimento em uma linha telefônica pode ser apurado
+a partir da relação $i = i_0 \epsilon^{-\beta l}$, onde $i$ é a
+intensidade, após $t$ segundos, de uma corrente telefônica de
+intensidade inicial $i_0$; $l$ é o comprimento da linha em quilômetros,
+e $\beta$ é uma constante. Para o cabo submarino
+franco-inglês lançado em 1910, $\beta = 0.0114$. Encontre o
+amortecimento no fim do cabo ($40$ quilômetros), e
+o comprimento ao longo do qual $i$ ainda é $8$% da corrente original
+(valor limite de audição muito boa).
+
+<p>(10) A pressão $p$ da atmosfera a uma altitude
+$h$ quilômetros é dada por $p=p_0 \epsilon^{-kh}$; $p_0$ sendo a
+pressão ao nível do mar ($760$ milímetros).
+
+<p>As pressões a $10$, $20$ e $50$ quilômetros sendo
+$199.2$, $42.2$, $0.32$ respectivamente, ache $k$ em cada caso.
+Usando o valor médio de $k$, ache o erro percentual
+em cada caso.
+
+<p>(11) Encontre o mínimo ou máximo de $y = x^x$.
+
+<p>(12) Encontre o mínimo ou máximo de $y = x^{\frac{1}{x}}$.
+
+<p>(13) Encontre o mínimo ou máximo de $y = xa^{\frac{1}{x}}$.
+
+<p><h3 class="answers">Respostas</h3>
+
+<p>(1)   Seja $\dfrac{t}{T} = x$ ($\therefore t = 8x$), e use a Tabela acima.
+
+<p>(2)   $T = 34.627$; $159.46$ minutos.
+
+<p>(3)   Tome $2t = x$; e use a Tabela acima.
+
+<p>(5)   (<em>a</em> ) $x^x \left(1 + \log_\epsilon x\right)$;&nbsp;&nbsp;
+(<em>b</em> ) $2x(\epsilon^x)^x$;&nbsp;&nbsp;
+(<em>c</em> ) $\epsilon^{x^x} × x^x \left(1 + \log_\epsilon x\right)$.
+
+
+<p>(6)   $0.14$ segundo.
+
+<p>(7)   (<em>a</em> ) $1.642$;&nbsp;&nbsp; (<em>b</em> ) $15.58$.
+
+
+<p>(8)   $\mu = 0.00037$, $31^m \frac{1}{4}$.
+
+<p>(9)   $i$ é $63.4$% de $i_0$, $220$ quilômetros.
+
+<p>(10)   $0.133$, $0.145$, $0.155$, média $0.144$; $-10.2$%, $-0.9$%, $+77.2$%.
+
+
+<p>(11)   Mín. para $x = \dfrac{1}{\epsilon}$.
+
+<p>(12)   Máx. para $x = \epsilon$.
+
+
+<p>(13)   Mín. para $x = \log_\epsilon a$.
+<br>
+<!-- Soluções comerciais removidas: projeto público e sem fins lucrativos -->
+
+
+<hr>
+<nav class="chapter-nav" aria-label="Navegação do capítulo">
+  <a class="nav-prev" href="14.html">← Anterior</a>
+  <a class="nav-home" href="index.html">Página principal</a>
+  <a class="nav-next" href="15.html">Próximo →</a>
+</nav>
+<footer class="site-footer" role="contentinfo">
+  <p class="a rotatedFloralHeartBullet"></p>
+
+  <div class="manifesto">
+    <p class="manifesto-lead">
+      Este é um <strong>projeto público</strong>, sem fins lucrativos.
+      Não é permitido comercializá-lo, vendê-lo nem usá-lo como produto pago.
+    </p>
+    <p class="manifesto-quote">
+      A educação é um direito de todos.
+      O conhecimento deve ser livre sempre que não cause o mal:
+      deve circular, ensinar e libertar, nunca aprisionar quem aprende.
+    </p>
+    <p class="manifesto-sign">
+      - Thales Rodrigues
+    </p>
+  </div>
+
+  <nav class="author-links" aria-label="Redes de Thales Rodrigues">
+    <a href="https://www.linkedin.com/in/thales-oliveira-rodrigues/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    <span class="dot" aria-hidden="true">·</span>
+    <a href="https://github.com/Rodriguestmo" target="_blank" rel="noopener noreferrer">GitHub</a>
+  </nav>
+
+  <p class="footer-meta">
+    <small>
+      Tradução e adaptação PT-BR por Thales Rodrigues.
+      Texto de Silvanus P. Thompson em domínio público (Project Gutenberg).
+      Notas de contexto inspiradas na edição Gardner (1998).
+      Projeto público e gratuito.
+    </small>
+  </p>
+</footer>
+
+<script src="j/jquery.js"></script>
+<script src="j/modernizr.js"></script>
+<script src="j/dih5.js"></script>
+<script src="j/chapters-data.js"></script>
+<script src="j/glossary-data.js"></script>
+<script src="j/reader-features.js"></script>
+<script src="j/notes-toggle.js"></script>
+<!-- Analytics desativado na edição PT local -->
+</body>
+</html>

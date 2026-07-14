@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+
+<title>Cálculo Tornado Fácil</title>
+<meta name="description" content="Capítulo XXI: encontrando algumas soluções.">
+<meta name="author" content="Thales Rodrigues; Silvanus P. Thompson">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="googlebot" content="index, follow">
+<meta name="language" content="Portuguese">
+<meta name="keywords" content="cálculo, calculus made easy, Silvanus Thompson, cálculo diferencial, cálculo integral, matemática, educação livre, português, Martin Gardner, Cálculo Tornado Fácil, Thales Rodrigues">
+<link rel="canonical" href="https://rodriguestmo.github.io/calculo-tornado-facil/21.html">
+<link rel="alternate" hreflang="pt-BR" href="https://rodriguestmo.github.io/calculo-tornado-facil/21.html">
+<link rel="alternate" hreflang="x-default" href="https://rodriguestmo.github.io/calculo-tornado-facil/">
+
+
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
+<link rel="icon" href="favicon-16.png" type="image/png" sizes="16x16">
+<link rel="shortcut icon" href="favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png" sizes="180x180">
+<meta name="theme-color" content="#c45c26">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Cálculo Tornado Fácil">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Cálculo Tornado Fácil">
+<meta property="og:description" content="Capítulo XXI: encontrando algumas soluções.">
+<meta property="og:url" content="https://rodriguestmo.github.io/calculo-tornado-facil/21.html">
+<meta property="og:image" content="https://rodriguestmo.github.io/calculo-tornado-facil/cover.jpg">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Cálculo Tornado Fácil">
+<meta name="twitter:description" content="Capítulo XXI: encontrando algumas soluções.">
+<meta name="twitter:image" content="https://rodriguestmo.github.io/calculo-tornado-facil/cover.jpg">
+
+<link rel="describedby" href="https://rodriguestmo.github.io/calculo-tornado-facil/llms.txt">
+<link rel="stylesheet" href="screen.css">
+<style>
+body{counter-reset:h1 21}
+</style>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$'], ['\\[','\\]']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ["script","noscript","style","textarea","pre","code"]
+    },
+    TeX: {
+      extensions: ["AMSmath.js","AMSsymbols.js"],
+      equationNumbers: { autoNumber: "none" }
+    },
+    "HTML-CSS": {
+      availableFonts: ["TeX"],
+      linebreaks: { automatic: false },
+      styles: {
+        ".MathJax_Display": { "margin": "1.5em 0" }
+      }
+    },
+    CommonHTML: {
+      styles: { ".MJXc-display": { "margin": "1.5em 0" } }
+    },
+    showProcessingMessages: false,
+    messageStyle: "none"
+  });
+</script>
+<script type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Chapter",
+  "name": "Encontrando Algumas Soluções",
+  "position": 21,
+  "isPartOf": {
+    "@type": "Book",
+    "name": "Cálculo Tornado Fácil",
+    "url": "https://rodriguestmo.github.io/calculo-tornado-facil/"
+  },
+  "author": {"@type": "Person", "name": "Silvanus P. Thompson"},
+  "translator": {"@type": "Person", "name": "Thales Rodrigues"},
+  "url": "https://rodriguestmo.github.io/calculo-tornado-facil/21.html",
+  "inLanguage": "pt-BR",
+  "isAccessibleForFree": true
+}
+</script>
+</head>
+<body>
+<!-- Progresso de leitura do capítulo (scroll) -->
+<div id="read-progress" class="read-progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="Progresso de leitura do capítulo">
+  <div id="read-progress-bar" class="read-progress-bar"></div>
+</div>
+
+<!-- Barra fixa: logo + menus (marca-texto à esquerda, engrenagem à direita) -->
+<div id="site-toolbar" class="site-toolbar" role="region" aria-label="Controles do site">
+  <a class="tb-home" href="index.html">Cálculo Tornado Fácil</a>
+
+  <div class="tb-controls">
+    <!-- Marca-texto (esquerda) -->
+    <div class="tb-menu" data-menu="highlight">
+      <button type="button" class="tb-btn tb-menu-btn" id="hl-list-toggle" aria-expanded="false" aria-controls="hl-list-panel" title="Marca-texto e lista de destaques">
+        Marca-texto
+        <span id="hl-count-badge" class="hl-count-badge" hidden>0</span>
+      </button>
+      <div id="hl-list-panel" class="tb-menu-panel hl-list-panel" hidden role="dialog" aria-label="Marca-texto">
+        <div class="tb-menu-title">Marca-texto</div>
+
+        <div class="hl-color-row">
+          <span class="tb-menu-label">Cor ao destacar</span>
+          <div id="hl-color-swatches" class="hl-color-swatches" role="group" aria-label="Cor do marca-texto">
+            <button type="button" class="hl-swatch-btn cme-hl-pastel-yellow" data-color="pastel-yellow" title="Amarelo pastel" aria-label="Amarelo pastel" aria-pressed="true"></button>
+            <button type="button" class="hl-swatch-btn cme-hl-pastel-green" data-color="pastel-green" title="Verde pastel" aria-label="Verde pastel" aria-pressed="false"></button>
+            <button type="button" class="hl-swatch-btn cme-hl-pastel-blue" data-color="pastel-blue" title="Azul pastel" aria-label="Azul pastel" aria-pressed="false"></button>
+            <button type="button" class="hl-swatch-btn cme-hl-pastel-pink" data-color="pastel-pink" title="Rosa pastel" aria-label="Rosa pastel" aria-pressed="false"></button>
+            <button type="button" class="hl-swatch-btn cme-hl-pastel-orange" data-color="pastel-orange" title="Laranja pastel" aria-label="Laranja pastel" aria-pressed="false"></button>
+            <button type="button" class="hl-swatch-btn cme-hl-pastel-purple" data-color="pastel-purple" title="Roxo pastel" aria-label="Roxo pastel" aria-pressed="false"></button>
+          </div>
+          <select id="hl-color" hidden aria-hidden="true" tabindex="-1">
+            <option value="pastel-yellow">Amarelo pastel</option>
+            <option value="pastel-green">Verde pastel</option>
+            <option value="pastel-blue">Azul pastel</option>
+            <option value="pastel-pink">Rosa pastel</option>
+            <option value="pastel-orange">Laranja pastel</option>
+            <option value="pastel-purple">Roxo pastel</option>
+          </select>
+        </div>
+
+        <div class="hl-filter-row">
+          <button type="button" id="hl-filter-toggle" class="hl-filter-toggle" aria-expanded="false" aria-controls="hl-filter-body">
+            <span class="tb-menu-label">Filtrar lista</span>
+            <span id="hl-filter-toggle-label" class="hl-filter-toggle-label">mostrar</span>
+          </button>
+          <div id="hl-filter-body" class="hl-filter-body" hidden>
+            <div id="hl-filter-swatches" class="hl-color-swatches" role="group" aria-label="Filtrar destaques por cor">
+              <button type="button" class="hl-filter-btn is-active" data-filter="all" title="Todas as cores" aria-label="Todas as cores" aria-pressed="true">Tudo</button>
+              <button type="button" class="hl-swatch-btn hl-filter-btn cme-hl-pastel-yellow" data-filter="pastel-yellow" title="Filtrar amarelo" aria-label="Filtrar amarelo" aria-pressed="false"></button>
+              <button type="button" class="hl-swatch-btn hl-filter-btn cme-hl-pastel-green" data-filter="pastel-green" title="Filtrar verde" aria-label="Filtrar verde" aria-pressed="false"></button>
+              <button type="button" class="hl-swatch-btn hl-filter-btn cme-hl-pastel-blue" data-filter="pastel-blue" title="Filtrar azul" aria-label="Filtrar azul" aria-pressed="false"></button>
+              <button type="button" class="hl-swatch-btn hl-filter-btn cme-hl-pastel-pink" data-filter="pastel-pink" title="Filtrar rosa" aria-label="Filtrar rosa" aria-pressed="false"></button>
+              <button type="button" class="hl-swatch-btn hl-filter-btn cme-hl-pastel-orange" data-filter="pastel-orange" title="Filtrar laranja" aria-label="Filtrar laranja" aria-pressed="false"></button>
+              <button type="button" class="hl-swatch-btn hl-filter-btn cme-hl-pastel-purple" data-filter="pastel-purple" title="Filtrar roxo" aria-label="Filtrar roxo" aria-pressed="false"></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="hl-list-head">
+          <strong>Seus destaques</strong>
+          <span class="hl-list-hint">salvos neste navegador</span>
+        </div>
+        <div id="hl-list-body" class="hl-list-body">
+          <p class="hl-list-empty">Nenhum destaque ainda. Selecione um trecho no texto para destacar.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Configurações (direita) - só ícone de engrenagem -->
+    <div class="tb-menu" data-menu="settings">
+      <button type="button" class="tb-btn tb-menu-btn tb-btn-icon" id="settings-toggle" aria-expanded="false" aria-controls="settings-panel" title="Configurações" aria-label="Configurações">
+        <svg class="tb-gear-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false">
+          <path fill="currentColor" d="M19.14 12.94c.04-.31.06-.63.06-.94s-.02-.63-.06-.94l2.03-1.58a.5.5 0 0 0 .12-.64l-1.92-3.32a.5.5 0 0 0-.6-.22l-2.39.96a7.03 7.03 0 0 0-1.63-.94l-.36-2.54A.5.5 0 0 0 14.9 2h-3.8a.5.5 0 0 0-.49.42l-.36 2.54c-.59.24-1.13.55-1.63.94l-2.39-.96a.5.5 0 0 0-.6.22L3.71 8.08a.5.5 0 0 0 .12.64l2.03 1.58c-.04.31-.06.63-.06.94s.02.63.06.94L3.83 14.7a.5.5 0 0 0-.12.64l1.92 3.32c.14.24.43.34.68.22l2.39-.96c.5.39 1.04.7 1.63.94l.36 2.54c.05.24.25.42.49.42h3.8c.24 0 .44-.18.49-.42l.36-2.54c.59-.24 1.13-.55 1.63-.94l2.39.96c.25.1.54 0 .68-.22l1.92-3.32a.5.5 0 0 0-.12-.64l-2.03-1.58zM12 15.5A3.5 3.5 0 1 1 12 8.5a3.5 3.5 0 0 1 0 7z"/>
+        </svg>
+      </button>
+      <div id="settings-panel" class="tb-menu-panel" hidden role="dialog" aria-label="Configurações de leitura">
+        <div class="tb-menu-title">Configurações</div>
+
+        <label class="tb-menu-row">
+          <span class="tb-menu-label">Notas de Gardner</span>
+          <select id="notes-mode" aria-label="Modo de exibição das notas">
+            <option value="all">Sempre visíveis</option>
+            <option value="click">Lupa (clique para abrir)</option>
+            <option value="off">Sempre ocultadas</option>
+          </select>
+        </label>
+
+        <label class="tb-menu-row">
+          <span class="tb-menu-label">Fonte</span>
+          <select id="font-family" aria-label="Fonte do texto">
+            <option value="default">Padrão do site</option>
+            <option value="dyslexia">Dislexia</option>
+            <option value="sans">Sans-serif</option>
+            <option value="mono">Monospace</option>
+          </select>
+        </label>
+
+        <div class="tb-menu-row">
+          <span class="tb-menu-label">Tamanho</span>
+          <div class="tb-font-size" role="group" aria-label="Tamanho da fonte">
+            <button type="button" id="font-smaller" class="tb-btn tb-btn-sq" title="Diminuir fonte" aria-label="Diminuir fonte">A-</button>
+            <span id="font-size-label" class="tb-size-label" aria-live="polite">100%</span>
+            <button type="button" id="font-larger" class="tb-btn tb-btn-sq" title="Aumentar fonte" aria-label="Aumentar fonte">A+</button>
+          </div>
+        </div>
+
+        <div class="tb-menu-row">
+          <span class="tb-menu-label">Tema</span>
+          <button type="button" id="toggle-theme" class="tb-btn" title="Alternar tema claro/escuro" aria-pressed="false">
+            <span class="theme-label">Tema escuro</span>
+          </button>
+        </div>
+
+        <div class="tb-menu-row tb-menu-row-danger">
+          <span class="tb-menu-label">Dados locais</span>
+          <button type="button" id="clear-site-data" class="tb-btn tb-btn-danger" title="Apagar destaques, notas e preferências salvos neste navegador">
+            Limpar cache do site
+          </button>
+          <span class="tb-menu-hint">Remove destaques, notas, progresso e preferências salvos neste navegador.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Popup de seleção: destacar + nota -->
+<div id="hl-popup" class="hl-popup" hidden role="dialog" aria-label="Destacar trecho">
+  <button type="button" id="hl-btn-mark" class="tb-btn">Destacar</button>
+  <button type="button" id="hl-btn-note" class="tb-btn">Destacar + nota</button>
+  <button type="button" id="hl-btn-cancel" class="tb-btn tb-btn-ghost">Cancelar</button>
+</div>
+
+<!-- Tooltip flutuante da nota ao passar o mouse -->
+<div id="hl-float-tip" class="hl-float-tip" hidden role="tooltip"></div>
+
+<!-- Confirmação: limpar cache -->
+<div id="clear-data-modal" class="hl-modal" hidden role="dialog" aria-modal="true" aria-labelledby="clear-data-title">
+  <div class="hl-modal-box">
+    <h3 id="clear-data-title">Limpar cache do site?</h3>
+    <p class="hl-quote" style="font-style:normal;opacity:0.95">
+      Isso apaga <strong>tudo</strong> que foi salvo neste navegador:
+      destaques, notas, preferências (fonte, tema, tamanho), cor do marca-texto
+      e qualquer outro dado local do site.
+    </p>
+    <p class="hl-quote" style="font-style:normal;opacity:0.85">
+      Esta ação não pode ser desfeita.
+    </p>
+    <div class="hl-modal-actions">
+      <button type="button" id="clear-data-confirm" class="tb-btn tb-btn-danger">Sim, limpar tudo</button>
+      <button type="button" id="clear-data-cancel" class="tb-btn tb-btn-ghost">Cancelar</button>
+    </div>
+  </div>
+</div>
+
+<!-- Modal de nota do highlight -->
+<div id="hl-note-modal" class="hl-modal" hidden role="dialog" aria-modal="true" aria-labelledby="hl-note-title">
+  <div class="hl-modal-box">
+    <h3 id="hl-note-title">Nota do trecho</h3>
+    <p id="hl-note-quote" class="hl-quote"></p>
+    <label class="hl-note-label">Cor deste destaque</label>
+    <div id="hl-note-swatches" class="hl-color-swatches" role="group" aria-label="Cor deste destaque">
+      <button type="button" class="hl-swatch-btn cme-hl-pastel-yellow" data-color="pastel-yellow" title="Amarelo pastel" aria-label="Amarelo pastel"></button>
+      <button type="button" class="hl-swatch-btn cme-hl-pastel-green" data-color="pastel-green" title="Verde pastel" aria-label="Verde pastel"></button>
+      <button type="button" class="hl-swatch-btn cme-hl-pastel-blue" data-color="pastel-blue" title="Azul pastel" aria-label="Azul pastel"></button>
+      <button type="button" class="hl-swatch-btn cme-hl-pastel-pink" data-color="pastel-pink" title="Rosa pastel" aria-label="Rosa pastel"></button>
+      <button type="button" class="hl-swatch-btn cme-hl-pastel-orange" data-color="pastel-orange" title="Laranja pastel" aria-label="Laranja pastel"></button>
+      <button type="button" class="hl-swatch-btn cme-hl-pastel-purple" data-color="pastel-purple" title="Roxo pastel" aria-label="Roxo pastel"></button>
+    </div>
+    <select id="hl-note-color" hidden aria-hidden="true" tabindex="-1">
+      <option value="pastel-yellow">Amarelo pastel</option>
+      <option value="pastel-green">Verde pastel</option>
+      <option value="pastel-blue">Azul pastel</option>
+      <option value="pastel-pink">Rosa pastel</option>
+      <option value="pastel-orange">Laranja pastel</option>
+      <option value="pastel-purple">Roxo pastel</option>
+    </select>
+    <label class="hl-note-label" for="hl-note-input">Sua nota (salva só neste navegador)</label>
+    <textarea id="hl-note-input" rows="4" maxlength="2000" placeholder="Escreva uma anotação opcional..."></textarea>
+    <div class="hl-modal-actions">
+      <button type="button" id="hl-note-save" class="tb-btn">Salvar</button>
+      <button type="button" id="hl-note-remove" class="tb-btn tb-btn-danger">Remover destaque</button>
+      <button type="button" id="hl-note-close" class="tb-btn tb-btn-ghost">Fechar</button>
+    </div>
+  </div>
+</div>
+
+<h1><br>Encontrando Algumas Soluções</h1>
+<p class="a rotatedFloralHeartBullet">
+
+<p>Neste capítulo saímos a trabalhar encontrando
+soluções de algumas equações diferenciais
+importantes, usando para esse propósito os processos
+mostrados nos capítulos precedentes.
+
+<p>O principiante, que agora sabe quão fáceis a
+maioria desses processos são em si mesmos, começará
+aqui a perceber que a integração é <em>uma arte</em>. Como
+em todas as artes, também nesta a facilidade só se
+adquire com prática diligente e regular. Quem
+quiser atingir essa facilidade deve resolver
+exemplos, e mais exemplos, e ainda mais exemplos,
+como os que se encontram em abundância em todos os
+tratados regulares sobre o Cálculo. Nosso propósito
+aqui deve ser oferecer a mais breve introdução ao
+trabalho sério.
+
+<p><hr>
+
+<p><em>Exemplo (1.)</em> Ache a solução da equação
+diferencial
+\[
+ay + b \frac{dy}{dx} = 0.
+\]
+
+<p>Transpondo, temos</p>
+
+\[
+b \frac{dy}{dx} = -ay.
+\]
+
+<p>Ora, a mera inspeção dessa relação nos diz que
+temos de lidar com um caso em que $\dfrac{dy}{dx}$ é
+proporcional a $y$. Se pensarmos na curva que
+representará $y$ como função de $x$, ela será tal que
+sua inclinação em qualquer ponto será proporcional
+à ordenada naquele ponto, e será uma inclinação
+negativa se $y$ for positivo. Assim, obviamente a
+curva será uma curva de decaimento, e a solução
+conterá $\epsilon^{-x}$ como fator. Mas, sem presumir
+desse pedaço de sagacidade, vamos ao trabalho.
+
+<p>Como tanto $y$ quanto $dy$ ocorrem na equação e em
+lados opostos, não podemos fazer nada até
+colocarmos tanto $y$ quanto $dy$ de um lado, e $dx$ do
+outro. Para isso, devemos separar nossos
+companheiros de costume inseparáveis $dy$ e $dx$ um
+do outro.</p>
+
+\[
+\frac{dy}{y} = - \frac{a}{b}\, dx.
+\]
+
+<p>Tendo feito o feito, agora vemos que ambos os
+lados entraram em uma forma que é integrável,
+porque reconhecemos $\dfrac{dy}{y}$, ou $\dfrac{1}{y}\, dy$, como uma
+diferencial que encontramos (<a href="14.html#expolo">aqui</a>) ao diferenciar
+logaritmos. Assim podemos de uma vez escrever as
+instruções para integrar,
+\[
+\int \frac{dy}{y} = \int -\frac{a}{b}\, dx;
+\]
+e fazendo as duas integrações, temos:
+\[
+\log_\epsilon y = -\frac{a}{b} x + \log_\epsilon C,
+\]
+
+onde $\log_\epsilon C$ é a constante de integração ainda
+indeterminada. Então, deslogaritmizando, obtemos:
+\[
+y = C \epsilon^{-\frac{a}{b} x},
+\]
+que é <em>a solução</em> pedida*. Ora, essa solução parece
+bastante diferente da equação diferencial original
+da qual foi construída: e no entanto, a um
+matemático experiente, ambas transmitem a mesma
+informação sobre o modo como $y$ depende de $x$.
+
+<p><note>*Podemos escrever qualquer forma de constante como a “constante de
+  integração,” e a forma $\log_\epsilon C$ é adotada aqui de preferência,
+  porque os outros termos nesta linha da equação são, ou são tratados
+  como, logaritmos; e poupa complicações depois se a constante
+  acrescentada for <em>do mesmo tipo</em>.</note>
+
+<p>Agora, quanto a $C$, seu significado depende do
+valor inicial de $y$. Pois se pusermos $x = 0$ para
+ver que valor $y$ então tem, vemos que isso faz
+$y = C \epsilon^{-0}$; e como $\epsilon^{-0} = 1$ vemos que $C$ não é
+outra coisa senão o valor particular*
+ de $y$ no
+início. Podemos chamar isso de $y_0$, e assim
+escrever a solução como</p>
+
+\[
+y = y_0 \epsilon^{-\frac{a}{b} x}.
+\]
+
+<p><note>*Compare o que se disse sobre a “constante de integração,”
+  com referência à <a href="17.html#figure48">Figura 48</a> <a href="17.html#constant">aqui</a>, e à <a href="17.html#figure51">Figura 51</a>.</note>
+<p><hr>
+
+<p><em>Exemplo (2.)</em>
+
+<p>Tomemos como exemplo a resolver</p>
+
+\[
+ay + b \frac{dy}{dx} = g,
+\]
+onde $g$ é uma constante. De novo, inspecionar a
+equação sugerirá, (1) que de um modo ou de outro
+$\epsilon^x$ entrará na solução, e (2) que se em qualquer
+parte da
+
+curva $y$ se tornar ou um máximo ou um mínimo, de
+modo que $\dfrac{dy}{dx} = 0$, então $y$ terá o valor
+$= \dfrac{g}{a}$. Mas vamos ao trabalho como antes,
+separando as diferenciais e tentando transformar a
+coisa em alguma forma integrável.
+\[
+\begin{aligned}
+b\frac{dy}{dx}           &= g -ay; \\
+\frac{dy}{dx}            &= \frac{a}{b}\left(\frac{g}{a}-y\right); \\
+\frac{dy}{y-\dfrac{g}{a}} &= -\frac{a}{b}\, dx.
+\end{aligned}
+\]
+
+<p>Agora fizemos o melhor para não ter nada senão $y$
+e $dy$ de um lado, e nada senão $dx$ do outro. Mas o
+resultado do lado esquerdo é integrável?
+
+<p>É da mesma forma que o resultado <a href="14.html#differlog">aqui</a>; assim,
+escrevendo as instruções para integrar, temos:
+\[
+\int{\frac{dy}{y-\dfrac{g}{a}}} = - \int{\frac{a}{b}\, dx};
+\]
+e, fazendo a integração, e acrescentando a
+constante apropriada,
+\[
+\begin{aligned}
+\log_\epsilon\left(y-\frac{g}{a}\right) &= -\frac{a}{b}x + \log_\epsilon C; \\
+ \text{donde}\;\;        y-\frac{g}{a} &= C\epsilon^{-\frac{a}{b}x}; \\
+ \text{e finalmente,}\;\;              y &= \frac{g}{a} + C\epsilon^{-\frac{a}{b}x},
+\end{aligned}
+\]
+que é <em>a solução</em>.
+
+
+<p>Se a condição imposta for que $y = 0$ quando $x = 0$,
+podemos achar $C$; pois então a exponencial se torna
+$= 1$; e temos</p>
+
+\[
+\begin{aligned}
+                0 &= \frac{g}{a} + C, \\
+ \text{ou}\;  C &= -\frac{g}{a}.
+\end{aligned}
+\]
+
+<p>Pondo esse valor, a solução se torna</p>
+
+\[
+y = \frac{g}{a} (1-\epsilon^{-\frac{a}{b} x}).
+\]
+
+<p>Mas além disso, se $x$ cresce indefinidamente, $y$
+crescerá até um máximo; pois quando $x=\infty$, a
+exponencial $= 0$, dando $y_{\text{máx.}} = \dfrac{g}{a}$.
+Substituindo isso, obtemos finalmente</p>
+
+\[
+y = y_{\text{máx.}}(1-\epsilon^{-\frac{a}{b} x}).
+\]
+
+<p>Este resultado também é de importância na ciência
+física.
+
+<p><hr>
+
+<p>
+<em>Exemplo (3.)</em>
+
+   Seja $ay+b\frac{dy}{dt} = g · \sin 2\pi nt$.
+
+
+<p>Acharemos isto bem menos tratável do que o
+precedente. Primeiro divida tudo por $b$.</p>
+
+\[
+\frac{dy}{dt} + \frac{a}{b}y = \frac{g}{b} \sin 2\pi nt.
+\]
+
+<p>Ora, como está, o lado esquerdo não é integrável.
+Mas pode ser tornado assim pelo artifício - e é
+aqui
+
+que a habilidade e a prática sugerem um plano - de
+multiplicar todos os termos por $\epsilon^{\frac{a}{b} t}$,
+dando-nos:</p>
+
+\[
+\frac{dy}{dt} \epsilon^{\frac{a}{b} t} + \frac{a}{b} y \epsilon^{\frac{a}{b} t} = \frac{g}{b} \epsilon^{\frac{a}{b} t} · \sin 2 \pi nt,
+\]
+que é o mesmo que
+\[
+\frac{dy}{dt} \epsilon^{\frac{a}{b} t} + y \frac{d(\epsilon^{\frac{a}{b} t})}{dt} = \frac{g}{b} \epsilon^{\frac{a}{b} t} · \sin 2 \pi nt;
+\]
+e isto sendo uma diferencial completa pode ser
+integrado assim: - pois, se  $u = y\epsilon^{\frac{a}{b} t}$,
+$\dfrac{du}{dt} = \dfrac{dy}{dt} \epsilon^{\frac{a}{b} t} + y \dfrac{d(\epsilon^{\frac{a}{b} t})}{dt}$,
+\[
+\begin{aligned}
+  y \epsilon^{\frac{a}{b} t}
+  &= \frac{g}{b} \int \epsilon^{\frac{a}{b} t} · \sin 2 \pi nt · dt + C, \\
+ \text{ou} \\
+y &= \frac{g}{b} \epsilon^{-\frac{a}{b} t} \\
+     \int \epsilon^{ \frac{a}{b} t} · \sin 2\pi nt · dt
+       + C\epsilon^{-\frac{a}{b} t}.
+\tag*{[A]}
+\end{aligned}
+\]
+
+<p>O último termo é obviamente um termo que se
+esvairá conforme $t$ aumenta, e pode ser omitido. O
+trabalho agora é achar a integral que aparece como
+fator. Para atacar isso recorremos ao recurso (veja
+<a href="20.html#intparts">aqui</a>) da integração por partes, cuja fórmula geral
+é $\int u dv = uv - \int v du$. Para esse propósito escreva
+\[
+\begin{aligned}
+&\left\{ \\
+\begin{aligned}
+ u &= \epsilon^{\frac{a}{b} t}; \\
+dv &= \sin 2\pi nt · dt. \\
+\end{aligned}
+\right.
+\end{aligned}
+\]
+Teremos então
+\[
+\begin{aligned}
+&\left\{ \\
+\begin{aligned}
+du &= \epsilon^{\frac{a}{b} t} × \frac{a}{b}\, dt; \\
+v &= - \frac{1}{2\pi n} \cos 2\pi nt. \\
+\end{aligned}
+\right.
+\end{aligned}
+\]
+
+<p>Inserindo isso, a integral em questão se torna:</p>
+
+\[
+\begin{aligned}
+\int \epsilon^{\frac{a}{b} t} &{} · \sin 2 \pi n t · dt \\
+&= -\frac{1}{2 \pi n} · \epsilon^{\frac{a}{b} t} · \cos 2 \pi nt \\
+   -\int -\frac{1}{2\pi n} \cos 2 \pi nt · \epsilon^{\frac{a}{b} t} · \frac{a}{b}\, dt \\
+&= -\frac{1}{2 \pi n} \epsilon^{\frac{a}{b} t} \cos 2 \pi nt \\
+   +\frac{a}{2 \pi nb} \int \epsilon^{\frac{a}{b} t} · \cos 2 \pi nt · dt.
+\tag*{[B]}
+\end{aligned}
+\]
+
+<p>A última integral ainda é irredutível. Para
+contornar a dificuldade, repita a integração por
+partes do lado esquerdo, mas tratando-o do modo
+inverso ao escrever:</p>
+
+\[
+\begin{aligned}
+u &= \sin 2 \pi n t, &
+dv &= \epsilon^{\frac{a}{b} t} · dt, \\
+du &= 2 \pi n · \cos 2 \pi n t · dt, &
+v &= \frac{b}{a} \epsilon^{\frac{a}{b} t}.
+\end{aligned}
+\]
+<p>Inserindo isso, obtemos</p>
+\[
+\begin{aligned}
+\int \epsilon^{\frac{a}{b} t} &{} · \sin 2 \pi n t · dt\\
+&= \frac{b}{a} · \epsilon^{\frac{a}{b} t} · \sin 2 \pi n t - \\
+   \frac{2 \pi n b}{a} \int \epsilon^{\frac{a}{b} t} · \cos 2 \pi n t · dt. \tag*{[C]}
+\end{aligned}
+\]
+<p>Notando que a integral final intratável em [C] é a
+mesma que em [B], podemos eliminá-la, multiplicando
+[B] por $\dfrac{2 \pi nb}{a}$, e multiplicando [C] por
+$\dfrac{a}{2 \pi nb}$, e somando-as.
+<p>O resultado, quando simplificado, é:</p>
+\[
+\begin{aligned}
+\int \epsilon^{\frac{a}{b} t} · \sin 2 \pi n t · dt
+  &= \epsilon^{\frac{a}{b} t} \left\{\frac{ ab · \sin 2 \pi nt - 2 \pi n b^2 · \cos 2 \pi n t}{ a^2 + 4 \pi^2 n^2 b^2 } \right\} \\
+\tag*{[D]} &
+\end{aligned}
+\]
+Inserindo esse valor em [A], obtemos
+\[
+\begin{aligned}
+y &= g \left\{\frac{ a · \sin 2 \pi n t - 2 \pi n b · \cos 2 \pi nt}{ a^2 + 4 \pi^2  n^2 b^2}\right\}. &
+\end{aligned}
+\]
+<p>Para simplificar ainda mais, imaginemos um ângulo
+$\phi$ tal que $\tan \phi = \dfrac{2 \pi n b}{ a}$.
+   Então</p>
+\[
+\sin \phi = \frac{2 \pi nb}{\sqrt{a^2 + 4 \pi^2 n^2 b^2}},
+\]
+ e
+ \[
+\cos \phi = \frac{a}{\sqrt{a^2 + 4 \pi^2 n^2 b^2}}.
+\]
+Substituindo isso, obtemos:
+ \[
+y = g \frac{\cos \phi · \sin 2 \pi nt
+  - \sin \phi · \cos 2 \pi nt}{\sqrt{a^2 + 4 \pi^2 n^2 b^2}}.
+\]
+que se pode escrever
+ \[
+y = g \frac{\sin(2 \pi nt - \phi)}{\sqrt{a^2 + 4 \pi^2 n^2 b^2}},
+\]
+ que é <em>a solução desejada.</em>
+
+
+<p>Isto não é outra coisa senão a equação de uma
+corrente elétrica alternada, onde $g$ representa a
+amplitude da força eletromotriz, $n$ a frequência,
+$a$ a resistência, $b$ o coeficiente de autoindução
+do circuito, e $\phi$ é um ângulo de atraso.
+
+<p><hr>
+
+
+<p>
+<em>Exemplo (4.)</em>
+
+   Suponha que
+$M\, dx + N\, dy = 0.$
+
+
+<p>Poderíamos integrar essa expressão diretamente, se
+$M$ fosse função só de $x$, e $N$ função só de $y$;
+mas, se tanto $M$ quanto $N$ são funções que dependem
+tanto de $x$ quanto de $y$, como a integramos? É ela
+mesma uma diferencial exata? Isto é: $M$ e $N$ foram
+cada um formados por diferenciação parcial a partir
+de alguma função comum $U$, ou não? Se o foram,
+então</p>
+
+\[\left\{
+  \begin{aligned}
+ \frac{\partial U}{\partial x} = M, \\
+ \frac{\partial U}{\partial y} = N.
+  \end{aligned}
+\right.
+\]
+E se tal função comum existe, então
+\[
+\frac{\partial U}{\partial x}\, dx + \frac{\partial U}{\partial y}\, dy
+\]
+é uma diferencial exata (compare <a href="16.html#partialdiff">aqui</a>).
+
+<p>
+Ora o teste da questão é este. Se a expressão é
+uma diferencial exata, deve ser verdade que</p>
+
+\[
+\begin{aligned}
+        \frac{dM}{dy} &= \frac{dN}{dx}; \\
+\text{pois então}\;
+\frac{d(dU)}{dx\, dy} &= \frac{d(dU)}{dy\, dx},
+\end{aligned}
+\]
+ o que é necessariamente verdadeiro.
+
+<p>Tome como ilustração a equação</p>
+
+\[
+(1 + 3 xy)\, dx + x^2\, dy = 0.
+\]
+
+<p>É esta uma diferencial exata ou não? Aplique o
+teste.</p>
+
+\[\left\{
+  \begin{aligned}
+ \frac{d(1 + 3xy)}{dy}=3x, \\
+  \dfrac{d(x^2)}{dx} = 2x,
+  \end{aligned}
+\right.
+\]
+que não concordam. Portanto, não é uma diferencial
+exata, e as duas funções $1+3xy$ e $x^2$ não vieram
+de uma função original comum.
+
+<p>É possível em tais casos descobrir, contudo, <em>um
+fator integrante</em>, isto é, um fator tal que se
+ambos forem multiplicados por esse fator, a
+expressão se tornará uma diferencial exata. Não há
+uma única regra para descobrir tal fator
+integrante; mas a experiência em geral sugere um.
+No presente caso $2x$ atuará como tal. Multiplicando
+por $2x$, obtemos
+\[
+(2x + 6x^2y)\, dx + 2x^3\, dy = 0.
+\]
+
+<p>Agora aplique o teste a isto.</p>
+
+\[
+\left\{
+  \begin{aligned}
+ \frac{d(2x + 6x^2y)}{dy}=6x^2, \\
+ \dfrac{d(2x^3)}{dx} = 6x^2,
+  \end{aligned}
+\right.
+\]
+que concorda. Logo isto é uma diferencial exata, e
+pode ser integrado. Ora, se $w = 2x^3y$,
+\[
+dw=6x^2y\, dx + 2x^3\, dy.
+\]
+   Logo
+   \[
+\int 6x^2y\, dx + \int 2x^3\, dy=w=2x^3y;
+\]
+ de modo que obtemos
+\[
+ U = x^2 + 2x^3y + C.
+\]
+
+<p><hr>
+<em>Exemplo (5.)</em> Seja $\dfrac{d^2 y}{dt^2} + n^2 y = 0$.
+
+<p>Neste caso temos uma equação diferencial de
+segundo grau, em que $y$ aparece na forma de uma
+segunda derivada, bem como em pessoa.
+
+<p>Transpondo, temos $\dfrac{d^2 y}{dt^2} = - n^2 y$.
+
+<p>Parece daí que temos de lidar com uma função tal
+que sua segunda derivada é proporcional a ela
+mesma, mas com sinal invertido. No Capítulo XV
+vimos que havia tal função - a saber, o <em>seno</em> (ou
+também o <em>cosseno</em>) que possuía essa propriedade.
+Assim, sem mais delongas, podemos inferir que a
+solução será da forma $y = A \sin (pt + q)$. Contudo,
+vamos ao trabalho.
+
+<p>Multiplique ambos os lados da equação original por
+$2\dfrac{dy}{dt}$ e integre, dando-nos $2\dfrac{d^2 y}{dt^2}\, \dfrac{dy}{dt} + 2x^2 y \dfrac{dy}{dt} = 0$, e, como</p>
+
+\[
+2 \frac{d^2y}{dt^2}\, \frac{dy}{dt}
+  = \frac{d \left(\dfrac{dy}{dt}\right)^2}{dt},\quad
+\left(\frac{dy}{dt}\right)^2 + n^2 (y^2-C^2) = 0,
+\]
+$C$ sendo uma constante. Então, tomando as raízes
+quadradas,
+\[
+\frac{dy}{dt} = -n \sqrt{ y^2 - C^2}\quad \text{e}\quad
+\frac{dy}{\sqrt{C^2 - y^2}} = n · dt.
+\]
+
+<p>Mas pode-se mostrar que (veja <a href="15.html#intex3">aqui</a>)</p>
+
+\[
+\frac{1}{\sqrt{C^2 - y^2}} = \frac{d (\arcsin \dfrac{y}{C})}{dy};
+\]
+donde, passando de ângulos a senos,
+\[
+\arcsin \frac{y}{C} = nt + C_1\quad \text{e}\quad y = C \sin (nt + C_1),
+\]
+
+onde $C_1$ é um ângulo constante que entra por
+integração.
+
+<p>Ou, de preferência, isto se pode escrever</p>
+
+\[
+y = A \sin nt + B \cos nt, \text{ que é a solução.}
+\]
+
+<p><hr>
+
+<p><em>Exemplo (6.)</em> $\dfrac{d^2 y}{dt^2} - n^2 y = 0$.
+
+<p>Aqui obviamente temos de lidar com uma função $y$
+que é tal que sua segunda derivada é proporcional a
+ela mesma. A única função que conhecemos com essa
+propriedade é a função exponencial (veja
+<a href="14.html#unchanged">aqui</a>), e podemos estar certos portanto de que a
+solução da equação será dessa forma.
+
+<p>Procedendo como antes, multiplicando por
+$2 \dfrac{dy}{dx}$, e integrando, obtemos $2\dfrac{d^2 y}{dx^2}\, \dfrac{dy}{dx} - 2x^2 y \dfrac{dy}{dx}=0$,
+
+ e, como</p>
+
+\[
+2\frac{d^2 y}{dx^2}\, \frac{dy}{dx}
+  = \frac{d \left(\dfrac{dy}{dx}\right)^2}{dx},\quad
+\left(\frac{dy}{dx}\right)^2 - n^2 (y^2 + c^2) = 0, \\
+\frac{dy}{dx} - n \sqrt{y^2 + c^2} = 0,
+\]
+onde $c$ é uma constante, e $\dfrac{dy}{\sqrt{y^2 + c^2}} = n\, dx$.
+
+<p>Ora, se</p>
+
+\[
+\quad w = \log_\epsilon ( y+ \sqrt{y^2+ c^2}) = \log_\epsilon u,\\
+\frac{dw}{du} = \frac{1}{u},\quad \frac{du}{dy} = 1 + \frac{y}{\sqrt{y^2 + c^2}} = \frac{y + \sqrt{ y^2 + c^2}}{\sqrt{y^2 + c^2}} \\
+\]
+ e
+\[
+ \frac{dw}{dy} = \frac{1}{\sqrt{ y^2 + c^2}}.
+\]
+
+<p>Logo, integrando, isto nos dá</p>
+
+\[
+\log_\epsilon (y + \sqrt{y^2 + c^2} ) = nx + \log_\epsilon C, \\
+y + \sqrt{y^2 + c^2} = C \epsilon^{nx}.
+\tag*{(1)}  \\
+\]
+\[
+   \text{Ora}\;  \qquad ( y + \sqrt{y^2 + c^2} ) × ( -y + \sqrt{y^2 + c^2} ) = c^2 ;    \\
+  \text{donde}\;  \qquad  -y + \sqrt{y^2 + c^2} = \dfrac{c^2}{C} \epsilon^{-nx}.
+\tag*{(2)}
+\]
+
+<p>Subtraindo (2) de (1) e dividindo por $2$, temos
+então</p>
+
+\[
+y = \frac{1}{2} C \epsilon^{nx} - \frac{1}{2}\, \frac{c^2}{C} \epsilon^{-nx},
+\]
+que se escreve de modo mais conveniente
+\[
+y = A \epsilon^{nx} + B \epsilon^{-nx}.
+\]
+Ou a solução, que à primeira vista não parece ter
+nada a ver com a equação original, mostra que $y$
+consiste de dois termos, um dos quais cresce
+logaritmicamente conforme $x$ aumenta, e de um
+segundo termo que se esvai conforme $x$ aumenta.
+
+<p><hr>
+
+<p>
+<em>Exemplo (7.)</em>
+   Seja
+\[
+\begin{aligned}
+b \frac{d^2y}{dt^2} + a \frac{dy}{dt} + gy &= 0.
+\end{aligned}
+\]
+
+<p>O exame dessa expressão mostrará que, se $b = 0$,
+ela tem a forma do Exemplo 1, cuja solução era uma
+exponencial negativa. Por outro lado, se $a = 0$,
+sua forma se torna a mesma do Exemplo 6, cuja
+solução é a soma de uma exponencial positiva e uma
+negativa. Não é portanto muito surpreendente achar
+que a solução do presente exemplo é</p>
+
+\[
+\begin{aligned}
+y &= (\epsilon^{-mt})(A \epsilon^{nt} + B \epsilon^{-nt}), \\
+ \text{onde}\;
+m &= \frac{a}{2b}\quad \text{e}\quad \\
+n  &= \sqrt{\frac{a^2}{4b^2}} - \frac{g}{b}.
+\end{aligned}
+\]
+
+<p>Os passos pelos quais se chega a essa solução não
+são dados aqui; podem ser encontrados em tratados
+avançados.
+
+<p><hr>
+
+
+<p>
+<em>Exemplo (8.)</em>
+\[
+\frac{d^2y}{dt^2} = a^2 \frac{d^2y}{dx^2}.
+\]
+
+<p>Viu-se (<a href="9.html#Example4">aqui</a>) que essa equação se derivava do
+original
+\[
+y = F(x+at) + f(x-at),
+\]
+onde $F$ e $f$ eram quaisquer funções arbitrárias de
+$t$.
+
+<p>Outro modo de tratá-la é transformá-la por uma
+mudança de variáveis em</p>
+
+\[
+\frac{d^2y}{du · dv} = 0,
+\]
+onde $u = x + at$, e $v = x - at$, levando à mesma
+solução geral. Se considerarmos um caso em que $F$
+se anula, então temos simplesmente
+\[
+y = f(x-at);
+\]
+e isto meramente enuncia que, no tempo $t = 0$, $y$ é
+uma função particular de $x$, e pode ser visto como
+denotando que a curva da relação de $y$ com $x$ tem
+uma forma particular. Então qualquer mudança no
+valor de $t$ é equivalente simplesmente a uma
+alteração na origem a partir da qual $x$ se conta.
+Isto é, indica que, a forma da função sendo
+conservada, ela se propaga ao longo da direção $x$
+com uma velocidade uniforme $a$; de modo que
+qualquer que seja o valor da ordenada $y$ em qualquer
+tempo particular $t_0$ em qualquer ponto particular
+$x_0$, o mesmo valor de $y$ aparecerá no tempo
+subsequente $t_1$ em um ponto mais adiante, cuja
+abscissa é $x_0 + a(t_1 - t_0)$. Neste caso a equação
+simplificada
+
+representa a propagação de uma onda (de qualquer
+forma) a uma velocidade uniforme ao longo da
+direção $x$.
+
+<p>Se a equação diferencial tivesse sido escrita</p>
+
+\[
+m \frac{d^2y}{dt^2} = k\, \frac{d^2y}{dx^2},
+\]
+a solução teria sido a mesma, mas a velocidade de
+propagação teria tido o valor
+\[
+a = \sqrt{\frac{k}{m}}.
+\]
+
+<p><hr>
+
+<p>Você foi agora conduzido pessoalmente pelas
+fronteiras até a terra encantada. E para que tenha
+uma referência prática aos principais resultados, o
+autor, ao despedir-se, pede permissão para
+presenteá-lo com um passaporte na forma de uma
+conveniente <a href="table.html">coleção de formas-padrão</a>.
+Na coluna do meio se puseram várias das funções que
+mais comumente ocorrem. Os resultados de
+diferenciá-las se puseram à esquerda; os resultados
+de integrá-las se puseram à direita. Que você as
+ache úteis!
+
+<br>
+<!-- Soluções comerciais removidas: projeto público e sem fins lucrativos -->
+
+
+<hr>
+<nav class="chapter-nav" aria-label="Navegação do capítulo">
+  <a class="nav-prev" href="20.html">← Anterior</a>
+  <a class="nav-home" href="index.html">Página principal</a>
+  <a class="nav-next" href="epilogue.html">Próximo →</a>
+</nav>
+<footer class="site-footer" role="contentinfo">
+  <p class="a rotatedFloralHeartBullet"></p>
+
+  <div class="manifesto">
+    <p class="manifesto-lead">
+      Este é um <strong>projeto público</strong>, sem fins lucrativos.
+      Não é permitido comercializá-lo, vendê-lo nem usá-lo como produto pago.
+    </p>
+    <p class="manifesto-quote">
+      A educação é um direito de todos.
+      O conhecimento deve ser livre sempre que não cause o mal:
+      deve circular, ensinar e libertar, nunca aprisionar quem aprende.
+    </p>
+    <p class="manifesto-sign">
+      - Thales Rodrigues
+    </p>
+  </div>
+
+  <nav class="author-links" aria-label="Redes de Thales Rodrigues">
+    <a href="https://www.linkedin.com/in/thales-oliveira-rodrigues/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    <span class="dot" aria-hidden="true">·</span>
+    <a href="https://github.com/Rodriguestmo" target="_blank" rel="noopener noreferrer">GitHub</a>
+  </nav>
+
+  <p class="footer-meta">
+    <small>
+      Tradução e adaptação PT-BR por Thales Rodrigues.
+      Texto de Silvanus P. Thompson em domínio público (Project Gutenberg).
+      Notas de contexto inspiradas na edição Gardner (1998).
+      Projeto público e gratuito.
+    </small>
+  </p>
+</footer>
+
+<script src="j/jquery.js"></script>
+<script src="j/modernizr.js"></script>
+<script src="j/dih5.js"></script>
+<script src="j/chapters-data.js"></script>
+<script src="j/glossary-data.js"></script>
+<script src="j/reader-features.js"></script>
+<script src="j/notes-toggle.js"></script>
+<!-- Analytics desativado na edição PT local -->
+</body>
+</html>

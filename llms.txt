@@ -1,0 +1,27 @@
+# Cálculo Tornado Fácil
+
+> Tradução pública e gratuita para português brasileiro do clássico Calculus Made Easy (Silvanus P. Thompson, 1910). Projeto sem fins lucrativos. Não é permitido comercializar.
+
+Projeto de Thales Rodrigues. Educação é um direito de todos; o conhecimento deve ser livre sempre que não cause o mal.
+
+## Site
+- Home: https://rodriguestmo.github.io/calculo-tornado-facil/
+- Prólogo (PT): https://rodriguestmo.github.io/calculo-tornado-facil/prologue.html
+- Capítulo I (PT): https://rodriguestmo.github.io/calculo-tornado-facil/1.html
+- Sumário completo: https://rodriguestmo.github.io/calculo-tornado-facil/index.html
+- Sitemap: https://rodriguestmo.github.io/calculo-tornado-facil/sitemap.xml
+
+## Código
+- Repositório: https://github.com/Rodriguestmo/calculo-tornado-facil
+
+## Fontes
+- Texto original: domínio público (Project Gutenberg #33283) — https://www.gutenberg.org/ebooks/33283
+- Notas de contexto inspiradas na edição anotada de Martin Gardner (1998)
+
+## Autor da edição PT-BR
+- Thales Rodrigues
+- LinkedIn: https://www.linkedin.com/in/thales-oliveira-rodrigues/
+- GitHub: https://github.com/Rodriguestmo
+
+## Como citar
+Cálculo Tornado Fácil (trad. Thales Rodrigues), baseado em Thompson, S. P. Calculus Made Easy (1910). Disponível em https://rodriguestmo.github.io/calculo-tornado-facil/
