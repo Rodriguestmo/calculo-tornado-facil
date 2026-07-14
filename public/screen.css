@@ -703,8 +703,9 @@ html.theme-dark body {
   background: #161616 !important;
   color: #e8e4d9 !important;
 }
-html.theme-dark a { color: #8ec7ff; }
-html.theme-dark a:visited { color: #b9a0e0; }
+html.theme-dark a,
+html.theme-dark a:link,
+html.theme-dark a:visited { color: #8ec7ff; }
 html.theme-dark hr { border-color: #444; }
 html.theme-dark h1,
 html.theme-dark h2,
