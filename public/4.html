@@ -91,7 +91,7 @@ body{counter-reset:h1 4}
 </script>
 </head>
 <body>
-<!-- Barra fixa: navegação, leitura, notas, tema -->
+<!-- Barra fixa: navegação, leitura, notas, destaques, tema -->
 <div id="site-toolbar" class="site-toolbar" role="region" aria-label="Controles do site">
   <a class="tb-home" href="index.html">Cálculo Tornado Fácil</a>
 
@@ -121,6 +121,33 @@ body{counter-reset:h1 4}
       <button type="button" id="font-larger" class="tb-btn tb-btn-sq" title="Aumentar fonte" aria-label="Aumentar fonte">A+</button>
     </div>
 
+    <label class="tb-field" title="Cor dos novos destaques">
+      <span class="tb-label">Cor</span>
+      <select id="hl-color" aria-label="Cor do destaque">
+        <option value="pastel-yellow">Amarelo pastel</option>
+        <option value="pastel-green">Verde pastel</option>
+        <option value="pastel-blue">Azul pastel</option>
+        <option value="pastel-pink">Rosa pastel</option>
+        <option value="pastel-orange">Laranja pastel</option>
+        <option value="pastel-purple">Roxo pastel</option>
+      </select>
+    </label>
+
+    <div class="tb-hl-wrap">
+      <button type="button" id="hl-list-toggle" class="tb-btn" aria-expanded="false" aria-controls="hl-list-panel" title="Ver todos os destaques e notas">
+        Destaques <span id="hl-count-badge" class="hl-count-badge" hidden>0</span>
+      </button>
+      <div id="hl-list-panel" class="hl-list-panel" hidden role="menu" aria-label="Lista de destaques">
+        <div class="hl-list-head">
+          <strong>Seus destaques</strong>
+          <span class="hl-list-hint">salvos neste navegador</span>
+        </div>
+        <div id="hl-list-body" class="hl-list-body">
+          <p class="hl-list-empty">Nenhum destaque ainda. Selecione um trecho no texto para destacar.</p>
+        </div>
+      </div>
+    </div>
+
     <button type="button" id="toggle-theme" class="tb-btn" title="Alternar tema claro/escuro" aria-pressed="false">
       <span class="theme-label">Tema escuro</span>
     </button>
@@ -134,11 +161,23 @@ body{counter-reset:h1 4}
   <button type="button" id="hl-btn-cancel" class="tb-btn tb-btn-ghost">Cancelar</button>
 </div>
 
+<!-- Tooltip flutuante da nota ao passar o mouse -->
+<div id="hl-float-tip" class="hl-float-tip" hidden role="tooltip"></div>
+
 <!-- Modal de nota do highlight -->
 <div id="hl-note-modal" class="hl-modal" hidden role="dialog" aria-modal="true" aria-labelledby="hl-note-title">
   <div class="hl-modal-box">
     <h3 id="hl-note-title">Nota do trecho</h3>
     <p id="hl-note-quote" class="hl-quote"></p>
+    <label class="hl-note-label" for="hl-note-color">Cor deste destaque</label>
+    <select id="hl-note-color" aria-label="Cor deste destaque">
+      <option value="pastel-yellow">Amarelo pastel</option>
+      <option value="pastel-green">Verde pastel</option>
+      <option value="pastel-blue">Azul pastel</option>
+      <option value="pastel-pink">Rosa pastel</option>
+      <option value="pastel-orange">Laranja pastel</option>
+      <option value="pastel-purple">Roxo pastel</option>
+    </select>
     <label class="hl-note-label" for="hl-note-input">Sua nota (salva só neste navegador)</label>
     <textarea id="hl-note-input" rows="4" maxlength="2000" placeholder="Escreva uma anotação opcional..."></textarea>
     <div class="hl-modal-actions">

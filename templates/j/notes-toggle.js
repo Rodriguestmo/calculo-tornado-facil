@@ -3,8 +3,9 @@
      cme-notes-mode = "all" | "click" | "off"
      cme-theme      = "light" | "dark"
      cme-font       = "default" | "dyslexia" | "sans" | "mono"
-     cme-font-size  = 85..140 (percentual)
-     cme-highlights = { "pagina.html": [ {id, text, note, nth} ] }
+     cme-font-size  = 85..140
+     cme-hl-color   = "pastel-yellow" | ...
+     cme-highlights = { "pagina.html": [ {id, text, note, nth, color} ] }
 */
 (function () {
   var KEY_MODE = "cme-notes-mode";
@@ -12,10 +13,48 @@
   var KEY_FONT = "cme-font";
   var KEY_SIZE = "cme-font-size";
   var KEY_HL = "cme-highlights";
+  var KEY_HL_COLOR = "cme-hl-color";
   var SIZE_MIN = 85;
   var SIZE_MAX = 140;
   var SIZE_STEP = 5;
   var SIZE_DEFAULT = 100;
+  var COLOR_DEFAULT = "pastel-yellow";
+  var COLORS = {
+    "pastel-yellow": 1,
+    "pastel-green": 1,
+    "pastel-blue": 1,
+    "pastel-pink": 1,
+    "pastel-orange": 1,
+    "pastel-purple": 1
+  };
+  var PAGE_TITLES = {
+    "index.html": "Página principal",
+    "prologue.html": "Prólogo",
+    "1.html": "I. Terrores Preliminares",
+    "2.html": "II. Graus de Pequenez",
+    "3.html": "III. Crescimentos Relativos",
+    "4.html": "IV. Casos Mais Simples",
+    "5.html": "V. Constantes",
+    "6.html": "VI. Somas e Produtos",
+    "7.html": "VII. Diferenciação Sucessiva",
+    "8.html": "VIII. Quando o Tempo Varia",
+    "9.html": "IX. Truque Útil",
+    "10.html": "X. Significado Geométrico",
+    "11.html": "XI. Máximos e Mínimos",
+    "12.html": "XII. Curvatura",
+    "13.html": "XIII. Outros Truques",
+    "14.html": "XIV. (a) Juros Compostos",
+    "14b.html": "XIV. (b) Decaimento",
+    "15.html": "XV. Senos e Cossenos",
+    "16.html": "XVI. Diferenciação Parcial",
+    "17.html": "XVII. Integração",
+    "18.html": "XVIII. Integrar como Inverso",
+    "19.html": "XIX. Áreas",
+    "20.html": "XX. Truques e Armadilhas",
+    "21.html": "XXI. Soluções",
+    "epilogue.html": "Epílogo",
+    "table.html": "Tabela de Formas"
+  };
 
   var root = document.documentElement;
   var modeSelect = document.getElementById("notes-mode");
@@ -24,6 +63,12 @@
   var fontSmaller = document.getElementById("font-smaller");
   var fontLarger = document.getElementById("font-larger");
   var fontSizeLabel = document.getElementById("font-size-label");
+  var hlColorSelect = document.getElementById("hl-color");
+  var hlListToggle = document.getElementById("hl-list-toggle");
+  var hlListPanel = document.getElementById("hl-list-panel");
+  var hlListBody = document.getElementById("hl-list-body");
+  var hlCountBadge = document.getElementById("hl-count-badge");
+  var hlFloatTip = document.getElementById("hl-float-tip");
 
   var hlPopup = document.getElementById("hl-popup");
   var hlBtnMark = document.getElementById("hl-btn-mark");
@@ -32,12 +77,14 @@
   var hlModal = document.getElementById("hl-note-modal");
   var hlNoteInput = document.getElementById("hl-note-input");
   var hlNoteQuote = document.getElementById("hl-note-quote");
+  var hlNoteColor = document.getElementById("hl-note-color");
   var hlNoteSave = document.getElementById("hl-note-save");
   var hlNoteRemove = document.getElementById("hl-note-remove");
   var hlNoteClose = document.getElementById("hl-note-close");
 
   var pendingRange = null;
   var activeHlId = null;
+  var tipHideTimer = null;
 
   var LUPA_SVG =
     '<svg class="note-mark-icon" viewBox="0 0 24 24" width="14" height="14" aria-hidden="true" focusable="false">' +
@@ -64,6 +111,20 @@
     var p = location.pathname.split("/").pop() || "index.html";
     if (!p || p === "") p = "index.html";
     return p;
+  }
+
+  function normalizeColor(c) {
+    return COLORS[c] ? c : COLOR_DEFAULT;
+  }
+
+  function pageTitle(page) {
+    return PAGE_TITLES[page] || page;
+  }
+
+  function truncate(s, n) {
+    s = (s || "").replace(/\s+/g, " ").trim();
+    if (s.length <= n) return s;
+    return s.slice(0, n - 1) + "…";
   }
 
   /* ---------- Tema ---------- */
@@ -105,6 +166,12 @@
     return pct;
   }
 
+  function applyHlColorPref(color) {
+    color = normalizeColor(color);
+    if (hlColorSelect) hlColorSelect.value = color;
+    return color;
+  }
+
   /* ---------- Notas Gardner ---------- */
   function noteIdFromHref(href) {
     if (!href) return null;
@@ -119,7 +186,6 @@
       var note = notes[i];
       var id = note.id;
       if (!id) continue;
-
       var mark = document.querySelector(
         '.note-mark[data-note="' + id + '"], .note-mark[href="#' + id + '"]'
       );
@@ -136,7 +202,6 @@
         mark.innerHTML = LUPA_SVG;
         continue;
       }
-
       mark = document.createElement("button");
       mark.type = "button";
       mark.className = "note-mark note-mark-block";
@@ -198,17 +263,14 @@
   function onMarkActivate(ev) {
     var mode = normalizeMode(get(KEY_MODE, "click"));
     if (mode === "off") return;
-
     var el = ev.target;
     while (el && el !== document && !el.classList.contains("note-mark")) {
       el = el.parentNode;
     }
     if (!el || !el.classList.contains("note-mark")) return;
-
     var id = el.getAttribute("data-note") || noteIdFromHref(el.getAttribute("href"));
     if (!id) return;
     ev.preventDefault();
-
     if (mode === "all") {
       var note = document.getElementById(id);
       if (note) {
@@ -221,7 +283,7 @@
     toggleNote(id);
   }
 
-  /* ---------- Destaques (highlights) ---------- */
+  /* ---------- Destaques ---------- */
   function loadAllHighlights() {
     try {
       return JSON.parse(get(KEY_HL, "{}")) || {};
@@ -232,6 +294,7 @@
 
   function saveAllHighlights(data) {
     set(KEY_HL, JSON.stringify(data));
+    refreshHlList();
   }
 
   function getPageHighlights() {
@@ -246,84 +309,34 @@
     saveAllHighlights(all);
   }
 
+  function flattenHighlights() {
+    var all = loadAllHighlights();
+    var out = [];
+    Object.keys(all).forEach(function (page) {
+      (all[page] || []).forEach(function (item) {
+        out.push({
+          page: page,
+          id: item.id,
+          text: item.text || "",
+          note: item.note || "",
+          nth: item.nth || 0,
+          color: normalizeColor(item.color || COLOR_DEFAULT)
+        });
+      });
+    });
+    return out;
+  }
+
   function uid() {
     return "hl-" + Date.now().toString(36) + "-" + Math.random().toString(36).slice(2, 8);
   }
 
-  function countOccurrencesBefore(rootEl, text, beforeNode) {
-    var walker = document.createTreeWalker(rootEl, NodeFilter.SHOW_TEXT, null);
-    var count = 0;
-    var node;
-    while ((node = walker.nextNode())) {
-      if (beforeNode && (node === beforeNode || node.compareDocumentPosition(beforeNode) & Node.DOCUMENT_POSITION_FOLLOWING)) {
-        // still counting until we pass beforeNode... actually we want nth of this text in document
-      }
-    }
-    return count;
-  }
-
-  function nthOccurrenceIndex(text, markEl) {
-    // how many previous marks with same text exist, or search text nodes
-    var all = document.body.innerText;
-    // Better: count mark elements with same data-text before this one; for new: count existing same text in body
-    var nodes = document.body.querySelectorAll("mark.cme-hl");
-    var n = 0;
-    for (var i = 0; i < nodes.length; i++) {
-      if (nodes[i] === markEl) return n;
-      if (nodes[i].getAttribute("data-text") === text) n++;
-    }
-    // for creation before mark exists: count text occurrences via indexOf chain
-    return countTextNth(document.body, text, markEl);
-  }
-
-  function countTextNth(container, text, stopAt) {
-    if (!text) return 0;
-    var walker = document.createTreeWalker(container, NodeFilter.SHOW_TEXT, {
-      acceptNode: function (node) {
-        if (!node.nodeValue || !node.nodeValue.trim()) return NodeFilter.FILTER_REJECT;
-        var p = node.parentNode;
-        if (p && (p.closest && (p.closest("#site-toolbar") || p.closest(".hl-popup") || p.closest(".hl-modal") || p.closest("script") || p.closest("style")))) {
-          return NodeFilter.FILTER_REJECT;
-        }
-        return NodeFilter.FILTER_ACCEPT;
-      },
-    });
-    var full = "";
-    var map = []; // {start, end, node}
-    var node;
-    while ((node = walker.nextNode())) {
-      if (stopAt && node.parentNode && stopAt.contains && node.parentNode.closest && false) {
-      }
-      var start = full.length;
-      full += node.nodeValue;
-      map.push({ start: start, end: full.length, node: node });
-    }
-    // find all occurrences
-    var occ = 0;
-    var pos = 0;
-    while (true) {
-      var i = full.indexOf(text, pos);
-      if (i === -1) break;
-      // check if this occurrence is at/after stopAt mark start
-      if (stopAt) {
-        var markStart = -1;
-        // find text offset of stopAt first text child
-        var tw = document.createTreeWalker(stopAt, NodeFilter.SHOW_TEXT, null);
-        var tn = tw.nextNode();
-        if (tn) {
-          for (var m = 0; m < map.length; m++) {
-            if (map[m].node === tn) {
-              markStart = map[m].start;
-              break;
-            }
-          }
-        }
-        if (markStart >= 0 && i >= markStart) return occ;
-      }
-      occ++;
-      pos = i + Math.max(text.length, 1);
-    }
-    return occ;
+  function applyColorToMark(mark, color) {
+    color = normalizeColor(color);
+    mark.setAttribute("data-color", color);
+    mark.className = "cme-hl cme-hl-" + color;
+    var note = mark.getAttribute("data-note") || "";
+    if (note) mark.classList.add("cme-hl-has-note");
   }
 
   function findNthTextRange(container, text, nth) {
@@ -338,6 +351,8 @@
           (p.closest("#site-toolbar") ||
             p.closest(".hl-popup") ||
             p.closest(".hl-modal") ||
+            p.closest(".hl-list-panel") ||
+            p.closest(".hl-float-tip") ||
             p.closest("script") ||
             p.closest("style") ||
             p.closest("mark.cme-hl"))
@@ -345,7 +360,7 @@
           return NodeFilter.FILTER_REJECT;
         }
         return NodeFilter.FILTER_ACCEPT;
-      },
+      }
     });
     var full = "";
     var map = [];
@@ -387,19 +402,18 @@
     }
   }
 
-  function wrapRange(range, id, text, note) {
+  function wrapRange(range, id, text, note, color) {
     var mark = document.createElement("mark");
-    mark.className = "cme-hl";
     mark.setAttribute("data-id", id);
     mark.setAttribute("data-text", text);
     if (note) mark.setAttribute("data-note", note);
+    applyColorToMark(mark, color);
     mark.setAttribute("tabindex", "0");
-    mark.setAttribute("title", note ? "Nota: " + note : "Destaque (clique para anotar)");
     mark.setAttribute("role", "button");
+    mark.removeAttribute("title");
     try {
       range.surroundContents(mark);
     } catch (e) {
-      // seleção atravessa elementos: extrai conteúdo
       try {
         var frag = range.extractContents();
         mark.appendChild(frag);
@@ -408,6 +422,7 @@
         return null;
       }
     }
+    bindHighlightHover(mark);
     return mark;
   }
 
@@ -419,16 +434,9 @@
     parent.normalize();
   }
 
-  function clearRenderedHighlights() {
-    var marks = document.querySelectorAll("mark.cme-hl");
-    // unwrap from last to first to keep structure stable
-    for (var i = marks.length - 1; i >= 0; i--) unwrapMark(marks[i]);
-  }
-
   function restoreHighlights() {
     var list = getPageHighlights();
     if (!list.length) return;
-    // sort by nth ascending, apply carefully
     list = list.slice().sort(function (a, b) {
       return (a.nth || 0) - (b.nth || 0);
     });
@@ -437,7 +445,13 @@
       if (!item || !item.text) continue;
       var range = findNthTextRange(document.body, item.text, item.nth || 0);
       if (!range) continue;
-      wrapRange(range, item.id, item.text, item.note || "");
+      wrapRange(
+        range,
+        item.id,
+        item.text,
+        item.note || "",
+        item.color || COLOR_DEFAULT
+      );
     }
   }
 
@@ -450,13 +464,15 @@
       var text = m.getAttribute("data-text") || m.textContent;
       var nth = textCount[text] || 0;
       textCount[text] = nth + 1;
+      var id = m.getAttribute("data-id") || uid();
       list.push({
-        id: m.getAttribute("data-id") || uid(),
+        id: id,
         text: text,
         note: m.getAttribute("data-note") || "",
         nth: nth,
+        color: normalizeColor(m.getAttribute("data-color") || COLOR_DEFAULT)
       });
-      m.setAttribute("data-id", list[list.length - 1].id);
+      m.setAttribute("data-id", id);
     }
     setPageHighlights(list);
   }
@@ -489,21 +505,31 @@
     if (!text || text.length < 2) return null;
     if (text.length > 800) return null;
     var range = sel.getRangeAt(0);
-    // must be inside body content, not toolbar
     var node = range.commonAncestorContainer;
     var el = node.nodeType === 1 ? node : node.parentNode;
     if (!el || !el.closest) return null;
-    if (el.closest("#site-toolbar") || el.closest(".hl-popup") || el.closest(".hl-modal")) return null;
+    if (
+      el.closest("#site-toolbar") ||
+      el.closest(".hl-popup") ||
+      el.closest(".hl-modal") ||
+      el.closest(".hl-list-panel") ||
+      el.closest(".hl-float-tip")
+    )
+      return null;
     if (el.closest("mark.cme-hl")) return null;
     return { sel: sel, range: range.cloneRange(), text: text };
   }
 
-  function onSelectionChange() {
-    // delayed so mouseup fires first
-  }
-
   function onMouseUp(ev) {
-    if (ev.target && ev.target.closest && (ev.target.closest(".hl-popup") || ev.target.closest(".hl-modal") || ev.target.closest("#site-toolbar"))) {
+    if (
+      ev.target &&
+      ev.target.closest &&
+      (ev.target.closest(".hl-popup") ||
+        ev.target.closest(".hl-modal") ||
+        ev.target.closest("#site-toolbar") ||
+        ev.target.closest(".hl-list-panel") ||
+        ev.target.closest(".hl-float-tip"))
+    ) {
       return;
     }
     setTimeout(function () {
@@ -522,14 +548,9 @@
     var text = pendingRange.toString().replace(/\s+/g, " ").trim();
     if (!text) return;
     var id = uid();
-    // compute nth before wrapping
-    var nth = 0;
-    var tmpRange = findNthTextRange(document.body, text, 0);
-    // count how many times text appears before our selection start
-    var probe = document.createRange();
+    var color = normalizeColor(get(KEY_HL_COLOR, COLOR_DEFAULT));
     try {
-      // simpler: after wrap, persistFromDom recalculates nth
-      var mark = wrapRange(pendingRange, id, text, "");
+      var mark = wrapRange(pendingRange, id, text, "", color);
       if (!mark) {
         hidePopup();
         return;
@@ -546,11 +567,18 @@
   function openNoteModal(mark) {
     if (!hlModal || !mark) return;
     activeHlId = mark.getAttribute("data-id");
-    if (hlNoteQuote) hlNoteQuote.textContent = '"' + (mark.getAttribute("data-text") || mark.textContent) + '"';
+    if (hlNoteQuote)
+      hlNoteQuote.textContent =
+        '"' + (mark.getAttribute("data-text") || mark.textContent) + '"';
     if (hlNoteInput) hlNoteInput.value = mark.getAttribute("data-note") || "";
+    if (hlNoteColor)
+      hlNoteColor.value = normalizeColor(
+        mark.getAttribute("data-color") || COLOR_DEFAULT
+      );
     hlModal.hidden = false;
     hlModal.style.display = "flex";
     if (hlNoteInput) hlNoteInput.focus();
+    hideFloatTip();
   }
 
   function closeNoteModal() {
@@ -565,6 +593,137 @@
     return document.querySelector('mark.cme-hl[data-id="' + id + '"]');
   }
 
+  /* ---------- Lista de destaques (dropdown) ---------- */
+  function refreshHlList() {
+    var items = flattenHighlights();
+    if (hlCountBadge) {
+      if (items.length) {
+        hlCountBadge.hidden = false;
+        hlCountBadge.textContent = String(items.length);
+      } else {
+        hlCountBadge.hidden = true;
+      }
+    }
+    if (!hlListBody) return;
+    if (!items.length) {
+      hlListBody.innerHTML =
+        '<p class="hl-list-empty">Nenhum destaque ainda. Selecione um trecho no texto para destacar.</p>';
+      return;
+    }
+    // group by page
+    var byPage = {};
+    items.forEach(function (it) {
+      if (!byPage[it.page]) byPage[it.page] = [];
+      byPage[it.page].push(it);
+    });
+    var html = "";
+    Object.keys(byPage)
+      .sort()
+      .forEach(function (page) {
+        html +=
+          '<div class="hl-list-group"><div class="hl-list-page">' +
+          pageTitle(page) +
+          "</div>";
+        byPage[page].forEach(function (it) {
+          var hasNote = !!(it.note && it.note.trim());
+          html +=
+            '<button type="button" class="hl-list-item" data-page="' +
+            page.replace(/"/g, "") +
+            '" data-id="' +
+            it.id.replace(/"/g, "") +
+            '">' +
+            '<span class="hl-list-swatch cme-hl-' +
+            it.color +
+            '"></span>' +
+            '<span class="hl-list-text">' +
+            escapeHtml(truncate(it.text, 90)) +
+            "</span>" +
+            (hasNote
+              ? '<span class="hl-list-note">' +
+                escapeHtml(truncate(it.note, 80)) +
+                "</span>"
+              : '<span class="hl-list-note hl-list-note-empty">sem nota</span>') +
+            "</button>";
+        });
+        html += "</div>";
+      });
+    hlListBody.innerHTML = html;
+  }
+
+  function escapeHtml(s) {
+    return String(s)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;");
+  }
+
+  function toggleHlList(force) {
+    if (!hlListPanel || !hlListToggle) return;
+    var open =
+      force === true ? true : force === false ? false : hlListPanel.hidden;
+    if (open) {
+      refreshHlList();
+      hlListPanel.hidden = false;
+      hlListToggle.setAttribute("aria-expanded", "true");
+    } else {
+      hlListPanel.hidden = true;
+      hlListToggle.setAttribute("aria-expanded", "false");
+    }
+  }
+
+  /* ---------- Tooltip flutuante ---------- */
+  function hideFloatTip() {
+    if (tipHideTimer) {
+      clearTimeout(tipHideTimer);
+      tipHideTimer = null;
+    }
+    if (hlFloatTip) {
+      hlFloatTip.hidden = true;
+      hlFloatTip.style.display = "none";
+      hlFloatTip.textContent = "";
+    }
+  }
+
+  function showFloatTip(mark, x, y) {
+    if (!hlFloatTip || !mark) return;
+    var note = (mark.getAttribute("data-note") || "").trim();
+    if (!note) {
+      hideFloatTip();
+      return;
+    }
+    hlFloatTip.textContent = note;
+    hlFloatTip.hidden = false;
+    hlFloatTip.style.display = "block";
+    var pad = 10;
+    var w = hlFloatTip.offsetWidth || 220;
+    var h = hlFloatTip.offsetHeight || 40;
+    var left = Math.min(window.innerWidth - w - pad, Math.max(pad, x + 12));
+    var top = Math.min(window.innerHeight - h - pad, Math.max(pad, y + 16));
+    hlFloatTip.style.left = left + "px";
+    hlFloatTip.style.top = top + "px";
+  }
+
+  function bindHighlightHover(mark) {
+    if (!mark || mark._hlBound) return;
+    mark._hlBound = true;
+    mark.addEventListener("mouseenter", function (ev) {
+      if (tipHideTimer) {
+        clearTimeout(tipHideTimer);
+        tipHideTimer = null;
+      }
+      showFloatTip(mark, ev.clientX, ev.clientY);
+    });
+    mark.addEventListener("mousemove", function (ev) {
+      var note = (mark.getAttribute("data-note") || "").trim();
+      if (!note) return;
+      showFloatTip(mark, ev.clientX, ev.clientY);
+    });
+    mark.addEventListener("mouseleave", function () {
+      tipHideTimer = setTimeout(hideFloatTip, 120);
+    });
+  }
+
   /* ---------- Init ---------- */
   ensureMarks();
 
@@ -572,15 +731,18 @@
   var theme = get(KEY_THEME, "light");
   var font = get(KEY_FONT, "default");
   var size = clampSize(get(KEY_SIZE, String(SIZE_DEFAULT)));
+  var hlColor = applyHlColorPref(get(KEY_HL_COLOR, COLOR_DEFAULT));
 
   applyMode(mode);
   applyTheme(theme);
   applyFont(font);
   applyFontSize(size);
+  set(KEY_HL_COLOR, hlColor);
 
-  // restore highlights after layout
   setTimeout(function () {
     restoreHighlights();
+    document.querySelectorAll("mark.cme-hl").forEach(bindHighlightHover);
+    refreshHlList();
   }, 50);
 
   if (modeSelect) {
@@ -623,6 +785,54 @@
     });
   }
 
+  if (hlColorSelect) {
+    hlColorSelect.addEventListener("change", function () {
+      var c = normalizeColor(hlColorSelect.value);
+      set(KEY_HL_COLOR, c);
+    });
+  }
+
+  if (hlListToggle) {
+    hlListToggle.addEventListener("click", function (ev) {
+      ev.stopPropagation();
+      toggleHlList();
+    });
+  }
+
+  if (hlListBody) {
+    hlListBody.addEventListener("click", function (ev) {
+      var btn = ev.target.closest && ev.target.closest(".hl-list-item");
+      if (!btn) return;
+      var page = btn.getAttribute("data-page");
+      var id = btn.getAttribute("data-id");
+      if (!page || !id) return;
+      if (page === pageKey()) {
+        var mark = findMarkById(id);
+        if (mark) {
+          try {
+            mark.scrollIntoView({ behavior: "smooth", block: "center" });
+          } catch (e) {}
+          openNoteModal(mark);
+        }
+        toggleHlList(false);
+      } else {
+        location.href = page + "#hl-" + encodeURIComponent(id);
+      }
+    });
+  }
+
+  document.addEventListener("click", function (ev) {
+    if (
+      hlListPanel &&
+      !hlListPanel.hidden &&
+      hlListToggle &&
+      !hlListPanel.contains(ev.target) &&
+      !hlListToggle.contains(ev.target)
+    ) {
+      toggleHlList(false);
+    }
+  });
+
   document.addEventListener("click", onMarkActivate);
   document.addEventListener("keydown", function (ev) {
     if (ev.key !== "Enter" && ev.key !== " ") return;
@@ -653,18 +863,20 @@
     }, 30);
   });
 
-  if (hlBtnMark) hlBtnMark.addEventListener("click", function () { createHighlight(false); });
-  if (hlBtnNote) hlBtnNote.addEventListener("click", function () { createHighlight(true); });
+  if (hlBtnMark)
+    hlBtnMark.addEventListener("click", function () {
+      createHighlight(false);
+    });
+  if (hlBtnNote)
+    hlBtnNote.addEventListener("click", function () {
+      createHighlight(true);
+    });
   if (hlBtnCancel) hlBtnCancel.addEventListener("click", hidePopup);
 
   document.addEventListener("click", function (ev) {
     var t = ev.target;
     if (t && t.classList && t.classList.contains("cme-hl")) {
       openNoteModal(t);
-      return;
-    }
-    if (hlPopup && !hlPopup.hidden && t && !hlPopup.contains(t)) {
-      // keep popup if still selecting
     }
   });
 
@@ -677,15 +889,17 @@
       }
       var note = (hlNoteInput && hlNoteInput.value) || "";
       note = note.trim().slice(0, 2000);
+      var color = normalizeColor(
+        (hlNoteColor && hlNoteColor.value) || COLOR_DEFAULT
+      );
       if (note) {
         mark.setAttribute("data-note", note);
-        mark.setAttribute("title", "Nota: " + note);
         mark.classList.add("cme-hl-has-note");
       } else {
         mark.removeAttribute("data-note");
-        mark.setAttribute("title", "Destaque (clique para anotar)");
         mark.classList.remove("cme-hl-has-note");
       }
+      applyColorToMark(mark, color);
       persistFromDom();
       closeNoteModal();
     });
@@ -714,6 +928,23 @@
     if (ev.key === "Escape") {
       hidePopup();
       closeNoteModal();
+      toggleHlList(false);
+      hideFloatTip();
     }
   });
+
+  // deep-link from lista: #hl-id
+  setTimeout(function () {
+    var hash = location.hash || "";
+    if (hash.indexOf("#hl-") === 0) {
+      var id = decodeURIComponent(hash.slice(4));
+      var mark = findMarkById(id);
+      if (mark) {
+        try {
+          mark.scrollIntoView({ behavior: "smooth", block: "center" });
+        } catch (e) {}
+        openNoteModal(mark);
+      }
+    }
+  }, 200);
 })();
