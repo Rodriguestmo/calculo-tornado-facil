@@ -74,6 +74,9 @@
   var settingsPanel = document.getElementById("settings-panel");
   var hlColorSwatches = document.getElementById("hl-color-swatches");
   var hlFilterSwatches = document.getElementById("hl-filter-swatches");
+  var hlFilterToggle = document.getElementById("hl-filter-toggle");
+  var hlFilterBody = document.getElementById("hl-filter-body");
+  var hlFilterToggleLabel = document.getElementById("hl-filter-toggle-label");
   var hlNoteSwatches = document.getElementById("hl-note-swatches");
   var clearSiteDataBtn = document.getElementById("clear-site-data");
   var clearDataModal = document.getElementById("clear-data-modal");
@@ -896,6 +899,19 @@
       setHlFilter(btn.getAttribute("data-filter") || "all");
     });
   }
+
+  if (hlFilterToggle && hlFilterBody) {
+    hlFilterToggle.addEventListener("click", function (ev) {
+      ev.stopPropagation();
+      var open = hlFilterBody.hidden;
+      hlFilterBody.hidden = !open;
+      hlFilterToggle.setAttribute("aria-expanded", open ? "true" : "false");
+      if (hlFilterToggleLabel) {
+        hlFilterToggleLabel.textContent = open ? "ocultar" : "mostrar";
+      }
+    });
+  }
+
 
   if (hlNoteSwatches) {
     hlNoteSwatches.addEventListener("click", function (ev) {

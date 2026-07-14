@@ -940,19 +940,30 @@ mark.cme-hl {
   background: #fff3a8; /* amarelo pastel padrão */
 }
 
-/* cores pastel */
+/* cores pastel (mark, lista e botões-círculo) */
 mark.cme-hl-pastel-yellow,
-.hl-list-swatch.cme-hl-pastel-yellow { background: #fff3a8; }
+.hl-list-swatch.cme-hl-pastel-yellow,
+.hl-swatch-btn.cme-hl-pastel-yellow { background: #fff3a8 !important; }
+
 mark.cme-hl-pastel-green,
-.hl-list-swatch.cme-hl-pastel-green { background: #c8f0c8; }
+.hl-list-swatch.cme-hl-pastel-green,
+.hl-swatch-btn.cme-hl-pastel-green { background: #c8f0c8 !important; }
+
 mark.cme-hl-pastel-blue,
-.hl-list-swatch.cme-hl-pastel-blue { background: #cfe4ff; }
+.hl-list-swatch.cme-hl-pastel-blue,
+.hl-swatch-btn.cme-hl-pastel-blue { background: #cfe4ff !important; }
+
 mark.cme-hl-pastel-pink,
-.hl-list-swatch.cme-hl-pastel-pink { background: #ffd6e5; }
+.hl-list-swatch.cme-hl-pastel-pink,
+.hl-swatch-btn.cme-hl-pastel-pink { background: #ffd6e5 !important; }
+
 mark.cme-hl-pastel-orange,
-.hl-list-swatch.cme-hl-pastel-orange { background: #ffe0c2; }
+.hl-list-swatch.cme-hl-pastel-orange,
+.hl-swatch-btn.cme-hl-pastel-orange { background: #ffe0c2 !important; }
+
 mark.cme-hl-pastel-purple,
-.hl-list-swatch.cme-hl-pastel-purple { background: #e6d6ff; }
+.hl-list-swatch.cme-hl-pastel-purple,
+.hl-swatch-btn.cme-hl-pastel-purple { background: #e6d6ff !important; }
 
 mark.cme-hl.cme-hl-has-note {
   box-shadow: inset 0 -2px 0 rgba(0,0,0,0.18);
@@ -1407,10 +1418,14 @@ body {
   width: 1.55em;
   height: 1.55em;
   border-radius: 50%;
-  border: 2px solid rgba(255,255,255,0.25);
+  border: 2px solid rgba(255,255,255,0.35);
   padding: 0;
   cursor: pointer;
-  box-shadow: inset 0 0 0 1px rgba(0,0,0,0.08);
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,0.12);
+  flex: 0 0 auto;
+  appearance: none;
+  -webkit-appearance: none;
+  background-clip: padding-box;
 }
 .hl-swatch-btn:hover {
   transform: scale(1.08);
@@ -1499,4 +1514,34 @@ body {
 .tb-menu[data-menu="settings"] .tb-menu-panel {
   right: 0;
   left: auto;
+}
+
+/* Toggle mostrar/ocultar filtro de cores */
+.hl-filter-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 0.5em;
+  background: transparent;
+  border: 0;
+  color: inherit;
+  font: inherit;
+  padding: 0.15em 0;
+  cursor: pointer;
+  text-align: left;
+}
+.hl-filter-toggle .tb-menu-label {
+  margin: 0;
+}
+.hl-filter-toggle-label {
+  font-size: 11px;
+  opacity: 0.7;
+  text-transform: lowercase;
+}
+.hl-filter-body {
+  margin-top: 0.4em;
+}
+.hl-filter-body[hidden] {
+  display: none !important;
 }
