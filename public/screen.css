@@ -1606,9 +1606,19 @@ html.cme-focus .cme-fab-bm,
 html.cme-focus .cme-fab-glos {
   opacity: 0.35;
 }
+html.cme-focus .cme-fab:hover,
+html.cme-focus .cme-fab:focus-visible {
+  opacity: 1;
+}
 html.cme-focus .cme-fab-focus {
   opacity: 1;
   border-color: #e8a54b;
+}
+
+.cme-drawer[hidden],
+.cme-drawer-backdrop[hidden],
+.cme-resume-banner[hidden] {
+  display: none !important;
 }
 
 .cme-resume-banner {

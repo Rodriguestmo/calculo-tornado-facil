@@ -113,6 +113,20 @@
 
   function openDrawer(id) {
     closeDrawers();
+    // Fechar painéis flutuantes da barra para evitar sobreposição
+    var sp = document.getElementById("settings-panel");
+    var st = document.getElementById("settings-toggle");
+    if (sp) {
+      sp.hidden = true;
+      if (st) st.setAttribute("aria-expanded", "false");
+    }
+    var hlp = document.getElementById("hl-list-panel");
+    var hlt = document.getElementById("hl-list-toggle");
+    if (hlp) {
+      hlp.hidden = true;
+      if (hlt) hlt.setAttribute("aria-expanded", "false");
+    }
+
     var el = document.getElementById(id);
     var bd = document.getElementById("cme-drawer-backdrop");
     if (el) el.hidden = false;
@@ -171,6 +185,19 @@
     });
   }
 
+
+  function restoreBookmarkScroll() {
+    var m = location.hash && location.hash.match(/^#cme-bm=(\d+)/);
+    if (!m) return;
+    var cur = pageKey();
+    if (sessionStorage.getItem("cme-bm-restored-" + cur)) return;
+    sessionStorage.setItem("cme-bm-restored-" + cur, "1");
+    var y = parseInt(m[1], 10) || 0;
+    setTimeout(function () {
+      window.scrollTo(0, y);
+    }, 100);
+  }
+
   function maybeShowResumeBanner() {
     var banner = document.getElementById("cme-resume-banner");
     if (!banner) return;
@@ -187,8 +214,17 @@
     // show on index or if different page
     var cur = pageKey();
     if (cur === resume.page) {
-      // restore scroll once
-      if (!sessionStorage.getItem("cme-restored-" + cur) && resume.scrollY > 80) {
+      // restore scroll once (bookmark hash has priority over resume)
+      var bmHash = location.hash && location.hash.match(/^#cme-bm=(\d+)/);
+      if (bmHash) {
+        if (!sessionStorage.getItem("cme-bm-restored-" + cur)) {
+          sessionStorage.setItem("cme-bm-restored-" + cur, "1");
+          var by = parseInt(bmHash[1], 10) || 0;
+          setTimeout(function () {
+            window.scrollTo(0, by);
+          }, 100);
+        }
+      } else if (!sessionStorage.getItem("cme-restored-" + cur) && resume.scrollY > 80) {
         sessionStorage.setItem("cme-restored-" + cur, "1");
         setTimeout(function () {
           window.scrollTo(0, resume.scrollY);
@@ -291,10 +327,12 @@
     });
     var html = "";
     list.forEach(function (b) {
+      var href = b.page || "";
+      if (b.scrollY) href += "#cme-bm=" + Math.round(b.scrollY);
       html +=
         '<div class="cme-bm-item">' +
         '<a href="' +
-        escapeHtml(b.page) +
+        escapeHtml(href) +
         '">' +
         escapeHtml(truncate(b.title || b.page, 60)) +
         "</a>" +
@@ -380,32 +418,42 @@
   /* ---------- Search ---------- */
   var searchIndex = null;
   var searchLoading = false;
+  var searchWaiters = [];
 
   function loadSearchIndex(cb) {
     if (searchIndex) {
       cb(searchIndex);
       return;
     }
+    if (typeof cb === "function") searchWaiters.push(cb);
     if (searchLoading) return;
     searchLoading = true;
+    function flush(data) {
+      searchLoading = false;
+      var q = searchWaiters.slice();
+      searchWaiters = [];
+      q.forEach(function (fn) {
+        try {
+          fn(data);
+        } catch (e) {}
+      });
+    }
     fetch("j/search-index.json")
       .then(function (r) {
         return r.json();
       })
       .then(function (data) {
         searchIndex = data;
-        searchLoading = false;
-        cb(data);
+        flush(data);
       })
       .catch(function () {
-        searchLoading = false;
         // fallback: titles only
         searchIndex = {
           pages: CHAPTERS.map(function (ch) {
             return { id: ch.id, title: ch.title, text: ch.title };
           })
         };
-        cb(searchIndex);
+        flush(searchIndex);
       });
   }
 
@@ -526,6 +574,7 @@
     renderBookmarks();
     renderGlossary("");
     maybeShowResumeBanner();
+    restoreBookmarkScroll();
 
     var tocOpen = document.getElementById("cme-toc-open");
     var searchOpen = document.getElementById("cme-search-open");
@@ -643,7 +692,7 @@
       { passive: true }
     );
     window.addEventListener("beforeunload", saveResume);
-    saveResume();
+
 
     // keyboard
     document.addEventListener("keydown", function (ev) {
