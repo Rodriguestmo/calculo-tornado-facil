@@ -831,9 +831,14 @@ html.font-mono body {
   letter-spacing: -0.01em;
 }
 
-/* Escala de fonte com limites (85%–140%) via --cme-font-scale */
+/* Escala de fonte com limites (85%–140%) via --cme-font-scale
+   Base ~18px (equivalente ao "large" original do tema) */
 html body {
-  font-size: calc(large * var(--cme-font-scale, 1)) !important;
+  font-size: calc(18px * var(--cme-font-scale, 1)) !important;
+  line-height: 1.556;
+}
+html.font-dyslexia body {
+  line-height: 1.7;
 }
 html body p,
 html body li,
