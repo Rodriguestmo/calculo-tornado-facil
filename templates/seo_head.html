@@ -35,3 +35,23 @@
 <meta name="twitter:image" content="{{ site_url }}/cover.jpg">
 
 <link rel="describedby" href="{{ site_url }}/llms.txt">
+{# Aplica modo das notas antes do paint para não sumirem se o JS atrasar #}
+<script>
+(function () {
+  try {
+    // migração v2 espelhada (evita flash com modo click antigo)
+    if (localStorage.getItem("cme-notes-v") !== "2") {
+      var prev = localStorage.getItem("cme-notes-mode");
+      if (prev === null || prev === "click") {
+        localStorage.setItem("cme-notes-mode", "all");
+      }
+      localStorage.setItem("cme-notes-v", "2");
+    }
+    var m = localStorage.getItem("cme-notes-mode");
+    if (m !== "all" && m !== "click" && m !== "off") m = "all";
+    document.documentElement.classList.add("notes-mode-" + m);
+  } catch (e) {
+    document.documentElement.classList.add("notes-mode-all");
+  }
+})();
+</script>

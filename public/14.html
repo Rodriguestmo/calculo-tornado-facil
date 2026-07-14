@@ -41,6 +41,26 @@
 
 <link rel="describedby" href="https://rodriguestmo.github.io/calculo-tornado-facil/llms.txt">
 
+<script>
+(function () {
+  try {
+    // migração v2 espelhada (evita flash com modo click antigo)
+    if (localStorage.getItem("cme-notes-v") !== "2") {
+      var prev = localStorage.getItem("cme-notes-mode");
+      if (prev === null || prev === "click") {
+        localStorage.setItem("cme-notes-mode", "all");
+      }
+      localStorage.setItem("cme-notes-v", "2");
+    }
+    var m = localStorage.getItem("cme-notes-mode");
+    if (m !== "all" && m !== "click" && m !== "off") m = "all";
+    document.documentElement.classList.add("notes-mode-" + m);
+  } catch (e) {
+    document.documentElement.classList.add("notes-mode-all");
+  }
+})();
+</script>
+
 <link rel="stylesheet" href="screen.css">
 <style>
 body{counter-reset:h1 14}
@@ -176,7 +196,7 @@ body{counter-reset:h1 14}
         <div class="tb-menu-title">Configurações</div>
 
         <label class="tb-menu-row">
-          <span class="tb-menu-label">Notas de Gardner</span>
+          <span class="tb-menu-label">Notas</span>
           <select id="notes-mode" aria-label="Modo de exibição das notas">
             <option value="all">Sempre visíveis</option>
             <option value="click">Lupa (clique para abrir)</option>
@@ -288,6 +308,18 @@ body{counter-reset:h1 14}
 <p class="a rotatedFloralHeartBullet">
 
 
+
+<aside class="cme-note gardner-note" id="g-ch14-epsilon">
+<header>Nota (Martin Gardner / contexto)</header>
+<p>O número $\epsilon$ de Thompson é o $e \approx 2{,}71828\ldots$ moderno - base dos logaritmos naturais. Gardner e edições atuais usam $e$; aqui mantemos $\epsilon$ por fidelidade ao texto, com a mesma série $1 + x + x^2/2! + \cdots$.</p>
+<span class="src">Comparação ed. Gardner 1998 e notação moderna.</span>
+</aside>
+
+<aside class="cme-note particular-note" id="p-ch14-growth">
+<header>Nota particular</header>
+<p>A lei “o incremento é proporcional ao valor atual” é a equação $\dfrac{dy}{dx} = ky$, cuja solução é crescimento (ou decaimento) exponencial. Juros compostos “contínuos” são o mesmo fenômeno com roupagem financeira.</p>
+<span class="src">Edição PT-BR.</span>
+</aside>
 <p>Seja uma quantidade que cresce de tal modo que
 o incremento de seu crescimento, durante um tempo dado,
 seja sempre proporcional à sua própria magnitude.
@@ -1276,7 +1308,7 @@ y = b\epsilon^{ax}.
     <small>
       Tradução e adaptação PT-BR por Thales Rodrigues.
       Texto de Silvanus P. Thompson em domínio público (Project Gutenberg).
-      Notas de contexto inspiradas na edição Gardner (1998).
+      Notas Gardner (1998) e notas particulares da edição PT-BR.
       Projeto público e gratuito.
     </small>
   </p>

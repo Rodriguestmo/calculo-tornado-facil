@@ -38,6 +38,26 @@
 <meta name="twitter:image" content="https://rodriguestmo.github.io/calculo-tornado-facil/cover.jpg">
 
 <link rel="describedby" href="https://rodriguestmo.github.io/calculo-tornado-facil/llms.txt">
+
+<script>
+(function () {
+  try {
+    // migração v2 espelhada (evita flash com modo click antigo)
+    if (localStorage.getItem("cme-notes-v") !== "2") {
+      var prev = localStorage.getItem("cme-notes-mode");
+      if (prev === null || prev === "click") {
+        localStorage.setItem("cme-notes-mode", "all");
+      }
+      localStorage.setItem("cme-notes-v", "2");
+    }
+    var m = localStorage.getItem("cme-notes-mode");
+    if (m !== "all" && m !== "click" && m !== "off") m = "all";
+    document.documentElement.classList.add("notes-mode-" + m);
+  } catch (e) {
+    document.documentElement.classList.add("notes-mode-all");
+  }
+})();
+</script>
 <link rel="stylesheet" href="screen.css">
 <style>
 body{counter-reset:h1 0}
@@ -171,7 +191,7 @@ body{counter-reset:h1 0}
         <div class="tb-menu-title">Configurações</div>
 
         <label class="tb-menu-row">
-          <span class="tb-menu-label">Notas de Gardner</span>
+          <span class="tb-menu-label">Notas</span>
           <select id="notes-mode" aria-label="Modo de exibição das notas">
             <option value="all">Sempre visíveis</option>
             <option value="click">Lupa (clique para abrir)</option>
@@ -281,10 +301,10 @@ body{counter-reset:h1 0}
 <h1><br>Prólogo</h1>
 <p class="a rotatedFloralHeartBullet">
 
-<aside class="gardner-note" id="g-prologo-edicao">
+<aside class="cme-note gardner-note" id="g-prologo-edicao">
 <header>Nota de edição (Martin Gardner, 1998)</header>
 <p>A edição de 1998, anotada e ampliada por Martin Gardner, mantém o plano original de Thompson e acrescenta: três capítulos preliminares (função, limite, derivada), notas de rodapé assinadas M.G., linguagem modernizada e um apêndice recreativo.</p>
-<p>Neste site, o texto principal é de Thompson (domínio público). As caixas como esta trazem material inspirado na edição Gardner. Na barra superior você escolhe: <strong>sempre visíveis</strong> ou <strong>lupa</strong> (clique para abrir/fechar cada nota).</p>
+<p>Neste site, o texto principal é de Thompson (domínio público). As caixas em tom quente trazem material inspirado na edição Gardner; as em tom azul são <strong>notas particulares</strong> desta edição PT-BR. Em Configurações (engrenagem) você escolhe: <strong>sempre visíveis</strong>, <strong>lupa</strong> (clique para abrir) ou <strong>ocultadas</strong>.</p>
 <span class="src">Fonte de referência: Thompson &amp; Gardner, Calculus Made Easy, St. Martin's Press, 1998.</span>
 </aside>
 
@@ -301,7 +321,7 @@ como são fáceis os cálculos fáceis. Pelo contrário,
 parecem querer impressioná-lo com a própria
 esperteza extraordinária, indo pelo caminho mais difícil.
 
-<aside class="gardner-note" id="g-prologo-livros">
+<aside class="cme-note gardner-note" id="g-prologo-livros">
 <header>Nota (contexto Gardner)</header>
 <p>Gardner abre a edição de 1998 criticando livros de cálculo “gordos” demais (às vezes com mais de mil páginas e preços altos) e o ensino que afasta alunos. Ele defende Thompson precisamente por ser magro, vivo e centrado nas ideias, em vez de em catálogos de técnicas.</p>
 <span class="src">Adaptado do Prefácio à Edição de 1998.</span>
@@ -314,7 +334,7 @@ partes que não são difíceis. Domine-as a fundo, e o resto
 virá. O que um tolo consegue, outro também consegue.
 <a class="note-mark" href="#g-prologo-tolo" data-note="g-prologo-tolo" title="Abrir/fechar nota de Gardner"></a>
 
-<aside class="gardner-note" id="g-prologo-tolo">
+<aside class="cme-note gardner-note" id="g-prologo-tolo">
 <header>Nota (Martin Gardner)</header>
 <p>Gardner lembra que o cálculo é a matemática da mudança: o universo “lá fora” está em fluxo constante. Mesmo quem não vai se tornar matemático ou cientista se beneficia de enxergar a ideia central - a “filosofia” do cálculo, no sentido de William James - e não só de treinar exercícios manuais.</p>
 <span class="src">Adaptado do Prefácio à Edição de 1998.</span>
@@ -356,7 +376,7 @@ virá. O que um tolo consegue, outro também consegue.
     <small>
       Tradução e adaptação PT-BR por Thales Rodrigues.
       Texto de Silvanus P. Thompson em domínio público (Project Gutenberg).
-      Notas de contexto inspiradas na edição Gardner (1998).
+      Notas Gardner (1998) e notas particulares da edição PT-BR.
       Projeto público e gratuito.
     </small>
   </p>

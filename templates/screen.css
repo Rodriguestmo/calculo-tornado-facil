@@ -577,8 +577,11 @@ html { scroll-padding-top: 3.6em; }
 /* Empurra o conteúdo para baixo da barra fixa */
 body { padding-top: 3.6em !important; }
 
-/* Bloco de nota Gardner */
-.gardner-note {
+/* Blocos de nota (Gardner e particulares) */
+.cme-note,
+.gardner-note,
+.particular-note {
+  display: block;
   margin: 1.25em 0;
   padding: 0.85em 1em 0.9em 1em;
   border-left: 4px solid #8b4513;
@@ -589,7 +592,13 @@ body { padding-top: 3.6em !important; }
   line-height: 1.45;
   box-shadow: 0 1px 2px rgba(0,0,0,0.06);
 }
-.gardner-note header {
+.particular-note {
+  border-left-color: #2c5f8a;
+  background: #f0f6fb;
+}
+.cme-note header,
+.gardner-note header,
+.particular-note header {
   font-weight: bold;
   font-size: 0.85em;
   text-transform: uppercase;
@@ -600,10 +609,21 @@ body { padding-top: 3.6em !important; }
   border: 0;
   background: transparent;
 }
-.gardner-note p { margin: 0.4em 0; }
-.gardner-note p:first-of-type { margin-top: 0; }
-.gardner-note p:last-child { margin-bottom: 0; }
-.gardner-note .src {
+.particular-note header {
+  color: #2c5f8a;
+}
+.cme-note p,
+.gardner-note p,
+.particular-note p { margin: 0.4em 0; }
+.cme-note p:first-of-type,
+.gardner-note p:first-of-type,
+.particular-note p:first-of-type { margin-top: 0; }
+.cme-note p:last-child,
+.gardner-note p:last-child,
+.particular-note p:last-child { margin-bottom: 0; }
+.cme-note .src,
+.gardner-note .src,
+.particular-note .src {
   display: block;
   margin-top: 0.55em;
   font-size: 0.82em;
@@ -650,7 +670,9 @@ body { padding-top: 3.6em !important; }
 }
 
 /* Modo: todas as notas sempre visíveis */
-html.notes-mode-all .gardner-note {
+html.notes-mode-all .cme-note,
+html.notes-mode-all .gardner-note,
+html.notes-mode-all .particular-note {
   display: block;
 }
 /* No modo "todas", a lupa ainda aparece (rola até a nota) */
@@ -662,10 +684,14 @@ html.notes-mode-all .note-mark-block {
 }
 
 /* Modo: clique na lupa abre/fecha a nota abaixo */
-html.notes-mode-click .gardner-note {
+html.notes-mode-click .cme-note,
+html.notes-mode-click .gardner-note,
+html.notes-mode-click .particular-note {
   display: none;
 }
-html.notes-mode-click .gardner-note.is-open {
+html.notes-mode-click .cme-note.is-open,
+html.notes-mode-click .gardner-note.is-open,
+html.notes-mode-click .particular-note.is-open {
   display: block;
   animation: note-open 0.18s ease-out;
 }
@@ -677,7 +703,9 @@ html.notes-mode-click .note-mark-block {
 }
 
 /* Modo: sempre ocultadas (sem notas e sem lupas) */
+html.notes-mode-off .cme-note,
 html.notes-mode-off .gardner-note,
+html.notes-mode-off .particular-note,
 html.notes-mode-off .note-mark {
   display: none !important;
 }
@@ -718,17 +746,31 @@ html.theme-dark .title,
 html.theme-dark .number {
   background: #161616;
 }
+html.theme-dark .cme-note,
 html.theme-dark .gardner-note {
   background: #2a2418;
   border-left-color: #d4a574;
   color: #e8e4d9;
   box-shadow: none;
 }
+html.theme-dark .particular-note {
+  background: #1a2430;
+  border-left-color: #6a9fc9;
+  color: #e8e4d9;
+  box-shadow: none;
+}
+html.theme-dark .cme-note header,
 html.theme-dark .gardner-note header {
   color: #e0b878;
   background: transparent;
 }
-html.theme-dark .gardner-note .src {
+html.theme-dark .particular-note header {
+  color: #8ec7ff;
+  background: transparent;
+}
+html.theme-dark .cme-note .src,
+html.theme-dark .gardner-note .src,
+html.theme-dark .particular-note .src {
   color: #a89b84;
 }
 html.theme-dark .note-mark {
@@ -907,7 +949,9 @@ html body li,
 html body td,
 html body th,
 html body blockquote,
+html body .cme-note,
 html body .gardner-note,
+html body .particular-note,
 html body .edition-box {
   font-size: inherit;
 }

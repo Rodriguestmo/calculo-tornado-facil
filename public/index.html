@@ -38,6 +38,26 @@
 <meta name="twitter:image" content="https://rodriguestmo.github.io/calculo-tornado-facil/cover.jpg">
 
 <link rel="describedby" href="https://rodriguestmo.github.io/calculo-tornado-facil/llms.txt">
+
+<script>
+(function () {
+  try {
+    // migração v2 espelhada (evita flash com modo click antigo)
+    if (localStorage.getItem("cme-notes-v") !== "2") {
+      var prev = localStorage.getItem("cme-notes-mode");
+      if (prev === null || prev === "click") {
+        localStorage.setItem("cme-notes-mode", "all");
+      }
+      localStorage.setItem("cme-notes-v", "2");
+    }
+    var m = localStorage.getItem("cme-notes-mode");
+    if (m !== "all" && m !== "click" && m !== "off") m = "all";
+    document.documentElement.classList.add("notes-mode-" + m);
+  } catch (e) {
+    document.documentElement.classList.add("notes-mode-all");
+  }
+})();
+</script>
 <link rel="stylesheet" href="screen.css">
 <style>
 h1:before{content:''}
@@ -197,7 +217,7 @@ html.theme-dark .title, html.theme-dark .number { background: #161616; }
         <div class="tb-menu-title">Configurações</div>
 
         <label class="tb-menu-row">
-          <span class="tb-menu-label">Notas de Gardner</span>
+          <span class="tb-menu-label">Notas</span>
           <select id="notes-mode" aria-label="Modo de exibição das notas">
             <option value="all">Sempre visíveis</option>
             <option value="click">Lupa (clique para abrir)</option>
@@ -317,13 +337,14 @@ html.theme-dark .title, html.theme-dark .number { background: #161616; }
   <h4>Sobre esta edição em português</h4>
   <p>Tradução PT-BR do clássico <em>Calculus Made Easy</em> (1910), de Silvanus P. Thompson,
   a partir do texto em domínio público.</p>
-  <p><strong>Leitura:</strong> na barra preta no topo você pode mudar a fonte (padrão, dislexia,
-  sans-serif, monospace), o tamanho do texto, o tema e como as notas de Gardner aparecem.
+  <p><strong>Leitura:</strong> na barra preta (engrenagem) você muda fonte, tamanho, tema e
+  como as <strong>notas</strong> aparecem (sempre visíveis, lupa ou ocultas). Há notas no espírito
+  de Gardner (caixas em tom quente) e <strong>notas particulares</strong> desta edição (tom azul).
   Selecione um trecho para destacar e, se quiser, anexar uma nota. Preferências e destaques
   ficam salvos só neste navegador.</p>
-  <p><strong>Tradução completa</strong> do livro para português brasileiro, com notas de contexto opcionais.
-  O texto principal de Thompson é domínio público; as notas de contexto são adaptações
-  inspiradas na edição anotada de Gardner (1998).</p>
+  <p><strong>Tradução completa</strong> do livro para português brasileiro.
+  O texto principal de Thompson é domínio público; as notas Gardner são adaptações
+  da edição de 1998 e as particulares são da edição PT-BR.</p>
   <p>Projeto <strong>público</strong>, sem fins lucrativos. Não é permitido comercializar.</p>
 </div>
 
@@ -362,7 +383,7 @@ html.theme-dark .title, html.theme-dark .number { background: #161616; }
 <h3>Referências desta edição</h3>
 <ul>
   <li>Texto original em domínio público: <a href="https://www.gutenberg.org/ebooks/33283">Project Gutenberg #33283</a></li>
-  <li>Notas de contexto: inspiradas na edição Thompson &amp; Gardner (1998)</li>
+  <li>Notas Gardner: inspiradas na edição Thompson &amp; Gardner (1998); notas particulares: edição PT-BR</li>
   <li>Código desta edição: <a href="https://github.com/Rodriguestmo/calculo-tornado-facil">github.com/Rodriguestmo/calculo-tornado-facil</a></li>
 </ul>
 
@@ -394,7 +415,7 @@ html.theme-dark .title, html.theme-dark .number { background: #161616; }
     <small>
       Tradução e adaptação PT-BR por Thales Rodrigues.
       Texto de Silvanus P. Thompson em domínio público (Project Gutenberg).
-      Notas de contexto inspiradas na edição Gardner (1998).
+      Notas Gardner (1998) e notas particulares da edição PT-BR.
       Projeto público e gratuito.
     </small>
   </p>

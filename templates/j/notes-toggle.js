@@ -248,7 +248,16 @@
     }
   }
 
-  /* ---------- Notas Gardner ---------- */
+  /* ---------- Notas (Gardner + particulares) ---------- */
+  function isNoteEl(el) {
+    if (!el || !el.classList) return false;
+    return (
+      el.classList.contains("cme-note") ||
+      el.classList.contains("gardner-note") ||
+      el.classList.contains("particular-note")
+    );
+  }
+
   function noteIdFromHref(href) {
     if (!href) return null;
     var i = href.indexOf("#");
@@ -257,11 +266,15 @@
   }
 
   function ensureMarks() {
-    var notes = document.querySelectorAll(".gardner-note[id]");
+    var notes = document.querySelectorAll(
+      ".cme-note[id], .gardner-note[id], .particular-note[id]"
+    );
     for (var i = 0; i < notes.length; i++) {
       var note = notes[i];
       var id = note.id;
       if (!id) continue;
+      // garante classes unificadas
+      if (!note.classList.contains("cme-note")) note.classList.add("cme-note");
       var mark = document.querySelector(
         '.note-mark[data-note="' + id + '"], .note-mark[href="#' + id + '"]'
       );
@@ -274,7 +287,7 @@
           "aria-expanded",
           note.classList.contains("is-open") ? "true" : "false"
         );
-        mark.setAttribute("title", "Abrir/fechar nota de Gardner");
+        mark.setAttribute("title", "Abrir/fechar nota");
         mark.innerHTML = LUPA_SVG;
         continue;
       }
@@ -284,7 +297,7 @@
       mark.setAttribute("data-note", id);
       mark.setAttribute("aria-controls", id);
       mark.setAttribute("aria-expanded", "false");
-      mark.setAttribute("title", "Abrir/fechar nota de Gardner");
+      mark.setAttribute("title", "Abrir/fechar nota");
       mark.innerHTML = LUPA_SVG;
       note.parentNode.insertBefore(mark, note);
     }
@@ -301,7 +314,9 @@
   }
 
   function closeAllNotes() {
-    var notes = document.querySelectorAll(".gardner-note.is-open");
+    var notes = document.querySelectorAll(
+      ".cme-note.is-open, .gardner-note.is-open, .particular-note.is-open"
+    );
     for (var i = 0; i < notes.length; i++) {
       notes[i].classList.remove("is-open");
       setMarkExpanded(notes[i].id, false);
@@ -311,7 +326,7 @@
   function toggleNote(noteId) {
     if (!noteId) return;
     var note = document.getElementById(noteId);
-    if (!note || !note.classList.contains("gardner-note")) return;
+    if (!note || !isNoteEl(note)) return;
     var open = !note.classList.contains("is-open");
     note.classList.toggle("is-open", open);
     setMarkExpanded(noteId, open);
@@ -324,7 +339,7 @@
 
   function normalizeMode(mode) {
     if (mode === "all" || mode === "click" || mode === "off") return mode;
-    return "click";
+    return "all";
   }
 
   function applyMode(mode) {
@@ -337,7 +352,7 @@
   }
 
   function onMarkActivate(ev) {
-    var mode = normalizeMode(get(KEY_MODE, "click"));
+    var mode = normalizeMode(get(KEY_MODE, "all"));
     if (mode === "off") return;
     var el = ev.target;
     while (el && el !== document && !el.classList.contains("note-mark")) {
@@ -815,7 +830,18 @@
   /* ---------- Init ---------- */
   ensureMarks();
 
-  var mode = normalizeMode(get(KEY_MODE, "click"));
+  // v2: padrão "sempre visíveis"; quem nunca escolheu modo (ou ficou em click
+  // sem perceber) passa a ver as notas. Preferência "off" é respeitada.
+  var NOTES_V = "cme-notes-v";
+  if (get(NOTES_V, "") !== "2") {
+    var prevMode = get(KEY_MODE, null);
+    if (prevMode === null || prevMode === "click") {
+      set(KEY_MODE, "all");
+    }
+    set(NOTES_V, "2");
+  }
+
+  var mode = normalizeMode(get(KEY_MODE, "all"));
   var theme = get(KEY_THEME, "light");
   var font = get(KEY_FONT, "default");
   var size = clampSize(get(KEY_SIZE, String(SIZE_DEFAULT)));

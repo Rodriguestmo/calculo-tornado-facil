@@ -30,3 +30,8 @@
 
 ## Atualização
 2026-07-14 — publicado em https://rodriguestmo.github.io/calculo-tornado-facil/ (features + revisão 100% da tradução; commit f629b3c).
+
+## Notas (2026-07-14)
+- Sistema: modo padrão sempre visíveis; migração v2 click→all
+- Classes: gardner-note (quente) + particular-note (azul)
+- ~28 notas em 19 páginas; AGY APROVADO

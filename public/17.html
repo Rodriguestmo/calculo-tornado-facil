@@ -38,6 +38,26 @@
 <meta name="twitter:image" content="https://rodriguestmo.github.io/calculo-tornado-facil/cover.jpg">
 
 <link rel="describedby" href="https://rodriguestmo.github.io/calculo-tornado-facil/llms.txt">
+
+<script>
+(function () {
+  try {
+    // migração v2 espelhada (evita flash com modo click antigo)
+    if (localStorage.getItem("cme-notes-v") !== "2") {
+      var prev = localStorage.getItem("cme-notes-mode");
+      if (prev === null || prev === "click") {
+        localStorage.setItem("cme-notes-mode", "all");
+      }
+      localStorage.setItem("cme-notes-v", "2");
+    }
+    var m = localStorage.getItem("cme-notes-mode");
+    if (m !== "all" && m !== "click" && m !== "off") m = "all";
+    document.documentElement.classList.add("notes-mode-" + m);
+  } catch (e) {
+    document.documentElement.classList.add("notes-mode-all");
+  }
+})();
+</script>
 <link rel="stylesheet" href="screen.css">
 <style>
 body{counter-reset:h1 17}
@@ -172,7 +192,7 @@ body{counter-reset:h1 17}
         <div class="tb-menu-title">Configurações</div>
 
         <label class="tb-menu-row">
-          <span class="tb-menu-label">Notas de Gardner</span>
+          <span class="tb-menu-label">Notas</span>
           <select id="notes-mode" aria-label="Modo de exibição das notas">
             <option value="all">Sempre visíveis</option>
             <option value="click">Lupa (clique para abrir)</option>
@@ -282,6 +302,18 @@ body{counter-reset:h1 17}
 <h1><br>Integração</h1>
 <p class="a rotatedFloralHeartBullet">
 
+
+<aside class="cme-note gardner-note" id="g-ch17-integral">
+<header>Nota (contexto Gardner)</header>
+<p>Gardner reforça a imagem: integrar é “totalizar” pedacinhos - no plano, pedacinhos de área sob a curva. O $\int$ do Cap. I deixa de ser só um desenho assustador e vira a operação inversa da diferenciação.</p>
+<span class="src">Notas M.G. sobre integração; Cap. I e XVII.</span>
+</aside>
+
+<aside class="cme-note particular-note" id="p-ch17-plus-c">
+<header>Nota particular</header>
+<p>Sempre que integrar sem limites, acrescente $+C$. Diferenciar “apaga” constantes; a integração não sabe de que altura a curva partiu - $C$ carrega essa informação.</p>
+<span class="src">Edição PT-BR.</span>
+</aside>
 <p>O grande segredo já foi revelado: esse misterioso
 símbolo $\int$, que no fundo não passa de um $S$ alongado,
 significa apenas “a soma de,” ou “a soma de todas as
@@ -582,7 +614,7 @@ neste capítulo, ache $y$,</p>
     <small>
       Tradução e adaptação PT-BR por Thales Rodrigues.
       Texto de Silvanus P. Thompson em domínio público (Project Gutenberg).
-      Notas de contexto inspiradas na edição Gardner (1998).
+      Notas Gardner (1998) e notas particulares da edição PT-BR.
       Projeto público e gratuito.
     </small>
   </p>

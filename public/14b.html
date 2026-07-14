@@ -38,6 +38,26 @@
 <meta name="twitter:image" content="https://rodriguestmo.github.io/calculo-tornado-facil/cover.jpg">
 
 <link rel="describedby" href="https://rodriguestmo.github.io/calculo-tornado-facil/llms.txt">
+
+<script>
+(function () {
+  try {
+    // migração v2 espelhada (evita flash com modo click antigo)
+    if (localStorage.getItem("cme-notes-v") !== "2") {
+      var prev = localStorage.getItem("cme-notes-mode");
+      if (prev === null || prev === "click") {
+        localStorage.setItem("cme-notes-mode", "all");
+      }
+      localStorage.setItem("cme-notes-v", "2");
+    }
+    var m = localStorage.getItem("cme-notes-mode");
+    if (m !== "all" && m !== "click" && m !== "off") m = "all";
+    document.documentElement.classList.add("notes-mode-" + m);
+  } catch (e) {
+    document.documentElement.classList.add("notes-mode-all");
+  }
+})();
+</script>
 <link rel="stylesheet" href="screen.css">
 <style>
 body{counter-reset:h1 14}
@@ -172,7 +192,7 @@ body{counter-reset:h1 14}
         <div class="tb-menu-title">Configurações</div>
 
         <label class="tb-menu-row">
-          <span class="tb-menu-label">Notas de Gardner</span>
+          <span class="tb-menu-label">Notas</span>
           <select id="notes-mode" aria-label="Modo de exibição das notas">
             <option value="all">Sempre visíveis</option>
             <option value="click">Lupa (clique para abrir)</option>
@@ -283,6 +303,12 @@ body{counter-reset:h1 14}
 <p class="a rotatedFloralHeartBullet">
 
 
+
+<aside class="cme-note particular-note" id="p-ch14b-decay">
+<header>Nota particular</header>
+<p>Decaimento exponencial: $y = y_0\,\epsilon^{-at}$. A <em>constante de tempo</em> $T = 1/a$ é o tempo para a quantidade cair a cerca de $37\%$ do valor inicial ($1/\epsilon$). Em física moderna fala-se também em meia-vida (cair à metade), que é outro número, $T\ln 2$.</p>
+<span class="src">Edição PT-BR.</span>
+</aside>
 <p>Se tomássemos $p$ como uma fração própria (menor que
 a unidade), a curva tenderia obviamente a afundar para baixo,
 como na <a href="#figure42">Figura 42</a>, onde cada ordenada sucessiva
@@ -688,7 +714,7 @@ em cada caso.
     <small>
       Tradução e adaptação PT-BR por Thales Rodrigues.
       Texto de Silvanus P. Thompson em domínio público (Project Gutenberg).
-      Notas de contexto inspiradas na edição Gardner (1998).
+      Notas Gardner (1998) e notas particulares da edição PT-BR.
       Projeto público e gratuito.
     </small>
   </p>

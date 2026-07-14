@@ -38,6 +38,26 @@
 <meta name="twitter:image" content="https://rodriguestmo.github.io/calculo-tornado-facil/cover.jpg">
 
 <link rel="describedby" href="https://rodriguestmo.github.io/calculo-tornado-facil/llms.txt">
+
+<script>
+(function () {
+  try {
+    // migração v2 espelhada (evita flash com modo click antigo)
+    if (localStorage.getItem("cme-notes-v") !== "2") {
+      var prev = localStorage.getItem("cme-notes-mode");
+      if (prev === null || prev === "click") {
+        localStorage.setItem("cme-notes-mode", "all");
+      }
+      localStorage.setItem("cme-notes-v", "2");
+    }
+    var m = localStorage.getItem("cme-notes-mode");
+    if (m !== "all" && m !== "click" && m !== "off") m = "all";
+    document.documentElement.classList.add("notes-mode-" + m);
+  } catch (e) {
+    document.documentElement.classList.add("notes-mode-all");
+  }
+})();
+</script>
 <link rel="stylesheet" href="screen.css">
 <style>
 body{counter-reset:h1 11}
@@ -172,7 +192,7 @@ body{counter-reset:h1 11}
         <div class="tb-menu-title">Configurações</div>
 
         <label class="tb-menu-row">
-          <span class="tb-menu-label">Notas de Gardner</span>
+          <span class="tb-menu-label">Notas</span>
           <select id="notes-mode" aria-label="Modo de exibição das notas">
             <option value="all">Sempre visíveis</option>
             <option value="click">Lupa (clique para abrir)</option>
@@ -282,6 +302,12 @@ body{counter-reset:h1 11}
 <h1><br>Máximos e Mínimos</h1>
 <p class="a rotatedFloralHeartBullet">
 
+
+<aside class="cme-note particular-note" id="p-ch11-maxmin">
+<header>Nota particular</header>
+<p>Receita de máximos e mínimos: (1) escreva $y$ em função de uma variável; (2) calcule $\dfrac{dy}{dx}$; (3) iguale a zero e resolva; (4) confira se é máx. ou mín. (teste da segunda derivada ou inspeção). O “truque de igualar a zero” é o que Thompson quer que fique na memória.</p>
+<span class="src">Edição PT-BR.</span>
+</aside>
 <p>Um dos principais usos do processo de diferenciar
 é descobrir sob que condições o valor
 da coisa diferenciada se torna um máximo, ou um
@@ -1060,7 +1086,7 @@ máxima.
     <small>
       Tradução e adaptação PT-BR por Thales Rodrigues.
       Texto de Silvanus P. Thompson em domínio público (Project Gutenberg).
-      Notas de contexto inspiradas na edição Gardner (1998).
+      Notas Gardner (1998) e notas particulares da edição PT-BR.
       Projeto público e gratuito.
     </small>
   </p>

@@ -38,6 +38,26 @@
 <meta name="twitter:image" content="https://rodriguestmo.github.io/calculo-tornado-facil/cover.jpg">
 
 <link rel="describedby" href="https://rodriguestmo.github.io/calculo-tornado-facil/llms.txt">
+
+<script>
+(function () {
+  try {
+    // migração v2 espelhada (evita flash com modo click antigo)
+    if (localStorage.getItem("cme-notes-v") !== "2") {
+      var prev = localStorage.getItem("cme-notes-mode");
+      if (prev === null || prev === "click") {
+        localStorage.setItem("cme-notes-mode", "all");
+      }
+      localStorage.setItem("cme-notes-v", "2");
+    }
+    var m = localStorage.getItem("cme-notes-mode");
+    if (m !== "all" && m !== "click" && m !== "off") m = "all";
+    document.documentElement.classList.add("notes-mode-" + m);
+  } catch (e) {
+    document.documentElement.classList.add("notes-mode-all");
+  }
+})();
+</script>
 <link rel="stylesheet" href="screen.css">
 <style>
 body{counter-reset:h1 2}
@@ -172,7 +192,7 @@ body{counter-reset:h1 2}
         <div class="tb-menu-title">Configurações</div>
 
         <label class="tb-menu-row">
-          <span class="tb-menu-label">Notas de Gardner</span>
+          <span class="tb-menu-label">Notas</span>
           <select id="notes-mode" aria-label="Modo de exibição das notas">
             <option value="all">Sempre visíveis</option>
             <option value="click">Lupa (clique para abrir)</option>
@@ -282,6 +302,18 @@ body{counter-reset:h1 2}
 <h1><br>Sobre Diferentes Graus de Pequenez</h1>
 <p class="a rotatedFloralHeartBullet">
 
+
+<aside class="cme-note gardner-note" id="g-ch2-smallness">
+<header>Nota (contexto Gardner)</header>
+<p>Gardner enfatiza que o “truque” de Thompson é o mesmo da definição moderna de derivada: tomar o incremento tão pequeno quanto se queira e <em>desprezar</em> os termos de segunda ordem (ou superior). Em linguagem atual, isso corresponde a passar ao limite.</p>
+<span class="src">Prefácio e notas M.G., ed. 1998.</span>
+</aside>
+
+<aside class="cme-note particular-note" id="p-ch2-orders">
+<header>Nota particular</header>
+<p>Guarde a hierarquia: se $dx$ é “pequeno”, então $(dx)^2$ é “pequeno ao quadrado” e some da conta quando $dx$ tende a zero. É por isso que, ao expandir $(x+dx)^2 = x^2 + 2x\,dx + (dx)^2$, o último termo some e sobra $2x$ na derivada.</p>
+<span class="src">Edição PT-BR.</span>
+</aside>
 <p>Veremos que, em nossos processos de cálculo, temos
 de lidar com quantidades pequenas de vários graus
 de pequenez.
@@ -501,7 +533,7 @@ não importaria muito ao boi.
     <small>
       Tradução e adaptação PT-BR por Thales Rodrigues.
       Texto de Silvanus P. Thompson em domínio público (Project Gutenberg).
-      Notas de contexto inspiradas na edição Gardner (1998).
+      Notas Gardner (1998) e notas particulares da edição PT-BR.
       Projeto público e gratuito.
     </small>
   </p>

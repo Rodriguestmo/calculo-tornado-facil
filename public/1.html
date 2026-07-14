@@ -38,6 +38,26 @@
 <meta name="twitter:image" content="https://rodriguestmo.github.io/calculo-tornado-facil/cover.jpg">
 
 <link rel="describedby" href="https://rodriguestmo.github.io/calculo-tornado-facil/llms.txt">
+
+<script>
+(function () {
+  try {
+    // migração v2 espelhada (evita flash com modo click antigo)
+    if (localStorage.getItem("cme-notes-v") !== "2") {
+      var prev = localStorage.getItem("cme-notes-mode");
+      if (prev === null || prev === "click") {
+        localStorage.setItem("cme-notes-mode", "all");
+      }
+      localStorage.setItem("cme-notes-v", "2");
+    }
+    var m = localStorage.getItem("cme-notes-mode");
+    if (m !== "all" && m !== "click" && m !== "off") m = "all";
+    document.documentElement.classList.add("notes-mode-" + m);
+  } catch (e) {
+    document.documentElement.classList.add("notes-mode-all");
+  }
+})();
+</script>
 <link rel="stylesheet" href="screen.css">
 <style>
 body{counter-reset:h1 1}
@@ -172,7 +192,7 @@ body{counter-reset:h1 1}
         <div class="tb-menu-title">Configurações</div>
 
         <label class="tb-menu-row">
-          <span class="tb-menu-label">Notas de Gardner</span>
+          <span class="tb-menu-label">Notas</span>
           <select id="notes-mode" aria-label="Modo de exibição das notas">
             <option value="all">Sempre visíveis</option>
             <option value="click">Lupa (clique para abrir)</option>
@@ -282,7 +302,7 @@ body{counter-reset:h1 1}
 <h1><br>Para livrá-lo dos Terrores Preliminares</h1>
 <p class="a rotatedFloralHeartBullet">
 
-<aside class="gardner-note" id="g-ch1-prelim">
+<aside class="cme-note gardner-note" id="g-ch1-prelim">
 <header>Nota (Martin Gardner, 1998)</header>
 <p>Antes de entrar no texto de Thompson, Gardner acrescentou três capítulos preliminares na edição de 1998:</p>
 <p>(1) <em>O que é uma função?</em> - como uma grandeza depende de outra.<br>
@@ -299,7 +319,7 @@ dizer, em termos de bom senso, o significado
 dos dois principais símbolos usados no cálculo.
 <a class="note-mark" href="#g-ch1-highschool" data-note="g-ch1-highschool" title="Abrir/fechar nota de Gardner"></a>
 
-<aside class="gardner-note" id="g-ch1-highschool">
+<aside class="cme-note gardner-note" id="g-ch1-highschool">
 <header>Nota editorial (Gardner / tradução)</header>
 <p>No original de 1910, Thompson fala em <em>fifth-form boys</em> (meninos de uma série do ensino britânico da época). A edição Gardner (1998) moderniza para <em>high school students</em>. Aqui usamos “alunos do ensino médio”, no mesmo espírito de localização.</p>
 <span class="src">Comparação entre ed. Gutenberg (1910/1946) e ed. Gardner 1998.</span>
@@ -317,7 +337,7 @@ esses pedacinhos (ou elementos) podem ser considerados
 indefinidamente pequenos.
 <a class="note-mark" href="#g-ch1-infinitesimal" data-note="g-ch1-infinitesimal" title="Abrir/fechar nota de Gardner"></a>
 
-<aside class="gardner-note" id="g-ch1-infinitesimal">
+<aside class="cme-note gardner-note" id="g-ch1-infinitesimal">
 <header>Nota (contexto Gardner)</header>
 <p>A edição Gardner às vezes prefere “infinitamente pequenos” / linguagem mais próxima do uso atual. Thompson evita o formalismo dos $\varepsilon$ e $\delta$ e trabalha com a intuição de quantidades tão pequenas quanto se queira - o que, em termos modernos, é a porta de entrada para a ideia de limite.</p>
 <p>Gardner também padroniza a terminologia: o antigo “coeficiente diferencial” (<em>differential coefficient</em>) vira simplesmente <strong>derivada</strong> (<em>derivative</em>) no resto do livro anotado.</p>
@@ -342,7 +362,7 @@ cortada em $3600$ pedacinhos chamados segundos. O
 todo dos $3600$ pedacinhos somados
 forma uma hora.
 
-<aside class="gardner-note" id="g-ch1-integral">
+<aside class="cme-note gardner-note" id="g-ch1-integral">
 <header>Nota (Martin Gardner)</header>
 <p>Mais adiante no livro, Gardner lembra que a integral definida está ligada a somar pedacinhos de área sob uma curva entre dois extremos - a imagem geométrica clássica de “totalizar” o que o $\int$ anuncia. Thompson introduz o símbolo aqui só para matar o medo do desenho; o cálculo de áreas vem nos capítulos de integração.</p>
 <span class="src">Notas M.G. sobre integração (ed. 1998); contextualização do Cap. I.</span>
@@ -391,7 +411,7 @@ pelos símbolos que se seguem.
     <small>
       Tradução e adaptação PT-BR por Thales Rodrigues.
       Texto de Silvanus P. Thompson em domínio público (Project Gutenberg).
-      Notas de contexto inspiradas na edição Gardner (1998).
+      Notas Gardner (1998) e notas particulares da edição PT-BR.
       Projeto público e gratuito.
     </small>
   </p>
