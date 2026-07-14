@@ -270,22 +270,23 @@ sup {
   vertical-align: text-top;
 }
 
-/* links - sem sublinhado pontilhado (fica feio no sumário e na nav) */
+/* links - sem sublinhado pontilhado; :visited com a MESMA cor
+   (histórico visitado do browser não some com "limpar cache" do site) */
 
 a {
   text-decoration: none;
   border-bottom: none;
+  color: FireBrick;
 }
-a:link {
+a:link,
+a:visited {
   color: FireBrick;
   border-bottom: none;
 }
-a:visited {
-  color: RosyBrown;
+a:link:hover,
+a:visited:hover {
   border-bottom: none;
-}
-a:link:hover, a:visited:hover {
-  border-bottom: none;
+  color: #a33a1a;
   text-decoration: underline;
   text-underline-offset: 0.15em;
 }
@@ -295,16 +296,34 @@ a:link:hover, a:visited:hover {
   border-bottom: none;
 }
 
-/* sumário da home */
+/* sumário da home - nunca marcar "lido" só por :visited do browser */
 .toc a,
 .toc a:link,
-.toc a:visited,
-.toc a:hover {
+.toc a:visited {
+  color: FireBrick;
   border-bottom: none;
+  text-decoration: none;
 }
-.toc a:hover {
+.toc a:hover,
+.toc a:visited:hover {
+  color: #a33a1a;
   text-decoration: underline;
   text-underline-offset: 0.15em;
+}
+
+html.theme-dark a,
+html.theme-dark a:link,
+html.theme-dark a:visited {
+  color: #8ec7ff;
+}
+html.theme-dark a:hover,
+html.theme-dark a:visited:hover {
+  color: #b8dcff;
+}
+html.theme-dark .toc a,
+html.theme-dark .toc a:link,
+html.theme-dark .toc a:visited {
+  color: #8ec7ff;
 }
 
 /* figures and legends */
