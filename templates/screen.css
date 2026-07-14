@@ -465,9 +465,25 @@ html { scroll-padding-top: 3.6em; }
   font-size: 14px;
   box-shadow: 0 1px 4px rgba(0,0,0,0.35);
 }
-.site-toolbar a { color: #f5f0e6; text-decoration: none; }
-.site-toolbar a:hover { text-decoration: underline; }
-.site-toolbar .tb-home { font-weight: bold; letter-spacing: 0.02em; }
+.site-toolbar a,
+.site-toolbar a:link,
+.site-toolbar a:visited,
+.site-toolbar a:hover {
+  color: #f5f0e6;
+  text-decoration: none;
+  border-bottom: none;
+}
+.site-toolbar .tb-home {
+  font-weight: bold;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  border-bottom: none;
+}
+.site-toolbar .tb-home:hover {
+  opacity: 0.9;
+  text-decoration: none;
+  border-bottom: none;
+}
 .site-toolbar .tb-controls {
   display: inline-flex;
   align-items: center;
@@ -1014,12 +1030,16 @@ html.theme-dark #hl-note-input {
   line-height: 1.4;
   clear: both;
 }
-.chapter-nav a {
+.chapter-nav a,
+.chapter-nav a:link,
+.chapter-nav a:visited,
+.chapter-nav a:hover {
   text-decoration: none;
+  border-bottom: none;
   white-space: nowrap;
 }
 .chapter-nav a:hover {
-  text-decoration: underline;
+  opacity: 0.85;
 }
 .chapter-nav .nav-prev {
   text-align: left;
